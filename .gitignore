@@ -1,0 +1,4 @@
+dist/
+.codex-tmp/
+__pycache__/
+.DS_Store
