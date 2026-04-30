@@ -75,9 +75,17 @@ def render_faq(faq: list[dict[str, str]]) -> str:
     return '<section class="block"><h2>FAQ</h2>' + "".join(rows) + "</section>"
 
 
-def render_palmistry_embed(page: dict[str, Any], asset_prefix: str = "") -> str:
+def render_palmistry_embed(
+    page: dict[str, Any], asset_prefix: str = "", asset_urls: dict[str, str] | None = None
+) -> str:
     quiz = page["quiz"]
     images = {item["id"]: item for item in quiz["images"]}
+
+    def media_src(item: dict[str, Any]) -> str:
+        if asset_urls and item["id"] in asset_urls:
+            return asset_urls[item["id"]]
+        return asset_prefix + item["src"]
+
     options = []
     for step in quiz["steps"]:
         radios = []
@@ -107,7 +115,7 @@ def render_palmistry_embed(page: dict[str, Any], asset_prefix: str = "") -> str:
         image_cards.append(
             f"""
             <figure class="np-image-card">
-              <img src="{esc(asset_prefix + item["src"])}" alt="{esc(item["alt"])}" loading="lazy" />
+              <img src="{esc(media_src(item))}" alt="{esc(item["alt"])}" loading="lazy" />
               <figcaption>{esc(item["caption"])}</figcaption>
             </figure>
             """
@@ -270,6 +278,89 @@ def render_palmistry_embed(page: dict[str, Any], asset_prefix: str = "") -> str:
       width: min(100%, 360px);
       height: auto;
     }}
+    .np-reader {{
+      display: grid;
+      gap: 12px;
+      margin-bottom: 14px;
+    }}
+    .np-upload {{
+      display: grid;
+      gap: 6px;
+      padding: 12px;
+      border: 1px dashed rgba(0, 135, 120, 0.42);
+      border-radius: 12px;
+      background: rgba(0, 135, 120, 0.07);
+      cursor: pointer;
+    }}
+    .np-upload input {{
+      width: 100%;
+      color: var(--np-muted);
+      font-size: 14px;
+    }}
+    .np-upload strong, .np-upload span {{
+      display: block;
+    }}
+    .np-upload span {{
+      color: var(--np-muted);
+      line-height: 1.45;
+      font-size: 13px;
+    }}
+    .np-scan-stage {{
+      position: relative;
+      overflow: hidden;
+      min-height: 320px;
+      border: 1px solid var(--np-line);
+      border-radius: 14px;
+      background: #f7efe4;
+    }}
+    .np-scan-stage img {{
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      object-fit: cover;
+      filter: saturate(0.92) contrast(1.04);
+    }}
+    .np-scan-overlay {{
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }}
+    .np-scan-line {{
+      fill: none;
+      stroke-width: 3.5;
+      stroke-linecap: round;
+      stroke-dasharray: 420;
+      animation: np-draw 2.1s ease forwards;
+    }}
+    .np-scan-line.heart {{ stroke: #b64c72; }}
+    .np-scan-line.head {{ stroke: #008778; animation-delay: 0.12s; }}
+    .np-scan-line.life {{ stroke: #c28b2c; animation-delay: 0.24s; }}
+    .np-scan-label rect {{
+      fill: rgba(255, 250, 244, 0.9);
+      stroke: rgba(31, 38, 48, 0.14);
+    }}
+    .np-scan-label text {{
+      fill: var(--np-ink);
+      font-size: 12px;
+      font-weight: 700;
+    }}
+    .np-scan-caption {{
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }}
+    .np-scan-caption span {{
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--np-line);
+      color: var(--np-muted);
+      font-size: 12px;
+      text-align: center;
+    }}
     .np-line-draw {{
       fill: none;
       stroke: var(--np-accent-2);
@@ -309,9 +400,23 @@ def render_palmistry_embed(page: dict[str, Any], asset_prefix: str = "") -> str:
       padding: 16px;
       border-radius: 14px;
       border: 1px solid rgba(0, 135, 120, 0.28);
-      background: rgba(0, 135, 120, 0.08);
+      background:
+        linear-gradient(135deg, rgba(0, 135, 120, 0.12), rgba(182, 76, 114, 0.1)),
+        #fff;
     }}
     .np-result[hidden] {{ display: none; }}
+    .np-result-badge {{
+      display: inline-flex;
+      margin-bottom: 8px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #1f2630;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }}
     .np-result h4 {{
       margin: 0 0 8px;
       font-size: 22px;
@@ -324,6 +429,27 @@ def render_palmistry_embed(page: dict[str, Any], asset_prefix: str = "") -> str:
       margin: 10px 0 0;
       padding-left: 20px;
       line-height: 1.6;
+    }}
+    .np-result-lines {{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }}
+    .np-result-lines span {{
+      padding: 7px 9px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--np-line);
+      color: var(--np-muted);
+      font-size: 13px;
+      font-weight: 700;
+    }}
+    .np-copy-status {{
+      min-height: 20px;
+      margin-top: 10px;
+      color: var(--np-muted);
+      font-size: 13px;
     }}
     .np-gallery {{
       display: grid;
@@ -346,7 +472,7 @@ def render_palmistry_embed(page: dict[str, Any], asset_prefix: str = "") -> str:
     }}
     .np-attribution a {{ color: var(--np-accent); }}
     @media (max-width: 860px) {{
-      .np-hero, .np-layout, .np-gallery {{ grid-template-columns: 1fr; }}
+      .np-hero, .np-layout, .np-gallery, .np-scan-caption {{ grid-template-columns: 1fr; }}
       .neuro-palmistry {{ border-radius: 0; border-left: 0; border-right: 0; }}
     }}
   </style>
@@ -358,13 +484,45 @@ def render_palmistry_embed(page: dict[str, Any], asset_prefix: str = "") -> str:
       <p class="np-note">{esc(quiz["public_disclaimer"])}</p>
     </div>
     <figure class="np-hero-visual">
-      <img src="{esc(asset_prefix + images["right-hand-chart"]["src"])}" alt="{esc(images["right-hand-chart"]["alt"])}" loading="lazy" />
+      <img src="{esc(media_src(images["right-hand-chart"]))}" alt="{esc(images["right-hand-chart"]["alt"])}" loading="lazy" />
       <figcaption>{esc(images["right-hand-chart"]["caption"])}</figcaption>
     </figure>
   </div>
   <div class="np-layout">
     <div class="np-panel">
       <h3>Схема руки</h3>
+      <div class="np-reader">
+        <label class="np-upload">
+          <strong>Добавить снимок ладони</strong>
+          <span>Файл остаётся в вашем браузере. Блок только показывает превью и накладывает декоративную схему линий.</span>
+          <input type="file" accept="image/*" data-np-photo />
+        </label>
+        <div class="np-scan-stage">
+          <img src="{esc(media_src(images["chief-lines"]))}" alt="{esc(images["chief-lines"]["alt"])}" data-np-preview loading="lazy" />
+          <svg class="np-scan-overlay" viewBox="0 0 360 420" aria-hidden="true">
+            <path class="np-scan-line heart" d="M72 152 C130 125 206 126 284 158" />
+            <path class="np-scan-line head" d="M74 210 C142 190 222 194 297 222" />
+            <path class="np-scan-line life" d="M135 330 C88 277 78 213 122 141" />
+            <g class="np-scan-label" transform="translate(36 120)">
+              <rect width="112" height="28" rx="14" />
+              <text x="14" y="19">линия сердца</text>
+            </g>
+            <g class="np-scan-label" transform="translate(202 202)">
+              <rect width="104" height="28" rx="14" />
+              <text x="14" y="19">линия головы</text>
+            </g>
+            <g class="np-scan-label" transform="translate(86 306)">
+              <rect width="104" height="28" rx="14" />
+              <text x="14" y="19">линия жизни</text>
+            </g>
+          </svg>
+        </div>
+        <div class="np-scan-caption">
+          <span>локальное фото</span>
+          <span>подписи линий</span>
+          <span>развлекательный разбор</span>
+        </div>
+      </div>
       <div class="np-hand" aria-hidden="true">
         <svg viewBox="0 0 260 320" role="img">
           <path d="M126 291 C91 271 70 243 66 203 L55 118 C53 102 75 98 80 113 L93 155 L94 66 C95 48 119 48 120 66 L124 147 L132 45 C134 27 158 30 157 49 L151 149 L166 67 C169 50 192 55 188 74 L174 157 L198 105 C205 90 226 101 219 118 L194 184 C184 212 179 246 167 265 C157 280 144 288 126 291 Z" fill="#ffe1c4" stroke="#8e5940" stroke-width="4" />
@@ -374,7 +532,7 @@ def render_palmistry_embed(page: dict[str, Any], asset_prefix: str = "") -> str:
           <path class="np-line-draw" d="M143 255 C145 219 142 190 134 160" />
         </svg>
       </div>
-      <p class="np-note">Результат строится по выбранным вариантам, а не по загрузке фотографии. Так страница не собирает биометрию и персональные данные.</p>
+      <p class="np-note">Результат строится по выбранным вариантам. Снимок нужен только для визуального эффекта и не превращается в биометрию или диагностику.</p>
       <div class="np-gallery">{"".join(image_cards)}</div>
       <p class="np-attribution">
         Изображения: Wikimedia Commons, public domain/CC0. Источники: Chief Lines of the Hand, Plate XXII Palmistry chart of right hand, Chart of the Hand.
@@ -390,10 +548,19 @@ def render_palmistry_embed(page: dict[str, Any], asset_prefix: str = "") -> str:
         </div>
       </form>
       <div class="np-result" hidden aria-live="polite">
+        <span class="np-result-badge" data-np-badge>нейро-хиромантия</span>
         <h4></h4>
         <p data-np-summary></p>
+        <div class="np-result-lines">
+          <span data-np-line-focus>Акцент линии</span>
+          <span data-np-palm-style>Рисунок ладони</span>
+        </div>
         <ul data-np-points></ul>
         <p data-np-footer></p>
+        <div class="np-button-row">
+          <button class="np-button secondary" type="button" data-np-copy>Скопировать разбор</button>
+        </div>
+        <div class="np-copy-status" data-np-copy-status></div>
       </div>
     </div>
   </div>
@@ -406,6 +573,24 @@ def render_palmistry_embed(page: dict[str, Any], asset_prefix: str = "") -> str:
       const button = root.querySelector('[data-np-result]');
       const reset = root.querySelector('[data-np-reset]');
       const form = root.querySelector('.np-form');
+      const photo = root.querySelector('[data-np-photo]');
+      const preview = root.querySelector('[data-np-preview]');
+      const copyButton = root.querySelector('[data-np-copy]');
+      const copyStatus = root.querySelector('[data-np-copy-status]');
+      photo.addEventListener('change', () => {{
+        const file = photo.files && photo.files[0];
+        if (!file) return;
+        if (!file.type.startsWith('image/')) {{
+          photo.value = '';
+          return;
+        }}
+        const reader = new FileReader();
+        reader.onload = () => {{
+          preview.src = String(reader.result);
+          preview.alt = 'Локальный снимок ладони с декоративной схемой линий';
+        }};
+        reader.readAsDataURL(file);
+      }});
       const choose = () => {{
         const checked = [...root.querySelectorAll('input[type="radio"]:checked')];
         const required = new Set([...root.querySelectorAll('fieldset')].map((item) => item.querySelector('input').name));
@@ -413,8 +598,11 @@ def render_palmistry_embed(page: dict[str, Any], asset_prefix: str = "") -> str:
           result.hidden = false;
           result.querySelector('h4').textContent = 'Нужно выбрать все варианты';
           result.querySelector('[data-np-summary]').textContent = 'Пройдите четыре коротких шага, чтобы получить аккуратный развлекательный разбор.';
+          result.querySelector('[data-np-line-focus]').textContent = 'Акцент линии';
+          result.querySelector('[data-np-palm-style]').textContent = 'Рисунок ладони';
           result.querySelector('[data-np-points]').innerHTML = '';
           result.querySelector('[data-np-footer]').textContent = '';
+          copyStatus.textContent = '';
           return;
         }}
         const score = {{}};
@@ -424,17 +612,38 @@ def render_palmistry_embed(page: dict[str, Any], asset_prefix: str = "") -> str:
         }});
         const winner = Object.keys(archetypes).sort((a, b) => (score[b] || 0) - (score[a] || 0))[0];
         const data = archetypes[winner];
+        const byName = (name) => checked.find((item) => item.name === name);
+        const lineFocus = byName('line_focus')?.closest('.np-option')?.querySelector('strong')?.textContent || 'линия ладони';
+        const palmStyle = byName('line_style')?.closest('.np-option')?.querySelector('strong')?.textContent || 'рисунок линий';
         result.hidden = false;
+        result.querySelector('[data-np-badge]').textContent = 'Нейро-хиромантия 16+';
         result.querySelector('h4').textContent = data.title;
         result.querySelector('[data-np-summary]').textContent = data.summary;
+        result.querySelector('[data-np-line-focus]').textContent = `Акцент: ${{lineFocus}}`;
+        result.querySelector('[data-np-palm-style]').textContent = `Рисунок: ${{palmStyle}}`;
         result.querySelector('[data-np-points]').innerHTML = data.points.map((point) => `<li>${{point}}</li>`).join('');
         result.querySelector('[data-np-footer]').textContent = data.footer;
+        copyStatus.textContent = '';
       }};
+      copyButton.addEventListener('click', async () => {{
+        const title = result.querySelector('h4').textContent;
+        const summary = result.querySelector('[data-np-summary]').textContent;
+        const footer = result.querySelector('[data-np-footer]').textContent;
+        const points = [...result.querySelectorAll('[data-np-points] li')].map((item) => `- ${{item.textContent}}`).join('\\n');
+        const text = `${{title}}\\n${{summary}}\\n${{points}}\\n${{footer}}`;
+        try {{
+          await navigator.clipboard.writeText(text);
+          copyStatus.textContent = 'Разбор скопирован.';
+        }} catch (error) {{
+          copyStatus.textContent = 'Скопируйте текст результата вручную.';
+        }}
+      }});
       button.addEventListener('click', choose);
       reset.addEventListener('click', () => {{
         window.setTimeout(() => {{
           result.hidden = true;
           form.querySelectorAll('input').forEach((item) => item.checked = false);
+          copyStatus.textContent = '';
         }}, 0);
       }});
     }})();
@@ -727,6 +936,15 @@ def main() -> None:
         if page.get("template") == "palmistry_quiz":
             snippet = render_palmistry_embed(page, asset_prefix="https://tatyana-psy.moonn.ru/")
             (out_dir / "snippets" / "neuro-palmistry-test.html").write_text(snippet, encoding="utf-8")
+            tilda_snippet = render_palmistry_embed(
+                page,
+                asset_urls={
+                    "chief-lines": "https://commons.wikimedia.org/wiki/Special:FilePath/Chief_Lines_of_the_Hand.jpg?width=920",
+                    "right-hand-chart": "https://commons.wikimedia.org/wiki/Special:FilePath/Plate_XXII-_Palmistry_chart_of_right_hand_-_DPLA_-_2e7beac1623e708c1e7a59732d068151.jpg?width=920",
+                    "classic-chart": "https://commons.wikimedia.org/wiki/Special:FilePath/Chart_of_the_Hand.png?width=920",
+                },
+            )
+            (out_dir / "snippets" / "neuro-palmistry-test-tilda.html").write_text(tilda_snippet, encoding="utf-8")
 
     (out_dir / ".nojekyll").write_text("", encoding="utf-8")
     (out_dir / "CNAME").write_text((ROOT / "CNAME").read_text(encoding="utf-8"), encoding="utf-8")

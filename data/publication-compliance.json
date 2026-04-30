@@ -11,7 +11,7 @@
       "personal_data": {
         "collects_personal_data": false,
         "uploads_photos": false,
-        "notes": "The test uses radio choices only and does not send data to a server."
+        "notes": "The test can preview a selected image in the browser via FileReader, but it does not upload the file, store it, or send it to a backend."
       },
       "risk_flags": [
         "esoteric framing can be misread as prediction",
@@ -21,7 +21,7 @@
       "mitigations": [
         "visible entertainment disclaimer",
         "no future prediction wording",
-        "no photo upload or biometric processing",
+        "local-only photo preview without upload or biometric processing",
         "local public-domain/CC0-style media sources recorded in data/media-sources.json"
       ],
       "checked_sources": [
@@ -36,7 +36,7 @@
           "checked_at": "2026-04-30"
         }
       ],
-      "follow_up_rule": "Future entertainment tests should use a data manifest, visible disclaimer, no hidden collection, media source registry, and browser QA before publication."
+      "follow_up_rule": "Future entertainment tests should use a data manifest, visible disclaimer, no hidden collection, media source registry, Tilda-ready snippet when needed, and browser QA before publication."
     }
   ]
 }
