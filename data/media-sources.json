@@ -1,0 +1,32 @@
+{
+  "updated_at": "2026-04-30T22:19:51+03:00",
+  "sources": [
+    {
+      "id": "palm-lines-chief",
+      "local_path": "assets/images/palm-lines-chief.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chief_Lines_of_the_Hand.jpg",
+      "source_title": "Chief Lines of the Hand.jpg",
+      "license_status": "Public domain",
+      "author": "Elmo Jean La Seer",
+      "source_notes": "Published in 1904; Wikimedia Commons page marks the work as public domain."
+    },
+    {
+      "id": "palm-chart-right-hand",
+      "local_path": "assets/images/palm-chart-right-hand.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Plate_XXII-_Palmistry_chart_of_right_hand_-_DPLA_-_2e7beac1623e708c1e7a59732d068151.jpg",
+      "source_title": "Plate XXII: Palmistry chart of right hand",
+      "license_status": "Public domain",
+      "author": "William Salmon; Frederick Hendrick van Hove",
+      "source_notes": "Wikimedia Commons page marks the file as public domain; contributed through the Science History Institute/DPLA cooperation project."
+    },
+    {
+      "id": "palm-chart-classic",
+      "local_path": "assets/images/palm-chart-classic.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chart_of_the_Hand.png",
+      "source_title": "Chart of the Hand.png",
+      "license_status": "Public domain mark",
+      "author": "Ella Adelia Fletcher",
+      "source_notes": "Published in 1901; Wikimedia Commons page marks the underlying work as public domain."
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "updated_at": "2026-04-30T22:19:51+03:00",
+  "records": [
+    {
+      "page": "neuro-palmistry-test.html",
+      "project": "moon-psy-site",
+      "workstream": "site-entertainment-prototypes",
+      "content_type": "interactive entertainment test",
+      "audience_label": "16+",
+      "decision": "publishable as entertainment prototype after local QA; not positioned as prediction, medical advice, psychological diagnosis, financial/legal advice, or guaranteed personal analysis",
+      "personal_data": {
+        "collects_personal_data": false,
+        "uploads_photos": false,
+        "notes": "The test uses radio choices only and does not send data to a server."
+      },
+      "risk_flags": [
+        "esoteric framing can be misread as prediction",
+        "public page for Russian audience needs age/disclaimer language",
+        "media rights must stay traceable"
+      ],
+      "mitigations": [
+        "visible entertainment disclaimer",
+        "no future prediction wording",
+        "no photo upload or biometric processing",
+        "local public-domain/CC0-style media sources recorded in data/media-sources.json"
+      ],
+      "checked_sources": [
+        {
+          "topic": "436-FZ age/publication classification",
+          "url": "https://www.consultant.ru/document/cons_doc_LAW_108808/",
+          "checked_at": "2026-04-30"
+        },
+        {
+          "topic": "152-FZ personal data obligations",
+          "url": "https://ips.pravo.gov.ru/api/ips/legislation/document?baseid=None&hash=98490812b3409e2a8d78a11ca9010f434ea3d9250a11dbbdb78690cd5551bdd6",
+          "checked_at": "2026-04-30"
+        }
+      ],
+      "follow_up_rule": "Future entertainment tests should use a data manifest, visible disclaimer, no hidden collection, media source registry, and browser QA before publication."
+    }
+  ]
+}

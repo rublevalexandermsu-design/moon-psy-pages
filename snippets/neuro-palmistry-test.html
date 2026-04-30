@@ -1,0 +1,491 @@
+
+<section class="neuro-palmistry" data-neuro-palmistry>
+  <style>
+    .neuro-palmistry {
+      --np-bg: #fffaf4;
+      --np-ink: #1f2630;
+      --np-muted: #65707d;
+      --np-line: rgba(31, 38, 48, 0.14);
+      --np-accent: #008778;
+      --np-accent-2: #b64c72;
+      --np-gold: #c28b2c;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: clamp(18px, 3vw, 34px);
+      color: var(--np-ink);
+      background: linear-gradient(180deg, #fffdf9 0%, var(--np-bg) 100%);
+      border: 1px solid var(--np-line);
+      border-radius: 18px;
+      font-family: Inter, "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
+    }
+    .neuro-palmistry * { box-sizing: border-box; }
+    .np-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
+      gap: clamp(18px, 4vw, 42px);
+      align-items: center;
+      margin-bottom: 28px;
+    }
+    .np-kicker {
+      display: inline-flex;
+      margin: 0 0 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(0, 135, 120, 0.1);
+      color: var(--np-accent);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .np-hero h2 {
+      margin: 0;
+      max-width: 760px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+    .np-lead {
+      max-width: 680px;
+      margin: 16px 0 0;
+      color: var(--np-muted);
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.55;
+    }
+    .np-note {
+      margin: 18px 0 0;
+      padding: 12px 14px;
+      border-left: 4px solid var(--np-accent);
+      background: rgba(0, 135, 120, 0.08);
+      color: #2f4045;
+      line-height: 1.55;
+    }
+    .np-hero-visual {
+      margin: 0;
+      overflow: hidden;
+      border-radius: 14px;
+      border: 1px solid var(--np-line);
+      background: #fff;
+    }
+    .np-hero-visual img, .np-image-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .np-hero-visual figcaption, .np-image-card figcaption {
+      padding: 10px 12px;
+      color: var(--np-muted);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .np-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(320px, 1.08fr);
+      gap: 18px;
+      align-items: start;
+    }
+    .np-panel {
+      border: 1px solid var(--np-line);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.76);
+      padding: clamp(14px, 2.4vw, 22px);
+    }
+    .np-panel h3 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      line-height: 1.18;
+    }
+    .np-step {
+      margin: 0 0 16px;
+      padding: 0;
+      border: 0;
+    }
+    .np-step legend {
+      margin-bottom: 10px;
+      font-weight: 800;
+      font-size: 16px;
+    }
+    .np-options {
+      display: grid;
+      gap: 10px;
+    }
+    .np-option {
+      display: grid;
+      grid-template-columns: 22px minmax(0, 1fr);
+      gap: 10px;
+      align-items: start;
+      min-height: 70px;
+      padding: 12px;
+      border: 1px solid var(--np-line);
+      border-radius: 12px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .np-option:has(input:checked) {
+      border-color: var(--np-accent);
+      box-shadow: 0 0 0 3px rgba(0, 135, 120, 0.12);
+    }
+    .np-option input {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: var(--np-accent);
+    }
+    .np-option strong, .np-option em {
+      display: block;
+      line-height: 1.35;
+    }
+    .np-option em {
+      margin-top: 4px;
+      color: var(--np-muted);
+      font-style: normal;
+      font-size: 14px;
+    }
+    .np-hand {
+      display: grid;
+      place-items: center;
+      min-height: 280px;
+      border-radius: 14px;
+      background:
+        linear-gradient(145deg, rgba(0, 135, 120, 0.12), rgba(182, 76, 114, 0.1)),
+        #fff;
+      border: 1px solid var(--np-line);
+    }
+    .np-hand svg {
+      width: min(100%, 360px);
+      height: auto;
+    }
+    .np-line-draw {
+      fill: none;
+      stroke: var(--np-accent-2);
+      stroke-width: 5;
+      stroke-linecap: round;
+      stroke-dasharray: 520;
+      animation: np-draw 2.4s ease forwards;
+    }
+    .np-line-draw:nth-child(2) { stroke: var(--np-accent); animation-delay: 0.2s; }
+    .np-line-draw:nth-child(3) { stroke: var(--np-gold); animation-delay: 0.4s; }
+    @keyframes np-draw {
+      from { stroke-dashoffset: 520; opacity: 0.4; }
+      to { stroke-dashoffset: 0; opacity: 1; }
+    }
+    .np-button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .np-button {
+      border: 0;
+      border-radius: 999px;
+      padding: 12px 18px;
+      background: var(--np-accent);
+      color: #fff;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .np-button.secondary {
+      background: #fff;
+      color: var(--np-ink);
+      border: 1px solid var(--np-line);
+    }
+    .np-result {
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(0, 135, 120, 0.28);
+      background: rgba(0, 135, 120, 0.08);
+    }
+    .np-result[hidden] { display: none; }
+    .np-result h4 {
+      margin: 0 0 8px;
+      font-size: 22px;
+    }
+    .np-result p {
+      margin: 8px 0;
+      line-height: 1.6;
+    }
+    .np-result ul {
+      margin: 10px 0 0;
+      padding-left: 20px;
+      line-height: 1.6;
+    }
+    .np-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .np-image-card {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--np-line);
+      border-radius: 12px;
+      background: #fff;
+    }
+    .np-attribution {
+      margin-top: 16px;
+      color: var(--np-muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .np-attribution a { color: var(--np-accent); }
+    @media (max-width: 860px) {
+      .np-hero, .np-layout, .np-gallery { grid-template-columns: 1fr; }
+      .neuro-palmistry { border-radius: 0; border-left: 0; border-right: 0; }
+    }
+  </style>
+  <div class="np-hero">
+    <div>
+      <p class="np-kicker">Развлекательный формат 16+</p>
+      <h2>Нейро-хиромантия</h2>
+      <p class="np-lead">Выберите, какая схема ладони больше похожа на вашу, и получите аккуратный нейтральный разбор в стиле классической хиромантии.</p>
+      <p class="np-note">Это развлекательный тест, а не медицинская, психологическая или прогностическая диагностика. Он не требует загрузки фото и не собирает персональные данные.</p>
+    </div>
+    <figure class="np-hero-visual">
+      <img src="https://tatyana-psy.moonn.ru/assets/images/palm-chart-right-hand.jpg" alt="Старинная public domain схема правой ладони с линиями и знаками хиромантии" loading="lazy" />
+      <figcaption>Старинная схема правой ладони</figcaption>
+    </figure>
+  </div>
+  <div class="np-layout">
+    <div class="np-panel">
+      <h3>Схема руки</h3>
+      <div class="np-hand" aria-hidden="true">
+        <svg viewBox="0 0 260 320" role="img">
+          <path d="M126 291 C91 271 70 243 66 203 L55 118 C53 102 75 98 80 113 L93 155 L94 66 C95 48 119 48 120 66 L124 147 L132 45 C134 27 158 30 157 49 L151 149 L166 67 C169 50 192 55 188 74 L174 157 L198 105 C205 90 226 101 219 118 L194 184 C184 212 179 246 167 265 C157 280 144 288 126 291 Z" fill="#ffe1c4" stroke="#8e5940" stroke-width="4" />
+          <path class="np-line-draw" d="M82 181 C111 164 143 164 178 184" />
+          <path class="np-line-draw" d="M86 214 C117 201 149 203 183 219" />
+          <path class="np-line-draw" d="M111 250 C94 222 91 191 105 160" />
+          <path class="np-line-draw" d="M143 255 C145 219 142 190 134 160" />
+        </svg>
+      </div>
+      <p class="np-note">Результат строится по выбранным вариантам, а не по загрузке фотографии. Так страница не собирает биометрию и персональные данные.</p>
+      <div class="np-gallery">
+            <figure class="np-image-card">
+              <img src="https://tatyana-psy.moonn.ru/assets/images/palm-lines-chief.jpg" alt="Классическая схема основных линий ладони для развлекательного теста нейро-хиромантии" loading="lazy" />
+              <figcaption>Классическая схема основных линий</figcaption>
+            </figure>
+            
+            <figure class="np-image-card">
+              <img src="https://tatyana-psy.moonn.ru/assets/images/palm-chart-right-hand.jpg" alt="Старинная public domain схема правой ладони с линиями и знаками хиромантии" loading="lazy" />
+              <figcaption>Старинная схема правой ладони</figcaption>
+            </figure>
+            
+            <figure class="np-image-card">
+              <img src="https://tatyana-psy.moonn.ru/assets/images/palm-chart-classic.png" alt="Винтажная public domain карта ладони для визуального развлекательного теста" loading="lazy" />
+              <figcaption>Винтажная карта ладони</figcaption>
+            </figure>
+            </div>
+      <p class="np-attribution">
+        Изображения: Wikimedia Commons, public domain/CC0. Источники: Chief Lines of the Hand, Plate XXII Palmistry chart of right hand, Chart of the Hand.
+      </p>
+    </div>
+    <div class="np-panel">
+      <h3>Быстрый тест по ладони</h3>
+      <form class="np-form">
+        
+            <fieldset class="np-step">
+              <legend>1. Какая форма ладони ближе?</legend>
+              <div class="np-options">
+                <label class="np-option">
+                  <input type="radio" name="palm_shape" value="clear" data-archetype="strategist" />
+                  <span>
+                    <strong>Чёткая и собранная</strong>
+                    <em>Ладонь выглядит компактной, линии воспринимаются ясно.</em>
+                  </span>
+                </label>
+                
+                <label class="np-option">
+                  <input type="radio" name="palm_shape" value="soft" data-archetype="diplomat" />
+                  <span>
+                    <strong>Мягкая и плавная</strong>
+                    <em>Форма кажется спокойной, без резких акцентов.</em>
+                  </span>
+                </label>
+                
+                <label class="np-option">
+                  <input type="radio" name="palm_shape" value="long" data-archetype="observer" />
+                  <span>
+                    <strong>Вытянутая и наблюдательная</strong>
+                    <em>Пальцы или ладонь визуально тянутся вверх.</em>
+                  </span>
+                </label>
+                
+                <label class="np-option">
+                  <input type="radio" name="palm_shape" value="active" data-archetype="creator" />
+                  <span>
+                    <strong>Активная и живая</strong>
+                    <em>В ладони много деталей, линий и маленьких развилок.</em>
+                  </span>
+                </label>
+                </div>
+            </fieldset>
+            
+            <fieldset class="np-step">
+              <legend>2. Какая линия первой бросается в глаза?</legend>
+              <div class="np-options">
+                <label class="np-option">
+                  <input type="radio" name="line_focus" value="head" data-archetype="strategist" />
+                  <span>
+                    <strong>Линия головы</strong>
+                    <em>Больше всего заметна центральная горизонтальная линия.</em>
+                  </span>
+                </label>
+                
+                <label class="np-option">
+                  <input type="radio" name="line_focus" value="heart" data-archetype="diplomat" />
+                  <span>
+                    <strong>Линия сердца</strong>
+                    <em>Верхняя линия кажется самой выразительной.</em>
+                  </span>
+                </label>
+                
+                <label class="np-option">
+                  <input type="radio" name="line_focus" value="life" data-archetype="creator" />
+                  <span>
+                    <strong>Линия жизни</strong>
+                    <em>Дуга вокруг большого пальца сразу притягивает взгляд.</em>
+                  </span>
+                </label>
+                
+                <label class="np-option">
+                  <input type="radio" name="line_focus" value="fate" data-archetype="observer" />
+                  <span>
+                    <strong>Вертикальная линия судьбы</strong>
+                    <em>Внимание уходит к линии, которая поднимается к центру ладони.</em>
+                  </span>
+                </label>
+                </div>
+            </fieldset>
+            
+            <fieldset class="np-step">
+              <legend>3. Какой рисунок линий вам ближе?</legend>
+              <div class="np-options">
+                <label class="np-option">
+                  <input type="radio" name="line_style" value="direct" data-archetype="strategist" />
+                  <span>
+                    <strong>Прямой</strong>
+                    <em>Люблю ясные маршруты и понятные решения.</em>
+                  </span>
+                </label>
+                
+                <label class="np-option">
+                  <input type="radio" name="line_style" value="flow" data-archetype="diplomat" />
+                  <span>
+                    <strong>Плавный</strong>
+                    <em>Мне ближе мягкая настройка и внимание к атмосфере.</em>
+                  </span>
+                </label>
+                
+                <label class="np-option">
+                  <input type="radio" name="line_style" value="branches" data-archetype="creator" />
+                  <span>
+                    <strong>Разветвлённый</strong>
+                    <em>Интересны варианты, связи и неожиданные повороты.</em>
+                  </span>
+                </label>
+                
+                <label class="np-option">
+                  <input type="radio" name="line_style" value="quiet" data-archetype="observer" />
+                  <span>
+                    <strong>Сдержанный</strong>
+                    <em>Мне важно сначала наблюдать, а потом делать вывод.</em>
+                  </span>
+                </label>
+                </div>
+            </fieldset>
+            
+            <fieldset class="np-step">
+              <legend>4. Какой результат хочется получить?</legend>
+              <div class="np-options">
+                <label class="np-option">
+                  <input type="radio" name="mood" value="decisions" data-archetype="strategist" />
+                  <span>
+                    <strong>Про решения</strong>
+                    <em>Что во мне помогает действовать собранно.</em>
+                  </span>
+                </label>
+                
+                <label class="np-option">
+                  <input type="radio" name="mood" value="relations" data-archetype="diplomat" />
+                  <span>
+                    <strong>Про отношения</strong>
+                    <em>Как я считываю людей и держу контакт.</em>
+                  </span>
+                </label>
+                
+                <label class="np-option">
+                  <input type="radio" name="mood" value="energy" data-archetype="creator" />
+                  <span>
+                    <strong>Про энергию</strong>
+                    <em>Где во мне больше живости и импульса.</em>
+                  </span>
+                </label>
+                
+                <label class="np-option">
+                  <input type="radio" name="mood" value="meaning" data-archetype="observer" />
+                  <span>
+                    <strong>Про смысл</strong>
+                    <em>Как я выбираю направление и замечаю знаки.</em>
+                  </span>
+                </label>
+                </div>
+            </fieldset>
+            
+        <div class="np-button-row">
+          <button class="np-button" type="button" data-np-result>Показать разбор</button>
+          <button class="np-button secondary" type="reset" data-np-reset>Сбросить</button>
+        </div>
+      </form>
+      <div class="np-result" hidden aria-live="polite">
+        <h4></h4>
+        <p data-np-summary></p>
+        <ul data-np-points></ul>
+        <p data-np-footer></p>
+      </div>
+    </div>
+  </div>
+  <script type="application/json" data-np-archetypes>{"strategist": {"title": "Ваш образ: Собранный стратег", "summary": "В развлекательной интерпретации такой рисунок говорит о любви к структуре, ясным решениям и спокойному контролю над ситуацией.", "points": ["Сильная сторона: умение быстро отделять главное от второстепенного.", "В отношениях вам важно, чтобы слова совпадали с действиями.", "Лучший формат отдыха: переключение, где есть понятная рамка и видимый результат."], "footer": "Подсказка теста: иногда полезно оставлять место для спонтанности, даже если план уже выглядит убедительно."}, "diplomat": {"title": "Ваш образ: Тонкий дипломат", "summary": "Такой результат звучит как портрет человека, который чувствует атмосферу, быстро замечает оттенки общения и стремится к мягкому балансу.", "points": ["Сильная сторона: способность видеть не только слова, но и настроение.", "В отношениях вам важны такт, доверие и бережная ясность.", "Лучший формат отдыха: спокойная среда, где можно восстановить внутренний ритм."], "footer": "Подсказка теста: мягкость становится сильнее, когда рядом с ней есть ясная личная граница."}, "creator": {"title": "Ваш образ: Живой создатель", "summary": "Разветвлённый и активный рисунок в таком тесте читается как склонность к идеям, движению, экспериментам и быстрой смене фокуса.", "points": ["Сильная сторона: способность запускать новое и видеть несколько ходов сразу.", "В отношениях вам важны интерес, обмен и ощущение развития.", "Лучший формат отдыха: творческий импульс, короткое приключение или новый опыт."], "footer": "Подсказка теста: идеи раскрываются лучше, когда у них есть простой следующий шаг."}, "observer": {"title": "Ваш образ: Наблюдательный исследователь", "summary": "Этот вариант похож на человека, который не спешит с выводами, любит считывать закономерности и искать скрытую логику происходящего.", "points": ["Сильная сторона: внимательность к деталям и умение замечать слабые сигналы.", "В отношениях вам важно пространство, честность и отсутствие давления.", "Лучший формат отдыха: тишина, глубокий разговор, книга, прогулка или новая тема для изучения."], "footer": "Подсказка теста: наблюдение становится ценнее, когда переходит в аккуратное действие."}}</script>
+  <script>
+    (() => {
+      const root = document.currentScript.closest('[data-neuro-palmistry]');
+      const archetypes = JSON.parse(root.querySelector('[data-np-archetypes]').textContent);
+      const result = root.querySelector('.np-result');
+      const button = root.querySelector('[data-np-result]');
+      const reset = root.querySelector('[data-np-reset]');
+      const form = root.querySelector('.np-form');
+      const choose = () => {
+        const checked = [...root.querySelectorAll('input[type="radio"]:checked')];
+        const required = new Set([...root.querySelectorAll('fieldset')].map((item) => item.querySelector('input').name));
+        if (checked.length < required.size) {
+          result.hidden = false;
+          result.querySelector('h4').textContent = 'Нужно выбрать все варианты';
+          result.querySelector('[data-np-summary]').textContent = 'Пройдите четыре коротких шага, чтобы получить аккуратный развлекательный разбор.';
+          result.querySelector('[data-np-points]').innerHTML = '';
+          result.querySelector('[data-np-footer]').textContent = '';
+          return;
+        }
+        const score = {};
+        checked.forEach((item) => {
+          const key = item.dataset.archetype;
+          score[key] = (score[key] || 0) + 1;
+        });
+        const winner = Object.keys(archetypes).sort((a, b) => (score[b] || 0) - (score[a] || 0))[0];
+        const data = archetypes[winner];
+        result.hidden = false;
+        result.querySelector('h4').textContent = data.title;
+        result.querySelector('[data-np-summary]').textContent = data.summary;
+        result.querySelector('[data-np-points]').innerHTML = data.points.map((point) => `<li>${point}</li>`).join('');
+        result.querySelector('[data-np-footer]').textContent = data.footer;
+      };
+      button.addEventListener('click', choose);
+      reset.addEventListener('click', () => {
+        window.setTimeout(() => {
+          result.hidden = true;
+          form.querySelectorAll('input').forEach((item) => item.checked = false);
+        }, 0);
+      });
+    })();
+  </script>
+</section>
