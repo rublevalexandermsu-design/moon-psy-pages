@@ -1,4 +1,15 @@
 dist/
 .codex-tmp/
+.codex-server.pid
+.playwright-cli/
+output/
 __pycache__/
 .DS_Store
+
+# Local environments and secrets
+.env
+.env.*
+!.env.example
+*secrets*
+*credentials*
+*token*
