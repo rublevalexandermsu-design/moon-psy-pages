@@ -90,3 +90,34 @@ Canonical append-only chat history for `moon-psy-site`.
   - Returned title `Example Domain` and URL `https://example.com/`.
 - Follow-up rule:
   - If Browser Use can open localhost but fails on external URLs with app-server path errors, check whether local `C:\Users\yanta\AppData\Local\OpenAI\Codex\bin\codex.exe` exists and refresh it from the installed Codex resources directory after app updates.
+
+## 2026-05-01T12:47:00+03:00 — Tilda staging homepage copy published
+
+- Project: `moon-psy-site`.
+- Workstream: `tilda-api-sync`.
+- Branch: `codex/tilda-api-sync`.
+- Request: use repaired Browser Use so the user can see the Tilda cabinet actions, create an editable staging copy, publish it on a temporary address, and keep production `Moonn.ru` untouched.
+- Actions:
+  - Logged into Tilda through Browser Use.
+  - Opened production project `Moonn.ru`, project id `8326812`.
+  - Located production homepage `pageid=42678538`.
+  - Duplicated the homepage inside production and received new page id `138660066`.
+  - Moved only the duplicate, not the original page, into staging project `Moonn Staging`, project id `25075076`.
+  - Renamed the staging page to remove `Copy of`.
+  - Enabled `noindex` and `nofollow` for the staging page before publication.
+  - Assigned the staging page as the project homepage in site settings.
+  - Published all pages in the staging project.
+- Verified facts:
+  - Staging project contains one copied page.
+  - Temporary staging URL is `https://carry-pacific-flatfish.tilda.ws/`.
+  - Browser Use opened the published staging root URL successfully.
+  - Production `Moonn.ru` was not edited directly; only a duplicate page was created and moved.
+- Incident:
+  - Symptom: first publication opened the copied page at `/page138660066.html`, while the staging root showed a Tilda stub/404.
+  - Root cause: the Tilda project did not have a homepage selected; clearing the page URL was not sufficient and briefly made the root return 404.
+  - Resolution: set `pageid=138660066` as the project homepage in site settings, saved settings, republished, and verified the root URL.
+  - Follow-up rule: after moving pages into a Tilda staging project, always set the staging homepage in site settings and verify the root URL, not only the direct page URL.
+- Open questions:
+  - Which additional canonical production pages should be copied next.
+  - Whether internal links in staging should continue pointing to production pages or be rewired to copied staging pages as those pages are added.
+  - Which analytics source should be treated as authoritative for traffic/click data.
