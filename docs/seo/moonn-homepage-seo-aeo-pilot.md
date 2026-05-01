@@ -231,6 +231,26 @@ Important action gate:
 - Binding Metrica to Webmaster changes Yandex account/site settings.
 - Both should be done only after action-time confirmation and first on staging where possible.
 
+## GSC Indexing Reasons: First Pass
+
+Detailed GSC indexing diagnostics were captured in `registry/seo/moonn-gsc-indexing-diagnostics.json`.
+
+Reason groups:
+
+- `Not found (404)`: 9 pages. Includes malformed links such as `https://moonn.ru/http://wa.me/+79777770303` and old legacy `.html` paths. Action: fix malformed links and create redirect map.
+- `Blocked by robots.txt`: 2 pages. Includes `/psiholog-moskva-online` and `/psiholog`. Current robots has broad rules such as `Disallow: /psiholog`, which also blocks `/psiholog...` URLs by prefix. Action: decide whether these are legacy duplicates or active landing pages before changing robots.
+- `Alternate page with proper canonical tag`: 2 pages. Includes a Yandex click-id URL and a legacy `page35668815.html`. Action: mostly OK, but redirect old page path if needed.
+- `Discovered - currently not indexed`: 81 pages. Includes date/event URLs, topical articles, knowledge-base pages, and utility pages. Action: classify into public evergreen, event/archive, test/utility, or retire.
+- `Crawled - currently not indexed`: 22 pages. Includes emotional-intelligence article pages, legacy page paths, and tpost/AMP-like variants. Action: check content quality, duplicate/canonical status, and internal links.
+
+Priority:
+
+1. Fix concrete 404 defects.
+2. Classify and resolve robots-blocked `/psiholog*` pages.
+3. Improve public evergreen articles and knowledge-base pages.
+4. Keep utility/test pages intentionally out of index.
+5. Validate in GSC only after fixes are live.
+
 ## Tilda Implementation Order
 
 1. Keep staging `noindex,nofollow`.

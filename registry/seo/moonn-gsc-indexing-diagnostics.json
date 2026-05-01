@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-05-01T21:20:00+03:00",
+  "project": "moon-psy-site",
+  "workstream": "seo-aeo-retrofit",
+  "source": "Google Search Console Page indexing, authenticated browser view",
+  "property": "https://moonn.ru/",
+  "summary": {
+    "indexed_pages": 29,
+    "not_indexed_pages": 116,
+    "reason_groups": 5,
+    "last_update_visible": "2026-04-27"
+  },
+  "reason_groups": [
+    {
+      "reason": "Not found (404)",
+      "count": 9,
+      "source": "Website",
+      "validation": "Not Started",
+      "sample_urls_visible": [
+        "https://moonn.ru/http://wa.me/+79777770303",
+        "https://moonn.ru/emotionalnaya-vygoranie",
+        "https://moonn.ru/static.tildacdn.com/",
+        "https://moonn.ru/zaprocy",
+        "https://moonn.ru/bystraya-psihologiya.html",
+        "https://moonn.ru/leksii.html",
+        "https://moonn.ru/kurs-duhovnoy-psihologii.html",
+        "https://moonn.ru/zaprocy.html",
+        "https://moonn.ru/podrostki.html"
+      ],
+      "classification": "fix_or_redirect",
+      "interpretation": "This group contains malformed links and old URL paths. The malformed WhatsApp URL confirms at least one on-page link bug: the external `http://wa.me` URL is being resolved as an internal moonn.ru path.",
+      "actions": [
+        "Fix malformed internal links that wrap external URLs, especially WhatsApp and Tilda CDN paths.",
+        "Create a 301 redirect map for old .html and legacy transliterated URLs that have a current equivalent.",
+        "Return true 404/410 only for pages that are intentionally removed and have no replacement.",
+        "After fixes, validate this GSC reason group."
+      ]
+    },
+    {
+      "reason": "Blocked by robots.txt",
+      "count": 2,
+      "source": "Website",
+      "validation": "Not Started",
+      "sample_urls_visible": [
+        "https://moonn.ru/psiholog-moskva-online",
+        "https://moonn.ru/psiholog"
+      ],
+      "classification": "decide_redirect_or_unblock",
+      "robots_evidence": [
+        "Disallow: /psiholog",
+        "Disallow: /psiholog-online",
+        "Disallow: /psiholog-moskva"
+      ],
+      "interpretation": "The broad `Disallow: /psiholog` rule also blocks any URL beginning with /psiholog, including /psiholog-moskva-online. This may be intentional for legacy duplicate pages, but it is risky if any /psiholog* page should rank.",
+      "actions": [
+        "Decide whether /psiholog and /psiholog-moskva-online are legacy duplicates or active landing pages.",
+        "If legacy: redirect them to the canonical consultation page instead of relying only on robots blocking.",
+        "If active: narrow the robots.txt rules and ensure canonical/unique metadata are correct.",
+        "Do not remove robots rules globally until page intent is classified."
+      ]
+    },
+    {
+      "reason": "Alternate page with proper canonical tag",
+      "count": 2,
+      "source": "Website",
+      "validation": "Not Started",
+      "sample_urls_visible": [
+        "https://moonn.ru/page35668815.html",
+        "https://moonn.ru/?ysclid=m6xfh8ksf6316418997"
+      ],
+      "classification": "mostly_ok_monitor",
+      "interpretation": "Google found alternate URLs that correctly point to another canonical URL. The yandex click-id URL is normal; the page*.html URL should be redirected if it is a legacy public path.",
+      "actions": [
+        "Leave parameter URL canonical behavior intact.",
+        "Map page35668815.html to the current canonical page if it is a legacy Tilda URL.",
+        "No validation priority unless impressions/clicks exist for these alternates."
+      ]
+    },
+    {
+      "reason": "Discovered - currently not indexed",
+      "count": 81,
+      "source": "Google systems",
+      "validation": "Not Started",
+      "sample_urls_visible": [
+        "https://moonn.ru/20251201",
+        "https://moonn.ru/20251213",
+        "https://moonn.ru/20251216",
+        "https://moonn.ru/about_gaslight",
+        "https://moonn.ru/aromatherapy",
+        "https://moonn.ru/article_gadget_addiction",
+        "https://moonn.ru/article_toxic_job",
+        "https://moonn.ru/articles/eq-iq-rukovoditely",
+        "https://moonn.ru/baza-znaniy-emocionalnyy-intellekt-psihologiya",
+        "https://moonn.ru/cta"
+      ],
+      "classification": "content_quality_internal_linking_sitemap_review",
+      "interpretation": "Google knows these URLs but has not crawled/indexed them yet. The sample mixes date/event pages, topical articles, knowledge-base pages, and utility pages. This is the largest indexation backlog.",
+      "actions": [
+        "Split samples into public evergreen pages, event/date pages, utility/test pages, and pages to retire.",
+        "For public evergreen pages: unique metadata, H1/H2, internal links from relevant hubs, image alt, schema type, and sitemap inclusion.",
+        "For event/date pages: decide whether they are future public events, archives, or test pages.",
+        "For utility pages such as /cta: noindex or remove from sitemap unless there is public search value.",
+        "After fixing a batch, request indexing for representative URLs instead of validating the whole group blindly."
+      ]
+    },
+    {
+      "reason": "Crawled - currently not indexed",
+      "count": 22,
+      "source": "Google systems",
+      "validation": "Not Started",
+      "sample_urls_visible": [
+        "https://moonn.ru/emotional-intelligence/articles",
+        "https://moonn.ru/emotional-intelligence/articles/why-it-matters",
+        "https://moonn.ru/semeyniy_psiholog",
+        "https://moonn.ru/water",
+        "https://moonn.ru/emotional...",
+        "https://moonn.ru/page44548639.html",
+        "https://moonn.ru/pplsay",
+        "https://moonn.ru/tpost/...",
+        "https://moonn.ru/tpost/...amp=true"
+      ],
+      "classification": "thin_duplicate_or_low_signal_review",
+      "interpretation": "Google crawled these pages but decided not to index. This usually requires improving uniqueness, quality, canonical clarity, internal linking, and removing duplicates such as AMP/tpost variants if they are not canonical.",
+      "actions": [
+        "Check each URL for content depth, duplicate metadata, canonical URL, indexability, and internal links.",
+        "Fix or redirect old page*.html and tpost/AMP variants.",
+        "Improve article hub pages that should be indexed, especially emotional-intelligence pages.",
+        "Noindex/remove pages with no standalone search intent."
+      ]
+    }
+  ],
+  "immediate_priority_order": [
+    "Fix malformed 404 links and redirects because they are concrete site defects.",
+    "Classify /psiholog* robots-blocked URLs as legacy or active landing pages.",
+    "Batch-fix public evergreen pages from Discovered/Crawled groups using contextual SEO templates.",
+    "Keep utility/test pages out of the index deliberately.",
+    "Validate GSC groups only after representative fixes are live."
+  ]
+}

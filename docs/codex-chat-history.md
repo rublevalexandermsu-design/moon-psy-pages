@@ -949,6 +949,35 @@ Canonical append-only chat history for `moon-psy-site`.
   - No Tilda, Yandex, Google, or production settings were changed in this step.
 
 
+## 2026-05-01T21:20:00+03:00 — GSC not-indexed reasons captured
+
+- Project: `moon-psy-site`.
+- Workstream: `seo-aeo-retrofit`.
+- Branch: `codex/tilda-api-sync`.
+- Request: start with GSC reasons before deciding which pages to fix or leave out of index.
+- Verified GSC Page indexing reasons:
+  - `Not found (404)`: 9 URLs.
+  - `Blocked by robots.txt`: 2 URLs.
+  - `Alternate page with proper canonical tag`: 2 URLs.
+  - `Discovered - currently not indexed`: 81 URLs.
+  - `Crawled - currently not indexed`: 22 URLs.
+- Important root cause:
+  - Live `robots.txt` contains broad rules such as `Disallow: /psiholog`, which also blocks prefix URLs like `/psiholog-moskva-online`.
+- Sample URL findings:
+  - 404 group includes malformed internalized external links such as `https://moonn.ru/http://wa.me/+79777770303`, plus legacy `.html` URLs.
+  - Robots group includes `/psiholog-moskva-online` and `/psiholog`.
+  - Canonical group includes `/?ysclid=...` and `page35668815.html`.
+  - Discovered group includes date/event pages, articles, knowledge-base pages, and utility URLs.
+  - Crawled group includes emotional-intelligence article pages, old page URLs, and tpost/AMP-like variants.
+- Changed files:
+  - `registry/seo/moonn-gsc-indexing-diagnostics.json`
+  - `registry/seo/moonn-seo-remediation-backlog.json`
+  - `docs/seo/moonn-homepage-seo-aeo-pilot.md`
+  - `docs/codex-chat-history.md`
+- Boundary:
+  - No Google, Yandex, Tilda, or production site settings were changed.
+
+
 ## 2026-05-01T19:13:04+03:00 — All copied Tilda pages audited for card/grid regression
 
 - Project: `moon-psy-site`.

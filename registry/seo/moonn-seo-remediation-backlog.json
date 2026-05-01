@@ -75,18 +75,26 @@
     {
       "id": "SEO-002",
       "title": "Diagnose 116 Google not-indexed pages",
-      "status": "blocked_on_report_detail",
+      "status": "diagnosed_first_pass",
       "priority": "critical",
       "reason": "Google Search Console shows only 29 indexed pages and 116 not indexed pages across 5 reason groups.",
-      "implementation_boundary": "Open GSC Page indexing reason groups and export/sample URLs before changing page status.",
+      "implementation_boundary": "Use registry/seo/moonn-gsc-indexing-diagnostics.json as the first-pass diagnostic. Export full GSC URL lists before bulk page edits.",
       "acceptance_checks": [
         "Each GSC exclusion reason is captured with count and sample URLs.",
         "Pages are classified as keep noindex, canonical duplicate, thin/low value, unpublished/test, or fix-and-submit.",
         "Sitemap and canonical rules are updated only after classification.",
         "Validated pages are submitted for recrawl."
       ],
+      "diagnostic_registry": "registry/seo/moonn-gsc-indexing-diagnostics.json",
+      "reason_groups": [
+        {"reason": "Not found (404)", "count": 9, "action": "fix_or_redirect"},
+        {"reason": "Blocked by robots.txt", "count": 2, "action": "decide_redirect_or_unblock"},
+        {"reason": "Alternate page with proper canonical tag", "count": 2, "action": "mostly_ok_monitor"},
+        {"reason": "Discovered - currently not indexed", "count": 81, "action": "content_quality_internal_linking_sitemap_review"},
+        {"reason": "Crawled - currently not indexed", "count": 22, "action": "thin_duplicate_or_low_signal_review"}
+      ],
       "next_reports": [
-        "GSC -> Indexing -> Pages -> each of 5 reasons",
+        "GSC -> export full URL list for each reason group",
         "GSC -> Sitemaps",
         "Tilda -> SEO Assistant"
       ]
