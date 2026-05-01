@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-05-01T16:58:00+03:00",
+  "updated_at": "2026-05-01T17:25:00+03:00",
   "source_project_id": "8326812",
   "source_project_name": "Moonn.ru",
   "staging_project_id": "25075076",
   "staging_project_name": "Moonn Staging",
   "staging_base_url": "https://carry-pacific-flatfish.tilda.ws",
   "published_source_pages": 131,
-  "copied_pages": 61,
-  "pending_pages": 70,
+  "copied_pages": 67,
+  "pending_pages": 64,
   "tilda_known_limit_note": "Tilda page duplication has a daily new-page limit; copy remaining pages in batches and update this registry after each batch.",
   "pages": [
     {
@@ -257,13 +257,14 @@
       "source_project_id": "8326812",
       "staging_project_id": "25075076",
       "source_page_id": "44682379",
-      "staging_page_id": null,
+      "staging_page_id": "138690346",
       "title": "Вы можете стать спокойным и уверенным в себе человеком  в течение 1 месяца",
       "alias": "psihology",
       "sort": 220,
       "published": "1731504253",
-      "status": "pending_copy",
-      "staging_url": null
+      "status": "copied_verified",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/psihology",
+      "verified_at": "2026-05-01T17:25:00+03:00"
     },
     {
       "source_project_id": "8326812",
@@ -282,61 +283,66 @@
       "source_project_id": "8326812",
       "staging_project_id": "25075076",
       "source_page_id": "43765245",
-      "staging_page_id": null,
+      "staging_page_id": "138690486",
       "title": "Школа Практической Психологии для Подростков",
       "alias": "shppp333",
       "sort": 270,
       "published": "1725021068",
-      "status": "pending_copy",
-      "staging_url": null
+      "status": "copied_verified",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/shppp333",
+      "verified_at": "2026-05-01T17:25:00+03:00"
     },
     {
       "source_project_id": "8326812",
       "staging_project_id": "25075076",
       "source_page_id": "62923037",
-      "staging_page_id": null,
+      "staging_page_id": "138690686",
       "title": "Воспитание ребенка - статья",
       "alias": "vospitanie_article",
       "sort": 280,
       "published": "1740134705",
-      "status": "pending_copy",
-      "staging_url": null
+      "status": "copied_verified",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/vospitanie_article",
+      "verified_at": "2026-05-01T17:25:00+03:00"
     },
     {
       "source_project_id": "8326812",
       "staging_project_id": "25075076",
       "source_page_id": "62923441",
-      "staging_page_id": null,
+      "staging_page_id": "138690986",
       "title": "Управление конфликтами в семье - статья",
       "alias": "semeynie_konflikti_article",
       "sort": 290,
       "published": "1740134742",
-      "status": "pending_copy",
-      "staging_url": null
+      "status": "copied_verified",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/semeynie_konflikti_article",
+      "verified_at": "2026-05-01T17:25:00+03:00"
     },
     {
       "source_project_id": "8326812",
       "staging_project_id": "25075076",
       "source_page_id": "62988415",
-      "staging_page_id": null,
+      "staging_page_id": "138691116",
       "title": "Статья - Выгорание на работе: как распознать, предотвратить и справиться. Психолог Татьяна Мунн",
       "alias": "vigoranie_article",
       "sort": 300,
       "published": "1740424348",
-      "status": "pending_copy",
-      "staging_url": null
+      "status": "copied_verified",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/vigoranie_article",
+      "verified_at": "2026-05-01T17:25:00+03:00"
     },
     {
       "source_project_id": "8326812",
       "staging_project_id": "25075076",
       "source_page_id": "62966623",
-      "staging_page_id": null,
+      "staging_page_id": "138691296",
       "title": "Статья - Как вести Дневник Эмоций. Психолог Татьяна Мунн",
       "alias": "article_diary_of_emotions",
       "sort": 310,
       "published": "1740424519",
-      "status": "pending_copy",
-      "staging_url": null
+      "status": "copied_verified",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/article_diary_of_emotions",
+      "verified_at": "2026-05-01T17:25:00+03:00"
     },
     {
       "source_project_id": "8326812",

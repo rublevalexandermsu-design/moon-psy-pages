@@ -637,3 +637,50 @@ Canonical append-only chat history for `moon-psy-site`.
   - Pending staging pages: 70.
 - Follow-up priority:
   - Continue with published article, EI knowledge-base, event/news, and legal/service pages; keep skipping unpublished/test-looking pages unless explicitly requested.
+
+
+## 2026-05-01T17:25:00+03:00 — Tilda article and program pages copied to staging
+
+- Project: `moon-psy-site`.
+- Workstream: `tilda-api-sync`.
+- Branch: `codex/tilda-api-sync`.
+- Request: continue copying the next published/live pages from the original Moonn project into staging.
+- Strategic assessment:
+  - Platform value: high, because this expands the staging mirror beyond service pages into articles and program/education pages.
+  - Obsolescence risk: medium, because article pages can later need SEO, legal/publication, and editorial review before changes are transferred to production.
+  - Stronger architecture: keep copying source-identical pages first, then run improvement batches through a separate content QA workflow.
+  - Reuse: the same source-live gate, duplicate/move flow, publish gate, Browser Use verification, and registry update now covers service and article pages.
+  - 3-12 month risk if skipped: content and SEO improvements would be tested against an incomplete staging site, increasing transfer risk.
+- Eligibility check:
+  - `https://moonn.ru/psihology` returned `200`.
+  - `https://moonn.ru/shppp333` returned `200`.
+  - `https://moonn.ru/vospitanie_article` returned `200`.
+  - `https://moonn.ru/semeynie_konflikti_article` returned `200`.
+  - `https://moonn.ru/vigoranie_article` returned `200`.
+  - `https://moonn.ru/article_diary_of_emotions` returned `200`.
+- Actions:
+  - Copied and normalized six pages:
+    - `44682379` -> `138690346`, alias `psihology`.
+    - `43765245` -> `138690486`, alias `shppp333`.
+    - `62923037` -> `138690686`, alias `vospitanie_article`.
+    - `62923441` -> `138690986`, alias `semeynie_konflikti_article`.
+    - `62988415` -> `138691116`, alias `vigoranie_article`.
+    - `62966623` -> `138691296`, alias `article_diary_of_emotions`.
+  - Published the `Moonn Staging` project and verified the public URLs through Browser Use and direct HTTP checks.
+  - Updated `registry/tilda/moonn-staging-page-map.json`.
+- Verified live staging URLs:
+  - `https://carry-pacific-flatfish.tilda.ws/psihology`
+  - `https://carry-pacific-flatfish.tilda.ws/shppp333`
+  - `https://carry-pacific-flatfish.tilda.ws/vospitanie_article`
+  - `https://carry-pacific-flatfish.tilda.ws/semeynie_konflikti_article`
+  - `https://carry-pacific-flatfish.tilda.ws/vigoranie_article`
+  - `https://carry-pacific-flatfish.tilda.ws/article_diary_of_emotions`
+- Process note:
+  - Tilda publishing triggered reliably through the visible DOM button and confirmation, while the earlier CSS click path sometimes did not start the publish job.
+  - Follow-up rule: when publish progress is not visible after selector click, use the visible DOM node for `Опубликовать все страницы` and verify with HTTP plus Browser Use.
+- Current copy state:
+  - Published production pages: 131.
+  - Copied and verified staging pages: 67.
+  - Pending staging pages: 64.
+- Follow-up priority:
+  - Continue with published article/EI pages: `eintellect`, `trauma`, `abuse_gaslight`, `article_gadget_addiction`, `article_femininity`, `article_toxic_job`, then deeper EI knowledge-base and event/news pages.
