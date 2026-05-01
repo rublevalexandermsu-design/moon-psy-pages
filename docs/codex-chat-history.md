@@ -684,3 +684,48 @@ Canonical append-only chat history for `moon-psy-site`.
   - Pending staging pages: 64.
 - Follow-up priority:
   - Continue with published article/EI pages: `eintellect`, `trauma`, `abuse_gaslight`, `article_gadget_addiction`, `article_femininity`, `article_toxic_job`, then deeper EI knowledge-base and event/news pages.
+
+
+## 2026-05-01T17:45:00+03:00 — Tilda EI and psychology article pages copied to staging
+
+- Project: `moon-psy-site`.
+- Workstream: `tilda-api-sync`.
+- Branch: `codex/tilda-api-sync`.
+- Request: continue copying the next published/live pages from the original Moonn project into staging.
+- Strategic assessment:
+  - Platform value: high, because these EI/psychology articles extend the SEO and knowledge-base layer in the staging mirror.
+  - Obsolescence risk: medium, because later content edits should pass SEO/editorial/legal review instead of being mixed with raw copying.
+  - Stronger architecture: keep source-identical staging first, then improve content in separate reviewed batches.
+  - Reuse: the one-page copy rhythm reduced timeout risk and should be preferred for Tilda batches.
+  - 3-12 month risk if skipped: staging would miss high-value article pages and future SEO work could diverge from production behavior.
+- Eligibility check:
+  - `https://moonn.ru/eintellect` returned `200`.
+  - `https://moonn.ru/trauma` returned `200`.
+  - `https://moonn.ru/abuse_gaslight` returned `200`.
+  - `https://moonn.ru/article_gadget_addiction` returned `200`.
+  - `https://moonn.ru/article_femininity` returned `200`.
+  - `https://moonn.ru/article_toxic_job` returned `200`.
+- Actions:
+  - Copied and normalized six pages:
+    - `63574637` -> `138693676`, alias `eintellect`.
+    - `63579285` -> `138693896`, alias `trauma`.
+    - `63684093` -> `138694136`, alias `abuse_gaslight`.
+    - `63692311` -> `138694256`, alias `article_gadget_addiction`.
+    - `64057747` -> `138694396`, alias `article_femininity`.
+    - `64061157` -> `138694546`, alias `article_toxic_job`.
+  - Published the `Moonn Staging` project.
+  - Verified the public URLs through direct HTTP checks and Browser Use.
+  - Updated `registry/tilda/moonn-staging-page-map.json`.
+- Verified live staging URLs:
+  - `https://carry-pacific-flatfish.tilda.ws/eintellect`
+  - `https://carry-pacific-flatfish.tilda.ws/trauma`
+  - `https://carry-pacific-flatfish.tilda.ws/abuse_gaslight`
+  - `https://carry-pacific-flatfish.tilda.ws/article_gadget_addiction`
+  - `https://carry-pacific-flatfish.tilda.ws/article_femininity`
+  - `https://carry-pacific-flatfish.tilda.ws/article_toxic_job`
+- Current copy state:
+  - Published production pages: 131.
+  - Copied and verified staging pages: 73.
+  - Pending staging pages: 58.
+- Follow-up priority:
+  - Continue with deeper EI and knowledge-base pages: `emotional-intelligence/knowledge-base/male-loneliness-russia`, `articles/eq-dlya-rukovoditeley`, `emotional-intelligence/ei-leader-12`, `personal-boundaries`, `active-listening`, `emotional-contagion`.

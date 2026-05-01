@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-05-01T17:25:00+03:00",
+  "updated_at": "2026-05-01T17:45:00+03:00",
   "source_project_id": "8326812",
   "source_project_name": "Moonn.ru",
   "staging_project_id": "25075076",
   "staging_project_name": "Moonn Staging",
   "staging_base_url": "https://carry-pacific-flatfish.tilda.ws",
   "published_source_pages": 131,
-  "copied_pages": 67,
-  "pending_pages": 64,
+  "copied_pages": 73,
+  "pending_pages": 58,
   "tilda_known_limit_note": "Tilda page duplication has a daily new-page limit; copy remaining pages in batches and update this registry after each batch.",
   "pages": [
     {
@@ -360,73 +360,79 @@
       "source_project_id": "8326812",
       "staging_project_id": "25075076",
       "source_page_id": "63574637",
-      "staging_page_id": null,
+      "staging_page_id": "138693676",
       "title": "Эмоциональный интеллект: Как стать хозяином своих эмоций и улучшить качество жизни. Психолог Татьяна Мунн",
       "alias": "eintellect",
       "sort": 330,
       "published": "1740424274",
-      "status": "pending_copy",
-      "staging_url": null
+      "status": "copied_verified",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/eintellect",
+      "verified_at": "2026-05-01T17:45:00+03:00"
     },
     {
       "source_project_id": "8326812",
       "staging_project_id": "25075076",
       "source_page_id": "63579285",
-      "staging_page_id": null,
+      "staging_page_id": "138693896",
       "title": "Статья - Психология травмы: Влияние травматического опыта и методы терапии. Психолог Татьяна Мунн",
       "alias": "trauma",
       "sort": 340,
       "published": "1740424161",
-      "status": "pending_copy",
-      "staging_url": null
+      "status": "copied_verified",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/trauma",
+      "verified_at": "2026-05-01T17:45:00+03:00"
     },
     {
       "source_project_id": "8326812",
       "staging_project_id": "25075076",
       "source_page_id": "63684093",
-      "staging_page_id": null,
+      "staging_page_id": "138694136",
       "title": "Статья - Абьюзинг и газлайтинг: в чем суть и отличия. Психолог Татьяна Мунн",
       "alias": "abuse_gaslight",
       "sort": 350,
       "published": "1763192731",
-      "status": "pending_copy",
-      "staging_url": null
+      "status": "copied_verified",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/abuse_gaslight",
+      "verified_at": "2026-05-01T17:45:00+03:00"
     },
     {
       "source_project_id": "8326812",
       "staging_project_id": "25075076",
       "source_page_id": "63692311",
-      "staging_page_id": null,
+      "staging_page_id": "138694256",
       "title": "Статья - Зависимость подростков от гаджетов и социальных сетей: причины, последствия и пути решения. Психолог Татьяна Мунн",
       "alias": "article_gadget_addiction",
       "sort": 360,
       "published": "1763192726",
-      "status": "pending_copy",
-      "staging_url": null
+      "status": "copied_verified",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/article_gadget_addiction",
+      "verified_at": "2026-05-01T17:45:00+03:00"
     },
     {
       "source_project_id": "8326812",
       "staging_project_id": "25075076",
       "source_page_id": "64057747",
-      "staging_page_id": null,
+      "staging_page_id": "138694396",
       "title": "Статья - Потеря женственности в отношениях. внутренние и внешние факторы. Психолог Татьяна Мунн",
       "alias": "article_femininity",
       "sort": 370,
       "published": "1740657373",
-      "status": "pending_copy",
-      "staging_url": null
+      "status": "copied_verified",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/article_femininity",
+      "verified_at": "2026-05-01T17:45:00+03:00"
     },
     {
       "source_project_id": "8326812",
       "staging_project_id": "25075076",
       "source_page_id": "64061157",
-      "staging_page_id": null,
+      "staging_page_id": "138694546",
       "title": "Статья - Как справиться с негативными эмоциями других людей на работе. Психолог Татьяна Мунн",
       "alias": "article_toxic_job",
       "sort": 380,
       "published": "1763193695",
-      "status": "pending_copy",
-      "staging_url": null
+      "status": "copied_verified",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/article_toxic_job",
+      "verified_at": "2026-05-01T17:45:00+03:00"
     },
     {
       "source_project_id": "8326812",
