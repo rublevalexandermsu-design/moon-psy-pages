@@ -71,6 +71,27 @@ The page is not considered ready until these checks pass:
 - Main forms remain visible.
 - No production project publishing happened.
 
+## Deployment Log
+
+### 2026-05-01
+
+- Inserted the theme snippet into the staging homepage HEAD code.
+- Published only `Moonn Staging`.
+- Confirmed the live homepage HTML contains:
+  - `moonn-radiant-sanctuary`
+  - `moonn-radiant-sanctuary-theme`
+- Opened the live staging homepage in Browser Use.
+- First-screen visual check passed: primary hero, menu, CTA buttons, and portrait area remain visible.
+- Production `moonn.ru` was not changed.
+
+## Tilda Editor Note
+
+The page HEAD code editor has both a visible code editor textarea and a hidden `textarea[name="headcode"]`.
+
+Do not fill only the hidden `headcode` textarea. It does not reliably persist through Tilda's save action.
+
+Use the visible code editor field, save, reload the editor, and confirm the saved code appears in `headcode` before publishing.
+
 ## Follow-Up Workstreams
 
 The user's broader request splits into three workstreams:

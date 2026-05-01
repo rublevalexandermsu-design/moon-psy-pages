@@ -762,3 +762,36 @@ Canonical append-only chat history for `moon-psy-site`.
   - Before actual insertion and staging publication, an explicit action-time confirmation is required because it modifies a public staging page.
 - Next step:
   - After confirmation, insert the theme snippet into the staging homepage HEAD, publish only `Moonn Staging`, then verify desktop/mobile rendering and links.
+
+
+## 2026-05-01T18:35:00+03:00 — Radiant Sanctuary theme applied to staging homepage
+
+- Project: `moon-psy-site`.
+- Workstream: `staging-design-system` under `tilda-api-sync`.
+- Branch: `codex/tilda-api-sync`.
+- Request: after explicit confirmation, apply the prepared `Radiant Sanctuary` theme to the staging homepage.
+- Strategic assessment:
+  - Platform value: high, because this creates the first live Tilda proof of the unified visual system.
+  - Obsolescence risk: medium, because the theme still needs broader multi-page QA before site-level rollout.
+  - Stronger architecture: page-level pilot first, then reusable rollout to copied pages after review.
+  - Reuse: the same snippet and editor workflow can be used for other staging pages.
+  - 3-12 month risk if skipped: visual drift remains unresolved and product/payment pages would inherit inconsistent styles.
+- Actions:
+  - Inserted the theme snippet into the staging homepage page HEAD code.
+  - Published only `Moonn Staging`.
+  - Verified the live HTML contains `moonn-radiant-sanctuary` and `moonn-radiant-sanctuary-theme`.
+  - Opened the live staging homepage in Browser Use and confirmed main content, navigation, CTA links, and buttons still appear in the DOM.
+  - Captured a first-screen Browser Use screenshot and found no critical first-screen overlap.
+  - Updated `docs/tilda-radiant-sanctuary.md`.
+- Live staging URL:
+  - `https://carry-pacific-flatfish.tilda.ws/`
+- Incident/process note:
+  - Initial save attempt using the hidden `textarea[name="headcode"]` did not persist.
+  - Root cause: Tilda's code editor uses a visible editor field and syncs into the hidden `headcode` field.
+  - Follow-up rule: insert code through the visible editor, save, reload the editor, and confirm the hidden field contains the snippet before publishing.
+- Boundary:
+  - Production `moonn.ru` was not changed.
+  - This is a staging homepage pilot only, not a full site-level rollout.
+- Next step:
+  - User visual review of the staging homepage.
+  - After approval, apply the theme to a small second batch: one consultation page, one lecture/product page, and one knowledge-base article, then compare for collisions.
