@@ -1,0 +1,10 @@
+old_path,new_path,priority,reason
+/http://wa.me/+79777770303,/psiholog-konsultacii-moskva,P0,"Internalized WhatsApp URL; Tilda 301 cannot redirect to external wa.me"
+/emotionalnaya-vygoranie,/emotional-intelligence/knowledge-base/burnout,P1,"Legacy burnout URL to evergreen EI burnout page"
+/zaprocy,/page120952796.html,P1,"Legacy clean intent URL to live Tilda page for psychology requests"
+/zaprocy.html,/page120952796.html,P1,"Legacy .html duplicate"
+/bystraya-psihologiya.html,/page120899276.html,P1,"Legacy method URL to live Быстрая психология page"
+/leksii.html,/lectures1,P1,"Legacy lecture URL to lecture hub"
+/kurs-duhovnoy-psihologii.html,/platnye-treningi-seminary-programmy-tatiana-moonn,P2,"Unconfirmed course status; route to paid-products hub"
+/podrostki.html,/uslugi_podrostki,P1,"Legacy teen consultation URL to current service page"
+/emotional-intelligence/articles/why-it-matters,/emotional-intelligence/articles/why-ei-matters,P1,"Old EI article slug to current canonical slug"

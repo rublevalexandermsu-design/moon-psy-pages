@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-05-01T21:35:00+03:00",
+  "project": "moon-psy-site",
+  "workstream": "seo-aeo-retrofit",
+  "batch": "B1",
+  "name": "GSC 404 technical redirects",
+  "source_decision_table": "registry/seo/moonn-gsc-url-decision-table.json",
+  "tilda_reference": {
+    "official_help": "https://help.tilda.cc/search-engine",
+    "ui_path": "Site Settings -> SEO -> 301 redirects",
+    "format_rule": "Use paths without domain, beginning with slash.",
+    "constraint": "Tilda 301 redirects work only from non-existent pages and within the same domain. Existing pages require canonical/page edits or T223, not 301."
+  },
+  "status": "prepared_not_applied",
+  "production_change_required": true,
+  "production_confirmation": "User said `да сделай`; direct production application still depends on available Tilda UI access because documented Tilda API is read/export-oriented.",
+  "redirects": [
+    {
+      "id": "R-404-001",
+      "old_path": "/http://wa.me/+79777770303",
+      "new_path": "/psiholog-konsultacii-moskva",
+      "source_url": "https://moonn.ru/http://wa.me/+79777770303",
+      "source_status": 404,
+      "target_status": 200,
+      "priority": "P0",
+      "reason": "The external WhatsApp URL was accidentally indexed as an internal path. Tilda 301 cannot redirect to an external domain, so the internal 404 should lead to the consultation page while the real source link is fixed in Tilda blocks.",
+      "must_also_fix_source_link": true
+    },
+    {
+      "id": "R-404-002",
+      "old_path": "/emotionalnaya-vygoranie",
+      "new_path": "/emotional-intelligence/knowledge-base/burnout",
+      "source_url": "https://moonn.ru/emotionalnaya-vygoranie",
+      "source_status": 404,
+      "target_status": 200,
+      "priority": "P1",
+      "reason": "The legacy burnout URL should consolidate into the evergreen emotional-intelligence knowledge-base page."
+    },
+    {
+      "id": "R-404-003",
+      "old_path": "/zaprocy",
+      "new_path": "/page120952796.html",
+      "source_url": "https://moonn.ru/zaprocy",
+      "source_status": 404,
+      "target_status": 200,
+      "priority": "P1",
+      "reason": "A matching live page exists for `С какими запросами работает психолог`. The target is a technical Tilda page URL now; later this should be converted to a clean alias."
+    },
+    {
+      "id": "R-404-004",
+      "old_path": "/zaprocy.html",
+      "new_path": "/page120952796.html",
+      "source_url": "https://moonn.ru/zaprocy.html",
+      "source_status": 404,
+      "target_status": 200,
+      "priority": "P1",
+      "reason": "Legacy .html duplicate for the same search-intent page."
+    },
+    {
+      "id": "R-404-005",
+      "old_path": "/bystraya-psihologiya.html",
+      "new_path": "/page120899276.html",
+      "source_url": "https://moonn.ru/bystraya-psihologiya.html",
+      "source_status": 404,
+      "target_status": 200,
+      "priority": "P1",
+      "reason": "A matching method page exists as a live Tilda technical URL. Later it should receive a clean alias `/bystraya-psihologiya`."
+    },
+    {
+      "id": "R-404-006",
+      "old_path": "/leksii.html",
+      "new_path": "/lectures1",
+      "source_url": "https://moonn.ru/leksii.html",
+      "source_status": 404,
+      "target_status": 200,
+      "priority": "P1",
+      "reason": "Old lecture path should consolidate into the current lecture page."
+    },
+    {
+      "id": "R-404-007",
+      "old_path": "/kurs-duhovnoy-psihologii.html",
+      "new_path": "/platnye-treningi-seminary-programmy-tatiana-moonn",
+      "source_url": "https://moonn.ru/kurs-duhovnoy-psihologii.html",
+      "source_status": 404,
+      "target_status": 200,
+      "priority": "P2",
+      "reason": "The course status is not confirmed, so route the old course URL to the paid-products hub instead of promoting a possibly inactive product page."
+    },
+    {
+      "id": "R-404-008",
+      "old_path": "/podrostki.html",
+      "new_path": "/uslugi_podrostki",
+      "source_url": "https://moonn.ru/podrostki.html",
+      "source_status": 404,
+      "target_status": 200,
+      "priority": "P1",
+      "reason": "Teen consultation has direct commercial/search value and a current service page exists."
+    },
+    {
+      "id": "R-404-009",
+      "old_path": "/emotional-intelligence/articles/why-it-matters",
+      "new_path": "/emotional-intelligence/articles/why-ei-matters",
+      "source_url": "https://moonn.ru/emotional-intelligence/articles/why-it-matters",
+      "source_status": 404,
+      "target_status": 200,
+      "priority": "P1",
+      "reason": "GSC crawled the old article slug. A current canonical slug exists in the sitemap."
+    }
+  ],
+  "not_redirected": [
+    {
+      "id": "NR-404-001",
+      "path": "/static.tildacdn.com/",
+      "source_url": "https://moonn.ru/static.tildacdn.com/",
+      "source_status": 404,
+      "decision": "do_not_redirect",
+      "reason": "This is not a content URL. It should remain out of the index unless a source link still points to it. The snapshot search did not find `moonn.ru/static.tildacdn.com` or bare `src=\"static.tildacdn.com` references."
+    }
+  ],
+  "post_apply_checks": [
+    "Run HEAD/GET checks for every old_path and confirm 301/302 to the expected target.",
+    "Run a small crawl for `moonn.ru/http://wa.me` and `moonn.ru/static.tildacdn.com`.",
+    "Open GSC and validate the 404 group only after live checks pass."
+  ]
+}

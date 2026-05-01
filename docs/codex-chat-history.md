@@ -825,6 +825,39 @@ Canonical append-only chat history for `moon-psy-site`.
   - Production `moonn.ru`, Tilda redirects, Google Search Console and Yandex settings were not changed.
 
 
+## 2026-05-01T21:35:00+03:00 — Tilda 404 redirect and source-link fix packet prepared
+
+- Project: `moon-psy-site`.
+- Workstream: `seo-aeo-retrofit` under `tilda-api-sync`.
+- Branch: `codex/tilda-api-sync`.
+- Request: proceed from the GSC URL decision table and start fixing the 404 group.
+- Strategic assessment:
+  - Platform value: high, because GSC 404 remediation is now an executable batch with redirects, source-link fixes and post-apply checks.
+  - Obsolescence risk: low for the registry; medium for any manual Tilda UI action unless the result is verified live.
+  - Stronger architecture: separate redirects from source-link repairs, because Tilda 301 cannot redirect to external domains and cannot fix malformed source links.
+  - Reuse: the B1 packet format can be reused for future GSC batches.
+  - 3-12 month risk if skipped: broken links can reappear after page edits and old technical Tilda URLs will keep polluting GSC.
+- Actions:
+  - Checked official Tilda SEO/redirect guidance: 301 redirects are configured in Site Settings -> SEO -> 301 redirects, paths start with `/`, and redirects work inside one domain from non-existent pages.
+  - Prepared `registry/seo/moonn-tilda-301-redirects-b1.json`.
+  - Prepared CSV input `registry/seo/moonn-tilda-301-redirects-b1.csv`.
+  - Prepared source-link fix registry `registry/seo/moonn-source-link-fixes-b1.json`.
+  - Prepared implementation note `docs/seo/moonn-tilda-404-remediation-b1.md`.
+  - Linked the execution packet from `registry/seo/moonn-gsc-url-decision-table.json`.
+- Findings:
+  - `http://wa.me/+79777770303` appears once in the Tilda snapshot, on the homepage export.
+  - `http://wa.me/79777770303` appears 88 times and should be normalized to HTTPS.
+  - `http://.moonn.ru` appears 39 times and should be corrected to `https://moonn.ru`.
+  - No current snapshot reference was found for `https://moonn.ru/static.tildacdn.com` or bare `src="static.tildacdn.com`.
+- Boundary:
+  - Production Tilda redirects and block links were not changed in this step because the documented Tilda API is read/export-oriented; the packet is ready for Tilda UI application and live verification.
+- Tool incident:
+  - Symptom: `Browser Use` timed out during runtime initialization and the alternative browser MCP returned a closed transport/context while opening Tilda settings.
+  - Root cause: browser automation bridge was not available for reliable Tilda UI edits in this turn.
+  - Solution: prepared a machine-readable redirect/link-fix packet and did not attempt unsafe undocumented Tilda endpoints.
+  - Follow-up rule: apply this packet only through a visible Tilda UI session or a documented Tilda write API if Tilda exposes one later; then verify live redirects before GSC validation.
+
+
 ## 2026-05-01T19:25:00+03:00 — Homepage SEO/AEO pilot manifest for Moonn staging
 
 - Project: `moon-psy-site`.

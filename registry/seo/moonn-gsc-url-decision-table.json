@@ -10,6 +10,12 @@
     "https://moonn.ru/sitemap.xml",
     "live HEAD checks on 2026-05-01"
   ],
+  "execution_packets": [
+    "registry/seo/moonn-tilda-301-redirects-b1.json",
+    "registry/seo/moonn-tilda-301-redirects-b1.csv",
+    "registry/seo/moonn-source-link-fixes-b1.json",
+    "docs/seo/moonn-tilda-404-remediation-b1.md"
+  ],
   "policy": {
     "production_changes": "not_applied",
     "staging_first": true,

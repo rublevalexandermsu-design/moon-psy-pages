@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-05-01T21:35:00+03:00",
+  "project": "moon-psy-site",
+  "workstream": "seo-aeo-retrofit",
+  "source": "output/tilda-snapshot/pages/*.html",
+  "status": "prepared_not_applied",
+  "fixes": [
+    {
+      "id": "LINK-001",
+      "pattern": "http://wa.me/+79777770303",
+      "replacement": "https://wa.me/79777770303",
+      "matches": 1,
+      "first_files": [
+        "index.html"
+      ],
+      "priority": "P0",
+      "reason": "This exact value likely produced the GSC internalized WhatsApp 404."
+    },
+    {
+      "id": "LINK-002",
+      "pattern": "http://wa.me/79777770303",
+      "replacement": "https://wa.me/79777770303",
+      "matches": 88,
+      "first_files": [
+        "abuse_gaslight.html",
+        "article_diary_of_emotions.html",
+        "article_femininity.html",
+        "article_gadget_addiction.html",
+        "article_toxic_job.html",
+        "articles__eq-dlya-rukovoditeley.html"
+      ],
+      "priority": "P1",
+      "reason": "Use HTTPS for all WhatsApp links and keep one canonical format."
+    },
+    {
+      "id": "LINK-003",
+      "pattern": "http://.moonn.ru",
+      "replacement": "https://moonn.ru",
+      "matches": 39,
+      "first_files": [
+        "abuse_gaslight.html",
+        "article_diary_of_emotions.html",
+        "article_femininity.html",
+        "article_gadget_addiction.html",
+        "article_toxic_job.html",
+        "articles__eq-dlya-rukovoditeley.html",
+        "eintellect.html",
+        "emotional-intelligence__knowledge-base__male-loneliness-russia.html",
+        "geshtalt.html",
+        "kpt.html"
+      ],
+      "priority": "P1",
+      "reason": "Typo in internal domain links; this can create broken or suspicious outbound behavior."
+    }
+  ],
+  "negative_findings": [
+    {
+      "pattern": "https://moonn.ru/static.tildacdn.com",
+      "matches": 0
+    },
+    {
+      "pattern": "href=\"static.tildacdn.com",
+      "matches": 0
+    },
+    {
+      "pattern": "src=\"static.tildacdn.com",
+      "matches": 0
+    }
+  ],
+  "implementation_note": "These are Tilda block-level content fixes. They cannot be completed through the documented read/export Tilda API; apply in the Tilda editor or via a validated UI automation path."
+}
