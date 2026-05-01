@@ -69,3 +69,24 @@ Canonical append-only chat history for `moon-psy-site`.
 - Risks:
   - Bulk copy can pollute staging with old test pages and may hit Tilda's daily page creation limit.
   - Production safety rule: duplicate first, move only duplicates, never move original pages.
+
+## 2026-05-01T12:28:00+03:00 — Browser Use repair
+
+- Project: `moon-psy-site`.
+- Workstream: `tilda-api-sync`.
+- Branch: `codex/tilda-api-sync`.
+- Request: repair Browser Use after Codex restart and Browser MCP extension setup.
+- Symptom:
+  - Browser Use `iab` could create a session and tab, and could open local URLs.
+  - External navigation failed with `failed to start codex app-server: Системе не удается найти указанный путь. (os error 3)`.
+- Root cause:
+  - `node_repl.exe` reported its runtime path as `C:\Users\yanta\AppData\Local\OpenAI\Codex\bin`, but that directory did not exist.
+  - Browser Use permission checks for external URLs need `codex.exe app-server`; node_repl could not locate `codex.exe` beside its reported runtime path.
+- Fix:
+  - Created `C:\Users\yanta\AppData\Local\OpenAI\Codex\bin`.
+  - Copied installed `codex.exe` from the Codex WindowsApps resources directory into that local bin directory.
+- Verification:
+  - Browser Use opened `https://example.com/` through the in-app browser.
+  - Returned title `Example Domain` and URL `https://example.com/`.
+- Follow-up rule:
+  - If Browser Use can open localhost but fails on external URLs with app-server path errors, check whether local `C:\Users\yanta\AppData\Local\OpenAI\Codex\bin\codex.exe` exists and refresh it from the installed Codex resources directory after app updates.

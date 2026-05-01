@@ -85,3 +85,15 @@ Tilda API does not expose visits, button clicks, or page-view analytics. For tra
 - Google Analytics/Search Console access, if installed.
 - Tilda built-in statistics access, if used.
 - A future first-party event layer in staging before production rollout.
+
+## Browser Use note
+
+Browser Use is the preferred browser control path for this workstream.
+
+On 2026-05-01, Browser Use was repaired by restoring local `codex.exe` discovery for `node_repl.exe`:
+
+- Expected local path: `C:\Users\yanta\AppData\Local\OpenAI\Codex\bin\codex.exe`.
+- Source used for repair: installed Codex WindowsApps `app\resources\codex.exe`.
+- Verification: Browser Use opened `https://example.com/`.
+
+If Browser Use can open localhost but fails on external URLs with an app-server path error, refresh that local `codex.exe` copy after checking the currently installed Codex version path.
