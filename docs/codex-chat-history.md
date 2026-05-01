@@ -791,6 +791,8 @@ Canonical append-only chat history for `moon-psy-site`.
   - Follow-up rule: insert code through the visible editor, save, reload the editor, and confirm the hidden field contains the snippet before publishing.
 - Boundary:
   - Production `moonn.ru` was not changed.
+
+
   - This is a staging homepage pilot only, not a full site-level rollout.
 - Next step:
   - User visual review of the staging homepage.
@@ -926,5 +928,30 @@ Canonical append-only chat history for `moon-psy-site`.
   - Root cause: project-level HEAD did not reliably propagate to already published pages; quick page HEAD saves also needed editor reload verification, and final publication only completed after using publish-all from the project/search context.
   - Solution: use page-level marked CDN snippets, verify editor persistence after save for pages that miss live checks, then verify live output across every copied URL.
   - Follow-up rule: for future Tilda mass rollouts, do not trust editor save or publish-all alone; require registry-driven live URL verification.
+- Boundary:
+  - Production `moonn.ru` was not changed.
+
+
+## 2026-05-01T18:38:29+03:00 — Tilda card substrates preserved after theme regression
+
+- Project: `moon-psy-site`.
+- Workstream: `staging-design-system` under `tilda-api-sync`.
+- Branch: `codex/tilda-api-sync`.
+- Request: check copied staging pages where text columns/cards on white substrates appeared shifted or lost their original backing after the visual theme rollout.
+- Strategic assessment:
+  - Platform value: high, because the shared design system must not damage reusable Tilda content blocks.
+  - Obsolescence risk: medium if the theme keeps targeting generic Tilda classes that change meaning across block types.
+  - Stronger architecture: keep the shared theme as a non-destructive visual layer and preserve Tilda-authored card/substrate geometry.
+  - Reuse: the rule protects consultation, lecture, paid product, and knowledge-base pages.
+  - 3-12 month risk if skipped: every future copied page with `.t-item` or card grids could silently lose its layout or readable substrates.
+- Incident:
+  - Symptom: staging pages such as `/emotional-intelligence/articles/benefits-of-ei` and `/uslugi_depression` showed text/card columns that looked clipped, shifted, or stripped of their original white backing.
+  - Root cause: the all-page CSS rollout used broad selectors for `.t-item`, `.t-card__col`, and related Tilda wrappers, plus forced `.t-rec` background and overflow rules.
+  - Solution: remove global card/substrate restyling, remove the forced odd-section background override, and remove forced transparent background/overflow clipping from `.t-rec`.
+  - Follow-up rule: future shared Tilda themes may enhance buttons, typography, and ambient background, but must not globally override generic Tilda block/card classes without page-specific QA.
+- Changed files:
+  - `assets/tilda-radiant-sanctuary.css`
+  - `docs/tilda-radiant-sanctuary.md`
+  - `registry/tilda/moonn-staging-page-map.json`
 - Boundary:
   - Production `moonn.ru` was not changed.

@@ -38,9 +38,8 @@ The CSS adds:
 - Animated pink/violet/cyan gradient orbs behind the page and inside Zero Block artboards.
 - Glass-style buttons and navigation.
 - Original Tilda button gradients are preserved; the theme only adds hover brightness/shadow.
-- Soft card surfaces.
+- Original Tilda card and text-column substrates are preserved; the theme does not globally restyle `.t-item` or `.t-card__col` geometry.
 - Tilda button normalization.
-- Tilda card/container normalization.
 - Focus states for forms.
 - Reduced-motion safety.
 
@@ -155,6 +154,20 @@ The page is not considered ready until these checks pass:
 - Button regression guard:
   - final live check confirmed the old forced theme button gradient is absent;
   - original Tilda button gradients remain page-authored.
+- Production `moonn.ru` was not changed.
+
+### 2026-05-01 card substrate preservation
+
+- User reported that text columns/cards on copied staging pages looked shifted and lost their original white substrates.
+- Root cause: the first all-page CSS rollout used broad selectors for `.t-item`, `.t-card__col`, and related Tilda block wrappers, plus a forced odd-section background override.
+- Fixed the canonical CSS to preserve Tilda-authored card geometry and section backgrounds:
+  - removed global card/substrate restyling for `.t-item` and `.t-card__col`;
+  - removed global `.t-rec:nth-of-type(odd)` background override;
+  - removed forced transparent background and overflow clipping from `.t-rec`.
+- Kept the shared visual layer:
+  - page/section gradient orbs;
+  - Zero Block orb styling;
+  - original button gradients with hover enhancement.
 - Production `moonn.ru` was not changed.
 
 Review sample URLs:
