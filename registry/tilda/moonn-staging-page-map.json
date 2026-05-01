@@ -21,6 +21,11 @@
     "button_rule": "Preserve original Tilda button gradients; theme only adds hover brightness, lift, and shadow.",
     "card_rule": "Preserve original Tilda card/text-column substrates, section backgrounds, and container widths; the shared theme must not globally override .t-item, .t-card__col, .t-container, .t-container_flex, or .t-rec backgrounds.",
     "last_css_fix_at": "2026-05-01T18:38:29+03:00",
+    "hotfix_pinned_css_source": "https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@102fb3d/assets/tilda-radiant-sanctuary.css",
+    "hotfix_pinned_pages": [
+      "https://carry-pacific-flatfish.tilda.ws/emotional-intelligence/articles/benefits-of-ei",
+      "https://carry-pacific-flatfish.tilda.ws/uslugi_depression"
+    ],
     "publication_note": "Tilda project-level HEAD did not propagate reliably to already published pages, so each copied_verified page has a short marked page-level snippet. Final publication succeeded after running publish-all from the project search context.",
     "verified_sample_urls": [
       "https://carry-pacific-flatfish.tilda.ws/psiholog-konsultacii-moskva",

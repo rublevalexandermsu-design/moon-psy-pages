@@ -170,6 +170,8 @@ The page is not considered ready until these checks pass:
   - page/section gradient orbs;
   - Zero Block orb styling;
   - original button gradients with hover enhancement.
+- Because jsDelivr's branch URL continued to serve a stale cached copy after purge, pinned the two reported pages to the verified commit CSS URL:
+  `https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@102fb3d/assets/tilda-radiant-sanctuary.css`.
 - Production `moonn.ru` was not changed.
 
 Review sample URLs:

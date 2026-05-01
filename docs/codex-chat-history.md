@@ -948,7 +948,12 @@ Canonical append-only chat history for `moon-psy-site`.
   - Symptom: staging pages such as `/emotional-intelligence/articles/benefits-of-ei` and `/uslugi_depression` showed text/card columns that looked clipped, shifted, or stripped of their original white backing.
   - Root cause: the all-page CSS rollout used broad selectors for `.t-item`, `.t-card__col`, and related Tilda wrappers, forced `.t-rec` background/overflow rules, and narrowed the standard `.t-container` width from Tilda's 1200px grid.
   - Solution: remove global card/substrate restyling, remove the forced odd-section background override, remove forced transparent background/overflow clipping from `.t-rec`, and remove global `.t-container` width narrowing.
+  - Live hotfix: pinned the two reported pages to commit CSS `@102fb3d` because the jsDelivr branch URL continued serving stale CSS after purge.
   - Follow-up rule: future shared Tilda themes may enhance buttons, typography, and ambient background, but must not globally override generic Tilda block/card/container classes without page-specific QA.
+- Verification:
+  - `/emotional-intelligence/articles/benefits-of-ei`: staging now uses a 1200px `.t-container`, keeps three `.t-card__col` items in one row, and does not force card backgrounds.
+  - `/uslugi_depression`: staging now matches production card substrate geometry: white `.t858__inner-col`, 5px radius, original shadow, 1200px container, three card items.
+  - Both live pages contain pinned CSS `@102fb3d` and no longer contain the stale branch CSS URL.
 - Changed files:
   - `.gitignore`
   - `assets/tilda-radiant-sanctuary.css`
