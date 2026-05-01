@@ -121,3 +121,35 @@ Canonical append-only chat history for `moon-psy-site`.
   - Which additional canonical production pages should be copied next.
   - Whether internal links in staging should continue pointing to production pages or be rewired to copied staging pages as those pages are added.
   - Which analytics source should be treated as authoritative for traffic/click data.
+
+## 2026-05-01T13:00:00+03:00 — Tilda staging core pages copied
+
+- Project: `moon-psy-site`.
+- Workstream: `tilda-api-sync`.
+- Branch: `codex/tilda-api-sync`.
+- Request: continue the Tilda staging setup through Browser Use and carry the work as far as practical.
+- Actions:
+  - Copied five core production pages into `Moonn Staging`:
+    - `135430346` -> `138661976`, alias `psiholog-konsultacii-moskva`.
+    - `135442186` -> `138662086`, alias `vystupleniya-lekcii-treningi-psiholog-tatiana-moonn`.
+    - `135444166` -> `138662216`, alias `platnye-treningi-seminary-programmy-tatiana-moonn`.
+    - `135534246` -> `138662406`, alias `baza-znaniy-emocionalnyy-intellekt-psihologiya`.
+    - `66814657` -> `138662576`, alias `events_tp`.
+  - Removed `Copy of` from the copied staging page titles.
+  - Restored the public aliases for the copied staging pages.
+  - Republished the staging project.
+- Verified live staging URLs:
+  - `https://carry-pacific-flatfish.tilda.ws/`
+  - `https://carry-pacific-flatfish.tilda.ws/psiholog-konsultacii-moskva`
+  - `https://carry-pacific-flatfish.tilda.ws/vystupleniya-lekcii-treningi-psiholog-tatiana-moonn`
+  - `https://carry-pacific-flatfish.tilda.ws/platnye-treningi-seminary-programmy-tatiana-moonn`
+  - `https://carry-pacific-flatfish.tilda.ws/baza-znaniy-emocionalnyy-intellekt-psihologiya`
+  - `https://carry-pacific-flatfish.tilda.ws/events_tp`
+- Incident:
+  - Symptom: a long Browser Use copy loop exceeded the tool timeout after several page moves.
+  - Root cause: copying multiple pages through the Tilda UI is slow and each duplicate/move step waits on live cabinet navigation.
+  - Resolution: verified the staging state after timeout, confirmed all five pages were actually copied, then normalized titles and aliases in a separate shorter operation.
+  - Follow-up rule: for Tilda UI copy work, use smaller batches and verify staging project state after every timeout instead of restarting or duplicating pages again.
+- Open questions:
+  - Internal links inside copied Tilda blocks still include some absolute `moonn.ru` URLs. These require either manual block-level link rewiring or a reliable staging-only site code injection once the Tilda code editor input path is stable.
+  - Need decide whether to copy news/event child pages next or keep staging focused on the conversion/navigation core first.
