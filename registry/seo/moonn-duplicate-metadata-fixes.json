@@ -1,0 +1,186 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-05-01T21:10:00+03:00",
+  "project": "moon-psy-site",
+  "scope": "first duplicate groups from staging audit",
+  "source": "registry/seo/moonn-seo-audit-pages.json",
+  "rules": [
+    "Apply to staging first.",
+    "Keep metadata unique per page.",
+    "Avoid guarantee-like wording.",
+    "Descriptions should summarize the exact page intent, not the whole site.",
+    "Production transfer requires approval after visual/source QA."
+  ],
+  "fixes": [
+    {
+      "alias": "kurs-ei",
+      "url": "https://carry-pacific-flatfish.tilda.ws/kurs-ei",
+      "cluster": "paid_courses_video_products",
+      "current_issue": "Duplicate title and duplicate description with /programmakursa.",
+      "title": "Курс по эмоциональному интеллекту — Татьяна Мунн",
+      "description": "Курс Татьяны Мунн по эмоциональному интеллекту: программа обучения, психология эмоций, практика саморегуляции и развитие soft skills.",
+      "h1": "Курс по эмоциональному интеллекту",
+      "priority": "high"
+    },
+    {
+      "alias": "programmakursa",
+      "url": "https://carry-pacific-flatfish.tilda.ws/programmakursa",
+      "cluster": "paid_courses_video_products",
+      "current_issue": "Duplicate title and duplicate description with /kurs-ei.",
+      "title": "Программа курса эмоционального интеллекта — Татьяна Мунн",
+      "description": "Подробная программа курса Татьяны Мунн по эмоциональному интеллекту: темы занятий, структура, навыки и формат обучения.",
+      "h1": "Программа курса эмоционального интеллекта",
+      "priority": "high"
+    },
+    {
+      "alias": "uslugi_fin_blocks",
+      "url": "https://carry-pacific-flatfish.tilda.ws/uslugi_fin_blocks",
+      "cluster": "consultation_services",
+      "current_issue": "Generic duplicate consultation description across service pages.",
+      "title": "Денежные блоки и тревога о деньгах — психолог Татьяна Мунн",
+      "description": "Консультация психолога по денежным блокам, тревоге о финансах и внутренним ограничениям. Татьяна Мунн, Москва и онлайн.",
+      "h1": "Денежные блоки: консультация психолога",
+      "priority": "high"
+    },
+    {
+      "alias": "uslugi_podrostki",
+      "url": "https://carry-pacific-flatfish.tilda.ws/uslugi_podrostki",
+      "cluster": "consultation_services",
+      "current_issue": "Generic duplicate consultation description across service pages.",
+      "title": "Психолог для подростка — Татьяна Мунн | Москва и онлайн",
+      "description": "Консультация психолога для подростков от 12 лет: тревога, конфликты, учебная нагрузка, самооценка и отношения с родителями.",
+      "h1": "Психолог для подростка",
+      "priority": "high"
+    },
+    {
+      "alias": "uslugi_konflikti_na_rabote",
+      "url": "https://carry-pacific-flatfish.tilda.ws/uslugi_konflikti_na_rabote",
+      "cluster": "consultation_services",
+      "current_issue": "Generic duplicate consultation description across service pages.",
+      "title": "Конфликты на работе — психолог Татьяна Мунн",
+      "description": "Психологическая консультация по конфликтам на работе: эмоции, коммуникация, границы, стресс и отношения в коллективе.",
+      "h1": "Конфликты на работе: помощь психолога",
+      "priority": "high"
+    },
+    {
+      "alias": "uslugi_otnosheniya_v_kollektive",
+      "url": "https://carry-pacific-flatfish.tilda.ws/uslugi_otnosheniya_v_kollektive",
+      "cluster": "consultation_services",
+      "current_issue": "Generic duplicate consultation description across service pages.",
+      "title": "Отношения в коллективе — консультация психолога",
+      "description": "Консультация по отношениям в коллективе: напряжение, коммуникация, лидерство, эмоциональный интеллект и рабочие конфликты.",
+      "h1": "Отношения в коллективе",
+      "priority": "high"
+    },
+    {
+      "alias": "uslugi_depression",
+      "url": "https://carry-pacific-flatfish.tilda.ws/uslugi_depression",
+      "cluster": "consultation_services",
+      "current_issue": "Generic duplicate consultation description across service pages.",
+      "title": "Депрессивные состояния — психолог Татьяна Мунн",
+      "description": "Консультация психолога при апатии, подавленности и потере сил. Работа со стрессом, эмоциями и состоянием онлайн или в Москве.",
+      "h1": "Депрессивные состояния: консультация психолога",
+      "priority": "high"
+    },
+    {
+      "alias": "uslugi_obida_na_roditelei",
+      "url": "https://carry-pacific-flatfish.tilda.ws/uslugi_obida_na_roditelei",
+      "cluster": "consultation_services",
+      "current_issue": "Generic duplicate consultation description across service pages.",
+      "title": "Обида на родителей — консультация психолога",
+      "description": "Психологическая работа с обидой на родителей, внутренним напряжением, семейными сценариями и эмоциональными реакциями.",
+      "h1": "Обида на родителей",
+      "priority": "high"
+    },
+    {
+      "alias": "uslugi_procrastination",
+      "url": "https://carry-pacific-flatfish.tilda.ws/uslugi_procrastination",
+      "cluster": "consultation_services",
+      "current_issue": "Generic duplicate consultation description across service pages.",
+      "title": "Прокрастинация и лень — психолог Татьяна Мунн",
+      "description": "Консультация психолога при прокрастинации, потере мотивации и откладывании дел. Работа с эмоциями, стрессом и внутренними блоками.",
+      "h1": "Прокрастинация: помощь психолога",
+      "priority": "high"
+    },
+    {
+      "alias": "uslugi_sohranit_brak",
+      "url": "https://carry-pacific-flatfish.tilda.ws/uslugi_sohranit_brak",
+      "cluster": "consultation_services",
+      "current_issue": "Generic duplicate consultation description across service pages.",
+      "title": "Как сохранить брак — семейная консультация психолога",
+      "description": "Консультация психолога для пары: конфликты, доверие, коммуникация, эмоциональная дистанция и решение семейного кризиса.",
+      "h1": "Как сохранить брак",
+      "priority": "high"
+    },
+    {
+      "alias": "uslugi_razvod",
+      "url": "https://carry-pacific-flatfish.tilda.ws/uslugi_razvod",
+      "cluster": "consultation_services",
+      "current_issue": "Generic duplicate consultation description across service pages.",
+      "title": "Развод и расставание — консультация психолога",
+      "description": "Психологическая поддержка при разводе и расставании: эмоции, стресс, решения, границы и восстановление устойчивости.",
+      "h1": "Развод и расставание",
+      "priority": "high"
+    },
+    {
+      "alias": "uslugi_lubovnaya_zavisimost",
+      "url": "https://carry-pacific-flatfish.tilda.ws/uslugi_lubovnaya_zavisimost",
+      "cluster": "consultation_services",
+      "current_issue": "Generic duplicate consultation description across service pages.",
+      "title": "Любовная зависимость — психолог Татьяна Мунн",
+      "description": "Консультация психолога при любовной зависимости, эмоциональной привязанности, тревоге в отношениях и сложном расставании.",
+      "h1": "Любовная зависимость",
+      "priority": "high"
+    },
+    {
+      "alias": "uslugi_gtr",
+      "url": "https://carry-pacific-flatfish.tilda.ws/uslugi_gtr",
+      "cluster": "consultation_services",
+      "current_issue": "Generic duplicate consultation description across service pages.",
+      "title": "Тревога и генерализованное тревожное состояние — психолог",
+      "description": "Консультация психолога при тревоге, постоянном напряжении и беспокойстве. Работа с эмоциональным состоянием онлайн и в Москве.",
+      "h1": "Тревога и постоянное беспокойство",
+      "priority": "high"
+    },
+    {
+      "alias": "st2",
+      "url": "https://carry-pacific-flatfish.tilda.ws/st2",
+      "cluster": "paid_courses_video_products",
+      "current_issue": "Duplicate description with /st1.",
+      "title": "Среда трансформации онлайн — тренинг Татьяны Мунн",
+      "description": "Онлайн-тренинг «Среда трансформации»: психологические практики для энергии, состояния и изменений в жизни.",
+      "h1": "Среда трансформации онлайн",
+      "priority": "medium"
+    },
+    {
+      "alias": "st1",
+      "url": "https://carry-pacific-flatfish.tilda.ws/st1",
+      "cluster": "paid_courses_video_products",
+      "current_issue": "Duplicate description with /st2.",
+      "title": "Среда трансформации — программа тренинга",
+      "description": "Программа тренинга «Среда трансформации»: темы, формат участия и психологические практики для работы с состоянием.",
+      "h1": "Программа тренинга «Среда трансформации»",
+      "priority": "medium"
+    },
+    {
+      "alias": "semeynie_konflikti_article",
+      "url": "https://carry-pacific-flatfish.tilda.ws/semeynie_konflikti_article",
+      "cluster": "emotional_intelligence_articles",
+      "current_issue": "Duplicate description with /article_diary_of_emotions.",
+      "title": "Семейные конфликты: как решать без эскалации",
+      "description": "Статья о семейных конфликтах: причины, эмоции, коммуникация и способы спокойного разрешения сложных ситуаций.",
+      "h1": "Семейные конфликты: как находить решение",
+      "priority": "medium"
+    },
+    {
+      "alias": "article_diary_of_emotions",
+      "url": "https://carry-pacific-flatfish.tilda.ws/article_diary_of_emotions",
+      "cluster": "emotional_intelligence_articles",
+      "current_issue": "Duplicate description with /semeynie_konflikti_article.",
+      "title": "Дневник эмоций: как вести и зачем он нужен",
+      "description": "Как вести дневник эмоций: простая практика эмоционального интеллекта для осознанности, саморегуляции и анализа состояний.",
+      "h1": "Дневник эмоций: как вести",
+      "priority": "medium"
+    }
+  ]
+}

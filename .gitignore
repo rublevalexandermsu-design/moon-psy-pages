@@ -4,6 +4,7 @@ dist/
 .playwright-cli/
 output/
 artifacts/
+tmp_*.png
 __pycache__/
 .DS_Store
 

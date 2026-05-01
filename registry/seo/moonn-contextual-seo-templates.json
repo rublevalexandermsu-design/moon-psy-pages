@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-05-01T21:05:00+03:00",
+  "project": "moon-psy-site",
+  "templates": [
+    {
+      "cluster": "homepage_brand",
+      "title_pattern": "{primary_entity} в Москве | психолог МГУ и эмоциональный интеллект",
+      "description_pattern": "{primary_entity} — психолог МГУ. Консультации онлайн и в Москве, лекции, эмоциональный интеллект, стресс, выгорание и отношения.",
+      "h1_pattern": "{primary_entity}: психолог МГУ в Москве",
+      "schema_types": ["WebPage", "Person", "ProfessionalService", "OfferCatalog"],
+      "required_entity_links": ["Yandex Services", "MSU Istina", "Telegram"]
+    },
+    {
+      "cluster": "consultation_services",
+      "title_pattern": "{service_topic} — психолог Татьяна Мунн | Москва и онлайн",
+      "description_pattern": "Консультация психолога Татьяны Мунн по теме: {service_topic}. Работа онлайн и в Москве для взрослых и подростков. Запись и форматы встречи.",
+      "h1_pattern": "{service_topic}: консультация психолога",
+      "schema_types": ["Service", "WebPage", "BreadcrumbList"],
+      "required_sections": ["symptoms_or_request", "how_consultation_works", "format", "price_or_booking", "faq"]
+    },
+    {
+      "cluster": "lectures_events_speaker",
+      "title_pattern": "{lecture_topic} — лекция психолога Татьяны Мунн",
+      "description_pattern": "Лекция Татьяны Мунн по теме: {lecture_topic}. Эмоциональный интеллект, soft skills, психология эмоций, выступления и корпоративные форматы.",
+      "h1_pattern": "{lecture_topic}: лекция по психологии",
+      "schema_types": ["Event", "Course", "Person", "BreadcrumbList"],
+      "required_sections": ["topic", "audience", "speaker", "date_or_recording", "registration_or_booking"]
+    },
+    {
+      "cluster": "paid_courses_video_products",
+      "title_pattern": "{product_name} — курс/запись Татьяны Мунн",
+      "description_pattern": "{product_name}: обучающий продукт Татьяны Мунн по психологии эмоций и эмоциональному интеллекту. Программа, формат доступа и условия участия.",
+      "h1_pattern": "{product_name}",
+      "schema_types": ["Course", "Product", "Offer", "BreadcrumbList"],
+      "required_sections": ["program", "for_whom", "result_without_guarantees", "access_format", "payment"]
+    },
+    {
+      "cluster": "emotional_intelligence_articles",
+      "title_pattern": "{article_topic} | эмоциональный интеллект — Татьяна Мунн",
+      "description_pattern": "{article_topic}: практическая статья по эмоциональному интеллекту, психологии эмоций и soft skills от психолога Татьяны Мунн.",
+      "h1_pattern": "{article_topic}",
+      "schema_types": ["Article", "Person", "BreadcrumbList"],
+      "required_sections": ["definition", "practical_examples", "steps", "related_articles", "author"]
+    },
+    {
+      "cluster": "knowledge_base",
+      "title_pattern": "{knowledge_topic}: что это и как применять | база знаний",
+      "description_pattern": "{knowledge_topic}: понятное объяснение, примеры и практическое применение в эмоциональном интеллекте и психологии.",
+      "h1_pattern": "{knowledge_topic}",
+      "schema_types": ["Article", "DefinedTerm", "BreadcrumbList"],
+      "required_sections": ["definition", "why_it_matters", "examples", "practice", "related_terms"]
+    },
+    {
+      "cluster": "reviews_trust_contacts",
+      "title_pattern": "{page_topic} — Татьяна Мунн, психолог МГУ",
+      "description_pattern": "{page_topic}: внешние профили, отзывы, образование, контакты и способы записи к психологу Татьяне Мунн.",
+      "h1_pattern": "{page_topic}",
+      "schema_types": ["ProfilePage", "Person", "BreadcrumbList"],
+      "required_sections": ["verified_profiles", "reviews_source", "education", "contacts", "booking"]
+    }
+  ],
+  "global_rules": [
+    "Do not use one generic title or description across multiple pages.",
+    "Keep one H1 per page.",
+    "Add H2/H3 hierarchy for visible content.",
+    "Add alt text only for meaningful images; decorative backgrounds can stay empty.",
+    "Avoid guarantee-like medical or psychological outcome claims in metadata.",
+    "Keep staging noindex until production transfer is approved."
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-05-01T21:05:00+03:00",
+  "project": "moon-psy-site",
+  "workstream": "seo-aeo-retrofit",
+  "scope": "staging-first, production-transfer-after-approval",
+  "source_reports": [
+    "registry/seo/moonn-homepage-seo-aeo-2026.json",
+    "registry/seo/moonn-seo-audit-pages.json",
+    "Google Search Console authenticated screenshots",
+    "Yandex Webmaster authenticated screenshots",
+    "Yandex Metrica authenticated screenshots"
+  ],
+  "summary": {
+    "google_search_console": {
+      "period": "last 3 months",
+      "clicks": 221,
+      "impressions": 12400,
+      "ctr_percent": 1.8,
+      "average_position": 6.9,
+      "indexed_pages": 29,
+      "not_indexed_pages": 116,
+      "not_indexed_reason_groups": 5
+    },
+    "yandex_webmaster": {
+      "errors": 0,
+      "recommendations": 1,
+      "duplicate_title_count": 9,
+      "duplicate_description_count": 35,
+      "metrika_binding_recommended": true
+    },
+    "yandex_metrica": {
+      "canonical_counter": "96397286",
+      "canonical_counter_evidence": "Installed in live https://moonn.ru/ HTML"
+    },
+    "staging_machine_audit": {
+      "audited_pages": 73,
+      "ok_pages": 73,
+      "duplicate_title_groups": 1,
+      "duplicate_description_groups": 4,
+      "heading_issue_pages": 53,
+      "image_alt_issue_pages": 73
+    }
+  },
+  "work_items": [
+    {
+      "id": "SEO-001",
+      "title": "Remove duplicate title and description metadata",
+      "status": "in_progress",
+      "priority": "critical",
+      "reason": "Yandex Webmaster confirms 9 duplicate titles and 35 duplicate descriptions; staging audit confirms duplicate metadata clusters.",
+      "implementation_boundary": "Prepare unique metadata in registry first; apply to staging pages in Tilda; transfer to production only after review.",
+      "acceptance_checks": [
+        "Every indexed/staging page has a unique title.",
+        "Every indexed/staging page has a unique description.",
+        "Yandex Webmaster duplicate-title and duplicate-description warnings decrease after recrawl.",
+        "No page receives generic site-wide SEO copy unless it is intentionally noindex."
+      ],
+      "first_pages": [
+        "/kurs-ei",
+        "/programmakursa",
+        "/uslugi_fin_blocks",
+        "/uslugi_podrostki",
+        "/uslugi_konflikti_na_rabote",
+        "/uslugi_otnosheniya_v_kollektive",
+        "/uslugi_depression",
+        "/uslugi_obida_na_roditelei",
+        "/uslugi_procrastination",
+        "/uslugi_sohranit_brak",
+        "/uslugi_razvod",
+        "/uslugi_lubovnaya_zavisimost",
+        "/uslugi_gtr"
+      ]
+    },
+    {
+      "id": "SEO-002",
+      "title": "Diagnose 116 Google not-indexed pages",
+      "status": "blocked_on_report_detail",
+      "priority": "critical",
+      "reason": "Google Search Console shows only 29 indexed pages and 116 not indexed pages across 5 reason groups.",
+      "implementation_boundary": "Open GSC Page indexing reason groups and export/sample URLs before changing page status.",
+      "acceptance_checks": [
+        "Each GSC exclusion reason is captured with count and sample URLs.",
+        "Pages are classified as keep noindex, canonical duplicate, thin/low value, unpublished/test, or fix-and-submit.",
+        "Sitemap and canonical rules are updated only after classification.",
+        "Validated pages are submitted for recrawl."
+      ],
+      "next_reports": [
+        "GSC -> Indexing -> Pages -> each of 5 reasons",
+        "GSC -> Sitemaps",
+        "Tilda -> SEO Assistant"
+      ]
+    },
+    {
+      "id": "SEO-003",
+      "title": "Connect Moonn/Kumskova/Yandex Services/MSU Istina entity graph",
+      "status": "prepared",
+      "priority": "high",
+      "reason": "Yandex query sample includes `татьяна кумскова мунн отзывы`; Yandex Services and MSU Istina use legal/platform name variants.",
+      "implementation_boundary": "Add visible identity bridge and JSON-LD sameAs/alternateName to staging homepage first.",
+      "acceptance_checks": [
+        "Visible biography/trust block mentions the public/legal name bridge naturally.",
+        "Person schema includes alternateName variants.",
+        "Person schema sameAs includes Yandex Services and MSU Istina.",
+        "No hidden-only SEO text; the identity link is visible to users."
+      ],
+      "verified_profiles": [
+        "https://yandex.ru/uslugi/profile/TatyanaKumskova-948629",
+        "https://istina.msu.ru/workers/816305440/"
+      ]
+    },
+    {
+      "id": "SEO-004",
+      "title": "Bind canonical Yandex Metrica counter to Yandex Webmaster",
+      "status": "awaiting_action_time_confirmation",
+      "priority": "high",
+      "reason": "Yandex Webmaster recommends binding Metrica; live HTML confirms counter 96397286 is canonical for moonn.ru.",
+      "implementation_boundary": "This changes Yandex account/site settings; ask for explicit confirmation immediately before clicking the final bind/save action.",
+      "acceptance_checks": [
+        "Yandex Webmaster shows counter 96397286 bound to https://moonn.ru.",
+        "No duplicate/legacy counter is bound accidentally.",
+        "Registry records the date of binding and screenshot/fact evidence."
+      ]
+    },
+    {
+      "id": "SEO-005",
+      "title": "Create contextual page SEO templates by cluster",
+      "status": "in_progress",
+      "priority": "high",
+      "reason": "User explicitly requires contextual SEO, not one shared SEO block for every page.",
+      "implementation_boundary": "Generate templates by page cluster, then per-page manifests before Tilda edits.",
+      "clusters": [
+        "homepage_brand",
+        "consultation_services",
+        "lectures_events_speaker",
+        "paid_courses_video_products",
+        "emotional_intelligence_articles",
+        "knowledge_base",
+        "reviews_trust_contacts"
+      ],
+      "acceptance_checks": [
+        "Each page has a search intent cluster.",
+        "Each page has unique title, description, H1, image alt plan, canonical, and schema type.",
+        "Cluster templates do not overwrite page-specific context."
+      ]
+    }
+  ]
+}

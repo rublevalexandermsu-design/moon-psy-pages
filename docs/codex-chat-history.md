@@ -918,6 +918,37 @@ Canonical append-only chat history for `moon-psy-site`.
   - No Search Console, Yandex Webmaster, Metrica, Tilda, or production site settings were changed.
 
 
+## 2026-05-01T21:10:00+03:00 — Five-point Moonn SEO remediation backlog started
+
+- Project: `moon-psy-site`.
+- Workstream: `seo-aeo-retrofit`.
+- Branch: `codex/tilda-api-sync`.
+- Request: start doing the five SEO points: remove metadata duplicates, diagnose non-indexed pages, connect external entity profiles, bind Metrica to Webmaster, and create contextual SEO/AEO templates.
+- Actions:
+  - Added a machine audit script for staging pages: `scripts/seo_audit_pages.py`.
+  - Ran staging audit across 73 copied pages: 73 OK, 0 errors.
+  - Created `registry/seo/moonn-seo-audit-pages.json`.
+  - Created `registry/seo/moonn-seo-remediation-backlog.json`.
+  - Created `registry/seo/moonn-contextual-seo-templates.json`.
+  - Created first metadata duplicate fixes in `registry/seo/moonn-duplicate-metadata-fixes.json`.
+- Verified staging audit facts:
+  - 1 duplicate title group.
+  - 4 duplicate description groups.
+  - 53 pages with H1/H2 structure issues.
+  - 73 pages with at least one image missing alt.
+- First duplicate-fix scope:
+  - `/kurs-ei`, `/programmakursa`.
+  - 11 service pages using the generic consultation description.
+  - `/st1`, `/st2`.
+  - `/semeynie_konflikti_article`, `/article_diary_of_emotions`.
+- Decisions:
+  - Metadata fixes are prepared in registry first, not applied blindly in Tilda.
+  - Metrica/Webmaster binding requires action-time confirmation before the final bind/save click.
+  - Google non-indexed pages require opening the 5 GSC reason groups before bulk changes.
+- Boundary:
+  - No Tilda, Yandex, Google, or production settings were changed in this step.
+
+
 ## 2026-05-01T19:13:04+03:00 — All copied Tilda pages audited for card/grid regression
 
 - Project: `moon-psy-site`.

@@ -213,6 +213,24 @@ Next reports to open:
 - Yandex Metrica → canonical counter `96397286` → Traffic sources, Search phrases, Pages, Goals.
 - Tilda → Site Settings → SEO → SEO Assistant.
 
+## Active Remediation Backlog
+
+Five work items are now canonicalized in `registry/seo/moonn-seo-remediation-backlog.json`:
+
+1. Remove duplicate title and description metadata.
+2. Diagnose 116 Google not-indexed pages.
+3. Connect the Moonn/Kumskova/Yandex Services/MSU Istina entity graph.
+4. Bind canonical Yandex Metrica counter `96397286` to Yandex Webmaster.
+5. Create contextual SEO templates by page cluster.
+
+The first duplicate metadata fixes are drafted in `registry/seo/moonn-duplicate-metadata-fixes.json`.
+
+Important action gate:
+
+- Applying metadata to Tilda changes published page settings.
+- Binding Metrica to Webmaster changes Yandex account/site settings.
+- Both should be done only after action-time confirmation and first on staging where possible.
+
 ## Tilda Implementation Order
 
 1. Keep staging `noindex,nofollow`.
