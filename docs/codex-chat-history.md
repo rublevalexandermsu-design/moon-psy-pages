@@ -853,3 +853,33 @@ Canonical append-only chat history for `moon-psy-site`.
   - `https://carry-pacific-flatfish.tilda.ws/`
 - Boundary:
   - Production `moonn.ru` was not changed.
+
+
+## 2026-05-01T19:55:00+03:00 — Tilda button gradients preserved
+
+- Project: `moon-psy-site`.
+- Workstream: `staging-design-system` under `tilda-api-sync`.
+- Branch: `codex/tilda-api-sync`.
+- Request: compare staging buttons with the original site because the user noticed button color changes; original buttons had gradient color and hover highlighting.
+- Strategic assessment:
+  - Platform value: high, because CTA appearance affects conversion and trust.
+  - Obsolescence risk: medium if the shared theme keeps overriding per-page Tilda button styles.
+  - Stronger architecture: preserve page-authored Tilda button gradients and use the shared theme only for non-destructive hover polish.
+  - Reuse: this prevents the same button regression on consultation, lecture, product, and knowledge-base pages.
+  - 3-12 month risk if skipped: global design rollout could silently damage existing CTA styles across many copied pages.
+- Findings:
+  - Production and staging HTML both contained the original Tilda gradient:
+    `background-image:linear-gradient(0.5turn,rgba(127,0,255,1) 0%,rgba(225,0,255,1) 100%)`.
+  - The shared theme was overriding button background/color globally via `.t-btn`, `.t-btnflex`, `.t1028__btn`, and `.tn-atom__button`.
+- Actions:
+  - Removed the forced theme button background.
+  - Removed forced white button text and forced border reset.
+  - Kept hover brightness/saturation, slight lift, and purple shadow.
+  - Replaced the Tilda homepage HEAD with exactly one canonical theme block.
+  - Published only `Moonn Staging`.
+  - Verified live staging contains the original Tilda gradient, exactly one theme block, and no removed forced theme gradient.
+  - Browser Use live DOM check confirmed the relevant buttons remain present.
+- Live staging URL:
+  - `https://carry-pacific-flatfish.tilda.ws/`
+- Boundary:
+  - Production `moonn.ru` was not changed.

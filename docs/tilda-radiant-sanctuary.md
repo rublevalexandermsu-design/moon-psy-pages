@@ -37,6 +37,7 @@ The CSS adds:
 - Light radiant surface background.
 - Animated pink/violet/cyan gradient orbs behind the page and inside Zero Block artboards.
 - Glass-style buttons and navigation.
+- Original Tilda button gradients are preserved; the theme only adds hover brightness/shadow.
 - Soft card surfaces.
 - Tilda button normalization.
 - Tilda card/container normalization.
@@ -115,6 +116,24 @@ The page is not considered ready until these checks pass:
   - exactly one `moonn-radiant-sanctuary-theme` block;
   - `background-repeat: repeat-y`;
   - `moonnSectionOrbA`.
+- Production `moonn.ru` was not changed.
+
+### 2026-05-01 button gradient preservation
+
+- User concern: the theme appeared to change button colors; original buttons had a purple/pink gradient and hover highlighting.
+- Compared production `https://moonn.ru/` and staging HTML.
+- Confirmed both contain the original Tilda button gradient:
+  - `background-image:linear-gradient(0.5turn,rgba(127,0,255,1) 0%,rgba(225,0,255,1) 100%)`.
+- Removed the theme-level forced button `background`, forced white text, and forced border reset.
+- Kept a lightweight hover enhancement:
+  - brighter/saturated hover filter;
+  - subtle lift;
+  - purple shadow.
+- Published only `Moonn Staging`.
+- Confirmed the live staging HTML:
+  - still contains the original Tilda button gradient;
+  - has exactly one `moonn-radiant-sanctuary-theme` block;
+  - no longer contains the removed forced theme button gradient.
 - Production `moonn.ru` was not changed.
 
 ## Tilda Editor Note
