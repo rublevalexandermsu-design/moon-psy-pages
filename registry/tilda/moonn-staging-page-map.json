@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-05-01T15:37:00+03:00",
+  "updated_at": "2026-05-01T15:55:00+03:00",
   "source_project_id": "8326812",
   "source_project_name": "Moonn.ru",
   "staging_project_id": "25075076",
   "staging_project_name": "Moonn Staging",
   "staging_base_url": "https://carry-pacific-flatfish.tilda.ws",
   "published_source_pages": 131,
-  "copied_pages": 39,
-  "pending_pages": 92,
+  "copied_pages": 45,
+  "pending_pages": 86,
   "tilda_known_limit_note": "Tilda page duplication has a daily new-page limit; copy remaining pages in batches and update this registry after each batch.",
   "pages": [
     {
@@ -515,73 +515,79 @@
       "source_project_id": "8326812",
       "staging_project_id": "25075076",
       "source_page_id": "62462299",
-      "staging_page_id": null,
+      "staging_page_id": "138680626",
       "title": "Фитотерапия и Психология: забота о теле и душе",
       "alias": "phytotherapy",
       "sort": 460,
       "published": "1739381431",
-      "status": "pending_copy",
-      "staging_url": null
+      "status": "copied_verified",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/phytotherapy",
+      "verified_at": "2026-05-01T15:55:00+03:00"
     },
     {
       "source_project_id": "8326812",
       "staging_project_id": "25075076",
       "source_page_id": "62477227",
-      "staging_page_id": null,
+      "staging_page_id": "138680856",
       "title": "Микробиом и Психологическое состояние - как связаны. Лактобактерия L.Reuteri",
       "alias": "microbiom",
       "sort": 470,
       "published": "1739209661",
-      "status": "pending_copy",
-      "staging_url": null
+      "status": "copied_verified",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/microbiom",
+      "verified_at": "2026-05-01T15:55:00+03:00"
     },
     {
       "source_project_id": "8326812",
       "staging_project_id": "25075076",
       "source_page_id": "62470081",
-      "staging_page_id": null,
+      "staging_page_id": "138680976",
       "title": "Ароматерапия и Эфирные масла. Быстрая Психология: Использование ароматов в обретении внутренней гармонии и благополучия",
       "alias": "aromatherapy",
       "sort": 480,
       "published": "1739381370",
-      "status": "pending_copy",
-      "staging_url": null
+      "status": "copied_verified",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/aromatherapy",
+      "verified_at": "2026-05-01T15:55:00+03:00"
     },
     {
       "source_project_id": "8326812",
       "staging_project_id": "25075076",
       "source_page_id": "63131581",
-      "staging_page_id": null,
+      "staging_page_id": "138681236",
       "title": "Соль для здоровья - способы применения. Психолог Татьяна Мунн",
       "alias": "salt",
       "sort": 490,
       "published": "1739382098",
-      "status": "pending_copy",
-      "staging_url": null
+      "status": "copied_verified",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/salt",
+      "verified_at": "2026-05-01T15:55:00+03:00"
     },
     {
       "source_project_id": "8326812",
       "staging_project_id": "25075076",
       "source_page_id": "63138325",
-      "staging_page_id": null,
+      "staging_page_id": "138681366",
       "title": "Вакуумные банки для психологического здоровья. Психолог Татьяна Мунн",
       "alias": "vacuum_cups",
       "sort": 500,
       "published": "1739978236",
-      "status": "pending_copy",
-      "staging_url": null
+      "status": "copied_verified",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/vacuum_cups",
+      "verified_at": "2026-05-01T15:55:00+03:00"
     },
     {
       "source_project_id": "8326812",
       "staging_project_id": "25075076",
       "source_page_id": "63552425",
-      "staging_page_id": null,
+      "staging_page_id": "138681466",
       "title": "вода и здоровье - влияние воды на психоэмоциональное состояние. Психолог Татьяна Мунн (МГУ)",
       "alias": "water",
       "sort": 510,
       "published": "1740424650",
-      "status": "pending_copy",
-      "staging_url": null
+      "status": "copied_verified",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/water",
+      "verified_at": "2026-05-01T15:55:00+03:00"
     },
     {
       "source_project_id": "8326812",

@@ -461,3 +461,47 @@ Canonical append-only chat history for `moon-psy-site`.
   - Pending staging pages: 92.
 - Follow-up priority:
   - Continue with the remaining published consultation/service pages (`phytotherapy`, `microbiom`, `aromatherapy`, `salt`, `vacuum_cups`, `water`) or public event/news pages, skipping test-looking pages unless explicitly requested.
+
+
+## 2026-05-01T15:55:00+03:00 — Tilda wellness/service pages copied to staging
+
+- Project: `moon-psy-site`.
+- Workstream: `tilda-api-sync`.
+- Branch: `codex/tilda-api-sync`.
+- Request: continue copying the next published/accessibly live pages into the Tilda staging project.
+- Strategic assessment:
+  - Platform value: medium-high, because these wellness/service SEO pages expand the public consultation and content funnel in staging.
+  - Obsolescence risk: medium, because health-adjacent topics may need later editorial/legal review before major public changes.
+  - Stronger architecture: keep these pages as source-identical staging copies first, then improve content through a separate reviewed workflow.
+  - Reuse: the same source-live gate and live staging verification applies to the remaining service and article pages.
+  - 3-12 month risk if skipped: future SEO/content edits would happen against an incomplete staging mirror.
+- Eligibility check:
+  - `https://moonn.ru/phytotherapy` returned `200`.
+  - `https://moonn.ru/microbiom` returned `200`.
+  - `https://moonn.ru/aromatherapy` returned `200`.
+  - `https://moonn.ru/salt` returned `200`.
+  - `https://moonn.ru/vacuum_cups` returned `200`.
+  - `https://moonn.ru/water` returned `200`.
+- Actions:
+  - Copied and normalized six wellness/service pages:
+    - `62462299` -> `138680626`, alias `phytotherapy`.
+    - `62477227` -> `138680856`, alias `microbiom`.
+    - `62470081` -> `138680976`, alias `aromatherapy`.
+    - `63131581` -> `138681236`, alias `salt`.
+    - `63138325` -> `138681366`, alias `vacuum_cups`.
+    - `63552425` -> `138681466`, alias `water`.
+  - Published all pages in `Moonn Staging` and verified the new public URLs through Browser Use.
+  - Updated `registry/tilda/moonn-staging-page-map.json`.
+- Verified live staging URLs:
+  - `https://carry-pacific-flatfish.tilda.ws/phytotherapy`
+  - `https://carry-pacific-flatfish.tilda.ws/microbiom`
+  - `https://carry-pacific-flatfish.tilda.ws/aromatherapy`
+  - `https://carry-pacific-flatfish.tilda.ws/salt`
+  - `https://carry-pacific-flatfish.tilda.ws/vacuum_cups`
+  - `https://carry-pacific-flatfish.tilda.ws/water`
+- Current copy state:
+  - Published production pages: 131.
+  - Copied and verified staging pages: 45.
+  - Pending staging pages: 86.
+- Follow-up priority:
+  - Continue with published psychotherapy/service method pages (`kpt`, `psychoanalys`, `geshtalt`, `schematherapy`, `uslugi_*`) or high-value event/news pages, still skipping test-looking pages unless explicitly requested.
