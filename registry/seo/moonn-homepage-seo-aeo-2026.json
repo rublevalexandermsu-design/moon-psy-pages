@@ -83,7 +83,8 @@
       "og_description": "Консультации психолога онлайн и в Москве: эмоции, стресс, выгорание, отношения и эмоциональный интеллект.",
       "og_image_asset": "assets/images/tatiana-munn-psiholog-mgu-moscow-consultation.webp",
       "og_image_cdn_draft": "https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@codex/tilda-api-sync/assets/images/tatiana-munn-psiholog-mgu-moscow-consultation.webp",
-      "og_image_production_rule": "Pin to an immutable commit URL before production transfer.",
+      "og_image_cdn_pinned": "https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@3f00f43/assets/images/tatiana-munn-psiholog-mgu-moscow-consultation.webp",
+      "og_image_production_rule": "Use the immutable pinned URL for Tilda staging/production transfer.",
       "og_image_alt": "Татьяна Мунн, психолог МГУ в Москве"
     }
   },
