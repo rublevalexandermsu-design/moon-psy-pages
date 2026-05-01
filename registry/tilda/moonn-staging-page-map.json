@@ -26,6 +26,17 @@
       "https://carry-pacific-flatfish.tilda.ws/emotional-intelligence/articles/benefits-of-ei",
       "https://carry-pacific-flatfish.tilda.ws/uslugi_depression"
     ],
+    "last_card_audit_at": "2026-05-01T19:13:04+03:00",
+    "last_card_audit": {
+      "checked_pages": 73,
+      "live_ok": 73,
+      "theme_present": 73,
+      "pinned_102fb3d": 2,
+      "branch_css": 71,
+      "visual_ok": 72,
+      "pages_with_suspicious_card_or_grid_blocks": 59,
+      "recommended_action": "Pin all copied_verified staging pages to the verified commit CSS URL and republish staging pages, then rerun the card/grid audit."
+    },
     "publication_note": "Tilda project-level HEAD did not propagate reliably to already published pages, so each copied_verified page has a short marked page-level snippet. Final publication succeeded after running publish-all from the project search context.",
     "verified_sample_urls": [
       "https://carry-pacific-flatfish.tilda.ws/psiholog-konsultacii-moskva",

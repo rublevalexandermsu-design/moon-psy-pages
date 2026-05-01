@@ -793,6 +793,41 @@ Canonical append-only chat history for `moon-psy-site`.
   - Production `moonn.ru` was not changed.
 
 
+## 2026-05-01T19:13:04+03:00 — All copied Tilda pages audited for card/grid regression
+
+- Project: `moon-psy-site`.
+- Workstream: `staging-design-system` under `tilda-api-sync`.
+- Branch: `codex/tilda-api-sync`.
+- Request: check all other copied staging pages so the same card/text-column substrate problem does not remain elsewhere.
+- Strategic assessment:
+  - Platform value: high, because the visual system must be reliable before payment/video and SEO work starts.
+  - Obsolescence risk: medium while pages depend on a mutable branch CDN URL with stale cache behavior.
+  - Stronger architecture: commit-pinned CSS per staging page plus automated card/grid audit after each theme change.
+  - Reuse: the audit can be reused for future batches of copied Tilda pages.
+  - 3-12 month risk if skipped: layout regressions will recur whenever a generic Tilda block class appears on a copied page.
+- Audit results:
+  - Checked copied staging pages: `73`.
+  - Live pages with HTTP success: `73`.
+  - Pages with theme marker: `73`.
+  - Pages already pinned to verified CSS `@102fb3d`: `2`.
+  - Pages still loading branch CSS `@codex/tilda-api-sync`: `71`.
+  - Pages with browser audit completed: `72`.
+  - Pages with suspicious card/grid blocks: `59`.
+  - One page, `/events_tp`, timed out on `networkidle` but live HTTP was `200`; it should be rechecked after the pinned rollout.
+- Root cause:
+  - The two manually hotfixed pages are clean, but most pages still load the mutable branch CDN URL. jsDelivr continued to serve the old broad CSS for that branch even after purge.
+- Recommended action:
+  - Pin all `copied_verified` staging pages to `https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@102fb3d/assets/tilda-radiant-sanctuary.css`.
+  - Republish staging pages.
+  - Rerun the card/grid audit and require `branch_css = 0`, `pages_with_suspicious_card_or_grid_blocks = 0` except manually reviewed page-specific layouts.
+- Changed files:
+  - `registry/tilda/moonn-staging-page-map.json`
+  - `docs/codex-chat-history.md`
+- Boundary:
+  - Production `moonn.ru` was not changed.
+  - No mass Tilda page HEAD update was performed during this audit entry because that would publish public staging-page changes and requires action-time confirmation.
+
+
   - This is a staging homepage pilot only, not a full site-level rollout.
 - Next step:
   - User visual review of the staging homepage.
