@@ -153,3 +153,38 @@ Canonical append-only chat history for `moon-psy-site`.
 - Open questions:
   - Internal links inside copied Tilda blocks still include some absolute `moonn.ru` URLs. These require either manual block-level link rewiring or a reliable staging-only site code injection once the Tilda code editor input path is stable.
   - Need decide whether to copy news/event child pages next or keep staging focused on the conversion/navigation core first.
+
+## 2026-05-01T13:13:00+03:00 — Tilda staging copy expanded and mapped
+
+- Project: `moon-psy-site`.
+- Workstream: `tilda-api-sync`.
+- Branch: `codex/tilda-api-sync`.
+- Request: continue toward an identical Tilda staging copy so future edits can be made and tested in Tilda before production transfer.
+- Strategic decision:
+  - Full identity requires copying all published pages and tracking every `source_page_id -> staging_page_id` pair.
+  - Tilda does not expose a visible full-project duplicate action in `Moonn.ru` site settings; only transfer, delete, and unpublish were visible.
+  - Continue via page-copy batches, because Tilda has a daily new-page limit and the production project has 131 published pages.
+- Actions:
+  - Enabled site-level noindex for `Moonn Staging`.
+  - Added a machine-readable staging map at `registry/tilda/moonn-staging-page-map.json`.
+  - Copied and verified three more pages:
+    - `87231366` -> `138664896`, alias `speaker`.
+    - `53668815` -> `138665336`, alias `events`.
+    - `68295899` -> `138665516`, alias `lectures1`.
+  - Republished staging after the new pages were copied.
+- Verified live staging URLs:
+  - `https://carry-pacific-flatfish.tilda.ws/speaker`
+  - `https://carry-pacific-flatfish.tilda.ws/events`
+  - `https://carry-pacific-flatfish.tilda.ws/lectures1`
+- Current copy state:
+  - Published production pages: 131.
+  - Copied and verified staging pages: 9.
+  - Pending staging pages: 122.
+- Incident:
+  - Symptom: copying a 3-page batch timed out before the tool returned.
+  - Root cause: Tilda UI duplicate/move/rename operations are slow enough that multi-page batches can exceed the Browser Use tool timeout.
+  - Resolution: verified actual staging state, found that only `speaker` completed, then copied `events` and `lectures1` one page at a time.
+  - Follow-up rule: use one-page copy operations for Tilda UI work unless a faster authenticated API route is identified and safely validated.
+- Open questions:
+  - Whether to continue copying all 122 remaining pages over multiple batches/days, or first prioritize pages linked from navigation, forms, and conversion paths.
+  - Whether to solve internal absolute `moonn.ru` links by block-level editing or by a reliable staging-only code injection path.
