@@ -179,6 +179,26 @@ Exports needed:
 8. Verify browser result, page source, metadata, schema, and image preview.
 9. After approval, repeat the same manifest pattern for every page category.
 
+## Tilda-Native SEO Tools To Use
+
+Tilda should remain the operational source for page-level SEO settings, not a place where we paste one giant uncontrolled code block. Use the native controls first:
+
+- Site Settings → SEO → SEO Assistant: check pages, indexing errors, redirects, favicon, HTTPS/WWW settings.
+- Site Settings → SEO → Google Search Console: connect or verify Google ownership.
+- Site Settings → SEO → 301 redirects: fix old page URLs and malformed legacy paths.
+- Page Settings → SEO → Customize search results preview: unique title, description, keywords, canonical URL.
+- Page Settings → Social media → Customize social media preview: social title, description, and preview image.
+- Block settings → SEO title tag: set exactly one H1, then H2/H3 for sections.
+- Block content/image menu: set image alt text for meaningful images; skip decorative backgrounds.
+- Page Settings → Additional → HTML code for Head: add JSON-LD/schema.org for entity graph and AEO.
+- `/robots.txt` and `/sitemap.xml`: Tilda generates these automatically, but they must be checked after publishing.
+
+For Moonn, this means:
+
+- native Tilda fields handle title, description, canonical, social preview, H1/H2/H3, alt text, redirects;
+- custom Head code handles JSON-LD only;
+- SEO Assistant becomes the first QA gate before browser/source-code checks.
+
 ## Scaling Plan
 
 Page-specific SEO manifests should be created for these clusters:
@@ -209,3 +229,5 @@ Each page manifest must include:
 - Google image SEO: https://developers.google.com/search/docs/appearance/google-images
 - Google structured data: https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data
 - Tilda SEO guide: https://help.tilda.cc/search-engine
+- Tilda microdata guide: https://help.tilda.cc/microdata
+- Tilda ownership verification: https://help.tilda.cc/domain-confirm

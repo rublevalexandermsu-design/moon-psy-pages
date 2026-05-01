@@ -204,6 +204,7 @@
   },
   "implementation_checklist": [
     "Keep staging noindex while testing.",
+    "Run Tilda Site Settings -> SEO -> SEO Assistant before manual edits.",
     "Update page SEO title and description in Tilda page settings.",
     "Add page-level JSON-LD in Tilda HEAD for the homepage only.",
     "Add visible identity bridge between `Татьяна Мунн`, `Татьяна Кумскова`, and `Кумскова Татьяна Михайловна` near the biography/trust section.",
@@ -212,8 +213,21 @@
     "Fix primary H1/H2 hierarchy in page content.",
     "Add alt text to meaningful homepage images.",
     "Fix malformed links before production transfer.",
+    "Use Tilda 301 redirects for old or renamed URLs where links already exist in search.",
+    "Check generated robots.txt and sitemap.xml after publishing.",
     "Run browser QA and source-code validation after publish.",
     "Only then repeat the manifest pattern for copied pages."
+  ],
+  "tilda_native_seo_tools": [
+    "Site Settings -> SEO -> SEO Assistant",
+    "Site Settings -> SEO -> Google Search Console",
+    "Site Settings -> SEO -> WWW, HTTPS Redirects",
+    "Site Settings -> SEO -> 301 redirects",
+    "Page Settings -> SEO -> Customize search results preview",
+    "Page Settings -> Social media -> Customize social media preview",
+    "Block settings -> SEO title tag",
+    "Block content image menu -> alt text",
+    "Page Settings -> Additional -> HTML code for Head"
   ],
   "compliance_gate": {
     "status": "pilot_draft_not_publicly_applied",
@@ -228,6 +242,8 @@
     "https://developers.google.com/search/docs/appearance/title-link",
     "https://developers.google.com/search/docs/appearance/google-images",
     "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data",
-    "https://help.tilda.cc/search-engine"
+    "https://help.tilda.cc/search-engine",
+    "https://help.tilda.cc/microdata",
+    "https://help.tilda.cc/domain-confirm"
   ]
 }

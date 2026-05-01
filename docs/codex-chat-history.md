@@ -857,6 +857,36 @@ Canonical append-only chat history for `moon-psy-site`.
   - Production `moonn.ru` was not changed.
 
 
+## 2026-05-01T19:58:00+03:00 — Tilda-native SEO controls added to Moonn SEO pilot
+
+- Project: `moon-psy-site`.
+- Workstream: `seo-aeo-retrofit`.
+- Branch: `codex/tilda-api-sync`.
+- Request: user noted that Tilda itself may contain SEO information and asked to gather it for the SEO work.
+- Verified Tilda facts from official help:
+  - Tilda SEO Assistant exists under Site Settings → SEO → SEO Assistant and can show indexing/SEO errors.
+  - Page-level SEO title/description/social preview/canonical settings are available under Page Settings.
+  - H1/H2/H3 can be set through block title tag settings; Tilda recommends one H1 per page.
+  - Image alt can be set through the image menu/content panel; decorative backgrounds do not require alt.
+  - Tilda can connect/verify Google Search Console through Site Settings → SEO or ownership verification.
+  - Tilda generates `robots.txt` and `sitemap.xml`, and supports HTTPS/WWW and 301 redirect settings.
+  - JSON-LD/microdata can be added through page/head custom HTML.
+- Decision:
+  - Use Tilda native controls for title, description, canonical, social preview, headings, image alt, redirects, robots/sitemap checks, and SEO Assistant.
+  - Use custom Head code only for schema.org JSON-LD/entity graph.
+- Changed files:
+  - `registry/seo/moonn-homepage-seo-aeo-2026.json`
+  - `docs/seo/moonn-homepage-seo-aeo-pilot.md`
+  - `docs/codex-chat-history.md`
+- Incident:
+  - Symptom: Browser Use timed out while attempting to open Search Console, GA4, Yandex Webmaster, and Metrica tabs together.
+  - Root cause: multi-tab browser automation call exceeded the tool timeout / browser context closed.
+  - Solution: continue fact gathering from official docs and retry browser access in smaller single-tab steps after the user has the in-app browser active.
+- Boundary:
+  - No external account settings were changed.
+  - Tilda staging and production were not changed.
+
+
 ## 2026-05-01T19:13:04+03:00 — All copied Tilda pages audited for card/grid regression
 
 - Project: `moon-psy-site`.
