@@ -587,3 +587,53 @@ Canonical append-only chat history for `moon-psy-site`.
   - Pending staging pages: 76.
 - Follow-up priority:
   - Continue with remaining published `uslugi_*` pages: `uslugi_procrastination`, `uslugi_sohranit_brak`, `uslugi_razvod`, `uslugi_lubovnaya_zavisimost`, `uslugi_gtr`, `uslugi_aerofobia`, then public EI/event/news pages.
+
+
+## 2026-05-01T16:58:00+03:00 — Tilda remaining uslugi pages copied to staging
+
+- Project: `moon-psy-site`.
+- Workstream: `tilda-api-sync`.
+- Branch: `codex/tilda-api-sync`.
+- Request: continue copying the next published/live service pages from the original Moonn project into staging.
+- Strategic assessment:
+  - Platform value: high, because this completes the currently visible `uslugi_*` service batch in the staging mirror.
+  - Obsolescence risk: medium, because service pages should later be improved through a content/compliance workflow, not edited ad hoc in production.
+  - Stronger architecture: the copy workflow now includes a stricter publish-completion gate before live URL checks.
+  - Reuse: the same gate applies to all future Tilda page batches and reduces false 404 incidents.
+  - 3-12 month risk if skipped: staging would lag behind production on high-intent consultation pages and future edits could be tested against an incomplete mirror.
+- Eligibility check:
+  - `https://moonn.ru/uslugi_procrastination` returned `200`.
+  - `https://moonn.ru/uslugi_sohranit_brak` returned `200`.
+  - `https://moonn.ru/uslugi_razvod` returned `200`.
+  - `https://moonn.ru/uslugi_lubovnaya_zavisimost` returned `200`.
+  - `https://moonn.ru/uslugi_gtr` returned `200`.
+  - `https://moonn.ru/uslugi_aerofobia` returned `200`.
+- Actions:
+  - Copied and normalized six service pages:
+    - `63750667` -> `138685516`, alias `uslugi_procrastination`.
+    - `63752263` -> `138685686`, alias `uslugi_sohranit_brak`.
+    - `63755367` -> `138685886`, alias `uslugi_razvod`.
+    - `63757347` -> `138686066`, alias `uslugi_lubovnaya_zavisimost`.
+    - `63758713` -> `138686216`, alias `uslugi_gtr`.
+    - `63836583` -> `138686506`, alias `uslugi_aerofobia`.
+  - Published the `Moonn Staging` project and waited for Tilda's explicit `Все страницы опубликованы успешно` message.
+  - Verified the new public URLs through Browser Use after the publish-completion gate.
+  - Updated `registry/tilda/moonn-staging-page-map.json`.
+- Verified live staging URLs:
+  - `https://carry-pacific-flatfish.tilda.ws/uslugi_procrastination`
+  - `https://carry-pacific-flatfish.tilda.ws/uslugi_sohranit_brak`
+  - `https://carry-pacific-flatfish.tilda.ws/uslugi_razvod`
+  - `https://carry-pacific-flatfish.tilda.ws/uslugi_lubovnaya_zavisimost`
+  - `https://carry-pacific-flatfish.tilda.ws/uslugi_gtr`
+  - `https://carry-pacific-flatfish.tilda.ws/uslugi_aerofobia`
+- Incident note:
+  - Symptom: initial live checks returned intermittent `404`/`Tilda` titles for the new pages.
+  - Root cause: verification was started before Tilda completed the project publish job.
+  - Solution: wait for the explicit Tilda success text `Все страницы опубликованы успешно` before marking pages verified.
+  - Follow-up rule: every future Tilda batch must include a publish-completion gate, not just a fixed timeout after clicking publish.
+- Current copy state:
+  - Published production pages: 131.
+  - Copied and verified staging pages: 61.
+  - Pending staging pages: 70.
+- Follow-up priority:
+  - Continue with published article, EI knowledge-base, event/news, and legal/service pages; keep skipping unpublished/test-looking pages unless explicitly requested.

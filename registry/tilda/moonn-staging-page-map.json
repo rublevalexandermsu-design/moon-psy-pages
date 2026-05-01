@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-05-01T16:30:00+03:00",
+  "updated_at": "2026-05-01T16:58:00+03:00",
   "source_project_id": "8326812",
   "source_project_name": "Moonn.ru",
   "staging_project_id": "25075076",
   "staging_project_name": "Moonn Staging",
   "staging_base_url": "https://carry-pacific-flatfish.tilda.ws",
   "published_source_pages": 131,
-  "copied_pages": 55,
-  "pending_pages": 76,
+  "copied_pages": 61,
+  "pending_pages": 70,
   "tilda_known_limit_note": "Tilda page duplication has a daily new-page limit; copy remaining pages in batches and update this registry after each batch.",
   "pages": [
     {
@@ -843,73 +843,79 @@
       "source_project_id": "8326812",
       "staging_project_id": "25075076",
       "source_page_id": "63750667",
-      "staging_page_id": null,
+      "staging_page_id": "138685516",
       "title": "Прокрастинация: Почему мы откладываем дела на потом и как перестать это делать. Психолог МГУ Москва - Татьяна Мунн. Прием в кабинете и Онлайн",
       "alias": "uslugi_procrastination",
       "sort": 720,
       "published": "1740420954",
-      "status": "pending_copy",
-      "staging_url": null
+      "status": "copied_verified",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_procrastination",
+      "verified_at": "2026-05-01T16:58:00+03:00"
     },
     {
       "source_project_id": "8326812",
       "staging_project_id": "25075076",
       "source_page_id": "63752263",
-      "staging_page_id": null,
+      "staging_page_id": "138685686",
       "title": "Как сохранить брак: преодоление кризисов, восстановление доверия и искусство диалога. Психолог МГУ Москва - Татьяна Мунн. Прием в кабинете и Онлайн",
       "alias": "uslugi_sohranit_brak",
       "sort": 730,
       "published": "1740421094",
-      "status": "pending_copy",
-      "staging_url": null
+      "status": "copied_verified",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_sohranit_brak",
+      "verified_at": "2026-05-01T16:58:00+03:00"
     },
     {
       "source_project_id": "8326812",
       "staging_project_id": "25075076",
       "source_page_id": "63755367",
-      "staging_page_id": null,
+      "staging_page_id": "138685886",
       "title": "Помощь при расставании, измене, разводе. Психолог МГУ Москва - Татьяна Мунн. Прием в кабинете и Онлайн",
       "alias": "uslugi_razvod",
       "sort": 740,
       "published": "1740421176",
-      "status": "pending_copy",
-      "staging_url": null
+      "status": "copied_verified",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_razvod",
+      "verified_at": "2026-05-01T16:58:00+03:00"
     },
     {
       "source_project_id": "8326812",
       "staging_project_id": "25075076",
       "source_page_id": "63757347",
-      "staging_page_id": null,
+      "staging_page_id": "138686066",
       "title": "Любовные зависимости и привязанности. Психолог МГУ Москва - Татьяна Мунн. Прием в кабинете и Онлайн",
       "alias": "uslugi_lubovnaya_zavisimost",
       "sort": 750,
       "published": "1740421277",
-      "status": "pending_copy",
-      "staging_url": null
+      "status": "copied_verified",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_lubovnaya_zavisimost",
+      "verified_at": "2026-05-01T16:58:00+03:00"
     },
     {
       "source_project_id": "8326812",
       "staging_project_id": "25075076",
       "source_page_id": "63758713",
-      "staging_page_id": null,
+      "staging_page_id": "138686216",
       "title": "Тревожные расстройства: когда тревога становится болезнью. Психолог МГУ Москва - Татьяна Мунн. Прием в кабинете и Онлайн",
       "alias": "uslugi_gtr",
       "sort": 760,
       "published": "1740421405",
-      "status": "pending_copy",
-      "staging_url": null
+      "status": "copied_verified",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_gtr",
+      "verified_at": "2026-05-01T16:58:00+03:00"
     },
     {
       "source_project_id": "8326812",
       "staging_project_id": "25075076",
       "source_page_id": "63836583",
-      "staging_page_id": null,
+      "staging_page_id": "138686506",
       "title": "Аэрофобия Консультации по страху полётов (аэрофобия). Психолог МГУ Татьяна Мунн — автор метода “Быстрая психология”. ",
       "alias": "uslugi_aerofobia",
       "sort": 770,
       "published": "1760888887",
-      "status": "pending_copy",
-      "staging_url": null
+      "status": "copied_verified",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_aerofobia",
+      "verified_at": "2026-05-01T16:58:00+03:00"
     },
     {
       "source_project_id": "8326812",
