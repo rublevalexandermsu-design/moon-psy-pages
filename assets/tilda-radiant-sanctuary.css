@@ -1,0 +1,234 @@
+/*
+  Moonn Tilda theme pilot: Radiant Sanctuary
+  Scope: staging homepage first. Insert on a page as a <style> block or page-head CSS.
+  Source design packet: stitch_moonn.ru_modern_tilda_redesign (1).zip / DESIGN.md
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --moonn-surface: #fffafc;
+  --moonn-surface-low: #f8f1f8;
+  --moonn-surface-lowest: rgba(255, 255, 255, 0.84);
+  --moonn-surface-high: #f1e7f4;
+  --moonn-text: #21172a;
+  --moonn-muted: #6f6478;
+  --moonn-primary: #5a00a7;
+  --moonn-primary-soft: #7427c7;
+  --moonn-secondary: #b61759;
+  --moonn-accent: #ff7aa8;
+  --moonn-glass: rgba(255, 255, 255, 0.72);
+  --moonn-ghost: rgba(90, 0, 167, 0.15);
+  --moonn-shadow: 0 22px 64px rgba(90, 0, 167, 0.08);
+  --moonn-shadow-soft: 0 14px 44px rgba(33, 23, 42, 0.07);
+}
+
+html.moonn-radiant-sanctuary,
+html.moonn-radiant-sanctuary body {
+  color: var(--moonn-text);
+  background:
+    linear-gradient(135deg, rgba(90, 0, 167, 0.09), rgba(255, 122, 168, 0) 34%),
+    linear-gradient(225deg, rgba(182, 23, 89, 0.08), rgba(255, 250, 252, 0) 30%),
+    linear-gradient(180deg, #fffafc 0%, #f8f1f8 42%, #fff 100%);
+  font-family: "Plus Jakarta Sans", "Inter", "Segoe UI", Arial, sans-serif !important;
+  letter-spacing: 0;
+}
+
+html.moonn-radiant-sanctuary body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(110deg, rgba(90, 0, 167, 0.08), transparent 28%),
+    linear-gradient(290deg, rgba(255, 122, 168, 0.10), transparent 32%);
+  filter: blur(8px);
+  opacity: 0.88;
+}
+
+html.moonn-radiant-sanctuary .t-rec {
+  background-color: transparent !important;
+}
+
+html.moonn-radiant-sanctuary .t-rec:nth-of-type(odd) {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.70), rgba(248, 241, 248, 0.42)) !important;
+}
+
+html.moonn-radiant-sanctuary .t-container,
+html.moonn-radiant-sanctuary .t-container_flex {
+  max-width: min(1180px, calc(100vw - 32px));
+}
+
+html.moonn-radiant-sanctuary .t-title,
+html.moonn-radiant-sanctuary .t-name,
+html.moonn-radiant-sanctuary .tn-atom {
+  letter-spacing: 0 !important;
+}
+
+html.moonn-radiant-sanctuary .t-title,
+html.moonn-radiant-sanctuary .t-name_xl,
+html.moonn-radiant-sanctuary .t-name_lg {
+  color: var(--moonn-text) !important;
+  font-family: "Plus Jakarta Sans", "Inter", "Segoe UI", Arial, sans-serif !important;
+  font-weight: 800 !important;
+}
+
+html.moonn-radiant-sanctuary .t-descr,
+html.moonn-radiant-sanctuary .t-text,
+html.moonn-radiant-sanctuary .t-card__descr {
+  color: var(--moonn-muted) !important;
+  font-family: "Plus Jakarta Sans", "Inter", "Segoe UI", Arial, sans-serif !important;
+  line-height: 1.55 !important;
+}
+
+html.moonn-radiant-sanctuary .t-btn,
+html.moonn-radiant-sanctuary .t-btnflex,
+html.moonn-radiant-sanctuary .t1028__btn,
+html.moonn-radiant-sanctuary .tn-atom__button {
+  border: 0 !important;
+  border-radius: 999px !important;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.30), rgba(255, 255, 255, 0.06)),
+    linear-gradient(135deg, var(--moonn-primary), var(--moonn-secondary)) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.48),
+    0 16px 42px rgba(90, 0, 167, 0.18) !important;
+  color: #fff !important;
+  overflow: hidden;
+  text-decoration: none !important;
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease !important;
+}
+
+html.moonn-radiant-sanctuary .t-btn:hover,
+html.moonn-radiant-sanctuary .t-btnflex:hover,
+html.moonn-radiant-sanctuary .t1028__btn:hover,
+html.moonn-radiant-sanctuary .tn-atom__button:hover {
+  filter: brightness(1.06) saturate(1.05);
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.56),
+    0 22px 58px rgba(90, 0, 167, 0.23) !important;
+}
+
+html.moonn-radiant-sanctuary .t-btn *,
+html.moonn-radiant-sanctuary .t-btnflex *,
+html.moonn-radiant-sanctuary .t1028__btn *,
+html.moonn-radiant-sanctuary .tn-atom__button * {
+  color: #fff !important;
+}
+
+html.moonn-radiant-sanctuary .t-menu__link-item,
+html.moonn-radiant-sanctuary .t228__list_item a {
+  color: var(--moonn-text) !important;
+  border-radius: 999px;
+  padding: 8px 12px;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+html.moonn-radiant-sanctuary .t-menu__link-item:hover,
+html.moonn-radiant-sanctuary .t228__list_item a:hover {
+  background: rgba(90, 0, 167, 0.08);
+  color: var(--moonn-primary) !important;
+}
+
+html.moonn-radiant-sanctuary .t228,
+html.moonn-radiant-sanctuary .t456,
+html.moonn-radiant-sanctuary .t967,
+html.moonn-radiant-sanctuary .t450__container {
+  background: var(--moonn-glass) !important;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--moonn-shadow-soft);
+}
+
+html.moonn-radiant-sanctuary .t-card__col,
+html.moonn-radiant-sanctuary .t-item,
+html.moonn-radiant-sanctuary .t1000__feature,
+html.moonn-radiant-sanctuary .t908__item,
+html.moonn-radiant-sanctuary .t604__imgwrapper,
+html.moonn-radiant-sanctuary .t405__col,
+html.moonn-radiant-sanctuary .t670__wrapper {
+  border: 1px solid var(--moonn-ghost) !important;
+  border-radius: 24px !important;
+  background: var(--moonn-surface-lowest) !important;
+  box-shadow: var(--moonn-shadow-soft) !important;
+  overflow: hidden;
+}
+
+html.moonn-radiant-sanctuary .t-card__title,
+html.moonn-radiant-sanctuary .t405__title,
+html.moonn-radiant-sanctuary .t1000__title {
+  color: var(--moonn-text) !important;
+  font-weight: 800 !important;
+}
+
+html.moonn-radiant-sanctuary .t405__separator,
+html.moonn-radiant-sanctuary .t604__separator,
+html.moonn-radiant-sanctuary .t-divider,
+html.moonn-radiant-sanctuary hr {
+  opacity: 0 !important;
+}
+
+html.moonn-radiant-sanctuary input,
+html.moonn-radiant-sanctuary textarea,
+html.moonn-radiant-sanctuary select {
+  border: 1px solid rgba(90, 0, 167, 0.12) !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.82) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  color: var(--moonn-text) !important;
+}
+
+html.moonn-radiant-sanctuary textarea {
+  border-radius: 24px !important;
+}
+
+html.moonn-radiant-sanctuary input:focus,
+html.moonn-radiant-sanctuary textarea:focus,
+html.moonn-radiant-sanctuary select:focus {
+  outline: none !important;
+  border-color: rgba(90, 0, 167, 0.28) !important;
+  box-shadow: 0 0 0 5px rgba(90, 0, 167, 0.10) !important;
+}
+
+html.moonn-radiant-sanctuary .t-bgimg,
+html.moonn-radiant-sanctuary .t-img,
+html.moonn-radiant-sanctuary img {
+  filter: saturate(1.03) contrast(1.01);
+}
+
+html.moonn-radiant-sanctuary .t-slds__bullet_body {
+  background: rgba(90, 0, 167, 0.24) !important;
+}
+
+html.moonn-radiant-sanctuary .t-slds__bullet_active .t-slds__bullet_body {
+  background: var(--moonn-primary) !important;
+}
+
+html.moonn-radiant-sanctuary [data-elem-type="text"] .tn-atom {
+  color: inherit;
+}
+
+@media (max-width: 960px) {
+  html.moonn-radiant-sanctuary .t-container,
+  html.moonn-radiant-sanctuary .t-container_flex {
+    max-width: calc(100vw - 24px);
+  }
+
+  html.moonn-radiant-sanctuary .t-title {
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.moonn-radiant-sanctuary *,
+  html.moonn-radiant-sanctuary *::before,
+  html.moonn-radiant-sanctuary *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

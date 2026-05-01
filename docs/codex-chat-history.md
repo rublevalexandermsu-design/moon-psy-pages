@@ -729,3 +729,36 @@ Canonical append-only chat history for `moon-psy-site`.
   - Pending staging pages: 58.
 - Follow-up priority:
   - Continue with deeper EI and knowledge-base pages: `emotional-intelligence/knowledge-base/male-loneliness-russia`, `articles/eq-dlya-rukovoditeley`, `emotional-intelligence/ei-leader-12`, `personal-boundaries`, `active-listening`, `emotional-contagion`.
+
+
+## 2026-05-01T18:10:00+03:00 — Tilda Radiant Sanctuary design pilot prepared
+
+- Project: `moon-psy-site`.
+- Workstream: `staging-design-system` under `tilda-api-sync`.
+- Branch: `codex/tilda-api-sync`.
+- Request: inspect the uploaded redesign ZIP and start applying a unified design style to the staging homepage before rolling it out to copied pages.
+- Strategic assessment:
+  - Platform value: high, because a reusable Tilda theme layer can unify consultation, lecture, product, and knowledge-base pages.
+  - Obsolescence risk: medium, because a purely decorative redesign without a reusable theme contract would drift again across pages.
+  - Stronger architecture: create a canonical CSS theme and page-level pilot first, then roll out through a controlled QA workflow.
+  - Reuse: the same CSS theme can later be inserted page-by-page or promoted to site-level styling after approval.
+  - 3-12 month risk if skipped: pages will keep diverging visually, making future SEO/product/payment improvements harder to test and transfer.
+- Source design packet:
+  - `C:\Users\yanta\Downloads\stitch_moonn.ru_modern_tilda_redesign (1).zip`.
+  - Archive contains `DESIGN.md` only, not ready-to-upload assets.
+  - Design direction: `The Radiant Sanctuary`.
+- Actions:
+  - Extracted and reviewed `DESIGN.md`.
+  - Created canonical theme file `assets/tilda-radiant-sanctuary.css`.
+  - Created implementation note `docs/tilda-radiant-sanctuary.md`.
+  - Built a local preview from the published staging homepage at `output/tilda-design-preview/index.html`.
+  - Opened local preview in Browser Use at `http://127.0.0.1:8788/` and confirmed the homepage DOM/content still loads.
+  - Located the Tilda insertion point for the staging homepage:
+    - Page id: `138660066`.
+    - Tilda path: `Настройки страницы -> Дополнительно -> Html-код для вставки внутрь HEAD -> Редактировать код`.
+- Boundary:
+  - No Tilda page was modified in this step.
+  - No production project was touched.
+  - Before actual insertion and staging publication, an explicit action-time confirmation is required because it modifies a public staging page.
+- Next step:
+  - After confirmation, insert the theme snippet into the staging homepage HEAD, publish only `Moonn Staging`, then verify desktop/mobile rendering and links.
