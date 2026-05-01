@@ -793,6 +793,41 @@ Canonical append-only chat history for `moon-psy-site`.
   - Production `moonn.ru` was not changed.
 
 
+## 2026-05-01T19:25:00+03:00 — Homepage SEO/AEO pilot manifest for Moonn staging
+
+- Project: `moon-psy-site`.
+- Workstream: `seo-aeo-retrofit`.
+- Branch: `codex/tilda-api-sync`.
+- Request: start the second task after the Tilda visual rollout: maximize SEO/AEO for 2026, first on the homepage, then scale context-specific SEO across all copied pages; include image SEO, metadata, query/indexing analysis, and a plan for why pages are or are not found.
+- Strategic assessment:
+  - Platform value: high, because the homepage is the routing hub for consultations, lectures, paid products, and the knowledge base.
+  - Obsolescence risk: high if one generic SEO template is reused across all pages.
+  - Stronger architecture: page-specific SEO/AEO manifests with schema.org, image maps, heading plans, canonical rules, and QA gates.
+  - Reuse: the manifest pattern can scale to all copied staging pages.
+  - 3-12 month risk if skipped: duplicate metadata, weak entity signals, poor image SEO, and no reliable way to diagnose indexing.
+- Verified facts:
+  - Production homepage is live at `https://moonn.ru/`.
+  - Staging homepage is live at `https://carry-pacific-flatfish.tilda.ws/` and intentionally has `noindex,nofollow`.
+  - Current homepage has no JSON-LD.
+  - Current heading structure has multiple H1 section headings and no detected H2 headings in the sampled DOM.
+  - Most meaningful homepage images have empty `alt`; current `og:image` uses a weak Tilda CDN filename `___.jpg`.
+  - Public search can show partial brand coverage, but real query frequency, CTR, and index exclusion reasons require Google Search Console and Yandex Webmaster.
+- Created or changed files:
+  - `registry/seo/moonn-homepage-seo-aeo-2026.json`
+  - `docs/seo/moonn-homepage-seo-aeo-pilot.md`
+  - `docs/seo/moonn-homepage-jsonld-draft.html`
+  - `assets/images/tatiana-munn-psiholog-mgu-moscow-consultation.webp`
+- Decisions:
+  - Keep staging pages `noindex,nofollow` during SEO testing to avoid duplicate indexation.
+  - Avoid guarantee-like wording and medical-status ambiguity in SEO metadata unless credentials and legal wording are confirmed.
+  - Do not add FAQ or Review schema until visible page content and review sources are verified.
+- Open questions:
+  - Need Google Search Console and Yandex Webmaster access or exports for real query and indexing diagnostics.
+  - Need confirmation before inserting the SEO pilot into the Tilda staging homepage and publishing it.
+- Boundary:
+  - Production `moonn.ru` was not changed.
+
+
 ## 2026-05-01T19:13:04+03:00 — All copied Tilda pages audited for card/grid regression
 
 - Project: `moon-psy-site`.

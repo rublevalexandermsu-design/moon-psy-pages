@@ -1,0 +1,190 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-05-01T19:20:00+03:00",
+  "project": "moon-psy-site",
+  "workstream": "seo-aeo-retrofit",
+  "page": {
+    "type": "homepage",
+    "production_url": "https://moonn.ru/",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/",
+    "tilda_staging_project_id": "25075076",
+    "tilda_staging_page_id": "138660066",
+    "production_project_id": "8326812"
+  },
+  "source_boundary": {
+    "production_edit_allowed": false,
+    "staging_edit_allowed_after_confirmation": true,
+    "staging_indexing_policy": "keep_noindex_nofollow_until_final_production_transfer"
+  },
+  "current_audit": {
+    "checked_at": "2026-05-01T19:05:00+03:00",
+    "production": {
+      "http_status": 200,
+      "title": "Психолог МГУ в Москве - Татьяна Мунн. Быстрая Психология (Психотерапия). г.Москва moonn.ru",
+      "description": "Татьяна Мунн - Дипломированный Психолог МГУ. Москва. Онлайн. Очно. Кабинет. Быстрый результат за 1-3 встречи. Цена. Хороший частный психолог для подростков и взрослых",
+      "canonical": "https://moonn.ru",
+      "json_ld_count": 0,
+      "image_count": 55,
+      "robots": ""
+    },
+    "staging": {
+      "http_status": 200,
+      "title": "Психолог МГУ в Москве - Татьяна Мунн. Быстрая Психология (Психотерапия). г.Москва moonn.ru",
+      "description": "Татьяна Мунн - Дипломированный Психолог МГУ. Москва. Онлайн. Очно. Кабинет. Быстрый результат за 1-3 встречи. Цена. Хороший частный психолог для подростков и взрослых",
+      "canonical": "https://carry-pacific-flatfish.tilda.ws",
+      "json_ld_count": 0,
+      "image_count": 54,
+      "robots": "noindex,nofollow"
+    },
+    "structural_issues": [
+      "Hero/main offer is not represented as the primary H1.",
+      "Multiple H1 headings are used for section titles.",
+      "No H2 headings were detected in the sampled homepage DOM.",
+      "Most meaningful images have empty alt attributes.",
+      "Open Graph image uses a weak Tilda CDN filename: ___.jpg.",
+      "Several internal/external links contain malformed hrefs such as https://moonn.ru/http://..."
+    ]
+  },
+  "search_intent_map": {
+    "brand": [
+      "Татьяна Мунн",
+      "Татьяна Мунн психолог",
+      "Татьяна Мунн отзывы",
+      "Татьяна Мунн МГУ психолог"
+    ],
+    "service_local": [
+      "психолог МГУ Москва",
+      "психолог в Москве",
+      "консультация психолога Москва",
+      "психолог онлайн",
+      "психолог для подростка Москва",
+      "семейный психолог Москва"
+    ],
+    "expertise_and_aeo": [
+      "эмоциональный интеллект психолог",
+      "психология эмоций",
+      "как справиться со стрессом",
+      "как справиться с выгоранием",
+      "конфликты на работе психолог",
+      "быстрая психология"
+    ]
+  },
+  "target_metadata": {
+    "title": "Психолог МГУ Татьяна Мунн в Москве | быстрая психология",
+    "description": "Татьяна Мунн — психолог МГУ в Москве. Индивидуальные консультации онлайн и в кабинете: стресс, выгорание, отношения, эмоции и эмоциональный интеллект.",
+    "canonical_production": "https://moonn.ru/",
+    "canonical_staging": "https://carry-pacific-flatfish.tilda.ws/",
+    "robots_staging": "noindex,nofollow",
+    "robots_production": "index,follow",
+    "open_graph": {
+      "og_type": "website",
+      "og_url": "https://moonn.ru/",
+      "og_title": "Психолог МГУ Татьяна Мунн в Москве",
+      "og_description": "Консультации психолога онлайн и в Москве: эмоции, стресс, выгорание, отношения и эмоциональный интеллект.",
+      "og_image_asset": "assets/images/tatiana-munn-psiholog-mgu-moscow-consultation.webp",
+      "og_image_cdn_draft": "https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@codex/tilda-api-sync/assets/images/tatiana-munn-psiholog-mgu-moscow-consultation.webp",
+      "og_image_production_rule": "Pin to an immutable commit URL before production transfer.",
+      "og_image_alt": "Татьяна Мунн, психолог МГУ в Москве"
+    }
+  },
+  "heading_plan": {
+    "h1": "Психолог МГУ Татьяна Мунн в Москве",
+    "h2": [
+      "Индивидуальные консультации",
+      "Эмоциональный интеллект и психология эмоций",
+      "Лекции, выступления и корпоративные программы",
+      "Стоимость и форматы работы",
+      "Отзывы и доверие",
+      "База знаний по эмоциональному интеллекту"
+    ],
+    "demote_current_h1_sections": [
+      "ТЕМЫ ЛЕКЦИЙ, КОТОРЫЕ Я ЧИТАЮ",
+      "ТЕМЫ ЛЕКЦИЙ, КОТОРЫЕ ЧИТАЮ",
+      "ОБРАЗОВАНИЕ - МГУ",
+      "психолог Татьяна Мунн рекомендует",
+      "Яндекс-Услуги"
+    ]
+  },
+  "image_plan": {
+    "primary_asset": {
+      "path": "assets/images/tatiana-munn-psiholog-mgu-moscow-consultation.webp",
+      "source": "Tilda CDN homepage portrait asset from the owned Moonn site",
+      "target_use": [
+        "og:image",
+        "schema.org image",
+        "primary page image where Tilda upload allows replacement"
+      ],
+      "alt": "Татьяна Мунн, психолог МГУ в Москве",
+      "visible_caption": "Психолог Татьяна Мунн"
+    },
+    "rules": [
+      "Use Latin filenames only.",
+      "Keep hidden marketing tokens out of visible page text.",
+      "Use concise descriptive alt text for meaningful images and empty alt for decorative gradients.",
+      "Prefer WebP for generated/owned replacements, but do not break existing Tilda image rendering.",
+      "For mass rollout, map each Tilda CDN image to a stable SEO filename before replacing it."
+    ]
+  },
+  "structured_data_plan": {
+    "entities": [
+      "WebSite",
+      "WebPage",
+      "Person",
+      "ProfessionalService",
+      "OfferCatalog",
+      "BreadcrumbList"
+    ],
+    "deferred_entities": [
+      {
+        "type": "FAQPage",
+        "reason": "Add only after FAQ questions are visible on the page or inserted as real visible content."
+      },
+      {
+        "type": "Review",
+        "reason": "Add only for verified reviews shown on-page and compliant with platform/search guidelines."
+      }
+    ]
+  },
+  "indexation_data_needed": {
+    "required_for_true_query_analysis": [
+      "Google Search Console performance export for moonn.ru",
+      "Google Search Console page indexing report",
+      "Yandex Webmaster search queries and indexing diagnostics",
+      "Yandex Metrica or GA4 traffic and event data",
+      "Tilda forms/click goals or connected analytics goals"
+    ],
+    "public_search_is_not_enough_for": [
+      "real query frequencies",
+      "impressions",
+      "CTR",
+      "crawl/index exclusion causes",
+      "button click popularity"
+    ]
+  },
+  "implementation_checklist": [
+    "Keep staging noindex while testing.",
+    "Update page SEO title and description in Tilda page settings.",
+    "Add page-level JSON-LD in Tilda HEAD for the homepage only.",
+    "Set social preview image/title/description using the SEO-named asset.",
+    "Fix primary H1/H2 hierarchy in page content.",
+    "Add alt text to meaningful homepage images.",
+    "Fix malformed links before production transfer.",
+    "Run browser QA and source-code validation after publish.",
+    "Only then repeat the manifest pattern for copied pages."
+  ],
+  "compliance_gate": {
+    "status": "pilot_draft_not_publicly_applied",
+    "risk_flags": [
+      "psychology and wellbeing service claims",
+      "possible guarantee-like wording in current metadata",
+      "possible ambiguity between psychology and medical psychotherapy claims"
+    ],
+    "draft_decision": "Avoid guarantee-like phrases and avoid medical-status wording unless credentials and legal wording are confirmed."
+  },
+  "sources": [
+    "https://developers.google.com/search/docs/appearance/title-link",
+    "https://developers.google.com/search/docs/appearance/google-images",
+    "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data",
+    "https://help.tilda.cc/search-engine"
+  ]
+}
