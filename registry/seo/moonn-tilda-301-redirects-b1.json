@@ -12,9 +12,25 @@
     "format_rule": "Use paths without domain, beginning with slash.",
     "constraint": "Tilda 301 redirects work only from non-existent pages and within the same domain. Existing pages require canonical/page edits or T223, not 301."
   },
-  "status": "prepared_not_applied",
+  "status": "applied_propagating_partial",
   "production_change_required": true,
   "production_confirmation": "User said `да сделай`; direct production application still depends on available Tilda UI access because documented Tilda API is read/export-oriented.",
+  "applied_at": "2026-05-01T21:44:00+03:00",
+  "applied_in_tilda_ui": true,
+  "additional_ui_rule_added": {
+    "old_path": "/http:*",
+    "new_path": "/psiholog-konsultacii-moskva",
+    "reason": "Fallback attempt for internalized external http URLs after exact `/http://wa.me/+79777770303` did not verify live. As of the verification batch, this malformed WhatsApp URL still returns 404 and should be fixed primarily at source-link level."
+  },
+  "live_verification": {
+    "checked_at": "2026-05-01T21:50:00+03:00",
+    "method": "curl -I, 8 attempts per old path, recording x-tilda-server",
+    "summary_artifact": "tmp_tilda_redirect_verify_summary.json",
+    "state": "8 redirect rules are visible on at least some Tilda servers and appear to be propagating; the malformed WhatsApp URL is not verified and still returns 404.",
+    "verified_or_propagating_count": 8,
+    "not_verified_count": 1,
+    "do_not_validate_gsc_yet": true
+  },
   "redirects": [
     {
       "id": "R-404-001",

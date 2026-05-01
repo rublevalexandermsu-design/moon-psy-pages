@@ -5,6 +5,8 @@ dist/
 output/
 artifacts/
 tmp_*.png
+tmp_*.json
+tmp_*.txt
 __pycache__/
 .DS_Store
 

@@ -8,7 +8,7 @@ Workstream: `seo-aeo-retrofit`
 
 This is the first executable remediation batch from the GSC URL decision table. It focuses on URLs that Google reports as `Not found (404)` and one additional crawled old EI slug that also returns 404.
 
-No production Tilda settings were changed while preparing this packet.
+The production Tilda redirect settings were changed on 2026-05-01 after explicit user approval in the Codex thread.
 
 ## Tilda 301 Entries
 
@@ -37,6 +37,12 @@ Paste/add these rows:
 
 CSV source: `registry/seo/moonn-tilda-301-redirects-b1.csv`.
 
+Additional fallback rule added in Tilda UI:
+
+| Old path | New path | Status |
+| --- | --- | --- |
+| `/http:*` | `/psiholog-konsultacii-moskva` | Attempted fallback for malformed internalized external URLs; not verified for the WhatsApp 404 as of the first live check. |
+
 ## Source Link Fixes
 
 Redirects are not enough for the WhatsApp issue. The source Tilda links also need cleanup:
@@ -51,8 +57,25 @@ Snapshot search did not find a current source reference for `https://moonn.ru/st
 
 ## After Applying In Tilda
 
-1. Publish the production project.
-2. Re-check every old path for redirect behavior.
-3. Crawl for `moonn.ru/http://wa.me`, `http://wa.me/`, `http://.moonn.ru`, and `moonn.ru/static.tildacdn.com`.
-4. Only after live checks pass, validate the GSC 404 group.
+Applied in Tilda UI: 2026-05-01T21:44:00+03:00.
 
+Live verification batch: 2026-05-01T21:50:00+03:00, `curl -I`, 8 attempts per old path, recording `x-tilda-server`.
+
+| Old path | Result |
+| --- | --- |
+| `/emotionalnaya-vygoranie` | Propagating: some Tilda servers return 301 to `/emotional-intelligence/knowledge-base/burnout`, some still return 404. |
+| `/zaprocy` | Propagating: some Tilda servers return 301 to `/page120952796.html`, some still return 404. |
+| `/zaprocy.html` | Propagating: some Tilda servers return 301 to `/page120952796.html`, some still return 404. |
+| `/bystraya-psihologiya.html` | Propagating: some Tilda servers return 301 to `/page120899276.html`, some still return 404. |
+| `/leksii.html` | Propagating: some Tilda servers return 301 to `/lectures1`, some still return 404. |
+| `/kurs-duhovnoy-psihologii.html` | Propagating: some Tilda servers return 301 to `/platnye-treningi-seminary-programmy-tatiana-moonn`, some still return 404. |
+| `/podrostki.html` | Propagating: most sampled Tilda servers return 301 to `/uslugi_podrostki`; one sampled server still returned 404. |
+| `/emotional-intelligence/articles/why-it-matters` | Propagating: most sampled Tilda servers return 301 to `/emotional-intelligence/articles/why-ei-matters`; one sampled server still returned 404. |
+| `/http://wa.me/+79777770303` | Not verified: still returns 404. Tilda exact and wildcard redirect rules did not fix this malformed URL class; source links must be fixed in Tilda content blocks. |
+
+Next gates:
+
+1. Re-check this batch after Tilda cache propagation.
+2. Fix source links in Tilda blocks: `http://wa.me/+79777770303`, `http://wa.me/79777770303`, and `http://.moonn.ru`.
+3. Crawl for `moonn.ru/http://wa.me`, `http://wa.me/`, `http://.moonn.ru`, and `moonn.ru/static.tildacdn.com`.
+4. Only after stable live checks pass, validate the GSC 404 group.

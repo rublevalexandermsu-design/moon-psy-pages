@@ -793,6 +793,43 @@ Canonical append-only chat history for `moon-psy-site`.
   - Production `moonn.ru` was not changed.
 
 
+## 2026-05-01T21:50:00+03:00 — Moonn GSC 404 redirect packet applied in Tilda
+
+- Project: `moon-psy-site`.
+- Workstream: `seo-aeo-retrofit` under `tilda-api-sync`.
+- Branch: `codex/tilda-api-sync`.
+- Request: apply the prepared GSC 404 Tilda redirect batch and verify live behavior before moving to GSC validation.
+- Strategic assessment:
+  - Platform value: high, because real GSC 404s now have a tracked remediation path instead of ad hoc page fixes.
+  - Obsolescence risk: low for 301 remediation, but high if the source-link cleanup is skipped.
+  - Stronger architecture: keep a URL decision table, executable Tilda redirect packet, source-link fix packet, and live verification artifact.
+  - Reuse: the same batch model can be reused for the remaining Moonn pages and other Tilda projects.
+  - 3-12 month risk if skipped: broken URLs keep leaking crawl budget, users hit dead pages, and GSC validation would be premature.
+- Actions:
+  - Added the 9 prepared redirect rows in Tilda production project `8326812`.
+  - Saved the Tilda redirect settings.
+  - Added fallback rule `/http:*` -> `/psiholog-konsultacii-moskva` after the malformed WhatsApp URL did not verify through the exact rule.
+- Verification:
+  - Ran `curl -I` live checks against `https://moonn.ru`.
+  - 8 redirect rules returned valid 301 on at least some sampled Tilda servers and are in `propagating_partial` state.
+  - `/http://wa.me/+79777770303` remained 404 in all sampled attempts; source-link cleanup is required.
+  - GSC validation was not started because live checks are not stable on every sampled server yet.
+- Changed files:
+  - `registry/seo/moonn-tilda-301-redirects-b1.json`
+  - `docs/seo/moonn-tilda-404-remediation-b1.md`
+- Artifacts:
+  - `tmp_tilda_redirect_verify_summary.json`
+  - `tmp_tilda_redirect_verify_attempts.json`
+- Incident:
+  - Symptom: initial UI automation clicked `Добавить` with empty fields because clipboard typing did not populate Tilda inputs, and an early `Сохранить` click hit the wrong active Chrome window.
+  - Root cause: Tilda inputs required UIA `set_edit_text`; multiple overlapping Chrome windows made coordinate-only saving unreliable.
+  - Solution: use UIA field setting for Tilda forms, verify rows are visible in the redirect list, scroll to the visible save button, then verify live HTTP results.
+  - Follow-up rule: for production Tilda settings, do not trust form automation until rows are visible in the settings list and live HTTP checks confirm behavior.
+- Open follow-up:
+  - Re-check after Tilda cache propagation.
+  - Fix source links for `http://wa.me/+79777770303`, `http://wa.me/79777770303`, and `http://.moonn.ru`.
+
+
 ## 2026-05-01T21:15:02+03:00 — GSC URL decision table created for Moonn SEO fixes
 
 - Project: `moon-psy-site`.
