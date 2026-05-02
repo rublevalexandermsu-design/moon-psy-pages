@@ -1593,3 +1593,29 @@ Canonical append-only chat history for `moon-psy-site`.
   - Design marker present: `73`.
   - Schema/AEO JSON-LD live completion: not complete; current audit still shows schema missing in live HTML.
   - Remaining SEO backlog still includes source-link cleanup, duplicate metadata, H1/H2 normalization, image alt text, and page-specific schema once a reliable save path is proven.
+
+## 2026-05-02T16:25:00+03:00 — Production 73-page final status recorded
+
+- Project: `moon-psy-site`.
+- Workstream: `Moonn production SEO/design rollout`.
+- Branch: `codex/tilda-api-sync`.
+- Request: if anything remains from SEO/design for the original `73` pages, finish what can be finished and report what remains.
+- Actions:
+  - Re-ran the production live audit with `scripts/seo_audit_production_73.py`.
+  - Created final status artifact: `docs/seo/moonn-production-73-final-status-2026-05-02.md`.
+- Verified facts:
+  - Production pages in scope: `73`.
+  - Live `200 OK`: `73`.
+  - Errors: `0`.
+  - Production design missing: `0`.
+  - Schema missing in live HTML: `73`.
+  - JSON-LD missing in live HTML: `72`.
+  - Pages with bad source links: `44`.
+  - Heading issue pages: `53`.
+  - Image alt issue pages: `73`.
+  - Duplicate title groups: `1`.
+  - Duplicate description groups: `4`.
+- Decision:
+  - Design is complete for the production `73`.
+  - SEO is not complete and should not be reported as complete.
+  - The next safe production task is source-link cleanup in real Tilda blocks, verified by live HTML counters, then headings/alt/native metadata.
