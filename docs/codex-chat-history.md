@@ -2,6 +2,37 @@
 
 Canonical append-only chat history for `moon-psy-site`.
 
+## 2026-05-02T11:10:00+03:00 — Staging source-link audit and batch gate created
+
+- Project: `moon-psy-site`.
+- Workstream: `Moonn SEO / source-link cleanup`.
+- Branch: `codex/tilda-api-sync`.
+- Request: continue source-link cleanup, keep actions recorded, test on copied Tilda pages first, then apply the same operation to original pages.
+- Actions:
+  - Exported the staging Tilda project into `output/tilda-staging-link-check`.
+  - Added reusable script `scripts/tilda_link_issue_audit.py`.
+  - Generated `registry/seo/moonn-staging-source-link-audit-b1.json`.
+  - Generated `docs/seo/moonn-staging-source-link-cleanup-b1.md`.
+  - Checked official Tilda API documentation and confirmed the documented API is read/export/webhook oriented, not block-edit oriented.
+- Verification:
+  - Staging pages checked: `148`.
+  - Staging pages with known link issues: `60`.
+  - `http://wa.me/79777770303`: `90` occurrences.
+  - `http://.moonn.ru`: `39` occurrences.
+  - `http://wa.me/+79777770303`: `0` occurrences on staging.
+  - `/http://wa.me/+79777770303`: `0` occurrences on staging.
+- Decision:
+  - Use staging as the safe batch gate for P1 source cleanup.
+  - Do not apply production P1 fixes until the staging batch has a clean API-export verification.
+- Incident:
+  - Symptom: while preparing the first staging UI edit, manual pointer automation switched focus to an unrelated Chrome/Timepad tab.
+  - Root cause: the visible Chrome session contains several active tabs/windows, and coordinate-based clicks are too easy to misroute during mass Tilda edits.
+  - Follow-up rule: before mass Tilda UI edits, open a dedicated Chrome window/tab for one Tilda project and verify the address/project breadcrumb before every save/publish action.
+- Remaining work:
+  - Execute the first staging UI batch from `docs/seo/moonn-staging-source-link-cleanup-b1.md`.
+  - Re-export the edited pages and require old-pattern counters to become `0`.
+  - Then repeat the same verified pattern on production pages.
+
 ## 2026-05-02T08:45:00+03:00 — Homepage WhatsApp source-link 404 fixed in production Tilda
 
 - Project: `moon-psy-site`.

@@ -1,0 +1,1695 @@
+{
+  "schema_version": "1.0",
+  "patterns": {
+    "http_wa": {
+      "pattern": "http://wa.me/79777770303",
+      "replacement": "https://wa.me/79777770303",
+      "priority": "P1"
+    },
+    "bad_domain": {
+      "pattern": "http://.moonn.ru",
+      "replacement": "https://moonn.ru",
+      "priority": "P1"
+    },
+    "bad_plus_wa": {
+      "pattern": "http://wa.me/+79777770303",
+      "replacement": "https://wa.me/79777770303",
+      "priority": "P0"
+    },
+    "internalized_bad_plus_wa": {
+      "pattern": "/http://wa.me/+79777770303",
+      "replacement": "https://wa.me/79777770303",
+      "priority": "P0"
+    }
+  },
+  "pages_checked": 148,
+  "pages_with_issues": 60,
+  "totals": {
+    "http_wa": 90,
+    "bad_domain": 39,
+    "bad_plus_wa": 0,
+    "internalized_bad_plus_wa": 0
+  },
+  "items": [
+    {
+      "filename": "abuse_gaslight.html",
+      "source_page_id": "63684093",
+      "staging_page_id": "138694136",
+      "alias": "abuse_gaslight",
+      "title": "Статья - Абьюзинг и газлайтинг: в чем суть и отличия. Психолог Татьяна Мунн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/abuse_gaslight",
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "869774909",
+          "869774910",
+          "869804304",
+          "869910615",
+          "869912085"
+        ],
+        "bad_domain": [
+          "869774909",
+          "869774910",
+          "869804304",
+          "869910615",
+          "869912085"
+        ]
+      }
+    },
+    {
+      "filename": "article_diary_of_emotions.html",
+      "source_page_id": "62966623",
+      "staging_page_id": "138691296",
+      "alias": "article_diary_of_emotions",
+      "title": "Статья - Как вести Дневник Эмоций. Психолог Татьяна Мунн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/article_diary_of_emotions",
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "864005794",
+          "864005795",
+          "864005796",
+          "869832081"
+        ],
+        "bad_domain": [
+          "864005794",
+          "864005795",
+          "864005796",
+          "869832081"
+        ]
+      }
+    },
+    {
+      "filename": "article_femininity.html",
+      "source_page_id": "64057747",
+      "staging_page_id": "138694396",
+      "alias": "article_femininity",
+      "title": "Статья - Потеря женственности в отношениях. внутренние и внешние факторы. Психолог Татьяна Мунн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/article_femininity",
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "873459214",
+          "873459220",
+          "873459226",
+          "873459241",
+          "873459244"
+        ],
+        "bad_domain": [
+          "873459220",
+          "873459226",
+          "873459241",
+          "873459244"
+        ]
+      }
+    },
+    {
+      "filename": "article_gadget_addiction.html",
+      "source_page_id": "63692311",
+      "staging_page_id": "138694256",
+      "alias": "article_gadget_addiction",
+      "title": "Статья - Зависимость подростков от гаджетов и социальных сетей: причины, последствия и пути решения. Психолог Татьяна Мунн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/article_gadget_addiction",
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "869845874",
+          "869845875",
+          "869889697"
+        ],
+        "bad_domain": [
+          "869845874",
+          "869845875",
+          "869889697"
+        ]
+      }
+    },
+    {
+      "filename": "article_toxic_job.html",
+      "source_page_id": "64061157",
+      "staging_page_id": "138694546",
+      "alias": "article_toxic_job",
+      "title": "Статья - Как справиться с негативными эмоциями других людей на работе. Психолог Татьяна Мунн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/article_toxic_job",
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "873550459",
+          "873550468",
+          "873550471",
+          "873602806",
+          "873604108"
+        ],
+        "bad_domain": [
+          "873550459",
+          "873550468",
+          "873550471",
+          "873602806",
+          "873604108"
+        ]
+      }
+    },
+    {
+      "filename": "articles__eq-dlya-rukovoditeley.html",
+      "source_page_id": null,
+      "staging_page_id": null,
+      "alias": null,
+      "title": null,
+      "staging_url": null,
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "1564665311",
+          "1564665321"
+        ],
+        "bad_domain": [
+          "1564665311",
+          "1564665321"
+        ]
+      }
+    },
+    {
+      "filename": "baza-znaniy-emocionalnyy-intellekt-psihologiya.html",
+      "source_page_id": "135534246",
+      "staging_page_id": "138662406",
+      "alias": "baza-znaniy-emocionalnyy-intellekt-psihologiya",
+      "title": "Полезная информация по психологии, эмоциональному интеллекту - книги, статьи, видео, ссылки. Психолог Татьяна Мунн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/baza-znaniy-emocionalnyy-intellekt-psihologiya",
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 0,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "2175171681"
+        ]
+      }
+    },
+    {
+      "filename": "eintellect.html",
+      "source_page_id": "63574637",
+      "staging_page_id": "138693676",
+      "alias": "eintellect",
+      "title": "Эмоциональный интеллект: Как стать хозяином своих эмоций и улучшить качество жизни. Психолог Татьяна Мунн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/eintellect",
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "868889465",
+          "868889471",
+          "868889472",
+          "868936418"
+        ],
+        "bad_domain": [
+          "868889465",
+          "868889471",
+          "868889472",
+          "868936418"
+        ]
+      }
+    },
+    {
+      "filename": "emotional-intelligence__knowledge-base__male-loneliness-russia.html",
+      "source_page_id": null,
+      "staging_page_id": null,
+      "alias": null,
+      "title": null,
+      "staging_url": null,
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "1564559301",
+          "1564559311"
+        ],
+        "bad_domain": [
+          "1564559301",
+          "1564559311"
+        ]
+      }
+    },
+    {
+      "filename": "events.html",
+      "source_page_id": "53668815",
+      "staging_page_id": "138665336",
+      "alias": "events",
+      "title": "Психолог Татьяна Мунн - ближайшие мероприятия. Бесплатные лекции по психологии.",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/events",
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 0,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "787864694",
+          "787864695",
+          "787880404"
+        ]
+      }
+    },
+    {
+      "filename": "geshtalt.html",
+      "source_page_id": "63388057",
+      "staging_page_id": "138682696",
+      "alias": "geshtalt",
+      "title": "Гештальт-терапия: путь к гармонии через осознанность и принятие. Психолог Татьяна Мунн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/geshtalt",
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "867367910",
+          "867367911",
+          "867367913",
+          "867367914"
+        ],
+        "bad_domain": [
+          "867367910",
+          "867367911",
+          "867367913",
+          "867367914"
+        ]
+      }
+    },
+    {
+      "filename": "kabinet-psihologa-v-moskve.html",
+      "source_page_id": null,
+      "staging_page_id": null,
+      "alias": null,
+      "title": null,
+      "staging_url": null,
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 0,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "1870114541",
+          "1870114551",
+          "1870114561",
+          "1870114571",
+          "1870114581",
+          "1870114591"
+        ]
+      }
+    },
+    {
+      "filename": "kpt.html",
+      "source_page_id": "63403669",
+      "staging_page_id": "138682206",
+      "alias": "kpt",
+      "title": "Когнитивно-поведенческая терапия: что это такое и как это работает. Психолог Татьяна Мунн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/kpt",
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "867494323",
+          "867494324",
+          "867494325",
+          "867494326",
+          "867494327"
+        ],
+        "bad_domain": [
+          "867494323",
+          "867494324",
+          "867494325",
+          "867494326",
+          "867494327"
+        ]
+      }
+    },
+    {
+      "filename": "lectures1.html",
+      "source_page_id": "68295899",
+      "staging_page_id": "138665516",
+      "alias": "lectures1",
+      "title": " Лекции по ПСИХОЛОГИИ от Татьяны Мунн (МГУ)",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/lectures1",
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 0,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "1006417701",
+          "1012490386",
+          "1164515361"
+        ]
+      }
+    },
+    {
+      "filename": "otzivi.html",
+      "source_page_id": "81167556",
+      "staging_page_id": "138677976",
+      "alias": "otzivi",
+      "title": "Татьяна Мунн. Психолог. ОТЗЫВЫ",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/otzivi",
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 0,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "1352757161",
+          "1353045131"
+        ]
+      }
+    },
+    {
+      "filename": "page53913787.html",
+      "source_page_id": null,
+      "staging_page_id": null,
+      "alias": null,
+      "title": null,
+      "staging_url": null,
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 0,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "1611383991",
+          "789965757"
+        ]
+      }
+    },
+    {
+      "filename": "page62951593.html",
+      "source_page_id": null,
+      "staging_page_id": null,
+      "alias": null,
+      "title": null,
+      "staging_url": null,
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "863884210",
+          "863884211",
+          "863894019"
+        ],
+        "bad_domain": [
+          "863884210",
+          "863884211",
+          "863894019"
+        ]
+      }
+    },
+    {
+      "filename": "page62953471.html",
+      "source_page_id": null,
+      "staging_page_id": null,
+      "alias": null,
+      "title": null,
+      "staging_url": null,
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "863898726",
+          "863898727",
+          "863898730",
+          "863910260"
+        ],
+        "bad_domain": [
+          "863898727",
+          "863898730",
+          "863910260"
+        ]
+      }
+    },
+    {
+      "filename": "page62956267.html",
+      "source_page_id": null,
+      "staging_page_id": null,
+      "alias": null,
+      "title": null,
+      "staging_url": null,
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "863922289",
+          "863922290",
+          "863922291",
+          "863939459"
+        ],
+        "bad_domain": [
+          "863922289",
+          "863922290",
+          "863922291",
+          "863939459"
+        ]
+      }
+    },
+    {
+      "filename": "page62959307.html",
+      "source_page_id": null,
+      "staging_page_id": null,
+      "alias": null,
+      "title": null,
+      "staging_url": null,
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "863947432",
+          "863947433",
+          "863947434",
+          "863947435",
+          "863956090"
+        ],
+        "bad_domain": [
+          "863947432",
+          "863947433",
+          "863947434",
+          "863947435",
+          "863956090"
+        ]
+      }
+    },
+    {
+      "filename": "page62962631.html",
+      "source_page_id": null,
+      "staging_page_id": null,
+      "alias": null,
+      "title": null,
+      "staging_url": null,
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "863973565",
+          "863973567",
+          "863973569",
+          "863973571"
+        ],
+        "bad_domain": [
+          "863973565",
+          "863973567",
+          "863973569",
+          "863973571"
+        ]
+      }
+    },
+    {
+      "filename": "page62964151.html",
+      "source_page_id": null,
+      "staging_page_id": null,
+      "alias": null,
+      "title": null,
+      "staging_url": null,
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "863985769",
+          "863985770",
+          "863985771",
+          "863985772"
+        ],
+        "bad_domain": [
+          "863985769",
+          "863985770",
+          "863985771",
+          "863985772"
+        ]
+      }
+    },
+    {
+      "filename": "page62970147.html",
+      "source_page_id": null,
+      "staging_page_id": null,
+      "alias": null,
+      "title": null,
+      "staging_url": null,
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "864035611",
+          "864035612",
+          "864035613",
+          "864035614",
+          "869834332"
+        ],
+        "bad_domain": [
+          "864035611",
+          "864035612",
+          "864035613",
+          "864035614",
+          "869834332"
+        ]
+      }
+    },
+    {
+      "filename": "page63097209.html",
+      "source_page_id": null,
+      "staging_page_id": null,
+      "alias": null,
+      "title": null,
+      "staging_url": null,
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "865061662",
+          "865061664",
+          "865307217"
+        ],
+        "bad_domain": [
+          "865061662",
+          "865061664",
+          "865307217"
+        ]
+      }
+    },
+    {
+      "filename": "page63099675.html",
+      "source_page_id": null,
+      "staging_page_id": null,
+      "alias": null,
+      "title": null,
+      "staging_url": null,
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "865082784",
+          "865082785",
+          "865082787",
+          "865082788"
+        ],
+        "bad_domain": [
+          "865082784",
+          "865082785",
+          "865082787",
+          "865082788"
+        ]
+      }
+    },
+    {
+      "filename": "page63102709.html",
+      "source_page_id": null,
+      "staging_page_id": null,
+      "alias": null,
+      "title": null,
+      "staging_url": null,
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "865108930",
+          "865108931",
+          "865108932",
+          "865108933"
+        ],
+        "bad_domain": [
+          "865108930",
+          "865108931",
+          "865108932",
+          "865108933"
+        ]
+      }
+    },
+    {
+      "filename": "page63127703.html",
+      "source_page_id": null,
+      "staging_page_id": null,
+      "alias": null,
+      "title": null,
+      "staging_url": null,
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "865325327",
+          "865325328",
+          "865325329",
+          "865336272",
+          "865336429"
+        ],
+        "bad_domain": [
+          "865325327",
+          "865325328",
+          "865325329",
+          "865336272",
+          "865336429"
+        ]
+      }
+    },
+    {
+      "filename": "pochemu-menya-rekomenduyut.html",
+      "source_page_id": null,
+      "staging_page_id": null,
+      "alias": null,
+      "title": null,
+      "staging_url": null,
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 0,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "1870362651",
+          "1870362661",
+          "1870362671",
+          "1870362681",
+          "1870362691",
+          "1870362701"
+        ]
+      }
+    },
+    {
+      "filename": "psiholog-konsultacii-moskva.html",
+      "source_page_id": "135430346",
+      "staging_page_id": "138661976",
+      "alias": "psiholog-konsultacii-moskva",
+      "title": "Консультации психолога в Москве - Психолог МГУ Татьяна Мунн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/psiholog-konsultacii-moskva",
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 0,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "2173824361"
+        ]
+      }
+    },
+    {
+      "filename": "psiholog-moskva.html",
+      "source_page_id": null,
+      "staging_page_id": null,
+      "alias": null,
+      "title": null,
+      "staging_url": null,
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 0,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "1858953391",
+          "1858953401",
+          "1858953411",
+          "1858953421",
+          "1858953431",
+          "1858953441",
+          "1858974181"
+        ]
+      }
+    },
+    {
+      "filename": "psiholog-online.html",
+      "source_page_id": null,
+      "staging_page_id": null,
+      "alias": null,
+      "title": null,
+      "staging_url": null,
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 0,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "1858840981",
+          "1858840991",
+          "1858841001",
+          "1858841011",
+          "1858841021",
+          "1858841031"
+        ]
+      }
+    },
+    {
+      "filename": "psiholog-s-visokim-reytingom.html",
+      "source_page_id": null,
+      "staging_page_id": null,
+      "alias": null,
+      "title": null,
+      "staging_url": null,
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 0,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "1870285771",
+          "1870285781",
+          "1870285791",
+          "1870285801",
+          "1870285811",
+          "1870285821"
+        ]
+      }
+    },
+    {
+      "filename": "psy4psy.html",
+      "source_page_id": "62908693",
+      "staging_page_id": "138679376",
+      "alias": "psy4psy",
+      "title": "Психолог для психологов: Как найти поддержку для себя",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/psy4psy",
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 0,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "863576102"
+        ]
+      }
+    },
+    {
+      "filename": "psychoanalys.html",
+      "source_page_id": "63398035",
+      "staging_page_id": "138682476",
+      "alias": "psychoanalys",
+      "title": "Психоанализ как метод психотерапии. Психолог Татьяна Мунн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/psychoanalys",
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "867447954",
+          "867447955",
+          "867447956",
+          "867447957",
+          "867475677"
+        ],
+        "bad_domain": [
+          "867447954",
+          "867447955",
+          "867447956",
+          "867447957",
+          "867475677"
+        ]
+      }
+    },
+    {
+      "filename": "psypodgotovka1.html",
+      "source_page_id": "62652841",
+      "staging_page_id": "138679846",
+      "alias": "psypodgotovka1",
+      "title": "Психологическая подготовка к Экзаменам. Экзамены без стресса: Как подготовиться психологически к успеху",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/psypodgotovka1",
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 0,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "861500613",
+          "861886626",
+          "861888766"
+        ]
+      }
+    },
+    {
+      "filename": "recomend.html",
+      "source_page_id": "62977405",
+      "staging_page_id": "138677856",
+      "alias": "recomend",
+      "title": "Психология - полезная информация - книги, статьи, видео, ссылки. Психолог Татьяна Мунн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/recomend",
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 0,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "864198145"
+        ]
+      }
+    },
+    {
+      "filename": "salt.html",
+      "source_page_id": "63131581",
+      "staging_page_id": "138681236",
+      "alias": "salt",
+      "title": "Соль для здоровья - способы применения. Психолог Татьяна Мунн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/salt",
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 0,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "865403724"
+        ]
+      }
+    },
+    {
+      "filename": "schematherapy.html",
+      "source_page_id": "63409841",
+      "staging_page_id": "138682896",
+      "alias": "schematherapy",
+      "title": "Схематерапия: виды и описание схем. Психолог Татьяна Мунн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/schematherapy",
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "867548264",
+          "867548265",
+          "867548266",
+          "867548267"
+        ],
+        "bad_domain": [
+          "867548264",
+          "867548265",
+          "867548266",
+          "867548267"
+        ]
+      }
+    },
+    {
+      "filename": "selfharm.html",
+      "source_page_id": "62890623",
+      "staging_page_id": "138679646",
+      "alias": "selfharm",
+      "title": "Суицидальные мысли у подростков &amp; самоповреждение (сеплфхарм): Помощь психолога",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/selfharm",
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 0,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "863408214",
+          "863436355",
+          "863490831"
+        ]
+      }
+    },
+    {
+      "filename": "semeynie_konflikti_article.html",
+      "source_page_id": "62923441",
+      "staging_page_id": "138690986",
+      "alias": "semeynie_konflikti_article",
+      "title": "Управление конфликтами в семье - статья",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/semeynie_konflikti_article",
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "863657753",
+          "863657754",
+          "863657755",
+          "863660067",
+          "869831703"
+        ],
+        "bad_domain": [
+          "863657753",
+          "863657754",
+          "863657755",
+          "863660067",
+          "869831703"
+        ]
+      }
+    },
+    {
+      "filename": "semeyniy_psiholog.html",
+      "source_page_id": "62920697",
+      "staging_page_id": "138679266",
+      "alias": "semeyniy_psiholog",
+      "title": "Семейный психолог в Москве. в Кабинете и Онлайн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/semeyniy_psiholog",
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 0,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "863635146",
+          "863635147"
+        ]
+      }
+    },
+    {
+      "filename": "speaker.html",
+      "source_page_id": "87231366",
+      "staging_page_id": "138664896",
+      "alias": "speaker",
+      "title": "Психолог МГУ Татьяна Мунн — спикер и эксперт по эмоциональному интеллекту, soft skills, психологии эмоций и состояний.",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/speaker",
+      "counts": {
+        "http_wa": 4,
+        "bad_domain": 0,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "1444734111",
+          "1444797431",
+          "1444846131",
+          "1444897871",
+          "1444948621",
+          "1445125661",
+          "1445529241",
+          "1479546901",
+          "2173935961"
+        ]
+      }
+    },
+    {
+      "filename": "st2.html",
+      "source_page_id": "98329166",
+      "staging_page_id": "138676856",
+      "alias": "st2",
+      "title": "онлайн-тренинг \"Среда Трансформации\" стартует 31 декабря 2025 года. Автор и ведущий психолог Татьяна Мунн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/st2",
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 0,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "1608442311",
+          "1608442331",
+          "1611373891"
+        ]
+      }
+    },
+    {
+      "filename": "trauma.html",
+      "source_page_id": "63579285",
+      "staging_page_id": "138693896",
+      "alias": "trauma",
+      "title": "Статья - Психология травмы: Влияние травматического опыта и методы терапии. Психолог Татьяна Мунн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/trauma",
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "868928806",
+          "868928811",
+          "868936601"
+        ],
+        "bad_domain": [
+          "868928806",
+          "868928811",
+          "868936601"
+        ]
+      }
+    },
+    {
+      "filename": "uslugi_aerofobia.html",
+      "source_page_id": "63836583",
+      "staging_page_id": "138686506",
+      "alias": "uslugi_aerofobia",
+      "title": "Аэрофобия Консультации по страху полётов (аэрофобия). Психолог МГУ Татьяна Мунн — автор метода “Быстрая психология”. ",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_aerofobia",
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "870978951",
+          "870978969",
+          "870978970",
+          "870978971",
+          "870978972",
+          "870978974",
+          "870978975",
+          "870978977",
+          "870978979"
+        ],
+        "bad_domain": [
+          "870978951",
+          "870978969",
+          "870978970",
+          "870978971",
+          "870978972",
+          "870978974",
+          "870978975",
+          "870978977",
+          "870978979"
+        ]
+      }
+    },
+    {
+      "filename": "uslugi_depression.html",
+      "source_page_id": "63747017",
+      "staging_page_id": "138684276",
+      "alias": "uslugi_depression",
+      "title": "Депрессивное состояние: понимание и преодоление. Психолог МГУ Москва - Татьяна Мунн. Прием в кабинете и Онлайн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_depression",
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "870281484",
+          "870281485",
+          "870281486",
+          "870281487",
+          "870281488",
+          "870281489",
+          "870281490",
+          "870281491"
+        ],
+        "bad_domain": [
+          "870281484",
+          "870281485",
+          "870281486",
+          "870281487",
+          "870281488",
+          "870281489",
+          "870281490",
+          "870281491"
+        ]
+      }
+    },
+    {
+      "filename": "uslugi_fin_blocks.html",
+      "source_page_id": "63711321",
+      "staging_page_id": "138683016",
+      "alias": "uslugi_fin_blocks",
+      "title": "Проработка финансовых блоков. Психолог МГУ Москва - Татьяна Мунн. В кабинете и Онлайн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_fin_blocks",
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "870006040",
+          "870006045",
+          "870006046",
+          "870006047",
+          "870006048",
+          "870006049",
+          "870017268",
+          "870017464"
+        ],
+        "bad_domain": [
+          "870006040",
+          "870006045",
+          "870006046",
+          "870006047",
+          "870006048",
+          "870006049",
+          "870017268",
+          "870017464"
+        ]
+      }
+    },
+    {
+      "filename": "uslugi_gtr.html",
+      "source_page_id": "63758713",
+      "staging_page_id": "138686216",
+      "alias": "uslugi_gtr",
+      "title": "Тревожные расстройства: когда тревога становится болезнью. Психолог МГУ Москва - Татьяна Мунн. Прием в кабинете и Онлайн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_gtr",
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "870371678",
+          "870371679",
+          "870371680",
+          "870371681",
+          "870371682",
+          "870371683",
+          "870371684",
+          "870371685",
+          "870392488",
+          "870393483"
+        ],
+        "bad_domain": [
+          "870371678",
+          "870371679",
+          "870371680",
+          "870371681",
+          "870371682",
+          "870371683",
+          "870371684",
+          "870371685",
+          "870392488",
+          "870393483"
+        ]
+      }
+    },
+    {
+      "filename": "uslugi_konflikti_na_rabote.html",
+      "source_page_id": "63716871",
+      "staging_page_id": "138683936",
+      "alias": "uslugi_konflikti_na_rabote",
+      "title": "Проработка внутренних конфликтов, связанных с работой. Психолог МГУ Москва - Татьяна Мунн. В кабинете и Онлайн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_konflikti_na_rabote",
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "870053084",
+          "870053086",
+          "870053087",
+          "870053088",
+          "870053089",
+          "870053090",
+          "870053091",
+          "870053092"
+        ],
+        "bad_domain": [
+          "870053084",
+          "870053086",
+          "870053087",
+          "870053088",
+          "870053089",
+          "870053090",
+          "870053091",
+          "870053092"
+        ]
+      }
+    },
+    {
+      "filename": "uslugi_lubovnaya_zavisimost.html",
+      "source_page_id": "63757347",
+      "staging_page_id": "138686066",
+      "alias": "uslugi_lubovnaya_zavisimost",
+      "title": "Любовные зависимости и привязанности. Психолог МГУ Москва - Татьяна Мунн. Прием в кабинете и Онлайн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_lubovnaya_zavisimost",
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "870360263",
+          "870360265",
+          "870360266",
+          "870360267",
+          "870360268",
+          "870360269",
+          "870360270",
+          "870360271",
+          "870360272",
+          "870368344"
+        ],
+        "bad_domain": [
+          "870360263",
+          "870360265",
+          "870360266",
+          "870360267",
+          "870360268",
+          "870360269",
+          "870360270",
+          "870360271",
+          "870360272",
+          "870368344"
+        ]
+      }
+    },
+    {
+      "filename": "uslugi_obida_na_roditelei.html",
+      "source_page_id": "63749211",
+      "staging_page_id": "138684406",
+      "alias": "uslugi_obida_na_roditelei",
+      "title": "Обида на родителей - негативные чувства, связанные с детством. Психолог МГУ Москва - Татьяна Мунн. Прием в кабинете и Онлайн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_obida_na_roditelei",
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "870299408",
+          "870299409",
+          "870299410",
+          "870299411",
+          "870299412",
+          "870299413",
+          "870299414",
+          "870299415",
+          "870302684"
+        ],
+        "bad_domain": [
+          "870299408",
+          "870299409",
+          "870299410",
+          "870299411",
+          "870299412",
+          "870299413",
+          "870299414",
+          "870299415",
+          "870302684"
+        ]
+      }
+    },
+    {
+      "filename": "uslugi_otnosheniya_v_kollektive.html",
+      "source_page_id": "63718371",
+      "staging_page_id": "138684096",
+      "alias": "uslugi_otnosheniya_v_kollektive",
+      "title": "Налаживание отношений в коллективе. Психолог МГУ Москва - Татьяна Мунн. В кабинете и Онлайн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_otnosheniya_v_kollektive",
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "870065744",
+          "870065745",
+          "870065746",
+          "870065747",
+          "870065748",
+          "870065749",
+          "870065750",
+          "870065751"
+        ],
+        "bad_domain": [
+          "870065744",
+          "870065745",
+          "870065746",
+          "870065747",
+          "870065748",
+          "870065749",
+          "870065750",
+          "870065751"
+        ]
+      }
+    },
+    {
+      "filename": "uslugi_podrostki.html",
+      "source_page_id": "63713227",
+      "staging_page_id": "138683686",
+      "alias": "uslugi_podrostki",
+      "title": "Психологическая консультация для подростков от 12 лет. Психолог МГУ Москва - Татьяна Мунн. В кабинете и Онлайн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_podrostki",
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "870021130",
+          "870021132",
+          "870021133",
+          "870021134",
+          "870021135",
+          "870021136",
+          "870021137",
+          "870046488"
+        ],
+        "bad_domain": [
+          "870021130",
+          "870021132",
+          "870021133",
+          "870021134",
+          "870021135",
+          "870021136",
+          "870021137",
+          "870046488"
+        ]
+      }
+    },
+    {
+      "filename": "uslugi_procrastination.html",
+      "source_page_id": "63750667",
+      "staging_page_id": "138685516",
+      "alias": "uslugi_procrastination",
+      "title": "Прокрастинация: Почему мы откладываем дела на потом и как перестать это делать. Психолог МГУ Москва - Татьяна Мунн. Прием в кабинете и Онлайн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_procrastination",
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "870310586",
+          "870310587",
+          "870310588",
+          "870310589",
+          "870310590",
+          "870310591",
+          "870310592",
+          "870310593",
+          "870319006"
+        ],
+        "bad_domain": [
+          "870310586",
+          "870310587",
+          "870310588",
+          "870310589",
+          "870310590",
+          "870310591",
+          "870310592",
+          "870310593",
+          "870319006"
+        ]
+      }
+    },
+    {
+      "filename": "uslugi_razvod.html",
+      "source_page_id": "63755367",
+      "staging_page_id": "138685886",
+      "alias": "uslugi_razvod",
+      "title": "Помощь при расставании, измене, разводе. Психолог МГУ Москва - Татьяна Мунн. Прием в кабинете и Онлайн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_razvod",
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "870345771",
+          "870345772",
+          "870345773",
+          "870345774",
+          "870345775",
+          "870345776",
+          "870345777",
+          "870345778",
+          "870345779",
+          "870356549"
+        ],
+        "bad_domain": [
+          "870345773",
+          "870345774",
+          "870345775",
+          "870345776",
+          "870345777",
+          "870345778",
+          "870345779",
+          "870356549"
+        ]
+      }
+    },
+    {
+      "filename": "uslugi_sohranit_brak.html",
+      "source_page_id": "63752263",
+      "staging_page_id": "138685686",
+      "alias": "uslugi_sohranit_brak",
+      "title": "Как сохранить брак: преодоление кризисов, восстановление доверия и искусство диалога. Психолог МГУ Москва - Татьяна Мунн. Прием в кабинете и Онлайн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_sohranit_brak",
+      "counts": {
+        "http_wa": 2,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "870322718",
+          "870322719",
+          "870322720",
+          "870322721",
+          "870322722",
+          "870322723",
+          "870322724",
+          "870322725",
+          "870322726"
+        ],
+        "bad_domain": [
+          "870322718",
+          "870322719",
+          "870322720",
+          "870322721",
+          "870322722",
+          "870322723",
+          "870322724",
+          "870322725",
+          "870322726"
+        ]
+      }
+    },
+    {
+      "filename": "vacuum_cups.html",
+      "source_page_id": "63138325",
+      "staging_page_id": "138681366",
+      "alias": "vacuum_cups",
+      "title": "Вакуумные банки для психологического здоровья. Психолог Татьяна Мунн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/vacuum_cups",
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 0,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "865411554",
+          "865423856",
+          "865424662",
+          "868782957"
+        ]
+      }
+    },
+    {
+      "filename": "vigoranie_article.html",
+      "source_page_id": "62988415",
+      "staging_page_id": "138691116",
+      "alias": "vigoranie_article",
+      "title": "Статья - Выгорание на работе: как распознать, предотвратить и справиться. Психолог Татьяна Мунн",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/vigoranie_article",
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "864182265",
+          "864182266",
+          "864182267",
+          "864182268",
+          "869831919"
+        ],
+        "bad_domain": [
+          "864182265",
+          "864182266",
+          "864182267",
+          "864182268",
+          "869831919"
+        ]
+      }
+    },
+    {
+      "filename": "vospitanie_article.html",
+      "source_page_id": "62923037",
+      "staging_page_id": "138690686",
+      "alias": "vospitanie_article",
+      "title": "Воспитание ребенка - статья",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/vospitanie_article",
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 1,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "863654056",
+          "863654602",
+          "863655150",
+          "863655217",
+          "869831236"
+        ],
+        "bad_domain": [
+          "863654056",
+          "863654602",
+          "863655150",
+          "863655217",
+          "869831236"
+        ]
+      }
+    },
+    {
+      "filename": "water.html",
+      "source_page_id": "63552425",
+      "staging_page_id": "138681466",
+      "alias": "water",
+      "title": "вода и здоровье - влияние воды на психоэмоциональное состояние. Психолог Татьяна Мунн (МГУ)",
+      "staging_url": "https://carry-pacific-flatfish.tilda.ws/water",
+      "counts": {
+        "http_wa": 1,
+        "bad_domain": 0,
+        "bad_plus_wa": 0,
+        "internalized_bad_plus_wa": 0
+      },
+      "nearby_record_ids": {
+        "http_wa": [
+          "868702217",
+          "868702218"
+        ]
+      }
+    }
+  ]
+}
