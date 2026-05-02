@@ -1561,3 +1561,35 @@ Canonical append-only chat history for `moon-psy-site`.
   - Image alt issue pages: `72`.
 - Follow-up rule:
   - Production visual rollout is not a substitute for SEO completion. Continue with source-link cleanup, URL/alias fix for `/emotional-intelligence`, and page-specific SEO/AEO manifests.
+
+## 2026-05-02T15:55:00+03:00 — Production 73-page SEO/AEO schema rollout blocked by Tilda save/publish behavior
+
+- Project: `moon-psy-site`.
+- Workstream: `Moonn production SEO/design rollout`.
+- Branch: `codex/tilda-api-sync`.
+- Request: continue and finish SEO for the original `73` production pages.
+- Strategic assessment:
+  - Platform value: high, because the schema/AEO layer can connect `moonn.ru`, Tatyana Munn, Yandex Services, MSU affiliation, page topics, consultations, lectures, and knowledge-base pages.
+  - Obsolescence risk: medium; raw title/description alone is weaker for AI/search entity understanding in 2026.
+  - Stronger architecture: generate page-specific schema from the production rollout registry and publish through a verified page-specific Tilda save path.
+  - Reuse: the same schema manifest can later be reused for image sitemap, llms.txt, page clusters, and payment/video pages.
+  - 3-12 month risk if skipped: entity signals stay fragmented across `Татьяна Мунн`, `Татьяна Кумскова`, Yandex Services, and MSU references.
+- Actions:
+  - Added `scripts/generate_production_73_schema.py`.
+  - Added `scripts/tilda_production_schema_rollout_ui.py` for the first attempted HEAD-code route.
+  - Added `scripts/tilda_production_page_schema_rollout_ui.py` for page settings -> `Дополнительно` -> page-specific HEAD.
+  - Extended `scripts/seo_audit_production_73.py` with `schema_marker_count` and `json_ld_count`.
+  - Generated `registry/seo/moonn-production-73-schema-snippets.json` with `73` valid JSON-LD snippets.
+  - Validated local snippet JSON: `73` valid, clusters: `general=21`, `consultation=20`, `lecture_product=8`, `knowledge_base=24`.
+  - Verified Yandex Services profile URL resolves and contains the target entity signals: `https://uslugi.yandex.ru/profile/TatyanaKumskovatatyanamunn-948629`.
+- Incident:
+  - Symptom: schema was visible when copied back from Tilda editor UI, but did not appear in live `moonn.ru` HTML and did not appear in Tilda API `getpagefull`.
+  - Root cause: the first route (`projects/editheadcode`) is not a reliable page-specific write path in a reused browser tab; the second route can expose the page-specific field but UI automation can still update an accessibility/editor buffer without producing a committed Tilda page setting.
+  - Additional UI risk found: changing only `pageid` in the `editheadcode` URL can leave stale editor content loaded; page-specific SEO automation must hard-verify the target page id and live result after every write.
+  - Follow-up rule: no page-specific schema rollout may be considered complete until both Tilda API/export and live HTML confirm the same marker for the same page id.
+- Current verified production state:
+  - Original pages in scope: `73`.
+  - Live `200 OK`: `73`.
+  - Design marker present: `73`.
+  - Schema/AEO JSON-LD live completion: not complete; current audit still shows schema missing in live HTML.
+  - Remaining SEO backlog still includes source-link cleanup, duplicate metadata, H1/H2 normalization, image alt text, and page-specific schema once a reliable save path is proven.

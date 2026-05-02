@@ -31,6 +31,8 @@ class PageAudit:
     images_missing_alt: int
     theme_marker_count: int
     pinned_theme_count: int
+    schema_marker_count: int
+    json_ld_count: int
     link_issues: dict[str, int]
     error: str | None = None
 
@@ -118,6 +120,8 @@ def audit_page(page: dict) -> PageAudit:
         images_missing_alt=images_missing_alt,
         theme_marker_count=html.count("moonn-radiant-sanctuary-theme"),
         pinned_theme_count=html.count("moonn-psy-pages@102fb3d/assets/tilda-radiant-sanctuary.css"),
+        schema_marker_count=html.count("moonn-seo-schema:"),
+        json_ld_count=len(re.findall(r"<script\b[^>]*type=(?:'|\")application/ld\+json(?:'|\")[^>]*>", html, flags=re.IGNORECASE)),
         link_issues=link_issue_counts(html),
         error=error,
     )
@@ -153,6 +157,8 @@ def main() -> int:
         "error_count": sum(1 for audit in audits if audit.status != 200 or audit.error),
         "theme_missing_count": sum(1 for audit in audits if audit.theme_marker_count == 0),
         "pinned_theme_missing_count": sum(1 for audit in audits if audit.pinned_theme_count == 0),
+        "schema_missing_count": sum(1 for audit in audits if audit.schema_marker_count == 0),
+        "json_ld_missing_count": sum(1 for audit in audits if audit.json_ld_count == 0),
         "link_issue_pages": sum(1 for audit in audits if any(audit.link_issues.values())),
         "link_issue_totals": {
             key: sum(audit.link_issues[key] for audit in audits)
@@ -188,6 +194,8 @@ def main() -> int:
                     "ok_count",
                     "error_count",
                     "theme_missing_count",
+                    "schema_missing_count",
+                    "json_ld_missing_count",
                     "link_issue_pages",
                     "link_issue_totals",
                 ]
