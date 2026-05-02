@@ -2,6 +2,39 @@
 
 Canonical append-only chat history for `moon-psy-site`.
 
+## 2026-05-02T08:45:00+03:00 — Homepage WhatsApp source-link 404 fixed in production Tilda
+
+- Project: `moon-psy-site`.
+- Workstream: `Moonn SEO / source-link cleanup`.
+- Branch: `codex/tilda-api-sync`.
+- Request: continue the GSC 404 cleanup by waiting for Tilda/cache state and fixing the WhatsApp/source-link errors in the Tilda blocks.
+- Strategic assessment:
+  - Platform value: high, because a real GSC 404 was caused by a malformed source link on the production homepage.
+  - Obsolescence risk: low for the URL normalization itself; high if fixed only with redirects while the broken source remains.
+  - Stronger architecture: use source-level Tilda edits plus registry evidence, not a broad HEAD normalizer.
+  - Reuse: the same page_id/record_id registry method can be repeated for the remaining 57 affected pages.
+  - 3-12 month risk if skipped: GSC keeps discovering internalized external URLs and the site accumulates redirect debt.
+- Actions:
+  - Opened production Tilda project `8326812` and found homepage `pageid=42678538`.
+  - Used the Tilda page editor to scroll directly to `rec2175794871`.
+  - Opened the block content panel for the visible editor block `PL105N`.
+  - Changed `Карточка #3 / Ссылка` from `/http://wa.me/+79777770303` to `https://wa.me/79777770303`.
+  - Saved the block and published the homepage.
+  - Updated `registry/seo/moonn-source-link-fixes-b1.json`.
+  - Updated `registry/seo/moonn-source-link-locations-b1.json`.
+- Verification:
+  - Exported the homepage through Tilda API `getpagefull` after publishing into `output/tilda-snapshot-check-home/pages/index.html`.
+  - The exported source contains `rec2175794871`.
+  - Exact malformed value `/http://wa.me/+79777770303`: `0`.
+  - HTTP WhatsApp value `http://wa.me/+79777770303` / `http://wa.me/79777770303`: `0` on the homepage export.
+  - Fixed value `https://wa.me/79777770303`: `8`.
+- Incident / rule:
+  - Symptom: project-level HEAD injection was an unsafe path because CodeMirror could appear changed through automation without producing a live marker.
+  - Root cause: UI automation against code editors is not equivalent to persisted Tilda state.
+  - Follow-up rule: for Tilda SEO/link fixes, prefer content-level block edits and verify by fresh Tilda API export or live HTML marker after publish.
+- Remaining work:
+  - Continue P1 source cleanup for `http://wa.me/79777770303` and `http://.moonn.ru` across the remaining affected pages.
+
 ## 2026-05-01T12:07:00+03:00 — Tilda API sync and staging copy
 
 - Project: `moon-psy-site`.

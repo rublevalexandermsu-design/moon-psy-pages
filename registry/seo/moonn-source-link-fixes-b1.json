@@ -4,14 +4,38 @@
   "project": "moon-psy-site",
   "workstream": "seo-aeo-retrofit",
   "source": "output/tilda-snapshot/pages/*.html",
-  "status": "locations_detected_not_applied",
+  "status": "partial_content_level_fix_applied",
   "location_artifact": "registry/seo/moonn-source-link-locations-b1.json",
   "last_attempted_at": "2026-05-01T23:05:00+03:00",
+  "last_applied_at": "2026-05-02T08:45:00+03:00",
   "attempt_summary": {
     "project_head_normalizer": "Attempted but not applied. Tilda CodeMirror did not reliably accept programmatic insertion; live HTML after publish did not contain the `moonn-link-normalizer` marker.",
     "publish_all": "Tilda publish-all was run after the attempted project-head change; live HTML check confirmed the normalizer was not present, so this did not create the intended sitewide fix.",
-    "next_safe_action": "Apply content-level edits to the affected Tilda source blocks using the generated page_id/record_id location registry, starting with homepage P0 block `rec2175794871`."
+    "next_safe_action": "Continue content-level edits to the remaining P1 WhatsApp and internal-domain source blocks using the generated page_id/record_id location registry."
   },
+  "applied_changes": [
+    {
+      "id": "LINK-001-HOMEPAGE",
+      "applied_at": "2026-05-02T08:45:00+03:00",
+      "project_id": "8326812",
+      "page_id": "42678538",
+      "page_alias": "",
+      "record_id": "2175794871",
+      "editor_block_type_seen": "PL105N",
+      "snapshot_record_type": "1069",
+      "field": "Карточка #3 / Ссылка",
+      "old_value": "/http://wa.me/+79777770303",
+      "new_value": "https://wa.me/79777770303",
+      "verification": {
+        "method": "Tilda API getpagefull after page publish",
+        "artifact": "output/tilda-snapshot-check-home/pages/index.html",
+        "bad_exact_count": 0,
+        "bad_http_wa_count": 0,
+        "fixed_wa_count": 8,
+        "has_record_marker": true
+      }
+    }
+  ],
   "fixes": [
     {
       "id": "LINK-001",
