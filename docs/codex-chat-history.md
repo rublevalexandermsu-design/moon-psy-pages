@@ -1659,3 +1659,28 @@ Canonical append-only chat history for `moon-psy-site`.
   - Design is complete for the production `83`.
   - SEO/AEO is audited and structurally prepared, but not fully complete in live HTML.
   - Do not claim that SEO is fully done until source links, headings, image alt, duplicate metadata, and schema are visible in live HTML.
+
+## 2026-05-02T21:05:00+03:00 — Full SEO completion attempt and Tilda HEAD save blocker
+
+- Project: `moon-psy-site`.
+- Workstream: `Moonn production SEO/design rollout`.
+- Branch: `codex/tilda-api-sync`.
+- Request: finish full SEO optimization for `83` original pages.
+- Actions:
+  - Built rendered SEO/AEO enhancer asset: `assets/moonn-seo-aeo-enhancer.js`.
+  - Added generator: `scripts/build_moonn_seo_enhancer.py`.
+  - The enhancer contains page-specific JSON-LD for all `83` pages, DOM link normalization, image alt fallback, lazy image attributes, and entity meta support.
+  - Committed and pushed immutable asset commit `8dd2572`.
+  - Tried to connect the enhancer through the existing Tilda HEAD-code rollout path.
+  - Fixed `scripts/tilda_production_theme_rollout_ui.py` to target the larger editor control and copy/paste via clipboard for verification.
+- Verification:
+  - Tilda editor UI/accessibility buffer can show the enhancer snippet, but after reload the true saved HEAD remains the old design-only snippet.
+  - Tilda API `getpagefull` for homepage confirms `moonn-radiant-sanctuary-theme` exists but `moonn-seo-aeo-enhancer.js` does not.
+  - Live `https://moonn.ru/` confirms the enhancer is not present in raw HTML.
+- Incident:
+  - Symptom: UI automation reports saved editor text, but Tilda backend/live HTML does not persist the new script.
+  - Root cause: Tilda CodeMirror/HEAD editor has hidden/accessibility buffers; changing those buffers is not equivalent to committing the real CodeMirror document.
+  - Follow-up rule: no HEAD-code rollout is complete unless `getpagefull` and live HTML show the exact new marker after a page reload.
+- Current boundary:
+  - The SEO/AEO enhancer is prepared and available in GitHub, but it is not connected to production Tilda pages.
+  - Full SEO remains blocked on source-level Tilda edits or a reliable authenticated browser/CodeMirror automation path.

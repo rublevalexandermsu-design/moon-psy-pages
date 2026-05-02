@@ -3,6 +3,7 @@ import json
 import time
 from pathlib import Path
 
+import pyperclip
 from pywinauto import Desktop
 from pywinauto.keyboard import send_keys
 
@@ -44,10 +45,10 @@ def editor_control(window):
     for edit in edits:
         rect = edit.rectangle()
         if rect.top > 300 and rect.left < 140:
-            candidates.append(edit)
+            candidates.append((max(0, rect.width()) * max(0, rect.height()), len(edit.window_text()), edit))
     if not candidates:
         raise RuntimeError("Tilda HEAD code editor control not found")
-    return candidates[0]
+    return sorted(candidates, key=lambda item: (item[0], item[1]), reverse=True)[0][2]
 
 
 def click_button(window, label: str, wait_seconds: float = 2.0) -> None:
@@ -64,20 +65,44 @@ def normalize_existing(value: str) -> str:
     return "" if not value else value
 
 
+def copy_editor_text() -> str:
+    send_keys("^a")
+    time.sleep(0.2)
+    send_keys("^c")
+    time.sleep(0.3)
+    return pyperclip.paste()
+
+
+def remove_existing_theme(existing: str) -> str:
+    start = "<!-- moonn-radiant-sanctuary-theme:start -->"
+    end = "<!-- moonn-radiant-sanctuary-theme:end -->"
+    if start not in existing or end not in existing:
+        return existing
+    before, rest = existing.split(start, 1)
+    _, after = rest.split(end, 1)
+    return f"{before.rstrip()}\n{after.lstrip()}".strip()
+
+
 def apply_head_snippet(window, page_id: str, project_id: str, snippet: str) -> dict:
     edit_url = f"https://tilda.ru/projects/editheadcode/?projectid={project_id}&pageid={page_id}"
     navigate(window, edit_url, wait_seconds=5.5)
     editor = editor_control(window)
-    existing = normalize_existing(editor.window_text())
-    already_present = "moonn-radiant-sanctuary-theme" in existing
+    editor.click_input()
+    time.sleep(0.2)
+    existing = normalize_existing(copy_editor_text())
+    already_present = "moonn-radiant-sanctuary-theme" in existing and "moonn-seo-aeo-enhancer.js" in existing
     if already_present:
         return {"page_id": page_id, "status": "already_present"}
-    next_value = f"{existing}\n\n{snippet}".strip() if existing else snippet.strip()
+    cleaned = remove_existing_theme(existing)
+    next_value = f"{cleaned}\n\n{snippet}".strip() if cleaned else snippet.strip()
     editor.set_focus()
-    editor.set_edit_text(next_value)
-    time.sleep(0.4)
-    saved_text = editor.window_text()
-    if "moonn-radiant-sanctuary-theme" not in saved_text:
+    pyperclip.copy(next_value)
+    send_keys("^a")
+    time.sleep(0.2)
+    send_keys("^v")
+    time.sleep(0.7)
+    saved_text = copy_editor_text()
+    if "moonn-radiant-sanctuary-theme" not in saved_text or "moonn-seo-aeo-enhancer.js" not in saved_text:
         raise RuntimeError(f"Snippet did not appear in editor for page {page_id}")
     click_button(window, "Сохранить", wait_seconds=2.5)
     return {"page_id": page_id, "status": "saved_head"}
