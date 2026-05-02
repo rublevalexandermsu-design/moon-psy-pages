@@ -1496,3 +1496,34 @@ Canonical append-only chat history for `moon-psy-site`.
   - Follow-up rule: for Tilda SEO/source-link cleanup, locate and edit by live `rec` id and card label, then verify the published HTML counters before marking the page fixed.
 - Boundary:
   - Production `moonn.ru` was not changed.
+
+## 2026-05-02T13:25:00+03:00 — Production 73-page rollout scope accepted
+
+- Project: `moon-psy-site`.
+- Workstream: `Moonn production SEO/design rollout`.
+- Branch: `codex/tilda-api-sync`.
+- Request: stop editing staging copies; treat the copied `73` pages as the approved reference set and start applying the design and SEO work to the matching original production pages.
+- Strategic assessment:
+  - Platform value: high, because staging has now served its purpose and production needs one controlled rollout path.
+  - Obsolescence risk: medium if production work is done manually without a page registry and verification gates.
+  - Stronger architecture: use a production rollout manifest linking original page ids to staging page ids, then audit and apply page-level changes in batches.
+  - Reuse: the same rollout manifest model can later handle payments, video pages, SEO/schema, and new copied batches.
+  - 3-12 month risk if skipped: staging and production would drift, making SEO/design changes impossible to trust.
+- Actions:
+  - Confirmed `73` `copied_verified` pages have both original `source_page_id` and staging `staging_page_id`.
+  - Created production rollout registry: `registry/tilda/moonn-production-73-rollout.json`.
+  - Added production audit script: `scripts/seo_audit_production_73.py`.
+  - Ran the production audit against the `73` original `moonn.ru` URLs.
+  - Created rollout plan: `docs/seo/moonn-production-73-rollout-plan.md`.
+- Verified production baseline:
+  - Pages in scope: `73`.
+  - Live `200 OK`: `72`.
+  - Live error: `https://moonn.ru/emotional-intelligence` returns `404`.
+  - Design theme missing: `73`.
+  - Pages with link issues: `44`.
+  - Link totals: `http_wa=69`, `http_twa=4`, `bad_domain=26`, `bad_plus_wa=0`, `internalized_bad_plus_wa=0`.
+  - Duplicate title groups: `1`; duplicate description groups: `4`; heading issue pages: `53`; image alt issue pages: `72`.
+- Decision:
+  - Tilda API is used for snapshots/audits/verification only.
+  - Production edits still require Tilda UI automation because documented public API does not provide block/page-HEAD/native-SEO write methods.
+  - Next production action should be a small batch rollout of the verified `Radiant Sanctuary` page-level HEAD snippet, then live HTML verification before scaling to all `73`.

@@ -1,0 +1,659 @@
+[
+  {
+    "alias": "",
+    "source_page_id": "42678538",
+    "staging_page_id": "138660066",
+    "production_url": "https://moonn.ru/",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "psiholog-konsultacii-moskva",
+    "source_page_id": "135430346",
+    "staging_page_id": "138661976",
+    "production_url": "https://moonn.ru/psiholog-konsultacii-moskva",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/psiholog-konsultacii-moskva",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "vystupleniya-lekcii-treningi-psiholog-tatiana-moonn",
+    "source_page_id": "135442186",
+    "staging_page_id": "138662086",
+    "production_url": "https://moonn.ru/vystupleniya-lekcii-treningi-psiholog-tatiana-moonn",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/vystupleniya-lekcii-treningi-psiholog-tatiana-moonn",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "platnye-treningi-seminary-programmy-tatiana-moonn",
+    "source_page_id": "135444166",
+    "staging_page_id": "138662216",
+    "production_url": "https://moonn.ru/platnye-treningi-seminary-programmy-tatiana-moonn",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/platnye-treningi-seminary-programmy-tatiana-moonn",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "baza-znaniy-emocionalnyy-intellekt-psihologiya",
+    "source_page_id": "135534246",
+    "staging_page_id": "138662406",
+    "production_url": "https://moonn.ru/baza-znaniy-emocionalnyy-intellekt-psihologiya",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/baza-znaniy-emocionalnyy-intellekt-psihologiya",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "events_tp",
+    "source_page_id": "66814657",
+    "staging_page_id": "138662576",
+    "production_url": "https://moonn.ru/events_tp",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/events_tp",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "speaker",
+    "source_page_id": "87231366",
+    "staging_page_id": "138664896",
+    "production_url": "https://moonn.ru/speaker",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/speaker",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "events",
+    "source_page_id": "53668815",
+    "staging_page_id": "138665336",
+    "production_url": "https://moonn.ru/events",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/events",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "lectures1",
+    "source_page_id": "68295899",
+    "staging_page_id": "138665516",
+    "production_url": "https://moonn.ru/lectures1",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/lectures1",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "emotional-intelligence",
+    "source_page_id": "90977486",
+    "staging_page_id": "138667076",
+    "production_url": "https://moonn.ru/emotional-intelligence",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/emotional-intelligence/",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "emotional-intelligence/knowledge-base",
+    "source_page_id": "91652626",
+    "staging_page_id": "138667176",
+    "production_url": "https://moonn.ru/emotional-intelligence/knowledge-base",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/emotional-intelligence/knowledge-base",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "emotional-intelligence/articles",
+    "source_page_id": "91871866",
+    "staging_page_id": "138667346",
+    "production_url": "https://moonn.ru/emotional-intelligence/articles",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/emotional-intelligence/articles",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "recomend",
+    "source_page_id": "62977405",
+    "staging_page_id": "138677856",
+    "production_url": "https://moonn.ru/recomend",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/recomend",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "otzivi",
+    "source_page_id": "81167556",
+    "staging_page_id": "138677976",
+    "production_url": "https://moonn.ru/otzivi",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/otzivi",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "psiholog_moskva",
+    "source_page_id": "62119659",
+    "staging_page_id": "138678166",
+    "production_url": "https://moonn.ru/psiholog_moskva",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/psiholog_moskva",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "psihology",
+    "source_page_id": "44682379",
+    "staging_page_id": "138690346",
+    "production_url": "https://moonn.ru/psihology",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/psihology",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "psiholog",
+    "source_page_id": "114846506",
+    "staging_page_id": "138678336",
+    "production_url": "https://moonn.ru/psiholog",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/psiholog",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "shppp333",
+    "source_page_id": "43765245",
+    "staging_page_id": "138690486",
+    "production_url": "https://moonn.ru/shppp333",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/shppp333",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "vospitanie_article",
+    "source_page_id": "62923037",
+    "staging_page_id": "138690686",
+    "production_url": "https://moonn.ru/vospitanie_article",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/vospitanie_article",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "semeynie_konflikti_article",
+    "source_page_id": "62923441",
+    "staging_page_id": "138690986",
+    "production_url": "https://moonn.ru/semeynie_konflikti_article",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/semeynie_konflikti_article",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "vigoranie_article",
+    "source_page_id": "62988415",
+    "staging_page_id": "138691116",
+    "production_url": "https://moonn.ru/vigoranie_article",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/vigoranie_article",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "article_diary_of_emotions",
+    "source_page_id": "62966623",
+    "staging_page_id": "138691296",
+    "production_url": "https://moonn.ru/article_diary_of_emotions",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/article_diary_of_emotions",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "eintellect",
+    "source_page_id": "63574637",
+    "staging_page_id": "138693676",
+    "production_url": "https://moonn.ru/eintellect",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/eintellect",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "trauma",
+    "source_page_id": "63579285",
+    "staging_page_id": "138693896",
+    "production_url": "https://moonn.ru/trauma",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/trauma",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "abuse_gaslight",
+    "source_page_id": "63684093",
+    "staging_page_id": "138694136",
+    "production_url": "https://moonn.ru/abuse_gaslight",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/abuse_gaslight",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "article_gadget_addiction",
+    "source_page_id": "63692311",
+    "staging_page_id": "138694256",
+    "production_url": "https://moonn.ru/article_gadget_addiction",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/article_gadget_addiction",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "article_femininity",
+    "source_page_id": "64057747",
+    "staging_page_id": "138694396",
+    "production_url": "https://moonn.ru/article_femininity",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/article_femininity",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "article_toxic_job",
+    "source_page_id": "64061157",
+    "staging_page_id": "138694546",
+    "production_url": "https://moonn.ru/article_toxic_job",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/article_toxic_job",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "semeyniy_psiholog",
+    "source_page_id": "62920697",
+    "staging_page_id": "138679266",
+    "production_url": "https://moonn.ru/semeyniy_psiholog",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/semeyniy_psiholog",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "psy4psy",
+    "source_page_id": "62908693",
+    "staging_page_id": "138679376",
+    "production_url": "https://moonn.ru/psy4psy",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/psy4psy",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "selfharm",
+    "source_page_id": "62890623",
+    "staging_page_id": "138679646",
+    "production_url": "https://moonn.ru/selfharm",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/selfharm",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "psypodgotovka1",
+    "source_page_id": "62652841",
+    "staging_page_id": "138679846",
+    "production_url": "https://moonn.ru/psypodgotovka1",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/psypodgotovka1",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "panicheskie_ataki",
+    "source_page_id": "62126761",
+    "staging_page_id": "138680006",
+    "production_url": "https://moonn.ru/panicheskie_ataki",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/panicheskie_ataki",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "phytotherapy",
+    "source_page_id": "62462299",
+    "staging_page_id": "138680626",
+    "production_url": "https://moonn.ru/phytotherapy",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/phytotherapy",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "microbiom",
+    "source_page_id": "62477227",
+    "staging_page_id": "138680856",
+    "production_url": "https://moonn.ru/microbiom",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/microbiom",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "aromatherapy",
+    "source_page_id": "62470081",
+    "staging_page_id": "138680976",
+    "production_url": "https://moonn.ru/aromatherapy",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/aromatherapy",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "salt",
+    "source_page_id": "63131581",
+    "staging_page_id": "138681236",
+    "production_url": "https://moonn.ru/salt",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/salt",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "vacuum_cups",
+    "source_page_id": "63138325",
+    "staging_page_id": "138681366",
+    "production_url": "https://moonn.ru/vacuum_cups",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/vacuum_cups",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "water",
+    "source_page_id": "63552425",
+    "staging_page_id": "138681466",
+    "production_url": "https://moonn.ru/water",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/water",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "kpt",
+    "source_page_id": "63403669",
+    "staging_page_id": "138682206",
+    "production_url": "https://moonn.ru/kpt",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/kpt",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "psychoanalys",
+    "source_page_id": "63398035",
+    "staging_page_id": "138682476",
+    "production_url": "https://moonn.ru/psychoanalys",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/psychoanalys",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "geshtalt",
+    "source_page_id": "63388057",
+    "staging_page_id": "138682696",
+    "production_url": "https://moonn.ru/geshtalt",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/geshtalt",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "schematherapy",
+    "source_page_id": "63409841",
+    "staging_page_id": "138682896",
+    "production_url": "https://moonn.ru/schematherapy",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/schematherapy",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "uslugi_fin_blocks",
+    "source_page_id": "63711321",
+    "staging_page_id": "138683016",
+    "production_url": "https://moonn.ru/uslugi_fin_blocks",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_fin_blocks",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "uslugi_podrostki",
+    "source_page_id": "63713227",
+    "staging_page_id": "138683686",
+    "production_url": "https://moonn.ru/uslugi_podrostki",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_podrostki",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "uslugi_konflikti_na_rabote",
+    "source_page_id": "63716871",
+    "staging_page_id": "138683936",
+    "production_url": "https://moonn.ru/uslugi_konflikti_na_rabote",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_konflikti_na_rabote",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "uslugi_otnosheniya_v_kollektive",
+    "source_page_id": "63718371",
+    "staging_page_id": "138684096",
+    "production_url": "https://moonn.ru/uslugi_otnosheniya_v_kollektive",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_otnosheniya_v_kollektive",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "uslugi_depression",
+    "source_page_id": "63747017",
+    "staging_page_id": "138684276",
+    "production_url": "https://moonn.ru/uslugi_depression",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_depression",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "uslugi_obida_na_roditelei",
+    "source_page_id": "63749211",
+    "staging_page_id": "138684406",
+    "production_url": "https://moonn.ru/uslugi_obida_na_roditelei",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_obida_na_roditelei",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "uslugi_procrastination",
+    "source_page_id": "63750667",
+    "staging_page_id": "138685516",
+    "production_url": "https://moonn.ru/uslugi_procrastination",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_procrastination",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "uslugi_sohranit_brak",
+    "source_page_id": "63752263",
+    "staging_page_id": "138685686",
+    "production_url": "https://moonn.ru/uslugi_sohranit_brak",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_sohranit_brak",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "uslugi_razvod",
+    "source_page_id": "63755367",
+    "staging_page_id": "138685886",
+    "production_url": "https://moonn.ru/uslugi_razvod",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_razvod",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "uslugi_lubovnaya_zavisimost",
+    "source_page_id": "63757347",
+    "staging_page_id": "138686066",
+    "production_url": "https://moonn.ru/uslugi_lubovnaya_zavisimost",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_lubovnaya_zavisimost",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "uslugi_gtr",
+    "source_page_id": "63758713",
+    "staging_page_id": "138686216",
+    "production_url": "https://moonn.ru/uslugi_gtr",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_gtr",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "uslugi_aerofobia",
+    "source_page_id": "63836583",
+    "staging_page_id": "138686506",
+    "production_url": "https://moonn.ru/uslugi_aerofobia",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/uslugi_aerofobia",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "emotional-intelligence/articles/what-is-emotional-intelligence",
+    "source_page_id": "90782146",
+    "staging_page_id": "138668556",
+    "production_url": "https://moonn.ru/emotional-intelligence/articles/what-is-emotional-intelligence",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/emotional-intelligence/articles/what-is-emotional-intelligence",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "emotional-intelligence/articles/emotional-intelligence-skills",
+    "source_page_id": "90952996",
+    "staging_page_id": "138668766",
+    "production_url": "https://moonn.ru/emotional-intelligence/articles/emotional-intelligence-skills",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/emotional-intelligence/articles/emotional-intelligence-skills",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "emotional-intelligence/articles/why-ei-matters",
+    "source_page_id": "91163626",
+    "staging_page_id": "138668916",
+    "production_url": "https://moonn.ru/emotional-intelligence/articles/why-ei-matters",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/emotional-intelligence/articles/why-ei-matters",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "emotional-intelligence/articles/benefits-of-ei",
+    "source_page_id": "91171146",
+    "staging_page_id": "138669216",
+    "production_url": "https://moonn.ru/emotional-intelligence/articles/benefits-of-ei",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/emotional-intelligence/articles/benefits-of-ei",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "emotional-intelligence/knowledge-base/emotional-intelligence",
+    "source_page_id": "91652966",
+    "staging_page_id": "138670456",
+    "production_url": "https://moonn.ru/emotional-intelligence/knowledge-base/emotional-intelligence",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/emotional-intelligence/knowledge-base/emotional-intelligence",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "emotional-intelligence/knowledge-base/self-awareness",
+    "source_page_id": "91665726",
+    "staging_page_id": "138670576",
+    "production_url": "https://moonn.ru/emotional-intelligence/knowledge-base/self-awareness",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/emotional-intelligence/knowledge-base/self-awareness",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "emotional-intelligence/knowledge-base/self-regulation",
+    "source_page_id": "91670976",
+    "staging_page_id": "138670746",
+    "production_url": "https://moonn.ru/emotional-intelligence/knowledge-base/self-regulation",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/emotional-intelligence/knowledge-base/self-regulation",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "emotional-intelligence/knowledge-base/empathy",
+    "source_page_id": "91686486",
+    "staging_page_id": "138670916",
+    "production_url": "https://moonn.ru/emotional-intelligence/knowledge-base/empathy",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/emotional-intelligence/knowledge-base/empathy",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "emotional-intelligence/knowledge-base/emotional-literacy",
+    "source_page_id": "91692166",
+    "staging_page_id": "138672296",
+    "production_url": "https://moonn.ru/emotional-intelligence/knowledge-base/emotional-literacy",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/emotional-intelligence/knowledge-base/emotional-literacy",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "emotional-intelligence/knowledge-base/social-intelligence",
+    "source_page_id": "91696586",
+    "staging_page_id": "138672476",
+    "production_url": "https://moonn.ru/emotional-intelligence/knowledge-base/social-intelligence",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/emotional-intelligence/knowledge-base/social-intelligence",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "emotional-intelligence/knowledge-base/intrinsic-motivation",
+    "source_page_id": "91701376",
+    "staging_page_id": "138672636",
+    "production_url": "https://moonn.ru/emotional-intelligence/knowledge-base/intrinsic-motivation",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/emotional-intelligence/knowledge-base/intrinsic-motivation",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "emotional-intelligence/knowledge-base/burnout",
+    "source_page_id": "91715996",
+    "staging_page_id": "138672816",
+    "production_url": "https://moonn.ru/emotional-intelligence/knowledge-base/burnout",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/emotional-intelligence/knowledge-base/burnout",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "emotional-intelligence/knowledge-base/nonviolent-communication",
+    "source_page_id": "91720476",
+    "staging_page_id": "138672976",
+    "production_url": "https://moonn.ru/emotional-intelligence/knowledge-base/nonviolent-communication",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/emotional-intelligence/knowledge-base/nonviolent-communication",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "st2",
+    "source_page_id": "98329166",
+    "staging_page_id": "138676856",
+    "production_url": "https://moonn.ru/st2",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/st2",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "kurs-ei",
+    "source_page_id": "124264896",
+    "staging_page_id": "138667516",
+    "production_url": "https://moonn.ru/kurs-ei",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/kurs-ei",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "programmakursa",
+    "source_page_id": "124963886",
+    "staging_page_id": "138667746",
+    "production_url": "https://moonn.ru/programmakursa",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/programmakursa",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "st1",
+    "source_page_id": "69732653",
+    "staging_page_id": "138676976",
+    "production_url": "https://moonn.ru/st1",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/st1",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  },
+  {
+    "alias": "seminar555",
+    "source_page_id": "57927493",
+    "staging_page_id": "138677186",
+    "production_url": "https://moonn.ru/seminar555",
+    "staging_url": "https://carry-pacific-flatfish.tilda.ws/seminar555",
+    "cluster": "unclassified",
+    "rollout_status": "pending"
+  }
+]
