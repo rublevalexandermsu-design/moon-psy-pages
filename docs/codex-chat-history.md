@@ -1414,3 +1414,31 @@ Canonical append-only chat history for `moon-psy-site`.
   - `registry/tilda/moonn-staging-page-map.json`
 - Boundary:
   - Production `moonn.ru` was not changed.
+## 2026-05-02T11:45:00+03:00 — Tilda staging source-link cleanup session gate added
+
+- Project: `moon-psy-site`.
+- Workstream: `Moonn SEO / staging source-link cleanup`.
+- Branch: `codex/tilda-api-sync`.
+- Request: continue the next step after the GSC/Tilda staging link audit and begin fixing source-link errors on the copied Tilda pages.
+- Strategic assessment:
+  - Platform value: high, because source-link cleanup removes crawl/user defects before scaling SEO edits to production.
+  - Obsolescence risk: medium if performed manually without a repeatable gate; low after a browser/session contract is used.
+  - Stronger architecture: keep Tilda UI edits gated by project/page identity and verify with API export before production rollout.
+  - Reuse: the same gate applies to future Tilda SEO, design, payment, and video-page edits.
+  - 3-12 month risk if skipped: edits can drift across TimePad, staging, and production contexts, making SEO fixes unreliable.
+- Actions:
+  - Checked repo state: branch `codex/tilda-api-sync`, clean before this session update.
+  - Confirmed the visible desktop Chrome window was on `TimePad.ru`, not Tilda.
+  - Checked Browser Use in-app state; it was available but unauthenticated/blank.
+  - Opened the first staging editor URL for page `138694136`; Tilda returned `https://tilda.ru/404/pagenotpublished/`.
+  - Added a mandatory browser session gate to `docs/seo/moonn-staging-source-link-cleanup-b1.md`.
+- Incident:
+  - Symptom: attempts to continue UI editing were not in an authenticated Tilda staging editor context.
+  - Root cause: browser focus/session state drifted to TimePad, while Browser Use did not share the authenticated Tilda session.
+  - Solution: stop before any save/publish action; require a verified Tilda staging session before source edits.
+  - Follow-up rule: for Tilda UI edits, do not proceed from a login page, 404 page, public staging page, TimePad tab, or production project context.
+- Verification:
+  - No staging page source edits were made after the audit.
+  - No production page was changed.
+- Open issue:
+  - User needs to restore or expose an authenticated Tilda staging editor session before UI source-link edits can continue.

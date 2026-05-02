@@ -41,12 +41,29 @@ Generated: 2026-05-02T11:10:00+03:00
 
 For each page in the batch:
 
-1. Open the staging page editor, not production.
-2. Replace `http://wa.me/79777770303` with `https://wa.me/79777770303`.
-3. Replace `http://.moonn.ru` with `https://moonn.ru`.
-4. Save and publish the staging page.
-5. Re-export the page through Tilda API and require both old-pattern counters to become `0`.
-6. Only after the staging batch passes, apply the same page/block pattern to production pages.
+1. Pass the Tilda browser session gate below.
+2. Open the staging page editor, not production.
+3. Replace `http://wa.me/79777770303` with `https://wa.me/79777770303`.
+4. Replace `http://.moonn.ru` with `https://moonn.ru`.
+5. Save and publish the staging page.
+6. Re-export the page through Tilda API and require both old-pattern counters to become `0`.
+7. Only after the staging batch passes, apply the same page/block pattern to production pages.
+
+## Tilda Browser Session Gate
+
+Before any Tilda save or publish action:
+
+1. Visible browser URL must be on `tilda.ru`, not `timepad.ru`, `moonn.ru`, or the staging public domain.
+2. The Tilda account must already be authenticated; login pages and `tilda.ru/404/pagenotpublished/` do not pass.
+3. The editor/project context must show staging project `25075076` / `Moonn Staging`, not production project `8326812`.
+4. The active page id must match the current batch row.
+5. If any of these checks fail, stop before editing and restore the correct Tilda session.
+
+Current blocked state, 2026-05-02:
+
+- Visible desktop Chrome window is on `TimePad.ru`, not Tilda.
+- Browser Use in-app tab opens the direct staging editor URL as `https://tilda.ru/404/pagenotpublished/`.
+- No staging page source edits were made in this session after the audit.
 
 ## UI Incident
 
