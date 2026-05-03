@@ -77,3 +77,27 @@ Append-only project history for `moon-psy-site`.
 - Risk notes:
   - Shared credentials and private video links are sensitive; rotate the password after the setup session.
   - Public sales pages must not expose raw private or unlisted YouTube links.
+
+## 2026-05-03 — Live Moonn SEO Metadata Audit
+
+- Project: Moonn / Tilda site.
+- Workstream: live SEO/AEO audit.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: SEO heartbeat continued safe follow-up work while paid video lectures remain paused.
+- User-facing boundary:
+  - No Tilda edits were made.
+  - No payment/product/private-video changes were made.
+- Created files:
+  - `docs/moonn-live-seo-metadata-audit-2026-05-03.json`
+  - `docs/moonn-live-seo-metadata-audit-2026-05-03.md`
+- Verified:
+  - 9 priority Moonn URLs return HTTP `200`.
+  - All 9 have canonical and `og:image`.
+  - Only `https://moonn.ru/psiholog-moskva-online` exposes JSON-LD.
+- Findings:
+  - 8 of 9 checked pages need page-specific JSON-LD.
+  - 5 pages have no detected H1.
+  - Main page and depression page have too many detected H1 tags.
+  - `events_tp` has a very short generic description.
+- Follow-up rule:
+  - Next safe SEO step is a per-page Tilda SEO patch packet, not direct live edits: title, description, one-H1 instruction, JSON-LD, canonical confirmation and image/OG note.

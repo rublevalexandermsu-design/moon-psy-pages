@@ -1,0 +1,188 @@
+{
+  "version": 1,
+  "createdAt": "2026-05-03",
+  "project": "Moonn / Tilda site",
+  "workstream": "moonn-live-seo-audit",
+  "branch": "codex/moonn-seo-audit",
+  "status": "read-only-audit-no-tilda-edits",
+  "scope": [
+    "https://moonn.ru/",
+    "https://moonn.ru/events_tp",
+    "https://moonn.ru/lectures1",
+    "https://moonn.ru/psiholog-moskva-online",
+    "https://moonn.ru/psiholog-konsultacii-moskva",
+    "https://moonn.ru/uslugi_depression",
+    "https://moonn.ru/emotional-intelligence/articles/benefits-of-ei",
+    "https://moonn.ru/emotional-intelligence/knowledge-base/empathy",
+    "https://moonn.ru/emotional-intelligence/knowledge-base/nonviolent-communication"
+  ],
+  "summary": {
+    "checkedUrls": 9,
+    "http200": 9,
+    "canonicalPresent": 9,
+    "ogImagePresent": 9,
+    "jsonLdPresent": 1,
+    "jsonLdMissing": 8,
+    "missingH1": 5,
+    "multipleH1": 3,
+    "shortDescription": 1,
+    "overlongTitle": 2
+  },
+  "findings": [
+    {
+      "priority": "high",
+      "issue": "Most checked pages do not expose JSON-LD.",
+      "affectedUrls": [
+        "https://moonn.ru/",
+        "https://moonn.ru/events_tp",
+        "https://moonn.ru/lectures1",
+        "https://moonn.ru/psiholog-konsultacii-moskva",
+        "https://moonn.ru/uslugi_depression",
+        "https://moonn.ru/emotional-intelligence/articles/benefits-of-ei",
+        "https://moonn.ru/emotional-intelligence/knowledge-base/empathy",
+        "https://moonn.ru/emotional-intelligence/knowledge-base/nonviolent-communication"
+      ],
+      "recommendation": "Add page-specific JSON-LD: Person/ProfessionalService on consultation pages, Event/ItemList on lecture pages, Article/FAQPage on knowledge pages, BreadcrumbList everywhere."
+    },
+    {
+      "priority": "high",
+      "issue": "Several pages have no detected H1, which weakens page-topic clarity.",
+      "affectedUrls": [
+        "https://moonn.ru/events_tp",
+        "https://moonn.ru/lectures1",
+        "https://moonn.ru/emotional-intelligence/articles/benefits-of-ei",
+        "https://moonn.ru/emotional-intelligence/knowledge-base/empathy",
+        "https://moonn.ru/emotional-intelligence/knowledge-base/nonviolent-communication"
+      ],
+      "recommendation": "Ensure each indexable page has exactly one visible H1 aligned with its title and search intent."
+    },
+    {
+      "priority": "medium",
+      "issue": "Main page and depression page have many H1 elements.",
+      "affectedUrls": [
+        "https://moonn.ru/",
+        "https://moonn.ru/uslugi_depression"
+      ],
+      "recommendation": "Keep one primary H1 and demote repeated block headings to H2/H3 in Tilda."
+    },
+    {
+      "priority": "medium",
+      "issue": "The events page description is too short and generic.",
+      "affectedUrls": [
+        "https://moonn.ru/events_tp"
+      ],
+      "recommendation": "Rewrite description around lectures, paid/free events, emotional intelligence, psychology of relationships and Tatiana Moonn/Kumskova identity."
+    },
+    {
+      "priority": "medium",
+      "issue": "Some title tags are overlong.",
+      "affectedUrls": [
+        "https://moonn.ru/",
+        "https://moonn.ru/uslugi_depression"
+      ],
+      "recommendation": "Shorten title tags to the main commercial/search intent and keep identity modifiers in description/schema."
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://moonn.ru/",
+      "status": 200,
+      "titleLength": 90,
+      "descriptionLength": 166,
+      "canonical": "https://moonn.ru",
+      "ogImage": true,
+      "jsonLd": false,
+      "h1Count": 5,
+      "action": "shorten title, add Person/ProfessionalService JSON-LD, reduce to one H1"
+    },
+    {
+      "url": "https://moonn.ru/events_tp",
+      "status": 200,
+      "titleLength": 44,
+      "descriptionLength": 31,
+      "canonical": "https://moonn.ru/events_tp",
+      "ogImage": true,
+      "jsonLd": false,
+      "h1Count": 0,
+      "action": "add one H1, rewrite description, add ItemList/Event JSON-LD"
+    },
+    {
+      "url": "https://moonn.ru/lectures1",
+      "status": 200,
+      "titleLength": 42,
+      "descriptionLength": 205,
+      "canonical": "https://moonn.ru/lectures1",
+      "ogImage": true,
+      "jsonLd": false,
+      "h1Count": 0,
+      "action": "add one H1, clean leading comma in description, add ItemList/Event JSON-LD"
+    },
+    {
+      "url": "https://moonn.ru/psiholog-moskva-online",
+      "status": 200,
+      "titleLength": 72,
+      "descriptionLength": 138,
+      "canonical": "https://moonn.ru/psiholog-moskva-online",
+      "ogImage": true,
+      "jsonLd": true,
+      "h1Count": 1,
+      "action": "use as implementation reference for other consultation pages"
+    },
+    {
+      "url": "https://moonn.ru/psiholog-konsultacii-moskva",
+      "status": 200,
+      "titleLength": 59,
+      "descriptionLength": 171,
+      "canonical": "https://moonn.ru/psiholog-konsultacii-moskva",
+      "ogImage": true,
+      "jsonLd": false,
+      "h1Count": 2,
+      "action": "reduce to one H1, add ProfessionalService JSON-LD"
+    },
+    {
+      "url": "https://moonn.ru/uslugi_depression",
+      "status": 200,
+      "titleLength": 110,
+      "descriptionLength": 113,
+      "canonical": "https://moonn.ru/uslugi_depression",
+      "ogImage": true,
+      "jsonLd": false,
+      "h1Count": 6,
+      "action": "shorten title, reduce H1 count, add FAQPage and ProfessionalService JSON-LD"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/articles/benefits-of-ei",
+      "status": 200,
+      "titleLength": 77,
+      "descriptionLength": 136,
+      "canonical": "https://moonn.ru/emotional-intelligence/articles/benefits-of-ei",
+      "ogImage": true,
+      "jsonLd": false,
+      "h1Count": 0,
+      "action": "add H1 and Article/FAQPage/BreadcrumbList JSON-LD"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/empathy",
+      "status": 200,
+      "titleLength": 65,
+      "descriptionLength": 132,
+      "canonical": "https://moonn.ru/emotional-intelligence/knowledge-base/empathy",
+      "ogImage": true,
+      "jsonLd": false,
+      "h1Count": 0,
+      "action": "add H1 and Article/FAQPage/BreadcrumbList JSON-LD"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/nonviolent-communication",
+      "status": 200,
+      "titleLength": 77,
+      "descriptionLength": 123,
+      "canonical": "https://moonn.ru/emotional-intelligence/knowledge-base/nonviolent-communication",
+      "ogImage": true,
+      "jsonLd": false,
+      "h1Count": 0,
+      "action": "add H1 and Article/FAQPage/BreadcrumbList JSON-LD"
+    }
+  ],
+  "safeNextStep": "Prepare page-specific SEO patch packets for Tilda: title, description, H1 instruction and JSON-LD per URL. Do not apply live edits until the supported Tilda path and target pages are confirmed."
+}
