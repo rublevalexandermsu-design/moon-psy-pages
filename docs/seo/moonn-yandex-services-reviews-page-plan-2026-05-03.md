@@ -9,7 +9,7 @@
 
 1. Platform value: high. Reviews are external proof, useful for SEO, AEO, conversion, and entity trust.
 2. Obsolescence risk: medium. Reviews change over time, so the page needs refresh rules and provenance.
-3. Stronger architecture: use a reviews manifest plus screenshots/OCR evidence, not a one-off page.
+3. Stronger architecture: use a reviews manifest with per-review provenance plus screenshots/OCR evidence, not a one-off page.
 4. Reuse: high. The same workflow can support Timepad reviews, course feedback, event feedback, and future author profiles.
 5. 3-12 month risk if ignored: reviews remain isolated inside Yandex Services and do not strengthen `moonn.ru` entity trust.
 
@@ -26,6 +26,27 @@ Do not publish screenshots automatically until these questions are cleared:
 
 Default safe rule: use grouped screenshots only after manual approval or anonymization. For SEO text, prefer summarized review themes and short compliant excerpts over copying all review text verbatim.
 
+## Verification / Provenance Rule
+
+Every review used on `moonn.ru` must be independently checkable.
+
+Required manifest fields per review:
+
+- `source_platform`: `Yandex Services`.
+- `source_profile_url`: `https://uslugi.yandex.ru/profile/TatyanaKumskovatatyanamunn-948629`.
+- `source_review_url`: direct URL to the individual review if Yandex exposes one.
+- `source_review_id`: review id or stable DOM/link identifier if available.
+- `captured_at`: date/time when the review was checked.
+- `review_date`: visible date from Yandex.
+- `rating`: visible rating if available.
+- `reviewer_display`: public display name only if approved; otherwise anonymized label.
+- `public_excerpt`: short visible excerpt or approved OCR text.
+- `screenshot_file`: SEO-named evidence image if screenshots are approved.
+- `screenshot_hash`: SHA-256 hash of the evidence image.
+- `privacy_status`: `public`, `anonymized`, or `do_not_publish`.
+
+If Yandex does not provide direct links to individual reviews, do not pretend that it does. Use the Yandex profile URL as the source link and add a visible source note on the page: `Источник: профиль Татьяны Мунн на Яндекс Услугах; отзыв проверен по дате, рейтингу и скриншоту`. In that case each review block should still carry `captured_at`, `review_date`, `rating`, `screenshot_file`, and `screenshot_hash` in the internal manifest.
+
 ## Proposed Page Structure
 
 - URL candidate: `https://moonn.ru/reviews-yandex-services` or improve existing `https://moonn.ru/otzivi` if it is the canonical reviews page.
@@ -35,6 +56,8 @@ Default safe rule: use grouped screenshots only after manual approval or anonymi
 - Sections:
   - summary trust block: rating, review count, source link;
   - source disclosure: reviews are from Yandex Services profile;
+  - each visible review includes a source link to the individual Yandex review when available;
+  - if individual review links are not available, each visible review links to the Yandex Services profile and the internal manifest stores evidence fields;
   - grouped screenshots, 7-10 reviews per image if privacy allows;
   - OCR text layer only after review and cleanup;
   - thematic review clusters: consultation, anxiety/stress, relationships, emotional intelligence, lectures;
