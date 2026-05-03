@@ -6,6 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA = ROOT / "registry" / "seo" / "moonn-production-83-schema-snippets.json"
 AUDIT = ROOT / "registry" / "seo" / "moonn-production-83-seo-audit.json"
+ENTITY_GRAPH = ROOT / "registry" / "seo" / "moonn-authority-entity-graph.json"
 OUT = ROOT / "assets" / "moonn-seo-aeo-enhancer.js"
 
 
@@ -20,9 +21,48 @@ def path_key(url: str) -> str:
     return re.sub(r"/+$", "", url.replace("https://moonn.ru", "")) or "/"
 
 
+def uniq(values: list[str]) -> list[str]:
+    result = []
+    for value in values:
+        if value and value not in result:
+            result.append(value)
+    return result
+
+
+def enhance_person_schema(schema: dict, entity_graph: dict) -> dict:
+    person = entity_graph["person"]
+    same_as = entity_graph.get("same_as", [])
+    organizations = entity_graph.get("organizations", [])
+    for node in schema.get("@graph", []):
+        if node.get("@id") != "https://moonn.ru/#tatiana-munn":
+            continue
+        node["alternateName"] = uniq(list(node.get("alternateName", [])) + person.get("alternate_names", []))
+        node["jobTitle"] = uniq(list(node.get("jobTitle", [])) + person.get("job_titles", []))
+        node["sameAs"] = uniq(list(node.get("sameAs", [])) + same_as)
+        affiliations = []
+        for organization in organizations:
+            if organization.get("relationship") != "affiliation":
+                continue
+            affiliations.append({
+                "@type": "Organization",
+                "name": organization["name"],
+                "alternateName": organization.get("alternate_name"),
+                "url": organization["url"],
+            })
+        if affiliations:
+            node["affiliation"] = affiliations
+        node["subjectOf"] = [
+            {"@type": "WebPage", "url": url}
+            for url in same_as
+            if url != "https://moonn.ru/"
+        ]
+    return schema
+
+
 def main() -> int:
     schema_manifest = json.loads(SCHEMA.read_text(encoding="utf-8"))
     audit = json.loads(AUDIT.read_text(encoding="utf-8"))
+    entity_graph = json.loads(ENTITY_GRAPH.read_text(encoding="utf-8"))
     page_meta = {}
     for page in audit["pages"]:
         page_meta[path_key(page["url"])] = {
@@ -35,6 +75,7 @@ def main() -> int:
     schemas = {}
     for item in schema_manifest["snippets"]:
         schema = extract_json_ld(item["snippet"])
+        schema = enhance_person_schema(schema, entity_graph)
         schemas[path_key(item["url"])] = {
             "marker": item["marker"],
             "schema": schema,
@@ -45,6 +86,10 @@ def main() -> int:
         "scope": "moonn-production-83",
         "schemas": schemas,
         "page_meta": page_meta,
+        "entity_bridge": {
+            "text": entity_graph["person"]["visible_bridge_text"],
+            "links": entity_graph["person"]["visible_bridge_links"],
+        },
     }
 
     js = f"""/*
@@ -142,11 +187,49 @@ def main() -> int:
     if (meta.description) ensureMeta('abstract', meta.description);
   }}
 
+  function injectEntityBridge() {{
+    if (document.getElementById('moonn-entity-bridge')) return;
+    var bridge = PAYLOAD.entity_bridge || {{}};
+    if (!bridge.text) return;
+    var section = document.createElement('section');
+    section.id = 'moonn-entity-bridge';
+    section.setAttribute('aria-label', 'Профессиональная связка Татьяны Мунн');
+    section.innerHTML = '<p></p><nav aria-label="Профили Татьяны Мунн"></nav>';
+    section.querySelector('p').textContent = bridge.text;
+    var nav = section.querySelector('nav');
+    (bridge.links || []).forEach(function (item, index) {{
+      if (index) nav.appendChild(document.createTextNode(' · '));
+      var link = document.createElement('a');
+      link.href = item.url;
+      link.textContent = item.label;
+      link.rel = 'me noopener';
+      nav.appendChild(link);
+    }});
+    document.body.appendChild(section);
+  }}
+
+  function injectEntityBridgeStyles() {{
+    if (document.getElementById('moonn-entity-bridge-style')) return;
+    var style = document.createElement('style');
+    style.id = 'moonn-entity-bridge-style';
+    style.textContent = [
+      '#moonn-entity-bridge{{max-width:980px;margin:42px auto 26px;padding:0 20px 10px;font:12px/1.55 Arial,sans-serif;color:rgba(38,32,48,.68);text-align:center;position:relative;z-index:3;}}',
+      '#moonn-entity-bridge p{{margin:0 0 8px;}}',
+      '#moonn-entity-bridge nav{{font-size:12px;}}',
+      '#moonn-entity-bridge a{{color:rgba(88,48,168,.82);text-decoration:none;border-bottom:1px solid rgba(88,48,168,.22);}}',
+      '#moonn-entity-bridge a:hover{{color:#5d2ee6;border-bottom-color:rgba(93,46,230,.55);}}',
+      '@media (max-width:640px){{#moonn-entity-bridge{{margin:30px auto 18px;font-size:11px;}}}}'
+    ].join('');
+    document.head.appendChild(style);
+  }}
+
   function run() {{
     injectSchema();
     fixLinks();
     improveImages();
     improveHead();
+    injectEntityBridgeStyles();
+    injectEntityBridge();
     document.documentElement.setAttribute('data-moonn-seo-aeo-enhanced', PAYLOAD.scope);
   }}
 

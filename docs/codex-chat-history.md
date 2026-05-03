@@ -1724,3 +1724,35 @@ Canonical append-only chat history for `moon-psy-site`.
 - Remaining work:
   - Rendered production SEO/AEO is complete for the `83` pages.
   - Native source-level Tilda cleanup is still recommended for links, headings, alt text, and duplicate metadata so raw HTML converges with the rendered state.
+
+## 2026-05-03T14:35:00+03:00 — Moonn/Kumskova/MIBS entity bridge prepared
+
+- Project: `moon-psy-site`.
+- Workstream: `Moonn production entity SEO/AEO`.
+- Branch: `codex/tilda-api-sync`.
+- Request: connect `Татьяна Мунн`, `Татьяна Кумскова/Кумскова Татьяна Михайловна`, `психолог МГУ`, `МИБС/МИИИИПС`, Timepad, Yandex Services, MSU Istina, and author/scientific profiles without occupying the user's Chrome screen.
+- Strategic assessment:
+  - Platform value: high; consolidates fragmented public authority signals into one entity graph.
+  - Obsolescence risk: medium if external URLs are hardcoded without provenance.
+  - Stronger architecture: keep a canonical `entity graph` registry and generate schema/footer bridge from it.
+  - Reuse: the same entity-linking pattern applies to Timepad events, institute author pages, paid courses, and future author profiles.
+  - 3-12 month risk: without a registry, profile URLs and name variants will drift across Tilda, Timepad, Yandex, MSU, and institute pages.
+- Actions:
+  - Created `registry/seo/moonn-authority-entity-graph.json`.
+  - Created `docs/seo/moonn-authority-entity-graph-2026-05-03.md`.
+  - Updated `scripts/build_moonn_seo_enhancer.py` to read the entity graph registry.
+  - Regenerated `assets/moonn-seo-aeo-enhancer.js`.
+- Implemented in generated asset:
+  - Small visible footer-level identity bridge; no hidden SEO text.
+  - `Person.alternateName`: `Татьяна Мунн (Кумскова)`, `Татьяна Кумскова`, `Кумскова Татьяна Михайловна`.
+  - `Person.sameAs`: Yandex Services, Timepad, MSU Istina, PsyJournals, and `miiiips.ru`.
+  - `Person.affiliation`: MIBS/MIIIIPS institute contour.
+  - `Person.subjectOf`: external public profile pages.
+- Verification:
+  - `node --check assets/moonn-seo-aeo-enhancer.js` passed.
+  - Mock DOM execution confirmed that the enhancer injects `moonn-rendered-jsonld` and visible `moonn-entity-bridge`.
+- Deployment boundary:
+  - Production Tilda currently loads the old enhancer pinned to commit `8dd2572`.
+  - These changes are prepared in code, but they will not appear live until Tilda head snippets are updated to the new commit or to a stable loader.
+- Follow-up rule:
+  - Do not use invisible keyword stuffing. Entity reconciliation must be visible, editorial, schema-backed, and sourced from the canonical entity graph registry.

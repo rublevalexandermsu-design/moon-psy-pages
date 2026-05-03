@@ -1,0 +1,90 @@
+{
+  "entity_id": "moonn-tatiana-munn-kumskova",
+  "checked_at": "2026-05-03",
+  "primary_site": "https://moonn.ru/",
+  "person": {
+    "name": "Татьяна Мунн",
+    "alternate_names": [
+      "Татьяна Мунн (Кумскова)",
+      "Татьяна Кумскова",
+      "Кумскова Татьяна Михайловна"
+    ],
+    "job_titles": [
+      "психолог",
+      "спикер",
+      "лектор",
+      "эксперт по эмоциональному интеллекту"
+    ],
+    "visible_bridge_text": "Татьяна Мунн — публичное имя психолога и лектора Татьяны Кумсковой (Кумсковой Татьяны Михайловны), психолога МГУ и автора материалов по эмоциональному интеллекту. Профиль связан с Яндекс Услугами, Timepad, научными публикациями и проектами МИБС/МИИИИПС.",
+    "visible_bridge_links": [
+      {
+        "label": "Яндекс Услуги",
+        "url": "https://uslugi.yandex.ru/profile/TatyanaKumskovatatyanamunn-948629",
+        "source": "HTTP 200 check, 2026-05-03"
+      },
+      {
+        "label": "Timepad",
+        "url": "https://moonn.timepad.ru/events/",
+        "source": "Public Timepad organizer/events page, 2026-05-03"
+      },
+      {
+        "label": "МГУ Истина",
+        "url": "https://istina.msu.ru/workers/816305440/",
+        "source": "HTTP 200 check, 2026-05-03"
+      },
+      {
+        "label": "PsyJournals",
+        "url": "https://psyjournals.ru/authors/15337",
+        "source": "PsyJournals public author page, 2026-05-03"
+      },
+      {
+        "label": "МИБС/МИИИИПС",
+        "url": "https://miiiips.ru/",
+        "source": "HTTP 200 check, 2026-05-03"
+      }
+    ]
+  },
+  "organizations": [
+    {
+      "name": "МГУ имени М. В. Ломоносова, факультет психологии",
+      "url": "https://www.msu.ru/",
+      "relationship": "alumniOf"
+    },
+    {
+      "name": "МИБС/МИИИИПС",
+      "alternate_name": "Международный институт исследований искусственного интеллекта, психологии и спорта",
+      "url": "https://miiiips.ru/",
+      "relationship": "affiliation"
+    }
+  ],
+  "same_as": [
+    "https://uslugi.yandex.ru/profile/TatyanaKumskovatatyanamunn-948629",
+    "https://moonn.timepad.ru/events/",
+    "https://istina.msu.ru/workers/816305440/",
+    "https://psyjournals.ru/authors/15337",
+    "https://miiiips.ru/"
+  ],
+  "offsite_seo_actions": [
+    {
+      "priority": "high",
+      "action": "Добавить обратную ссылку на https://moonn.ru/ в публичные описания Timepad-событий и организатора, где это доступно.",
+      "reason": "Timepad уже ранжируется по лекциям и имени Татьяны Мунн; обратная ссылка укрепляет entity reconciliation."
+    },
+    {
+      "priority": "high",
+      "action": "Создать или дооформить авторскую страницу Татьяны Мунн/Кумсковой на miiiips.ru с тем же Person JSON-LD, sameAs и ссылками на moonn.ru, Timepad, Истину, PsyJournals и Яндекс Услуги.",
+      "reason": "Контролируемая институтская страница станет вторым надежным узлом графа, а не просто внешней площадкой."
+    },
+    {
+      "priority": "medium",
+      "action": "Синхронизировать имя в Яндекс Услугах, Timepad, научных профилях и сайте: видимое имя Татьяна Мунн, юридический/научный вариант Татьяна Кумскова / Кумскова Татьяна Михайловна.",
+      "reason": "Поисковым системам нужны повторяющиеся, но естественные совпадения имени, профессии, МГУ и тематики."
+    },
+    {
+      "priority": "medium",
+      "action": "Для новых лекций Timepad использовать единый блок спикера: имя, МГУ, эмоциональный интеллект, ссылка на moonn.ru, ссылка на профиль автора/института.",
+      "reason": "Событийные страницы дают свежие сигналы и часто быстрее попадают в выдачу, чем статические страницы."
+    }
+  ],
+  "compliance_note": "Do not hide keyword text for crawlers. The identity bridge must remain visible, concise, editorial, and useful to people."
+}
