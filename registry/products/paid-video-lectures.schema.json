@@ -63,9 +63,11 @@
           "source_page_url": {"type": "string"},
           "source_tilda_page_id": {"type": "string"},
           "timepad_source_url": {"type": ["string", "null"]},
+          "timepad_event_id": {"type": ["string", "null"]},
           "video_source_url": {"type": ["string", "null"]},
           "tilda_product_sku": {"type": ["string", "null"]},
           "tilda_member_group": {"type": ["string", "null"]},
+          "qr_image_file": {"type": ["string", "null"]},
           "protected_watch_page_url": {"type": ["string", "null"]},
           "qr_target_url": {"type": ["string", "null"]},
           "status": {

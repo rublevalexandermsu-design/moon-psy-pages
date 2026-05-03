@@ -16,8 +16,8 @@ Branch: `codex/moonn-paid-video-lectures`
 
 - Read-only Tilda API audit found 39 published page candidates with lecture/course/video/payment signals.
 - Strongest candidates:
-  - `https://moonn.ru/lectures1`, Tilda page `68295899`: likely canonical paid lecture storefront.
-  - `https://moonn.ru/events_tp`, Tilda page `66814657`: 11 Timepad links, likely event/archive page.
+  - `https://moonn.ru/events_tp`, Tilda page `66814657`: user-confirmed canonical lecture page; audit found 10 unique Timepad event URLs plus the Timepad loader.
+  - `https://moonn.ru/lectures1`, Tilda page `68295899`: secondary lecture page, not the current paid-lecture pilot.
   - `https://moonn.ru/events`, Tilda page `53668815`: public events page.
   - `https://moonn.ru/psypodgotovka1`, Tilda page `62652841`: already contains "purchase recording" signals.
   - `https://moonn.ru/seminar555`, Tilda page `57927493`: contains YouTube links and paid/seminar signals.
@@ -28,13 +28,15 @@ Branch: `codex/moonn-paid-video-lectures`
 Recommended model:
 
 1. Product/storefront page:
-   - Use `lectures1` as the first pilot storefront unless visual inspection proves another page is the real canonical page.
+   - Use `events_tp` as the first pilot storefront.
    - Each lecture card becomes a Tilda product with price `1300`.
    - Button text changes from `Записаться` / `Зарегистрироваться` to `Купить запись` or `Приобрести лекцию`.
 
 2. Payment:
    - Use Tilda cart/payment stack already configured in the project.
-   - For live rollout, verify which payment provider is active and whether test payments are possible.
+   - Tilda read-only API exposes the `userpayment` field but did not expose an active provider value in the current API response.
+   - Current assumption from the user: T-Bank/Tinkoff for IP Kumskova.
+   - For live rollout, visually verify which payment provider is active and whether test payments are possible.
    - Do not change production payment settings blindly.
 
 3. Access after payment:
@@ -60,6 +62,7 @@ Canonical files created:
 - `registry/products/paid-video-lectures.schema.json`
 - `registry/products/paid-video-lectures.manifest.json`
 - `registry/products/paid-video-lectures-audit-2026-05-03.json`
+- `assets/qr/tatyana-munn-paid-lectures-events-tp-qr.png`
 
 These files separate public page text from machine data:
 
@@ -77,7 +80,7 @@ These files separate public page text from machine data:
 ## Safe Rollout Plan
 
 1. Pilot one lecture in staging:
-   - choose one lecture card on `lectures1`;
+   - choose one lecture card on `events_tp`;
    - create a test product at `1300 RUB`;
    - create one protected watch page/group;
    - connect payment and post-payment group access;
@@ -108,17 +111,47 @@ Do not proceed to production until these are confirmed:
 - raw YouTube/private video links are not exposed on the public sales page;
 - user approved live publication and live payment path.
 
+## `events_tp` Lecture Candidates
+
+The manifest now contains 10 lecture candidates extracted from the live `events_tp` Timepad links:
+
+- `3334362` — БЕСПЛАТНЫЕ лекции по ПСИХОЛОГИИ.
+- `3796319` — ДУХОВНАЯ Психология.
+- `3796462` — Психология ЛЮБВИ к СЕБЕ.
+- `3796469` — Психология ГОЛОДА.
+- `3796473` — Психология МУЖЧИНЫ.
+- `3808776` — Психология Искусственного и Эмоционального ИНТЕЛЛЕКТА.
+- `3808782` — Психология ЖЕНЩИНЫ.
+- `3808783` — ЦИФРОВАЯ Психология.
+- `3808788` — БЫСТРАЯ Психология.
+- `3808803` — Психология ЗНАКОМСТВА.
+
+Each candidate has a planned:
+
+- SKU: `moonn-video-lecture-{timepad_event_id}`;
+- Members group: `moonn-video-lecture-{timepad_event_id}`;
+- price: `1300 RUB`;
+- QR target: `https://moonn.ru/events_tp`;
+- status: `needs_video`.
+
+## Test Scenario Approved By User
+
+User approved one test scenario. Safe interpretation:
+
+- one selected `events_tp` lecture only;
+- staging or Tilda-safe test mode first;
+- if only a live payment is available, run one explicit low-blast-radius test purchase after visual confirmation of seller/payment details;
+- do not create a new live T-Bank/Tinkoff integration unless existing provider is absent and legal/payment requisites are confirmed.
+
 ## User Input Needed
 
-- Final list of lectures to sell.
 - Video URL for each lecture.
 - Decision: one purchase per lecture or bundle/library access.
-- Confirmation which Tilda payment provider should be used.
-- Approval for one staging or safe live test purchase.
+- Visual confirmation of current Tilda payment provider, because read-only API did not expose active payment details.
+- Confirmation whether the group lecture `3334362` should be sold as a recording or treated only as an archive/series entry.
 
 ## Official Tilda References Checked
 
 - Tilda customer accounts for online store: `https://help-ru.tilda.cc/online-store/customer-accounts`
 - Tilda Members access after payment: `https://help-ru.tilda.cc/membership`
 - Tilda courses and paid course access: `https://help-ru.tilda.cc/courses`
-

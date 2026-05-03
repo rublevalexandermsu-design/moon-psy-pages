@@ -4,94 +4,227 @@
   "currency": "RUB",
   "default_price_rub": 1300,
   "canonical_store_page": {
-    "url": "https://moonn.ru/lectures1",
-    "tilda_page_id": "68295899",
-    "alias": "lectures1",
+    "url": "https://moonn.ru/events_tp",
+    "tilda_page_id": "66814657",
+    "alias": "events_tp",
     "role": "storefront"
   },
   "access_model": {
     "tilda_module": "Tilda Members / Courses",
-    "payment_receiver": "Tilda cart ST100 + configured payment system",
-    "delivery_rule": "Add buyer to the matching Members group only after successful payment.",
+    "payment_receiver": "Tilda cart ST100 + configured T-Bank/Tinkoff or existing project payment provider after visual verification",
+    "delivery_rule": "For one pilot, sell access to a protected Members/Courses page after successful payment; then scale to one group per lecture or one recordings library group.",
     "video_protection_rule": "Do not rely on public or unlisted YouTube links as protection. Use a protected Tilda Members/course page and avoid exposing the raw video link where possible."
   },
   "lectures": [
     {
-      "lecture_id": "lectures1-storefront",
-      "title": "Лекции по психологии от Татьяны Мунн",
-      "price_rub": 1300,
-      "source_page_url": "https://moonn.ru/lectures1",
-      "source_tilda_page_id": "68295899",
-      "timepad_source_url": null,
-      "video_source_url": null,
-      "tilda_product_sku": null,
-      "tilda_member_group": null,
-      "protected_watch_page_url": null,
-      "qr_target_url": "https://moonn.ru/lectures1",
-      "status": "needs_video",
-      "required_user_input": [
-        "list of final lecture titles",
-        "matching video URL for each lecture",
-        "confirmation of which payment system is live in Tilda",
-        "approval to test one 1300 RUB payment path in staging or with a safe test mode"
-      ],
-      "notes": "Canonical storefront candidate found by read-only Tilda audit."
-    },
-    {
-      "lecture_id": "events-tp-timepad-archive",
-      "title": "Лекции по психологии / Timepad-linked events",
+      "lecture_id": "timepad-3334362",
+      "title": "БЕСПЛАТНЫЕ лекции по ПСИХОЛОГИИ (по пн | 19.00). Психолог Татьяна Мунн",
       "price_rub": 1300,
       "source_page_url": "https://moonn.ru/events_tp",
       "source_tilda_page_id": "66814657",
-      "timepad_source_url": "multiple Timepad links found in page audit",
+      "timepad_event_id": "3334362",
+      "timepad_source_url": "https://moonn.timepad.ru/event/3334362/",
       "video_source_url": null,
-      "tilda_product_sku": null,
-      "tilda_member_group": null,
+      "tilda_product_sku": "moonn-video-lecture-3334362",
+      "tilda_member_group": "moonn-video-lecture-3334362",
       "protected_watch_page_url": null,
+      "qr_image_file": "assets/qr/tatyana-munn-paid-lectures-events-tp-qr.png",
       "qr_target_url": "https://moonn.ru/events_tp",
-      "status": "candidate",
+      "status": "needs_video",
       "required_user_input": [
-        "decision whether this page stays registration/events or becomes paid recording archive"
+        "matching video URL",
+        "confirm whether this Timepad event should be sold as a recording"
       ],
-      "notes": "Audit found 11 Timepad links. This is likely an events page, not necessarily the paid recording storefront."
+      "notes": "Generated from the live events_tp Timepad link list. Product/access records are planned, not yet created in Tilda."
     },
     {
-      "lecture_id": "psypodgotovka-exam-recordings",
-      "title": "Психологическая подготовка к экзаменам",
+      "lecture_id": "timepad-3796319",
+      "title": "Лекция \"ДУХОВНАЯ Психология\" в Парке Горького - 02 февраля 2026 (пн, 19.00- 21.00)",
       "price_rub": 1300,
-      "source_page_url": "https://moonn.ru/psypodgotovka1",
-      "source_tilda_page_id": "62652841",
-      "timepad_source_url": null,
+      "source_page_url": "https://moonn.ru/events_tp",
+      "source_tilda_page_id": "66814657",
+      "timepad_event_id": "3796319",
+      "timepad_source_url": "https://moonn.timepad.ru/event/3796319/",
       "video_source_url": null,
-      "tilda_product_sku": null,
-      "tilda_member_group": null,
+      "tilda_product_sku": "moonn-video-lecture-3796319",
+      "tilda_member_group": "moonn-video-lecture-3796319",
       "protected_watch_page_url": null,
-      "qr_target_url": "https://moonn.ru/psypodgotovka1",
-      "status": "candidate",
+      "qr_image_file": "assets/qr/tatyana-munn-paid-lectures-events-tp-qr.png",
+      "qr_target_url": "https://moonn.ru/events_tp",
+      "status": "needs_video",
       "required_user_input": [
-        "confirm whether this is one paid lecture, a bundle, or a free lead magnet",
-        "video URL(s)"
+        "matching video URL",
+        "confirm whether this Timepad event should be sold as a recording"
       ],
-      "notes": "Page text already contains signals about purchasing lecture recordings."
+      "notes": "Generated from the live events_tp Timepad link list. Product/access records are planned, not yet created in Tilda."
     },
     {
-      "lecture_id": "seminar555-recordings",
-      "title": "Обучение методу Быстрая Психология",
+      "lecture_id": "timepad-3796462",
+      "title": "Лекция \"Психология ЛЮБВИ к СЕБЕ\" в Парке Горького - вход свободный 09 февраля 2026 (пн, 19.00- 21.00). Психолог Татьяна Мунн",
       "price_rub": 1300,
-      "source_page_url": "https://moonn.ru/seminar555",
-      "source_tilda_page_id": "57927493",
-      "timepad_source_url": null,
-      "video_source_url": "multiple YouTube links found in page audit",
-      "tilda_product_sku": null,
-      "tilda_member_group": null,
+      "source_page_url": "https://moonn.ru/events_tp",
+      "source_tilda_page_id": "66814657",
+      "timepad_event_id": "3796462",
+      "timepad_source_url": "https://moonn.timepad.ru/event/3796462/",
+      "video_source_url": null,
+      "tilda_product_sku": "moonn-video-lecture-3796462",
+      "tilda_member_group": "moonn-video-lecture-3796462",
       "protected_watch_page_url": null,
-      "qr_target_url": "https://moonn.ru/seminar555",
-      "status": "candidate",
+      "qr_image_file": "assets/qr/tatyana-munn-paid-lectures-events-tp-qr.png",
+      "qr_target_url": "https://moonn.ru/events_tp",
+      "status": "needs_video",
       "required_user_input": [
-        "confirm whether existing YouTube links are previews or paid full videos",
-        "final sales model: one lecture, 3-day bundle, or course"
+        "matching video URL",
+        "confirm whether this Timepad event should be sold as a recording"
       ],
-      "notes": "Audit found 3 YouTube links. Needs access model decision before selling."
+      "notes": "Generated from the live events_tp Timepad link list. Product/access records are planned, not yet created in Tilda."
+    },
+    {
+      "lecture_id": "timepad-3796469",
+      "title": "Лекция \"Психология ГОЛОДА\" в Парке Горького - вход свободный 16 февраля 2026 (пн, 19.00- 21.00). Психолог Татьяна Мунн",
+      "price_rub": 1300,
+      "source_page_url": "https://moonn.ru/events_tp",
+      "source_tilda_page_id": "66814657",
+      "timepad_event_id": "3796469",
+      "timepad_source_url": "https://moonn.timepad.ru/event/3796469/",
+      "video_source_url": null,
+      "tilda_product_sku": "moonn-video-lecture-3796469",
+      "tilda_member_group": "moonn-video-lecture-3796469",
+      "protected_watch_page_url": null,
+      "qr_image_file": "assets/qr/tatyana-munn-paid-lectures-events-tp-qr.png",
+      "qr_target_url": "https://moonn.ru/events_tp",
+      "status": "needs_video",
+      "required_user_input": [
+        "matching video URL",
+        "confirm whether this Timepad event should be sold as a recording"
+      ],
+      "notes": "Generated from the live events_tp Timepad link list. Product/access records are planned, not yet created in Tilda."
+    },
+    {
+      "lecture_id": "timepad-3796473",
+      "title": "Лекция \"Психология МУЖЧИНЫ\" в Парке Горького - вход свободный 23 февраля 2026 (пн, 19.00- 21.00). Психолог Татьяна Мунн",
+      "price_rub": 1300,
+      "source_page_url": "https://moonn.ru/events_tp",
+      "source_tilda_page_id": "66814657",
+      "timepad_event_id": "3796473",
+      "timepad_source_url": "https://moonn.timepad.ru/event/3796473/",
+      "video_source_url": null,
+      "tilda_product_sku": "moonn-video-lecture-3796473",
+      "tilda_member_group": "moonn-video-lecture-3796473",
+      "protected_watch_page_url": null,
+      "qr_image_file": "assets/qr/tatyana-munn-paid-lectures-events-tp-qr.png",
+      "qr_target_url": "https://moonn.ru/events_tp",
+      "status": "needs_video",
+      "required_user_input": [
+        "matching video URL",
+        "confirm whether this Timepad event should be sold as a recording"
+      ],
+      "notes": "Generated from the live events_tp Timepad link list. Product/access records are planned, not yet created in Tilda."
+    },
+    {
+      "lecture_id": "timepad-3808776",
+      "title": "Лекция \"Психология Искусственного и Эмоционального ИНТЕЛЛЕКТА\" в Парке Горького - вход свободный 02 марта 2026 (пн, 19.00- 21.00). Психолог Татьяна Мунн",
+      "price_rub": 1300,
+      "source_page_url": "https://moonn.ru/events_tp",
+      "source_tilda_page_id": "66814657",
+      "timepad_event_id": "3808776",
+      "timepad_source_url": "https://moonn.timepad.ru/event/3808776/",
+      "video_source_url": null,
+      "tilda_product_sku": "moonn-video-lecture-3808776",
+      "tilda_member_group": "moonn-video-lecture-3808776",
+      "protected_watch_page_url": null,
+      "qr_image_file": "assets/qr/tatyana-munn-paid-lectures-events-tp-qr.png",
+      "qr_target_url": "https://moonn.ru/events_tp",
+      "status": "needs_video",
+      "required_user_input": [
+        "matching video URL",
+        "confirm whether this Timepad event should be sold as a recording"
+      ],
+      "notes": "Generated from the live events_tp Timepad link list. Product/access records are planned, not yet created in Tilda."
+    },
+    {
+      "lecture_id": "timepad-3808782",
+      "title": "Лекция \"Психология ЖЕНЩИНЫ\" в Парке Горького - вход свободный 09 марта 2026 (пн, 19.00- 21.00). Психолог Татьяна Мунн",
+      "price_rub": 1300,
+      "source_page_url": "https://moonn.ru/events_tp",
+      "source_tilda_page_id": "66814657",
+      "timepad_event_id": "3808782",
+      "timepad_source_url": "https://moonn.timepad.ru/event/3808782/",
+      "video_source_url": null,
+      "tilda_product_sku": "moonn-video-lecture-3808782",
+      "tilda_member_group": "moonn-video-lecture-3808782",
+      "protected_watch_page_url": null,
+      "qr_image_file": "assets/qr/tatyana-munn-paid-lectures-events-tp-qr.png",
+      "qr_target_url": "https://moonn.ru/events_tp",
+      "status": "needs_video",
+      "required_user_input": [
+        "matching video URL",
+        "confirm whether this Timepad event should be sold as a recording"
+      ],
+      "notes": "Generated from the live events_tp Timepad link list. Product/access records are planned, not yet created in Tilda."
+    },
+    {
+      "lecture_id": "timepad-3808783",
+      "title": "Лекция \"ЦИФРОВАЯ Психология\" в Парке Горького - вход свободный 16 марта 2026 (пн, 19.00- 21.00). Психолог Татьяна Мунн",
+      "price_rub": 1300,
+      "source_page_url": "https://moonn.ru/events_tp",
+      "source_tilda_page_id": "66814657",
+      "timepad_event_id": "3808783",
+      "timepad_source_url": "https://moonn.timepad.ru/event/3808783/",
+      "video_source_url": null,
+      "tilda_product_sku": "moonn-video-lecture-3808783",
+      "tilda_member_group": "moonn-video-lecture-3808783",
+      "protected_watch_page_url": null,
+      "qr_image_file": "assets/qr/tatyana-munn-paid-lectures-events-tp-qr.png",
+      "qr_target_url": "https://moonn.ru/events_tp",
+      "status": "needs_video",
+      "required_user_input": [
+        "matching video URL",
+        "confirm whether this Timepad event should be sold as a recording"
+      ],
+      "notes": "Generated from the live events_tp Timepad link list. Product/access records are planned, not yet created in Tilda."
+    },
+    {
+      "lecture_id": "timepad-3808788",
+      "title": "Лекция \"БЫСТРАЯ Психология\" в Парке Горького - вход свободный 30 марта 2026 (пн, 19.00- 21.00). Психолог Татьяна Мунн",
+      "price_rub": 1300,
+      "source_page_url": "https://moonn.ru/events_tp",
+      "source_tilda_page_id": "66814657",
+      "timepad_event_id": "3808788",
+      "timepad_source_url": "https://moonn.timepad.ru/event/3808788/",
+      "video_source_url": null,
+      "tilda_product_sku": "moonn-video-lecture-3808788",
+      "tilda_member_group": "moonn-video-lecture-3808788",
+      "protected_watch_page_url": null,
+      "qr_image_file": "assets/qr/tatyana-munn-paid-lectures-events-tp-qr.png",
+      "qr_target_url": "https://moonn.ru/events_tp",
+      "status": "needs_video",
+      "required_user_input": [
+        "matching video URL",
+        "confirm whether this Timepad event should be sold as a recording"
+      ],
+      "notes": "Generated from the live events_tp Timepad link list. Product/access records are planned, not yet created in Tilda."
+    },
+    {
+      "lecture_id": "timepad-3808803",
+      "title": "Лекция \"Психология ЗНАКОМСТВА\" в Парке Горького - вход свободный 23 марта 2026 (пн, 19.00- 21.00). Психолог Татьяна Мунн",
+      "price_rub": 1300,
+      "source_page_url": "https://moonn.ru/events_tp",
+      "source_tilda_page_id": "66814657",
+      "timepad_event_id": "3808803",
+      "timepad_source_url": "https://moonn.timepad.ru/event/3808803/",
+      "video_source_url": null,
+      "tilda_product_sku": "moonn-video-lecture-3808803",
+      "tilda_member_group": "moonn-video-lecture-3808803",
+      "protected_watch_page_url": null,
+      "qr_image_file": "assets/qr/tatyana-munn-paid-lectures-events-tp-qr.png",
+      "qr_target_url": "https://moonn.ru/events_tp",
+      "status": "needs_video",
+      "required_user_input": [
+        "matching video URL",
+        "confirm whether this Timepad event should be sold as a recording"
+      ],
+      "notes": "Generated from the live events_tp Timepad link list. Product/access records are planned, not yet created in Tilda."
     }
   ]
 }
