@@ -53,6 +53,38 @@ Until that migration is done, the rendered SEO layer improves `alt/title/schema`
 4. After media reupload, run the image audit again and compare `images_needing_filename_reupload`.
 5. Only then request image reindexing through Google Search Console and Yandex Webmaster.
 
+## Local Migration Package
+
+Prepared a local, non-Git media package:
+
+- Folder: `output/moonn-image-seo-migration`
+- Manifest: `output/moonn-image-seo-migration/manifest.csv`
+- Downloaded SEO-named files: `1362`
+- Download errors: `0`
+- Total media size: `484012169` bytes
+
+The package is intentionally stored under `output/`, which is ignored by Git. It is the working source for Tilda media replacement, not a repository artifact.
+
+The replacement manifest includes:
+
+- production page URL;
+- Tilda source page id;
+- original image URL;
+- canonical download URL;
+- current filename;
+- SEO filename;
+- local file path;
+- proposed alt/title;
+- file hash and content type.
+
+## Full-Fidelity Replacement Options
+
+1. Best long-term: use the package as a Tilda media migration checklist and replace images in source blocks, starting with hero/OG/above-the-fold assets.
+2. Faster but still source-level: batch replace only the highest-impact pages first, then rerun the audit to measure reduction in technical filenames.
+3. Rendered-only fallback: keep the current enhancer for contextual `alt/title`, but this does not change the CDN filename and should not be treated as full image SEO.
+
+Official Tilda API remains export/sync oriented in this project context; a documented API method for uploading a file to Tilda media library and replacing block assets was not available. Therefore the replacement step requires Tilda UI/DevTools automation or manual media replacement against the manifest.
+
 ## Validation
 
 - `python scripts/seo_image_audit_production.py` completed with `error_count=0`.

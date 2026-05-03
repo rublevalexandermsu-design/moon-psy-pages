@@ -1790,3 +1790,31 @@ Canonical append-only chat history for `moon-psy-site`.
   - Production Tilda still loads the older enhancer pinned to commit `8dd2572`; live pages need a head-code update to receive these rendered image rules.
 - Follow-up rule:
   - Treat image SEO as a two-layer system: immediate rendered attributes and schema first, then source-level Tilda media reupload for true filename SEO.
+
+## 2026-05-03T15:35:00+03:00 — Moonn image SEO migration package prepared
+
+- Project: `moon-psy-site`.
+- Workstream: `Moonn production image SEO/AEO`.
+- Branch: `codex/tilda-api-sync`.
+- Request: move beyond rendered image attributes and prepare a full route for real SEO filenames by downloading and renaming Tilda image assets locally.
+- Actions:
+  - Added `scripts/prepare_image_seo_migration_package.py`.
+  - Smoke-tested the package builder on 12 and then 20 files.
+  - Fixed network resilience for partial CDN reads with retries.
+  - Fixed Windows path length failures by shortening page-folder and filename paths while retaining SEO tokens and image ids.
+  - Generated local package in `output/moonn-image-seo-migration`.
+- Verified facts:
+  - Candidate files: `1362`.
+  - Downloaded files: `1362`.
+  - Errors: `0`.
+  - Total local media size: `484012169` bytes.
+  - Manifest files: `output/moonn-image-seo-migration/manifest.json` and `output/moonn-image-seo-migration/manifest.csv`.
+- Deployment boundary:
+  - The local package solves the download/rename/preparation stage.
+  - Tilda still requires source block media replacement through UI/DevTools automation or manual upload against the manifest.
+  - The official API path used in this project is export/sync oriented; no documented file-upload/block-replacement API was available.
+- Incident:
+  - Symptom: first full package run failed on `IncompleteRead`; second run failed on path length for long SEO filenames.
+  - Root cause: CDN transfer instability and Windows path-length limits were not accounted for in the first version.
+  - Fix: retries, cache reuse, shorter folder names, shorter SEO filenames with image ids.
+  - Follow-up rule: media migration scripts must treat network reads, duplicate filenames, and OS path length as first-class validation gates.
