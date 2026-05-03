@@ -146,9 +146,33 @@ User approved one test scenario. Safe interpretation:
 ## User Input Needed
 
 - Video URL for each lecture.
+- If videos are private/hidden in YouTube Studio, provide browser login access to the channel owner account or export the video list with title, video id, visibility and URL.
 - Decision: one purchase per lecture or bundle/library access.
 - Visual confirmation of current Tilda payment provider, because read-only API did not expose active payment details.
 - Confirmation whether the group lecture `3334362` should be sold as a recording or treated only as an archive/series entry.
+
+## YouTube Matching Gate
+
+The YouTube channel is `https://www.youtube.com/@moonn_tatiana`, but the relevant recordings are private/hidden. Public channel scanning is not enough to match videos reliably.
+
+Safe matching process:
+
+1. Open YouTube Studio through the already logged-in Chrome profile or have the owner log in visually.
+2. Export or inspect the private video list.
+3. Match by lecture title and date against `registry/products/paid-video-lectures-youtube-map.template.csv`.
+4. Store only video id / Studio URL / visibility in the internal manifest. Do not expose raw private links on public pages.
+5. After Tilda protected access exists, embed the selected video only inside the protected watch page/course lesson.
+
+Required matching fields:
+
+- `lecture_id`;
+- `timepad_event_id`;
+- `lecture_title`;
+- `youtube_candidate_title`;
+- `youtube_studio_url_or_video_id`;
+- `youtube_visibility`;
+- `match_confidence`;
+- `approved_for_paid_access`.
 
 ## Official Tilda References Checked
 

@@ -35,6 +35,8 @@ Append-only project history for `moon-psy-site`.
   - QR image was generated for `https://moonn.ru/events_tp`.
 - Open questions / blockers:
   - Video URL is still needed for each lecture.
+  - User clarified that YouTube recordings are private/hidden, so public channel scan is insufficient.
+  - YouTube Studio access or an exported owner video list is needed to match videos to lectures.
   - Confirm whether Timepad event `3334362` is a sellable recording or only a series/archive entry.
   - Tilda payment provider must be checked visually; read-only API did not expose active payment details.
   - Before production, run one staging or safe live test purchase and verify post-payment access.
