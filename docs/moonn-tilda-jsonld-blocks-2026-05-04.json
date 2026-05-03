@@ -1,0 +1,394 @@
+{
+  "version": 1,
+  "createdAt": "2026-05-04",
+  "project": "Moonn / Tilda site",
+  "workstream": "moonn-live-seo-audit",
+  "branch": "codex/moonn-seo-audit",
+  "status": "prepared-no-live-tilda-edits",
+  "sourcePacket": "docs/moonn-tilda-seo-patch-packets-2026-05-03.json",
+  "applicationBoundary": {
+    "safeUse": "Copy the relevant JSON-LD graph into the supported Tilda page head/code field after visual/API path is confirmed.",
+    "notDoneAutomatically": [
+      "No live Tilda edits were made.",
+      "No undocumented Tilda endpoints were used.",
+      "No fake ratings, reviews, prices, private videos or payment data were added."
+    ]
+  },
+  "sharedPerson": {
+    "@type": "Person",
+    "@id": "https://moonn.ru/#tatiana-munn",
+    "name": "Татьяна Мунн",
+    "alternateName": [
+      "Кумскова Татьяна Михайловна",
+      "Татьяна Мунн (Кумскова)"
+    ],
+    "jobTitle": "Психолог МГУ, эксперт по эмоциональному интеллекту",
+    "url": "https://moonn.ru/",
+    "sameAs": [
+      "https://moonn.ru/",
+      "https://moonn.timepad.ru/events/",
+      "https://miiiips.ru/author-tatyana-munn-kumskova.html",
+      "https://uslugi.yandex.ru/profile/TatyanaKumskovatatyanamunn-948629",
+      "https://istina.msu.ru/workers/816305440/",
+      "https://psyjournals.ru/authors/15337"
+    ]
+  },
+  "pages": [
+    {
+      "url": "https://moonn.ru/",
+      "tildaPlacement": "Page Settings -> Additional HTML for HEAD, or page head code field",
+      "jsonLd": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://moonn.ru/#tatiana-munn",
+            "name": "Татьяна Мунн",
+            "alternateName": ["Кумскова Татьяна Михайловна", "Татьяна Мунн (Кумскова)"],
+            "jobTitle": "Психолог МГУ, эксперт по эмоциональному интеллекту",
+            "url": "https://moonn.ru/",
+            "sameAs": ["https://moonn.timepad.ru/events/", "https://miiiips.ru/author-tatyana-munn-kumskova.html", "https://uslugi.yandex.ru/profile/TatyanaKumskovatatyanamunn-948629", "https://istina.msu.ru/workers/816305440/", "https://psyjournals.ru/authors/15337"]
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://moonn.ru/#psychology-service",
+            "name": "Психологические консультации Татьяны Мунн",
+            "url": "https://moonn.ru/",
+            "areaServed": ["Москва", "Онлайн"],
+            "provider": {"@id": "https://moonn.ru/#tatiana-munn"},
+            "description": "Консультации психолога МГУ Татьяны Мунн в Москве и онлайн: эмоциональный интеллект, отношения, стресс и подростки."
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://moonn.ru/#website",
+            "url": "https://moonn.ru/",
+            "name": "Татьяна Мунн",
+            "publisher": {"@id": "https://moonn.ru/#tatiana-munn"}
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://moonn.ru/#breadcrumbs",
+            "itemListElement": [
+              {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://moonn.ru/"}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://moonn.ru/events_tp",
+      "tildaPlacement": "Page Settings -> Additional HTML for HEAD, after public lecture cards are verified",
+      "jsonLd": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://moonn.ru/#tatiana-munn",
+            "name": "Татьяна Мунн",
+            "alternateName": ["Кумскова Татьяна Михайловна", "Татьяна Мунн (Кумскова)"],
+            "jobTitle": "Психолог МГУ, эксперт по эмоциональному интеллекту",
+            "url": "https://moonn.ru/",
+            "sameAs": ["https://moonn.timepad.ru/events/", "https://miiiips.ru/author-tatyana-munn-kumskova.html", "https://uslugi.yandex.ru/profile/TatyanaKumskovatatyanamunn-948629", "https://istina.msu.ru/workers/816305440/", "https://psyjournals.ru/authors/15337"]
+          },
+          {
+            "@type": "ItemList",
+            "@id": "https://moonn.ru/events_tp#lecture-list",
+            "name": "Лекции Татьяны Мунн по психологии",
+            "url": "https://moonn.ru/events_tp",
+            "description": "Расписание лекций Татьяны Мунн по психологии, отношениям и эмоциональному интеллекту.",
+            "itemListElement": []
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://moonn.ru/events_tp#breadcrumbs",
+            "itemListElement": [
+              {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://moonn.ru/"},
+              {"@type": "ListItem", "position": 2, "name": "Лекции", "item": "https://moonn.ru/events_tp"}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://moonn.ru/lectures1",
+      "tildaPlacement": "Page Settings -> Additional HTML for HEAD, after archive lecture cards are verified",
+      "jsonLd": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://moonn.ru/#tatiana-munn",
+            "name": "Татьяна Мунн",
+            "alternateName": ["Кумскова Татьяна Михайловна", "Татьяна Мунн (Кумскова)"],
+            "jobTitle": "Психолог МГУ, эксперт по эмоциональному интеллекту",
+            "url": "https://moonn.ru/",
+            "sameAs": ["https://moonn.timepad.ru/events/", "https://miiiips.ru/author-tatyana-munn-kumskova.html", "https://uslugi.yandex.ru/profile/TatyanaKumskovatatyanamunn-948629", "https://istina.msu.ru/workers/816305440/", "https://psyjournals.ru/authors/15337"]
+          },
+          {
+            "@type": "ItemList",
+            "@id": "https://moonn.ru/lectures1#lecture-archive",
+            "name": "Архив лекций Татьяны Мунн",
+            "url": "https://moonn.ru/lectures1",
+            "description": "Архив лекций Татьяны Мунн по эмоциональному интеллекту, отношениям и практической психологии.",
+            "itemListElement": []
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://moonn.ru/lectures1#breadcrumbs",
+            "itemListElement": [
+              {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://moonn.ru/"},
+              {"@type": "ListItem", "position": 2, "name": "Архив лекций", "item": "https://moonn.ru/lectures1"}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://moonn.ru/psiholog-moskva-online",
+      "tildaPlacement": "Use current JSON-LD as reference; replace only if current code is weaker after visual verification",
+      "jsonLd": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://moonn.ru/#tatiana-munn",
+            "name": "Татьяна Мунн",
+            "alternateName": ["Кумскова Татьяна Михайловна", "Татьяна Мунн (Кумскова)"],
+            "jobTitle": "Психолог МГУ, эксперт по эмоциональному интеллекту",
+            "url": "https://moonn.ru/",
+            "sameAs": ["https://moonn.timepad.ru/events/", "https://miiiips.ru/author-tatyana-munn-kumskova.html", "https://uslugi.yandex.ru/profile/TatyanaKumskovatatyanamunn-948629", "https://istina.msu.ru/workers/816305440/", "https://psyjournals.ru/authors/15337"]
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://moonn.ru/psiholog-moskva-online#service",
+            "name": "Консультации психолога МГУ в Москве и онлайн",
+            "url": "https://moonn.ru/psiholog-moskva-online",
+            "areaServed": ["Москва", "Онлайн"],
+            "provider": {"@id": "https://moonn.ru/#tatiana-munn"},
+            "description": "Консультации Татьяны Мунн по тревоге, выгоранию, отношениям и эмоциональному интеллекту."
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://moonn.ru/psiholog-moskva-online#faq",
+            "mainEntity": []
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://moonn.ru/psiholog-moskva-online#breadcrumbs",
+            "itemListElement": [
+              {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://moonn.ru/"},
+              {"@type": "ListItem", "position": 2, "name": "Психолог в Москве и онлайн", "item": "https://moonn.ru/psiholog-moskva-online"}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://moonn.ru/psiholog-konsultacii-moskva",
+      "tildaPlacement": "Page Settings -> Additional HTML for HEAD",
+      "jsonLd": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://moonn.ru/#tatiana-munn",
+            "name": "Татьяна Мунн",
+            "alternateName": ["Кумскова Татьяна Михайловна", "Татьяна Мунн (Кумскова)"],
+            "jobTitle": "Психолог МГУ, эксперт по эмоциональному интеллекту",
+            "url": "https://moonn.ru/",
+            "sameAs": ["https://moonn.timepad.ru/events/", "https://miiiips.ru/author-tatyana-munn-kumskova.html", "https://uslugi.yandex.ru/profile/TatyanaKumskovatatyanamunn-948629", "https://istina.msu.ru/workers/816305440/", "https://psyjournals.ru/authors/15337"]
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://moonn.ru/psiholog-konsultacii-moskva#service",
+            "name": "Консультации психолога Татьяны Мунн",
+            "url": "https://moonn.ru/psiholog-konsultacii-moskva",
+            "areaServed": ["Москва", "Онлайн"],
+            "provider": {"@id": "https://moonn.ru/#tatiana-munn"},
+            "description": "Индивидуальные и семейные консультации психолога в Москве и онлайн."
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://moonn.ru/psiholog-konsultacii-moskva#faq",
+            "mainEntity": []
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://moonn.ru/psiholog-konsultacii-moskva#breadcrumbs",
+            "itemListElement": [
+              {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://moonn.ru/"},
+              {"@type": "ListItem", "position": 2, "name": "Консультации", "item": "https://moonn.ru/psiholog-konsultacii-moskva"}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://moonn.ru/uslugi_depression",
+      "tildaPlacement": "Page Settings -> Additional HTML for HEAD",
+      "jsonLd": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://moonn.ru/#tatiana-munn",
+            "name": "Татьяна Мунн",
+            "alternateName": ["Кумскова Татьяна Михайловна", "Татьяна Мунн (Кумскова)"],
+            "jobTitle": "Психолог МГУ, эксперт по эмоциональному интеллекту",
+            "url": "https://moonn.ru/",
+            "sameAs": ["https://moonn.timepad.ru/events/", "https://miiiips.ru/author-tatyana-munn-kumskova.html", "https://uslugi.yandex.ru/profile/TatyanaKumskovatatyanamunn-948629", "https://istina.msu.ru/workers/816305440/", "https://psyjournals.ru/authors/15337"]
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://moonn.ru/uslugi_depression#service",
+            "name": "Психологическая поддержка при депрессивном состоянии",
+            "url": "https://moonn.ru/uslugi_depression",
+            "areaServed": ["Москва", "Онлайн"],
+            "provider": {"@id": "https://moonn.ru/#tatiana-munn"},
+            "description": "Психологическая поддержка при стрессе, эмоциональном истощении и депрессивном состоянии."
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://moonn.ru/uslugi_depression#faq",
+            "mainEntity": []
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://moonn.ru/uslugi_depression#breadcrumbs",
+            "itemListElement": [
+              {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://moonn.ru/"},
+              {"@type": "ListItem", "position": 2, "name": "Депрессивное состояние", "item": "https://moonn.ru/uslugi_depression"}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/articles/benefits-of-ei",
+      "tildaPlacement": "Page Settings -> Additional HTML for HEAD",
+      "jsonLd": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://moonn.ru/#tatiana-munn",
+            "name": "Татьяна Мунн",
+            "alternateName": ["Кумскова Татьяна Михайловна", "Татьяна Мунн (Кумскова)"],
+            "jobTitle": "Психолог МГУ, эксперт по эмоциональному интеллекту",
+            "url": "https://moonn.ru/",
+            "sameAs": ["https://moonn.timepad.ru/events/", "https://miiiips.ru/author-tatyana-munn-kumskova.html", "https://uslugi.yandex.ru/profile/TatyanaKumskovatatyanamunn-948629", "https://istina.msu.ru/workers/816305440/", "https://psyjournals.ru/authors/15337"]
+          },
+          {
+            "@type": "Article",
+            "@id": "https://moonn.ru/emotional-intelligence/articles/benefits-of-ei#article",
+            "headline": "Преимущества эмоционального интеллекта",
+            "url": "https://moonn.ru/emotional-intelligence/articles/benefits-of-ei",
+            "author": {"@id": "https://moonn.ru/#tatiana-munn"},
+            "about": ["эмоциональный интеллект", "EQ", "отношения", "продуктивность", "выгорание"],
+            "inLanguage": "ru-RU"
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://moonn.ru/emotional-intelligence/articles/benefits-of-ei#faq",
+            "mainEntity": []
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://moonn.ru/emotional-intelligence/articles/benefits-of-ei#breadcrumbs",
+            "itemListElement": [
+              {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://moonn.ru/"},
+              {"@type": "ListItem", "position": 2, "name": "Эмоциональный интеллект", "item": "https://moonn.ru/emotional-intelligence/articles/benefits-of-ei"}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/empathy",
+      "tildaPlacement": "Page Settings -> Additional HTML for HEAD",
+      "jsonLd": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://moonn.ru/#tatiana-munn",
+            "name": "Татьяна Мунн",
+            "alternateName": ["Кумскова Татьяна Михайловна", "Татьяна Мунн (Кумскова)"],
+            "jobTitle": "Психолог МГУ, эксперт по эмоциональному интеллекту",
+            "url": "https://moonn.ru/",
+            "sameAs": ["https://moonn.timepad.ru/events/", "https://miiiips.ru/author-tatyana-munn-kumskova.html", "https://uslugi.yandex.ru/profile/TatyanaKumskovatatyanamunn-948629", "https://istina.msu.ru/workers/816305440/", "https://psyjournals.ru/authors/15337"]
+          },
+          {
+            "@type": "Article",
+            "@id": "https://moonn.ru/emotional-intelligence/knowledge-base/empathy#article",
+            "headline": "Эмпатия в эмоциональном интеллекте",
+            "url": "https://moonn.ru/emotional-intelligence/knowledge-base/empathy",
+            "author": {"@id": "https://moonn.ru/#tatiana-munn"},
+            "about": ["эмпатия", "эмоциональный интеллект", "отношения", "лидерство"],
+            "inLanguage": "ru-RU"
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://moonn.ru/emotional-intelligence/knowledge-base/empathy#faq",
+            "mainEntity": []
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://moonn.ru/emotional-intelligence/knowledge-base/empathy#breadcrumbs",
+            "itemListElement": [
+              {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://moonn.ru/"},
+              {"@type": "ListItem", "position": 2, "name": "Эмпатия", "item": "https://moonn.ru/emotional-intelligence/knowledge-base/empathy"}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/nonviolent-communication",
+      "tildaPlacement": "Page Settings -> Additional HTML for HEAD",
+      "jsonLd": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://moonn.ru/#tatiana-munn",
+            "name": "Татьяна Мунн",
+            "alternateName": ["Кумскова Татьяна Михайловна", "Татьяна Мунн (Кумскова)"],
+            "jobTitle": "Психолог МГУ, эксперт по эмоциональному интеллекту",
+            "url": "https://moonn.ru/",
+            "sameAs": ["https://moonn.timepad.ru/events/", "https://miiiips.ru/author-tatyana-munn-kumskova.html", "https://uslugi.yandex.ru/profile/TatyanaKumskovatatyanamunn-948629", "https://istina.msu.ru/workers/816305440/", "https://psyjournals.ru/authors/15337"]
+          },
+          {
+            "@type": "Article",
+            "@id": "https://moonn.ru/emotional-intelligence/knowledge-base/nonviolent-communication#article",
+            "headline": "Ненасильственное общение и эмоциональный интеллект",
+            "url": "https://moonn.ru/emotional-intelligence/knowledge-base/nonviolent-communication",
+            "author": {"@id": "https://moonn.ru/#tatiana-munn"},
+            "about": ["ненасильственное общение", "NVC", "эмоциональный интеллект", "конфликты"],
+            "inLanguage": "ru-RU"
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://moonn.ru/emotional-intelligence/knowledge-base/nonviolent-communication#faq",
+            "mainEntity": []
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://moonn.ru/emotional-intelligence/knowledge-base/nonviolent-communication#breadcrumbs",
+            "itemListElement": [
+              {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://moonn.ru/"},
+              {"@type": "ListItem", "position": 2, "name": "Ненасильственное общение", "item": "https://moonn.ru/emotional-intelligence/knowledge-base/nonviolent-communication"}
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "validationRules": [
+    "Every page graph must include Person or reference the shared Person @id.",
+    "No AggregateRating or Review nodes are allowed until the reviews gate is approved.",
+    "Lecture ItemList nodes intentionally have empty itemListElement until lecture cards are verified.",
+    "FAQPage nodes intentionally have empty mainEntity until page FAQ text is verified.",
+    "After inserting in Tilda, re-audit live HTML for application/ld+json presence and run URL inspection before requesting indexing."
+  ]
+}

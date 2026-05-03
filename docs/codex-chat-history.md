@@ -121,3 +121,23 @@ Append-only project history for `moon-psy-site`.
   - The packets preserve the public entity bridge: `Татьяна Мунн`, `Кумскова Татьяна Михайловна`, МГУ, Moonn, Timepad, MIIIIPS, Yandex Services, MSU Istina and PsyJournals.
 - Follow-up rule:
   - Next safe step is generating final JSON-LD code blocks per page, then applying them only through supported Tilda page head/code fields after the safe path is confirmed.
+
+## 2026-05-04 — Moonn Tilda JSON-LD Blocks
+
+- Project: Moonn / Tilda site.
+- Workstream: live SEO/AEO audit.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: SEO heartbeat continued from the Tilda SEO patch packets.
+- User-facing boundary:
+  - No live Tilda edits were made.
+  - No undocumented Tilda endpoints were used.
+  - No review, rating, payment, product or private-video data was added.
+- Created files:
+  - `docs/moonn-tilda-jsonld-blocks-2026-05-04.json`
+  - `docs/moonn-tilda-jsonld-blocks-2026-05-04.md`
+- Result:
+  - Prepared JSON-LD graph objects for 9 priority Moonn URLs.
+  - Connected each page to the same person/entity bridge: Татьяна Мунн / Кумскова Татьяна Михайловна / МГУ / Moonn / Timepad / MIIIIPS / Yandex Services / MSU Istina / PsyJournals.
+  - Excluded `Review`, `AggregateRating`, copied reviews, private videos, prices and medical treatment claims by design.
+- Follow-up rule:
+  - Insert JSON-LD only through supported Tilda page head/code fields, then re-audit live HTML for `application/ld+json` before requesting indexing.
