@@ -1,0 +1,210 @@
+{
+  "version": 1,
+  "createdAt": "2026-05-03",
+  "project": "Moonn / Tilda site",
+  "workstream": "moonn-live-seo-audit",
+  "branch": "codex/moonn-seo-audit",
+  "status": "prepared-no-live-tilda-edits",
+  "sourceAudit": "docs/moonn-live-seo-metadata-audit-2026-05-03.json",
+  "applicationBoundary": {
+    "safeNow": [
+      "Use as a Tilda SEO editing checklist",
+      "Use to prepare per-page JSON-LD blocks",
+      "Use for GSC/Yandex reindexing notes after publication"
+    ],
+    "notDoneAutomatically": [
+      "No live Tilda edits",
+      "No use of undocumented Tilda endpoints",
+      "No payment/product/video changes",
+      "No publication of private video links or review screenshots"
+    ]
+  },
+  "globalEntity": {
+    "name": "Татьяна Мунн",
+    "alternateName": [
+      "Кумскова Татьяна Михайловна",
+      "Татьяна Мунн (Кумскова)"
+    ],
+    "jobTitle": "Психолог МГУ, эксперт по эмоциональному интеллекту",
+    "sameAs": [
+      "https://moonn.ru/",
+      "https://moonn.timepad.ru/events/",
+      "https://miiiips.ru/author-tatyana-munn-kumskova.html",
+      "https://uslugi.yandex.ru/profile/TatyanaKumskovatatyanamunn-948629",
+      "https://istina.msu.ru/workers/816305440/",
+      "https://psyjournals.ru/authors/15337"
+    ]
+  },
+  "patches": [
+    {
+      "url": "https://moonn.ru/",
+      "pageType": "home",
+      "priority": "high",
+      "title": "Татьяна Мунн — психолог МГУ в Москве и онлайн",
+      "description": "Татьяна Мунн (Кумскова Татьяна Михайловна) — психолог МГУ, консультации в Москве и онлайн, эмоциональный интеллект, отношения, стресс и подростки.",
+      "h1": "Психолог МГУ Татьяна Мунн",
+      "h1Instruction": "Leave exactly one visible H1 on the page; demote repeated block headings to H2/H3.",
+      "canonical": "https://moonn.ru/",
+      "schemaTypes": [
+        "Person",
+        "ProfessionalService",
+        "WebSite",
+        "BreadcrumbList"
+      ],
+      "imageAltPattern": "Татьяна Мунн, психолог МГУ, консультации в Москве и онлайн",
+      "reindexAfterPublish": true
+    },
+    {
+      "url": "https://moonn.ru/events_tp",
+      "pageType": "lecture-list",
+      "priority": "high",
+      "title": "Лекции Татьяны Мунн по психологии и эмоциональному интеллекту",
+      "description": "Расписание лекций Татьяны Мунн (Кумскова Татьяна Михайловна): отношения, эмоциональный интеллект, стресс, подростки и практическая психология.",
+      "h1": "Лекции по психологии Татьяны Мунн",
+      "h1Instruction": "Add one visible H1 near the top of the page; do not use several H1 blocks inside lecture cards.",
+      "canonical": "https://moonn.ru/events_tp",
+      "schemaTypes": [
+        "ItemList",
+        "Event",
+        "Person",
+        "BreadcrumbList"
+      ],
+      "imageAltPattern": "Лекция Татьяны Мунн по психологии и эмоциональному интеллекту",
+      "reindexAfterPublish": true
+    },
+    {
+      "url": "https://moonn.ru/lectures1",
+      "pageType": "lecture-archive",
+      "priority": "high",
+      "title": "Лекции по психологии от Татьяны Мунн, психолога МГУ",
+      "description": "Архив и список лекций Татьяны Мунн: эмоциональный интеллект, отношения, подростки, стресс и практическая психология для взрослых.",
+      "h1": "Лекции Татьяны Мунн по психологии",
+      "h1Instruction": "Add one visible H1 and remove the leading comma from the current description.",
+      "canonical": "https://moonn.ru/lectures1",
+      "schemaTypes": [
+        "ItemList",
+        "Event",
+        "Person",
+        "BreadcrumbList"
+      ],
+      "imageAltPattern": "Лекция по психологии от Татьяны Мунн, психолога МГУ",
+      "reindexAfterPublish": true
+    },
+    {
+      "url": "https://moonn.ru/psiholog-moskva-online",
+      "pageType": "consultation",
+      "priority": "medium",
+      "title": "Психолог МГУ Татьяна Мунн — консультации в Москве и онлайн",
+      "description": "Консультации психолога МГУ Татьяны Мунн в Москве и онлайн: тревога, выгорание, отношения, эмоциональный интеллект и быстрые практические встречи.",
+      "h1": "Психолог МГУ в Москве и онлайн",
+      "h1Instruction": "Keep current one-H1 structure; use as schema implementation reference for related consultation pages.",
+      "canonical": "https://moonn.ru/psiholog-moskva-online",
+      "schemaTypes": [
+        "ProfessionalService",
+        "Person",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "imageAltPattern": "Психолог МГУ Татьяна Мунн — консультация в Москве и онлайн",
+      "reindexAfterPublish": false
+    },
+    {
+      "url": "https://moonn.ru/psiholog-konsultacii-moskva",
+      "pageType": "consultation",
+      "priority": "high",
+      "title": "Консультации психолога в Москве — Татьяна Мунн, МГУ",
+      "description": "Индивидуальные и семейные консультации Татьяны Мунн в Москве и онлайн: отношения, стресс, подростки, эмоциональный интеллект и поддержка взрослых.",
+      "h1": "Консультации психолога Татьяны Мунн",
+      "h1Instruction": "Keep one H1; demote the second detected H1 to H2.",
+      "canonical": "https://moonn.ru/psiholog-konsultacii-moskva",
+      "schemaTypes": [
+        "ProfessionalService",
+        "Person",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "imageAltPattern": "Консультация психолога Татьяны Мунн в Москве",
+      "reindexAfterPublish": true
+    },
+    {
+      "url": "https://moonn.ru/uslugi_depression",
+      "pageType": "service-topic",
+      "priority": "high",
+      "title": "Депрессивное состояние — консультация психолога Татьяны Мунн",
+      "description": "Помощь при депрессивном состоянии, стрессе и эмоциональном истощении: консультации Татьяны Мунн, психолога МГУ, в Москве и онлайн.",
+      "h1": "Депрессивное состояние: психологическая поддержка",
+      "h1Instruction": "Keep one H1; demote repeated section headings to H2/H3.",
+      "canonical": "https://moonn.ru/uslugi_depression",
+      "schemaTypes": [
+        "ProfessionalService",
+        "Person",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "imageAltPattern": "Психологическая поддержка при депрессивном состоянии — Татьяна Мунн",
+      "reindexAfterPublish": true
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/articles/benefits-of-ei",
+      "pageType": "article",
+      "priority": "high",
+      "title": "Преимущества эмоционального интеллекта в жизни и работе",
+      "description": "Как эмоциональный интеллект помогает снижать конфликты, улучшать отношения, продуктивность и устойчивость к выгоранию. Автор: Татьяна Мунн.",
+      "h1": "Преимущества эмоционального интеллекта",
+      "h1Instruction": "Add one visible H1 aligned with article title.",
+      "canonical": "https://moonn.ru/emotional-intelligence/articles/benefits-of-ei",
+      "schemaTypes": [
+        "Article",
+        "Person",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "imageAltPattern": "Преимущества эмоционального интеллекта — статья Татьяны Мунн",
+      "reindexAfterPublish": true
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/empathy",
+      "pageType": "knowledge-base",
+      "priority": "high",
+      "title": "Эмпатия как навык эмоционального интеллекта — Татьяна Мунн",
+      "description": "Что такое эмпатия, как её развивать и применять в отношениях, лидерстве и обучении. База знаний по эмоциональному интеллекту от Татьяны Мунн.",
+      "h1": "Эмпатия в эмоциональном интеллекте",
+      "h1Instruction": "Add one visible H1 aligned with knowledge-base topic.",
+      "canonical": "https://moonn.ru/emotional-intelligence/knowledge-base/empathy",
+      "schemaTypes": [
+        "Article",
+        "Person",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "imageAltPattern": "Эмпатия как навык эмоционального интеллекта — Татьяна Мунн",
+      "reindexAfterPublish": true
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/nonviolent-communication",
+      "pageType": "knowledge-base",
+      "priority": "high",
+      "title": "Ненасильственное общение: 4 шага NVC — Татьяна Мунн",
+      "description": "Ненасильственное общение: наблюдение, чувства, потребности и просьбы. Примеры, упражнения и связь с эмоциональным интеллектом.",
+      "h1": "Ненасильственное общение и эмоциональный интеллект",
+      "h1Instruction": "Add one visible H1 aligned with NVC and emotional intelligence topic.",
+      "canonical": "https://moonn.ru/emotional-intelligence/knowledge-base/nonviolent-communication",
+      "schemaTypes": [
+        "Article",
+        "Person",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "imageAltPattern": "Ненасильственное общение и эмоциональный интеллект — Татьяна Мунн",
+      "reindexAfterPublish": true
+    }
+  ],
+  "jsonLdTemplateRules": [
+    "Use the page canonical URL as @id base.",
+    "Connect Person sameAs to Moonn, Timepad, MIIIIPS, Yandex Services, MSU Istina and PsyJournals.",
+    "Do not add fake ratings or reviews until the reviews compliance gate is complete.",
+    "Do not use MedicalBusiness or medical treatment claims unless separately legally reviewed.",
+    "For lecture pages, represent known public lecture cards as ItemList/Event only after card data is verified."
+  ],
+  "nextStep": "Generate final JSON-LD blocks per page and apply through supported Tilda page head/code fields after visual/API path is confirmed."
+}

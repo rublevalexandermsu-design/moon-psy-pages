@@ -101,3 +101,23 @@ Append-only project history for `moon-psy-site`.
   - `events_tp` has a very short generic description.
 - Follow-up rule:
   - Next safe SEO step is a per-page Tilda SEO patch packet, not direct live edits: title, description, one-H1 instruction, JSON-LD, canonical confirmation and image/OG note.
+
+## 2026-05-03 — Moonn Tilda SEO Patch Packets
+
+- Project: Moonn / Tilda site.
+- Workstream: live SEO/AEO audit.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: SEO heartbeat continued from the live metadata audit.
+- User-facing boundary:
+  - No live Tilda edits were made.
+  - No undocumented Tilda endpoints were used.
+  - No payment/product/private-video/review-screenshot changes were made.
+- Created files:
+  - `docs/moonn-tilda-seo-patch-packets-2026-05-03.json`
+  - `docs/moonn-tilda-seo-patch-packets-2026-05-03.md`
+- Result:
+  - Prepared page-specific SEO packets for 9 Moonn priority URLs.
+  - Each packet includes proposed title, description, H1, canonical, schema types, image alt pattern and reindex flag.
+  - The packets preserve the public entity bridge: `Татьяна Мунн`, `Кумскова Татьяна Михайловна`, МГУ, Moonn, Timepad, MIIIIPS, Yandex Services, MSU Istina and PsyJournals.
+- Follow-up rule:
+  - Next safe step is generating final JSON-LD code blocks per page, then applying them only through supported Tilda page head/code fields after the safe path is confirmed.
