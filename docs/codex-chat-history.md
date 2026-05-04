@@ -192,3 +192,32 @@ Append-only project history for `moon-psy-site`.
   - Root cause: broad legacy disallow rule `Disallow: /psiholog` matches current semantic psychology URLs by prefix.
   - Resolution: recorded as P0 fix; update Tilda/robots settings to block only exact legacy URLs, then retest in GSC/Yandex.
   - Follow-up rule: never add broad robots rules for short commercial prefixes when semantic pages may share the same prefix.
+
+## 2026-05-04 — Corrected Production Scope SEO Audit
+
+- Project: Moonn / Tilda site.
+- Workstream: live SEO/AEO audit.
+- Branch: `codex/moonn-seo-audit`.
+- User correction:
+  - The intended audit scope is not every URL in `sitemap.xml`, but the real published production pages we worked with earlier.
+- Decision:
+  - Treat `output/production-73-rollout-pages.json` plus `output/build-production-83-scope.log` additions as the canonical working scope.
+  - Keep the previous 148-URL sitemap audit only as sitemap-hygiene evidence, not as the main production-page SEO scope.
+- Created / updated files:
+  - `scripts/moonn_final_seo_audit.py`
+  - `docs/moonn-production-scope-seo-audit-2026-05-04.json`
+  - `docs/moonn-production-scope-seo-audit-2026-05-04.md`
+  - `docs/moonn-production-scope-seo-audit-2026-05-04.csv`
+  - `docs/moonn-production-scope-seo-action-plan-2026-05-04.md`
+- Verified:
+  - Corrected scope contains 83 URLs.
+  - All 83 URLs return HTTP `200`.
+- Findings:
+  - 77 URLs need SEO strengthening.
+  - 3 real pages are blocked by broad robots rules and need robots fix before strengthening.
+  - 2 URLs, `st1` and `st2`, need semantic rename or noindex/redirect decision.
+  - 1 legacy `/psiholog` page should stay out of index or be removed/redirected.
+  - 82 of 83 scoped pages have no detected JSON-LD.
+  - 44 scoped pages have no detected H1.
+- Follow-up rule:
+  - Future Moonn SEO progress checks must use the production scope file, not the whole Tilda sitemap, unless the task is explicitly sitemap cleanup.

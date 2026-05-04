@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import argparse
 import html
 import json
 import re
@@ -24,6 +25,11 @@ TODAY = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 JSON_OUT = OUT_DIR / f"moonn-final-seo-audit-{TODAY}.json"
 MD_OUT = OUT_DIR / f"moonn-final-seo-audit-{TODAY}.md"
 CSV_OUT = OUT_DIR / f"moonn-final-seo-audit-{TODAY}.csv"
+SCOPED_JSON_OUT = OUT_DIR / f"moonn-production-scope-seo-audit-{TODAY}.json"
+SCOPED_MD_OUT = OUT_DIR / f"moonn-production-scope-seo-audit-{TODAY}.md"
+SCOPED_CSV_OUT = OUT_DIR / f"moonn-production-scope-seo-audit-{TODAY}.csv"
+PRODUCTION_73_PATH = ROOT / "output" / "production-73-rollout-pages.json"
+PRODUCTION_83_LOG_PATH = ROOT / "output" / "build-production-83-scope.log"
 
 
 REQUEST_HEADERS = {
@@ -32,18 +38,23 @@ REQUEST_HEADERS = {
 }
 
 
-def fetch(url: str, timeout: int = 25) -> tuple[int | str, str, dict[str, str]]:
+def fetch(url: str, timeout: int = 25, attempts: int = 2) -> tuple[int | str, str, dict[str, str]]:
     req = urllib.request.Request(url, headers=REQUEST_HEADERS)
-    try:
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            raw = resp.read()
-            charset = resp.headers.get_content_charset() or "utf-8"
-            return resp.status, raw.decode(charset, errors="replace"), dict(resp.headers)
-    except urllib.error.HTTPError as exc:
-        body = exc.read().decode("utf-8", errors="replace")
-        return exc.code, body, dict(exc.headers)
-    except Exception as exc:  # noqa: BLE001
-        return "ERROR", str(exc), {}
+    last_error = ""
+    for attempt in range(attempts):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                raw = resp.read()
+                charset = resp.headers.get_content_charset() or "utf-8"
+                return resp.status, raw.decode(charset, errors="replace"), dict(resp.headers)
+        except urllib.error.HTTPError as exc:
+            body = exc.read().decode("utf-8", errors="replace")
+            return exc.code, body, dict(exc.headers)
+        except Exception as exc:  # noqa: BLE001
+            last_error = str(exc)
+            if attempt + 1 < attempts:
+                time.sleep(1.2 * (attempt + 1))
+    return "ERROR", last_error, {}
 
 
 def get_sitemap_urls() -> list[dict[str, str]]:
@@ -195,6 +206,8 @@ def audit_one(row: dict[str, str], disallows: list[str]) -> dict[str, object]:
 
     if status != 200:
         decision = "fix_http_or_remove_from_sitemap"
+    elif result["robotsTxtBlocked"] and result["kind"] in {"service", "lecture_or_events", "article", "knowledge_base", "home", "other"} and "meta_noindex" not in issues:
+        decision = "fix_robots_then_strengthen"
     elif "meta_noindex" in issues or result["robotsTxtBlocked"]:
         decision = "keep_out_of_index_or_remove_from_sitemap"
     elif result["kind"] in {"numeric_page", "test_or_staging"}:
@@ -260,17 +273,55 @@ def summarize(rows: list[dict[str, object]]) -> dict[str, object]:
     }
 
 
-def write_reports(rows: list[dict[str, object]], summary: dict[str, object]) -> None:
+def get_production_scope_urls() -> list[dict[str, str]]:
+    items: list[dict[str, object]] = []
+    if PRODUCTION_73_PATH.exists():
+        items.extend(json.loads(PRODUCTION_73_PATH.read_text(encoding="utf-8")))
+    if PRODUCTION_83_LOG_PATH.exists():
+        log = json.loads(PRODUCTION_83_LOG_PATH.read_text(encoding="utf-8"))
+        items.extend(log.get("additions", []))
+
+    seen: set[str] = set()
+    rows: list[dict[str, str]] = []
+    for item in items:
+        alias = str(item.get("alias") or "").lstrip("/")
+        url = str(item.get("production_url") or "").strip()
+        if not url:
+            url = "https://moonn.ru/" + alias if alias else "https://moonn.ru/"
+        if url in seen:
+            continue
+        seen.add(url)
+        rows.append(
+            {
+                "url": url,
+                "lastmod": "",
+                "alias": alias,
+                "source_page_id": str(item.get("source_page_id") or ""),
+                "staging_page_id": str(item.get("staging_page_id") or ""),
+                "scope_source": str(item.get("scope_source") or "production_73_rollout"),
+            }
+        )
+    return rows
+
+
+def write_reports(
+    rows: list[dict[str, object]],
+    summary: dict[str, object],
+    json_out: Path = JSON_OUT,
+    md_out: Path = MD_OUT,
+    csv_out: Path = CSV_OUT,
+    source_label: str = SITEMAP_URL,
+) -> None:
     payload = {
         "version": 1,
         "createdAt": datetime.now(timezone.utc).isoformat(),
-        "source": SITEMAP_URL,
+        "source": source_label,
         "summary": summary,
         "pages": rows,
     }
-    JSON_OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    json_out.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    with CSV_OUT.open("w", encoding="utf-8-sig", newline="") as handle:
+    with csv_out.open("w", encoding="utf-8-sig", newline="") as handle:
         writer = csv.DictWriter(
             handle,
             fieldnames=[
@@ -314,7 +365,7 @@ def write_reports(rows: list[dict[str, object]], summary: dict[str, object]) -> 
     lines = [
         f"# Moonn Final SEO Audit — {TODAY}",
         "",
-        "Mode: read-only live audit from `https://moonn.ru/sitemap.xml`.",
+        f"Mode: read-only live audit from `{source_label}`.",
         "",
         "## Summary",
         "",
@@ -341,12 +392,31 @@ def write_reports(rows: list[dict[str, object]], summary: dict[str, object]) -> 
         "- `keep_out_of_index_or_remove_from_sitemap`: keep blocked intentionally or remove from sitemap if it should not appear in search tools.",
         "- `fix_http_or_remove_from_sitemap`: fix response or remove from sitemap.",
     ]
-    MD_OUT.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    md_out.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--production-scope",
+        action="store_true",
+        help="Audit only the saved production rollout scope, not the full sitemap.",
+    )
+    args = parser.parse_args()
+
     started = time.time()
-    sitemap_rows = get_sitemap_urls()
+    if args.production_scope:
+        sitemap_rows = get_production_scope_urls()
+        json_out = SCOPED_JSON_OUT
+        md_out = SCOPED_MD_OUT
+        csv_out = SCOPED_CSV_OUT
+        source_label = "output/production-73-rollout-pages.json + output/build-production-83-scope.log"
+    else:
+        sitemap_rows = get_sitemap_urls()
+        json_out = JSON_OUT
+        md_out = MD_OUT
+        csv_out = CSV_OUT
+        source_label = SITEMAP_URL
     disallows = get_robot_disallows()
     results: list[dict[str, object]] = []
     with ThreadPoolExecutor(max_workers=6) as executor:
@@ -356,8 +426,8 @@ def main() -> int:
     results.sort(key=lambda row: str(row.get("url")))
     summary = summarize(results)
     summary["durationSeconds"] = round(time.time() - started, 2)
-    write_reports(results, summary)
-    print(json.dumps({"json": str(JSON_OUT), "md": str(MD_OUT), "csv": str(CSV_OUT), "summary": summary}, ensure_ascii=False, indent=2))
+    write_reports(results, summary, json_out=json_out, md_out=md_out, csv_out=csv_out, source_label=source_label)
+    print(json.dumps({"json": str(json_out), "md": str(md_out), "csv": str(csv_out), "summary": summary}, ensure_ascii=False, indent=2))
     return 0
 
 
