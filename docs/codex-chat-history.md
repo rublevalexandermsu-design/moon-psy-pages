@@ -221,3 +221,36 @@ Append-only project history for `moon-psy-site`.
   - 44 scoped pages have no detected H1.
 - Follow-up rule:
   - Future Moonn SEO progress checks must use the production scope file, not the whole Tilda sitemap, unless the task is explicitly sitemap cleanup.
+
+## 2026-05-04 — Moonn Production SEO Strengthening Packets
+
+- Project: Moonn / Tilda site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user asked to strengthen SEO for the `77` pages from the corrected production scope, then handle the `3` robots-blocked pages.
+- Strategic decision:
+  - Treat the work as a machine-first Tilda application packet because the documented Tilda API is read/export oriented and does not provide a supported bulk write endpoint for page SEO fields.
+  - Do not use undocumented Tilda endpoints for live production edits.
+  - Generate per-page title, description, canonical, H1 action, image alt pattern and JSON-LD instead of applying one generic SEO block to all pages.
+- Created or changed files:
+  - `scripts/build_moonn_production_seo_strengthening_packets.py`
+  - `docs/moonn-production-seo-strengthening-packets-2026-05-04.json`
+  - `docs/moonn-production-seo-strengthening-packets-2026-05-04.md`
+  - `docs/moonn-production-seo-strengthening-packets-2026-05-04.csv`
+  - `docs/moonn-robots-fix-packet-2026-05-04.md`
+- Results:
+  - `77` pages marked `ready_to_apply`.
+  - `3` pages marked `apply_after_robots_fix`.
+  - CSV validation: `80` rows.
+  - Max title length: `68`.
+  - Max description length: `158`.
+  - No short descriptions and no unfinished description punctuation.
+- Robots finding:
+  - Live `robots.txt` has broad `Disallow: /psiholog`, which blocks real working URLs:
+    - `https://moonn.ru/psiholog-konsultacii-moskva`
+    - `https://moonn.ru/psiholog_moskva`
+    - `https://moonn.ru/psihology`
+- Open questions / blockers:
+  - Live Tilda application still requires supported UI editing or another documented write-capable path.
+  - Robots change should be applied in Tilda settings and then verified live before applying the three page packets.
+- Follow-up rule:
+  - For Moonn/Tilda SEO, generate deterministic per-page packets first; apply live changes only through supported Tilda fields, then re-run `python scripts/moonn_final_seo_audit.py --production-scope`.
