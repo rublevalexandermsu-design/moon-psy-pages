@@ -254,3 +254,40 @@ Append-only project history for `moon-psy-site`.
   - Robots change should be applied in Tilda settings and then verified live before applying the three page packets.
 - Follow-up rule:
   - For Moonn/Tilda SEO, generate deterministic per-page packets first; apply live changes only through supported Tilda fields, then re-run `python scripts/moonn_final_seo_audit.py --production-scope`.
+
+## 2026-05-04 — Moonn Production SEO Applied Through Tilda UI
+
+- Project: Moonn / Tilda site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user asked to start live application in the real Google Chrome profile already logged into Tilda, not Playwright or Codex in-app browser.
+- Routing:
+  - Used visible Google Chrome window with Tilda account `Alexander`.
+  - Browser MCP extension was visually enabled but tool transport still returned `Transport closed`; did not switch to Playwright for Tilda.
+  - Used supported Tilda page settings UI (`EditPageSettings`) and native save/publish controls; did not use undocumented Tilda write endpoints.
+- Created files:
+  - `scripts/tilda_page_seo_settings_ui_rollout.py`
+  - `docs/moonn-ready-77-live-seo-verification-2026-05-04.json`
+  - `docs/moonn-production-80-live-seo-verification-2026-05-04.json`
+  - `docs/moonn-production-80-live-seo-rollout-2026-05-04.md`
+- Live changes:
+  - Applied page-specific `meta_title`, `meta_descr`, `link_canonical`, `nosearch=false`, `meta_nofollow=false` for `77` ready production pages.
+  - Published every changed page.
+  - Fixed legacy `/psiholog` page robots prefix issue by removing noindex/nofollow and setting canonical to `https://moonn.ru/psiholog-konsultacii-moskva`.
+  - Applied the same SEO settings to the `3` formerly robots-blocked production pages.
+- Verified:
+  - `77/77` ready pages returned HTTP `200` and matched title/description/canonical packets.
+  - `robots.txt` no longer contains broad `Disallow: /psiholog`.
+  - Final `80/80` production pages returned HTTP `200`.
+  - Final `80/80` title, description and canonical matched packets.
+  - Final `80/80` are clear of robots blocks.
+- Incident:
+  - Symptom: first bulk attempt produced false errors after the first page because the next iteration started from the Tilda page editor after publish.
+  - Root cause: UI automation did not reset to the canonical project page before each page settings operation.
+  - Resolution: updated rollout script to call `ensure_project_page()` before every page settings edit.
+  - Follow-up rule: Tilda UI batch automation must reset to a known canonical screen per item before opening settings, saving or publishing.
+- Residual work:
+  - Source-level H1/H2 cleanup inside Tilda blocks.
+  - Source-level image replacement/filename migration in Tilda storage.
+  - Review/noindex/rename decision for `st1` and `st2`.
+  - Compliant Yandex Services reviews page.
+  - Manual profile text synchronization for Yandex Services and MGU Istina.
