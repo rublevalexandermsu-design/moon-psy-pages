@@ -158,3 +158,37 @@ Append-only project history for `moon-psy-site`.
   - `data/site.json` remains valid JSON.
 - Follow-up rule:
   - Any future reviews page rollout must use the canonical Yandex Services profile URL and must pass personal-data/platform/legal gates before showing review evidence.
+
+## 2026-05-04 — Final Moonn Sitemap SEO Audit
+
+- Project: Moonn / Tilda site.
+- Workstream: live SEO/AEO audit.
+- Branch: `codex/moonn-seo-audit`.
+- User request:
+  - run the final SEO audit for Moonn pages.
+- Boundary:
+  - Read-only live audit.
+  - No Tilda edits, no payment/product/private-video changes, no review publication.
+- Created files:
+  - `scripts/moonn_final_seo_audit.py`
+  - `docs/moonn-final-seo-audit-2026-05-04.json`
+  - `docs/moonn-final-seo-audit-2026-05-04.md`
+  - `docs/moonn-final-seo-audit-2026-05-04.csv`
+  - `docs/moonn-final-seo-action-plan-2026-05-04.md`
+- Verified:
+  - `https://moonn.ru/sitemap.xml` contains 148 URLs.
+  - All 148 checked URLs returned HTTP `200`.
+  - `robots.txt` is live and references the sitemap.
+- Findings:
+  - 98 URLs should be strengthened for SEO.
+  - 45 opaque/test URLs should be reviewed for noindex, semantic rename or 301.
+  - 5 important psychology URLs are blocked by broad `Disallow: /psiholog`.
+  - 139 URLs have no detected JSON-LD.
+  - 91 URLs have no detected H1.
+  - 52 URLs have duplicate descriptions.
+  - 8 URLs have canonical mismatch.
+- Incident:
+  - Symptom: current `robots.txt` blocks useful `/psiholog...` pages.
+  - Root cause: broad legacy disallow rule `Disallow: /psiholog` matches current semantic psychology URLs by prefix.
+  - Resolution: recorded as P0 fix; update Tilda/robots settings to block only exact legacy URLs, then retest in GSC/Yandex.
+  - Follow-up rule: never add broad robots rules for short commercial prefixes when semantic pages may share the same prefix.
