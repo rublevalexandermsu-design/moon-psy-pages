@@ -141,3 +141,20 @@ Append-only project history for `moon-psy-site`.
   - Excluded `Review`, `AggregateRating`, copied reviews, private videos, prices and medical treatment claims by design.
 - Follow-up rule:
   - Insert JSON-LD only through supported Tilda page head/code fields, then re-audit live HTML for `application/ld+json` before requesting indexing.
+
+## 2026-05-04 — Yandex Services Review URL Canonicalization
+
+- Project: Moonn / Tilda site.
+- Workstream: live SEO/AEO audit / reviews page.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: SEO heartbeat final self-check found an old Yandex Services profile slug in the local reviews page data.
+- Changed files:
+  - `data/site.json`
+- Decision:
+  - Replace the old review profile URL `TatyanaKumskovamunn-948629` with the canonical redirected profile URL `TatyanaKumskovatatyanamunn-948629`.
+  - Do not publish reviews, screenshots, reviewer names, avatars or copied review text.
+- Verified:
+  - The old Yandex Services profile URL redirects to the canonical URL.
+  - `data/site.json` remains valid JSON.
+- Follow-up rule:
+  - Any future reviews page rollout must use the canonical Yandex Services profile URL and must pass personal-data/platform/legal gates before showing review evidence.
