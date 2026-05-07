@@ -1,0 +1,27 @@
+{
+  "createdAt": "2026-05-07T02:50:48.091530+00:00",
+  "projectId": "8326812",
+  "pages": [
+    {
+      "pageId": "114846506",
+      "url": "https://moonn.ru/psiholog",
+      "reason": "extra-live-page-missing-h1-after-rendered-audit",
+      "index": 1,
+      "status": "published"
+    },
+    {
+      "pageId": "69732653",
+      "url": "https://moonn.ru/st1",
+      "reason": "extra-live-page-missing-h1-after-rendered-audit",
+      "index": 2,
+      "status": "published"
+    },
+    {
+      "pageId": "98329166",
+      "url": "https://moonn.ru/st2",
+      "reason": "extra-live-page-missing-h1-after-rendered-audit",
+      "index": 3,
+      "status": "published"
+    }
+  ]
+}

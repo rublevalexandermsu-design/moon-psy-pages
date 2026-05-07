@@ -331,3 +331,31 @@ Append-only project history for `moon-psy-site`.
   - Rebuild H1/H2 plan into `supported_block_setting`, `unsupported_needs_design_solution`, and `manual_verify`.
   - For unsupported missing-H1 pages, choose a supported design-level solution: add a semantic H1 block or replace the hero/title block type.
   - For multiple-H1 pages, test each secondary heading block type before live batch changes.
+
+## 2026-05-07 — Moonn Scoped H1/H2 Publish Follow-Up
+
+- Project: Moonn / Tilda site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user asked to continue from the stopped point and avoid publishing all Tilda pages; target scope is the original published Moonn work set, not all `164` project pages.
+- Created/updated files:
+  - `scripts/tilda_publish_moonn_seo_scope_ui.py`
+  - `docs/moonn-seo-scope-publish-report-2026-05-07.json`
+  - `docs/moonn-extra-live-pages-publish-report-2026-05-07.json`
+- Actions:
+  - Verified that live `moonn.ru` still served semantic heading layer `@9483a34`, not final `@1e53aae`.
+  - Verified that live global HEAD still had broken Yandex.Metrika JavaScript (`m[i]=m[i]function...`) after earlier UI attempts.
+  - Saved corrected global HEAD in the Tilda global HEAD editor and confirmed the editor value after reload contained `@1e53aae` and valid `m[i]=m[i]||function`.
+  - Published only the scoped `80` SEO packet pages through Tilda UI.
+  - Published `3` extra live pages through Tilda UI: `/psiholog`, `/st1`, `/st2`.
+- Verification:
+  - Tilda UI publish reports marked `80/80` scoped pages and `3/3` extra live pages as published.
+  - Live/API HTML verification still returned old global HEAD `@9483a34` and broken Metrika. The global HEAD change did not propagate to public HTML through scoped page publishing.
+  - A one-page page-level HEAD pilot on `/` also did not persist into Tilda API/published HTML when changed through UIA field value alone.
+- Incident:
+  - Symptom: Tilda editor UI can display corrected HEAD after reload, while public HTML and Tilda API still return the old published HEAD.
+  - Root cause: UIA `set_edit_text`/accessibility-field edits can update the visible Ace editor value without reliably updating Tilda's underlying Ace/editor model submitted to the server.
+  - Resolution so far: stopped before claiming completion or using publish-all. Scoped publish report was recorded; live result remains old.
+  - Follow-up rule: for Tilda Ace editors, do not treat UIA field value as proof. The readiness gate is: persisted server value or published HTML/API contains the expected marker. If only publish-all can propagate global HEAD, get explicit approval because it may touch non-target project pages.
+- Residual work:
+  - Continue H1/H2 completion only after choosing a safe Tilda-supported write path: real Ace keyboard editing verified by API, supported Tilda UI field per page/block, or explicit approval for project-level publish-all if it is confirmed to publish only already-public pages.
+  - Re-run `python scripts\moonn_rendered_heading_audit.py` only after live HTML contains `@1e53aae`.
