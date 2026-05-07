@@ -359,3 +359,29 @@ Append-only project history for `moon-psy-site`.
 - Residual work:
   - Continue H1/H2 completion only after choosing a safe Tilda-supported write path: real Ace keyboard editing verified by API, supported Tilda UI field per page/block, or explicit approval for project-level publish-all if it is confirmed to publish only already-public pages.
   - Re-run `python scripts\moonn_rendered_heading_audit.py` only after live HTML contains `@1e53aae`.
+
+## 2026-05-07 — Moonn Tilda Folder Governance Inventory
+
+- Project: Moonn / Tilda site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user approved the stronger Tilda folder governance path before global HEAD publish: move test/draft pages into archive folders, then use Tilda's supported folder-aware publish flow.
+- Verified external rule:
+  - Tilda Help says pages can be moved to folders through drag-and-drop or Page Settings → Additional.
+  - Tilda Help says folders can be marked as archive, and archived folders are excluded from publish-all/folder publish flows.
+- Created files:
+  - `docs/moonn-tilda-page-governance-inventory-2026-05-07.json`
+  - `docs/moonn-tilda-page-governance-inventory-2026-05-07.md`
+- Read-only inventory:
+  - Official Tilda API `getpageslist` returned `164` project pages.
+  - `83` pages are protected work scope and must remain publishable.
+  - `8` pages are clear archive candidates by title/alias: tests, copies, old teen-camp pages.
+  - `73` pages are published outside the current SEO scope and require human/content classification before moving; they include legal pages, payment success pages, news, old SEO landing pages, code/media holder pages and no-alias article pages.
+- UI finding:
+  - The real Alexander Chrome/Tilda session opened the Moonn project and existing folder `ТЕСТЫ для АЛЕКС МАРК` (`folderid=2421516`).
+  - The project currently shows a Tilda subscription-expired banner: "Пожалуйста, оплатите подписку / Время истекло".
+  - Folder settings button did not open a settings dialog during this check, likely because project management is restricted while the subscription is expired.
+- Decision:
+  - Do not move `73` published outside-scope pages automatically. Several are legitimate public/legal/payment pages.
+  - Do not run project publish-all until archive-folder settings are confirmed and the excluded folder set is verified.
+- Follow-up rule:
+  - For Tilda global HEAD rollout, the required safety gate is: protected work-scope list, archive-candidate list, folder archive state verified in UI, then controlled publish. If subscription is expired or folder settings cannot be opened, stop and record blocker instead of forcing a broad publish.
