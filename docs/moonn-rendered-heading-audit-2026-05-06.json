@@ -1,18 +1,18 @@
 {
   "summary": {
-    "createdAt": "2026-05-07T01:56:16.982516+00:00",
+    "createdAt": "2026-05-07T22:28:01.333803+00:00",
     "scope": "rendered DOM audit for Moonn production pages after Tilda global semantic heading layer publish",
     "sourcePlan": "docs\\moonn-h1-h2-ui-apply-plan-2026-05-06.json",
     "sourceProductionAudit": "docs\\moonn-production-scope-seo-audit-2026-05-06.json",
     "pagesChecked": 83,
     "pagesLoaded": 83,
     "pagesWithSemanticLayerScript": 83,
-    "pagesWithExactlyOneH1": 77,
-    "pagesWithMissingH1": 6,
+    "pagesWithExactlyOneH1": 83,
+    "pagesWithMissingH1": 0,
     "pagesWithMultipleH1": 0,
     "targetChecks": 52,
-    "targetChecksMatched": 51,
-    "targetChecksFailed": 1,
+    "targetChecksMatched": 52,
+    "targetChecksFailed": 0,
     "errors": 0
   },
   "pages": [
@@ -708,7 +708,14 @@
       "status": 200,
       "loaded": true,
       "hasSemanticLayerScript": true,
-      "h1": [],
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Эмпатия — ключевой навык эмоционального интеллекта",
+          "recId": "1510754371",
+          "className": ""
+        }
+      ],
       "h2": [],
       "targetChecks": [],
       "error": null
@@ -1487,7 +1494,14 @@
       "status": 200,
       "loaded": true,
       "hasSemanticLayerScript": true,
-      "h1": [],
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Психология эмоций, выгорания и отношений",
+          "recId": "1856304071",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
       "h2": [],
       "targetChecks": [],
       "error": null
@@ -1588,7 +1602,14 @@
       "status": 200,
       "loaded": true,
       "hasSemanticLayerScript": true,
-      "h1": [],
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Вы можете стать спокойным и уверенным в себе человеком в течение 1 месяца и потребуется всего несколько встреч с профессиональным психологом",
+          "recId": "713914271",
+          "className": "tn-atom"
+        }
+      ],
       "h2": [],
       "targetChecks": [],
       "error": null
@@ -1958,7 +1979,14 @@
       "status": 200,
       "loaded": true,
       "hasSemanticLayerScript": true,
-      "h1": [],
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "От стресса к гармонии: быстрое снятие негативных эмоциональных состояний",
+          "recId": "824726050",
+          "className": "tn-atom"
+        }
+      ],
       "h2": [],
       "targetChecks": [],
       "error": null
@@ -2039,7 +2067,14 @@
       "status": 200,
       "loaded": true,
       "hasSemanticLayerScript": true,
-      "h1": [],
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Трансформационный онлайн-тренинг: \"СРЕДА Трансформации\" РАСКРОЙ СВОЙ ПОТЕНЦИАЛ",
+          "recId": "1060387551",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
       "h2": [],
       "targetChecks": [],
       "error": null
@@ -2049,7 +2084,14 @@
       "status": 200,
       "loaded": true,
       "hasSemanticLayerScript": true,
-      "h1": [],
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Трансформационный онлайн-тренинг: \"СРЕДА Трансформации\" РАСКРОЙ СВОЙ ПОТЕНЦИАЛ",
+          "recId": "1608442161",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
       "h2": [],
       "targetChecks": [],
       "error": null
@@ -2651,8 +2693,8 @@
           "recId": "870371670",
           "expectedTag": "h2",
           "visibleSignal": "Ключевые признаки ГТР :",
-          "matched": false,
-          "matchedText": null
+          "matched": true,
+          "matchedText": "Ключевые признаки ГТР:"
         }
       ],
       "error": null

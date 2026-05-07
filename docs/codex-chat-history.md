@@ -385,3 +385,54 @@ Append-only project history for `moon-psy-site`.
   - Do not run project publish-all until archive-folder settings are confirmed and the excluded folder set is verified.
 - Follow-up rule:
   - For Tilda global HEAD rollout, the required safety gate is: protected work-scope list, archive-candidate list, folder archive state verified in UI, then controlled publish. If subscription is expired or folder settings cannot be opened, stop and record blocker instead of forcing a broad publish.
+
+## 2026-05-08 — Moonn Post-Payment Tilda HEAD Rollout Verification
+
+- Project: Moonn / Tilda site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user paid Tilda Business and asked whether the unpaid subscription caused previous changes not to appear.
+- Context:
+  - Tilda Business is paid through `2026-06-08`; project controls are available again.
+  - The real Alexander Google Chrome/Tilda session was used. OBS was minimized after it interfered with visible desktop coordinates.
+- Actions:
+  - Rechecked live HTML after payment: protected URLs still served old global HEAD `@9483a34` and broken Yandex.Metrika before publication.
+  - Verified the Tilda global HEAD editor persisted the corrected code after navigating away and back:
+    - semantic heading layer `@1e53aae`;
+    - valid Yandex.Metrika snippet with `m[i]=m[i]||function`.
+  - Published a one-page pilot (`/`) through supported Tilda UI and confirmed live HTML switched to `@1e53aae`.
+  - Published the remaining scoped `80/80` SEO packet pages through `scripts/tilda_publish_moonn_seo_scope_ui.py`.
+  - Published `3/3` extra live pages through Tilda UI: `/psiholog`, `/st1`, `/st2`.
+- Changed files:
+  - `docs/moonn-seo-scope-publish-report-2026-05-07.json`
+  - `docs/moonn-extra-live-pages-publish-report-2026-05-07.json`
+  - `docs/moonn-rendered-heading-audit-2026-05-06.json`
+  - `docs/moonn-rendered-heading-audit-2026-05-06.md`
+  - `docs/moonn-rendered-heading-audit-2026-05-06.csv`
+  - `docs/moonn-production-scope-seo-audit-2026-05-07.json`
+  - `docs/moonn-production-scope-seo-audit-2026-05-07.md`
+  - `docs/moonn-production-scope-seo-audit-2026-05-07.csv`
+- Verification:
+  - Live HTML spot checks for `/`, `/emotional-intelligence/knowledge-base/empathy`, `/events_tp`, `/psiholog-konsultacii-moskva`, `/psiholog`, `/st1`, `/st2` all returned:
+    - `@1e53aae`: true;
+    - `@9483a34`: false;
+    - `m[i]=m[i]||function`: true.
+  - `python scripts\moonn_rendered_heading_audit.py`:
+    - `83/83` pages loaded;
+    - `83/83` pages have semantic layer script;
+    - `83/83` pages have exactly one rendered H1;
+    - `0` missing H1;
+    - `0` multiple H1;
+    - `52/52` target H1/H2 checks matched;
+    - `0` errors.
+  - `python scripts\moonn_final_seo_audit.py --production-scope`:
+    - `83/83` URLs returned HTTP `200`;
+    - raw HTML audit still flags `missing_h1`/`multiple_h1` because this audit does not execute the semantic heading JS layer.
+- Decision:
+  - Payment was a blocker for management access, but it was not the only reason changes did not appear. The actual live rollout required supported Tilda save plus scoped page publication.
+  - H1/H2 readiness should now be judged by rendered audit, not raw HTML audit alone, because the implemented solution is a global semantic JS layer.
+- Incident rule:
+  - When Tilda global HEAD changes are used, the readiness gate is three-stage: persisted editor value after navigation, scoped published live HTML marker, rendered browser audit.
+  - Do not treat raw HTML H1/H2 findings as final when the chosen implementation is a rendered semantic layer; pair raw audits with rendered audits and explicitly label the difference.
+- Residual work:
+  - Folder/archive governance remains open: only `8` clear archive candidates can be considered for archive movement; `73` outside-scope published pages need content classification before moving.
+  - SEO image alt/title and JSON-LD work remain separate follow-ups; current turn closed the HEAD/H1-H2 rollout.
