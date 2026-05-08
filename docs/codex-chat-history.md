@@ -441,7 +441,7 @@ Append-only project history for `moon-psy-site`.
 
 - Project: Moonn / Tilda site.
 - Branch: `codex/moonn-seo-audit`.
-- Commit: `49caf33` (`Roll out Moonn JSON-LD schema layer`).
+- Commit: `0148735` (`Roll out Moonn JSON-LD schema layer`).
 - Trigger: user asked to finish JSON-LD/schema and careful Tilda folder/archive cleanup before moving to GSC/Yandex reindexing, Yandex Services reviews and Yandex Services/MSU Istina synchronization.
 - Actions:
   - Created a global rendered JSON-LD schema layer for the `83` Moonn production-scope URLs.
