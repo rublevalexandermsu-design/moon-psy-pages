@@ -2,18 +2,19 @@
 
 ## Status
 
-This is a publication packet, not final legal advice. It is ready for legal/operator review and Tilda rollout after filling operator details.
+This is a publication packet, not final legal advice. It is ready for legal/operator review and Tilda rollout after confirming the public postal/legal address.
 
 ## Required Operator Variables
 
-- `OPERATOR_FULL_NAME`: `TODO`
-- `OPERATOR_LEGAL_STATUS`: `TODO` — for example ИП / самозанятый / физическое лицо / юридическое лицо.
-- `OPERATOR_INN`: `TODO`
-- `OPERATOR_OGRNIP_OR_OGRN`: `TODO`, if applicable.
-- `OPERATOR_ADDRESS`: `TODO`
-- `OPERATOR_EMAIL`: `TODO`
+- `OPERATOR_FULL_NAME`: `Индивидуальный предприниматель Кумскова Татьяна Михайловна`
+- `OPERATOR_LEGAL_STATUS`: `индивидуальный предприниматель`
+- `OPERATOR_INN`: `770906685276`
+- `OPERATOR_OGRNIP_OR_OGRN`: `316774600553212`
+- `OPERATOR_ADDRESS`: `АДРЕС_ДЛЯ_КОРРЕСПОНДЕНЦИИ_ТРЕБУЕТ_ПОДТВЕРЖДЕНИЯ`
+- `OPERATOR_EMAIL`: `moonn.official@yandex.ru`
 - `OPERATOR_PHONE`: `TODO`, optional for public page if email is enough.
 - `RKN_NOTIFICATION_STATUS`: `not_checked_by_request`
+- `RELATED_SITE`: `https://umun.ru/` — user-confirmed related site of Kumskova Tatiana Mikhailovna; public search did not return a strong independent verification during this pass.
 
 ## Pages To Publish
 
@@ -23,7 +24,7 @@ This is a publication packet, not final legal advice. It is ready for legal/oper
 
 Настоящая Политика определяет порядок обработки персональных данных пользователей сайта `https://moonn.ru/`.
 
-Оператор: `OPERATOR_FULL_NAME`, `OPERATOR_LEGAL_STATUS`, ИНН `OPERATOR_INN`, ОГРН/ОГРНИП `OPERATOR_OGRNIP_OR_OGRN`, адрес: `OPERATOR_ADDRESS`, электронная почта для обращений: `OPERATOR_EMAIL`.
+Оператор: индивидуальный предприниматель Кумскова Татьяна Михайловна, ИНН 770906685276, ОГРНИП 316774600553212, адрес для корреспонденции: `АДРЕС_ДЛЯ_КОРРЕСПОНДЕНЦИИ_ТРЕБУЕТ_ПОДТВЕРЖДЕНИЯ`, электронная почта для обращений: moonn.official@yandex.ru.
 
 Оператор обрабатывает персональные данные в соответствии с Федеральным законом № 152-ФЗ «О персональных данных» и иными применимыми требованиями законодательства Российской Федерации.
 
@@ -73,6 +74,7 @@ This is a publication packet, not final legal advice. It is ready for legal/oper
 - Tilda Publishing — размещение сайта, форм и технической инфраструктуры;
 - Яндекс.Метрика — аналитика посещаемости, карта кликов, Webvisor и статистика поведения пользователей;
 - Timepad — регистрация на мероприятия, если пользователь переходит на соответствующие страницы;
+- umun.ru — связанный сайт оператора, если пользователь переходит на этот ресурс;
 - платёжные сервисы, если пользователь оплачивает продукт или услугу;
 - почтовые и коммуникационные сервисы, если пользователь оставляет заявку.
 
@@ -89,7 +91,7 @@ This is a publication packet, not final legal advice. It is ready for legal/oper
 - получать сведения об обработке своих персональных данных;
 - требовать уточнения, блокирования или удаления персональных данных;
 - отозвать согласие на обработку;
-- направить обращение оператору по адресу `OPERATOR_EMAIL`.
+- направить обращение оператору по адресу moonn.official@yandex.ru.
 
 Порядок обращений описан на странице `/data-subject-request`.
 
@@ -101,7 +103,7 @@ This is a publication packet, not final legal advice. It is ready for legal/oper
 
 # Согласие на обработку персональных данных
 
-Пользователь, проставляя отдельную галочку в форме на сайте `https://moonn.ru/`, свободно, своей волей и в своём интересе даёт согласие оператору `OPERATOR_FULL_NAME` на обработку персональных данных.
+Пользователь, проставляя отдельную галочку в форме на сайте `https://moonn.ru/`, свободно, своей волей и в своём интересе даёт согласие оператору — индивидуальному предпринимателю Кумсковой Татьяне Михайловне, ИНН 770906685276, ОГРНИП 316774600553212 — на обработку персональных данных.
 
 ## Данные
 
@@ -130,7 +132,7 @@ This is a publication packet, not final legal advice. It is ready for legal/oper
 
 ## Срок действия и отзыв
 
-Согласие действует до достижения целей обработки или до отзыва согласия пользователем. Отзыв можно направить на `OPERATOR_EMAIL`.
+Согласие действует до достижения целей обработки или до отзыва согласия пользователем. Отзыв можно направить на moonn.official@yandex.ru.
 
 ### `/cookies`
 
@@ -164,7 +166,7 @@ This is a publication packet, not final legal advice. It is ready for legal/oper
 - об отзыве согласия;
 - о прекращении обработки.
 
-Запрос направляется на электронную почту `OPERATOR_EMAIL`.
+Запрос направляется на электронную почту moonn.official@yandex.ru.
 
 В запросе нужно указать:
 
@@ -189,9 +191,8 @@ Links:
 
 ## Tilda Rollout Gate
 
-- Do not publish until operator variables are filled.
+- Do not publish until the correspondence/legal address variable is confirmed.
 - Add required unchecked checkbox to every form.
 - Verify form submission is blocked without checkbox.
 - Verify all legal pages return HTTP 200 after publish.
 - Verify footer/menu contains links to `/privacy`, `/personal-data-consent`, `/cookies`.
-

@@ -602,3 +602,25 @@ Append-only project history for `moon-psy-site`.
   - Updated `moonn-seo-leftovers-morning-check` into `Moonn SEO and privacy compliance supervisor`.
   - Added weekly privacy/RKN scan duties: rerun `scripts\moonn_privacy_compliance_audit.py`, check legal endpoints, form checkbox/consent text, cookie/Yandex Metrika disclosure, GA/gtag drift, and robots.txt SEO safety.
   - Gate preserved: no live Tilda legal text, RKN notification, personal data publication, payment changes or bot-blocking rules without explicit approval.
+
+## 2026-05-08 — Moonn Privacy Operator Details Filled
+
+- Project: Moonn / Tilda site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user provided public email `moonn.official@yandex.ru` and stated that `umun.ru` is Kumskova Tatiana Mikhailovna's site.
+- Actions:
+  - Checked public sources for ИП Кумскова Татьяна Михайловна.
+  - Filled publication packet with:
+    - operator: `Индивидуальный предприниматель Кумскова Татьяна Михайловна`;
+    - INN: `770906685276`;
+    - OGRNIP: `316774600553212`;
+    - email: `moonn.official@yandex.ru`;
+    - related site: `https://umun.ru/`.
+  - Updated:
+    - `docs/moonn-privacy-publication-packet-2026-05-08.md`
+    - `docs/moonn-rkn-compliance-rollout-plan-2026-05-08.md`
+- Provenance:
+  - User-confirmed: `umun.ru` relationship and public email.
+  - Public search result confirmed ИП реквизиты via business profile snippets; full address not copied.
+- Remaining gate:
+  - Do not publish until the public correspondence/legal address is explicitly confirmed by user or legal source.

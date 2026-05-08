@@ -39,12 +39,13 @@ Use `docs/moonn-privacy-publication-packet-2026-05-08.md`.
 
 Gate: fill operator variables first:
 
-- legal operator name;
-- legal status;
-- INN;
-- OGRNIP/OGRN if applicable;
-- legal/postal address;
-- public email for personal-data requests.
+- legal operator name: `Индивидуальный предприниматель Кумскова Татьяна Михайловна`;
+- legal status: `индивидуальный предприниматель`;
+- INN: `770906685276`;
+- OGRNIP: `316774600553212`;
+- legal/postal address: `АДРЕС_ДЛЯ_КОРРЕСПОНДЕНЦИИ_ТРЕБУЕТ_ПОДТВЕРЖДЕНИЯ`;
+- public email for personal-data requests: `moonn.official@yandex.ru`;
+- related user-confirmed site: `https://umun.ru/`.
 
 ### 2. Add required form checkbox
 
@@ -105,7 +106,6 @@ Allowed later, after compliance pages are fixed:
 
 ## Current Blockers
 
-- Operator variables are not confirmed.
+- Operator variables are mostly filled; only the public correspondence/legal address remains unconfirmed.
 - Legal text is drafted but not lawyer-approved.
 - Live Tilda form checkbox rollout requires authenticated Tilda UI/API-safe application.
-
