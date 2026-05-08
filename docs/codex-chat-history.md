@@ -552,3 +552,25 @@ Append-only project history for `moon-psy-site`.
 - Decision:
   - Do not manually submit all `83` URLs through URL Inspection because it is quota-limited and Google recommends sitemap submission for bulk recrawling.
   - The next check must include Google sitemap last-read, Pages indexing, and URL Inspection statuses for the four manually requested priority URLs.
+
+## 2026-05-08 — Moonn RKN/Privacy Compliance Intake
+
+- Project: Moonn / Tilda site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user raised Roskomnadzor personal-data/cookie/form-policy scanner risk and asked whether bot access can be limited.
+- Actions:
+  - Checked live standard policy endpoints:
+    - `/privacy`: `404`
+    - `/policy`: `404`
+    - `/personal-data`: `404`
+    - `/soglasie`: `404`
+  - Checked `https://moonn.ru/robots.txt`: `200`.
+  - Checked main page signals: Yandex Metrika `96397286` active with clickmap/trackLinks/Webvisor; no Google Analytics signal found in the sampled main HTML.
+  - Created audit artifact:
+    - `docs/moonn-rkn-privacy-compliance-audit-2026-05-08.md`
+- Decision:
+  - Treat privacy/RKN compliance as a separate legal/privacy workstream, not as an SEO subtask.
+  - Do not try to hide non-compliance from RKN bots. First publish correct documents and form consents, then add conservative bot-control for non-essential AI/scraper bots.
+- Blockers:
+  - Need confirmed legal operator details and whether an RKN operator notification already exists.
+  - Need legal approval before publishing final policy/consent wording.
