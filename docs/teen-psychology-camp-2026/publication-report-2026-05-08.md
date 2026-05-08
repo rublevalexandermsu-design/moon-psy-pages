@@ -37,16 +37,49 @@ Checked `https://moonn.ru/podrostkovyy-lager-psihologiya?final-check=20260508b`:
 
 ## Homepage integration status
 
-Prepared a homepage banner and external JS asset, but the current Tilda page HEAD editor for the homepage rejected/rolled back both:
+Initially prepared a homepage banner and external JS asset, but the current Tilda page HEAD editor for the homepage rejected/rolled back both:
 
 1. a full inline banner snippet;
 2. a shorter external script reference.
 
-The live homepage still does not contain `/podrostkovyy-lager-psihologiya`, so homepage integration is not reported as completed.
+The live homepage integration was then completed through a native Tilda `T123` HTML block on the homepage, placed after the first running blue text strip and before the next large content section.
+
+Live homepage check `https://moonn.ru/?camp-banner-check=20260508-2141`:
+
+- HTTP: `200`
+- Banner marker `moonn-teen-camp-home-banner`: yes
+- Link `/podrostkovyy-lager-psihologiya`: yes
+- Camp text `Подростковый лагерь`: yes
+- SEO image `tatiana-moonn-teen-psychology-camp-hero-2026.jpg`: yes
+
+Rendered Chrome verification:
+
+- The homepage banner is visible in the early homepage flow.
+- The banner button `Узнать программу` opens `https://moonn.ru/podrostkovyy-lager-psihologiya`.
+- The banner image also points to the camp page.
 
 ## Decision
 
-Do not keep forcing homepage HEAD edits through Tilda because it risks corrupting the existing homepage design/SEO layer. The next safe step is to add a native Tilda block/card on the homepage, or use a supported existing block and link it to `/podrostkovyy-lager-psihologiya`, then publish and verify live.
+Do not keep forcing homepage HEAD edits through Tilda because it risks corrupting the existing homepage design/SEO layer. Homepage marketing placements should use native Tilda blocks/cards first, then be verified through live HTML and rendered Chrome.
+
+## Button and asset verification
+
+Checked `https://moonn.ru/podrostkovyy-lager-psihologiya?camp-page-check=20260508-2142`:
+
+- HTTP: `200`
+- Page title: `Подростковый лагерь по психологии — Татьяна Мунн`
+- Canonical URL: yes
+- JSON-LD: yes
+- PDF link: yes
+- Telegram link: yes
+- Live H1: `Лето, которое помогает подростку понять себя и стать увереннее`
+
+Interactive checks in Chrome:
+
+- `Записаться в Telegram` opens `https://t.me/moonn_official` and shows the Telegram Desktop handoff prompt.
+- Direct PDF URL opens in Chrome PDF viewer.
+- Chrome PDF viewer download button created a new file in Downloads; first bytes verified as `%PDF-`.
+- `Узнать про стоимость и рассрочку` currently opens WhatsApp. This is acceptable as a contact path, but if the intended behavior is scroll-to-price, that link should be changed in a separate Tilda edit.
 
 ## RKN / compliance
 

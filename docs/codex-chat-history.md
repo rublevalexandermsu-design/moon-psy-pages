@@ -716,3 +716,25 @@ Append-only project history for `moon-psy-site`.
 - Follow-up rule:
   - For public homepage integrations, do not report completion until the live homepage HTML or rendered browser output contains the new internal link and the visual banner/card is verified.
   - Prefer native Tilda blocks for homepage marketing placements; use HEAD/JS only for low-risk page-local enhancements where Tilda demonstrably preserves the code.
+
+## 2026-05-08 — Moonn Teen Camp Homepage Banner Completed
+
+- Project: Moonn / Tilda site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user interrupted the previous run and asked to continue: add the teen camp banner to the Moonn homepage, publish it, and verify the camp page buttons, PDF, Telegram and SEO.
+- Actions:
+  - Added a visible homepage banner through a native Tilda `T123` HTML block on homepage page `42678538`.
+  - Published only the homepage from the Tilda page editor, not the whole project.
+  - Verified the live homepage HTML includes `moonn-teen-camp-home-banner`, `/podrostkovyy-lager-psihologiya`, camp text and SEO image.
+  - Verified in Chrome that the banner is visible and the `Узнать программу` button opens the camp page.
+  - Verified the live camp page has title, canonical, JSON-LD, PDF link and Telegram link.
+  - Click-tested Telegram: it opens `t.me/moonn_official` and shows the Telegram Desktop handoff prompt.
+  - Opened the PDF in Chrome and clicked the PDF viewer download button; the downloaded file content starts with `%PDF-`.
+- Live URLs:
+  - `https://moonn.ru/`
+  - `https://moonn.ru/podrostkovyy-lager-psihologiya`
+- Incident / limitation:
+  - The camp page button `Узнать про стоимость и рассрочку` currently links to WhatsApp, not to a price section anchor. This is a working contact path, but if the intended UX is scroll-to-price, it needs a small separate edit.
+  - The PDF link exists in the page HTML and opens correctly, but it is lower in the materials section; direct PDF verification was used after confirming the link exists in source.
+- Follow-up rule:
+  - For future Moonn landing pages, homepage integration must be a native visible block first, with live HTML + rendered browser + primary CTA checks before reporting completion.
