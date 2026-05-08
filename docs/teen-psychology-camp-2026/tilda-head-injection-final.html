@@ -182,7 +182,14 @@
   function mountTeenCampPage() {
     if (!document.body || document.body.dataset.teenCampMounted === '1') return;
     document.body.dataset.teenCampMounted = '1';
+    var preservedCartNodes = Array.prototype.slice.call(document.querySelectorAll('[data-record-type="706"], .t706, .t706__carticon, .t706__cartwin, .t706__carticon-wrapper')).filter(function(node) {
+      return node && node.parentNode;
+    });
     document.body.innerHTML = pageHtml;
+    preservedCartNodes.forEach(function(node) {
+      node.style.display = '';
+      document.body.appendChild(node);
+    });
     var observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) entry.target.classList.add('visible');
