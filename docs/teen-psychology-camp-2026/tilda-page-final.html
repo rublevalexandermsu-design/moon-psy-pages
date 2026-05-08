@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Подростковый лагерь по психологии - Татьяна Мунн</title>
+  <meta name="description" content="Подростковый городской лагерь по психологии Татьяны Мунн: 6-10 июля, Цветной бульвар, 3-5 подростков, камерная группа, психология, общение, эмоции, уверенность, рассрочка." />
+  <style>
+    :root {
+      --bg:#f7f2fb;
+      --bg2:#fbf8fe;
+      --white:#ffffff;
+      --text:#1a2158;
+      --muted:#65709a;
+      --blue:#3149c9;
+      --blue2:#2037a4;
+      --purple:#9b59d0;
+      --purple-soft:#efe0fb;
+      --line:rgba(76, 59, 131, 0.12);
+      --shadow:0 18px 50px rgba(47, 39, 105, 0.12);
+      --shadow-hover:0 24px 65px rgba(47, 39, 105, 0.18);
+      --radius:28px;
+      --radius-sm:20px;
+      --max:1240px;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 0% 0%, rgba(173,111,220,.18), transparent 28%),
+        radial-gradient(circle at 100% 15%, rgba(72,105,228,.12), transparent 22%),
+        linear-gradient(180deg, #fcf9ff 0%, #f5eff9 100%);
+      overflow-x:hidden;
+    }
+    body::before, body::after {
+      content:"";
+      position:fixed;
+      border-radius:50%;
+      filter:blur(90px);
+      opacity:.35;
+      z-index:-1;
+      pointer-events:none;
+    }
+    body::before { width:280px;height:280px;left:-80px;top:120px;background:#c591ef; }
+    body::after { width:340px;height:340px;right:-80px;top:420px;background:#afc0ff; }
+
+    .wrap { width:min(var(--max), calc(100% - 32px)); margin:0 auto; }
+    .section { padding:38px 0; }
+    .pill {
+      display:inline-flex;align-items:center;gap:10px;
+      padding:12px 18px;border:1px solid rgba(155,89,208,.18);
+      border-radius:999px;background:rgba(245,235,252,.95);color:#8b4ec3;
+      font-size:16px;font-weight:700;box-shadow:0 6px 18px rgba(155,89,208,.08);
+    }
+    .pill-dot { width:10px;height:10px;border-radius:50%;background:#a74cda;box-shadow:0 0 0 8px rgba(167,76,218,.12); }
+    .btns { display:flex;flex-wrap:wrap;gap:14px; }
+    .btn {
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      min-height:58px;padding:14px 24px;border-radius:18px;border:1px solid transparent;
+      font-size:19px;font-weight:800;letter-spacing:-.01em;text-decoration:none;
+      transition:.25s ease;cursor:pointer;
+    }
+    .btn.primary { background:linear-gradient(135deg, var(--blue), var(--blue2)); color:#fff; box-shadow:0 14px 32px rgba(49,73,201,.25); }
+    .btn.primary:hover { transform:translateY(-2px); box-shadow:0 18px 40px rgba(49,73,201,.3); }
+    .btn.secondary { background:rgba(245,235,252,.85); color:#8a43c4; border-color:rgba(155,89,208,.2); }
+    .btn.secondary:hover { background:#f0e0fb; transform:translateY(-2px); }
+    .btn.ghost { background:#fff; color:var(--text); border-color:var(--line); }
+    .btn.ghost:hover { background:#fff; transform:translateY(-2px); }
+    .small { font-size:14px;color:var(--muted); }
+    .eyebrow { font-size:17px;font-weight:800;color:#6772a0; }
+
+    .site-header { position:sticky;top:0;z-index:20;backdrop-filter:blur(18px);background:rgba(252,249,255,.72);border-bottom:1px solid rgba(115,98,154,.08); }
+    .site-header .inner { min-height:86px;display:flex;align-items:center;justify-content:space-between;gap:20px; }
+    .brand { display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit; }
+    .logo { width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg, #8a43c4, #2f4acc);display:grid;place-items:center;color:#fff;font-weight:900;font-size:22px;box-shadow:0 12px 24px rgba(78,66,172,.26); }
+    .brand-text strong { display:block;font-size:16px;color:#6c76a2; }
+    .brand-text span { display:block;font-size:32px;font-weight:900;letter-spacing:-.03em;line-height:1; }
+    .nav { display:flex;align-items:center;gap:12px;flex-wrap:wrap; }
+    .nav a { text-decoration:none;color:var(--text);font-weight:800;padding:14px 20px;border-radius:18px;background:rgba(255,255,255,.78);border:1px solid var(--line); }
+    .nav a.cta { background:linear-gradient(135deg, var(--blue), var(--blue2)); color:#fff; border-color:transparent; }
+
+    .hero { padding:34px 0 24px; }
+    .hero-grid { display:grid;grid-template-columns:1.02fr .98fr;gap:34px;align-items:center; }
+    .hero h1 { font-size:clamp(44px, 7vw, 88px); line-height:.98; letter-spacing:-.05em; margin:20px 0 18px; }
+    .hero p.lead { font-size:clamp(20px, 2.2vw, 25px); line-height:1.52; color:#606b98; margin:0 0 28px; max-width:720px; }
+    .hero-points { display:flex;flex-wrap:wrap;gap:12px 18px;margin:22px 0 28px;padding:0;list-style:none; }
+    .hero-points li { display:flex;align-items:center;gap:10px;font-size:18px;font-weight:700;color:#69749c; }
+    .check { width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:#e9d8fb;color:#8a43c4;font-size:14px;font-weight:900; }
+
+    .hero-visual { position:relative;min-height:540px; }
+    .hero-card { position:relative;height:100%;min-height:540px;border-radius:34px;overflow:hidden;box-shadow:var(--shadow-hover);border:1px solid rgba(255,255,255,.55);background:#fff; }
+    .hero-card img { width:100%;height:100%;object-fit:cover;display:block; }
+    .overlay-top { position:absolute;inset:0;background:linear-gradient(180deg, rgba(20,26,74,.04), rgba(20,26,74,.12)); }
+    .hero-label { position:absolute;left:20px;top:20px;display:flex;gap:10px;flex-wrap:wrap; }
+    .hero-label span { background:rgba(255,255,255,.88);backdrop-filter:blur(10px);padding:10px 14px;border-radius:999px;font-weight:800;color:#3040a0;font-size:15px;border:1px solid rgba(255,255,255,.65); }
+    .speaker-card {
+      position:absolute;right:18px;bottom:18px;display:flex;gap:14px;align-items:center;
+      padding:14px;border-radius:22px;background:rgba(255,255,255,.92);backdrop-filter:blur(18px);
+      box-shadow:0 16px 36px rgba(39,40,88,.16);max-width:360px;border:1px solid rgba(255,255,255,.68);
+    }
+    .speaker-card img { width:84px;height:84px;border-radius:18px;object-fit:cover;flex:0 0 84px; }
+    .speaker-card strong { display:block;font-size:20px;line-height:1.1;margin-bottom:6px; }
+    .speaker-card span { display:block;font-size:14px;color:#5f6b98;line-height:1.45; }
+    .floating-price { position:absolute;left:-8px;bottom:24px;padding:18px 20px;border-radius:22px;background:linear-gradient(135deg, rgba(48,73,201,.96), rgba(123,86,226,.96));color:#fff;box-shadow:0 18px 38px rgba(55,74,185,.22); }
+    .floating-price b { display:block;font-size:30px;line-height:1; }
+    .floating-price small { display:block;font-size:14px;opacity:.88;margin-top:6px;line-height:1.35; }
+
+    .cards-4 { display:grid;grid-template-columns:repeat(4,1fr);gap:18px; }
+    .cards-5 { display:grid;grid-template-columns:repeat(5,1fr);gap:16px; }
+    .card { background:rgba(255,255,255,.82);border:1px solid var(--line);border-radius:26px;padding:24px;box-shadow:var(--shadow);transition:.25s ease; }
+    .card:hover { transform:translateY(-4px); box-shadow:var(--shadow-hover); }
+    .card h3 { margin:0 0 12px;font-size:22px;line-height:1.1;letter-spacing:-.02em; }
+    .card p { margin:0;color:#65709a;font-size:18px;line-height:1.55; }
+    .metric { font-size:44px;font-weight:900;letter-spacing:-.04em;color:#1b2a73;line-height:1; margin-bottom:8px; }
+
+    .section-title { margin:0 0 10px;font-size:clamp(34px,4vw,58px);line-height:1.02;letter-spacing:-.04em; }
+    .section-text { margin:0 0 24px;color:#65709a;font-size:20px;line-height:1.65;max-width:840px; }
+
+    .gallery-grid { display:grid;grid-template-columns:repeat(12,1fr);gap:18px; }
+    .gallery-card { position:relative;overflow:hidden;border-radius:28px;min-height:290px;background:#fff;box-shadow:var(--shadow-hover);border:1px solid rgba(255,255,255,.6); }
+    .gallery-card img { width:100%;height:100%;display:block;object-fit:cover;transition:transform .45s ease; }
+    .gallery-card:hover img { transform:scale(1.04); }
+    .gallery-card::after { content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(24,29,70,.02) 20%, rgba(24,29,70,.56) 100%); }
+    .gallery-card .caption { position:absolute;left:20px;right:20px;bottom:18px;z-index:2;color:#fff; }
+    .gallery-card .caption strong { display:block;font-size:19px;line-height:1.15;letter-spacing:-.02em;margin-bottom:8px; }
+    .gallery-card .caption span { display:block;font-size:14px;line-height:1.45;opacity:.96; }
+    .span-7 { grid-column:span 7; }
+    .span-5 { grid-column:span 5; }
+    .span-4 { grid-column:span 4; }
+    .span-8 { grid-column:span 8; }
+
+    .program { display:grid;grid-template-columns:repeat(5,1fr);gap:16px; }
+    .day-card { position:relative;padding:24px 22px 22px;background:rgba(255,255,255,.88);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow); }
+    .day-tag { display:inline-flex;align-items:center;justify-content:center;min-width:88px;height:40px;border-radius:999px;background:#ebe6ff;color:#6e46c7;font-size:14px;font-weight:900;margin-bottom:14px; }
+    .day-card h4 { margin:0 0 10px;font-size:22px;line-height:1.1;letter-spacing:-.02em; }
+    .day-card p { margin:0;color:#65709a;font-size:16px;line-height:1.55; }
+
+    .pricing-wrap { display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:stretch; }
+    .pricing-card { position:relative;padding:28px;background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(248,243,255,.95));border:1px solid rgba(126,98,186,.12);border-radius:28px;box-shadow:var(--shadow-hover); }
+    .price-big { font-size:58px;font-weight:900;letter-spacing:-.05em;line-height:1;color:#2339a8; }
+    .old-price { font-size:26px;color:#6a75a1;text-decoration:line-through;opacity:.9; }
+    .list { margin:16px 0 0;padding:0;list-style:none;display:grid;gap:12px; }
+    .list li { display:flex;gap:10px;align-items:flex-start;color:#64709a;font-size:18px;line-height:1.5; }
+
+    .cta-box { position:relative;overflow:hidden;padding:34px;border-radius:34px;background:linear-gradient(135deg, rgba(48,73,201,.96), rgba(123,86,226,.95));color:#fff;box-shadow:0 22px 55px rgba(57,79,196,.22); }
+    .cta-box::before { content:"";position:absolute;width:260px;height:260px;border-radius:50%;right:-60px;top:-60px;background:rgba(255,255,255,.11);filter:blur(8px); }
+    .cta-box h3 { margin:0 0 10px;font-size:42px;line-height:1.02;letter-spacing:-.04em;position:relative;z-index:1; }
+    .cta-box p { margin:0 0 22px;font-size:20px;line-height:1.6;opacity:.96;max-width:720px;position:relative;z-index:1; }
+    .cta-box .btn.primary { background:#fff;color:#2339a8; }
+    .cta-box .btn.secondary { background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.2);color:#fff; }
+    footer { padding:22px 0 40px;color:#7b81a4;font-size:15px; }
+
+    .reveal { opacity:0; transform:translateY(22px); transition:opacity .55s ease, transform .55s ease; }
+    .reveal.visible { opacity:1; transform:none; }
+
+    @media (max-width: 1100px) {
+      .hero-grid, .pricing-wrap { grid-template-columns:1fr; }
+      .cards-4 { grid-template-columns:repeat(2,1fr); }
+      .cards-5 { grid-template-columns:repeat(2,1fr); }
+      .program { grid-template-columns:repeat(2,1fr); }
+      .hero-visual { min-height:470px; }
+      .hero-card { min-height:470px; }
+    }
+    @media (max-width: 860px) {
+      .site-header .inner { padding:12px 0; align-items:flex-start; }
+      .nav { display:none; }
+      .cards-4, .cards-5, .program { grid-template-columns:1fr; }
+      .gallery-grid { grid-template-columns:1fr; }
+      .span-7,.span-5,.span-4,.span-8 { grid-column:span 1; }
+      .speaker-card { position:static; margin:14px; max-width:none; }
+      .floating-price { left:14px; right:14px; bottom:auto; top:14px; max-width:max-content; }
+      .hero h1 { max-width:12ch; }
+      .brand-text span { font-size:26px; }
+    }
+  </style>
+
+  <link rel="canonical" href="https://moonn.ru/podrostkovyy-lager-psihologiya" />
+  <meta property="og:title" content="Подростковый лагерь по психологии — Татьяна Мунн" />
+  <meta property="og:description" content="Городской психологический лагерь для подростков 6–10 июля: эмоции, общение, уверенность, безопасная камерная группа и практика с психологом Татьяной Мунн." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://moonn.ru/podrostkovyy-lager-psihologiya" />
+  <meta property="og:image" content="https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@b28b5f48939f8f640a218be50ac278ca24969ace/assets/teen-psychology-camp-2026/teen-psychology-camp-tatyana-moonn-poster-2026.jpg" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap inner">
+      <a class="brand" href="#top">
+        <div class="logo">TM</div>
+        <div class="brand-text">
+          <strong>Татьяна Мунн</strong>
+          <span>Подростковый лагерь по психологии</span>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="#program">Программа</a>
+        <a href="#gallery">Фото</a>
+        <a href="https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@b28b5f48939f8f640a218be50ac278ca24969ace/assets/teen-psychology-camp-2026/teen-psychology-camp-tatyana-moonn-program-2026.pdf" download>Скачать PDF</a>
+        <a href="#signup" class="cta">Записаться</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero section">
+      <div class="wrap hero-grid">
+        <div class="reveal visible">
+          <div class="pill"><span class="pill-dot"></span> 6 - 10 июля | понедельник - пятница | 10:00 - 18:00</div>
+          <h1>Лето, которое помогает подростку понять себя и стать увереннее</h1>
+          <p class="lead">Городской лагерь по психологии в центре Москвы, на Цветном бульваре. Небольшая камерная группа 3 - 5 человек, живая практика, общение, эмоции, уверенность в себе, навыки взаимодействия и безопасная поддерживающая атмосфера.</p>
+          <div class="btns">
+            <a class="btn primary" href="https://t.me/moonn_official" target="_blank" rel="noopener">Записаться в Telegram</a>
+            <a class="btn secondary" href="https://wa.me/79777770303" target="_blank" rel="noopener">Узнать про стоимость и рассрочку</a>
+          </div>
+          <ul class="hero-points">
+            <li><span class="check">✓</span>Камерная группа 3 - 5 подростков</li>
+            <li><span class="check">✓</span>Центр Москвы, Цветной бульвар</li>
+            <li><span class="check">✓</span>Предзапись до 15 мая - 30 000 ₽</li>
+            <li><span class="check">✓</span>Есть рассрочка</li>
+          </ul>
+        </div>
+        <div class="hero-visual reveal visible">
+          <div class="hero-card">
+            <img src="https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@b28b5f48939f8f640a218be50ac278ca24969ace/assets/teen-psychology-camp-2026/tatiana-moonn-teen-psychology-camp-hero-2026.jpg" alt="Татьяна Мунн и подростки в городском лагере по психологии" />
+            <div class="overlay-top"></div>
+            <div class="hero-label">
+              <span>Цветной бульвар</span>
+              <span>3 - 5 подростков</span>
+              <span>Практика и общение</span>
+            </div>
+            <div class="floating-price">
+              <b>30 000 ₽</b>
+              <small>при оплате до 15 мая<br>после - 40 000 ₽</small>
+            </div>
+            <div class="speaker-card">
+              <img src="https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@b28b5f48939f8f640a218be50ac278ca24969ace/assets/teen-psychology-camp-2026/tatiana-moonn-psychologist-msu-teen-camp-author.jpg" alt="Татьяна Мунн" />
+              <div>
+                <strong>Татьяна Мунн</strong>
+                <span>Психолог МГУ, автор метода «Быстрая психология». Опыт проведения подростковых программ, лекций и психологических форматов.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="cards-4">
+          <div class="card reveal">
+            <div class="metric">5</div>
+            <h3>Дней включённой практики</h3>
+            <p>Пять насыщенных дней, в которых подросток не просто слушает, а пробует, обсуждает, задаёт вопросы и получает опыт общения.</p>
+          </div>
+          <div class="card reveal">
+            <div class="metric">3 - 5</div>
+            <h3>Небольшая группа</h3>
+            <p>Камерный формат, где каждому подростку хватает внимания, контакта, поддержки и пространства раскрыться.</p>
+          </div>
+          <div class="card reveal">
+            <div class="metric">2</div>
+            <h3>Цены участия</h3>
+            <p>30 000 ₽ до 15 мая и 40 000 ₽ после. Возможна рассрочка по согласованию.</p>
+          </div>
+          <div class="card reveal">
+            <div class="metric">1</div>
+            <h3>Локация в центре Москвы</h3>
+            <p>Цветной бульвар - удобный городской формат, где сочетаются кабинет, прогулки, упражнения, задания и общение.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <p class="eyebrow">Для чего этот лагерь</p>
+        <h2 class="section-title">Что подросток получит за эти 5 дней</h2>
+        <p class="section-text">Лагерь помогает подросткам лучше понимать себя, легче общаться, увереннее чувствовать себя среди сверстников, замечать свои эмоции и разбираться в том, как строить контакт без лишнего напряжения и внутренней скованности.</p>
+        <div class="cards-5">
+          <div class="card reveal"><h3>Понимание себя</h3><p>Разбор эмоций, внутренних реакций, переживаний и того, что на самом деле происходит внутри.</p></div>
+          <div class="card reveal"><h3>Уверенность</h3><p>Поддержка самооценки, работа с тревогой, неловкостью, стеснением и внутренним напряжением.</p></div>
+          <div class="card reveal"><h3>Общение</h3><p>Навыки взаимодействия, диалога, уважения к себе и другому, умение договариваться и слышать.</p></div>
+          <div class="card reveal"><h3>Практика</h3><p>Упражнения, карточки, задания, мини-разборы и живые ситуации, а не сухая теория.</p></div>
+          <div class="card reveal"><h3>Безопасная атмосфера</h3><p>Камерная группа и продуманный формат, где подростку легче включиться и быть собой.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="wrap">
+        <p class="eyebrow">Визуально о формате</p>
+        <h2 class="section-title">Как выглядит этот лагерь</h2>
+        <p class="section-text">Мы обновили блок с фотографиями так, чтобы он логично показывал разные моменты программы - знакомство, общение, задания, обсуждения, уличные практики и спокойную работу в малой группе.</p>
+        <div class="gallery-grid">
+          <article class="gallery-card span-7 reveal">
+            <img src="https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@b28b5f48939f8f640a218be50ac278ca24969ace/assets/teen-psychology-camp-2026/tatiana-moonn-teen-camp-city-communication.jpg" alt="Татьяна Мунн и подростки общаются в городской атмосфере" />
+            <div class="caption">
+              <strong>Знакомство и живое общение в городской атмосфере</strong>
+              <span>Первый контакт, безопасная атмосфера, включение в группу и доверительный старт лагеря.</span>
+            </div>
+          </article>
+          <article class="gallery-card span-5 reveal">
+            <img src="https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@b28b5f48939f8f640a218be50ac278ca24969ace/assets/teen-psychology-camp-2026/teen-camp-psychology-workshop-cabinet.jpg" alt="Подростки в кабинете выполняют задания" />
+            <div class="caption">
+              <strong>Карточки, упражнения и совместная работа в кабинете</strong>
+              <span>Практика, мини-задания, обсуждения и разбор реальных жизненных ситуаций подростков.</span>
+            </div>
+          </article>
+          <article class="gallery-card span-4 reveal">
+            <img src="https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@b28b5f48939f8f640a218be50ac278ca24969ace/assets/teen-psychology-camp-2026/teen-camp-social-skills-city-practice.jpg" alt="Подростки на улице учатся взаимодействовать друг с другом" />
+            <div class="caption">
+              <strong>Прогулка и практика общения на улице</strong>
+              <span>Тренировка взаимодействия, внимания к другому и уверенности в живом контакте.</span>
+            </div>
+          </article>
+          <article class="gallery-card span-4 reveal">
+            <img src="https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@b28b5f48939f8f640a218be50ac278ca24969ace/assets/teen-psychology-camp-2026/tatiana-moonn-teen-camp-cafe-reflection.jpg" alt="Татьяна Мунн и подростки в кафе" />
+            <div class="caption">
+              <strong>Разговор, обратная связь и поддержка в тёплой обстановке</strong>
+              <span>Небольшие обсуждения, эмоциональный контакт и ощущение, что тебя действительно слышат.</span>
+            </div>
+          </article>
+          <article class="gallery-card span-4 reveal">
+            <img src="https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@b28b5f48939f8f640a218be50ac278ca24969ace/assets/teen-psychology-camp-2026/teen-camp-group-activities-soft-skills.jpg" alt="Подростки участвуют в групповых активностях" />
+            <div class="caption">
+              <strong>Камерная группа и внимание к каждому подростку</strong>
+              <span>Спокойный ритм, структурированная программа и пространство, где можно раскрываться без давления.</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="program">
+      <div class="wrap">
+        <p class="eyebrow">Программа лагеря</p>
+        <h2 class="section-title">Примерная логика 5 дней</h2>
+        <p class="section-text">Эта структура помогает родителю понять, что лагерь продуман не как набор случайных активностей, а как последовательный маршрут - от знакомства и включения до уверенности и навыков взаимодействия.</p>
+        <div class="program">
+          <div class="day-card reveal">
+            <div class="day-tag">День 1</div>
+            <h4>Знакомство и доверие</h4>
+            <p>Мягкий вход в группу, правила общения, первые упражнения на контакт, ощущение безопасности и интереса к процессу.</p>
+          </div>
+          <div class="day-card reveal">
+            <div class="day-tag">День 2</div>
+            <h4>Эмоции и состояние</h4>
+            <p>Как замечать свои переживания, лучше понимать реакцию на стресс, напряжение, обиду, тревогу и неловкость.</p>
+          </div>
+          <div class="day-card reveal">
+            <div class="day-tag">День 3</div>
+            <h4>Общение и границы</h4>
+            <p>Умение говорить о себе, договариваться, слышать других и не терять себя в контакте со сверстниками.</p>
+          </div>
+          <div class="day-card reveal">
+            <div class="day-tag">День 4</div>
+            <h4>Уверенность и самооценка</h4>
+            <p>Работа с внутренней уверенностью, образ себя, спокойствие в компании и снижение страха оценки.</p>
+          </div>
+          <div class="day-card reveal">
+            <div class="day-tag">День 5</div>
+            <h4>Итоги и опора на будущее</h4>
+            <p>Подведение итогов, личные выводы подростка, фиксация полезных навыков и того, что можно унести с собой дальше.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap pricing-wrap">
+        <div class="pricing-card reveal">
+          <p class="eyebrow">Стоимость участия</p>
+          <div style="display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin:10px 0 6px;">
+            <div class="price-big">30 000 ₽</div>
+            <div class="old-price">40 000 ₽</div>
+          </div>
+          <p class="section-text" style="margin-bottom:0;font-size:18px;max-width:none;">Специальная стоимость действует при оплате до 15 мая. После этой даты участие стоит 40 000 ₽. Возможна рассрочка.</p>
+          <ul class="list">
+            <li><span class="check">✓</span><span>Формат: городской лагерь с 6 по 10 июля, ежедневно с 10:00 до 18:00.</span></li>
+            <li><span class="check">✓</span><span>Локация: центр Москвы, Цветной бульвар.</span></li>
+            <li><span class="check">✓</span><span>Группа: 3 - 5 подростков в камерной атмосфере.</span></li>
+            <li><span class="check">✓</span><span>Если захотите забронировать место, можно написать в Telegram или WhatsApp и запросить QR-код на оплату.</span></li>
+          </ul>
+        </div>
+        <div class="pricing-card reveal">
+          <p class="eyebrow">Материалы</p>
+          <h3 style="margin:0 0 12px;font-size:34px;line-height:1.08;letter-spacing:-.03em;">Готовые файлы для страницы</h3>
+          <p class="section-text" style="margin-bottom:18px;font-size:18px;max-width:none;">В страницу уже встроены фотографии, поэтому она должна открываться корректно без пустых блоков. Ниже оставили быстрые ссылки на материалы мероприятия.</p>
+          <div class="btns">
+            <a class="btn ghost" href="https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@b28b5f48939f8f640a218be50ac278ca24969ace/assets/teen-psychology-camp-2026/teen-psychology-camp-tatyana-moonn-program-2026.pdf" download>Скачать программу PDF</a>
+            <a class="btn secondary" href="https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@b28b5f48939f8f640a218be50ac278ca24969ace/assets/teen-psychology-camp-2026/teen-psychology-camp-tatyana-moonn-poster-2026.jpg" download="poster.jpg">Скачать постер</a>
+          </div>
+          <div style="margin-top:20px;border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);">
+            <img src="https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@b28b5f48939f8f640a218be50ac278ca24969ace/assets/teen-psychology-camp-2026/teen-psychology-camp-tatyana-moonn-poster-2026.jpg" alt="Постер подросткового лагеря" style="display:block;width:100%;height:auto;" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="signup">
+      <div class="wrap">
+        <div class="cta-box reveal">
+          <h3>Если хотите обсудить участие - напишите возраст подростка и ваши ожидания</h3>
+          <p>Это поможет быстрее понять, подходит ли программа именно вам. Если вы примете решение участвовать, можно будет отправить QR-код на оплату. Также доступна рассрочка. Количество мест небольшое.</p>
+          <div class="btns">
+            <a class="btn primary" href="https://t.me/moonn_official" target="_blank" rel="noopener">Написать в Telegram</a>
+            <a class="btn secondary" href="https://wa.me/79777770303" target="_blank" rel="noopener">Написать в WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+<section class="section" aria-label="Документы и безопасность данных">
+  <div class="wrap">
+    <div class="card">
+      <h2>Документы и безопасность</h2>
+      <p>Для записи используйте Telegram или WhatsApp. Если вы оставляете персональные данные при общении или оплате, обработка выполняется по политике сайта Moonn.</p>
+      <div class="btns"><a class="btn ghost" href="/politic">Политика обработки персональных данных</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+  <footer>
+    <div class="wrap">
+      Татьяна Мунн - психолог МГУ, автор метода «Быстрая психология». Подростковый городской лагерь по психологии, Москва, Цветной бульвар.
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, {threshold: 0.14});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://moonn.ru/#tatiana-munn","name":"Татьяна Мунн","alternateName":["Кумскова Татьяна Михайловна","Татьяна Мунн (Кумскова)"],"jobTitle":"Психолог, эксперт по эмоциональному интеллекту","url":"https://moonn.ru/"},{"@type":["WebPage","Event"],"@id":"https://moonn.ru/podrostkovyy-lager-psihologiya#webpage","url":"https://moonn.ru/podrostkovyy-lager-psihologiya","name":"Подростковый лагерь по психологии — Татьяна Мунн","description":"Городской подростковый лагерь по психологии: 6–10 июля, Цветной бульвар, камерная группа, практика общения, эмоций и уверенности.","inLanguage":"ru-RU","organizer":{"@id":"https://moonn.ru/#tatiana-munn"},"performer":{"@id":"https://moonn.ru/#tatiana-munn"},"eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":"https://schema.org/EventScheduled","startDate":"2026-07-06","endDate":"2026-07-10","location":{"@type":"Place","name":"Москва, Цветной бульвар","address":{"@type":"PostalAddress","addressLocality":"Москва","addressCountry":"RU"}}},{"@type":"BreadcrumbList","@id":"https://moonn.ru/podrostkovyy-lager-psihologiya#breadcrumbs","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://moonn.ru/"},{"@type":"ListItem","position":2,"name":"Подростковый лагерь по психологии","item":"https://moonn.ru/podrostkovyy-lager-psihologiya"}]}]}</script>
+</body>
+</html>
