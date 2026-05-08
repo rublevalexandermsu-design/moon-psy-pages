@@ -1,0 +1,60 @@
+{
+  "source": "C:\\Users\\yanta\\Downloads\\teen_psychology_camp_tatyana_moonn.html",
+  "canonicalUrl": "https://moonn.ru/podrostkovyy-lager-psihologiya",
+  "assets": [
+    {
+      "index": 0,
+      "file": "assets/teen-psychology-camp-2026/tatiana-moonn-teen-psychology-camp-hero-2026.jpg",
+      "bytes": 234963,
+      "sha256": "5ad7d634c7d38f0a"
+    },
+    {
+      "index": 1,
+      "file": "assets/teen-psychology-camp-2026/tatiana-moonn-psychologist-msu-teen-camp-author.jpg",
+      "bytes": 9706,
+      "sha256": "0308cbae756fccd5"
+    },
+    {
+      "index": 2,
+      "file": "assets/teen-psychology-camp-2026/tatiana-moonn-teen-camp-city-communication.jpg",
+      "bytes": 234963,
+      "sha256": "5ad7d634c7d38f0a"
+    },
+    {
+      "index": 3,
+      "file": "assets/teen-psychology-camp-2026/teen-camp-psychology-workshop-cabinet.jpg",
+      "bytes": 203635,
+      "sha256": "2d897dda1fc93e74"
+    },
+    {
+      "index": 4,
+      "file": "assets/teen-psychology-camp-2026/teen-camp-social-skills-city-practice.jpg",
+      "bytes": 218335,
+      "sha256": "22cd1e51c5501b59"
+    },
+    {
+      "index": 5,
+      "file": "assets/teen-psychology-camp-2026/tatiana-moonn-teen-camp-cafe-reflection.jpg",
+      "bytes": 201340,
+      "sha256": "e7446c43fe9c5088"
+    },
+    {
+      "index": 6,
+      "file": "assets/teen-psychology-camp-2026/teen-camp-group-activities-soft-skills.jpg",
+      "bytes": 168666,
+      "sha256": "099bbb5d3205f366"
+    },
+    {
+      "index": 7,
+      "file": "assets/teen-psychology-camp-2026/teen-psychology-camp-tatyana-moonn-poster-2026.jpg",
+      "bytes": 267384,
+      "sha256": "95cce264e4ab6db3"
+    },
+    {
+      "type": "pdf",
+      "file": "assets/teen-psychology-camp-2026/teen-psychology-camp-tatyana-moonn-program-2026.pdf",
+      "bytes": 245793,
+      "sha256": "245a896ece3f7dd9"
+    }
+  ]
+}
