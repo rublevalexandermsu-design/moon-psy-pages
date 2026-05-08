@@ -662,3 +662,34 @@ Append-only project history for `moon-psy-site`.
   - Tilda global HEAD editing can duplicate old code if hidden textarea and ACE editor state are mixed.
 - Follow-up rule:
   - For RKN/compliance readiness, rendered JS mitigation is not the final source-level state. Next hardening must move the policy text and form checkboxes into native Tilda blocks/settings where possible, and then verify both raw HTML and rendered browser output.
+
+## 2026-05-08 — Moonn Native Policy Source Hardening
+
+- Project: Moonn / Tilda site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: continue the RKN/privacy hardening after the rendered compliance layer was published.
+- Actions:
+  - Converted `/politic` page `58199199` from rendered JS replacement dependency to native Tilda text content.
+  - Added canonical native text artifact:
+    - `docs/moonn-native-politic-text-2026-05-08.txt`
+  - Created native form candidate inventory:
+    - `docs/moonn-native-form-inventory-2026-05-08.json`
+  - Created native form hardening plan:
+    - `docs/moonn-native-form-hardening-plan-2026-05-08.md`
+  - Updated:
+    - `docs/moonn-rkn-live-verification-2026-05-08.md`
+- Verification:
+  - Tilda API `getpagefull` for `/politic` found native `Политика обработки персональных данных`.
+  - Tilda API no longer found old native title `ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ`.
+  - Tilda API and live raw HTML found INN `770906685276`, OGRNIP `316774600553212`, `moonn.official@yandex.ru`, and Yandex.Metrika/Webvisor disclosure.
+  - Live raw `https://moonn.ru/politic?native-check=20260508` returned `200`.
+- Form inventory:
+  - `15` production pages have form-like blocks.
+  - `21` candidate blocks were detected.
+  - `1` block already has a native checkbox signal.
+  - Homepage real contact form `42678538` / `rec691008996` is the first native checkbox pilot target.
+- Incident / limitation:
+  - Direct rich-text paste into Tilda selected only one word in the editor, so source edits must be verified through Tilda API and live raw HTML before being reported as done.
+  - The homepage form currently has old consent text but no native required checkbox signal in raw source; rendered JS mitigation remains active, but native checkbox work is still open.
+- Follow-up rule:
+  - Do not mass-edit all Tilda form blocks until one real form pilot proves the supported Tilda field path and passes API/live/browser verification.
