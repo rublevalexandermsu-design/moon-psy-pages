@@ -17,7 +17,17 @@ This is a publication packet, not final legal advice. It is ready for legal/oper
 
 ## Pages To Publish
 
-### `/privacy`
+### Existing canonical page: `/politic`
+
+Current Tilda page:
+
+- URL: `https://moonn.ru/politic`
+- Page ID: `58199199`
+- Status before rollout: published, but outdated and missing Yandex Metrika/operator details.
+
+The first live rollout uses `/politic` as the canonical visible policy page to avoid creating duplicate legal pages before the Tilda page structure is cleaned up.
+
+### Future standard URL: `/privacy`
 
 # Политика обработки персональных данных
 
@@ -189,8 +199,8 @@ Links:
 
 ## Tilda Rollout Gate
 
-- Do not publish until the correspondence/legal address variable is confirmed.
+- Current minimal rollout may use `/politic` without public address because the operator is identified by name, INN, OGRNIP and email; public postal/legal address still needs legal confirmation before adding it.
 - Add required unchecked checkbox to every form.
 - Verify form submission is blocked without checkbox.
-- Verify all legal pages return HTTP 200 after publish.
-- Verify footer/menu contains links to `/privacy`, `/personal-data-consent`, `/cookies`.
+- Verify `/politic` returns HTTP 200 and visibly includes operator, consent, cookies and Yandex Metrika/Webvisor text.
+- Future stronger rollout: create standard aliases `/privacy`, `/personal-data-consent`, `/cookies`, `/data-subject-request` or redirect them to `/politic`.

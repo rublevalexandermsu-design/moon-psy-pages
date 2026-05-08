@@ -28,12 +28,14 @@ Bring Moonn into a defensible personal-data/cookie/form compliance posture witho
 
 ### 1. Publish documents
 
-Create or publish pages:
+Immediate live path:
 
-- `/privacy`
-- `/personal-data-consent`
-- `/cookies`
-- `/data-subject-request`
+- strengthen existing published Tilda page `/politic` (`pageid=58199199`) as the canonical visible policy page;
+- use `/politic` as the link target for form consent and cookie notice.
+
+Future stronger path:
+
+- create standard aliases `/privacy`, `/personal-data-consent`, `/cookies`, `/data-subject-request`, or redirect them to `/politic` if Tilda supports this safely.
 
 Use `docs/moonn-privacy-publication-packet-2026-05-08.md`.
 
@@ -82,9 +84,9 @@ Run:
 python scripts\moonn_privacy_compliance_audit.py
 ```
 
-Expected:
+Expected immediate:
 
-- `/privacy`, `/personal-data-consent`, `/cookies`, `/data-subject-request` return `200`.
+- `/politic` returns `200` and visibly includes updated operator, consent, cookies and Yandex Metrika/Webvisor text.
 - Form pages have detected checkbox and consent text.
 - Cookie/Metric text is visible.
 - Google/Yandex crawling remains allowed.
