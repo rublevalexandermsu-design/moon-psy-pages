@@ -14,7 +14,6 @@ This is a publication packet, not final legal advice. It is ready for legal/oper
 - `OPERATOR_EMAIL`: `moonn.official@yandex.ru`
 - `OPERATOR_PHONE`: `TODO`, optional for public page if email is enough.
 - `RKN_NOTIFICATION_STATUS`: `not_checked_by_request`
-- `RELATED_SITE`: `https://umun.ru/` — user-confirmed related site of Kumskova Tatiana Mikhailovna; public search did not return a strong independent verification during this pass.
 
 ## Pages To Publish
 
@@ -74,7 +73,6 @@ This is a publication packet, not final legal advice. It is ready for legal/oper
 - Tilda Publishing — размещение сайта, форм и технической инфраструктуры;
 - Яндекс.Метрика — аналитика посещаемости, карта кликов, Webvisor и статистика поведения пользователей;
 - Timepad — регистрация на мероприятия, если пользователь переходит на соответствующие страницы;
-- umun.ru — связанный сайт оператора, если пользователь переходит на этот ресурс;
 - платёжные сервисы, если пользователь оплачивает продукт или услугу;
 - почтовые и коммуникационные сервисы, если пользователь оставляет заявку.
 

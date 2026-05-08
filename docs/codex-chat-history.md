@@ -607,20 +607,33 @@ Append-only project history for `moon-psy-site`.
 
 - Project: Moonn / Tilda site.
 - Branch: `codex/moonn-seo-audit`.
-- Trigger: user provided public email `moonn.official@yandex.ru` and stated that `umun.ru` is Kumskova Tatiana Mikhailovna's site.
+- Trigger: user provided public email `moonn.official@yandex.ru` and asked to prepare privacy pages for Moonn.
 - Actions:
   - Checked public sources for ИП Кумскова Татьяна Михайловна.
   - Filled publication packet with:
     - operator: `Индивидуальный предприниматель Кумскова Татьяна Михайловна`;
     - INN: `770906685276`;
     - OGRNIP: `316774600553212`;
-    - email: `moonn.official@yandex.ru`;
-    - related site: `https://umun.ru/`.
+    - email: `moonn.official@yandex.ru`.
   - Updated:
     - `docs/moonn-privacy-publication-packet-2026-05-08.md`
     - `docs/moonn-rkn-compliance-rollout-plan-2026-05-08.md`
 - Provenance:
-  - User-confirmed: `umun.ru` relationship and public email.
+  - User-confirmed: public email.
   - Public search result confirmed ИП реквизиты via business profile snippets; full address not copied.
 - Remaining gate:
   - Do not publish until the public correspondence/legal address is explicitly confirmed by user or legal source.
+
+## 2026-05-08 — Incident: Wrong External Domain Added To Privacy Packet
+
+- Project: Moonn / Tilda site.
+- Branch: `codex/moonn-seo-audit`.
+- Symptom: `https://umun.ru/` was added to the privacy packet as a related site.
+- Root cause: assistant treated a user correction mentioning a domain as ownership confirmation without a domain ownership verification gate.
+- Fix:
+  - Removed `umun.ru` from:
+    - `docs/moonn-privacy-publication-packet-2026-05-08.md`
+    - `docs/moonn-rkn-compliance-rollout-plan-2026-05-08.md`
+    - the operative history entry above.
+- Follow-up rule:
+  - Never add an external domain to legal/privacy documents unless ownership/control is verified through Tilda/project settings, DNS/registrar, official site text, or an explicit unambiguous user confirmation after showing the exact domain.

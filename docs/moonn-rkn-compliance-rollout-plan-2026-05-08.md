@@ -44,8 +44,7 @@ Gate: fill operator variables first:
 - INN: `770906685276`;
 - OGRNIP: `316774600553212`;
 - legal/postal address: `АДРЕС_ДЛЯ_КОРРЕСПОНДЕНЦИИ_ТРЕБУЕТ_ПОДТВЕРЖДЕНИЯ`;
-- public email for personal-data requests: `moonn.official@yandex.ru`;
-- related user-confirmed site: `https://umun.ru/`.
+- public email for personal-data requests: `moonn.official@yandex.ru`.
 
 ### 2. Add required form checkbox
 
