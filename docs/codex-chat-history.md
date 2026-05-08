@@ -693,3 +693,26 @@ Append-only project history for `moon-psy-site`.
   - The homepage form currently has old consent text but no native required checkbox signal in raw source; rendered JS mitigation remains active, but native checkbox work is still open.
 - Follow-up rule:
   - Do not mass-edit all Tilda form blocks until one real form pilot proves the supported Tilda field path and passes API/live/browser verification.
+
+## 2026-05-08 — Moonn Teen Psychology Camp Page Publication
+
+- Project: Moonn / Tilda site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: publish the teen psychology camp page from local HTML to `moonn.ru`, integrate it into the Moonn site, and preserve SEO/RKN checks.
+- Actions:
+  - Cleaned the local camp page from external/local residue and base64 image payloads.
+  - SEO-renamed and published assets through the GitHub/jsDelivr asset path.
+  - Created Tilda page `140348786` with alias `podrostkovyy-lager-psihologiya`.
+  - Added page-specific SEO metadata, canonical, OG metadata, JSON-LD and `/politic` link through Tilda HEAD.
+  - Published the page to `https://moonn.ru/podrostkovyy-lager-psihologiya`.
+  - Prepared homepage banner artifacts and an external banner JS asset.
+- Verification:
+  - Live camp page returned `200`.
+  - Live camp page includes the camp H1/hero text, JSON-LD, canonical URL and `/politic` link.
+  - Live camp page does not include Kaspersky residue, base64 payloads or `data:image`.
+- Incident / limitation:
+  - Tilda accepted page-specific HEAD injection on the new camp page, but the homepage HEAD editor rolled back/rejected additional banner snippets and kept only the previous `moonn-radiant-sanctuary` code.
+  - Therefore homepage integration is not complete and must be done as a native Tilda block/card rather than another forced HEAD injection.
+- Follow-up rule:
+  - For public homepage integrations, do not report completion until the live homepage HTML or rendered browser output contains the new internal link and the visual banner/card is verified.
+  - Prefer native Tilda blocks for homepage marketing placements; use HEAD/JS only for low-risk page-local enhancements where Tilda demonstrably preserves the code.
