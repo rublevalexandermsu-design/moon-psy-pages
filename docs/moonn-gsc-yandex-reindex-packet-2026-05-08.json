@@ -1,0 +1,703 @@
+{
+  "version": 1,
+  "createdAt": "2026-05-08T06:13:18.022819+00:00",
+  "sourceAudit": "docs\\moonn-production-scope-seo-audit-2026-05-08.json",
+  "scope": "Moonn 83 production URLs after JSON-LD/schema rollout",
+  "google": {
+    "method": "Submit sitemap for many URLs; URL Inspection request indexing for priority URLs only because Google quotas individual requests.",
+    "sitemap": "https://moonn.ru/sitemap.xml",
+    "priorityUrls": [
+      "https://moonn.ru/",
+      "https://moonn.ru/events_tp",
+      "https://moonn.ru/lectures1",
+      "https://moonn.ru/psiholog-konsultacii-moskva",
+      "https://moonn.ru/platnye-treningi-seminary-programmy-tatiana-moonn",
+      "https://moonn.ru/vystupleniya-lekcii-treningi-psiholog-tatiana-moonn",
+      "https://moonn.ru/emotional-intelligence/",
+      "https://moonn.ru/emotional-intelligence/knowledge-base",
+      "https://moonn.ru/otzivi",
+      "https://moonn.ru/speaker",
+      "https://moonn.ru/article_diary_of_emotions",
+      "https://moonn.ru/article_femininity",
+      "https://moonn.ru/article_gadget_addiction",
+      "https://moonn.ru/article_toxic_job",
+      "https://moonn.ru/articles/eq-dlya-rukovoditeley",
+      "https://moonn.ru/emotional-intelligence/articles",
+      "https://moonn.ru/emotional-intelligence/articles/benefits-of-ei",
+      "https://moonn.ru/emotional-intelligence/articles/emotional-intelligence-skills",
+      "https://moonn.ru/emotional-intelligence/articles/what-is-emotional-intelligence",
+      "https://moonn.ru/emotional-intelligence/articles/why-ei-matters"
+    ]
+  },
+  "yandex": {
+    "method": "Indexing -> Reindex pages; submit full 83 URL packet if daily UI limit allows, otherwise continue from remaining list next day.",
+    "urls": [
+      "https://moonn.ru/",
+      "https://moonn.ru/abuse_gaslight",
+      "https://moonn.ru/aromatherapy",
+      "https://moonn.ru/article_diary_of_emotions",
+      "https://moonn.ru/article_femininity",
+      "https://moonn.ru/article_gadget_addiction",
+      "https://moonn.ru/article_toxic_job",
+      "https://moonn.ru/articles/eq-dlya-rukovoditeley",
+      "https://moonn.ru/baza-znaniy-emocionalnyy-intellekt-psihologiya",
+      "https://moonn.ru/eintellect",
+      "https://moonn.ru/emotional-intelligence/",
+      "https://moonn.ru/emotional-intelligence/articles",
+      "https://moonn.ru/emotional-intelligence/articles/benefits-of-ei",
+      "https://moonn.ru/emotional-intelligence/articles/emotional-intelligence-skills",
+      "https://moonn.ru/emotional-intelligence/articles/what-is-emotional-intelligence",
+      "https://moonn.ru/emotional-intelligence/articles/why-ei-matters",
+      "https://moonn.ru/emotional-intelligence/diagnostoka-ei",
+      "https://moonn.ru/emotional-intelligence/ei-leader-12",
+      "https://moonn.ru/emotional-intelligence/knowledge-base",
+      "https://moonn.ru/emotional-intelligence/knowledge-base/active-listening",
+      "https://moonn.ru/emotional-intelligence/knowledge-base/burnout",
+      "https://moonn.ru/emotional-intelligence/knowledge-base/emotional-contagion",
+      "https://moonn.ru/emotional-intelligence/knowledge-base/emotional-intelligence",
+      "https://moonn.ru/emotional-intelligence/knowledge-base/emotional-literacy",
+      "https://moonn.ru/emotional-intelligence/knowledge-base/emotional-maturity",
+      "https://moonn.ru/emotional-intelligence/knowledge-base/empathy",
+      "https://moonn.ru/emotional-intelligence/knowledge-base/intrinsic-motivation",
+      "https://moonn.ru/emotional-intelligence/knowledge-base/male-loneliness-russia",
+      "https://moonn.ru/emotional-intelligence/knowledge-base/nonviolent-communication",
+      "https://moonn.ru/emotional-intelligence/knowledge-base/personal-boundaries",
+      "https://moonn.ru/emotional-intelligence/knowledge-base/psychological-safety",
+      "https://moonn.ru/emotional-intelligence/knowledge-base/self-awareness",
+      "https://moonn.ru/emotional-intelligence/knowledge-base/self-regulation",
+      "https://moonn.ru/emotional-intelligence/knowledge-base/social-intelligence",
+      "https://moonn.ru/events",
+      "https://moonn.ru/events_tp",
+      "https://moonn.ru/geshtalt",
+      "https://moonn.ru/kpt",
+      "https://moonn.ru/kurs-ei",
+      "https://moonn.ru/lectures1",
+      "https://moonn.ru/microbiom",
+      "https://moonn.ru/novosti",
+      "https://moonn.ru/otzivi",
+      "https://moonn.ru/panicheskie_ataki",
+      "https://moonn.ru/phytotherapy",
+      "https://moonn.ru/platnye-treningi-seminary-programmy-tatiana-moonn",
+      "https://moonn.ru/programmakursa",
+      "https://moonn.ru/psiholog",
+      "https://moonn.ru/psiholog-konsultacii-moskva",
+      "https://moonn.ru/psiholog_moskva",
+      "https://moonn.ru/psihology",
+      "https://moonn.ru/psy4psy",
+      "https://moonn.ru/psychoanalys",
+      "https://moonn.ru/psypodgotovka1",
+      "https://moonn.ru/recomend",
+      "https://moonn.ru/salt",
+      "https://moonn.ru/schematherapy",
+      "https://moonn.ru/selfharm",
+      "https://moonn.ru/semeynie_konflikti_article",
+      "https://moonn.ru/semeyniy_psiholog",
+      "https://moonn.ru/seminar555",
+      "https://moonn.ru/shppp333",
+      "https://moonn.ru/speaker",
+      "https://moonn.ru/st1",
+      "https://moonn.ru/st2",
+      "https://moonn.ru/trauma",
+      "https://moonn.ru/uslugi_aerofobia",
+      "https://moonn.ru/uslugi_depression",
+      "https://moonn.ru/uslugi_fin_blocks",
+      "https://moonn.ru/uslugi_gtr",
+      "https://moonn.ru/uslugi_konflikti_na_rabote",
+      "https://moonn.ru/uslugi_lubovnaya_zavisimost",
+      "https://moonn.ru/uslugi_obida_na_roditelei",
+      "https://moonn.ru/uslugi_otnosheniya_v_kollektive",
+      "https://moonn.ru/uslugi_podrostki",
+      "https://moonn.ru/uslugi_procrastination",
+      "https://moonn.ru/uslugi_razvod",
+      "https://moonn.ru/uslugi_sohranit_brak",
+      "https://moonn.ru/vacuum_cups",
+      "https://moonn.ru/vigoranie_article",
+      "https://moonn.ru/vospitanie_article",
+      "https://moonn.ru/vystupleniya-lekcii-treningi-psiholog-tatiana-moonn",
+      "https://moonn.ru/water"
+    ]
+  },
+  "urls": [
+    {
+      "url": "https://moonn.ru/",
+      "kind": "home",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/"
+    },
+    {
+      "url": "https://moonn.ru/abuse_gaslight",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/abuse_gaslight"
+    },
+    {
+      "url": "https://moonn.ru/aromatherapy",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/aromatherapy"
+    },
+    {
+      "url": "https://moonn.ru/article_diary_of_emotions",
+      "kind": "article",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/article_diary_of_emotions"
+    },
+    {
+      "url": "https://moonn.ru/article_femininity",
+      "kind": "article",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/article_femininity"
+    },
+    {
+      "url": "https://moonn.ru/article_gadget_addiction",
+      "kind": "article",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/article_gadget_addiction"
+    },
+    {
+      "url": "https://moonn.ru/article_toxic_job",
+      "kind": "article",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/article_toxic_job"
+    },
+    {
+      "url": "https://moonn.ru/articles/eq-dlya-rukovoditeley",
+      "kind": "article",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/articles/eq-dlya-rukovoditeley"
+    },
+    {
+      "url": "https://moonn.ru/baza-znaniy-emocionalnyy-intellekt-psihologiya",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/baza-znaniy-emocionalnyy-intellekt-psihologiya"
+    },
+    {
+      "url": "https://moonn.ru/eintellect",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/eintellect"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/emotional-intelligence/"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/articles",
+      "kind": "article",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/emotional-intelligence/articles"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/articles/benefits-of-ei",
+      "kind": "article",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/emotional-intelligence/articles/benefits-of-ei"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/articles/emotional-intelligence-skills",
+      "kind": "article",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/emotional-intelligence/articles/emotional-intelligence-skills"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/articles/what-is-emotional-intelligence",
+      "kind": "article",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/emotional-intelligence/articles/what-is-emotional-intelligence"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/articles/why-ei-matters",
+      "kind": "article",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/emotional-intelligence/articles/why-ei-matters"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/diagnostoka-ei",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/emotional-intelligence/diagnostoka-ei"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/ei-leader-12",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/emotional-intelligence/ei-leader-12"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base",
+      "kind": "knowledge_base",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/emotional-intelligence/knowledge-base"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/active-listening",
+      "kind": "knowledge_base",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/emotional-intelligence/knowledge-base/active-listening"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/burnout",
+      "kind": "knowledge_base",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/emotional-intelligence/knowledge-base/burnout"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/emotional-contagion",
+      "kind": "knowledge_base",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/emotional-intelligence/knowledge-base/emotional-contagion"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/emotional-intelligence",
+      "kind": "knowledge_base",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/emotional-intelligence/knowledge-base/emotional-intelligence"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/emotional-literacy",
+      "kind": "knowledge_base",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/emotional-intelligence/knowledge-base/emotional-literacy"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/emotional-maturity",
+      "kind": "knowledge_base",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/emotional-intelligence/knowledge-base/emotional-maturity"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/empathy",
+      "kind": "knowledge_base",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/emotional-intelligence/knowledge-base/empathy"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/intrinsic-motivation",
+      "kind": "knowledge_base",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/emotional-intelligence/knowledge-base/intrinsic-motivation"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/male-loneliness-russia",
+      "kind": "knowledge_base",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/emotional-intelligence/knowledge-base/male-loneliness-russia"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/nonviolent-communication",
+      "kind": "knowledge_base",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/emotional-intelligence/knowledge-base/nonviolent-communication"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/personal-boundaries",
+      "kind": "knowledge_base",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/emotional-intelligence/knowledge-base/personal-boundaries"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/psychological-safety",
+      "kind": "knowledge_base",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/emotional-intelligence/knowledge-base/psychological-safety"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/self-awareness",
+      "kind": "knowledge_base",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/emotional-intelligence/knowledge-base/self-awareness"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/self-regulation",
+      "kind": "knowledge_base",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/emotional-intelligence/knowledge-base/self-regulation"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/social-intelligence",
+      "kind": "knowledge_base",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/emotional-intelligence/knowledge-base/social-intelligence"
+    },
+    {
+      "url": "https://moonn.ru/events",
+      "kind": "lecture_or_events",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/events"
+    },
+    {
+      "url": "https://moonn.ru/events_tp",
+      "kind": "lecture_or_events",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/events_tp"
+    },
+    {
+      "url": "https://moonn.ru/geshtalt",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/geshtalt"
+    },
+    {
+      "url": "https://moonn.ru/kpt",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/kpt"
+    },
+    {
+      "url": "https://moonn.ru/kurs-ei",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/kurs-ei"
+    },
+    {
+      "url": "https://moonn.ru/lectures1",
+      "kind": "lecture_or_events",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/lectures1"
+    },
+    {
+      "url": "https://moonn.ru/microbiom",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/microbiom"
+    },
+    {
+      "url": "https://moonn.ru/novosti",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/novosti"
+    },
+    {
+      "url": "https://moonn.ru/otzivi",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/otzivi"
+    },
+    {
+      "url": "https://moonn.ru/panicheskie_ataki",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/panicheskie_ataki"
+    },
+    {
+      "url": "https://moonn.ru/phytotherapy",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/phytotherapy"
+    },
+    {
+      "url": "https://moonn.ru/platnye-treningi-seminary-programmy-tatiana-moonn",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/platnye-treningi-seminary-programmy-tatiana-moonn"
+    },
+    {
+      "url": "https://moonn.ru/programmakursa",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/programmakursa"
+    },
+    {
+      "url": "https://moonn.ru/psiholog",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/psiholog-konsultacii-moskva"
+    },
+    {
+      "url": "https://moonn.ru/psiholog-konsultacii-moskva",
+      "kind": "service",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/psiholog-konsultacii-moskva"
+    },
+    {
+      "url": "https://moonn.ru/psiholog_moskva",
+      "kind": "service",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/psiholog_moskva"
+    },
+    {
+      "url": "https://moonn.ru/psihology",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/psihology"
+    },
+    {
+      "url": "https://moonn.ru/psy4psy",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/psy4psy"
+    },
+    {
+      "url": "https://moonn.ru/psychoanalys",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/psychoanalys"
+    },
+    {
+      "url": "https://moonn.ru/psypodgotovka1",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/psypodgotovka1"
+    },
+    {
+      "url": "https://moonn.ru/recomend",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/recomend"
+    },
+    {
+      "url": "https://moonn.ru/salt",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/salt"
+    },
+    {
+      "url": "https://moonn.ru/schematherapy",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/schematherapy"
+    },
+    {
+      "url": "https://moonn.ru/selfharm",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/selfharm"
+    },
+    {
+      "url": "https://moonn.ru/semeynie_konflikti_article",
+      "kind": "article",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/semeynie_konflikti_article"
+    },
+    {
+      "url": "https://moonn.ru/semeyniy_psiholog",
+      "kind": "service",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/semeyniy_psiholog"
+    },
+    {
+      "url": "https://moonn.ru/seminar555",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/seminar555"
+    },
+    {
+      "url": "https://moonn.ru/shppp333",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/shppp333"
+    },
+    {
+      "url": "https://moonn.ru/speaker",
+      "kind": "lecture_or_events",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/speaker"
+    },
+    {
+      "url": "https://moonn.ru/st1",
+      "kind": "test_or_staging",
+      "decision": "review_noindex_or_rename_slug",
+      "status": 200,
+      "canonical": "https://moonn.ru/st1"
+    },
+    {
+      "url": "https://moonn.ru/st2",
+      "kind": "test_or_staging",
+      "decision": "review_noindex_or_rename_slug",
+      "status": 200,
+      "canonical": "https://moonn.ru/st2"
+    },
+    {
+      "url": "https://moonn.ru/trauma",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/trauma"
+    },
+    {
+      "url": "https://moonn.ru/uslugi_aerofobia",
+      "kind": "service",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/uslugi_aerofobia"
+    },
+    {
+      "url": "https://moonn.ru/uslugi_depression",
+      "kind": "service",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/uslugi_depression"
+    },
+    {
+      "url": "https://moonn.ru/uslugi_fin_blocks",
+      "kind": "service",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/uslugi_fin_blocks"
+    },
+    {
+      "url": "https://moonn.ru/uslugi_gtr",
+      "kind": "service",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/uslugi_gtr"
+    },
+    {
+      "url": "https://moonn.ru/uslugi_konflikti_na_rabote",
+      "kind": "service",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/uslugi_konflikti_na_rabote"
+    },
+    {
+      "url": "https://moonn.ru/uslugi_lubovnaya_zavisimost",
+      "kind": "service",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/uslugi_lubovnaya_zavisimost"
+    },
+    {
+      "url": "https://moonn.ru/uslugi_obida_na_roditelei",
+      "kind": "service",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/uslugi_obida_na_roditelei"
+    },
+    {
+      "url": "https://moonn.ru/uslugi_otnosheniya_v_kollektive",
+      "kind": "service",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/uslugi_otnosheniya_v_kollektive"
+    },
+    {
+      "url": "https://moonn.ru/uslugi_podrostki",
+      "kind": "service",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/uslugi_podrostki"
+    },
+    {
+      "url": "https://moonn.ru/uslugi_procrastination",
+      "kind": "service",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/uslugi_procrastination"
+    },
+    {
+      "url": "https://moonn.ru/uslugi_razvod",
+      "kind": "service",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/uslugi_razvod"
+    },
+    {
+      "url": "https://moonn.ru/uslugi_sohranit_brak",
+      "kind": "service",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/uslugi_sohranit_brak"
+    },
+    {
+      "url": "https://moonn.ru/vacuum_cups",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/vacuum_cups"
+    },
+    {
+      "url": "https://moonn.ru/vigoranie_article",
+      "kind": "article",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/vigoranie_article"
+    },
+    {
+      "url": "https://moonn.ru/vospitanie_article",
+      "kind": "article",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/vospitanie_article"
+    },
+    {
+      "url": "https://moonn.ru/vystupleniya-lekcii-treningi-psiholog-tatiana-moonn",
+      "kind": "lecture_or_events",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/vystupleniya-lekcii-treningi-psiholog-tatiana-moonn"
+    },
+    {
+      "url": "https://moonn.ru/water",
+      "kind": "other",
+      "decision": "strengthen_seo",
+      "status": 200,
+      "canonical": "https://moonn.ru/water"
+    }
+  ]
+}

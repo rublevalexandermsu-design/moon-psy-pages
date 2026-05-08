@@ -494,3 +494,37 @@ Append-only project history for `moon-psy-site`.
   - Execute archive-folder movement only after UI confirmation that the destination folder is an Archive Folder.
   - Image `alt` issues remain in the raw audit and should be handled through supported Tilda image/block fields or a separate image replacement workflow.
   - GSC/Yandex reindexing can start for the 83 production URLs after this schema rollout verification.
+
+## 2026-05-08 — Moonn GSC/Yandex Reindex Submission
+
+- Project: Moonn / Tilda site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user asked to do GSC/Yandex reindexing for the 83 Moonn production URLs after JSON-LD/schema rollout.
+- Actions:
+  - Built a reindexing packet for all `83` production-scope URLs:
+    - `docs/moonn-gsc-yandex-reindex-packet-2026-05-08.json`
+    - `docs/moonn-yandex-reindex-urls-2026-05-08.txt`
+    - `docs/moonn-google-priority-indexing-urls-2026-05-08.txt`
+  - Verified live `https://moonn.ru/sitemap.xml` has `149` URL entries and includes all `83/83` production-scope URLs.
+  - Submitted `sitemap.xml` in Google Search Console for property `https://moonn.ru/`.
+  - Submitted all `83` URLs in Yandex Webmaster via `Индексирование -> Переобход страниц`.
+- Verification:
+  - Google Search Console UI showed `Sitemap submitted successfully`.
+  - Yandex Webmaster showed daily limit `470` before submission and `387` remaining after submission, matching `83` submitted URLs.
+  - Yandex UI cleared the textarea and showed the submitted-pages section after send.
+- Changed files:
+  - `docs/moonn-gsc-yandex-reindex-packet-2026-05-08.json`
+  - `docs/moonn-yandex-reindex-urls-2026-05-08.txt`
+  - `docs/moonn-google-priority-indexing-urls-2026-05-08.txt`
+  - `docs/moonn-gsc-yandex-reindex-report-2026-05-08.json`
+  - `docs/moonn-gsc-yandex-reindex-report-2026-05-08.md`
+- Decision:
+  - Google bulk reindexing was handled through sitemap submission, not 83 individual URL Inspection requests, because Google documentation recommends sitemap for multiple URLs and quota-limits individual indexing requests.
+  - Yandex supports bulk URL submission in the Reindex Pages tool and accepted the full 83-URL packet within the visible daily quota.
+- Sources:
+  - Google recrawl documentation: `https://developers.google.com/search/docs/advanced/crawling/ask-google-to-recrawl`
+  - Google Search Console help: `https://support.google.com/webmasters/answer/10351509`
+  - Yandex reindex documentation: `https://yandex.ru/support/webmaster/ru/robot-workings/site-reindex`
+  - Yandex Webmaster quotas: `https://yandex.ru/support/webmaster/ru/indexing-options/quotas`
+- Follow-up rule:
+  - Do not keep resubmitting the same URLs every day. First check Yandex statuses after several days and repeat only failed URLs. In Google, check sitemap last-read and Pages indexing; use URL Inspection only for priority URLs if key pages stay stale.

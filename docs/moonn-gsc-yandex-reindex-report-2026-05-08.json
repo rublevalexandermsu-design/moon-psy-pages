@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "createdAt": "2026-05-08T06:21:53.714419+00:00",
+  "scope": "Moonn 83 production URLs after JSON-LD/schema rollout",
+  "sourcePacket": "docs/moonn-gsc-yandex-reindex-packet-2026-05-08.json",
+  "verifiedBeforeSubmission": {
+    "liveSitemap": "https://moonn.ru/sitemap.xml",
+    "sitemapLocCount": 149,
+    "scopeUrlsPresentInSitemap": 83,
+    "scopeUrlsMissingFromSitemap": 0,
+    "http200ScopeUrls": 83,
+    "renderedSchemaAudit": "83/83 with JSON-LD, Person, WebSite, WebPage, BreadcrumbList, 0 JSON errors"
+  },
+  "googleSearchConsole": {
+    "property": "https://moonn.ru/",
+    "action": "Submitted sitemap.xml through Google Search Console Sitemaps UI",
+    "submittedSitemap": "https://moonn.ru/sitemap.xml",
+    "uiResult": "Sitemap submitted successfully",
+    "coverage": "All 83 scope URLs are in live sitemap",
+    "reasonForNotSubmitting83Individually": "Google documentation says use sitemap for multiple pages; URL Inspection request indexing is quota-limited and intended for individual priority URLs."
+  },
+  "yandexWebmaster": {
+    "host": "https://moonn.ru",
+    "action": "Submitted all 83 URLs through Indexing -> Reindex pages UI",
+    "submittedUrlCount": 83,
+    "dailyLimitShownBeforeSubmit": 470,
+    "dailyRemainingShownAfterSubmit": 387,
+    "uiResult": "Submitted pages section appeared; textarea cleared after submission",
+    "expectedProcessing": "Yandex UI/docs indicate status moves through queue and processed later; updates may take days."
+  },
+  "sources": {
+    "google": "https://developers.google.com/search/docs/advanced/crawling/ask-google-to-recrawl",
+    "googleSupport": "https://support.google.com/webmasters/answer/10351509",
+    "yandex": "https://yandex.ru/support/webmaster/ru/robot-workings/site-reindex",
+    "yandexQuotas": "https://yandex.ru/support/webmaster/ru/indexing-options/quotas"
+  },
+  "nextCheck": {
+    "yandex": "Check queued/processed/error statuses after 3 days and repeat only failed URLs if needed.",
+    "google": "Check sitemap last read / Pages indexing after several days; use URL Inspection for priority pages only if sitemap is not reread or key URLs remain stale."
+  }
+}
