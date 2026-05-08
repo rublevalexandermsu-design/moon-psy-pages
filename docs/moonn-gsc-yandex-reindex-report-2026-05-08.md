@@ -12,6 +12,12 @@
 - Submitted `sitemap.xml` in GSC Sitemaps for property `https://moonn.ru/`.
 - UI result: `Sitemap submitted successfully`.
 - Google bulk path used: sitemap, because Google documentation recommends sitemap for multiple URLs and quota-limits individual URL Inspection requests.
+- Manual URL Inspection was also used for the first priority URLs:
+  - `https://moonn.ru/` — observed as indexed, request indexing result: `Indexing requested`.
+  - `https://moonn.ru/events_tp` — observed as `Discovered - currently not indexed`, request indexing result: `Indexing requested`.
+  - `https://moonn.ru/lectures1` — observed as indexed, request indexing result: `Indexing requested`.
+  - `https://moonn.ru/psiholog-konsultacii-moskva` — observed as indexed, request indexing result: `Indexing requested`.
+- Stop rule: do not manually submit all `83` URLs through URL Inspection. Use sitemap-level monitoring first, then inspect/request only stale priority URLs.
 
 ## Yandex Webmaster
 
@@ -23,4 +29,4 @@
 ## Next Check
 
 - Yandex: check statuses after 3 days; repeat only failed URLs.
-- Google: check sitemap last read and Pages indexing after several days; use URL Inspection for priority URLs only if sitemap is not reread or key pages remain stale.
+- Google: check sitemap last read, Pages indexing, and URL Inspection statuses for the four manually requested priority URLs after several days; use URL Inspection again only for stale or failed priority URLs.

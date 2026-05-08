@@ -17,7 +17,35 @@
     "submittedSitemap": "https://moonn.ru/sitemap.xml",
     "uiResult": "Sitemap submitted successfully",
     "coverage": "All 83 scope URLs are in live sitemap",
-    "reasonForNotSubmitting83Individually": "Google documentation says use sitemap for multiple pages; URL Inspection request indexing is quota-limited and intended for individual priority URLs."
+    "reasonForNotSubmitting83Individually": "Google documentation says use sitemap for multiple pages; URL Inspection request indexing is quota-limited and intended for individual priority URLs.",
+    "manualUrlInspection": {
+      "performedAt": "2026-05-08T06:51:00+00:00",
+      "browserProfile": "Google Chrome / Alexander Rublev account",
+      "method": "Google Search Console URL Inspection -> Request indexing",
+      "submittedPriorityUrls": [
+        {
+          "url": "https://moonn.ru/",
+          "observedStatusBeforeRequest": "URL is on Google; Page is indexed",
+          "requestIndexingResult": "Indexing requested"
+        },
+        {
+          "url": "https://moonn.ru/events_tp",
+          "observedStatusBeforeRequest": "Page is not indexed: Discovered - currently not indexed",
+          "requestIndexingResult": "Indexing requested"
+        },
+        {
+          "url": "https://moonn.ru/lectures1",
+          "observedStatusBeforeRequest": "URL is on Google; Page is indexed",
+          "requestIndexingResult": "Indexing requested"
+        },
+        {
+          "url": "https://moonn.ru/psiholog-konsultacii-moskva",
+          "observedStatusBeforeRequest": "URL is on Google; Page is indexed",
+          "requestIndexingResult": "Indexing requested"
+        }
+      ],
+      "stopRule": "Do not submit the full 83-URL list manually through URL Inspection. Continue with sitemap-level monitoring and inspect/request only stale priority URLs after status refresh."
+    }
   },
   "yandexWebmaster": {
     "host": "https://moonn.ru",
@@ -36,6 +64,6 @@
   },
   "nextCheck": {
     "yandex": "Check queued/processed/error statuses after 3 days and repeat only failed URLs if needed.",
-    "google": "Check sitemap last read / Pages indexing after several days; use URL Inspection for priority pages only if sitemap is not reread or key URLs remain stale."
+    "google": "Check sitemap last read / Pages indexing after several days; also check URL Inspection statuses for the 4 manually submitted priority URLs and request only stale/failed priority URLs if justified."
   }
 }

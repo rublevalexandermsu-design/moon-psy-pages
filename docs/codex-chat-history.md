@@ -528,3 +528,27 @@ Append-only project history for `moon-psy-site`.
   - Yandex Webmaster quotas: `https://yandex.ru/support/webmaster/ru/indexing-options/quotas`
 - Follow-up rule:
   - Do not keep resubmitting the same URLs every day. First check Yandex statuses after several days and repeat only failed URLs. In Google, check sitemap last-read and Pages indexing; use URL Inspection only for priority URLs if key pages stay stale.
+
+## 2026-05-08 — Moonn Manual Google URL Inspection Priority Requests
+
+- Project: Moonn / Tilda site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user asked to try Google manually after sitemap submission and add Google status checks to the follow-up automation.
+- Actions:
+  - Used the real Google Chrome profile with the already-authenticated Alexander Rublev Google account.
+  - Opened Google Search Console URL Inspection for property `https://moonn.ru/`.
+  - Manually requested indexing for priority URLs:
+    - `https://moonn.ru/`
+    - `https://moonn.ru/events_tp`
+    - `https://moonn.ru/lectures1`
+    - `https://moonn.ru/psiholog-konsultacii-moskva`
+  - Updated:
+    - `docs/moonn-gsc-yandex-reindex-report-2026-05-08.json`
+    - `docs/moonn-gsc-yandex-reindex-report-2026-05-08.md`
+- Verification:
+  - GSC showed `Indexing requested` for all four priority URLs.
+  - For `/events_tp`, GSC showed the important pre-request status: `Page is not indexed: Discovered - currently not indexed`.
+  - For `/`, `/lectures1`, and `/psiholog-konsultacii-moskva`, GSC showed the pages as already indexed before the manual request.
+- Decision:
+  - Do not manually submit all `83` URLs through URL Inspection because it is quota-limited and Google recommends sitemap submission for bulk recrawling.
+  - The next check must include Google sitemap last-read, Pages indexing, and URL Inspection statuses for the four manually requested priority URLs.
