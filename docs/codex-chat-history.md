@@ -637,3 +637,28 @@ Append-only project history for `moon-psy-site`.
     - the operative history entry above.
 - Follow-up rule:
   - Never add an external domain to legal/privacy documents unless ownership/control is verified through Tilda/project settings, DNS/registrar, official site text, or an explicit unambiguous user confirmation after showing the exact domain.
+
+## 2026-05-08 — Moonn RKN/Privacy Layer Published And Verified
+
+- Project: Moonn / Tilda site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user asked whether the RKN/privacy site changes were actually done and, if not, to finish policy, consent and related page changes.
+- Actions:
+  - Published the privacy compliance frontend layer through the Moonn Tilda global head.
+  - Re-published the protected production scope pages: `80/80` pages in `docs/moonn-seo-scope-publish-report-2026-05-07.json`.
+  - Published the existing `/politic` page as the canonical privacy/personal-data policy page.
+  - Re-ran the raw privacy audit:
+    - `docs/moonn-privacy-compliance-audit-2026-05-08.json`
+    - `docs/moonn-privacy-compliance-audit-2026-05-08.md`
+  - Created rendered/live verification:
+    - `docs/moonn-rkn-live-verification-2026-05-08.md`
+- Live verification:
+  - `https://moonn.ru/`, `https://moonn.ru/politic`, `https://moonn.ru/psiholog-konsultacii-moskva`, and `https://moonn.ru/events_tp` returned `200` and included `moonn-privacy-compliance-layer`.
+  - The rendered homepage had `2` forms and `2` required unchecked `moonn_personal_data_consent` checkboxes linking to `https://moonn.ru/politic`.
+  - Rendered `/politic` included ИП Кумскова Татьяна Михайловна, ИНН `770906685276`, ОГРНИП `316774600553212`, `moonn.official@yandex.ru`, cookies, Yandex Metrika and Webvisor disclosure.
+  - No checked live page contained `umun.ru`.
+- Incident / limitation:
+  - The current raw scanner does not execute JavaScript, so it still reports missing checkboxes on many pages even though rendered browser verification confirms the injected layer.
+  - Tilda global HEAD editing can duplicate old code if hidden textarea and ACE editor state are mixed.
+- Follow-up rule:
+  - For RKN/compliance readiness, rendered JS mitigation is not the final source-level state. Next hardening must move the policy text and form checkboxes into native Tilda blocks/settings where possible, and then verify both raw HTML and rendered browser output.

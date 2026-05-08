@@ -115,7 +115,7 @@ def publish_current_page(win):
         button = find_button(
             win,
             "Опубликовать",
-            lambda rect: rect.left > 850 and rect.top < 260,
+            lambda rect: rect.left > 850 and rect.top < 330,
         )
         if button:
             button.click_input()

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "createdAt": "2026-05-08T07:58:42.545263+00:00",
+  "createdAt": "2026-05-08T13:00:26.814593+00:00",
   "scope": "Moonn 83 production URLs privacy/form/cookie compliance read-only audit",
   "sourcePacket": "docs\\moonn-gsc-yandex-reindex-packet-2026-05-08.json",
   "policyEndpoints": [
@@ -74,7 +74,7 @@
       "url": "https://moonn.ru/",
       "status": 200,
       "formSignals": 66,
-      "consentSignals": 2,
+      "consentSignals": 8,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -90,7 +90,7 @@
       "url": "https://moonn.ru/abuse_gaslight",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 1,
+      "consentSignals": 7,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -106,7 +106,7 @@
       "url": "https://moonn.ru/aromatherapy",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -115,15 +115,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/article_diary_of_emotions",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -132,15 +131,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/article_femininity",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -149,15 +147,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/article_gadget_addiction",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -166,15 +163,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/article_toxic_job",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -183,15 +179,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/articles/eq-dlya-rukovoditeley",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 1,
+      "consentSignals": 7,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -207,7 +202,7 @@
       "url": "https://moonn.ru/baza-znaniy-emocionalnyy-intellekt-psihologiya",
       "status": 200,
       "formSignals": 32,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -216,15 +211,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/eintellect",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 1,
+      "consentSignals": 7,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -240,7 +234,7 @@
       "url": "https://moonn.ru/emotional-intelligence/",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -249,15 +243,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/emotional-intelligence/articles",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -266,15 +259,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/emotional-intelligence/articles/benefits-of-ei",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -283,15 +275,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/emotional-intelligence/articles/emotional-intelligence-skills",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -300,15 +291,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/emotional-intelligence/articles/what-is-emotional-intelligence",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -317,15 +307,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/emotional-intelligence/articles/why-ei-matters",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -334,15 +323,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/emotional-intelligence/diagnostoka-ei",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -351,15 +339,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/emotional-intelligence/ei-leader-12",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -368,32 +355,28 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/emotional-intelligence/knowledge-base",
-      "status": 200,
-      "formSignals": 1,
+      "status": "ERROR:_ssl.c:1011: The handshake operation timed out",
+      "formSignals": 0,
       "consentSignals": 0,
       "checkboxSignals": 0,
-      "yandexMetrikaSignals": 6,
-      "webvisorSignals": 2,
+      "yandexMetrikaSignals": 0,
+      "webvisorSignals": 0,
       "googleAnalyticsSignals": 0,
       "hasPolicyLink": false,
       "hasConsentLink": false,
-      "hasCookieText": true,
-      "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
-      ]
+      "hasCookieText": false,
+      "riskFlags": []
     },
     {
       "url": "https://moonn.ru/emotional-intelligence/knowledge-base/active-listening",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -402,15 +385,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/emotional-intelligence/knowledge-base/burnout",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -419,32 +401,28 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/emotional-intelligence/knowledge-base/emotional-contagion",
-      "status": 200,
-      "formSignals": 1,
+      "status": "ERROR:_ssl.c:1011: The handshake operation timed out",
+      "formSignals": 0,
       "consentSignals": 0,
       "checkboxSignals": 0,
-      "yandexMetrikaSignals": 6,
-      "webvisorSignals": 2,
+      "yandexMetrikaSignals": 0,
+      "webvisorSignals": 0,
       "googleAnalyticsSignals": 0,
       "hasPolicyLink": false,
       "hasConsentLink": false,
-      "hasCookieText": true,
-      "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
-      ]
+      "hasCookieText": false,
+      "riskFlags": []
     },
     {
       "url": "https://moonn.ru/emotional-intelligence/knowledge-base/emotional-intelligence",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -453,15 +431,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/emotional-intelligence/knowledge-base/emotional-literacy",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -470,15 +447,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/emotional-intelligence/knowledge-base/emotional-maturity",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -487,15 +463,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/emotional-intelligence/knowledge-base/empathy",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -504,15 +479,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/emotional-intelligence/knowledge-base/intrinsic-motivation",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -521,15 +495,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/emotional-intelligence/knowledge-base/male-loneliness-russia",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -538,15 +511,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/emotional-intelligence/knowledge-base/nonviolent-communication",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -555,15 +527,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/emotional-intelligence/knowledge-base/personal-boundaries",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 1,
+      "consentSignals": 7,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -579,7 +550,7 @@
       "url": "https://moonn.ru/emotional-intelligence/knowledge-base/psychological-safety",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 1,
+      "consentSignals": 7,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -595,7 +566,7 @@
       "url": "https://moonn.ru/emotional-intelligence/knowledge-base/self-awareness",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -604,15 +575,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/emotional-intelligence/knowledge-base/self-regulation",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -621,15 +591,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/emotional-intelligence/knowledge-base/social-intelligence",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -638,15 +607,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/events",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -655,15 +623,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/events_tp",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -672,15 +639,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/geshtalt",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -689,15 +655,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/kpt",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -706,15 +671,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/kurs-ei",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 1,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -722,15 +686,13 @@
       "hasPolicyLink": false,
       "hasConsentLink": false,
       "hasCookieText": true,
-      "riskFlags": [
-        "forms_without_detected_consent_text"
-      ]
+      "riskFlags": []
     },
     {
       "url": "https://moonn.ru/lectures1",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -739,15 +701,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/microbiom",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -756,15 +717,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/novosti",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -773,15 +733,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/otzivi",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -790,15 +749,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/panicheskie_ataki",
       "status": 200,
       "formSignals": 34,
-      "consentSignals": 2,
+      "consentSignals": 8,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -814,7 +772,7 @@
       "url": "https://moonn.ru/phytotherapy",
       "status": 200,
       "formSignals": 31,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -823,15 +781,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/platnye-treningi-seminary-programmy-tatiana-moonn",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -840,15 +797,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/programmakursa",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 1,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -856,9 +812,7 @@
       "hasPolicyLink": false,
       "hasConsentLink": false,
       "hasCookieText": true,
-      "riskFlags": [
-        "forms_without_detected_consent_text"
-      ]
+      "riskFlags": []
     },
     {
       "url": "https://moonn.ru/psiholog",
@@ -880,7 +834,7 @@
       "url": "https://moonn.ru/psiholog-konsultacii-moskva",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -889,15 +843,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/psiholog_moskva",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 2,
+      "consentSignals": 8,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -913,7 +866,7 @@
       "url": "https://moonn.ru/psihology",
       "status": 200,
       "formSignals": 2,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -922,15 +875,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/psy4psy",
       "status": 200,
       "formSignals": 32,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -939,8 +891,7 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
@@ -964,7 +915,7 @@
       "url": "https://moonn.ru/psypodgotovka1",
       "status": 200,
       "formSignals": 33,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -973,15 +924,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/recomend",
       "status": 200,
       "formSignals": 32,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -990,15 +940,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/salt",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -1007,15 +956,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/schematherapy",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -1024,15 +972,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/selfharm",
       "status": 200,
       "formSignals": 32,
-      "consentSignals": 4,
+      "consentSignals": 10,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -1048,7 +995,7 @@
       "url": "https://moonn.ru/semeynie_konflikti_article",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -1057,15 +1004,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/semeyniy_psiholog",
       "status": 200,
       "formSignals": 32,
-      "consentSignals": 8,
+      "consentSignals": 14,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -1081,7 +1027,7 @@
       "url": "https://moonn.ru/seminar555",
       "status": 200,
       "formSignals": 38,
-      "consentSignals": 4,
+      "consentSignals": 10,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -1097,7 +1043,7 @@
       "url": "https://moonn.ru/shppp333",
       "status": 200,
       "formSignals": 69,
-      "consentSignals": 3,
+      "consentSignals": 9,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -1113,7 +1059,7 @@
       "url": "https://moonn.ru/speaker",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -1122,8 +1068,7 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
@@ -1161,7 +1106,7 @@
       "url": "https://moonn.ru/trauma",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -1170,15 +1115,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/uslugi_aerofobia",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 2,
+      "consentSignals": 8,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -1192,25 +1136,23 @@
     },
     {
       "url": "https://moonn.ru/uslugi_depression",
-      "status": 200,
-      "formSignals": 1,
-      "consentSignals": 1,
+      "status": "ERROR:_ssl.c:1011: The handshake operation timed out",
+      "formSignals": 0,
+      "consentSignals": 0,
       "checkboxSignals": 0,
-      "yandexMetrikaSignals": 6,
-      "webvisorSignals": 2,
+      "yandexMetrikaSignals": 0,
+      "webvisorSignals": 0,
       "googleAnalyticsSignals": 0,
       "hasPolicyLink": false,
       "hasConsentLink": false,
-      "hasCookieText": true,
-      "riskFlags": [
-        "forms_without_detected_checkbox"
-      ]
+      "hasCookieText": false,
+      "riskFlags": []
     },
     {
       "url": "https://moonn.ru/uslugi_fin_blocks",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 1,
+      "consentSignals": 7,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -1226,7 +1168,7 @@
       "url": "https://moonn.ru/uslugi_gtr",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 1,
+      "consentSignals": 7,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -1242,7 +1184,7 @@
       "url": "https://moonn.ru/uslugi_konflikti_na_rabote",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 1,
+      "consentSignals": 7,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -1258,7 +1200,7 @@
       "url": "https://moonn.ru/uslugi_lubovnaya_zavisimost",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 1,
+      "consentSignals": 7,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -1274,7 +1216,7 @@
       "url": "https://moonn.ru/uslugi_obida_na_roditelei",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 1,
+      "consentSignals": 7,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -1290,7 +1232,7 @@
       "url": "https://moonn.ru/uslugi_otnosheniya_v_kollektive",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 1,
+      "consentSignals": 7,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -1306,7 +1248,7 @@
       "url": "https://moonn.ru/uslugi_podrostki",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 3,
+      "consentSignals": 9,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -1322,7 +1264,7 @@
       "url": "https://moonn.ru/uslugi_procrastination",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 1,
+      "consentSignals": 7,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -1336,25 +1278,23 @@
     },
     {
       "url": "https://moonn.ru/uslugi_razvod",
-      "status": 200,
-      "formSignals": 1,
-      "consentSignals": 1,
+      "status": "ERROR:_ssl.c:1011: The handshake operation timed out",
+      "formSignals": 0,
+      "consentSignals": 0,
       "checkboxSignals": 0,
-      "yandexMetrikaSignals": 6,
-      "webvisorSignals": 2,
+      "yandexMetrikaSignals": 0,
+      "webvisorSignals": 0,
       "googleAnalyticsSignals": 0,
       "hasPolicyLink": false,
       "hasConsentLink": false,
-      "hasCookieText": true,
-      "riskFlags": [
-        "forms_without_detected_checkbox"
-      ]
+      "hasCookieText": false,
+      "riskFlags": []
     },
     {
       "url": "https://moonn.ru/uslugi_sohranit_brak",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 1,
+      "consentSignals": 7,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -1370,7 +1310,7 @@
       "url": "https://moonn.ru/vacuum_cups",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -1379,15 +1319,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/vigoranie_article",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -1396,15 +1335,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/vospitanie_article",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -1413,15 +1351,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/vystupleniya-lekcii-treningi-psiholog-tatiana-moonn",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -1430,15 +1367,14 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     },
     {
       "url": "https://moonn.ru/water",
       "status": 200,
       "formSignals": 1,
-      "consentSignals": 0,
+      "consentSignals": 6,
       "checkboxSignals": 0,
       "yandexMetrikaSignals": 6,
       "webvisorSignals": 2,
@@ -1447,8 +1383,7 @@
       "hasConsentLink": false,
       "hasCookieText": true,
       "riskFlags": [
-        "forms_without_detected_checkbox",
-        "forms_without_detected_consent_text"
+        "forms_without_detected_checkbox"
       ]
     }
   ],
