@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "createdAt": "2026-05-08T05:58:19.738902+00:00",
+  "sourcePlan": "docs\\moonn-tilda-folder-governance-plan-2026-05-08.json",
+  "targetFolderPolicy": {
+    "folderName": "ARCHIVE / DRAFT / TEST",
+    "mustBeArchiveFolder": true,
+    "officialTildaSource": "https://help.tilda.cc/folders",
+    "executionGate": "Move only these clear candidates after confirming in Tilda UI that the destination folder has Archive Folder enabled. Do not delete pages."
+  },
+  "notAllowed": [
+    "Do not move protected 83-page SEO production scope.",
+    "Do not move legal, payment, reviews, media-holder, news/event or ambiguous pages.",
+    "Do not use Publish all pages as a cleanup substitute.",
+    "Do not delete pages."
+  ],
+  "candidates": [
+    {
+      "pageId": "117373586",
+      "url": "",
+      "alias": "",
+      "title": "тест софтскилс.",
+      "published": true,
+      "inventoryDecision": "archive_candidate_test_or_service",
+      "governanceBucket": "clear_archive_candidate",
+      "recommendedAction": "move_to_archive_folder_after_ui_gate",
+      "rationale": "Clear test/copy/legacy service candidate from read-only inventory; do not delete."
+    },
+    {
+      "pageId": "117374476",
+      "url": "",
+      "alias": "",
+      "title": "тест курс Михаил Ивановича Кумскова",
+      "published": true,
+      "inventoryDecision": "archive_candidate_test_or_service",
+      "governanceBucket": "clear_archive_candidate",
+      "recommendedAction": "move_to_archive_folder_after_ui_gate",
+      "rationale": "Clear test/copy/legacy service candidate from read-only inventory; do not delete."
+    },
+    {
+      "pageId": "119171366",
+      "url": "",
+      "alias": "",
+      "title": "Copy of psiholog-moskva-online",
+      "published": true,
+      "inventoryDecision": "archive_candidate_test_or_service",
+      "governanceBucket": "clear_archive_candidate",
+      "recommendedAction": "move_to_archive_folder_after_ui_gate",
+      "rationale": "Clear test/copy/legacy service candidate from read-only inventory; do not delete."
+    },
+    {
+      "pageId": "90265106",
+      "url": "https://moonn.ru/test77",
+      "alias": "test77",
+      "title": "БАЗА - ВАЖНО - тестовая страница",
+      "published": true,
+      "inventoryDecision": "archive_candidate_test_or_service",
+      "governanceBucket": "clear_archive_candidate",
+      "recommendedAction": "move_to_archive_folder_after_ui_gate",
+      "rationale": "Clear test/copy/legacy service candidate from read-only inventory; do not delete."
+    },
+    {
+      "pageId": "45468005",
+      "url": "",
+      "alias": "",
+      "title": "Copy of Вы можете стать спокойным и уверенным в себе человеком  в течение 1 месяца",
+      "published": true,
+      "inventoryDecision": "archive_candidate_test_or_service",
+      "governanceBucket": "clear_archive_candidate",
+      "recommendedAction": "move_to_archive_folder_after_ui_gate",
+      "rationale": "Clear test/copy/legacy service candidate from read-only inventory; do not delete."
+    },
+    {
+      "pageId": "135383536",
+      "url": "",
+      "alias": "",
+      "title": "Copy of БАЗА - ВАЖНО - тестовая страница",
+      "published": true,
+      "inventoryDecision": "archive_candidate_test_or_service",
+      "governanceBucket": "clear_archive_candidate",
+      "recommendedAction": "move_to_archive_folder_after_ui_gate",
+      "rationale": "Clear test/copy/legacy service candidate from read-only inventory; do not delete."
+    },
+    {
+      "pageId": "45296765",
+      "url": "",
+      "alias": "",
+      "title": "Летний Лагерь для Подростков по ПСИХОЛОГИИ - Школа ПРАКТИЧЕСКОЙ Психологии для ПОДРОСТКОВ в Москве, 12-16 августа  - 13-17 лет",
+      "published": true,
+      "inventoryDecision": "archive_candidate_test_or_service",
+      "governanceBucket": "clear_archive_candidate",
+      "recommendedAction": "move_to_archive_folder_after_ui_gate",
+      "rationale": "Clear test/copy/legacy service candidate from read-only inventory; do not delete."
+    },
+    {
+      "pageId": "44556925",
+      "url": "https://moonn.ru/shkolapsihologii",
+      "alias": "shkolapsihologii",
+      "title": "Летний Городской Лагерь в Москве (13-17 лет) - Школа ПРАКТИЧЕСКОЙ Психологии для ПОДРОСТКОВ, 12-16 августа с 10.00 до 18.00",
+      "published": true,
+      "inventoryDecision": "archive_candidate_test_or_service",
+      "governanceBucket": "clear_archive_candidate",
+      "recommendedAction": "move_to_archive_folder_after_ui_gate",
+      "rationale": "Clear test/copy/legacy service candidate from read-only inventory; do not delete."
+    }
+  ],
+  "status": "prepared_not_executed",
+  "reason": "The archive list is ready, but live Tilda movement needs a UI gate: confirm an archived folder first, then move exactly these 8 candidates."
+}

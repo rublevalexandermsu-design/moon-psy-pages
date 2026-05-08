@@ -436,3 +436,61 @@ Append-only project history for `moon-psy-site`.
 - Residual work:
   - Folder/archive governance remains open: only `8` clear archive candidates can be considered for archive movement; `73` outside-scope published pages need content classification before moving.
   - SEO image alt/title and JSON-LD work remain separate follow-ups; current turn closed the HEAD/H1-H2 rollout.
+
+## 2026-05-08 — Moonn JSON-LD Schema Rollout And Archive Packet
+
+- Project: Moonn / Tilda site.
+- Branch: `codex/moonn-seo-audit`.
+- Commit: `49caf33` (`Roll out Moonn JSON-LD schema layer`).
+- Trigger: user asked to finish JSON-LD/schema and careful Tilda folder/archive cleanup before moving to GSC/Yandex reindexing, Yandex Services reviews and Yandex Services/MSU Istina synchronization.
+- Actions:
+  - Created a global rendered JSON-LD schema layer for the `83` Moonn production-scope URLs.
+  - Added a global entity schema in Tilda HEAD for `Person`/`WebSite` linking Tatyana Moonn, Kumskova identity, Moonn and external entity signals.
+  - Saved the updated Tilda global HEAD through the real authenticated Alexander Google Chrome session.
+  - Published only the scoped `80/80` SEO packet pages, then the `3/3` extra live pages: `/psiholog`, `/st1`, `/st2`.
+  - Created a rendered schema audit so JSON-LD readiness is checked in the same rendered layer as the semantic H1/H2 fix.
+  - Created a Tilda archive execution packet for exactly `8` clear archive candidates.
+- Changed files:
+  - `assets/moonn-schema-layer.js`
+  - `scripts/build_moonn_schema_layer.py`
+  - `scripts/moonn_rendered_schema_audit.py`
+  - `scripts/tilda_publish_moonn_extra_live_pages_ui.py`
+  - `scripts/build_moonn_tilda_archive_execution_packet.py`
+  - `docs/moonn-global-head-code-with-schema-2026-05-08.html`
+  - `docs/moonn-schema-layer-packet-2026-05-08.json`
+  - `docs/moonn-schema-layer-packet-2026-05-08.md`
+  - `docs/moonn-rendered-schema-audit-2026-05-08.json`
+  - `docs/moonn-rendered-schema-audit-2026-05-08.md`
+  - `docs/moonn-rendered-schema-audit-2026-05-08.csv`
+  - `docs/moonn-tilda-archive-execution-packet-2026-05-08.json`
+  - `docs/moonn-tilda-archive-execution-packet-2026-05-08.md`
+  - `docs/moonn-tilda-archive-execution-packet-2026-05-08.csv`
+- Verification:
+  - `node --check assets\moonn-schema-layer.js` passed.
+  - Live HTML spot checks for `/`, `/emotional-intelligence/knowledge-base/empathy`, `/events_tp`, `/psiholog-konsultacii-moskva`, `/psiholog`, `/st1`, `/st2` all returned:
+    - `moonn-global-entity-schema`: true;
+    - `moonn-schema-layer`: true;
+    - schema commit marker `0e5967eaa5d2fcca54900772ff632f91f090f073`: true;
+    - `application/ld+json`: true.
+  - `python scripts\moonn_rendered_schema_audit.py`:
+    - `83/83` URLs HTTP `200`;
+    - `83/83` have schema layer script;
+    - `83/83` have global entity schema;
+    - `83/83` have JSON-LD;
+    - `83/83` have `Person`, `WebSite`, `WebPage`, `BreadcrumbList`;
+    - `0` JSON errors;
+    - `0` page errors.
+  - `python scripts\moonn_rendered_heading_audit.py` remains green:
+    - `83/83` loaded;
+    - `83/83` have exactly one rendered H1;
+    - `52/52` target H1/H2 checks matched.
+- Folder/archive decision:
+  - Official Tilda folder documentation says an Archive Folder is excluded from “Publish all pages”; source recorded in the execution packet: `https://help.tilda.cc/folders`.
+  - Live movement was not executed in this step because the safe gate still requires confirming the destination folder in Tilda UI as an Archive Folder.
+  - Only the `8` clear candidates in `docs/moonn-tilda-archive-execution-packet-2026-05-08.json` are ready for possible movement. Legal, payment, reviews, news/event, media-holder and ambiguous pages remain protected from automatic movement.
+- Incident rule:
+  - For Tilda SEO retrofits, distinguish three audit layers: raw HTML, rendered DOM, and search-console indexing state. A raw audit can correctly flag source HTML limitations while rendered audits verify JS-layer remediation.
+- Residual work:
+  - Execute archive-folder movement only after UI confirmation that the destination folder is an Archive Folder.
+  - Image `alt` issues remain in the raw audit and should be handled through supported Tilda image/block fields or a separate image replacement workflow.
+  - GSC/Yandex reindexing can start for the 83 production URLs after this schema rollout verification.
