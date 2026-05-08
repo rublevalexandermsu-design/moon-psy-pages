@@ -574,3 +574,31 @@ Append-only project history for `moon-psy-site`.
 - Blockers:
   - Need confirmed legal operator details and whether an RKN operator notification already exists.
   - Need legal approval before publishing final policy/consent wording.
+
+## 2026-05-08 — Moonn Privacy Compliance Packet and Audit Script
+
+- Project: Moonn / Tilda site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user asked to execute the first compliance steps: documents, form consents, cookies/analytics notice, and automation; RKN operator notification excluded for now.
+- Actions:
+  - Created publication packet:
+    - `docs/moonn-privacy-publication-packet-2026-05-08.md`
+  - Created technical audit script:
+    - `scripts/moonn_privacy_compliance_audit.py`
+  - Ran the audit against the `83` production-scope URLs.
+  - Created reports:
+    - `docs/moonn-privacy-compliance-audit-2026-05-08.json`
+    - `docs/moonn-privacy-compliance-audit-2026-05-08.md`
+    - `docs/moonn-rkn-compliance-rollout-plan-2026-05-08.md`
+- Verification:
+  - `python scripts\moonn_privacy_compliance_audit.py` completed.
+  - `python -m json.tool docs\moonn-privacy-compliance-audit-2026-05-08.json` passed.
+  - Audit result: `83/83` production URLs have form signals, `79` pages lack detected checkbox, `58` pages lack detected consent text, and required policy endpoints currently return `404`.
+- Decision:
+  - Do not publish final legal pages until operator variables are confirmed.
+  - Do not add GA4/Google Analytics while the cross-border/legal posture is unresolved; current checked main HTML did not show GA signals.
+  - Use Yandex Metrika as the primary analytics layer for now and disclose it clearly in `/cookies` and `/privacy`.
+- Automation:
+  - Updated `moonn-seo-leftovers-morning-check` into `Moonn SEO and privacy compliance supervisor`.
+  - Added weekly privacy/RKN scan duties: rerun `scripts\moonn_privacy_compliance_audit.py`, check legal endpoints, form checkbox/consent text, cookie/Yandex Metrika disclosure, GA/gtag drift, and robots.txt SEO safety.
+  - Gate preserved: no live Tilda legal text, RKN notification, personal data publication, payment changes or bot-blocking rules without explicit approval.
