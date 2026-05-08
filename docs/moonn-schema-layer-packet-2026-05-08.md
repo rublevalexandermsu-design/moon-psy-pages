@@ -1,0 +1,92 @@
+# Moonn Schema Layer Packet — 2026-05-08
+
+- Source audit: `docs\moonn-production-scope-seo-audit-2026-05-07.json`
+- Pages covered: `83`
+- Schema types: `Person`, `WebSite`, `WebPage`, `ProfessionalService`, `Article`, `ItemList`, `BreadcrumbList`.
+- Safety: no fake ratings/reviews/prices, no private videos, no payment data.
+
+## Paths
+
+- `/`: Person, WebSite, WebPage, ProfessionalService, BreadcrumbList
+- `/abuse_gaslight`: Person, WebSite, WebPage, BreadcrumbList
+- `/aromatherapy`: Person, WebSite, WebPage, BreadcrumbList
+- `/article_diary_of_emotions`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/article_femininity`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/article_gadget_addiction`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/article_toxic_job`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/articles/eq-dlya-rukovoditeley`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/baza-znaniy-emocionalnyy-intellekt-psihologiya`: Person, WebSite, WebPage, BreadcrumbList
+- `/eintellect`: Person, WebSite, WebPage, BreadcrumbList
+- `/emotional-intelligence`: Person, WebSite, WebPage, BreadcrumbList
+- `/emotional-intelligence/articles`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/emotional-intelligence/articles/benefits-of-ei`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/emotional-intelligence/articles/emotional-intelligence-skills`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/emotional-intelligence/articles/what-is-emotional-intelligence`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/emotional-intelligence/articles/why-ei-matters`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/emotional-intelligence/diagnostoka-ei`: Person, WebSite, WebPage, BreadcrumbList
+- `/emotional-intelligence/ei-leader-12`: Person, WebSite, WebPage, BreadcrumbList
+- `/emotional-intelligence/knowledge-base`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/emotional-intelligence/knowledge-base/active-listening`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/emotional-intelligence/knowledge-base/burnout`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/emotional-intelligence/knowledge-base/emotional-contagion`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/emotional-intelligence/knowledge-base/emotional-intelligence`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/emotional-intelligence/knowledge-base/emotional-literacy`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/emotional-intelligence/knowledge-base/emotional-maturity`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/emotional-intelligence/knowledge-base/empathy`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/emotional-intelligence/knowledge-base/intrinsic-motivation`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/emotional-intelligence/knowledge-base/male-loneliness-russia`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/emotional-intelligence/knowledge-base/nonviolent-communication`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/emotional-intelligence/knowledge-base/personal-boundaries`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/emotional-intelligence/knowledge-base/psychological-safety`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/emotional-intelligence/knowledge-base/self-awareness`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/emotional-intelligence/knowledge-base/self-regulation`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/emotional-intelligence/knowledge-base/social-intelligence`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/events`: Person, WebSite, WebPage, ItemList, BreadcrumbList
+- `/events_tp`: Person, WebSite, WebPage, ItemList, BreadcrumbList
+- `/geshtalt`: Person, WebSite, WebPage, BreadcrumbList
+- `/kpt`: Person, WebSite, WebPage, BreadcrumbList
+- `/kurs-ei`: Person, WebSite, WebPage, BreadcrumbList
+- `/lectures1`: Person, WebSite, WebPage, ItemList, BreadcrumbList
+- `/microbiom`: Person, WebSite, WebPage, BreadcrumbList
+- `/novosti`: Person, WebSite, WebPage, BreadcrumbList
+- `/otzivi`: Person, WebSite, WebPage, BreadcrumbList
+- `/panicheskie_ataki`: Person, WebSite, WebPage, BreadcrumbList
+- `/phytotherapy`: Person, WebSite, WebPage, BreadcrumbList
+- `/platnye-treningi-seminary-programmy-tatiana-moonn`: Person, WebSite, WebPage, BreadcrumbList
+- `/programmakursa`: Person, WebSite, WebPage, BreadcrumbList
+- `/psiholog`: Person, WebSite, WebPage, ProfessionalService, BreadcrumbList
+- `/psiholog-konsultacii-moskva`: Person, WebSite, WebPage, ProfessionalService, BreadcrumbList
+- `/psiholog_moskva`: Person, WebSite, WebPage, ProfessionalService, BreadcrumbList
+- `/psihology`: Person, WebSite, WebPage, ProfessionalService, BreadcrumbList
+- `/psy4psy`: Person, WebSite, WebPage, BreadcrumbList
+- `/psychoanalys`: Person, WebSite, WebPage, BreadcrumbList
+- `/psypodgotovka1`: Person, WebSite, WebPage, BreadcrumbList
+- `/recomend`: Person, WebSite, WebPage, BreadcrumbList
+- `/salt`: Person, WebSite, WebPage, BreadcrumbList
+- `/schematherapy`: Person, WebSite, WebPage, BreadcrumbList
+- `/selfharm`: Person, WebSite, WebPage, BreadcrumbList
+- `/semeynie_konflikti_article`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/semeyniy_psiholog`: Person, WebSite, WebPage, ProfessionalService, BreadcrumbList
+- `/seminar555`: Person, WebSite, WebPage, BreadcrumbList
+- `/shppp333`: Person, WebSite, WebPage, BreadcrumbList
+- `/speaker`: Person, WebSite, WebPage, ItemList, BreadcrumbList
+- `/st1`: Person, WebSite, WebPage, BreadcrumbList
+- `/st2`: Person, WebSite, WebPage, BreadcrumbList
+- `/trauma`: Person, WebSite, WebPage, BreadcrumbList
+- `/uslugi_aerofobia`: Person, WebSite, WebPage, ProfessionalService, BreadcrumbList
+- `/uslugi_depression`: Person, WebSite, WebPage, ProfessionalService, BreadcrumbList
+- `/uslugi_fin_blocks`: Person, WebSite, WebPage, ProfessionalService, BreadcrumbList
+- `/uslugi_gtr`: Person, WebSite, WebPage, ProfessionalService, BreadcrumbList
+- `/uslugi_konflikti_na_rabote`: Person, WebSite, WebPage, ProfessionalService, BreadcrumbList
+- `/uslugi_lubovnaya_zavisimost`: Person, WebSite, WebPage, ProfessionalService, BreadcrumbList
+- `/uslugi_obida_na_roditelei`: Person, WebSite, WebPage, ProfessionalService, BreadcrumbList
+- `/uslugi_otnosheniya_v_kollektive`: Person, WebSite, WebPage, ProfessionalService, BreadcrumbList
+- `/uslugi_podrostki`: Person, WebSite, WebPage, ProfessionalService, BreadcrumbList
+- `/uslugi_procrastination`: Person, WebSite, WebPage, ProfessionalService, BreadcrumbList
+- `/uslugi_razvod`: Person, WebSite, WebPage, ProfessionalService, BreadcrumbList
+- `/uslugi_sohranit_brak`: Person, WebSite, WebPage, ProfessionalService, BreadcrumbList
+- `/vacuum_cups`: Person, WebSite, WebPage, BreadcrumbList
+- `/vigoranie_article`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/vospitanie_article`: Person, WebSite, WebPage, Article, BreadcrumbList
+- `/vystupleniya-lekcii-treningi-psiholog-tatiana-moonn`: Person, WebSite, WebPage, ItemList, BreadcrumbList
+- `/water`: Person, WebSite, WebPage, BreadcrumbList
