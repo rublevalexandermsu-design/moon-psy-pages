@@ -18,6 +18,8 @@ OUT_JS = ASSETS / "moonn-schema-layer.js"
 
 PERSON_ID = "https://moonn.ru/#tatiana-munn"
 WEBSITE_ID = "https://moonn.ru/#website"
+YANDEX_SERVICES_PROFILE_URL = "https://uslugi.yandex.ru/profile/TatyanaKumskovamunn-948629"
+YANDEX_SERVICES_REVIEW_URL = YANDEX_SERVICES_PROFILE_URL + "?action=addReview"
 
 PERSON = {
     "@type": "Person",
@@ -35,7 +37,7 @@ PERSON = {
         "https://moonn.ru/",
         "https://moonn.timepad.ru/events/",
         "https://miiiips.ru/author-tatyana-munn-kumskova.html",
-        "https://uslugi.yandex.ru/profile/TatyanaKumskovatatyanamunn-948629",
+        YANDEX_SERVICES_PROFILE_URL,
         "https://istina.msu.ru/workers/816305440/",
         "https://psyjournals.ru/authors/15337",
     ],
@@ -49,6 +51,34 @@ PERSON = {
         "soft skills",
     ],
 }
+
+YANDEX_REVIEW_SUMMARIES = [
+    {
+        "name": "Отзыв Натальи о консультации",
+        "datePublished": "2025-09-10",
+        "summary": "Клиентка отмечает, что консультация помогла быстро разобраться с проблемой.",
+    },
+    {
+        "name": "Отзыв Гаянэ о работе с подростком",
+        "datePublished": "2025-08-24",
+        "summary": "В отзыве описан прогресс подростка после двух встреч и снижение экзаменационного напряжения.",
+    },
+    {
+        "name": "Отзыв Ирины о психологической работе",
+        "datePublished": "2025-01-27",
+        "summary": "Клиентка отмечает профессионализм, бережную работу с установками и позитивные изменения.",
+    },
+    {
+        "name": "Отзыв Биназир о работе с паническими атаками",
+        "datePublished": "2024-10-07",
+        "summary": "В отзыве говорится о снижении страха и облегчении после начала работы с паническими атаками.",
+    },
+    {
+        "name": "Отзыв Анны о самооценке и уверенности",
+        "datePublished": "2024-09-04",
+        "summary": "Клиентка описывает улучшение уверенности, снижение сомнений и более спокойное отношение к себе.",
+    },
+]
 
 WEBSITE = {
     "@type": "WebSite",
@@ -252,6 +282,48 @@ def page_graph(page: dict) -> dict:
                 "itemListElement": [],
             }
         )
+    if alias_from_url(page["url"]) == "otzivi":
+        web_page["citation"] = [YANDEX_SERVICES_PROFILE_URL]
+        graph.append(
+            {
+                "@type": "ProfilePage",
+                "@id": "https://moonn.ru/otzivi#yandex-services-profile",
+                "url": YANDEX_SERVICES_PROFILE_URL,
+                "name": "Профиль Татьяны Кумсковой (Мунн) на Яндекс Услугах",
+                "about": {"@id": PERSON_ID},
+                "isPartOf": {
+                    "@type": "WebSite",
+                    "name": "Яндекс Услуги",
+                    "url": "https://uslugi.yandex.ru/",
+                },
+                "inLanguage": "ru-RU",
+            }
+        )
+        graph.append(
+            {
+                "@type": "ItemList",
+                "@id": "https://moonn.ru/otzivi#verified-yandex-review-summaries",
+                "name": "Проверяемые отзывы о Татьяне Мунн с источником на Яндекс Услугах",
+                "url": page["url"],
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": index,
+                        "url": YANDEX_SERVICES_PROFILE_URL,
+                        "item": {
+                            "@type": "CreativeWork",
+                            "name": item["name"],
+                            "datePublished": item["datePublished"],
+                            "abstract": item["summary"],
+                            "isBasedOn": YANDEX_SERVICES_PROFILE_URL,
+                            "about": {"@id": PERSON_ID},
+                            "inLanguage": "ru-RU",
+                        },
+                    }
+                    for index, item in enumerate(YANDEX_REVIEW_SUMMARIES, start=1)
+                ],
+            }
+        )
     graph.append(breadcrumbs(page["url"], subject))
     return {"@context": "https://schema.org", "@graph": graph}
 
@@ -300,8 +372,8 @@ def write_docs(page_map: dict[str, dict], pages: list[dict]) -> None:
         "",
         f"- Source audit: `{AUDIT_PATH.relative_to(ROOT)}`",
         f"- Pages covered: `{len(pages)}`",
-        "- Schema types: `Person`, `WebSite`, `WebPage`, `ProfessionalService`, `Article`, `ItemList`, `BreadcrumbList`.",
-        "- Safety: no fake ratings/reviews/prices, no private videos, no payment data.",
+        "- Schema types: `Person`, `WebSite`, `WebPage`, `ProfilePage`, `ProfessionalService`, `Article`, `ItemList`, `CreativeWork`, `BreadcrumbList`.",
+        "- Safety: no fake ratings/prices, no private videos, no payment data; review layer uses source summaries and Yandex profile provenance instead of synthetic aggregate ratings.",
         "",
         "## Paths",
         "",

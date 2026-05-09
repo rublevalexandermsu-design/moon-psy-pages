@@ -866,3 +866,36 @@ Append-only project history for `moon-psy-site`.
   - Do not read the full old heavy chat unless a specific missing detail cannot be recovered from the handoff, project memory or recovery index.
 - Follow-up rule:
   - If this chat becomes slow, create another fast continuation chat from the handoff pattern instead of changing repositories, duplicating branches or reloading raw chat archives.
+
+## 2026-05-09 — Moonn Yandex Services Reviews SEO Restart
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user returned from Timepad workstream to the older SEO workstream about connecting Moonn site visibility with the Yandex Services profile `Татьяна Кумскова (Мунн)` and asked to build/strengthen a reviews page on `moonn.ru`.
+- Context checked:
+  - Active automation `moonn-seo-leftovers-morning-check`, which listed Yandex Services reviews/profile synchronization as a blocked SEO item.
+  - Existing live page `https://moonn.ru/otzivi`.
+  - Local schema and SEO packets in `assets/moonn-schema-layer.js`, `scripts/build_moonn_schema_layer.py`, and `docs/moonn-schema-layer-packet-2026-05-08.*`.
+- Verified facts:
+  - `https://moonn.ru/otzivi` already exists and returned `200`.
+  - The page already contains client reviews with Yandex Services source links.
+  - The page still includes weak public wording such as `дублирую информацию` and `поиска информации в интернете`.
+  - The working Yandex Services profile resolves as `https://uslugi.yandex.ru/profile/TatyanaKumskovamunn-948629`.
+- Decision:
+  - Do not create a duplicate reviews page and do not mirror the Yandex Services profile one-to-one.
+  - Keep `/otzivi` as the canonical reviews page and strengthen it with source links, profile provenance, schema, and user-facing editorial wording.
+  - Supersede the 2026-05-04 assumption that `TatyanaKumskovatatyanamunn-948629` was canonical; 2026-05-09 live check showed `TatyanaKumskovamunn-948629` as the working profile path.
+- Local artifacts changed/prepared:
+  - `data/site.json`
+  - `scripts/build_moonn_schema_layer.py`
+  - `assets/moonn-schema-layer.js`
+  - `assets/moonn-yandex-reviews-quality-layer.js`
+  - `docs/moonn-schema-layer-packet-2026-05-08.json`
+  - `docs/moonn-schema-layer-packet-2026-05-08.md`
+  - `docs/moonn-global-head-code-with-schema-2026-05-08.html`
+  - `docs/moonn-yandex-services-reviews-seo-packet-2026-05-09.md`
+- Risk / limitation:
+  - The rendered JS quality layer can remove weak wording visually after deployment, but raw Tilda HTML still needs native source cleanup for the strongest SEO/compliance result.
+  - Live Tilda HEAD currently pins schema scripts to an older commit; Git changes require a scoped Tilda HEAD update and page publish before they affect `moonn.ru`.
+- Follow-up rule:
+  - Public review pages must not expose internal SEO rationale. Use trust/provenance wording, source links, and structured data, and avoid synthetic ratings or unsupported review counts.

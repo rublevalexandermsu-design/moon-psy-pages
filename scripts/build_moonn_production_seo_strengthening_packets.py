@@ -33,7 +33,7 @@ ENTITY = {
     "sameAs": [
         "https://moonn.timepad.ru/events/",
         "https://miiiips.ru/author-tatyana-munn-kumskova.html",
-        "https://uslugi.yandex.ru/profile/TatyanaKumskovatatyanamunn-948629",
+        "https://uslugi.yandex.ru/profile/TatyanaKumskovamunn-948629",
         "https://istina.msu.ru/workers/816305440/",
         "https://psyjournals.ru/authors/15337",
     ],

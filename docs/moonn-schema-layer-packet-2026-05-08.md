@@ -2,8 +2,8 @@
 
 - Source audit: `docs\moonn-production-scope-seo-audit-2026-05-07.json`
 - Pages covered: `83`
-- Schema types: `Person`, `WebSite`, `WebPage`, `ProfessionalService`, `Article`, `ItemList`, `BreadcrumbList`.
-- Safety: no fake ratings/reviews/prices, no private videos, no payment data.
+- Schema types: `Person`, `WebSite`, `WebPage`, `ProfilePage`, `ProfessionalService`, `Article`, `ItemList`, `CreativeWork`, `BreadcrumbList`.
+- Safety: no fake ratings/prices, no private videos, no payment data; review layer uses source summaries and Yandex profile provenance instead of synthetic aggregate ratings.
 
 ## Paths
 
@@ -49,7 +49,7 @@
 - `/lectures1`: Person, WebSite, WebPage, ItemList, BreadcrumbList
 - `/microbiom`: Person, WebSite, WebPage, BreadcrumbList
 - `/novosti`: Person, WebSite, WebPage, BreadcrumbList
-- `/otzivi`: Person, WebSite, WebPage, BreadcrumbList
+- `/otzivi`: Person, WebSite, WebPage, ProfilePage, ItemList, BreadcrumbList
 - `/panicheskie_ataki`: Person, WebSite, WebPage, BreadcrumbList
 - `/phytotherapy`: Person, WebSite, WebPage, BreadcrumbList
 - `/platnye-treningi-seminary-programmy-tatiana-moonn`: Person, WebSite, WebPage, BreadcrumbList
