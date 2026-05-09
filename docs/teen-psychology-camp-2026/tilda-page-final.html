@@ -468,12 +468,38 @@
         });
       }
 
+      function openTeenCampPayment() {
+        initTildaCart();
+        if (typeof tcart__addProduct !== 'function' || typeof tcart__openCart !== 'function') return false;
+        var product = {
+          name: 'Подростковый лагерь по психологии',
+          price: 30000,
+          amount: 30000,
+          quantity: 1,
+          img: 'https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@b28b5f48939f8f640a218be50ac278ca24969ace/assets/teen-psychology-camp-2026/teen-psychology-camp-tatyana-moonn-poster-2026.jpg',
+          sku: 'teen-camp-2026'
+        };
+        try {
+          if (window.tcart && Array.isArray(window.tcart.products)) window.tcart.products = [];
+          tcart__addProduct(product);
+          if (typeof tcart__reDrawCartIcon === 'function') tcart__reDrawCartIcon();
+          tcart__openCart();
+          return true;
+        } catch (error) {
+          console.warn('Teen camp payment open skipped', error);
+          return false;
+        }
+      }
+
       initTildaCart();
       setTimeout(initTildaCart, 300);
       setTimeout(initTildaCart, 1200);
       document.addEventListener('click', function(event) {
-        if (event.target && event.target.closest && event.target.closest('a[href^="#order:"]')) {
-          initTildaCart();
+        var orderLink = event.target && event.target.closest && event.target.closest('a[href^="#order:"]');
+        if (orderLink) {
+          event.preventDefault();
+          event.stopPropagation();
+          openTeenCampPayment();
         }
       }, true);
     })();
