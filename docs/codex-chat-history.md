@@ -825,3 +825,23 @@ Append-only project history for `moon-psy-site`.
   - Native `#order`/hash binding was not reliable after custom HEAD rendering, and the first Tilda HEAD save attempts changed textarea/accessibility state without persisting the Ace editor value.
 - Follow-up rule:
   - For paid Moonn/Tilda pages, verify the full chain before reporting readiness: Tilda HEAD reopen -> Tilda publish -> live HTML -> one-product cart -> provider card-entry page. Real payment submission remains a separate high-risk action requiring explicit approval.
+
+## 2026-05-09 — Payment Fix Learning Note
+
+- Project: Moonn / Tilda site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user asked why the payment problem took too long and requested that the error path and solution be recorded for future self-learning.
+- What failed in the previous approach:
+  - I trusted Tilda's visible save state too early instead of verifying the Ace editor value after reopening the HEAD settings.
+  - I assumed a custom CTA/order hash would behave like a native Tilda product block, even though the page body is custom-mounted from an external artifact.
+  - I treated "a cart opens" as sufficient progress, while the actual acceptance criterion was stricter: exactly one product, `30 000 р.`, and provider-backed T-Bank card entry.
+- Key turning point:
+  - The problem was reframed from "make payment work in custom HTML" to "keep native Tilda/T-Bank as the source of truth and build only a minimal bridge from the custom page to native cart functions."
+- Reusable solution:
+  - Native payment layer: ST100/T-Bank.
+  - Custom page bridge: `tcart__addProduct` -> `tcart__reDrawCartIcon` -> `tcart__openCart`.
+  - Anti-duplication step: clear stale cart products before adding the current product.
+  - Persistence check: write through Ace editor, reopen HEAD, then publish.
+  - Readiness check: live HTML -> browser cart -> checkout button -> `pay.tbank.ru` card-entry page.
+- New rule:
+  - For Tilda payment tasks, do not report success from screenshots, editor messages, or partial cart opening. Success requires provider-page verification up to card-entry screen, without submitting a real payment unless explicitly approved.
