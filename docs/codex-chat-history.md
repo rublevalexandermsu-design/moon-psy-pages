@@ -766,3 +766,21 @@ Append-only project history for `moon-psy-site`.
   - Native `#order` parsing did not bind reliably after custom rendering, so the CTA now calls native Tilda cart functions directly.
 - Follow-up rule:
   - For future paid Moonn/Tilda pages, reuse native Tilda cart/payment blocks where they exist, verify the real provider-backed cart in browser, and keep real payment submission as a separate explicitly approved test.
+
+## 2026-05-09 — Moonn Chat Recovery Index
+
+- Project: Moonn / Tilda site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user reopened Codex after reinstall and asked to recover which prior Moonn-related chats/workstreams existed, so future work continues in the right project instead of recreating unrelated chats.
+- Actions:
+  - Confirmed the active Moonn repository is `C:\пайто н тесты\Ано_институт_глаболизация\moon-psy-site`, not `C:\пайто н тесты\курсэмоциональный интеллект`.
+  - Checked global Codex `session_index.jsonl` for Moonn/Tatiana Munn/Tilda/Timepad/payment-related thread records.
+  - Checked local raw sessions under `C:\Users\yanta\.codex\sessions`.
+  - Created recovery index:
+    - `docs/moonn-chat-recovery-index-2026-05-09.md`
+- Verification:
+  - Found older thread ids/names for March-April and May 1, but their raw session files are missing locally after reinstall.
+  - Found May 9 recovery raw sessions locally.
+  - Confirmed `docs/codex-chat-history.md` remains the canonical project-level memory for Moonn workstreams.
+- Follow-up rule:
+  - Before restarting any Moonn workstream, first read `docs/moonn-chat-recovery-index-2026-05-09.md` and `docs/codex-chat-history.md`; only open raw sessions when the exact thread id is present locally or restored from backup.
