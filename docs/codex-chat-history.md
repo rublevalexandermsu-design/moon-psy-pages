@@ -784,3 +784,19 @@ Append-only project history for `moon-psy-site`.
   - Confirmed `docs/codex-chat-history.md` remains the canonical project-level memory for Moonn workstreams.
 - Follow-up rule:
   - Before restarting any Moonn workstream, first read `docs/moonn-chat-recovery-index-2026-05-09.md` and `docs/codex-chat-history.md`; only open raw sessions when the exact thread id is present locally or restored from backup.
+
+## 2026-05-09 — Moonn Chat Restore Prompts
+
+- Project: Moonn / Tilda site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user asked for one startup prompt per recovered chat title, so newly created Codex chats can be renamed to old chat names and reconnected to the correct repository/workstream.
+- Actions:
+  - Created restore prompt packet:
+    - `docs/moonn-chat-restore-prompts-2026-05-09.md`
+  - Included prompts for research, public links, Yandex/Timepad/site promotion, school/event promotion, Tilda API, Moonn recovery, chat repository discovery and current Yandex/Timepad/agent continuation.
+- Verification:
+  - Each prompt points to the canonical repository `C:\пайто н тесты\Ано_институт_глаболизация\moon-psy-site`.
+  - Each prompt instructs the restored chat to read `docs/moonn-chat-recovery-index-2026-05-09.md` and `docs/codex-chat-history.md` first.
+  - High-risk gates for payment, legal/privacy, personal data, Tilda publish-all and live external changes are preserved.
+- Follow-up rule:
+  - When creating a replacement chat for a missing raw Moonn thread, use the exact old chat title plus the matching prompt from `docs/moonn-chat-restore-prompts-2026-05-09.md`; do not start from a blank generic prompt.
