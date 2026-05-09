@@ -185,10 +185,11 @@
     var preservedCartNodes = Array.prototype.slice.call(document.querySelectorAll('[data-record-type="706"], .t706, .t706__carticon, .t706__cartwin, .t706__carticon-wrapper')).filter(function(node) {
       return node && node.parentNode;
     });
-    document.body.innerHTML = pageHtml;
+    var mountRoot = document.getElementById('allrecords') || document.body;
+    mountRoot.innerHTML = pageHtml;
     preservedCartNodes.forEach(function(node) {
       node.style.display = '';
-      document.body.appendChild(node);
+      mountRoot.appendChild(node);
     });
     var cartRecord = document.querySelector('[data-record-type="706"][id]');
     if (cartRecord) {
