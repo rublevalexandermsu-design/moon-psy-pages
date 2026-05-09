@@ -40,8 +40,13 @@
       document.head.appendChild(style);
     }
     var mountRoot = document.getElementById('allrecords') || document.body;
-    var preservedCartNodes = Array.prototype.slice.call(document.querySelectorAll('[data-record-type="706"], .t706, .t706__carticon, .t706__cartwin, .t706__carticon-wrapper')).filter(function(node) {
+    var cartCandidates = Array.prototype.slice.call(document.querySelectorAll('[data-record-type="706"], .t706, .t706__carticon, .t706__cartwin, .t706__carticon-wrapper')).filter(function(node) {
       return node && node.parentNode;
+    });
+    var preservedCartNodes = cartCandidates.filter(function(node) {
+      return !cartCandidates.some(function(parent) {
+        return parent !== node && parent.contains(node);
+      });
     });
     var sourceBody = parsed.body.cloneNode(true);
     var sourceScripts = Array.prototype.slice.call(sourceBody.querySelectorAll('script'));
