@@ -550,19 +550,18 @@
       }
 
       function enhanceTildaPaymentUi() {
-        var cart = document.querySelector('.t706__cartwin');
+        var cart = document.querySelector('.t706__cartwin, .t706');
         if (!cart) return;
         repairTildaOrderFormHandlers();
-        var submit = cart.querySelector('.t-submit, button[type="submit"]');
-        if (submit) {
-          var submitText = submit.querySelector('.t-btnflex__text') || submit;
-          submitText.textContent = 'Перейти к оплате';
+        Array.prototype.slice.call(cart.querySelectorAll('.t-submit, button[type="submit"], .t-btnflex_type_submit')).forEach(function(submit) {
+          var submitText = submit.querySelector('.t-btnflex__text, span') || submit;
+          if ((submitText.textContent || '').trim() !== 'Перейти к оплате') submitText.textContent = 'Перейти к оплате';
           submit.setAttribute('aria-label', 'Перейти к оплате через T-Bank');
           submit.style.setProperty('background', 'linear-gradient(135deg, #3149c9, #2037a4)', 'important');
           submit.style.setProperty('color', '#ffffff', 'important');
           submit.style.setProperty('border-radius', '18px', 'important');
           submit.style.setProperty('box-shadow', '0 16px 36px rgba(49,73,201,.30)', 'important');
-        }
+        });
         Array.prototype.slice.call(cart.querySelectorAll('label, .t-radio__control')).forEach(function(label) {
           var text = (label.textContent || '').trim();
           if (text === 'Visa, МИР, Mastercard через T-Bank') {
@@ -592,29 +591,31 @@
         }
       }
 
-      function openTeenCampPayment() {
-        initTildaCart();
-        if (typeof tcart__addProduct !== 'function' || typeof tcart__openCart !== 'function') return false;
-        var product = {
-          name: 'Подростковый лагерь по психологии',
-          price: 30000,
-          amount: 30000,
-          quantity: 1,
-          img: 'https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@b28b5f48939f8f640a218be50ac278ca24969ace/assets/teen-psychology-camp-2026/teen-psychology-camp-tatyana-moonn-poster-2026.jpg',
-          sku: 'teen-camp-2026'
-        };
+      function clearTildaCartState() {
         try {
-          if (window.tcart && Array.isArray(window.tcart.products)) window.tcart.products = [];
-          tcart__addProduct(product);
+          if (window.tcart) {
+            window.tcart.products = [];
+            window.tcart.amount = 0;
+            window.tcart.total = 0;
+          }
           if (typeof tcart__reDrawCartIcon === 'function') tcart__reDrawCartIcon();
-          repairTildaOrderFormHandlers();
-          tcart__openCart();
-          setTimeout(enhanceTildaPaymentUi, 100);
-          setTimeout(enhanceTildaPaymentUi, 600);
-          return true;
         } catch (error) {
-          console.warn('Teen camp payment open skipped', error);
-          return false;
+          console.warn('Teen camp cart state cleanup skipped', error);
+        }
+        try {
+          [window.localStorage, window.sessionStorage].forEach(function(storage) {
+            if (!storage) return;
+            for (var index = storage.length - 1; index >= 0; index -= 1) {
+              var key = storage.key(index) || '';
+              var value = storage.getItem(key) || '';
+              var joined = (key + ' ' + value).toLowerCase();
+              if (joined.indexOf('teen-camp-2026') !== -1 || joined.indexOf('t706') !== -1 || key.toLowerCase().indexOf('tcart') !== -1) {
+                storage.removeItem(key);
+              }
+            }
+          });
+        } catch (error) {
+          console.warn('Teen camp cart storage cleanup skipped', error);
         }
       }
 
@@ -626,9 +627,17 @@
       document.addEventListener('click', function(event) {
         var orderLink = event.target && event.target.closest && event.target.closest('a[href^="#order:"]');
         if (orderLink) {
+          if (orderLink.dataset.teenCampNativeOrderClick === '1') {
+            delete orderLink.dataset.teenCampNativeOrderClick;
+            setTimeout(enhanceTildaPaymentUi, 200);
+            setTimeout(enhanceTildaPaymentUi, 900);
+            return;
+          }
           event.preventDefault();
-          event.stopPropagation();
-          openTeenCampPayment();
+          event.stopImmediatePropagation();
+          clearTildaCartState();
+          orderLink.dataset.teenCampNativeOrderClick = '1';
+          setTimeout(function() { orderLink.click(); }, 50);
         }
       }, true);
     })();
