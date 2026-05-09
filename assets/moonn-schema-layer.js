@@ -6,12 +6,17 @@
     return path;
   }
   function addJsonLd(data) {
-    if (!data || document.getElementById("moonn-page-schema-jsonld")) return;
-    var script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.id = "moonn-page-schema-jsonld";
+    if (!data) return;
+    var script = document.getElementById("moonn-page-schema-jsonld");
+    if (!script) {
+      script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.id = "moonn-page-schema-jsonld";
+      document.head.appendChild(script);
+    }
     script.text = JSON.stringify(data);
-    document.head.appendChild(script);
+    script.setAttribute("data-moonn-schema-path", normalizePath(window.location.pathname || "/"));
+    script.setAttribute("data-moonn-schema-updated", "true");
   }
   var path = normalizePath(window.location.pathname || "/");
   addJsonLd(MOONN_SCHEMA_MAP[path] || MOONN_SCHEMA_MAP[path + "/"] || MOONN_SCHEMA_MAP["/"]);

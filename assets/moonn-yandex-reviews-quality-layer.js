@@ -25,14 +25,17 @@
         '<a href="' + PROFILE_URL + '" target="_blank" rel="noopener noreferrer">Открыть профиль на Яндекс Услугах</a>.';
       if (node.dataset) node.dataset.moonnReviewQualityPatched = "true";
     });
+    return targets;
   }
 
   function addSourcePanel() {
     if (document.getElementById(PATCH_MARKER)) return;
-    var heading = Array.prototype.slice.call(document.querySelectorAll("h1, h2")).find(function (item) {
+    var heading = Array.prototype.slice.call(document.querySelectorAll("h1, h2, .t-title, .t-heading, .tn-atom")).find(function (item) {
       return /отзывы/i.test(item.textContent || "");
     });
-    if (!heading) return;
+    var patchedNode = document.querySelector("[data-moonn-review-quality-patched='true']");
+    var anchor = heading || patchedNode || document.querySelector("main, body");
+    if (!anchor || !anchor.parentNode) return;
     var panel = document.createElement("section");
     panel.id = PATCH_MARKER;
     panel.setAttribute("aria-label", "Источник отзывов");
@@ -45,7 +48,7 @@
       '<a style="color:#490094;font-weight:700;" href="' + PROFILE_URL + '" target="_blank" rel="noopener noreferrer">Профиль на Яндекс Услугах</a>' +
       '<a style="color:#490094;font-weight:700;" href="' + REVIEW_URL + '" target="_blank" rel="noopener noreferrer">Оставить отзыв</a>' +
       '</p>';
-    heading.parentNode.insertBefore(panel, heading.nextSibling);
+    anchor.parentNode.insertBefore(panel, anchor.nextSibling);
   }
 
   function run() {
