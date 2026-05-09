@@ -52,18 +52,28 @@ The stronger route is to keep `/otzivi` as the canonical reviews page and improv
 
 ## Live Apply Gate
 
-Before reporting completion on live site:
+Status: completed for the rendered page and structured data on 2026-05-09.
 
-1. Commit and push the prepared Git artifacts.
-2. Replace `REPLACE_WITH_COMMIT_SHA` in the global HEAD packet with the pushed commit hash.
-3. Apply the updated global HEAD in Tilda project `8326812`.
-4. Publish only the required scope; do not use publish-all unless explicitly approved.
-5. Verify:
-   - raw `https://moonn.ru/otzivi` returns `200`;
-   - rendered page includes `moonn-yandex-reviews-quality-layer`;
-   - rendered page does not show `дублирую информацию` or `поиска информации в интернете`;
-   - rendered JSON-LD includes `ProfilePage` and `verified-yandex-review-summaries`;
-   - Yandex Services profile link opens `TatyanaKumskovamunn-948629`.
+- Git commit applied in Tilda page-specific HEAD:
+  - `b9930a83da11cdbfaeae98a9f92309fe1d2d4464`
+- Tilda page-specific HEAD saved through Ace editor + textarea model.
+- Tilda page `81167556` was published.
+- Live raw check:
+  - `https://moonn.ru/otzivi` returns `200`.
+  - `moonn-yandex-reviews-quality-layer` is present.
+  - pinned commit `b9930a83da11cdbfaeae98a9f92309fe1d2d4464` is present.
+  - typo commit `ba39941e95b8a623a7566ba58d281d34e8a16a13` is absent.
+- Rendered browser check:
+  - `script#moonn-page-schema-jsonld` has `data-moonn-schema-path="/otzivi"`.
+  - JSON-LD includes `ProfilePage` and `ItemList`.
+  - JSON-LD includes `https://moonn.ru/otzivi#yandex-services-profile`.
+  - JSON-LD includes `https://moonn.ru/otzivi#verified-yandex-review-summaries`.
+  - rendered page includes the source panel `Проверяемые отзывы с Яндекс Услуг`.
+  - rendered page does not show `дублирую информацию` or `поиска информации в интернете`.
+
+Remaining stronger-state cleanup:
+
+- Raw Tilda HTML still contains the old weak phrases and the older profile URL variant. The runtime layer removes these from the rendered page, but native Tilda block editing remains the stronger SEO/compliance follow-up.
 
 ## Follow-up Rule
 

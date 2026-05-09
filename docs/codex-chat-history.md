@@ -899,3 +899,29 @@ Append-only project history for `moon-psy-site`.
   - Live Tilda HEAD currently pins schema scripts to an older commit; Git changes require a scoped Tilda HEAD update and page publish before they affect `moonn.ru`.
 - Follow-up rule:
   - Public review pages must not expose internal SEO rationale. Use trust/provenance wording, source links, and structured data, and avoid synthetic ratings or unsupported review counts.
+
+## 2026-05-09 23:05 MSK — Moonn Yandex Services Reviews SEO Live Applied
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: continue the Yandex Services reviews SEO task to actual Tilda/live deployment, not just local packet preparation.
+- Actions:
+  - Hardened `assets/moonn-schema-layer.js` so the current page-specific schema layer updates an existing `script#moonn-page-schema-jsonld` instead of silently no-oping when an older global schema node exists.
+  - Hardened `assets/moonn-yandex-reviews-quality-layer.js` so the Yandex Services source panel can attach to Tilda text elements and patched review text, not only native `h1/h2`.
+  - Saved Tilda page-specific HEAD for page `81167556` with commit `b9930a83da11cdbfaeae98a9f92309fe1d2d4464`.
+  - Published only page `81167556`.
+- Verification:
+  - Raw live `https://moonn.ru/otzivi` returned `200`.
+  - Raw live HTML contains `moonn-yandex-reviews-quality-layer` and pinned commit `b9930a83da11cdbfaeae98a9f92309fe1d2d4464`.
+  - Wrong typo commit `ba39941e95b8a623a7566ba58d281d34e8a16a13` is absent.
+  - Rendered Playwright check: `script#moonn-page-schema-jsonld` has `data-moonn-schema-path="/otzivi"` and `data-moonn-schema-updated="true"`.
+  - Rendered JSON-LD includes `Person`, `WebSite`, `WebPage`, `ProfilePage`, `ItemList`, `BreadcrumbList`.
+  - Rendered JSON-LD includes `https://moonn.ru/otzivi#yandex-services-profile` and `https://moonn.ru/otzivi#verified-yandex-review-summaries`.
+  - Rendered page includes the panel `Проверяемые отзывы с Яндекс Услуг`.
+  - Rendered page no longer shows `дублирую информацию` or `поиска информации в интернете`.
+- Remaining risk / follow-up:
+  - Raw Tilda HTML still contains the old weak phrases and the older Yandex profile URL variant. The runtime layer corrects the rendered page, but a native Tilda block cleanup remains the stronger final SEO/compliance state.
+- Commits:
+  - `b9930a8` — `Harden Yandex reviews runtime layers`
+- Follow-up rule:
+  - When a global runtime layer and a page-specific runtime layer both write the same DOM node, the page-specific layer must update/replace stale node content and expose a verification attribute, not silently skip.
