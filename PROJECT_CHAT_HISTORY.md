@@ -105,4 +105,4 @@ Append-only project history for `moon-psy-pages`.
 - Open questions:
   - Whether to create the full Moonn compressed memory registry as the next step.
 - Commit hash:
-  - Pending at time of entry.
+  - `4a8f55f` for the chat restore prompts.
