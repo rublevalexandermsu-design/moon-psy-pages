@@ -74,4 +74,4 @@ Append-only project history for `moon-psy-pages`.
   - Whether to create a full Moonn compressed context package under `registry/codex_context/moonn/`.
   - Whether to backfill `PROJECT_CHAT_HISTORY.md` with summarized entries from all 26 old `moon-psy-site` workstreams.
 - Commit hash:
-  - Pending at time of entry.
+  - `944f896` for the chat recovery index.
