@@ -40,4 +40,4 @@ Append-only project history for `moon-psy-pages`.
   - Should Timepad visual assets be part of public static dist or only source assets for external upload?
   - Should `.gitignore` guardrails from `origin/codex/tilda-api-sync` be promoted to `main`?
 - Commit hash:
-  - Pending at time of entry.
+  - `8ceb78a` for the initial recovery audit documentation.
