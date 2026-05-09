@@ -738,3 +738,31 @@ Append-only project history for `moon-psy-site`.
   - The PDF link exists in the page HTML and opens correctly, but it is lower in the materials section; direct PDF verification was used after confirming the link exists in source.
 - Follow-up rule:
   - For future Moonn landing pages, homepage integration must be a native visible block first, with live HTML + rendered browser + primary CTA checks before reporting completion.
+
+## 2026-05-09 — Moonn Teen Camp Payment CTA Completed
+
+- Project: Moonn / Tilda site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: add a real payment entry point to the teen psychology camp landing page and verify that the user can pay 30 000 ₽ through the existing Tilda/T-Bank flow.
+- Actions:
+  - Updated teen camp page artifacts with the product price, `Оплатить участие` CTA and native Tilda order link.
+  - Preserved the native Tilda cart record `rec2251553291` / block `706` instead of replacing it with a custom payment layer.
+  - Added runtime repair so the custom-rendered landing page restores `.t706` cart DOM that the older loader had displaced.
+  - Bound the payment CTA to native Tilda cart functions: `tcart__addProduct`, `tcart__reDrawCartIcon`, `tcart__openCart`.
+  - Purged the encoded jsDelivr branch URL so Tilda loaded the current external page artifact.
+  - Added payment rollout report:
+    - `docs/teen-psychology-camp-2026/payment-rollout-report-2026-05-09.md`
+  - Added verification screenshot:
+    - `docs/teen-psychology-camp-2026/cart-headless-check.png`
+- Verification:
+  - Live page keeps the native Tilda cart script and `.t706` cart record.
+  - PDF link returns `200`, `application/pdf`, size `245793`.
+  - Headless browser click on `Оплатить участие` opens the cart modal with product `Подростковый лагерь по психологии`, SKU `teen-camp-2026`, price `30 000р.`, T-Bank card payment and T-Bank installment option.
+  - Real Google Chrome check also showed the visible cart modal with order, price and T-Bank payment options.
+  - No card details were entered and no real payment was submitted.
+- Incident / root cause:
+  - The first custom Tilda loader replaced body content and broke/displaced the native cart DOM.
+  - Tilda timed out on a large HEAD payload, so the stable approach is compact loader plus external artifact.
+  - Native `#order` parsing did not bind reliably after custom rendering, so the CTA now calls native Tilda cart functions directly.
+- Follow-up rule:
+  - For future paid Moonn/Tilda pages, reuse native Tilda cart/payment blocks where they exist, verify the real provider-backed cart in browser, and keep real payment submission as a separate explicitly approved test.
