@@ -1,0 +1,69 @@
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://moonn.ru/#tatiana-munn","name":"Татьяна Мунн","alternateName":["Кумскова Татьяна Михайловна","Татьяна Мунн (Кумскова)"],"jobTitle":"Психолог, эксперт по эмоциональному интеллекту","url":"https://moonn.ru/"},{"@type":["WebPage","Event"],"@id":"https://moonn.ru/podrostkovyy-lager-psihologiya#webpage","url":"https://moonn.ru/podrostkovyy-lager-psihologiya","name":"Подростковый лагерь по психологии — Татьяна Мунн","description":"Городской подростковый лагерь по психологии: 6–10 июля, Цветной бульвар, камерная группа, практика общения, эмоций и уверенности.","inLanguage":"ru-RU","organizer":{"@id":"https://moonn.ru/#tatiana-munn"},"performer":{"@id":"https://moonn.ru/#tatiana-munn"},"eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":"https://schema.org/EventScheduled","startDate":"2026-07-06","endDate":"2026-07-10","location":{"@type":"Place","name":"Москва, Цветной бульвар","address":{"@type":"PostalAddress","addressLocality":"Москва","addressCountry":"RU"}},"offers":{"@type":"Offer","url":"https://moonn.ru/podrostkovyy-lager-psihologiya","price":"30000","priceCurrency":"RUB","availability":"https://schema.org/InStock","validFrom":"2026-05-08","validThrough":"2026-05-15"}},{"@type":"BreadcrumbList","@id":"https://moonn.ru/podrostkovyy-lager-psihologiya#breadcrumbs","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://moonn.ru/"},{"@type":"ListItem","position":2,"name":"Подростковый лагерь по психологии","item":"https://moonn.ru/podrostkovyy-lager-psihologiya"}]}]}</script>
+<link rel="canonical" href="https://moonn.ru/podrostkovyy-lager-psihologiya">
+<meta property="og:title" content="Подростковый лагерь по психологии — Татьяна Мунн">
+<meta property="og:description" content="Городской подростковый лагерь по психологии: 6–10 июля, Цветной бульвар, камерная группа, практика общения, эмоций и уверенности.">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@b28b5f48939f8f640a218be50ac278ca24969ace/assets/teen-psychology-camp-2026/teen-psychology-camp-tatyana-moonn-poster-2026.jpg">
+<meta property="og:url" content="https://moonn.ru/podrostkovyy-lager-psihologiya">
+<meta name="twitter:card" content="summary_large_image">
+<script>
+(function() {
+  var pageUrl = 'https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@codex/moonn-seo-audit/docs/teen-psychology-camp-2026/tilda-page-final.html?v=20260509-allrecords';
+  function copyAttrs(from, to) {
+    Array.prototype.slice.call(from.attributes || []).forEach(function(attr) {
+      if (attr.name !== 'id') to.setAttribute(attr.name, attr.value);
+    });
+  }
+  function bootCart() {
+    var cartRecord = document.querySelector('[data-record-type="706"][id]');
+    if (!cartRecord || typeof t_onFuncLoad !== 'function') return;
+    var cartRecordId = cartRecord.id.replace(/^rec/, '');
+    t_onFuncLoad('tcart__init', function() {
+      try {
+        var result = tcart__init(cartRecordId, {cssClassName: ''});
+        if (result && typeof result.catch === 'function') {
+          result.catch(function(error) { console.warn('Teen camp cart init skipped', error); });
+        }
+      } catch (error) {
+        console.warn('Teen camp cart init skipped', error);
+      }
+    });
+  }
+  function mount(html) {
+    if (!document.body || document.body.dataset.teenCampMounted === '1') return;
+    document.body.dataset.teenCampMounted = '1';
+    var parsed = new DOMParser().parseFromString(html, 'text/html');
+    var style = parsed.querySelector('style');
+    if (style) {
+      style.id = 'teen-camp-2026-style';
+      var oldStyle = document.getElementById(style.id);
+      if (oldStyle) oldStyle.remove();
+      document.head.appendChild(style);
+    }
+    var mountRoot = document.getElementById('allrecords') || document.body;
+    var preservedCartNodes = Array.prototype.slice.call(document.querySelectorAll('[data-record-type="706"], .t706, .t706__carticon, .t706__cartwin, .t706__carticon-wrapper')).filter(function(node) {
+      return node && node.parentNode;
+    });
+    var sourceBody = parsed.body.cloneNode(true);
+    var sourceScripts = Array.prototype.slice.call(sourceBody.querySelectorAll('script'));
+    sourceScripts.forEach(function(script) { script.remove(); });
+    mountRoot.innerHTML = sourceBody.innerHTML;
+    preservedCartNodes.forEach(function(node) {
+      node.style.display = '';
+      mountRoot.appendChild(node);
+    });
+    sourceScripts.forEach(function(sourceScript) {
+      if (sourceScript.type === 'application/ld+json') return;
+      var script = document.createElement('script');
+      copyAttrs(sourceScript, script);
+      script.text = sourceScript.textContent;
+      mountRoot.appendChild(script);
+    });
+    bootCart();
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() { fetch(pageUrl).then(function(r) { return r.text(); }).then(mount); });
+  } else {
+    fetch(pageUrl).then(function(r) { return r.text(); }).then(mount);
+  }
+})();
+</script>
