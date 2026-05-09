@@ -837,6 +837,7 @@ Append-only project history for `moon-psy-site`.
   - I treated "a cart opens" as sufficient progress, while the actual acceptance criterion was stricter: exactly one product, `30 000 р.`, and provider-backed T-Bank card entry.
 - Key turning point:
   - The problem was reframed from "make payment work in custom HTML" to "keep native Tilda/T-Bank as the source of truth and build only a minimal bridge from the custom page to native cart functions."
+  - The deeper behavioral turning point was that I rechecked my own actions and stopped trusting visual confirmations. The green Tilda save banner was only a UI signal, not proof of persistence or publication.
 - Reusable solution:
   - Native payment layer: ST100/T-Bank.
   - Custom page bridge: `tcart__addProduct` -> `tcart__reDrawCartIcon` -> `tcart__openCart`.
