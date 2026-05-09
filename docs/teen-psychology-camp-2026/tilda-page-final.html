@@ -531,9 +531,28 @@
         });
       }
 
+      function repairTildaOrderFormHandlers() {
+        var cartRecord = document.querySelector('[data-record-type="706"][id]');
+        var form = document.querySelector('.t706__cartwin form.js-form-proccess');
+        if (!cartRecord || !form) return;
+        try {
+          if (window.initForms && cartRecord.id) delete window.initForms[cartRecord.id];
+          if (typeof t_forms__initFormFields === 'function') t_forms__initFormFields(cartRecord);
+          if (typeof t_forms__addInputItsGood === 'function') t_forms__addInputItsGood(cartRecord);
+          if (typeof t_forms__addAttrAction === 'function') t_forms__addAttrAction(cartRecord);
+          if (typeof t_forms__onSubmit === 'function') t_forms__onSubmit(cartRecord);
+          if (typeof t_forms__onClick === 'function') t_forms__onClick(cartRecord);
+          if (typeof t_forms__onRender === 'function') t_forms__onRender(cartRecord);
+          if (typeof t_forms__addFocusOnTab === 'function') t_forms__addFocusOnTab(cartRecord);
+        } catch (error) {
+          console.warn('Teen camp order form handler repair skipped', error);
+        }
+      }
+
       function enhanceTildaPaymentUi() {
         var cart = document.querySelector('.t706__cartwin');
         if (!cart) return;
+        repairTildaOrderFormHandlers();
         var submit = cart.querySelector('.t-submit, button[type="submit"]');
         if (submit) {
           var submitText = submit.querySelector('.t-btnflex__text') || submit;
@@ -588,6 +607,7 @@
           if (window.tcart && Array.isArray(window.tcart.products)) window.tcart.products = [];
           tcart__addProduct(product);
           if (typeof tcart__reDrawCartIcon === 'function') tcart__reDrawCartIcon();
+          repairTildaOrderFormHandlers();
           tcart__openCart();
           setTimeout(enhanceTildaPaymentUi, 100);
           setTimeout(enhanceTildaPaymentUi, 600);
@@ -601,6 +621,7 @@
       initTildaCart();
       setTimeout(initTildaCart, 300);
       setTimeout(initTildaCart, 1200);
+      setTimeout(repairTildaOrderFormHandlers, 1500);
       setInterval(enhanceTildaPaymentUi, 1500);
       document.addEventListener('click', function(event) {
         var orderLink = event.target && event.target.closest && event.target.closest('a[href^="#order:"]');
