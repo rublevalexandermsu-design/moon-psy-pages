@@ -47,6 +47,32 @@
     body::before { width:280px;height:280px;left:-80px;top:120px;background:#c591ef; }
     body::after { width:340px;height:340px;right:-80px;top:420px;background:#afc0ff; }
 
+    .teen-camp-page {
+      min-height:100vh;
+      position:relative;
+      overflow:hidden;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 4% 18%, rgba(220, 136, 233, .30), transparent 24%),
+        radial-gradient(circle at 96% 15%, rgba(165, 184, 255, .25), transparent 25%),
+        radial-gradient(circle at 88% 78%, rgba(233, 146, 210, .20), transparent 22%),
+        linear-gradient(180deg, #fcf7ff 0%, #f7effd 42%, #fff9fd 100%);
+      isolation:isolate;
+    }
+    .teen-camp-page::before,
+    .teen-camp-page::after {
+      content:"";
+      position:fixed;
+      border-radius:50%;
+      filter:blur(88px);
+      opacity:.42;
+      z-index:-1;
+      pointer-events:none;
+      transform:translateZ(0);
+    }
+    .teen-camp-page::before { width:420px;height:420px;left:-150px;top:150px;background:#dc7fe6; }
+    .teen-camp-page::after { width:460px;height:460px;right:-150px;top:300px;background:#aebfff; }
+
     .wrap { width:min(var(--max), calc(100% - 32px)); margin:0 auto; }
     .section { padding:38px 0; }
     .pill {
@@ -151,6 +177,41 @@
     .cta-box p { margin:0 0 22px;font-size:20px;line-height:1.6;opacity:.96;max-width:720px;position:relative;z-index:1; }
     .cta-box .btn.primary { background:#fff;color:#2339a8; }
     .cta-box .btn.secondary { background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.2);color:#fff; }
+    .t706__cartwin .t-submit,
+    .t706__cartwin .t-btnflex.t-btnflex_type_submit {
+      width:100% !important;
+      min-height:62px !important;
+      display:inline-flex !important;
+      align-items:center !important;
+      justify-content:center !important;
+      margin-top:18px !important;
+      border:0 !important;
+      border-radius:18px !important;
+      background:linear-gradient(135deg, var(--blue), var(--blue2)) !important;
+      color:#fff !important;
+      font-size:18px !important;
+      font-weight:900 !important;
+      line-height:1.2 !important;
+      text-align:center !important;
+      box-shadow:0 16px 36px rgba(49,73,201,.30) !important;
+      cursor:pointer !important;
+      opacity:1 !important;
+    }
+    .t706__cartwin .t-submit *,
+    .t706__cartwin .t-btnflex.t-btnflex_type_submit * {
+      color:#fff !important;
+      font-size:18px !important;
+      font-weight:900 !important;
+    }
+    .teen-camp-payment-note {
+      margin:12px 0 4px;
+      padding:12px 14px;
+      border-radius:14px;
+      background:#f4edff;
+      color:#5d5487;
+      font-size:13px;
+      line-height:1.45;
+    }
     footer { padding:22px 0 40px;color:#7b81a4;font-size:15px; }
 
     .reveal { opacity:0; transform:translateY(22px); transition:opacity .55s ease, transform .55s ease; }
@@ -185,6 +246,7 @@
   <meta property="og:image" content="https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@b28b5f48939f8f640a218be50ac278ca24969ace/assets/teen-psychology-camp-2026/teen-psychology-camp-tatyana-moonn-poster-2026.jpg" />
 </head>
 <body>
+  <div class="teen-camp-page">
   <header class="site-header">
     <div class="wrap inner">
       <a class="brand" href="#top">
@@ -433,6 +495,7 @@
       Татьяна Мунн - психолог МГУ, автор метода «Быстрая психология». Подростковый городской лагерь по психологии, Москва, Цветной бульвар.
     </div>
   </footer>
+  </div>
 
   <script>
     const observer = new IntersectionObserver((entries) => {
@@ -468,6 +531,48 @@
         });
       }
 
+      function enhanceTildaPaymentUi() {
+        var cart = document.querySelector('.t706__cartwin');
+        if (!cart) return;
+        var submit = cart.querySelector('.t-submit, button[type="submit"]');
+        if (submit) {
+          var submitText = submit.querySelector('.t-btnflex__text') || submit;
+          submitText.textContent = 'Перейти к оплате';
+          submit.setAttribute('aria-label', 'Перейти к оплате через T-Bank');
+          submit.style.setProperty('background', 'linear-gradient(135deg, #3149c9, #2037a4)', 'important');
+          submit.style.setProperty('color', '#ffffff', 'important');
+          submit.style.setProperty('border-radius', '18px', 'important');
+          submit.style.setProperty('box-shadow', '0 16px 36px rgba(49,73,201,.30)', 'important');
+        }
+        Array.prototype.slice.call(cart.querySelectorAll('label, .t-radio__control')).forEach(function(label) {
+          var text = (label.textContent || '').trim();
+          if (text === 'Visa, МИР, Mastercard через T-Bank') {
+            label.childNodes.forEach(function(node) {
+              if (node.nodeType === 3 && node.textContent.indexOf('Visa') !== -1) {
+                node.textContent = ' Банковская карта через T-Bank (МИР, Visa, Mastercard)';
+              }
+            });
+          }
+          if (text === 'Рассрочка Т-Банк') {
+            label.childNodes.forEach(function(node) {
+              if (node.nodeType === 3 && node.textContent.indexOf('Рассрочка') !== -1) {
+                node.textContent = ' Рассрочка через T-Bank';
+              }
+            });
+          }
+        });
+        var paymentBlock = Array.prototype.slice.call(cart.querySelectorAll('*')).find(function(node) {
+          return (node.textContent || '').trim() === 'Способ оплаты';
+        });
+        if (paymentBlock && !cart.querySelector('.teen-camp-payment-note')) {
+          var note = document.createElement('div');
+          note.className = 'teen-camp-payment-note';
+          note.textContent = 'После нажатия кнопки откроется защищённая страница T-Bank. Там выбирается конкретная карта и вводятся платёжные данные.';
+          var container = paymentBlock.parentElement || paymentBlock;
+          container.appendChild(note);
+        }
+      }
+
       function openTeenCampPayment() {
         initTildaCart();
         if (typeof tcart__addProduct !== 'function' || typeof tcart__openCart !== 'function') return false;
@@ -484,6 +589,8 @@
           tcart__addProduct(product);
           if (typeof tcart__reDrawCartIcon === 'function') tcart__reDrawCartIcon();
           tcart__openCart();
+          setTimeout(enhanceTildaPaymentUi, 100);
+          setTimeout(enhanceTildaPaymentUi, 600);
           return true;
         } catch (error) {
           console.warn('Teen camp payment open skipped', error);
@@ -494,6 +601,7 @@
       initTildaCart();
       setTimeout(initTildaCart, 300);
       setTimeout(initTildaCart, 1200);
+      setInterval(enhanceTildaPaymentUi, 1500);
       document.addEventListener('click', function(event) {
         var orderLink = event.target && event.target.closest && event.target.closest('a[href^="#order:"]');
         if (orderLink) {
