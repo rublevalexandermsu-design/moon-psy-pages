@@ -925,3 +925,21 @@ Append-only project history for `moon-psy-site`.
   - `b9930a8` — `Harden Yandex reviews runtime layers`
 - Follow-up rule:
   - When a global runtime layer and a page-specific runtime layer both write the same DOM node, the page-specific layer must update/replace stale node content and expose a verification attribute, not silently skip.
+
+## 2026-05-09 — Moonn Yandex Services All Reviews Requirement
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user clarified that `/otzivi` must include all reviews, not only four or five selected examples.
+- Verification:
+  - Rendered Yandex Services profile showed `190 оценок`.
+  - Browser scan collected `136` unique visible public text-review records from the paginated reviews section.
+  - `190 оценок` is not the same as `190` text reviews; some Yandex ratings may not expose public review text.
+- Decision:
+  - Treat “all reviews” as all public text reviews visible on Yandex Services at scan time.
+  - Do not hard-code a handful of summaries as the final state.
+  - Do not publish the full verbatim external review corpus to `moonn.ru` or GitHub until legal/platform/personal-data gate is passed.
+- Artifact:
+  - `docs/moonn-yandex-services-all-reviews-scan-2026-05-09.md`
+- Follow-up rule:
+  - Review pages need a canonical review manifest and count-verification gate. Selected summaries are acceptable only as an interim SEO/provenance layer, not as the complete reviews page.
