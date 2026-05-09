@@ -846,3 +846,23 @@ Append-only project history for `moon-psy-site`.
   - Readiness check: live HTML -> browser cart -> checkout button -> `pay.tbank.ru` card-entry page.
 - New rule:
   - For Tilda payment tasks, do not report success from screenshots, editor messages, or partial cart opening. Success requires provider-page verification up to card-entry screen, without submitting a real payment unless explicitly approved.
+
+## 2026-05-09 20:59 MSK — Fast Continuation Chat Started
+
+- Project: Moonn / Tilda site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user opened a new Codex chat to continue the prior Moonn/Tilda payment workstream without the slowdown from the old heavy chat, while keeping the old chat as archive.
+- Context read:
+  - `docs/codex-handoffs/2026-05-09-fast-restart-moonn-payment.md`
+  - latest 2026-05-09 entries from `docs/codex-chat-history.md`
+- Confirmed state:
+  - Repository is `C:\пайто н тесты\Ано_институт_глаболизация\moon-psy-site`.
+  - Active branch is `codex/moonn-seo-audit`.
+  - Latest commit is `822e1ad` — `Add fast restart handoff for Moonn payment`.
+  - Remaining local untracked files are the three pre-existing PNG verification screenshots in `docs/teen-psychology-camp-2026/`.
+- Decision:
+  - Continue Moonn/Tilda work in this chat on the existing canonical branch.
+  - Do not create a new repository or duplicate branch for this continuation.
+  - Do not read the full old heavy chat unless a specific missing detail cannot be recovered from the handoff, project memory or recovery index.
+- Follow-up rule:
+  - If this chat becomes slow, create another fast continuation chat from the handoff pattern instead of changing repositories, duplicating branches or reloading raw chat archives.
