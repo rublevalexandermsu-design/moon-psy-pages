@@ -75,3 +75,34 @@ Append-only project history for `moon-psy-pages`.
   - Whether to backfill `PROJECT_CHAT_HISTORY.md` with summarized entries from all 26 old `moon-psy-site` workstreams.
 - Commit hash:
   - `944f896` for the chat recovery index.
+
+## 2026-05-09 18:05 Europe/Moscow - Moonn Chat Restore Prompts
+
+- Project: Moonn / Tatyana Moonn site / promotion / Timepad.
+- Workstream: recovery audit and chat restoration.
+- Branch: `codex/moonn-context-recovery`.
+- User request:
+  - create a separate prompt for each recovered chat so the user can create a new Codex chat, rename it to the old name and paste the prompt to reconnect it with the right repo/workstream.
+- Decisions:
+  - Prompts are grouped by workstream/thread group, not only by visible old chat title.
+  - Each prompt instructs the new chat to read recovery indexes first and raw session files only when exact details are needed.
+  - High-risk actions remain gated: Tilda/Timepad/API writes, publication, legal/privacy, payment, secrets and private videos.
+- Created or changed files:
+  - `docs/moonn-chat-restore-prompts-2026-05-09.md`
+- Restore prompts created for:
+  - `Найти способ доступа в Тильду`
+  - `Изучи деятельность Татьяны Мун`
+  - `Ищи публичные ссылки Татьяны Мунн`
+  - `яндекс Тани, таймпад-агент/школа/Сайт.продвижение`
+  - `Подключить API к Tilda`
+  - `тут будем подключать аппи к тильде к сайту-moonn.ru`
+  - `Восстановить контур Moonn`
+  - `Moonn SEO / Tilda production audit`
+  - `Moonn RKN privacy compliance`
+  - `Moonn paid lectures and protected access`
+  - `Moonn teen psychology camp / Timepad school`
+  - `Moonn chat registry and compressed memory`
+- Open questions:
+  - Whether to create the full Moonn compressed memory registry as the next step.
+- Commit hash:
+  - Pending at time of entry.
