@@ -800,3 +800,28 @@ Append-only project history for `moon-psy-site`.
   - High-risk gates for payment, legal/privacy, personal data, Tilda publish-all and live external changes are preserved.
 - Follow-up rule:
   - When creating a replacement chat for a missing raw Moonn thread, use the exact old chat title plus the matching prompt from `docs/moonn-chat-restore-prompts-2026-05-09.md`; do not start from a blank generic prompt.
+
+## 2026-05-09 — Moonn Teen Camp Tilda/T-Bank Payment Completed
+
+- Project: Moonn / Tilda site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user asked to finish real payment for `Подростковый лагерь по психологии` on `moonn.ru` through the correct Tilda route, not through a detached custom HTML payment workaround.
+- Actions:
+  - Kept native Tilda ST100/T-Bank as the payment layer.
+  - Updated the external page artifact so `Оплатить участие` opens native Tilda cart through `tcart__addProduct`, `tcart__reDrawCartIcon` and `tcart__openCart`.
+  - Updated the Tilda page HEAD loader to the committed bridge artifact.
+  - Corrected the Tilda HEAD save path by writing through the Ace editor model, then reopened and verified persistence.
+  - Published Tilda page `140348786` in project `8326812`.
+- Verification:
+  - Live HTML check: `@b7fc89f` is present, old `@6e83435` is absent, `20260509-native-cart-bridge` is present.
+  - Chrome Alexander profile check: clicking `Оплатить участие` opens the Tilda cart with one product, SKU `teen-camp-2026`, amount `30 000 р.`.
+  - Checkout form check: test name/email/phone and consent reveal `Перейти к оплате через T-Bank`.
+  - Provider check: the flow redirects to `pay.tbank.ru` and shows T-Bank card-entry fields with `30 000 ₽`.
+  - No card details were submitted and no real payment was made.
+- Commits:
+  - `b7fc89f` — `Open teen camp checkout via native Tilda cart`
+  - `6ca1991` — `Point teen camp Tilda head loader to native cart bridge`
+- Incident / root cause:
+  - Native `#order`/hash binding was not reliable after custom HEAD rendering, and the first Tilda HEAD save attempts changed textarea/accessibility state without persisting the Ace editor value.
+- Follow-up rule:
+  - For paid Moonn/Tilda pages, verify the full chain before reporting readiness: Tilda HEAD reopen -> Tilda publish -> live HTML -> one-product cart -> provider card-entry page. Real payment submission remains a separate high-risk action requiring explicit approval.
