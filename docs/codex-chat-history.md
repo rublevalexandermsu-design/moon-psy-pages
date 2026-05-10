@@ -993,3 +993,30 @@ Append-only project history for `moon-psy-site`.
   - The full verbatim Yandex review corpus is still not republished because the legal/platform/personal-data gate for copying external review text remains unresolved. The published layer uses summary cards with source links.
 - Follow-up rule:
   - For external-review archive pages, publish the user-facing trust layer as summaries plus source links until the full-text republication gate is explicitly cleared.
+
+## 2026-05-10 — Moonn Reviews Link And Code-Leak Incident Fixed
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user reported two live defects on `/otzivi`:
+  - internal escaped HEAD/script code was visible at the top of the public page;
+  - review-card links opened Yandex reviewer profiles instead of Tatyana Munn's Yandex Services profile.
+- Root cause:
+  - The previous validation checked card count and 2026 dates but did not click/inspect card link destinations.
+  - The Tilda page contained an escaped legacy page-specific HEAD payload as a body text node; runtime scripts could not remove it until the correct commit hash was published.
+  - A wrong full commit hash was briefly written into Tilda HEAD even though the short hash looked correct.
+- Fix:
+  - Updated `assets/moonn-yandex-all-reviews-layer.js` so every review-card link points to `https://uslugi.yandex.ru/profile/TatyanaKumskovamunn-948629`.
+  - Updated `assets/moonn-yandex-reviews-quality-layer.js` to remove leaked escaped HEAD text nodes from rendered `body`.
+  - Hid empty decorative Tilda block `rec1353368171`, which visually overlapped the Yandex source panel.
+  - Republished Tilda page `81167556` with the correct commit `8739444484729fb768f29522ef6e7a16bf06299b`.
+- Verification:
+  - Live rendered Playwright check found no visible `moonn-radiant-sanctuary-theme:start` or `cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages` leak text.
+  - Live rendered page still has the Yandex source panel and `123` review cards.
+  - Live rendered check found `0` review-card links pointing to `reviews.yandex.ru/user`.
+  - First 10 sampled card links all point to `https://uslugi.yandex.ru/profile/TatyanaKumskovamunn-948629`.
+  - Decorative divider block `rec1353368171` is `display: none`.
+- Commit:
+  - `8739444` — `Fix Yandex reviews public links and leaked code`
+- Follow-up rule:
+  - Public-page validation for review archives must include link-destination checks, visible-code leak checks, and exact full commit hash verification, not only card count and text/date presence.

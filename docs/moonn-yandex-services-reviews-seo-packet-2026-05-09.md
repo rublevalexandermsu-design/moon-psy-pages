@@ -105,3 +105,32 @@ Publication posture:
 
 - Full verbatim Yandex review text is still behind the legal/platform/personal-data gate.
 - Current public page uses source-linked summary cards, not a full text mirror of Yandex Services.
+
+## 2026-05-10 Public Defect Fix
+
+Status: completed for the rendered page.
+
+- Correct commit applied in Tilda page-specific HEAD:
+  - `8739444484729fb768f29522ef6e7a16bf06299b`
+- Fixed:
+  - visible escaped internal HEAD/script code at the top of `/otzivi`;
+  - review-card links pointing to Yandex reviewer profiles;
+  - decorative divider overlap over the Yandex Services source card.
+
+Live rendered verification:
+
+- No visible `moonn-radiant-sanctuary-theme:start` leak text.
+- No visible `cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages` leak text.
+- `123` review summary cards render.
+- `0` card links point to `reviews.yandex.ru/user`.
+- Sampled review-card links point to `https://uslugi.yandex.ru/profile/TatyanaKumskovamunn-948629`.
+- `rec1353368171` is hidden to prevent visual overlap.
+
+Validation rule:
+
+- Future archive-page releases must check:
+  - no visible internal code;
+  - exact full commit hash resolves on CDN;
+  - rendered card count;
+  - card link destinations;
+  - visual overlap at desktop and mobile widths.
