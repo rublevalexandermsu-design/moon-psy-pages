@@ -26,6 +26,11 @@ Title:
 
 `Психологическая консультация с Татьяной Мунн`
 
+Poster image:
+
+- Source file: `assets/timepad/tatyana-munn-psychological-consultation-msu-online-offline-moscow-timepad-2026.png`.
+- Public CDN URL after push: `https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@codex/moonn-seo-audit/assets/timepad/tatyana-munn-psychological-consultation-msu-online-offline-moscow-timepad-2026.png`.
+
 Initial slot:
 
 - Date: 2026-05-18.
@@ -112,4 +117,3 @@ Do not publish until all checks pass:
 - At least one real slot checked against iClient/YCLIENTS.
 - User explicitly approves publication.
 - Support message sent only after draft URL and content are final.
-
