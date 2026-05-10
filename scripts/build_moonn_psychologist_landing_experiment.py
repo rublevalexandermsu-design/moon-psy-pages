@@ -165,6 +165,16 @@ def replace_lectures_section(html: str) -> str:
     )
 
 
+def remove_intro_summary_section(html: str) -> str:
+    return re.sub(
+        r'\s*<section id=["\']ai-summary["\'][\s\S]*?</section>\s*(?=<section class=["\']hero["\'])',
+        "\n",
+        html,
+        count=1,
+        flags=re.I,
+    )
+
+
 def replace_payment_buttons(html: str) -> str:
     replacements = {
         r'<button class="btn ghost" type="button" data-pay-open="single" aria-label="Оплата онлайн">Оплатить</button>':
@@ -327,6 +337,7 @@ def clean_html() -> str:
     html = remove_html_comments(html)
     html = replace_json_ld(html)
     html = replace_lectures_section(html)
+    html = remove_intro_summary_section(html)
     html = replace_payment_buttons(html)
     html = remove_payment_modal_and_legacy_js(html)
     html = inject_responsive_safety_css(html)

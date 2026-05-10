@@ -1224,3 +1224,27 @@ Append-only project history for `moon-psy-site`.
   - `72ac8de` — `Add Tilda loader for psychologist landing`
 - Follow-up rule:
   - For this page type, prefer native Tilda `T123` block replacement over HEAD document replacement when the page already consists of a single canonical HTML block. HEAD loaders remain fallback artifacts, not the primary publication route.
+
+## 2026-05-10 — Moonn Psychologist Landing Summary Card Removed
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user asked to remove the visible top block `Кратко о консультациях` and verify SEO after deletion.
+- Route:
+  - Kept the same canonical additional landing URL: `https://moonn.ru/psiholog-tatiana-moonn`.
+  - Updated the generator rather than manually deleting the block only in Tilda, so future regenerations do not restore the removed section.
+  - Published through native Tilda `T123` record `rec1863545891` on page `115095616`.
+- Changes:
+  - Added deterministic removal of the `#ai-summary` section before the hero.
+  - Regenerated `docs/psychologist-tatiana-munn-landing/tilda-html-block-final.html`, `tilda-page-final.html`, and `quality-report.json`.
+  - Added visual QA artifact `docs/psychologist-tatiana-munn-landing/visual-remove-summary-2026-05-10.png`.
+  - Updated `docs/psychologist-tatiana-munn-landing/publication-report-2026-05-10.md`.
+- Verification:
+  - Local generated artifacts: no `Кратко о консультациях` / `ai-summary` matches outside the removal rule in the generator.
+  - Local quality report: title/description/canonical present, H1 count `1`, JSON-LD count `1`, iClient present, YouTube channel present, old YouTube embeds `0`, visible/raw internal hits `0`.
+  - Tilda editor save confirmation: block length `89843`, `hasSummary=false`, `hasHero=true`.
+  - Tilda API after publish: `has_summary=false`, iClient present, YouTube channel present, old YouTube embeds absent, legacy payment markers absent.
+  - Live HTML `https://moonn.ru/psiholog-tatiana-moonn?qa=remove-summary-1778414288`: status `200`, title unchanged, canonical correct, H1 count `1`, JSON-LD count `3`, iClient present, YouTube channel present, old YouTube IDs absent, legacy payment markers absent.
+  - Visual Edge/browser check confirmed the page starts with the hero block and the removed top summary card is absent.
+- Follow-up rule:
+  - For public Tilda pages, visual deletion requests must be implemented in the generator/source artifact first, then published, then verified through Tilda API, live HTML, and browser render.
