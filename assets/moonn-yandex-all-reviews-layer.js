@@ -30,11 +30,10 @@
   }
 
   function renderReview(item) {
-    var url = item.sourceUrl || PROFILE_URL;
     return '<article class="moonn-all-review-card">' +
       '<div class="moonn-all-review-meta"><strong>' + escapeHtml(item.author) + '</strong><span>' + escapeHtml(item.date) + '</span></div>' +
       '<p>' + escapeHtml(item.summary) + '</p>' +
-      '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener noreferrer">Полный отзыв на Яндекс Услугах</a>' +
+      '<a href="' + escapeHtml(PROFILE_URL) + '" target="_blank" rel="noopener noreferrer">Отзывы Татьяны Мунн на Яндекс Услугах</a>' +
     '</article>';
   }
 

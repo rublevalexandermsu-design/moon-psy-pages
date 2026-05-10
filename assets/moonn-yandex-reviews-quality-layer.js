@@ -21,7 +21,7 @@
     panel.id = PATCH_MARKER;
     panel.setAttribute("aria-label", "Источник отзывов");
     panel.style.cssText =
-      "max-width:1060px;margin:28px auto;padding:26px;border:1px solid rgba(33,23,38,.12);border-radius:18px;background:#fff;color:#1f1726;font-family:Arial,sans-serif;line-height:1.5;box-shadow:0 16px 44px rgba(44,28,62,.08);";
+      "position:relative;z-index:30;overflow:hidden;max-width:1060px;margin:28px auto;padding:26px;border:1px solid rgba(33,23,38,.12);border-radius:18px;background:#fff;color:#1f1726;font-family:Arial,sans-serif;line-height:1.5;box-shadow:0 16px 44px rgba(44,28,62,.08);";
     panel.innerHTML =
       '<div style="display:flex;gap:18px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;margin:0 0 16px;">' +
       '<div style="display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:14px;background:#fff4d6;font-weight:800;color:#21172b;">' +
@@ -40,6 +40,21 @@
       '<a style="color:#490094;font-weight:700;" href="' + REVIEW_URL + '" target="_blank" rel="noopener noreferrer">Оставить отзыв</a>' +
       '</p>';
     anchor.parentNode.insertBefore(panel, anchor.nextSibling);
+  }
+
+  function removeLeakedHeadCodeText() {
+    Array.prototype.slice.call(document.body.childNodes).forEach(function (node) {
+      if (node.nodeType !== Node.TEXT_NODE) return;
+      var text = (node.nodeValue || "").trim();
+      if (!text) return;
+      var looksLikeLeakedHead =
+        text.indexOf("<!-- moonn-radiant-sanctuary-theme:start -->") !== -1 ||
+        text.indexOf("moonn-yandex-reviews-quality-layer") !== -1 ||
+        text.indexOf("cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages") !== -1;
+      if (looksLikeLeakedHead) {
+        node.parentNode.removeChild(node);
+      }
+    });
   }
 
   function reorderIntroBlocks() {
@@ -72,6 +87,7 @@
     style.textContent =
       "#rec1353045131{background:#fff!important;}" +
       "#rec1353045131 .t-title,#rec1353045131 .t-heading,#rec1353045131 .tn-atom{color:#21172b!important;}" +
+      "#rec1353368171{display:none!important;}" +
       "#rec1353100721[data-moonn-moved-down='true']{display:none!important;}" +
       "#moonn-yandex-reviews-quality-layer{box-sizing:border-box;}" +
       "@media (max-width:640px){#moonn-yandex-reviews-quality-layer{margin-left:16px!important;margin-right:16px!important;padding:18px!important;}}";
@@ -80,6 +96,7 @@
 
   function run() {
     if (!isReviewsPage()) return;
+    removeLeakedHeadCodeText();
     reorderIntroBlocks();
     addLayoutStyles();
     addSourcePanel();
