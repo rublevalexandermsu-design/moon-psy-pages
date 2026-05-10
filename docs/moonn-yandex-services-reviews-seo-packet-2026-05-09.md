@@ -78,3 +78,30 @@ Remaining stronger-state cleanup:
 ## Follow-up Rule
 
 For future review-source pages, avoid public wording that explains internal SEO mechanics. Use user-facing trust language, source links, provenance records, and structured data instead.
+
+## 2026-05-10 Archive Layer Update
+
+Status: completed for the rendered page.
+
+- Git commit applied in Tilda page-specific HEAD:
+  - `9df3edab278d5c27dbc98e2216de692ae247da6f`
+- Added runtime layer:
+  - `assets/moonn-yandex-all-reviews-layer.js`
+- Updated runtime layer:
+  - `assets/moonn-yandex-reviews-quality-layer.js`
+- Tilda page `81167556` was published only for `/otzivi`.
+
+Live checks:
+
+- Raw live HTML contains `moonn-yandex-reviews-quality-layer`.
+- Raw live HTML contains `moonn-yandex-all-reviews-layer`.
+- Raw live HTML contains commit `9df3edab278d5c27dbc98e2216de692ae247da6f`.
+- Rendered browser check found `123` review summary cards.
+- Rendered browser check found 2026 review dates, including `15.04.2026`, `05.04.2026`, and `28.02.2026`.
+- Rendered browser check found the Yandex Services source badge and `актуальные отзывы 2026`.
+- Rendered browser check confirmed the old dark hero block is hidden.
+
+Publication posture:
+
+- Full verbatim Yandex review text is still behind the legal/platform/personal-data gate.
+- Current public page uses source-linked summary cards, not a full text mirror of Yandex Services.

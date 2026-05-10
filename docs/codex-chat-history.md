@@ -966,3 +966,30 @@ Append-only project history for `moon-psy-site`.
   - `ca82ebe` — `Stop destructive Yandex reviews patching`
 - Follow-up rule:
   - Runtime content patches on Tilda must not replace `innerHTML` of broad containers (`div`, record wrappers, body-level sections). Use additive overlays or leaf-node-only changes with tight length/class guards and visual verification.
+
+## 2026-05-10 — Moonn Yandex Reviews 2026 Archive Layer Published
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user noticed that the live `/otzivi` page started with 2025 reviews and missed newer Yandex Services reviews from 2026; user also asked for a clearer Yandex Services source block and removal of the dark first review block.
+- Actions:
+  - Added `assets/moonn-yandex-all-reviews-layer.js`.
+  - Updated `assets/moonn-yandex-reviews-quality-layer.js` to:
+    - place a light Yandex Services provenance block near the top;
+    - keep the profile block before reviews;
+    - hide the dark legacy hero block `rec1353100721`;
+    - avoid destructive HTML replacement.
+  - Published Tilda page-specific HEAD for page `81167556` with commit `9df3edab278d5c27dbc98e2216de692ae247da6f`.
+  - Published only page `81167556`.
+- Verification:
+  - Local browser preview before publication found the order: intro -> Yandex Services panel -> profile -> all-reviews layer -> native Tilda review cards.
+  - Live raw HTML contains both `moonn-yandex-reviews-quality-layer` and `moonn-yandex-all-reviews-layer` pinned to commit `9df3edab278d5c27dbc98e2216de692ae247da6f`.
+  - Live rendered Playwright check found `123` review summary cards, including 2026 dates `15.04.2026`, `05.04.2026`, and `28.02.2026`.
+  - Live rendered page contains the Yandex Services badge and `актуальные отзывы 2026`.
+  - Live rendered page hides the dark legacy hero block (`display: none`).
+- Commit:
+  - `9df3eda` — `Add Yandex reviews archive layer`
+- Risk / limitation:
+  - The full verbatim Yandex review corpus is still not republished because the legal/platform/personal-data gate for copying external review text remains unresolved. The published layer uses summary cards with source links.
+- Follow-up rule:
+  - For external-review archive pages, publish the user-facing trust layer as summaries plus source links until the full-text republication gate is explicitly cleared.
