@@ -1,0 +1,33 @@
+{
+  "project": "Moonn / Tatiana Moonn art gallery",
+  "branch": "codex/moonn-art-gallery",
+  "generatedAt": "2026-05-10",
+  "outputDir": "C:\\пайто н тесты\\Ано_институт_глаболизация\\moon-psy-site\\docs\\tatiana-munn-art-gallery",
+  "zip": "C:\\пайто н тесты\\Ано_институт_глаболизация\\moon-psy-site\\output\\tatiana-munn-art-gallery-site.zip",
+  "artworks": 10,
+  "htmlFiles": [
+    "about.html",
+    "artwork-blue-flower-harmony.html",
+    "artwork-eye-vortex.html",
+    "artwork-finance-realization.html",
+    "artwork-gold-blue-gate.html",
+    "artwork-lotus-balance.html",
+    "artwork-orchid-rings.html",
+    "artwork-personal-code-speed.html",
+    "artwork-sensitivity-purple.html",
+    "artwork-turquoise-protection.html",
+    "artwork-violet-galaxy.html",
+    "catalog.html",
+    "code.html",
+    "contacts.html",
+    "index.html"
+  ],
+  "checks": {
+    "usesTatianaMunnDoubleN": true,
+    "singleNVisibleHits": 0,
+    "hasThreeJs": true,
+    "hasPurchaseRequestLayer": true,
+    "hasArtworkJson": true,
+    "latinAssetNames": true
+  }
+}

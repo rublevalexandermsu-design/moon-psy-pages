@@ -1248,3 +1248,27 @@ Append-only project history for `moon-psy-site`.
   - Visual Edge/browser check confirmed the page starts with the hero block and the removed top summary card is absent.
 - Follow-up rule:
   - For public Tilda pages, visual deletion requests must be implemented in the generator/source artifact first, then published, then verified through Tilda API, live HTML, and browser render.
+
+## 2026-05-10 — Tatiana Moonn Art Gallery Site Package
+
+- Project: Moonn / Tatiana Moonn art gallery.
+- Branch: `codex/moonn-art-gallery`.
+- Trigger: user provided gallery/3D-scroll prototypes and generated artwork images, asking for a premium multi-page 3D gallery site for selling Tatyana Munn's paintings.
+- Route:
+  - Split this into a new product workstream branch instead of continuing the SEO/Timepad branch.
+  - Built a deterministic static site generator so the gallery can be regenerated from source images and structured artwork records.
+  - Kept real payment out of the public package until prices, inventory, legal seller, delivery/return terms and payment product IDs are confirmed.
+- Changes:
+  - Added `scripts/build_tatiana_munn_art_gallery_site.py`.
+  - Generated `docs/tatiana-munn-art-gallery/` with `index.html`, catalog, individual artwork pages, code form, about/contact pages, optimized WebP artwork assets, local Three.js vendor file, favicon, `data/artworks.json`, README and `build-report.json`.
+  - Created the local archive `output/tatiana-munn-art-gallery-site.zip`.
+- Verification:
+  - Local server `http://127.0.0.1:8765/` returned `200`.
+  - Playwright/Chrome QA passed desktop and mobile canvas checks: visible nonblank WebGL canvas, no console/page errors.
+  - Interaction QA passed: preview modal opens, artwork flips, code form returns a numeric code, catalog has `10` cards, first detail page opens.
+  - Public text scan passed for the generated site excluding vendored Three.js: no visible single-`н` `Татьяна Мун`, no `MVP`, `прототип`, `Tilda`, `ST100`, `data-demo` or internal payment layer.
+- Incident / correction:
+  - Initial 3D frame was modeled as one solid box and visually occluded artwork textures in the gallery scene.
+  - Fixed by replacing the solid frame with four separate frame bars and moving the image plane slightly forward.
+- Follow-up rule:
+  - For 3D gallery/public frontend tasks, visual QA must include not only nonblank canvas checks but also screenshot inspection for occlusion, lighting and readability of the actual products.

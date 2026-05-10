@@ -1,0 +1,222 @@
+[
+  {
+    "id": "tm-art-01",
+    "slug": "blue-flower-harmony",
+    "title": "Гармония и чувственность",
+    "subtitle": "Круглая центральная работа",
+    "shape": "round",
+    "price": "700 000 ₽",
+    "placement": "pedestal",
+    "image": "assets/art/01-blue-flower-harmony.webp",
+    "thumb": "assets/art/01-blue-flower-harmony-thumb.webp",
+    "detailUrl": "artwork-blue-flower-harmony.html",
+    "scene": {
+      "x": 0,
+      "y": 0.25,
+      "z": -8,
+      "ry": 0,
+      "width": 4.0,
+      "height": 4.0
+    },
+    "note": "Центральная работа с глубоким синим цветком и золотым ядром.",
+    "intent": "Гармония, чувственность, восстановление личного ресурса."
+  },
+  {
+    "id": "tm-art-02",
+    "slug": "turquoise-protection",
+    "title": "Ясность и защита",
+    "subtitle": "Бирюзовая мандала с оком",
+    "shape": "square",
+    "price": "420 000 ₽",
+    "placement": "left",
+    "image": "assets/art/02-turquoise-protection.webp",
+    "thumb": "assets/art/02-turquoise-protection-thumb.webp",
+    "detailUrl": "artwork-turquoise-protection.html",
+    "scene": {
+      "x": -8.6,
+      "y": 0.45,
+      "z": -14,
+      "ry": 70,
+      "width": 3.4,
+      "height": 3.4
+    },
+    "note": "Бирюзовая работа с жемчужной фактурой и центральным оком.",
+    "intent": "Ясность, защита, ощущение внутренней опоры."
+  },
+  {
+    "id": "tm-art-03",
+    "slug": "lotus-balance",
+    "title": "Баланс и восстановление",
+    "subtitle": "Бирюзовая геометрия с лотосами",
+    "shape": "square",
+    "price": "280 000 ₽",
+    "placement": "right",
+    "image": "assets/art/03-lotus-balance.webp",
+    "thumb": "assets/art/03-lotus-balance-thumb.webp",
+    "detailUrl": "artwork-lotus-balance.html",
+    "scene": {
+      "x": 8.6,
+      "y": 0.45,
+      "z": -18,
+      "ry": -70,
+      "width": 3.5,
+      "height": 3.5
+    },
+    "note": "Лотосы и мягкая геометрия собирают композицию в спокойный ритм.",
+    "intent": "Баланс, мягкое восстановление, спокойная настройка пространства."
+  },
+  {
+    "id": "tm-art-04",
+    "slug": "violet-galaxy",
+    "title": "Энергия и ресурс",
+    "subtitle": "Фиолетовая галактика со стразами",
+    "shape": "square",
+    "price": "360 000 ₽",
+    "placement": "left",
+    "image": "assets/art/04-violet-galaxy.webp",
+    "thumb": "assets/art/04-violet-galaxy-thumb.webp",
+    "detailUrl": "artwork-violet-galaxy.html",
+    "scene": {
+      "x": -8.6,
+      "y": 0.45,
+      "z": -24,
+      "ry": 70,
+      "width": 3.35,
+      "height": 3.35
+    },
+    "note": "Темная основа, фиолетовые круги, золотые акценты и световые блики.",
+    "intent": "Ресурс, энергия, собранность, внутренняя концентрация."
+  },
+  {
+    "id": "tm-art-05",
+    "slug": "orchid-rings",
+    "title": "Тонкая настройка",
+    "subtitle": "Орхидея и пересекающиеся круги",
+    "shape": "square",
+    "price": "190 000 ₽",
+    "placement": "right",
+    "image": "assets/art/05-orchid-rings.webp",
+    "thumb": "assets/art/05-orchid-rings-thumb.webp",
+    "detailUrl": "artwork-orchid-rings.html",
+    "scene": {
+      "x": 8.6,
+      "y": 0.45,
+      "z": -28,
+      "ry": -70,
+      "width": 3.35,
+      "height": 3.35
+    },
+    "note": "Фиолетовые поля и цветок в центре делают работу камерной и мягкой.",
+    "intent": "Тонкая настройка, эстетика, спокойная эмоциональная фокусировка."
+  },
+  {
+    "id": "tm-art-06",
+    "slug": "personal-code-speed",
+    "title": "Скорость восстановления",
+    "subtitle": "Персональный код на голубом поле",
+    "shape": "square",
+    "price": "320 000 ₽",
+    "placement": "center",
+    "image": "assets/art/06-personal-code-speed.webp",
+    "thumb": "assets/art/06-personal-code-speed-thumb.webp",
+    "detailUrl": "artwork-personal-code-speed.html",
+    "scene": {
+      "x": 0,
+      "y": 0.2,
+      "z": -36,
+      "ry": 0,
+      "width": 3.7,
+      "height": 3.7
+    },
+    "note": "Работа с числовым рядом и мягкими лотосами по краям.",
+    "intent": "Скорость, ясный ритм, персональная формула под запрос."
+  },
+  {
+    "id": "tm-art-07",
+    "slug": "finance-realization",
+    "title": "Финансовая реализация",
+    "subtitle": "Фиолетовая спираль",
+    "shape": "square",
+    "price": "310 000 ₽",
+    "placement": "left",
+    "image": "assets/art/07-finance-realization.webp",
+    "thumb": "assets/art/07-finance-realization-thumb.webp",
+    "detailUrl": "artwork-finance-realization.html",
+    "scene": {
+      "x": -8.6,
+      "y": 0.45,
+      "z": -42,
+      "ry": 70,
+      "width": 3.35,
+      "height": 3.35
+    },
+    "note": "Лаконичная спираль и числовой ряд на мягком фиолетовом поле.",
+    "intent": "Реализация, структура цели, фокус на финансовом запросе."
+  },
+  {
+    "id": "tm-art-08",
+    "slug": "sensitivity-purple",
+    "title": "Чувственность",
+    "subtitle": "Симметрия шести лепестков",
+    "shape": "square",
+    "price": "170 000 ₽",
+    "placement": "right",
+    "image": "assets/art/08-sensitivity-purple.webp",
+    "thumb": "assets/art/08-sensitivity-purple-thumb.webp",
+    "detailUrl": "artwork-sensitivity-purple.html",
+    "scene": {
+      "x": 8.6,
+      "y": 0.45,
+      "z": -46,
+      "ry": -70,
+      "width": 3.35,
+      "height": 3.35
+    },
+    "note": "Нежная светлая работа с фиолетовым лепестковым знаком.",
+    "intent": "Чувственность, мягкость, принятие себя и своего состояния."
+  },
+  {
+    "id": "tm-art-09",
+    "slug": "eye-vortex",
+    "title": "Око потока",
+    "subtitle": "Цветовой вихрь",
+    "shape": "square",
+    "price": "260 000 ₽",
+    "placement": "center",
+    "image": "assets/art/09-eye-vortex.webp",
+    "thumb": "assets/art/09-eye-vortex-thumb.webp",
+    "detailUrl": "artwork-eye-vortex.html",
+    "scene": {
+      "x": 0,
+      "y": 0.2,
+      "z": -54,
+      "ry": 0,
+      "width": 3.8,
+      "height": 3.8
+    },
+    "note": "Цветовые поля сходятся к глазу как к центру наблюдения.",
+    "intent": "Внимание, видение, переход от хаоса к ясной картине."
+  },
+  {
+    "id": "tm-art-10",
+    "slug": "gold-blue-gate",
+    "title": "Кодовые врата",
+    "subtitle": "Золотые линии и синий центр",
+    "shape": "wide",
+    "price": "380 000 ₽",
+    "placement": "right",
+    "image": "assets/art/10-gold-blue-gate.webp",
+    "thumb": "assets/art/10-gold-blue-gate-thumb.webp",
+    "detailUrl": "artwork-gold-blue-gate.html",
+    "scene": {
+      "x": 8.6,
+      "y": 0.2,
+      "z": -60,
+      "ry": -70,
+      "width": 4.6,
+      "height": 2.9
+    },
+    "note": "Широкая работа с золотой фактурой, синим центром и декоративным знаком.",
+    "intent": "Порог, переход, настройка пространства под новый этап."
+  }
+]

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Галерея энергетических картин Татьяны Мунн | 3D-прогулка и индивидуальный код</title>
+  <meta name="description" content="Премиальная 3D-галерея картин Татьяны Мунн: прогулка по залу, каталог работ, индивидуальный код, заявка на покупку.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://moonn.ru/art-gallery">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://moonn.ru/art-gallery">
+  <meta property="og:title" content="Галерея энергетических картин Татьяны Мунн | 3D-прогулка и индивидуальный код">
+  <meta property="og:description" content="Премиальная 3D-галерея картин Татьяны Мунн: прогулка по залу, каталог работ, индивидуальный код, заявка на покупку.">
+  <meta property="og:image" content="assets/tatiana_munn_gallery_concept.webp">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ArtGallery", "name": "Галерея энергетических картин Татьяны Мунн", "url": "https://moonn.ru/art-gallery", "founder": {"@type": "Person", "name": "Татьяна Мунн"}, "description": "Премиальная 3D-галерея картин Татьяны Мунн: прогулка по залу, каталог работ, индивидуальный код, заявка на покупку."}</script>
+  
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Галерея Татьяны Мунн">
+    <span class="brand-mark">TM</span>
+    <span><b>Татьяна Мунн</b><small>галерея энергетических картин</small></span>
+  </a>
+  <nav class="site-nav" aria-label="Основная навигация"><a class="is-active" href="index.html">Галерея</a>
+<a class="" href="catalog.html">Каталог</a>
+<a class="" href="code.html">Индивидуальный код</a>
+<a class="" href="about.html">О Татьяне</a>
+<a class="" href="contacts.html">Контакты</a></nav>
+  <button class="gold-button compact" data-open-purchase>Купить картину</button>
+</header>
+
+<main class="immersive-page">
+  <canvas id="galleryCanvas" aria-label="3D-зал энергетических картин Татьяны Мунн"></canvas>
+  <div class="scroll-meter"><span id="scrollMeter"></span></div>
+  <section class="story-section hero-section">
+    <div class="hero-copy">
+      <span class="eyebrow">Премиальная 3D-галерея</span>
+      <h1>Галерея энергетических картин<br><strong>Татьяна Мунн</strong></h1>
+      <p>Прокручивайте страницу: камера входит в зал, проходит вдоль стен, подходит к работам на пьедесталах и подсвечивает каждую картину как в частной выставке.</p>
+      <div class="hero-actions">
+        <a class="gold-button" href="#walk">Войти в зал</a>
+        <a class="ghost-button" href="catalog.html">Открыть каталог</a>
+      </div>
+    </div>
+  </section>
+  <section class="story-section side-copy" id="walk">
+    <div class="glass-text left">
+      <span class="eyebrow">Экспозиция</span>
+      <h2>Стены, пьедесталы и личные таблички</h2>
+      <p>Работы расположены как в камерном выставочном зале: крупные полотна на стенах, круглая картина в центре, рядом подписи с назначением и запросом.</p>
+    </div>
+  </section>
+  <section class="story-section side-copy">
+    <div class="glass-text right">
+      <span class="eyebrow">Выбор картины</span>
+      <h2>Кликните по полотну</h2>
+      <p>Любую работу можно открыть крупно, перевернуть и увидеть оборот с персональным кодом владельца.</p>
+      <button class="ghost-button" data-preview-art>Показать просмотр</button>
+    </div>
+  </section>
+  <section class="story-section side-copy">
+    <div class="glass-text left">
+      <span class="eyebrow">Индивидуальный код</span>
+      <h2>Формула под человека</h2>
+      <p>Покупатель вводит данные и запрос. Код связывается с выбранной работой, оборотом картины и сертификатом владельца.</p>
+      <a class="gold-button" href="code.html">Составить код</a>
+    </div>
+  </section>
+  <section class="story-section side-copy">
+    <div class="glass-text right">
+      <span class="eyebrow">Фактура</span>
+      <h2>Золото, жемчуг, стразы и свет</h2>
+      <p>WebP-ассеты подготовлены из новых изображений: усилена резкость и контраст, сохранены блики и фактура, чтобы работы не выглядели плоско.</p>
+    </div>
+  </section>
+  <section class="story-section final-section">
+    <div class="glass-text center">
+      <span class="eyebrow">Частная покупка</span>
+      <h2>Выберите работу для себя или в подарок</h2>
+      <p>Финальный путь клиента: просмотр в 3D-зале, открытие карточки, подбор кода, заявка на покупку и подтверждение заказа.</p>
+      <div class="hero-actions">
+        <a class="gold-button" href="catalog.html">Перейти в каталог</a>
+        <button class="ghost-button" data-open-purchase>Оставить заявку</button>
+      </div>
+    </div>
+  </section>
+</main>
+<div class="art-modal" id="artModal" aria-hidden="true">
+  <div class="art-modal__shade" data-close-art></div>
+  <article class="art-modal__panel">
+    <button class="icon-close" type="button" data-close-art aria-label="Закрыть">×</button>
+    <div class="flip-card" id="flipCard">
+      <div class="flip-card__inner">
+        <div class="flip-face front"><img id="modalImage" alt=""></div>
+        <div class="flip-face back">
+          <span>Персональный код</span>
+          <strong class="js-code">516 108 369</strong>
+          <small>ФИО, дата рождения и запрос владельца наносятся на оборот или сертификат по согласованию.</small>
+        </div>
+      </div>
+    </div>
+    <div class="modal-copy">
+      <span class="eyebrow">Выбранная работа</span>
+      <h2 id="modalTitle">Гармония и чувственность</h2>
+      <p id="modalText"></p>
+      <div class="modal-actions">
+        <button class="gold-button" id="flipButton" type="button">Перевернуть</button>
+        <button class="ghost-button" type="button" data-open-purchase>Забронировать</button>
+        <a class="ghost-button" id="modalDetail" href="catalog.html">Страница картины</a>
+      </div>
+    </div>
+  </article>
+</div>
+<script type="application/json" id="artworksData">[{"id": "tm-art-01", "slug": "blue-flower-harmony", "title": "Гармония и чувственность", "subtitle": "Круглая центральная работа", "shape": "round", "price": "700 000 ₽", "placement": "pedestal", "image": "assets/art/01-blue-flower-harmony.webp", "thumb": "assets/art/01-blue-flower-harmony-thumb.webp", "detailUrl": "artwork-blue-flower-harmony.html", "scene": {"x": 0, "y": 0.25, "z": -8, "ry": 0, "width": 4.0, "height": 4.0}, "note": "Центральная работа с глубоким синим цветком и золотым ядром.", "intent": "Гармония, чувственность, восстановление личного ресурса."}, {"id": "tm-art-02", "slug": "turquoise-protection", "title": "Ясность и защита", "subtitle": "Бирюзовая мандала с оком", "shape": "square", "price": "420 000 ₽", "placement": "left", "image": "assets/art/02-turquoise-protection.webp", "thumb": "assets/art/02-turquoise-protection-thumb.webp", "detailUrl": "artwork-turquoise-protection.html", "scene": {"x": -8.6, "y": 0.45, "z": -14, "ry": 70, "width": 3.4, "height": 3.4}, "note": "Бирюзовая работа с жемчужной фактурой и центральным оком.", "intent": "Ясность, защита, ощущение внутренней опоры."}, {"id": "tm-art-03", "slug": "lotus-balance", "title": "Баланс и восстановление", "subtitle": "Бирюзовая геометрия с лотосами", "shape": "square", "price": "280 000 ₽", "placement": "right", "image": "assets/art/03-lotus-balance.webp", "thumb": "assets/art/03-lotus-balance-thumb.webp", "detailUrl": "artwork-lotus-balance.html", "scene": {"x": 8.6, "y": 0.45, "z": -18, "ry": -70, "width": 3.5, "height": 3.5}, "note": "Лотосы и мягкая геометрия собирают композицию в спокойный ритм.", "intent": "Баланс, мягкое восстановление, спокойная настройка пространства."}, {"id": "tm-art-04", "slug": "violet-galaxy", "title": "Энергия и ресурс", "subtitle": "Фиолетовая галактика со стразами", "shape": "square", "price": "360 000 ₽", "placement": "left", "image": "assets/art/04-violet-galaxy.webp", "thumb": "assets/art/04-violet-galaxy-thumb.webp", "detailUrl": "artwork-violet-galaxy.html", "scene": {"x": -8.6, "y": 0.45, "z": -24, "ry": 70, "width": 3.35, "height": 3.35}, "note": "Темная основа, фиолетовые круги, золотые акценты и световые блики.", "intent": "Ресурс, энергия, собранность, внутренняя концентрация."}, {"id": "tm-art-05", "slug": "orchid-rings", "title": "Тонкая настройка", "subtitle": "Орхидея и пересекающиеся круги", "shape": "square", "price": "190 000 ₽", "placement": "right", "image": "assets/art/05-orchid-rings.webp", "thumb": "assets/art/05-orchid-rings-thumb.webp", "detailUrl": "artwork-orchid-rings.html", "scene": {"x": 8.6, "y": 0.45, "z": -28, "ry": -70, "width": 3.35, "height": 3.35}, "note": "Фиолетовые поля и цветок в центре делают работу камерной и мягкой.", "intent": "Тонкая настройка, эстетика, спокойная эмоциональная фокусировка."}, {"id": "tm-art-06", "slug": "personal-code-speed", "title": "Скорость восстановления", "subtitle": "Персональный код на голубом поле", "shape": "square", "price": "320 000 ₽", "placement": "center", "image": "assets/art/06-personal-code-speed.webp", "thumb": "assets/art/06-personal-code-speed-thumb.webp", "detailUrl": "artwork-personal-code-speed.html", "scene": {"x": 0, "y": 0.2, "z": -36, "ry": 0, "width": 3.7, "height": 3.7}, "note": "Работа с числовым рядом и мягкими лотосами по краям.", "intent": "Скорость, ясный ритм, персональная формула под запрос."}, {"id": "tm-art-07", "slug": "finance-realization", "title": "Финансовая реализация", "subtitle": "Фиолетовая спираль", "shape": "square", "price": "310 000 ₽", "placement": "left", "image": "assets/art/07-finance-realization.webp", "thumb": "assets/art/07-finance-realization-thumb.webp", "detailUrl": "artwork-finance-realization.html", "scene": {"x": -8.6, "y": 0.45, "z": -42, "ry": 70, "width": 3.35, "height": 3.35}, "note": "Лаконичная спираль и числовой ряд на мягком фиолетовом поле.", "intent": "Реализация, структура цели, фокус на финансовом запросе."}, {"id": "tm-art-08", "slug": "sensitivity-purple", "title": "Чувственность", "subtitle": "Симметрия шести лепестков", "shape": "square", "price": "170 000 ₽", "placement": "right", "image": "assets/art/08-sensitivity-purple.webp", "thumb": "assets/art/08-sensitivity-purple-thumb.webp", "detailUrl": "artwork-sensitivity-purple.html", "scene": {"x": 8.6, "y": 0.45, "z": -46, "ry": -70, "width": 3.35, "height": 3.35}, "note": "Нежная светлая работа с фиолетовым лепестковым знаком.", "intent": "Чувственность, мягкость, принятие себя и своего состояния."}, {"id": "tm-art-09", "slug": "eye-vortex", "title": "Око потока", "subtitle": "Цветовой вихрь", "shape": "square", "price": "260 000 ₽", "placement": "center", "image": "assets/art/09-eye-vortex.webp", "thumb": "assets/art/09-eye-vortex-thumb.webp", "detailUrl": "artwork-eye-vortex.html", "scene": {"x": 0, "y": 0.2, "z": -54, "ry": 0, "width": 3.8, "height": 3.8}, "note": "Цветовые поля сходятся к глазу как к центру наблюдения.", "intent": "Внимание, видение, переход от хаоса к ясной картине."}, {"id": "tm-art-10", "slug": "gold-blue-gate", "title": "Кодовые врата", "subtitle": "Золотые линии и синий центр", "shape": "wide", "price": "380 000 ₽", "placement": "right", "image": "assets/art/10-gold-blue-gate.webp", "thumb": "assets/art/10-gold-blue-gate-thumb.webp", "detailUrl": "artwork-gold-blue-gate.html", "scene": {"x": 8.6, "y": 0.2, "z": -60, "ry": -70, "width": 4.6, "height": 2.9}, "note": "Широкая работа с золотой фактурой, синим центром и декоративным знаком.", "intent": "Порог, переход, настройка пространства под новый этап."}]</script>
+<script type="module" src="gallery-3d.js"></script>
+
+
+<aside class="purchase-drawer" id="purchaseDrawer" aria-hidden="true" aria-label="Заявка на покупку картины">
+  <div class="purchase-drawer__shade" data-close-purchase></div>
+  <form class="purchase-drawer__panel">
+    <button class="icon-close" type="button" data-close-purchase aria-label="Закрыть">×</button>
+    <span class="eyebrow">Запрос на покупку</span>
+    <h2>Забронировать картину</h2>
+    <p>Оставьте контакты, чтобы согласовать наличие, формат, персональный код, доставку и способ оплаты.</p>
+    <label>Картина<input name="artwork" id="purchaseArtwork" value="Гармония и чувственность"></label>
+    <label>Имя<input name="name" placeholder="Ваше имя"></label>
+    <label>Телефон или Telegram<input name="contact" placeholder="+7 ... / @username"></label>
+    <label>Комментарий<textarea name="message" rows="4" placeholder="Какая работа интересна и какой запрос хотите заложить в код"></textarea></label>
+    <button class="gold-button" type="button" data-copy-request>Сформировать текст заявки</button>
+    <small>После заявки с вами согласуют наличие работы, персональную настройку, доставку и удобный способ оплаты.</small>
+  </form>
+</aside>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>О Татьяне Мунн | галерея энергетических картин</title>
+  <meta name="description" content="О Татьяне Мунн и авторском подходе к фактурным картинам с персональным кодом.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://moonn.ru/art-gallery/about">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://moonn.ru/art-gallery/about">
+  <meta property="og:title" content="О Татьяне Мунн | галерея энергетических картин">
+  <meta property="og:description" content="О Татьяне Мунн и авторском подходе к фактурным картинам с персональным кодом.">
+  <meta property="og:image" content="assets/tatiana_munn_gallery_concept.webp">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ArtGallery", "name": "Галерея энергетических картин Татьяны Мунн", "url": "https://moonn.ru/art-gallery/about", "founder": {"@type": "Person", "name": "Татьяна Мунн"}, "description": "О Татьяне Мунн и авторском подходе к фактурным картинам с персональным кодом."}</script>
+  
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Галерея Татьяны Мунн">
+    <span class="brand-mark">TM</span>
+    <span><b>Татьяна Мунн</b><small>галерея энергетических картин</small></span>
+  </a>
+  <nav class="site-nav" aria-label="Основная навигация"><a class="" href="index.html">Галерея</a>
+<a class="" href="catalog.html">Каталог</a>
+<a class="" href="code.html">Индивидуальный код</a>
+<a class="is-active" href="about.html">О Татьяне</a>
+<a class="" href="contacts.html">Контакты</a></nav>
+  <button class="gold-button compact" data-open-purchase>Купить картину</button>
+</header>
+
+<main class="page-shell">
+  <section class="page-hero">
+    <span class="eyebrow">О художнике</span>
+    <h1>Татьяна Мунн</h1>
+    <p>Татьяна Мунн создаёт фактурные картины, где цвет, символ, число и ручная работа собираются в персональный арт-объект для пространства владельца.</p>
+  </section>
+  <section class="content-grid">
+    <article><h2>Подход</h2><p>Работы строятся вокруг запроса, визуального ритма, фактуры и индивидуального кода. Сайт показывает этот путь как частную прогулку по галерее.</p></article>
+    <article><h2>Формат</h2><p>Картины могут быть выбраны из готовой коллекции или настроены под человека. Детали согласуются перед покупкой.</p></article>
+  </section>
+</main>
+
+
+<aside class="purchase-drawer" id="purchaseDrawer" aria-hidden="true" aria-label="Заявка на покупку картины">
+  <div class="purchase-drawer__shade" data-close-purchase></div>
+  <form class="purchase-drawer__panel">
+    <button class="icon-close" type="button" data-close-purchase aria-label="Закрыть">×</button>
+    <span class="eyebrow">Запрос на покупку</span>
+    <h2>Забронировать картину</h2>
+    <p>Оставьте контакты, чтобы согласовать наличие, формат, персональный код, доставку и способ оплаты.</p>
+    <label>Картина<input name="artwork" id="purchaseArtwork" value="Гармония и чувственность"></label>
+    <label>Имя<input name="name" placeholder="Ваше имя"></label>
+    <label>Телефон или Telegram<input name="contact" placeholder="+7 ... / @username"></label>
+    <label>Комментарий<textarea name="message" rows="4" placeholder="Какая работа интересна и какой запрос хотите заложить в код"></textarea></label>
+    <button class="gold-button" type="button" data-copy-request>Сформировать текст заявки</button>
+    <small>После заявки с вами согласуют наличие работы, персональную настройку, доставку и удобный способ оплаты.</small>
+  </form>
+</aside>
+
+<script src="app.js"></script>
+</body>
+</html>

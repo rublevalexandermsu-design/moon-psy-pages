@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Индивидуальный код для картины Татьяны Мунн</title>
+  <meta name="description" content="Форма индивидуального кода для картины Татьяны Мунн: ФИО, дата рождения, время рождения и запрос.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://moonn.ru/art-gallery/code">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://moonn.ru/art-gallery/code">
+  <meta property="og:title" content="Индивидуальный код для картины Татьяны Мунн">
+  <meta property="og:description" content="Форма индивидуального кода для картины Татьяны Мунн: ФИО, дата рождения, время рождения и запрос.">
+  <meta property="og:image" content="assets/tatiana_munn_gallery_concept.webp">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ArtGallery", "name": "Галерея энергетических картин Татьяны Мунн", "url": "https://moonn.ru/art-gallery/code", "founder": {"@type": "Person", "name": "Татьяна Мунн"}, "description": "Форма индивидуального кода для картины Татьяны Мунн: ФИО, дата рождения, время рождения и запрос."}</script>
+  
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Галерея Татьяны Мунн">
+    <span class="brand-mark">TM</span>
+    <span><b>Татьяна Мунн</b><small>галерея энергетических картин</small></span>
+  </a>
+  <nav class="site-nav" aria-label="Основная навигация"><a class="" href="index.html">Галерея</a>
+<a class="" href="catalog.html">Каталог</a>
+<a class="is-active" href="code.html">Индивидуальный код</a>
+<a class="" href="about.html">О Татьяне</a>
+<a class="" href="contacts.html">Контакты</a></nav>
+  <button class="gold-button compact" data-open-purchase>Купить картину</button>
+</header>
+
+<main class="page-shell code-page">
+  <section class="page-hero code-hero">
+    <span class="eyebrow">Персональная формула</span>
+    <h1>Индивидуальный код для картины</h1>
+    <p>Введите данные и запрос, чтобы получить персональный числовой код для выбранной картины.</p>
+  </section>
+  <section class="code-layout">
+    <form class="premium-form" id="codeForm">
+      <label>Фамилия, имя, отчество<input id="fio" value="Иванов Иван Иванович"></label>
+      <label>Дата рождения<input id="birth" type="date" value="1985-05-12"></label>
+      <label>Время рождения<input id="birthTime" type="time" value="14:30"></label>
+      <label>Запрос<textarea id="request" rows="4">гармония, ресурс, реализация</textarea></label>
+      <button class="gold-button" type="submit">Составить код</button>
+    </form>
+    <article class="code-result-card">
+      <span class="eyebrow">Ваш код</span>
+      <strong class="js-code">516 108 369</strong>
+      <p>Этот блок связан с оборотом картины и сертификатом владельца.</p>
+    </article>
+  </section>
+</main>
+
+
+<aside class="purchase-drawer" id="purchaseDrawer" aria-hidden="true" aria-label="Заявка на покупку картины">
+  <div class="purchase-drawer__shade" data-close-purchase></div>
+  <form class="purchase-drawer__panel">
+    <button class="icon-close" type="button" data-close-purchase aria-label="Закрыть">×</button>
+    <span class="eyebrow">Запрос на покупку</span>
+    <h2>Забронировать картину</h2>
+    <p>Оставьте контакты, чтобы согласовать наличие, формат, персональный код, доставку и способ оплаты.</p>
+    <label>Картина<input name="artwork" id="purchaseArtwork" value="Гармония и чувственность"></label>
+    <label>Имя<input name="name" placeholder="Ваше имя"></label>
+    <label>Телефон или Telegram<input name="contact" placeholder="+7 ... / @username"></label>
+    <label>Комментарий<textarea name="message" rows="4" placeholder="Какая работа интересна и какой запрос хотите заложить в код"></textarea></label>
+    <button class="gold-button" type="button" data-copy-request>Сформировать текст заявки</button>
+    <small>После заявки с вами согласуют наличие работы, персональную настройку, доставку и удобный способ оплаты.</small>
+  </form>
+</aside>
+
+<script src="app.js"></script>
+</body>
+</html>
