@@ -1302,3 +1302,36 @@ Append-only project history for `moon-psy-site`.
   - A temporary QA script used stale selectors for the flip/code controls; corrected the selectors and added a stable `#codeValue` id.
 - Follow-up rule:
   - For generated public frontend packages, always scan the generated output for accidental concept/mockup layers, local-address references and internal wording after regeneration, not only the source generator.
+
+## 2026-05-10 — Tatiana Moonn Art Gallery 3D Material Correction
+
+- Project: Moonn / Tatiana Moonn art gallery.
+- Branch: `codex/moonn-art-gallery`.
+- Trigger: user reviewed the 3D gallery again and flagged that wall plaques, floor, walls, ceiling, entry doors, benches, pedestal and artwork relief still looked too flat or like old 2D/game-style assets.
+- Route:
+  - Continued the existing art-gallery workstream and kept `scripts/build_tatiana_munn_art_gallery_site.py` as the canonical source.
+  - Used newly supplied generated scene images as source assets for the gallery environment, with Latin filenames under `assets/scene/`.
+  - Kept the bench model sheet as a reference only because it contains working labels and a white presentation background unsuitable for the public scene.
+- Changes:
+  - Added scene assets for parquet floor, wall panel, coffered ceiling, ornate entry doors and blue tufted bench reference.
+  - Replaced the flat sports-like floor with a glossy herringbone/parquet material.
+  - Replaced repeated wall-door texture misuse with dark base walls plus separate clean lighted wall panels behind artworks.
+  - Added procedural panel trims, ceiling lights, stronger spotlighting and material bump maps.
+  - Moved plaque positions up, improved plaque canvas resolution and removed artwork "breathing"; motion is now applied as subtle camera bob only.
+  - Added artwork bump/displacement maps and sheen overlays for more tactile canvas relief.
+  - Raised and reshaped the central pedestal and corrected the center plaque so it does not sink into the floor.
+  - Reworked benches to use geometry, tufting marks, gold trim and straightened shorter legs rather than stretching a 2D bench image onto a box.
+  - Regenerated `docs/tatiana-munn-art-gallery/` and `output/tatiana-munn-art-gallery-site.zip`.
+- Verification:
+  - Generator compiles with `python -m py_compile`.
+  - Static build regenerated successfully with `10` artworks.
+  - Local page `http://127.0.0.1:8765/` returned `200`.
+  - Playwright QA screenshots were saved under `output/playwright/art-gallery-3d-upgrade-3/`.
+  - Browser console/page-error log is empty.
+  - Public generated-site scan passed for localhost, internal workflow wording, `MVP`/`прототип`, and single-`н` visible `Татьяна Мун` leaks.
+- Incident / correction:
+  - The first attempt mapped the supplied door image as a repeated side-wall texture, causing door handles to appear behind paintings on the left wall.
+  - Fixed by remapping wall panels to the clean lit wall image and restricting door imagery to the entry-door overlay only.
+  - Another weak assumption was applying product-like object motion to the painting groups. This made the paintings and plaques feel as if they were jumping; fixed by keeping product geometry static and moving only the camera.
+- Follow-up rule:
+  - For premium product 3D scenes, do not stretch full reference images onto arbitrary boxes or walls. Use clean texture crops only for matching surfaces, keep working/model sheets out of public assets, and validate by screenshot before reporting.
