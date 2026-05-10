@@ -1191,3 +1191,36 @@ Append-only project history for `moon-psy-site`.
   - Demote the previous `Сайт.6..резервный.последний.копия.html` candidate.
 - Artifact updated:
   - `docs/moonn-homepage-experiment-plan-2026-05-10.md`.
+
+## 2026-05-10 — Moonn Psychologist SEO Landing Published
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user approved building and publishing the additional SEO/AI/EE optimized page from `Окончательный.код.сай..html`, keeping the current homepage intact.
+- Route:
+  - Continued the existing additional semantic URL `https://moonn.ru/psiholog-tatiana-moonn` instead of replacing `/` or creating a duplicate domain.
+  - Cleaned the local HTML into a deterministic generated artifact.
+  - Published through the native Tilda `T123` record `rec1863545891` on page `115095616`, not through a HEAD takeover.
+- Changes:
+  - Removed old visible setup hints and legacy payment modal markers.
+  - Replaced consultation payment CTAs with direct iClient/YCLIENTS booking: `https://n461584.yclients.com/`.
+  - Replaced old embedded YouTube video IDs with the current YouTube channel link: `https://youtube.com/channel/UCyAQlNoDtg7En6BdwbctSrQ`.
+  - Added SEO title, description, canonical, JSON-LD and Yandex Metrika click goals for iClient/YouTube/reviews.
+- Artifacts:
+  - `scripts/build_moonn_psychologist_landing_experiment.py`
+  - `docs/psychologist-tatiana-munn-landing/tilda-html-block-final.html`
+  - `docs/psychologist-tatiana-munn-landing/tilda-page-final.html`
+  - `docs/psychologist-tatiana-munn-landing/tilda-head-seo-final.html`
+  - `docs/psychologist-tatiana-munn-landing/tilda-head-loader-final.html`
+  - `docs/psychologist-tatiana-munn-landing/quality-report.json`
+  - `docs/psychologist-tatiana-munn-landing/publication-report-2026-05-10.md`
+- Verification:
+  - Local quality report: title/description/canonical present, H1 count `1`, JSON-LD count `1`, iClient present, YouTube channel present, old YouTube embeds `0`, visible/raw internal hits `0`.
+  - Tilda API after publish: `meta_title` and `meta_descr` updated; HTML contains iClient and YouTube channel; old setup hint and old YouTube embed IDs absent.
+  - Live HTML `https://moonn.ru/psiholog-tatiana-moonn?qa=final`: status `200`, title updated, canonical correct, H1 count `1`, JSON-LD count `3`, iClient links `17`, YouTube channel present, old YouTube IDs absent, legacy payment modal markers absent.
+  - Desktop headless Chrome visual QA confirmed the new page renders publicly with the Moonn cookie/compliance layer.
+- Commits:
+  - `4c38497` — `Add Moonn psychologist SEO landing artifact`
+  - `72ac8de` — `Add Tilda loader for psychologist landing`
+- Follow-up rule:
+  - For this page type, prefer native Tilda `T123` block replacement over HEAD document replacement when the page already consists of a single canonical HTML block. HEAD loaders remain fallback artifacts, not the primary publication route.
