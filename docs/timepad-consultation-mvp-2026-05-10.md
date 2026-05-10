@@ -41,7 +41,7 @@ Initial slot:
 
 Location:
 
-`Москва, метро Марьина Роща / онлайн. Точный адрес кабинета или ссылка для онлайн-встречи направляются после оплаты и подтверждения записи.`
+`Москва, Цветной бульвар, д. 19, стр. 4`
 
 Category:
 
@@ -102,27 +102,52 @@ Future automation candidate:
 
 `Timepad order_change webhook -> order registry -> email/Telegram notification -> iClient/YCLIENTS booking/blocking`.
 
+## Recurring Schedule Decision
+
+The single event `3973843` should become the first event of a weekly consultation schedule, not a set of manually duplicated unrelated events.
+
+Target schedule:
+
+- Weekly from 2026-05-18 through 2026-12-28 inclusive.
+- Baseline time: Monday, 12:00-14:00 MSK.
+- Each slot must keep capacity `1`.
+- Prefer Timepad's calendar-style schedule display so visitors can choose a date visually.
+- The slot list must be reconciled with iClient/YCLIENTS before publishing many dates.
+
+Reason:
+
+- Timepad represents repeating events as a master event with separate session events.
+- Mass-creating many independent copies through API would create moderation and duplicate-management risk.
+- Timepad's help article says the schedule/master-event option can be enabled by support after sending a link to the first event of the series.
+
 ## Support Message Draft
 
 Subject:
 
-`Просим проверить и опубликовать консультацию психолога Татьяны Мунн`
+`Просим проверить консультацию психолога Татьяны Мунн и подключить расписание`
 
 Body:
 
 ```text
 Здравствуйте!
 
-Просим проверить и одобрить публикацию мероприятия в личном кабинете организатора «Психолог Татьяна Мунн (МГУ) - "Быстрая Психология"»:
+Просим проверить мероприятие в личном кабинете организатора «Психолог Татьяна Мунн (МГУ) - "Быстрая Психология"» и помочь подключить к нему расписание:
 
 Психологическая консультация с Татьяной Мунн
 https://moonn.timepad.ru/event/3973843/
 
-Это не лекция и не дубль ранее опубликованных бесплатных мероприятий. Это отдельная страница записи на индивидуальную платную консультацию психолога Татьяны Мунн: онлайн или очно в Москве.
+Это не лекция и не дубль ранее опубликованных бесплатных мероприятий. Это отдельная страница записи на индивидуальную платную консультацию психолога Татьяны Мунн: онлайн или очно в Москве по адресу Цветной бульвар, д. 19, стр. 4.
 
 Запись, выбор билета и оплата проходят через Timepad. Слот консультации настроен как ограниченная запись с лимитом мест, чтобы не было двойного бронирования. После оплаты организатор подтверждает встречу и переносит запись в рабочий календарь специалиста.
 
-Просим проверить мероприятие и разрешить его показ/одобрение. Если нужно скорректировать формулировки, формат или категорию, пожалуйста, подскажите, что именно лучше изменить, чтобы страница соответствовала правилам Timepad.
+Просим:
+
+1. Проверить и одобрить мероприятие.
+2. Подключить к нему функцию расписания / мастер-события, чтобы посетитель мог выбрать дату консультации.
+3. Настроить еженедельные слоты по понедельникам с 12:00 до 14:00 с 18 мая 2026 года по 28 декабря 2026 года включительно, с лимитом 1 место на каждый слот.
+4. По возможности включить отображение расписания в виде календаря, чтобы посетитель мог выбрать удобную дату на странице мероприятия.
+
+Если лучше выбрать другой технический формат внутри Timepad, пожалуйста, подскажите, что именно нужно изменить, чтобы страница соответствовала правилам Timepad и корректно работала как запись на платные консультации.
 
 Спасибо!
 ```
@@ -142,3 +167,4 @@ Still required:
 - iClient/YCLIENTS slot reconciliation.
 - Support message submission or reply from Timepad.
 - Afisha/moderation result check after Timepad support response.
+- Timepad support should enable recurring schedule/master-event mode instead of creating many independent duplicate events.

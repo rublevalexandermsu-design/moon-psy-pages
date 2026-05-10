@@ -1102,3 +1102,22 @@ Append-only project history for `moon-psy-site`.
   - iClient/YCLIENTS slot reconciliation remains required before scaling beyond this first slot.
 - Follow-up rule:
   - Timepad publication is not fully complete at `access_status=public`; for business readiness, also verify paid prices on the public page, poster, moderation status, and calendar/slot reconciliation.
+
+## 2026-05-10 — Moonn Timepad Consultation Address And Recurring Schedule Path
+
+- Project: Moonn / Tatyana Munn site and Timepad promotion.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user noticed that the public Timepad event showed an ambiguous place (`метро Марьина Роща / онлайн`) and asked to show a real address on the map; user also asked how participants can choose dates through the end of the year.
+- Fix:
+  - Updated Timepad event `3973843` through API to use `Москва, Цветной бульвар, д. 19, стр. 4`.
+  - Added the same address to the public description.
+- Verification:
+  - API read-back confirmed city `Москва`, address `Москва, Цветной бульвар, д. 19, стр. 4`, `status=ok`, `access_status=public`, registration open, paid prices `6000/10000/40000`.
+  - Public HTML check returned `200`, contains the address, no longer contains the vague `метро Марьина Роща / онлайн` wording, contains a map link, and still contains paid prices.
+- Recurring schedule decision:
+  - Do not mass-create many independent weekly duplicate events by API.
+  - Use Timepad's master-event/schedule mechanism for weekly consultation slots from 2026-05-18 through 2026-12-28 inclusive.
+  - Ask Timepad to use calendar-style schedule display if available, so visitors can choose a date visually.
+  - Official Timepad help says the schedule/master-event option is connected by writing to support with the first event link; this matches the support route for the current event.
+- Follow-up rule:
+  - For paid consultation scheduling, prefer one Timepad master event with session slots and capacity `1` over many standalone cloned events; independent copies create moderation, duplicate, and calendar-sync risk.
