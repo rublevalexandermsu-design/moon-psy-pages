@@ -16,27 +16,32 @@ const flipButton = document.getElementById('flipButton');
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'high-performance' });
 renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
 renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.46;
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x0a0d13);
-scene.fog = new THREE.FogExp2(0x080c14, 0.006);
+scene.background = new THREE.Color(0x151c26);
+scene.fog = new THREE.FogExp2(0x0c121b, 0.0037);
 
 const camera = new THREE.PerspectiveCamera(54, 1, 0.1, 120);
 camera.position.set(0, 1.2, 5.5);
 
-scene.add(new THREE.HemisphereLight(0xd7f6ff, 0x24130d, 1.0));
-const warm = new THREE.PointLight(0xffc56f, 2.25, 48);
+scene.add(new THREE.HemisphereLight(0xf3ffff, 0x47291a, 1.58));
+scene.add(new THREE.AmbientLight(0xfff0d8, 0.38));
+const warm = new THREE.PointLight(0xffcf86, 4.1, 62);
 warm.position.set(0, 5, -18);
 scene.add(warm);
-const cool = new THREE.PointLight(0x5fd6df, 1.45, 40);
+const cool = new THREE.PointLight(0x8cebff, 1.95, 52);
 cool.position.set(-4, 3, -38);
 scene.add(cool);
 
 const loader = new THREE.TextureLoader();
 const clickable = [];
 const frames = [];
+const panelLights = [];
+const artworkLights = [];
 
 function mat(color, roughness = 0.8, metalness = 0.05) {
   return new THREE.MeshStandardMaterial({ color, roughness, metalness });
@@ -212,6 +217,18 @@ function makeSideWallPanel(side, z) {
   makeBox(0.055, 5.45, 0.08, trim, x + normalOffset * 1.8, 1.1, z + 2.72);
   makeBox(0.055, 0.08, 5.45, trim, x + normalOffset * 1.8, 3.82, z);
   makeBox(0.055, 0.08, 5.45, trim, x + normalOffset * 1.8, -1.62, z);
+  const lights = [];
+  [-1.45, 0, 1.45].forEach((offset) => {
+    const lampGlow = new THREE.PointLight(0xffd89a, 0.62, 8.5);
+    lampGlow.position.set(x + (isLeft ? 0.72 : -0.72), 3.32, z + offset);
+    scene.add(lampGlow);
+    lights.push(lampGlow);
+    const lamp = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.13, 0.16, 18), mat(0xd8aa5d, 0.34, 0.62));
+    lamp.rotation.z = Math.PI / 2;
+    lamp.position.set(x + (isLeft ? 0.16 : -0.16), 3.38, z + offset);
+    scene.add(lamp);
+  });
+  panelLights.push({ z, lights });
 }
 
 artworks.forEach((art) => {
@@ -220,7 +237,7 @@ artworks.forEach((art) => {
 });
 
 for (let z = -8; z > -72; z -= 8) {
-  const light = new THREE.PointLight(0xffcf86, 1.0, 18);
+  const light = new THREE.PointLight(0xffcf86, 1.85, 25);
   light.position.set(0, 4.3, z);
   scene.add(light);
   makeBox(17.4, 0.08, 0.16, mat(0x5a3e24, 0.45, 0.44), 0, 5.05, z);
@@ -285,7 +302,7 @@ makeBench(4.7, -7.2);
 
 function textTexture(title, subtitle) {
   const c = document.createElement('canvas');
-  c.width = 1536; c.height = 640;
+  c.width = 2200; c.height = 820;
   const ctx = c.getContext('2d');
   const bg = ctx.createLinearGradient(0, 0, c.width, c.height);
   bg.addColorStop(0, '#101722');
@@ -300,16 +317,19 @@ function textTexture(title, subtitle) {
   ctx.lineWidth = 3;
   ctx.strokeRect(52, 52, c.width - 104, c.height - 104);
   ctx.fillStyle = '#f4d38a';
-  ctx.font = '700 72px Georgia';
+  ctx.font = '800 94px Georgia';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'alphabetic';
-  wrap(ctx, title, c.width / 2, 170, 1180, 78);
-  ctx.fillStyle = '#d6ccd7';
-  ctx.font = '42px Segoe UI';
-  wrap(ctx, subtitle, c.width / 2, 380, 1220, 54);
+  wrap(ctx, title, c.width / 2, 220, 1680, 104);
+  ctx.fillStyle = '#f0eaf0';
+  ctx.font = '600 50px Segoe UI';
+  wrap(ctx, subtitle, c.width / 2, 500, 1760, 68);
   const texture = new THREE.CanvasTexture(c);
   texture.colorSpace = THREE.SRGBColorSpace;
-  texture.anisotropy = Math.min(renderer.capabilities.getMaxAnisotropy?.() || 8, 8);
+  texture.generateMipmaps = false;
+  texture.minFilter = THREE.LinearFilter;
+  texture.magFilter = THREE.LinearFilter;
+  texture.anisotropy = Math.min(renderer.capabilities.getMaxAnisotropy?.() || 8, 16);
   return texture;
 }
 
@@ -335,9 +355,12 @@ function addArtwork(art, index) {
     map: t,
     bumpMap: t,
     displacementMap: t,
+    emissive: 0xffffff,
+    emissiveMap: t,
+    emissiveIntensity: 0.16,
     bumpScale: 0.065,
     displacementScale: art.shape === 'round' ? 0.035 : 0.026,
-    roughness: 0.50,
+    roughness: 0.46,
     metalness: 0.03,
   });
   const w = art.scene.width;
@@ -370,37 +393,41 @@ function addArtwork(art, index) {
   frames.push(group);
 
   const plaqueTexture = textTexture(art.title, art.intent);
-  const plaqueWidth = Math.min(3.9, w + 1.0);
-  const isPedestal = art.placement === 'pedestal' || art.placement === 'center';
-  const plaqueHeight = isPedestal ? 0.66 : 0.74;
-  const plaqueY = isPedestal ? -h / 2 + 0.18 : -h / 2 - 0.46;
-  const plaqueZ = isPedestal ? 0.92 : 0.16;
+  const plaqueWidth = Math.min(4.35, w + 1.16);
+  const isMainPedestal = art.placement === 'pedestal';
+  const isCenterWork = art.placement === 'center';
+  const plaqueHeight = isMainPedestal ? 0.84 : 0.92;
+  const plaqueY = isMainPedestal ? -h / 2 - 0.16 : (isCenterWork ? -h / 2 - 0.58 : -h / 2 - 0.46);
+  const plaqueZ = isMainPedestal ? 1.18 : (isCenterWork ? 0.26 : 0.16);
   const plaqueBack = new THREE.Mesh(new THREE.BoxGeometry(plaqueWidth + 0.16, plaqueHeight + 0.18, 0.12), mat(0x0f1118, 0.45, 0.38));
   plaqueBack.position.set(0, plaqueY, plaqueZ - 0.05);
   group.add(plaqueBack);
-  const plaque = new THREE.Mesh(new THREE.PlaneGeometry(plaqueWidth, plaqueHeight), new THREE.MeshBasicMaterial({ map: plaqueTexture }));
+  const plaque = new THREE.Mesh(new THREE.PlaneGeometry(plaqueWidth, plaqueHeight), new THREE.MeshBasicMaterial({ map: plaqueTexture, toneMapped: false }));
   plaque.position.set(0, plaqueY, plaqueZ + 0.03);
   group.add(plaque);
 
-  if (art.placement === 'pedestal' || art.placement === 'center') {
+  if (isMainPedestal) {
     const pedestalMat = mat(0x1a1210, 0.36, 0.42);
-    const pedestal = new THREE.Mesh(new THREE.CylinderGeometry(w * 0.48, w * 0.56, 1.08, 72), pedestalMat);
-    pedestal.position.set(0, -h / 2 - 0.36, 0.18);
+    const pedestal = new THREE.Mesh(new THREE.CylinderGeometry(w * 0.48, w * 0.56, 0.82, 72), pedestalMat);
+    pedestal.position.set(0, -h / 2 - 0.72, 0.0);
     pedestal.castShadow = true;
     group.add(pedestal);
-    const rimTop = new THREE.Mesh(new THREE.TorusGeometry(w * 0.50, 0.035, 10, 72), mat(0xd8aa5d, 0.32, 0.68));
-    rimTop.rotation.x = Math.PI / 2;
-    rimTop.position.set(0, -h / 2 + 0.18, 0.18);
-    group.add(rimTop);
-    const rimBottom = rimTop.clone();
-    rimBottom.position.y = -h / 2 - 0.88;
-    group.add(rimBottom);
+    [-0.32, -1.08].forEach((rimY) => {
+      const rim = new THREE.Mesh(new THREE.TorusGeometry(w * 0.50, 0.028, 10, 72), mat(0xd8aa5d, 0.32, 0.68));
+      rim.rotation.x = Math.PI / 2;
+      rim.position.set(0, -h / 2 + rimY, 0.0);
+      group.add(rim);
+    });
   }
 
   group.position.set(art.scene.x, art.scene.y, art.scene.z);
   group.rotation.y = THREE.MathUtils.degToRad(art.scene.ry);
   group.userData.baseY = group.position.y;
   group.userData.index = index;
+  const focusLight = new THREE.PointLight(0xffddb0, 0.38, 9.5);
+  focusLight.position.set(0, h / 2 + 0.78, 1.15);
+  group.add(focusLight);
+  artworkLights.push({ group, light: focusLight });
   scene.add(group);
 }
 
@@ -539,11 +566,22 @@ function animate() {
   const door = Math.min(1, current / 0.11);
   leftDoor.rotation.y = -door * 1.25;
   rightDoor.rotation.y = door * 1.25;
+  panelLights.forEach(({ z, lights }) => {
+    const focus = Math.max(0, 1 - Math.abs(z - camera.position.z) / 8.5);
+    lights.forEach((light) => {
+      light.intensity = 0.68 + focus * 2.45;
+      light.distance = 7.5 + focus * 3.5;
+    });
+  });
   frames.forEach((group, index) => {
     const distance = Math.abs(group.position.z - camera.position.z);
     const active = distance < 7;
     group.position.y = group.userData.baseY;
     group.scale.setScalar(active ? 1.012 : 1);
+  });
+  artworkLights.forEach(({ group, light }) => {
+    const focus = Math.max(0, 1 - Math.abs(group.position.z - camera.position.z) / 7.2);
+    light.intensity = 0.52 + focus * 2.35;
   });
   renderer.render(scene, camera);
 }

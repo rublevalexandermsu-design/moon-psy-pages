@@ -1335,3 +1335,30 @@ Append-only project history for `moon-psy-site`.
   - Another weak assumption was applying product-like object motion to the painting groups. This made the paintings and plaques feel as if they were jumping; fixed by keeping product geometry static and moving only the camera.
 - Follow-up rule:
   - For premium product 3D scenes, do not stretch full reference images onto arbitrary boxes or walls. Use clean texture crops only for matching surfaces, keep working/model sheets out of public assets, and validate by screenshot before reporting.
+
+## 2026-05-11 — Tatiana Moonn Art Gallery Door, Lighting And Plaque Fix
+
+- Project: Moonn / Tatiana Moonn art gallery.
+- Branch: `codex/moonn-art-gallery`.
+- Trigger: user reviewed the latest local gallery and flagged that the entry door handles were not mirrored toward the center opening, the gallery became too dark, artwork lights should activate when approaching a painting, and the two center paintings had plaque text visually blocked by stand/floor geometry.
+- Route:
+  - Continued the existing art-gallery workstream and edited the canonical generator, not the generated HTML by hand.
+  - Kept the static package offline-safe; no payment/provider integration was added.
+- Changes:
+  - Generated `gallery-door-ornate-mirror.webp` and assigned mirrored/original door assets to the left/right entry leaves; disabled the duplicate CSS handle overlay.
+  - Increased renderer exposure and ambient/hemisphere/ceiling light intensity, added artwork self-illumination and dynamic warm focus lights for wall panels and individual paintings.
+  - Raised central/pedestal artworks so their plaques stay above the parquet plane.
+  - Removed center-art pedestal creation and lowered the main pedestal rim so plaque text is no longer covered by stand geometry.
+  - Rebuilt plaque textures at higher canvas resolution with stronger type and disabled mipmap blur for readability.
+  - Regenerated `docs/tatiana-munn-art-gallery/` and `output/tatiana-munn-art-gallery-site.zip`.
+- Verification:
+  - Static build regenerated successfully with `10` artworks.
+  - Local page `http://127.0.0.1:8765/` returned `200`.
+  - Playwright QA screenshots were saved under `output/playwright/art-gallery-door-lighting-fix-2/`.
+  - Browser console/page-error log is empty.
+  - Public page text scan passed for localhost, `127.0.0.1`, `MVP`, `прототип`, `не дубль` and `технический`.
+- Incident / correction:
+  - Root cause of blocked center plaque text was geometric, not only styling: center artwork plaques were placed below the floor plane while the central pedestal rim also sat in front of the label area.
+  - Root cause of the door issue was reusing a single baked door image for both leaves and adding a separate CSS handle layer, which made handle placement look inconsistent.
+- Follow-up rule:
+  - For generated 3D product scenes, verify hero entry, mid-gallery lighting and every center/pedestal label after each geometry change; visual labels must clear the floor plane and nearby decorative geometry before the task is reported as ready.
