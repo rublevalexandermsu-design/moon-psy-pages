@@ -1121,3 +1121,20 @@ Append-only project history for `moon-psy-site`.
   - Official Timepad help says the schedule/master-event option is connected by writing to support with the first event link; this matches the support route for the current event.
 - Follow-up rule:
   - For paid consultation scheduling, prefer one Timepad master event with session slots and capacity `1` over many standalone cloned events; independent copies create moderation, duplicate, and calendar-sync risk.
+
+## 2026-05-10 — Moonn Timepad Consultation Weekend Schedule Correction
+
+- Project: Moonn / Tatyana Munn site and Timepad promotion.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user corrected the schedule assumption: Tatyana currently consults on Saturday and Sunday, not Monday; a single fixed slot does not let visitors choose a suitable time.
+- Fix:
+  - Updated Timepad event `3973843` through API from `2026-05-18 12:00-14:00` to `2026-05-16 12:00-14:00`.
+  - Updated public short and full descriptions to say consultations are held on Saturdays and Sundays.
+  - Updated the support request model: ask Timepad for weekend schedule/master-event slots with selectable dates and times, not one Monday recurring slot.
+- Verification:
+  - API read-back confirmed `starts_at=2026-05-16T12:00:00+03:00`, `ends_at=2026-05-16T14:00:00+03:00`, sale end `2026-05-16T11:30:00+03:00`, address `Москва, Цветной бульвар, д. 19, стр. 4`.
+  - Public HTML check returned `200`, contains `16 мая`, weekend wording, address and paid prices, and no longer contains the previous `18 мая` / Monday wording.
+- Tooling note:
+  - Gmail connector install/activation was requested but not completed in this session, so email sending is still blocked without manual browser use.
+- Follow-up rule:
+  - Consultation schedule assumptions must be verified against the current iClient/YCLIENTS calendar before publication or support submission; Timepad support requests should ask for multiple selectable weekend slots.
