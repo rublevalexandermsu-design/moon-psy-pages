@@ -1050,3 +1050,31 @@ Append-only project history for `moon-psy-site`.
   - `bc10db7` — `Render Yandex review excerpts from scan`
 - Follow-up rule:
   - Review-page releases must validate semantic fidelity (`exact excerpt` vs `generated summary`), source-link type (`provider profile` vs `reviewer profile` vs `verified review permalink`), raw HEAD cleanliness, and rendered browser output before reporting completion.
+
+## 2026-05-10 — Moonn Timepad Consultation MVP Draft Created
+
+- Project: Moonn / Tatyana Munn site and Timepad promotion.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user approved a minimal MVP for paid psychological consultations through Timepad, with email/manual notification for Rublev and later iClient/YCLIENTS mirroring.
+- Strategic decision:
+  - Use Timepad as the visible booking/payment layer, not a page that primarily sends users to iClient/YCLIENTS, because Timepad moderation may treat an external paid-booking link as bypass.
+  - Keep iClient/YCLIENTS as the specialist's working calendar, but mirror paid Timepad orders manually in the MVP.
+  - Future stronger architecture: Timepad `order_change` webhook -> registry/notification -> iClient/YCLIENTS booking/blocking.
+- Action:
+  - Created draft Timepad event in Tatyana Munn's personal organization `426753` / `moonn`.
+  - Draft event: `https://moonn.timepad.ru/event/3973843/`.
+  - Status verified by API: `access_status=draft`, `moderation_status=not_moderated`.
+  - Initial placeholder slot: 2026-05-18 12:00-14:00 MSK.
+  - Tickets: 2-hour consultation `10 000 ₽`, 1-hour consultation `6 000 ₽`, package of 5 consultations `40 000 ₽`.
+- Artifact:
+  - `docs/timepad-consultation-mvp-2026-05-10.md`
+- Verification:
+  - Timepad API returned event id `3973843`.
+  - Read-back via Timepad API confirmed organization `426753`, category `Психология и самопознание`, draft status, location, prices and total ticket limit `1`.
+- Known limitations before publication:
+  - Poster image is not uploaded yet.
+  - Slot schedule is not yet synced against iClient/YCLIENTS.
+  - Custom registration questions need UI verification because Timepad API rejected custom `field_id` values.
+  - Event is not published and not submitted as complete.
+- Follow-up rule:
+  - Paid Timepad consultation pages are not ready until the slot schedule is checked against the specialist's working calendar and the registration/payment path is verified in the UI. API-created drafts must still pass Timepad UI checks before publication.
