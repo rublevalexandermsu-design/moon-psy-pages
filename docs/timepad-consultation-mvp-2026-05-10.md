@@ -8,6 +8,8 @@
 - Draft event: `https://moonn.timepad.ru/event/3973843/`.
 - Created at: 2026-05-10 12:04 MSK.
 - Status after creation: `access_status=draft`, `moderation_status=not_moderated`.
+- Published after poster upload: 2026-05-10 12:04-12:05 MSK.
+- Current verified status: `status=ok`, `access_status=public`, `moderation_status=not_moderated`.
 
 ## Strategic Decision
 
@@ -57,7 +59,6 @@ Event-level ticket limit:
 
 ## Known Limitations Before Publication
 
-- Poster image is not uploaded yet; user is preparing it.
 - Final slot schedule is not synced with iClient/YCLIENTS yet.
 - Custom registration questions were not added through API because Timepad rejected custom `field_id` values; add or verify fields in the Timepad UI before publication:
   - phone;
@@ -66,7 +67,27 @@ Event-level ticket limit:
   - safe optional comment;
   - personal data consent wording.
 - API returned default `buy_amount_max=30` for ticket types, but the event-level limit is `1`. Before publication, verify in the Timepad UI that a buyer cannot reserve more than one slot/order.
-- Draft has no public moderation approval and must not be treated as published.
+- Event is public on Timepad but not yet moderated into the Timepad Afisha: `moderation_status=not_moderated`.
+
+## Publication Verification - 2026-05-10
+
+API read-back:
+
+- `status=ok`.
+- `access_status=public`.
+- `moderation_status=not_moderated`.
+- `registration_data.price_min=6000`.
+- `registration_data.price_max=40000`.
+- `registration_data.tickets_limit=1`.
+- `registration_data.is_registration_open=true`.
+- Timepad copied the poster to Uploadcare: `poster_event_3973843.jpg`.
+
+Public HTTP check:
+
+- `https://moonn.timepad.ru/event/3973843/` returns `200`.
+- Public HTML contains the event title.
+- Public HTML contains the poster marker.
+- Public HTML contains paid prices `6 000`, `10 000`, and `40 000`.
 
 ## Anti-Duplicate Booking Rule
 
@@ -92,28 +113,32 @@ Body:
 ```text
 Здравствуйте!
 
-Просим проверить и опубликовать мероприятие в личном кабинете организатора «Психолог Татьяна Мунн (МГУ) - "Быстрая Психология"»:
+Просим проверить и одобрить публикацию мероприятия в личном кабинете организатора «Психолог Татьяна Мунн (МГУ) - "Быстрая Психология"»:
 
 Психологическая консультация с Татьяной Мунн
 https://moonn.timepad.ru/event/3973843/
 
 Это не лекция и не дубль ранее опубликованных бесплатных мероприятий. Это отдельная страница записи на индивидуальную платную консультацию психолога Татьяны Мунн: онлайн или очно в Москве.
 
-Запись, выбор билета и оплата проходят через Timepad. Слоты консультаций настраиваются как ограниченные записи с лимитом мест, чтобы не было двойного бронирования. После оплаты организатор подтверждает встречу и переносит запись в рабочий календарь специалиста.
+Запись, выбор билета и оплата проходят через Timepad. Слот консультации настроен как ограниченная запись с лимитом мест, чтобы не было двойного бронирования. После оплаты организатор подтверждает встречу и переносит запись в рабочий календарь специалиста.
 
-Просим проверить мероприятие и разрешить публикацию. Если нужно скорректировать формулировки, формат или категорию, пожалуйста, подскажите, что именно лучше изменить, чтобы страница соответствовала правилам Timepad.
+Просим проверить мероприятие и разрешить его показ/одобрение. Если нужно скорректировать формулировки, формат или категорию, пожалуйста, подскажите, что именно лучше изменить, чтобы страница соответствовала правилам Timepad.
 
 Спасибо!
 ```
 
 ## Publication Gate
 
-Do not publish until all checks pass:
+Completed:
 
 - Poster uploaded and visually checked.
-- Timepad draft opens in organizer UI.
-- Ticket prices and total slot limit verified in UI.
-- Registration form fields verified in UI.
-- At least one real slot checked against iClient/YCLIENTS.
-- User explicitly approves publication.
-- Support message sent only after draft URL and content are final.
+- Timepad event updated through API.
+- API confirms public status and paid registration.
+- Public URL returns `200`.
+
+Still required:
+
+- Timepad UI check of registration form fields.
+- iClient/YCLIENTS slot reconciliation.
+- Support message submission or reply from Timepad.
+- Afisha/moderation result check after Timepad support response.

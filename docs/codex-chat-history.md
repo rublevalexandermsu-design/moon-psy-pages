@@ -1078,3 +1078,27 @@ Append-only project history for `moon-psy-site`.
   - Event is not published and not submitted as complete.
 - Follow-up rule:
   - Paid Timepad consultation pages are not ready until the slot schedule is checked against the specialist's working calendar and the registration/payment path is verified in the UI. API-created drafts must still pass Timepad UI checks before publication.
+
+## 2026-05-10 — Moonn Timepad Consultation Event Published With Poster
+
+- Project: Moonn / Tatyana Munn site and Timepad promotion.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user provided a poster image for the consultation event and asked to rename it with SEO-style Latin filename, attach it to the Timepad event, publish the event, verify paid/public status, open the page, and prepare support text.
+- Actions:
+  - Copied the supplied image to `assets/timepad/tatyana-munn-psychological-consultation-msu-online-offline-moscow-timepad-2026.png`.
+  - Pushed the image to GitHub and verified CDN availability through jsDelivr.
+  - Updated Timepad event `3973843` through API with the poster and `access_status=public`.
+  - Opened the public event page in the browser.
+- Verification:
+  - Timepad API confirmed `status=ok`, `access_status=public`, `moderation_status=not_moderated`.
+  - Timepad API confirmed paid range `6000-40000`, registration open, total ticket limit `1`, and three active paid ticket types.
+  - Public URL `https://moonn.timepad.ru/event/3973843/` returned HTTP `200`.
+  - Public HTML contains event title, poster marker, and prices `6 000`, `10 000`, `40 000`.
+- Commit:
+  - `d991bfa` — `Add Timepad consultation poster`
+- Risk / limitation:
+  - The event is public but still `not_moderated`, so Timepad support/Afisha approval is not yet complete.
+  - Custom questionnaire fields still need Timepad UI verification because API rejected custom question field ids.
+  - iClient/YCLIENTS slot reconciliation remains required before scaling beyond this first slot.
+- Follow-up rule:
+  - Timepad publication is not fully complete at `access_status=public`; for business readiness, also verify paid prices on the public page, poster, moderation status, and calendar/slot reconciliation.
