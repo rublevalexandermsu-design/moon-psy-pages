@@ -1272,3 +1272,33 @@ Append-only project history for `moon-psy-site`.
   - Fixed by replacing the solid frame with four separate frame bars and moving the image plane slightly forward.
 - Follow-up rule:
   - For 3D gallery/public frontend tasks, visual QA must include not only nonblank canvas checks but also screenshot inspection for occlusion, lighting and readability of the actual products.
+
+## 2026-05-10 — Tatiana Moonn Art Gallery Walkthrough Refinement
+
+- Project: Moonn / Tatiana Moonn art gallery.
+- Branch: `codex/moonn-art-gallery`.
+- Trigger: user reviewed the local 3D gallery, left browser comments 1-8 and clarified that the entry doors must open into the real gallery without a persistent background mockup, the camera must approach paintings like a visitor, plaques must be readable, and the code/features sections should match the premium banner direction.
+- Route:
+  - Continued the existing art-gallery workstream and edited the canonical generator instead of hand-editing generated HTML.
+  - Kept the package static and offline-safe; no real payment integration was added.
+- Changes:
+  - Added animated semi-closed entry doors that fade out after the entrance instead of keeping the concept banner behind the 3D room.
+  - Reworked the camera route into explicit artwork stops, with lower look targets so paintings and plaques stay in frame.
+  - Brightened opaque gallery walls/floor, added benches and stronger ceiling/wall lighting.
+  - Added plaque backplates and corrected center/pedestal plaque placement so the title plaques are visible above the floor.
+  - Shortened story-panel visibility windows so text cards do not keep covering paintings after the visitor passes them.
+  - Added the `Почему мои картины особенные` feature strip and upgraded `code.html` with the banner-style personal-code section.
+  - Regenerated `docs/tatiana-munn-art-gallery/` and `output/tatiana-munn-art-gallery-site.zip`.
+- Verification:
+  - Generator compiles with `python -m py_compile`.
+  - Static build regenerated successfully with `10` artworks.
+  - Browser QA via Playwright passed with no console/page errors.
+  - Checked screenshots for entry doors, first artwork/plaque, later gallery stops, modal flip, feature strip, code page, and mobile top screen.
+  - Code form updates a deterministic numeric result: `928 433 318` in the QA scenario.
+  - Public generated-site scan passed for internal strings and local-address leaks in gallery HTML/CSS/JS/JSON/README.
+- Incident / correction:
+  - During refinement, the entry-door DOM layer initially used the banner image as a persistent background. This made the real 3D walls look transparent and showed duplicate paintings behind the room.
+  - Fixed by removing the banner background from the entry layer and making the entry overlay disappear based on scroll progress.
+  - A temporary QA script used stale selectors for the flip/code controls; corrected the selectors and added a stable `#codeValue` id.
+- Follow-up rule:
+  - For generated public frontend packages, always scan the generated output for accidental concept/mockup layers, local-address references and internal wording after regeneration, not only the source generator.

@@ -39,6 +39,20 @@
     <p>Введите данные и запрос, чтобы получить персональный числовой код для выбранной картины.</p>
   </section>
   <section class="code-layout">
+    <article class="code-intro">
+      <div>
+        <span class="eyebrow">Каждая картина может быть настроена под вас лично</span>
+        <h2>Персональный код соединяет работу с вашим запросом</h2>
+        <p>Данные владельца и запрос помогают подготовить числовой ряд для оборота картины и сертификата.</p>
+      </div>
+      <div class="code-steps" aria-label="Данные для составления кода">
+        <div><span>1</span><b>ФИО</b></div>
+        <div><span>2</span><b>Дата рождения</b></div>
+        <div><span>3</span><b>Время рождения</b></div>
+        <div><span>4</span><b>Ваш запрос</b></div>
+      </div>
+      <p class="code-note">Искусство, написанное для вашей души</p>
+    </article>
     <form class="premium-form" id="codeForm">
       <label>Фамилия, имя, отчество<input id="fio" value="Иванов Иван Иванович"></label>
       <label>Дата рождения<input id="birth" type="date" value="1985-05-12"></label>
@@ -48,7 +62,7 @@
     </form>
     <article class="code-result-card">
       <span class="eyebrow">Ваш код</span>
-      <strong class="js-code">516 108 369</strong>
+      <strong id="codeValue" class="js-code">516 108 369</strong>
       <p>Этот блок связан с оборотом картины и сертификатом владельца.</p>
     </article>
   </section>
