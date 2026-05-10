@@ -1155,3 +1155,39 @@ Append-only project history for `moon-psy-site`.
 - Follow-up:
   - Wait for Timepad response or moderation result.
   - If Timepad asks for a different technical format, update the Timepad event and this project history before resubmitting.
+
+## 2026-05-10 — Moonn Homepage Replacement Experiment Routed
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user asked how to publish and test an older/newer local HTML page without replacing the currently ranking homepage.
+- Checked facts:
+  - Current live homepage `https://moonn.ru/` returns `200`, has title/description, self-canonical to `/`, and detected JSON-LD.
+  - Candidate local HTML file exists outside the repository and has one H1 and many sections, but no detected title, description, canonical or robots meta.
+  - Candidate page contains internal setup text and incomplete Timepad/WhatsApp instructions, so it is not safe to publish as-is.
+- Decision:
+  - Do not replace the root homepage now.
+  - Use a same-domain semantic experimental landing instead of a new domain or duplicate root page.
+  - Clean the local HTML, choose a semantic URL, add metadata/schema, and publish only after content/legal/SEO/visual QA.
+- Artifact:
+  - `docs/moonn-homepage-experiment-plan-2026-05-10.md`
+- Follow-up rule:
+  - Alternative homepages must be launched as semantic same-domain experiments with clear search intent, self-canonical only when materially unique, and Metrica/Search Console measurement before any root homepage migration.
+
+## 2026-05-10 — Moonn Homepage Experiment Candidate Switched
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user clarified that `Окончательный.код.сай..html` is the better working page and should be used instead of `Сайт.6..резервный.последний.копия.html`.
+- Checked facts:
+  - New candidate exists at `C:\пайтонннн.. тесты\код сайт татьяна мунн\Коды для сайта татьяны.готовые\Окончательный.код.сай..html`.
+  - File size: `113006` bytes; last modified `2026-02-15`.
+  - Detected one H1, sixteen H2 sections and one JSON-LD block.
+  - No detected title, meta description, canonical or robots meta.
+  - Internal hints reduced to `3`, but one visible setup instruction remains: `Если Тильда позволяет - перенеси <title>, meta description, og:* в HEAD страницы.`
+  - Page contains real Timepad links for the lecture carousel, but consultation booking/payment text still uses Telegram/WhatsApp/card/SBP and must be aligned with the newer Timepad paid booking route.
+- Decision:
+  - Use `Окончательный.код.сай..html` as the primary candidate for the same-domain SEO landing experiment.
+  - Demote the previous `Сайт.6..резервный.последний.копия.html` candidate.
+- Artifact updated:
+  - `docs/moonn-homepage-experiment-plan-2026-05-10.md`.
