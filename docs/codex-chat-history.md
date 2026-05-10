@@ -1139,3 +1139,19 @@ Append-only project history for `moon-psy-site`.
   - Gmail connector install/activation was requested but not completed in this session, so email sending is still blocked without manual browser use.
 - Follow-up rule:
   - Consultation schedule assumptions must be verified against the current iClient/YCLIENTS calendar before publication or support submission; Timepad support requests should ask for multiple selectable reception-day slots.
+
+## 2026-05-10 — Moonn Timepad Support Email Sent
+
+- Project: Moonn / Tatyana Munn site and Timepad promotion.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user explicitly asked to send the support email to Timepad after the consultation reception days were corrected.
+- Action:
+  - Gmail connector became available after tool discovery.
+  - Sent email from `rublevalexandermsu@gmail.com` to `support@timepad.ru`.
+  - Subject: `Просим проверить консультацию психолога Татьяны Мунн и подключить расписание`.
+  - Message asked Timepad to check event `https://moonn.timepad.ru/event/3973843/` and connect schedule/master-event mode for Tuesday, Saturday, and Sunday consultation slots through the end of 2026.
+- Verification:
+  - Gmail send response returned message id `19e1152a116ae61a`, thread id `19e1152a116ae61a`, label `SENT`.
+- Follow-up:
+  - Wait for Timepad response or moderation result.
+  - If Timepad asks for a different technical format, update the Timepad event and this project history before resubmitting.
