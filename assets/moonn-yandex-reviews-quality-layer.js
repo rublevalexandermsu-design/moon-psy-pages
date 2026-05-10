@@ -7,34 +7,14 @@
     return (window.location.pathname || "").replace(/\/$/, "") === "/otzivi";
   }
 
-  function normalize(text) {
-    return (text || "").replace(/\s+/g, " ").trim();
-  }
-
-  function replaceWeakSeoText() {
-    var nodes = Array.prototype.slice.call(document.querySelectorAll("p, div, span"));
-    var targets = nodes.filter(function (node) {
-      var text = normalize(node.textContent);
-      return text.indexOf("дублирую информацию") !== -1 || text.indexOf("поиска информации в интернете") !== -1;
-    });
-    targets.forEach(function (node) {
-      if (node.dataset && node.dataset.moonnReviewQualityPatched) return;
-      node.innerHTML =
-        'На этой странице собраны отзывы клиентов и участников мероприятий Татьяны Мунн. ' +
-        'Каждый отзыв связан с исходным профилем на Яндекс Услугах, чтобы можно было перейти к первоисточнику и проверить контекст публикации. ' +
-        '<a href="' + PROFILE_URL + '" target="_blank" rel="noopener noreferrer">Открыть профиль на Яндекс Услугах</a>.';
-      if (node.dataset) node.dataset.moonnReviewQualityPatched = "true";
-    });
-    return targets;
-  }
-
   function addSourcePanel() {
     if (document.getElementById(PATCH_MARKER)) return;
     var heading = Array.prototype.slice.call(document.querySelectorAll("h1, h2, .t-title, .t-heading, .tn-atom")).find(function (item) {
-      return /отзывы/i.test(item.textContent || "");
+      var text = (item.textContent || "").replace(/\s+/g, " ").trim();
+      return /^отзывы/i.test(text) || /отзывы клиентов/i.test(text);
     });
-    var patchedNode = document.querySelector("[data-moonn-review-quality-patched='true']");
-    var anchor = heading || patchedNode || document.querySelector("main, body");
+    var firstRecord = document.querySelector(".r, [id^='rec']");
+    var anchor = heading || firstRecord;
     if (!anchor || !anchor.parentNode) return;
     var panel = document.createElement("section");
     panel.id = PATCH_MARKER;
@@ -53,7 +33,6 @@
 
   function run() {
     if (!isReviewsPage()) return;
-    replaceWeakSeoText();
     addSourcePanel();
   }
 
