@@ -1,0 +1,2187 @@
+<style id="tmPsyStyles">
+  :root{
+    --bg:#070A12;
+    --card: rgba(255,255,255,.07);
+    --card2: rgba(255,255,255,.10);
+    --stroke: rgba(255,255,255,.14);
+    --text: rgba(255,255,255,.94);
+    --muted: rgba(255,255,255,.74);
+    --soft: rgba(255,255,255,.60);
+    --accent: #A855F7;
+    --accent2:#22D3EE;
+    --ok:#34D399;
+    --shadow: 0 18px 60px rgba(0,0,0,.55);
+    --radius: 22px;
+    --radius2: 14px;
+    --max: 1140px;
+  }
+
+  *{box-sizing:border-box}
+  .tm-root, .tm-root *{box-sizing:border-box}
+
+  /* TILDA-BG-LOCK START:      Tilda ( ) */
+  .tm-root{
+    margin:0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+    color: var(--text) !important;
+    color-scheme: dark;
+    background:
+      radial-gradient(1200px 800px at 15% 10%, rgba(168,85,247,.22), transparent 60%),
+      radial-gradient(1000px 700px at 85% 20%, rgba(34,211,238,.18), transparent 62%),
+      radial-gradient(900px 700px at 40% 95%, rgba(52,211,153,.12), transparent 60%),
+      var(--bg) !important;
+    background-attachment: fixed;
+    overflow-x:hidden;
+    isolation:isolate;
+    padding-bottom: 26px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .tm-root section{background: transparent !important}
+  /* TILDA-BG-LOCK END */
+  .tm-root a{color:inherit !important; text-decoration:none !important}
+  .tm-root .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
+
+  .tm-root .btn{color: rgba(255,255,255,.92) !important}
+  .tm-root .btn.primary{color: rgba(255,255,255,.96) !important}
+  .tm-root .menu a{color: rgba(255,255,255,.78) !important}
+  .tm-root .menu a:hover{color: rgba(255,255,255,.95) !important}
+  .tm-root .title h2{color: rgba(255,255,255,.92) !important}
+  .tm-root .title p{color: rgba(255,255,255,.72) !important}
+  .tm-root .card p, .tm-root .list li{color: rgba(255,255,255,.82) !important}
+  .tm-root .note{color: rgba(255,255,255,.66) !important}
+
+  /* Top nav */
+  .tm-root .nav{
+    position:sticky; top:0; z-index:60;
+    background: linear-gradient(to bottom, rgba(7,10,18,.86), rgba(7,10,18,.40));
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,.10);
+  }
+  .tm-root .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:12px;
+    padding:14px 0;
+  }
+  .tm-root .brand{display:flex; align-items:center; gap:12px; min-width:220px}
+
+  .tm-root .logo{
+    width:36px; height:36px; border-radius:12px;
+    background: radial-gradient(circle at 30% 30%, rgba(168,85,247,.98), rgba(34,211,238,.78));
+    box-shadow: 0 10px 30px rgba(168,85,247,.20);
+    position:relative;
+    overflow:hidden;
+    flex:0 0 auto;
+  }
+  .tm-root .logo:after{
+    content:"";
+    position:absolute; inset:-30%;
+    background: conic-gradient(from 90deg, rgba(255,255,255,.0), rgba(255,255,255,.35), rgba(255,255,255,.0));
+    animation: spin 6.5s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  .tm-root .brand b{font-weight:700; letter-spacing:.2px}
+  .tm-root .brand .sub{display:block; font-size:12px; color:var(--muted); margin-top:2px}
+
+  .tm-root .menu{display:flex; gap:12px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
+  .tm-root .menu a{
+    font-size:13px;
+    padding:9px 10px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    transition: .2s ease;
+    white-space:nowrap;
+    background: transparent;
+  }
+  .tm-root .menu a:hover{
+    border-color: rgba(255,255,255,.16);
+    background: rgba(255,255,255,.05);
+    transform: translateY(-1px);
+  }
+
+  .tm-root .cta{display:flex; align-items:center; gap:10px; margin-left:6px; flex-wrap:wrap}
+  .tm-root .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    padding:11px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.18);
+    background: rgba(255,255,255,.07);
+    transition: .2s ease;
+    font-size:13px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.25);
+    line-height:1;
+    white-space:nowrap;
+    cursor:pointer;
+  }
+  .tm-root .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.10)}
+  .tm-root .btn.primary{
+    border-color: rgba(168,85,247,.60);
+    background: linear-gradient(135deg, rgba(168,85,247,.88), rgba(34,211,238,.58));
+  }
+  .tm-root .btn.ghost{
+    border-color: rgba(34,211,238,.30);
+    background: rgba(34,211,238,.10);
+  }
+
+  /* Mobile burger */
+  .tm-root .burger{
+    display:none;
+    width:42px; height:42px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.16);
+    background: rgba(255,255,255,.07);
+    box-shadow: 0 12px 30px rgba(0,0,0,.25);
+    align-items:center; justify-content:center;
+    padding:0;
+    cursor:pointer;
+  }
+  .tm-root .burger span{
+    display:block; width:18px; height:2px; border-radius:2px;
+    background: rgba(255,255,255,.85);
+    position:relative;
+  }
+  .tm-root .burger span:before,
+  .tm-root .burger span:after{
+    content:"";
+    position:absolute; left:0; width:18px; height:2px; border-radius:2px;
+    background: rgba(255,255,255,.85);
+  }
+  .tm-root .burger span:before{top:-6px}
+  .tm-root .burger span:after{top:6px}
+
+  .tm-root .drawer{
+    position:fixed; inset:0;
+    z-index:120;
+    display:none;
+  }
+  .tm-root .drawer.show{display:block}
+  .tm-root .drawer .backdrop{
+    position:absolute; inset:0;
+    background: rgba(0,0,0,.56);
+    backdrop-filter: blur(4px);
+  }
+  .tm-root .drawer .panel{
+    position:absolute; right:12px; top:12px; left:12px;
+    border-radius: 22px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
+    box-shadow: var(--shadow);
+    overflow:hidden;
+  }
+  .tm-root .drawer .panel:before{
+    content:"";
+    position:absolute; inset:-2px;
+    background:
+      radial-gradient(560px 240px at 18% 12%, rgba(168,85,247,.22), transparent 60%),
+      radial-gradient(560px 240px at 86% 18%, rgba(34,211,238,.16), transparent 62%),
+      radial-gradient(560px 260px at 55% 115%, rgba(52,211,153,.12), transparent 60%);
+    pointer-events:none;
+    opacity:.95;
+  }
+  .tm-root .drawer .panel-head{
+    position:relative;
+    z-index:1;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 14px;
+    border-bottom: 1px solid rgba(255,255,255,.10);
+  }
+  .tm-root .drawer .panel-head b{font-size:14px}
+  .tm-root .xbtn{
+    width:40px; height:40px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.16);
+    background: rgba(255,255,255,.07);
+    color: rgba(255,255,255,.90);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    font-size:18px;
+    line-height:1;
+  }
+  .tm-root .drawer nav{
+    position:relative;
+    z-index:1;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px;
+    padding:14px;
+  }
+  .tm-root .drawer nav a{
+    padding:12px 12px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: rgba(0,0,0,.18);
+    font-size:13px;
+  }
+  .tm-root .drawer .panel-cta{
+    position:relative;
+    z-index:1;
+    padding: 0 14px 14px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px;
+  }
+  .tm-root .drawer .panel-cta a{width:100%}
+
+  /* Hero */
+  .tm-root .hero{position:relative; padding:56px 0 26px}
+  .tm-root .hero-grid{
+    display:grid;
+    grid-template-columns: 1.25fr .75fr;
+    gap:18px;
+    align-items:stretch;
+  }
+
+  .tm-root .hero-card{
+    border-radius: var(--radius);
+    background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.04)) !important;
+    border: 1px solid rgba(255,255,255,.14);
+    box-shadow: var(--shadow);
+    overflow:hidden;
+    position:relative;
+    padding: 24px;
+    min-height: 420px;
+  }
+  .tm-root .hero-card:before{
+    content:"";
+    position:absolute; inset:-2px;
+    background:
+      radial-gradient(560px 260px at 18% 15%, rgba(168,85,247,.30), transparent 55%),
+      radial-gradient(520px 260px at 85% 30%, rgba(34,211,238,.22), transparent 60%),
+      radial-gradient(520px 260px at 60% 100%, rgba(52,211,153,.16), transparent 55%);
+    pointer-events:none;
+    filter: saturate(1.15);
+    opacity:.98;
+  }
+
+  .tm-root .kicker{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:8px 10px;
+    border-radius: 999px;
+    border:1px solid rgba(255,255,255,.16);
+    background: rgba(0,0,0,.22);
+    color: rgba(255,255,255,.86);
+    font-size:12px;
+    position:relative;
+    z-index:1;
+  }
+  .tm-root .dot{
+    width:8px; height:8px; border-radius:50%;
+    background: radial-gradient(circle at 30% 30%, rgba(52,211,153,1), rgba(52,211,153,.2));
+    box-shadow: 0 0 0 5px rgba(52,211,153,.10);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}
+
+  .tm-root h1{
+    margin:14px 0 10px;
+    font-size: clamp(28px, 3.8vw, 44px);
+    line-height: 1.08;
+    letter-spacing: -0.5px;
+    position:relative;
+    z-index:1;
+  }
+  .tm-root .lead{
+    margin:0;
+    color: rgba(255,255,255,.80);
+    font-size: 15px;
+    line-height: 1.55;
+    max-width: 62ch;
+    position:relative;
+    z-index:1;
+  }
+
+  .tm-root .hero-actions{
+    display:flex; gap:10px; flex-wrap:wrap;
+    margin-top:18px;
+    position:relative;
+    z-index:1;
+  }
+
+  .tm-root .stats{
+    margin-top:18px;
+    display:grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap:10px;
+    position:relative;
+    z-index:1;
+  }
+  .tm-root .stat{
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: rgba(0,0,0,.18);
+    padding: 12px 12px;
+  }
+  .tm-root .stat b{display:block; font-size:16px}
+  .tm-root .stat span{display:block; margin-top:3px; font-size:12px; color: rgba(255,255,255,.72)}
+
+  .tm-root .side{
+    border-radius: var(--radius);
+    border: 1px solid rgba(255,255,255,.14);
+    background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04)) !important;
+    box-shadow: var(--shadow);
+    overflow:hidden;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+  }
+  .tm-root .side:before{
+    content:"";
+    position:absolute; inset:-2px;
+    background:
+      radial-gradient(560px 260px at 18% 15%, rgba(168,85,247,.24), transparent 55%),
+      radial-gradient(520px 260px at 85% 30%, rgba(34,211,238,.18), transparent 60%),
+      radial-gradient(520px 260px at 60% 100%, rgba(52,211,153,.14), transparent 55%);
+    pointer-events:none;
+    opacity:.95;
+  }
+
+  .tm-root .portrait{
+    position:relative;
+    aspect-ratio: 4/3;
+    width:100%;
+    overflow:hidden;
+    border-bottom:1px solid rgba(255,255,255,.10);
+    background: rgba(0,0,0,.25);
+  }
+  .tm-root .portrait video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    background: rgba(0,0,0,.25);
+    position:relative;
+    z-index:1;
+  }
+  .tm-root .portrait .vfade{
+    position:absolute; inset:0;
+    background: linear-gradient(to top, rgba(7,10,18,.70), rgba(7,10,18,.05) 60%);
+    pointer-events:none;
+    z-index:2;
+  }
+
+  .tm-root .side-body{padding:16px 16px 18px; position:relative; z-index:1}
+  .tm-root .side h3{margin:0 0 8px; font-size:15px}
+  .tm-root .chiprow{display:flex; flex-wrap:wrap; gap:8px}
+  .tm-root .chip{
+    font-size:12px;
+    color: rgba(255,255,255,.82);
+    padding:8px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: rgba(0,0,0,.18);
+  }
+
+  /* Sections */
+  .tm-root section{padding: 34px 0; position:relative; isolation:isolate;}
+  .tm-root section:before{
+    content:"";
+    position:absolute; inset:-2px;
+    background:
+      radial-gradient(680px 260px at 18% 12%, rgba(168,85,247,.16), transparent 60%),
+      radial-gradient(640px 260px at 88% 18%, rgba(34,211,238,.14), transparent 62%),
+      radial-gradient(640px 280px at 55% 110%, rgba(52,211,153,.12), transparent 60%);
+    opacity:.95;
+    z-index:-1;
+    pointer-events:none;
+  }
+  .tm-root section:nth-of-type(2n):before{
+    background:
+      radial-gradient(720px 280px at 80% 10%, rgba(168,85,247,.16), transparent 62%),
+      radial-gradient(680px 260px at 12% 25%, rgba(34,211,238,.14), transparent 62%),
+      radial-gradient(720px 320px at 45% 110%, rgba(52,211,153,.12), transparent 60%);
+  }
+
+  .tm-root .title{
+    display:flex; align-items:flex-end; justify-content:space-between;
+    gap:16px;
+    margin-bottom: 14px;
+  }
+  .tm-root .title h2{margin:0; font-size:22px; letter-spacing:-.2px}
+  .tm-root .title p{margin:0; font-size:13px; max-width: 60ch}
+
+  .tm-root .grid-3{display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:12px}
+  .tm-root .grid-2{display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:12px}
+
+  /* Cards */
+  .tm-root .card,
+  .tm-root .quote,
+  .tm-root .video,
+  .tm-root .big-cta{
+    border-radius: var(--radius);
+    background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04)) !important;
+    border: 1px solid rgba(255,255,255,.14);
+    box-shadow: 0 18px 60px rgba(0,0,0,.34);
+    position:relative;
+    overflow:hidden;
+  }
+  .tm-root .card{padding:16px}
+  .tm-root .card.slim{border-radius: var(--radius2)}
+
+  .tm-root .card:before,
+  .tm-root .quote:after,
+  .tm-root .video:before,
+  .tm-root .big-cta:before{
+    content:"";
+    position:absolute; inset:-2px;
+    background:
+      radial-gradient(520px 210px at 16% 12%, rgba(168,85,247,.22), transparent 58%),
+      radial-gradient(520px 210px at 86% 20%, rgba(34,211,238,.18), transparent 60%),
+      radial-gradient(560px 260px at 55% 115%, rgba(52,211,153,.14), transparent 60%);
+    pointer-events:none;
+    filter: saturate(1.18);
+    opacity:.98;
+  }
+
+  .tm-root .card h3{margin:0 0 8px; font-size:15px; position:relative; z-index:1}
+  .tm-root .card p{margin:0; font-size:13px; line-height:1.55; position:relative; z-index:1}
+
+  .tm-root .list{margin:10px 0 0; padding:0; list-style:none}
+  .tm-root .list li{
+    margin: 8px 0;
+    display:flex; gap:10px; align-items:flex-start;
+    font-size: 13px;
+    line-height: 1.5;
+    position:relative;
+    z-index:1;
+  }
+  .tm-root .bullet{
+    width:9px; height:9px; border-radius:50%;
+    margin-top:5px;
+    background: radial-gradient(circle at 30% 30%, rgba(34,211,238,1), rgba(34,211,238,.18));
+    box-shadow: 0 0 0 5px rgba(34,211,238,.10);
+    flex:0 0 auto;
+  }
+
+  /* Glow */
+  .tm-root .glow{transform: translateY(-1px)}
+  .tm-root .glow{
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,.10),
+      0 0 22px rgba(168,85,247,.30),
+      0 0 22px rgba(34,211,238,.22),
+      0 18px 60px rgba(0,0,0,.40);
+  }
+  .tm-root .glow-once:after{
+    content:"";
+    position:absolute; inset:-2px;
+    border-radius: inherit;
+    padding: 2px;
+    background: conic-gradient(from 90deg,
+      rgba(34,211,238,.0),
+      rgba(34,211,238,.85),
+      rgba(168,85,247,.85),
+      rgba(52,211,153,.75),
+      rgba(34,211,238,.0));
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity:.95;
+    filter: blur(.2px);
+    will-change: transform;
+    animation: neonSpin 6.5s linear 1;
+    animation-fill-mode: both;
+    pointer-events:none;
+  }
+  @keyframes neonSpin{to{transform: rotate(360deg)}}
+
+  /* "капелька-неончик" */
+  .tm-root .drop-glow{position:relative}
+  .tm-root .drop-glow.glow-once:after{display:none !important; content:none !important;}
+  .tm-root .drop-glow:before{
+    content:"";
+    position:absolute;
+    width:7px; height:7px;
+    border-radius:999px;
+    background: rgba(34,211,238,.95);
+    box-shadow:
+      0 0 10px rgba(34,211,238,.55),
+      0 0 20px rgba(168,85,247,.22),
+      0 0 28px rgba(34,211,238,.18);
+    opacity:.92;
+    pointer-events:none;
+    z-index:6;
+    offset-path: inset(6px round 18px);
+    offset-distance: 0%;
+    animation: tmDotRun 6.2s linear infinite;
+  }
+  @keyframes tmDotRun{to{offset-distance:100%}}
+  .tm-root .card.drop-glow:before{offset-path: inset(7px round var(--radius))}
+  .tm-root .card.slim.drop-glow:before{offset-path: inset(7px round var(--radius2))}
+  .tm-root .big-cta.drop-glow:before{offset-path: inset(7px round var(--radius))}
+
+  /* Media */
+  .tm-root iframe{width:100%; aspect-ratio: 16/9; border:0; display:block; position:relative; z-index:1; background: rgba(0,0,0,.15)}
+
+  /* Quotes */
+  .tm-root .quotes{display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap:12px}
+  .tm-root .quote{padding:16px}
+  .tm-root .quote:before{
+    content:"“";
+    position:absolute;
+    top:-10px; left:12px;
+    font-size:72px;
+    color: rgba(255,255,255,.10);
+    font-weight:700;
+    z-index:1;
+    pointer-events:none;
+  }
+  .tm-root .quote p{margin:0; font-size:13px; line-height:1.55; position:relative; z-index:2}
+  .tm-root .quote b{display:block; margin-top:10px; font-size:12px; color: rgba(255,255,255,.64); position:relative; z-index:2}
+
+  /* Carousel (общий) */
+  .tm-root .carousel{position:relative; border-radius: var(--radius)}
+  .tm-root .track{
+    display:flex;
+    gap:12px;
+    overflow:auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior:smooth;
+    padding: 2px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tm-root .track::-webkit-scrollbar{height:10px}
+  .tm-root .track::-webkit-scrollbar-thumb{background: rgba(255,255,255,.10); border-radius: 999px}
+
+  .tm-root .slide{
+    flex: 0 0 calc(33.333% - 8px);
+    scroll-snap-align: start;
+    border-radius: var(--radius);
+    border: 1px solid rgba(255,255,255,.14);
+    background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04)) !important;
+    overflow:hidden;
+    position:relative;
+  }
+  .tm-root .slide:before{
+    content:"";
+    position:absolute; inset:-2px;
+    background:
+      radial-gradient(520px 210px at 16% 12%, rgba(168,85,247,.20), transparent 60%),
+      radial-gradient(520px 210px at 86% 20%, rgba(34,211,238,.16), transparent 62%),
+      radial-gradient(560px 260px at 55% 115%, rgba(52,211,153,.12), transparent 60%);
+    pointer-events:none;
+    opacity:.95;
+  }
+
+  .tm-root .slide .media{
+    width:100%;
+    aspect-ratio: 16/9;
+    background: rgba(0,0,0,.18);
+    position:relative;
+    z-index:1;
+    overflow:hidden;
+  }
+  .tm-root .slide .media img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    display:block;
+  }
+
+  .tm-root .slide .cap{
+    position:absolute; left:12px; right:12px; bottom:10px;
+    padding:10px 10px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: rgba(7,10,18,.58);
+    backdrop-filter: blur(10px);
+    z-index:2;
+    font-size:12px;
+    color: rgba(255,255,255,.86);
+    line-height:1.35;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+  }
+  .tm-root .capbtn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:8px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.18);
+    background: rgba(255,255,255,.08);
+    font-size:12px;
+    line-height:1;
+    white-space:nowrap;
+  }
+  .tm-root .capbtn:hover{background: rgba(255,255,255,.12); transform: translateY(-1px)}
+
+  .tm-root .car-btn{
+    position:absolute;
+    top:50%; transform: translateY(-50%);
+    width:44px; height:44px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.16);
+    background: rgba(0,0,0,.28);
+    backdrop-filter: blur(10px);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    z-index:5;
+    color: rgba(255,255,255,.90);
+    user-select:none;
+  }
+  .tm-root .car-btn:hover{background: rgba(0,0,0,.36)}
+  .tm-root .car-btn.left{left:-4px}
+  .tm-root .car-btn.right{right:-4px}
+
+  /* Сертификаты: вписываем */
+  .tm-root .cert-carousel .slide .media{
+    aspect-ratio: 4/3;
+    background: rgba(255,255,255,.06);
+  }
+  .tm-root .cert-carousel .slide .media img{
+    object-fit: contain;
+    background: rgba(255,255,255,.92);
+  }
+
+  /* Отзывы: 9:16 */
+  .tm-root .review-carousel .slide{
+    flex: 0 0 calc(25% - 9px);
+  }
+  .tm-root .review-carousel .slide .media{
+    aspect-ratio: 9/16;
+    background: rgba(255,255,255,.06);
+  }
+  .tm-root .review-carousel .slide .media img{
+    object-fit: contain;
+    background: rgba(255,255,255,.94);
+  }
+
+  /* Спикер */
+  .tm-root .speaker-carousel .slide .media{aspect-ratio: 16/9;}
+
+  /* ВДЕО в карточках (mp4) */
+  .tm-root .video-box{
+    margin-top:12px;
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.14);
+    background:rgba(0,0,0,.18);
+    position:relative;
+  }
+  .tm-root .video-box .video-16x9{
+    width:100%;
+    aspect-ratio: 16/9;
+    background: rgba(0,0,0,.18);
+    position:relative;
+  }
+  .tm-root .video-box video{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    display:block;
+  }
+  .tm-root .video-box.contain video{
+    object-fit: contain;
+    background: rgba(0,0,0,.35);
+  }
+
+  /* Fallback panel for video issues */
+  .tm-root .v-fallback{
+    display:none;
+    position:absolute;
+    inset:auto 12px 12px 12px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: rgba(7,10,18,.70);
+    backdrop-filter: blur(10px);
+    padding: 12px;
+    z-index: 6;
+  }
+  .tm-root .v-fallback.show{display:block}
+  .tm-root .v-fallback b{display:block; font-size:12px; margin-bottom:6px}
+  .tm-root .v-fallback p{margin:0; font-size:12px; color: rgba(255,255,255,.76); line-height:1.45}
+  .tm-root .v-fallback a{
+    display:inline-flex;
+    margin-top:10px;
+    align-items:center;
+    justify-content:center;
+    padding:10px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.18);
+    background: rgba(255,255,255,.08);
+    font-size:12px;
+    white-space:nowrap;
+  }
+
+  /* Footer CTA */
+  .tm-root .big-cta{padding:18px; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap}
+  .tm-root .big-cta h3{margin:0; font-size:16px; position:relative; z-index:1}
+  .tm-root .big-cta p{margin:6px 0 0; font-size:13px; line-height:1.55; max-width: 72ch; position:relative; z-index:1}
+  .tm-root .foot{padding: 28px 0 40px; color: rgba(255,255,255,.62); font-size: 12px}
+
+  /* Reveal */
+  .tm-root .reveal{opacity:0; transform: translateY(10px); transition: .6s ease}
+  .tm-root .reveal.show{opacity:1; transform: translateY(0)}
+
+  /* Helpers */
+  .tm-root .sep{height:1px; background: rgba(255,255,255,.08); margin: 10px 0 0}
+  .tm-root .mini{font-size:12px; color: rgba(255,255,255,.72); line-height:1.5}
+  .tm-root .note{
+    font-size:12px;
+    line-height:1.5;
+    border-left: 2px solid rgba(34,211,238,.55);
+    padding-left: 10px;
+    margin-top: 10px;
+  }
+
+  /* Bottom sticky CTA (mobile) */
+  .tm-root .bottom-cta{
+    position:fixed;
+    left:12px; right:12px; bottom:12px;
+    z-index:80;
+    display:none;
+    gap:10px;
+    padding:10px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: rgba(7,10,18,.70);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 18px 60px rgba(0,0,0,.45);
+    flex-wrap:wrap;
+  }
+  .tm-root .bottom-cta a{flex:1 1 30%; justify-content:center}
+
+  /* =========================
+     Прайс (используется в консультациях)
+     ========================= */
+  .tm-root .price-row{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    margin: 10px 0 0;
+    position:relative;
+    z-index:1;
+    flex-wrap:wrap;
+  }
+  .tm-root .price{
+    font-size:22px;
+    font-weight:800;
+    letter-spacing:-.2px;
+    line-height:1.1;
+    background: linear-gradient(135deg, rgba(168,85,247,.96), rgba(34,211,238,.86));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .tm-root .price small{
+    font-size:12px;
+    color: rgba(255,255,255,.72);
+    font-weight:600;
+    margin-left:6px;
+  }
+  .tm-root .badge{
+    font-size:12px;
+    color: rgba(255,255,255,.86);
+    padding:8px 10px;
+    border-radius:999px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: rgba(0,0,0,.18);
+  }
+
+  /* Payment modal */
+  .tm-root .modal{
+    position:fixed; inset:0;
+    z-index:200;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:14px;
+  }
+  .tm-root .modal.show{display:flex}
+  .tm-root .modal .m-backdrop{
+    position:absolute; inset:0;
+    background: rgba(0,0,0,.62);
+    backdrop-filter: blur(6px);
+  }
+  .tm-root .modal .m-panel{
+    position:relative;
+    width:min(860px, 100%);
+    border-radius: 22px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
+    box-shadow: var(--shadow);
+    overflow:hidden;
+  }
+  .tm-root .modal .m-panel:before{
+    content:"";
+    position:absolute; inset:-2px;
+    background:
+      radial-gradient(620px 260px at 18% 12%, rgba(168,85,247,.22), transparent 60%),
+      radial-gradient(620px 260px at 86% 18%, rgba(34,211,238,.16), transparent 62%),
+      radial-gradient(620px 280px at 55% 110%, rgba(52,211,153,.12), transparent 60%);
+    pointer-events:none;
+    opacity:.95;
+  }
+  .tm-root .modal .m-head{
+    position:relative;
+    z-index:1;
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:12px;
+    padding:16px 16px;
+    border-bottom: 1px solid rgba(255,255,255,.10);
+  }
+  .tm-root .modal .m-head b{
+    display:block;
+    font-size:14px;
+    letter-spacing:.2px;
+  }
+  .tm-root .modal .m-head .m-sub{
+    display:block;
+    margin-top:4px;
+    font-size:12px;
+    color: rgba(255,255,255,.70);
+    line-height:1.45;
+    max-width: 70ch;
+  }
+  .tm-root .modal .m-body{
+    position:relative;
+    z-index:1;
+    padding:14px 16px 16px;
+    display:grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap:12px;
+  }
+  .tm-root .modal .m-box{
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: rgba(0,0,0,.18);
+    padding:14px;
+  }
+  .tm-root .modal .m-box h4{
+    margin:0 0 10px;
+    font-size:14px;
+  }
+  .tm-root .modal .m-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:10px;
+  }
+  .tm-root .modal .m-actions a,
+  .tm-root .modal .m-actions button{
+    width:100%;
+    justify-content:center;
+  }
+  .tm-root .modal .m-actions .row2{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px;
+    width:100%;
+  }
+  .tm-root .qr{
+    display:none;
+    margin-top:10px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: rgba(0,0,0,.18);
+    padding:12px;
+    text-align:center;
+  }
+  .tm-root .qr.show{display:block}
+  .tm-root .qr img{
+    max-width: 240px;
+    width:100%;
+    height:auto;
+    border-radius: 12px;
+    background: rgba(255,255,255,.92);
+  }
+
+  .tm-root .faq{
+    display:grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap:12px;
+  }
+  .tm-root details{
+    border-radius: var(--radius);
+    border: 1px solid rgba(255,255,255,.14);
+    background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04)) !important;
+    box-shadow: 0 18px 60px rgba(0,0,0,.30);
+    padding:14px 14px;
+    position:relative;
+    overflow:hidden;
+  }
+  .tm-root details:before{
+    content:"";
+    position:absolute; inset:-2px;
+    background:
+      radial-gradient(520px 210px at 16% 12%, rgba(168,85,247,.18), transparent 58%),
+      radial-gradient(520px 210px at 86% 20%, rgba(34,211,238,.14), transparent 60%),
+      radial-gradient(560px 260px at 55% 115%, rgba(52,211,153,.10), transparent 60%);
+    pointer-events:none;
+    opacity:.98;
+  }
+  .tm-root summary{
+    cursor:pointer;
+    list-style:none;
+    font-weight:700;
+    font-size:14px;
+    position:relative;
+    z-index:1;
+  }
+  .tm-root summary::-webkit-details-marker{display:none}
+  .tm-root details p{
+    margin:10px 0 0;
+    font-size:13px;
+    line-height:1.55;
+    color: rgba(255,255,255,.80);
+    position:relative;
+    z-index:1;
+  }
+
+  /* NEW: lectures section - make it carousel on mobile too */
+  .tm-root .lectures-carousel .slide{flex: 0 0 calc(33.333% - 8px)}
+  .tm-root .lectures-carousel iframe{aspect-ratio: 16/9}
+  @media (max-width: 980px){
+    .tm-root .hero-grid{grid-template-columns: 1fr;}
+    .tm-root .brand{min-width:auto}
+    .tm-root .stats{grid-template-columns: 1fr;}
+    .tm-root .grid-3{grid-template-columns: 1fr;}
+    .tm-root .grid-2{grid-template-columns: 1fr;}
+    .tm-root .quotes{grid-template-columns: 1fr;}
+    .tm-root .menu{display:none}
+    .tm-root .burger{display:flex}
+    .tm-root .bottom-cta{display:flex}
+    .tm-root .review-carousel .slide{flex: 0 0 72%;}
+    .tm-root .modal .m-body{grid-template-columns: 1fr;}
+    .tm-root .faq{grid-template-columns: 1fr;}
+    .tm-root .lectures-carousel .slide{flex: 0 0 84%;}
+  }
+
+  @media (max-width: 560px){
+    .tm-root .wrap{padding: 0 14px}
+    .tm-root .nav-inner{padding: 12px 0}
+    .tm-root .brand .sub{display:none}
+    .tm-root .cta{gap:8px}
+    .tm-root .btn{padding: 12px 12px}
+    .tm-root .hero{padding: 44px 0 18px}
+    .tm-root .hero-card{padding: 18px; min-height:auto}
+    .tm-root .hero-actions a{width:100%}
+    .tm-root .side{border-radius: 22px}
+    .tm-root .portrait{aspect-ratio: 1/1}
+    .tm-root .slide{flex: 0 0 86%}
+    .tm-root .car-btn{display:none}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .tm-root *{scroll-behavior:auto !important; animation:none !important; transition:none !important}
+  }
+
+  /* FIX: mp4 внутри карточки (подложка не перекрывает видео) */
+  .tm-root #tmPodcastVideo{position: relative; z-index: 5;}
+  .tm-root #podcast .card:before{z-index: 0 !important;}
+  .tm-root #podcast .card > *{position: relative; z-index: 2;}
+
+
+  /* Moonn publication QA: prevent horizontal overflow in Tilda/mobile shells. */
+  .tm-root, .tm-root #tmRoot{max-width:100%; overflow-x:hidden}
+  .tm-root .wrap,
+  .tm-root .card,
+  .tm-root .hero-card,
+  .tm-root .side,
+  .tm-root .big-cta,
+  .tm-root .drawer .panel{max-width:100%; min-width:0}
+  .tm-root p,
+  .tm-root li,
+  .tm-root h1,
+  .tm-root h2,
+  .tm-root h3{overflow-wrap:anywhere}
+  .tm-root .hero-actions{display:flex; flex-wrap:wrap}
+  .tm-root .btn{max-width:100%; min-width:0; text-align:center}
+  .tm-root img,
+  .tm-root video,
+  .tm-root iframe{max-width:100%; height:auto}
+
+  @media (max-width: 560px){
+    .tm-root .nav-inner{gap:8px}
+    .tm-root .brand{min-width:0; flex:1 1 96px}
+    .tm-root .brand b{line-height:1.1}
+    .tm-root .cta{flex:0 1 236px; justify-content:flex-end; gap:8px}
+    .tm-root .cta .btn{padding:10px 12px; font-size:12px}
+    .tm-root .hero-actions{flex-direction:column}
+    .tm-root .hero-actions .btn{width:100%; white-space:normal; line-height:1.2}
+    .tm-root .bottom-cta{left:12px; right:12px; max-width:calc(100vw - 24px); gap:8px}
+    .tm-root .bottom-cta a{white-space:normal; line-height:1.2; padding:10px 8px}
+    .tm-root .review-carousel .slide,
+    .tm-root .lectures-carousel .slide,
+    .tm-root .slide{flex-basis:88%; max-width:88%}
+  }
+
+</style>
+
+
+<div class="tm-root" id="tmRoot">
+
+  
+  <script id="tmSeoJsonLd" type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://moonn.ru/#tatiana-munn",
+      "name": "Татьяна Мунн",
+      "alternateName": [
+        "Кумскова Татьяна Михайловна",
+        "Татьяна Мунн (Кумскова)",
+        "Tatiana Munn",
+        "Tatiana Moonn"
+      ],
+      "jobTitle": "Психолог МГУ, эксперт по эмоциональному интеллекту",
+      "url": "https://moonn.ru/psiholog-tatiana-moonn",
+      "sameAs": [
+        "https://moonn.ru/",
+        "https://moonn.ru/psiholog-tatiana-moonn",
+        "https://n461584.yclients.com/",
+        "https://youtube.com/channel/UCyAQlNoDtg7En6BdwbctSrQ",
+        "https://moonn.timepad.ru/events/",
+        "https://uslugi.yandex.ru/profile/TatyanaKumskovamunn-948629",
+        "https://istina.msu.ru/workers/816305440/",
+        "https://psyjournals.ru/authors/15337"
+      ],
+      "knowsAbout": [
+        "эмоциональный интеллект",
+        "психология эмоций",
+        "тревога",
+        "стресс",
+        "выгорание",
+        "отношения",
+        "личные границы",
+        "подростковая психология"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://moonn.ru/psiholog-tatiana-moonn#webpage",
+      "url": "https://moonn.ru/psiholog-tatiana-moonn",
+      "name": "Психолог Татьяна Мунн в Москве и онлайн | консультации, отзывы, запись",
+      "description": "Татьяна Мунн — психолог МГУ в Москве и онлайн. Консультации для взрослых и подростков, эмоциональный интеллект, отношения, тревога, выгорание, отзывы и онлайн-запись.",
+      "isPartOf": {
+        "@id": "https://moonn.ru/#website"
+      },
+      "about": {
+        "@id": "https://moonn.ru/#tatiana-munn"
+      },
+      "author": {
+        "@id": "https://moonn.ru/#tatiana-munn"
+      },
+      "inLanguage": "ru-RU"
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://moonn.ru/psiholog-tatiana-moonn#service",
+      "name": "Психолог Татьяна Мунн — консультации в Москве и онлайн",
+      "url": "https://moonn.ru/psiholog-tatiana-moonn",
+      "provider": {
+        "@id": "https://moonn.ru/#tatiana-munn"
+      },
+      "areaServed": [
+        "Москва",
+        "Онлайн"
+      ],
+      "serviceType": [
+        "Индивидуальная психологическая консультация",
+        "Консультация психолога онлайн",
+        "Психолог для подростков",
+        "Психологическая помощь при тревоге, выгорании и сложностях в отношениях"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Москва",
+        "streetAddress": "Цветной бульвар, д. 19, стр. 4",
+        "addressCountry": "RU"
+      },
+      "description": "Татьяна Мунн — психолог МГУ в Москве и онлайн. Консультации для взрослых и подростков, эмоциональный интеллект, отношения, тревога, выгорание, отзывы и онлайн-запись."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://moonn.ru/psiholog-tatiana-moonn#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://moonn.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Психолог Татьяна Мунн",
+          "item": "https://moonn.ru/psiholog-tatiana-moonn"
+        }
+      ]
+    }
+  ]
+}
+</script>
+  
+
+  <header class="nav">
+    <div class="wrap">
+      <div class="nav-inner">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <b>Татьяна Мунн</b>
+            <span class="sub">психолог МГУ - «Быстрая психология»</span>
+          </div>
+        </div>
+
+        <nav class="menu" aria-label="Основное меню">
+          <a href="#about">О Татьяне</a>
+          <a href="#method">Метод</a>
+          <a href="#issues">Запросы</a>
+          <a href="#consult">Консультации</a>
+          <a href="#lectures">Лекции</a>
+          <a href="#park">Парк Горького</a>
+          <a href="#podcast">Предзапись</a>
+          <a href="#certs">Сертификаты</a>
+          <a href="#corporate">Для компаний</a>
+          <a href="#reviews">Отзывы</a>
+          <a href="#teen">Подростки</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+
+        <div class="cta">
+          
+          <a class="btn" href="https://t.me/moonn_official" target="_blank" rel="noreferrer">Telegram</a>
+          
+          <a class="btn primary" href="https://n461584.yclients.com/" target="_blank" rel="noreferrer" data-moonn-goal="iclient_booking">Онлайн-запись</a>
+
+          <a class="btn ghost" href="https://n461584.yclients.com/" target="_blank" rel="noreferrer" data-moonn-goal="iclient_booking">Онлайн-запись</a>
+          <button class="burger" id="burger" aria-label="Открыть меню"><span></span></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="backdrop" id="drawerBg"></div>
+    <div class="panel" role="dialog" aria-modal="true">
+      <div class="panel-head">
+        <b>Навигация</b>
+        <button class="xbtn" id="drawerX" aria-label="Закрыть">✕</button>
+      </div>
+      <nav>
+        <a href="#about">О Татьяне</a>
+        <a href="#method">Метод</a>
+        <a href="#issues">Запросы</a>
+        <a href="#consult">Консультации</a>
+        <a href="#lectures">Лекции</a>
+        <a href="#park">Парк Горького</a>
+        <a href="#podcast">Предзапись</a>
+        <a href="#certs">Сертификаты</a>
+        <a href="#corporate">Для компаний</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#teen">Подростки</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <div class="panel-cta">
+        <a class="btn" href="https://t.me/moonn_official" target="_blank" rel="noreferrer">Канал</a>
+        <a class="btn primary" href="https://n461584.yclients.com/" target="_blank" rel="noreferrer" data-moonn-goal="iclient_booking">Онлайн-запись</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-cta" aria-label="Быстрая запись">
+    <a class="btn" href="https://t.me/moonn_official" target="_blank" rel="noreferrer">Канал</a>
+    <a class="btn primary" href="https://t.me/Tatiana_Moonn" target="_blank" rel="noreferrer">Написать</a>
+    <a class="btn ghost" href="#consult">Форматы</a>
+  </div>
+<main>
+    <section id="ai-summary">
+      <div class="wrap">
+        <div class="card reveal" data-glow>
+          <h2>Кратко о консультациях</h2>
+          <ul class="list">
+            <li><span class="bullet"></span>Татьяна Мунн, психолог МГУ, автор метода «Быстрая психология»</li>
+            <li><span class="bullet"></span>Формат: онлайн и очно в Москве по предварительной записи</li>
+            <li><span class="bullet"></span>Темы: тревога, выгорание, отношения, границы, самооценка, подростковые запросы</li>
+            <li><span class="bullet"></span>Длительность: 60-120 минут; доступны пакеты 3 и 5 встреч</li>
+            <li><span class="bullet"></span>Онлайн-запись: iClient/YCLIENTS; контактные каналы — для уточнений</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
+
+          <div class="hero-card reveal" data-glow>
+            <div class="kicker"><span class="dot" aria-hidden="true"></span> Очные и онлайн-консультации в Москве | Лекции | Выступления</div>
+            <h1>
+              Быстрая психология.
+              <span style="color:rgba(34,211,238,.92)">Глубоко</span> и
+              <span style="color:rgba(168,85,247,.96)">без лишней воды</span>.
+            </h1>
+            <p class="lead">
+              Я - Татьяна Мунн, психолог МГУ, эксперт по эмоциональному интеллекту, психологии эмоций и состояний.
+              Работаю со взрослыми и подростками. Часто уже за 1-3 встречи получается сдвинуть то, что годами стояло на месте.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn primary" href="https://n461584.yclients.com/" target="_blank" rel="noreferrer" data-moonn-goal="iclient_booking">Записаться онлайн</a>
+              <a class="btn" href="#lectures">Посмотреть лекции</a>
+              <a class="btn" href="#corporate">Пригласить как спикера</a>
+              <a class="btn ghost" href="https://n461584.yclients.com/" target="_blank" rel="noreferrer" data-moonn-goal="iclient_booking">Онлайн-запись</a>
+            </div>
+
+            <div class="stats">
+              <div class="stat">
+                <b>1-3 встречи</b>
+                <span>частая динамика по запросу</span>
+              </div>
+              <div class="stat">
+                <b>Москва + онлайн</b>
+                <span>кабинет и дистанционно</span>
+              </div>
+              <div class="stat">
+                <b>Эмоции - в ресурс</b>
+                <span>эмоциональный интеллект, состояния</span>
+              </div>
+            </div>
+
+            <div class="note">
+              Важно: если есть острые состояния (суицидальные мысли, сильные приступы паники, психотические эпизоды) - лучше сразу обращаться в экстренные службы и к врачу.
+              Психологическая помощь не заменяет медицинскую.
+            </div>
+          </div>
+
+          <aside class="side reveal" aria-label="Карточка специалиста" data-glow>
+            <div class="portrait">
+              <video
+                id="tmHeroVideo"
+                muted
+                playsinline
+                autoplay
+                loop
+                preload="auto"
+                src="https://static.tildacdn.com/vide3162-6262-4331-b363-346638343861/___3.mp4"></video>
+              <div class="vfade" aria-hidden="true"></div>
+            </div>
+
+            <div class="side-body">
+              <h3>Коротко обо мне</h3>
+              <div class="chiprow">
+                <span class="chip">Психолог МГУ</span>
+                <span class="chip">«Быстрая психология»</span>
+                <span class="chip">Эмоциональный интеллект</span>
+                <span class="chip">Выгорание</span>
+                <span class="chip">Отношения и границы</span>
+              </div>
+              <div style="margin-top:12px" class="hero-actions">
+                <a class="btn primary" href="https://n461584.yclients.com/" target="_blank" rel="noreferrer" data-moonn-goal="iclient_booking">Онлайн-запись</a>
+                <a class="btn ghost" href="https://n461584.yclients.com/" target="_blank" rel="noreferrer" data-moonn-goal="iclient_booking">Онлайн-запись</a>
+                <a class="btn" href="#contacts">Контакты</a>
+              </div>
+              <p class="mini" style="margin-top:10px; opacity:.85">moonn.ru | Telegram @Tatiana_Moonn | +7-977-777-03-03</p>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="title">
+          <div>
+            <h2>О Татьяне</h2>
+            <p>Татьяна Мунн - преподаватель МГУ, психолог, автор метода «Быстрая психология», эксперт в области психологии эмоций и состояний.</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card reveal" data-glow>
+            <h3>Как я работаю</h3>
+            <p>Без лишней воды. Быстро проясняем, что именно запускает состояние, и переводим это в понятные шаги.</p>
+            <ul class="list">
+              <li><span class="bullet"></span> запрос - формулируем вместе</li>
+              <li><span class="bullet"></span> состояние - называем и «приземляем»</li>
+              <li><span class="bullet"></span> план - короткий и выполнимый</li>
+            </ul>
+          </div>
+          <div class="card reveal" data-glow>
+            <h3>С чем чаще приходят</h3>
+            <ul class="list">
+              <li><span class="bullet"></span> выгорание, хроническая усталость, потеря мотивации</li>
+              <li><span class="bullet"></span> тревога, внутреннее напряжение, паника</li>
+              <li><span class="bullet"></span> отношения, границы, зависимость от оценки</li>
+              <li><span class="bullet"></span> прокрастинация и самосаботаж</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="credentials">
+      <div class="wrap">
+        <div class="grid-2">
+          <div class="card reveal" data-glow>
+            <h2>Квалификация и документы</h2>
+            <ul class="list">
+              <li><span class="bullet"></span>Профильное психологическое образование и практическая работа с взрослыми и подростками</li>
+              <li><span class="bullet"></span>Публичные лекции и образовательные программы по психологии эмоций и состояний</li>
+              <li><span class="bullet"></span>Подтверждающие документы: <a href="#certs">раздел «Сертификаты и дипломы»</a></li>
+            </ul>
+          </div>
+          <div class="card reveal" data-glow>
+            <h3>Подробнее о специалисте</h3>
+            <p>Расширенный профиль и материалы о работе доступны на отдельной странице.</p>
+            <div class="hero-actions" style="margin-top:12px">
+              <a class="btn" href="https://moonn.ru/psiholog-tatiana-moonn" target="_blank" rel="noreferrer">О специалисте</a>
+              <a class="btn ghost" href="#contacts">Контакты</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="method">
+      <div class="wrap">
+        <div class="title">
+          <div>
+            <h2>Метод «Быстрая психология»</h2>
+            <p>Смысл метода - быстрее находить главный механизм, который держит состояние, и менять его через ясные действия и точные формулировки.</p>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="card reveal" data-glow>
+            <h3>Точность</h3>
+            <p>Мы не расплываемся. Выделяем одну-две ключевые точки, которые реально меняют динамику.</p>
+          </div>
+          <div class="card reveal" data-glow>
+            <h3>Опора на тело</h3>
+            <p>Состояния живут в теле. Учимся считывать сигналы, чтобы эмоции перестали быть шумом и стали ресурсом.</p>
+          </div>
+          <div class="card reveal" data-glow>
+            <h3>План на неделю</h3>
+            <p>После встречи остаётся простой план: что делать, что не делать, и как отслеживать прогресс.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="issues">
+      <div class="wrap">
+        <div class="title">
+          <div>
+            <h2>Вопросы, с которыми я работаю</h2>
+            <p>Основные темы + короткое видео о формате работы.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card reveal drop-glow" data-glow>
+            <h3>Основные запросы</h3>
+            <ul class="list">
+              <li><span class="bullet"></span> выгорание, усталость, ощущение «я не вывожу»</li>
+              <li><span class="bullet"></span> тревога, паника, напряжение и контроль</li>
+              <li><span class="bullet"></span> отношения, границы, созависимость</li>
+              <li><span class="bullet"></span> самооценка, зависимость от оценки</li>
+              <li><span class="bullet"></span> прокрастинация, самосаботаж</li>
+              <li><span class="bullet"></span> состояние «не чувствую себя» и потеря опоры</li>
+            </ul>
+            <p class="mini" style="margin-top:10px; opacity:.85">
+              Если твой запрос «не из списка» - всё равно пиши. Мы быстро поймём, подходит ли формат.
+            </p>
+          </div>
+
+          <div class="card reveal drop-glow" data-glow>
+            <h3>Видео о формате работы</h3>
+<div class="video-box contain">
+              <div class="video-16x9">
+                <video
+                  muted
+                  playsinline
+                  autoplay
+                  loop
+                  preload="none"
+                  src="https://static.tildacdn.com/vide3634-6636-4662-a561-636663663631/_______.mp4"></video>
+              </div>
+            </div>
+</div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="quiz">
+      <div class="wrap">
+        <div class="title">
+          <div>
+            <h2>Мини-тест на 60-90 секунд</h2>
+            <p>Чтобы быстро понять, что у вас сейчас “ядро состояния” - и куда лучше двигаться дальше.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card reveal drop-glow" data-glow>
+            <h3>Ответьте честно (это не экзамен)</h3>
+            <p class="mini">Нажмите варианты - в конце получите результат и подсказку “куда дальше”.</p>
+
+            <div class="sep"></div>
+
+            <div id="tmQuiz" style="margin-top:12px; position:relative; z-index:2">
+              <div class="card slim" style="background: rgba(0,0,0,.22) !important; margin-bottom:10px">
+                <p style="margin:0; font-size:13px"><b>1)</b> Сейчас больше всего похоже на…</p>
+                <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px">
+                  <button class="btn" type="button" data-q="q1" data-v="stress">стресс/напряжение</button>
+                  <button class="btn" type="button" data-q="q1" data-v="anxiety">тревога</button>
+                  <button class="btn" type="button" data-q="q1" data-v="burnout">выгорание</button>
+                </div>
+              </div>
+
+              <div class="card slim" style="background: rgba(0,0,0,.22) !important; margin-bottom:10px">
+                <p style="margin:0; font-size:13px"><b>2)</b> Что сильнее всего мешает в быту?</p>
+                <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px">
+                  <button class="btn" type="button" data-q="q2" data-v="sleep">сон/восстановление</button>
+                  <button class="btn" type="button" data-q="q2" data-v="focus">фокус/концентрация</button>
+                  <button class="btn" type="button" data-q="q2" data-v="relations">отношения/границы</button>
+                </div>
+              </div>
+
+              <div class="card slim" style="background: rgba(0,0,0,.22) !important; margin-bottom:10px">
+                <p style="margin:0; font-size:13px"><b>3)</b> Какой ресурс сейчас “просел”?</p>
+                <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px">
+                  <button class="btn" type="button" data-q="q3" data-v="energy">энергия</button>
+                  <button class="btn" type="button" data-q="q3" data-v="meaning">смысл/мотивация</button>
+                  <button class="btn" type="button" data-q="q3" data-v="confidence">уверенность</button>
+                </div>
+              </div>
+
+              <div class="card slim" id="tmQuizResult" style="display:none; background: rgba(0,0,0,.22) !important">
+                <p style="margin:0; font-size:13px"><b>Результат:</b></p>
+                <p class="mini" id="tmQuizText" style="margin-top:8px; opacity:.92"></p>
+                <div class="hero-actions" style="margin-top:12px">
+                  <a class="btn primary" href="#consult">Подобрать формат</a>
+                  <a class="btn" href="#lectures">Посмотреть лекции</a>
+                  <a class="btn" href="https://t.me/Tatiana_Moonn" target="_blank" rel="noreferrer">Написать</a>
+                </div>
+              </div>
+
+              <p class="mini" style="margin-top:10px; opacity:.75">
+                Это не диагноз и не медицинская оценка. Это короткая ориентация по запросу перед консультацией.
+              </p>
+            </div>
+          </div>
+
+          <div class="card reveal drop-glow" data-glow>
+            <h3>Зачем этот тест (и почему он удерживает)</h3>
+            <ul class="list">
+              <li><span class="bullet"></span> помогает за 1 минуту назвать состояние словами</li>
+              <li><span class="bullet"></span> снимает хаос: появляется “следующий шаг”</li>
+              <li><span class="bullet"></span> вы не просто читаете - вы взаимодействуете</li>
+            </ul>
+            <p class="note">Если хотите, я сделаю расширенную версию теста: 7-10 вопросов + ветвления под подростков/взрослых.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="consult">
+      <div class="wrap">
+        <div class="title">
+          <div>
+            <h2>Консультации</h2>
+            <p>Москва + онлайн. Формат подбираем под задачу и ваш ритм жизни.</p>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="card reveal" data-glow>
+            <h3>1 встреча</h3>
+            <p>Если нужен понятный результат и структура. Быстро фиксируем, что именно мешает, и делаем план.</p>
+            <div class="price-row">
+              <span class="price">10 000 ₽<small>60-120 мин</small></span>
+              <span class="badge">онлайн или очно</span>
+            </div>
+            <div class="hero-actions" style="margin-top:12px">
+              <a class="btn primary" href="https://n461584.yclients.com/" target="_blank" rel="noreferrer" data-moonn-goal="iclient_booking">Выбрать время</a>
+              <a class="btn" href="https://t.me/Tatiana_Moonn" target="_blank" rel="noreferrer">Написать</a>
+            </div>
+          </div>
+
+          <div class="card reveal" data-glow>
+            <h3>Пакет 3 встречи</h3>
+            <p>Если запрос сложнее и важно удержать темп. 3 шага - 3 результата, с поддержкой между встречами.</p>
+            <div class="price-row">
+              <span class="price">27 000 ₽<small>3 встречи</small></span>
+              <span class="badge">экономия</span>
+            </div>
+            <div class="hero-actions" style="margin-top:12px">
+              <a class="btn primary" href="https://n461584.yclients.com/" target="_blank" rel="noreferrer" data-moonn-goal="iclient_booking">Записаться</a>
+              <a class="btn" href="https://t.me/Tatiana_Moonn" target="_blank" rel="noreferrer">Написать</a>
+            </div>
+          </div>
+
+          <div class="card reveal" data-glow>
+            <h3>Пакет 5 встреч</h3>
+            <p>Глубже и устойчивее. Для тех, кому важно реально перестроить привычки и состояние.</p>
+            <div class="price-row">
+              <span class="price">40 000 ₽<small>5 встреч</small></span>
+              <span class="badge">пакет</span>
+            </div>
+            <div class="hero-actions" style="margin-top:12px">
+              <a class="btn primary" href="https://n461584.yclients.com/" target="_blank" rel="noreferrer" data-moonn-goal="iclient_booking">Записаться</a>
+              <a class="btn" href="#contacts">Контакты</a>
+            </div>
+          </div>
+        </div>
+
+        </div>
+    </section>
+
+    <section id="lectures">
+      <div class="wrap">
+        <div class="title">
+          <div>
+            <h2>Лекции и видео</h2>
+            <p>Актуальные видео и записи выступлений собраны на YouTube-канале Татьяны Мунн. Если встроенное видео не открывается, переходите на канал напрямую.</p>
+          </div>
+        </div>
+
+        <div class="big-cta reveal" data-glow>
+          <div>
+            <h3>Видео о психологии эмоций, отношениях и саморегуляции</h3>
+            <p>Канал помогает познакомиться с подходом Татьяны Мунн до консультации: лекции, объяснения метода «Быстрая психология», темы тревоги, выгорания, отношений и эмоционального интеллекта.</p>
+            <div class="hero-actions" style="margin-top:12px">
+              <a class="btn primary" href="https://youtube.com/channel/UCyAQlNoDtg7En6BdwbctSrQ" target="_blank" rel="noreferrer" data-moonn-goal="youtube_channel">Открыть YouTube-канал</a>
+              <a class="btn" href="https://n461584.yclients.com/" target="_blank" rel="noreferrer" data-moonn-goal="iclient_booking">Записаться на консультацию</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section id="park">
+      <div class="wrap">
+        <div class="title">
+          <div>
+            <h2>Лекции в Парке Горького</h2>
+            <p>Карусель из 11 лекций. Регистрация - через Timepad (кнопка на каждой карточке).</p>
+          </div>
+        </div>
+
+        <div class="carousel reveal" data-glow>
+          <div class="car-btn left" data-car-left aria-label="Назад">‹</div>
+          <div class="car-btn right" data-car-right aria-label="Вперёд">›</div>
+
+          <div class="track" data-track>
+            <div class="slide">
+              <div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild6138-6132-4136-a131-326631323232/-/format/webp/2602_______.png.webp" alt="Лекция в Парке Горького 1" /></div>
+              <div class="cap"><span>Лекция в Парке Горького №1</span><a class="capbtn" href="https://moonn.timepad.ru/event/3334362/" target="_blank" rel="noreferrer">Забронировать</a></div>
+            </div>
+            <div class="slide">
+              <div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3130-3762-4466-a365-343935333664/-/format/webp/2603_______.png.webp" alt="Лекция в Парке Горького 2" /></div>
+              <div class="cap"><span>Лекция в Парке Горького №2</span><a class="capbtn" href="https://moonn.timepad.ru/event/3334362/" target="_blank" rel="noreferrer">Забронировать</a></div>
+            </div>
+            <div class="slide">
+              <div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild6161-3462-4333-b164-316635316130/-/format/webp/2604______.png.webp" alt="Лекция в Парке Горького 3" /></div>
+              <div class="cap"><span>Лекция в Парке Горького №3</span><a class="capbtn" href="https://moonn.timepad.ru/event/3334362/" target="_blank" rel="noreferrer">Забронировать</a></div>
+            </div>
+            <div class="slide">
+              <div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild6362-3863-4237-a266-613233336133/-/format/webp/2605________.png.webp" alt="Лекция в Парке Горького 4" /></div>
+              <div class="cap"><span>Лекция в Парке Горького №4</span><a class="capbtn" href="https://moonn.timepad.ru/event/3334362/" target="_blank" rel="noreferrer">Забронировать</a></div>
+            </div>
+            <div class="slide">
+              <div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3561-6635-4435-b964-386664313838/-/format/webp/2606______.png.webp" alt="Лекция в Парке Горького 5" /></div>
+              <div class="cap"><span>Лекция в Парке Горького №5</span><a class="capbtn" href="https://moonn.timepad.ru/event/3334362/" target="_blank" rel="noreferrer">Забронировать</a></div>
+            </div>
+            <div class="slide">
+              <div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3136-3235-4435-b330-623033636332/-/format/webp/2607______.png.webp" alt="Лекция в Парке Горького 6" /></div>
+              <div class="cap"><span>Лекция в Парке Горького №6</span><a class="capbtn" href="https://moonn.timepad.ru/event/3334362/" target="_blank" rel="noreferrer">Забронировать</a></div>
+            </div>
+            <div class="slide">
+              <div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3863-6534-4264-b531-666266396538/-/format/webp/2608________.png.webp" alt="Лекция в Парке Горького 7" /></div>
+              <div class="cap"><span>Лекция в Парке Горького №7</span><a class="capbtn" href="https://moonn.timepad.ru/event/3334362/" target="_blank" rel="noreferrer">Забронировать</a></div>
+            </div>
+            <div class="slide">
+              <div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild6462-6234-4131-a566-613661393038/-/format/webp/2609______.png.webp" alt="Лекция в Парке Горького 8" /></div>
+              <div class="cap"><span>Лекция в Парке Горького №8</span><a class="capbtn" href="https://moonn.timepad.ru/event/3334362/" target="_blank" rel="noreferrer">Забронировать</a></div>
+            </div>
+            <div class="slide">
+              <div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild6631-6263-4161-b732-643336383963/-/format/webp/2610______.png.webp" alt="Лекция в Парке Горького 9" /></div>
+              <div class="cap"><span>Лекция в Парке Горького №9</span><a class="capbtn" href="https://moonn.timepad.ru/event/3334362/" target="_blank" rel="noreferrer">Забронировать</a></div>
+            </div>
+            <div class="slide">
+              <div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3132-6238-4837-b662-366638363238/-/format/webp/2611______.png.webp" alt="Лекция в Парке Горького 10" /></div>
+              <div class="cap"><span>Лекция в Парке Горького №10</span><a class="capbtn" href="https://moonn.timepad.ru/event/3334362/" target="_blank" rel="noreferrer">Забронировать</a></div>
+            </div>
+            <div class="slide">
+              <div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3233-3332-4463-b461-323464376266/-/format/webp/2612______.png.webp" alt="Лекция в Парке Горького 11" /></div>
+              <div class="cap"><span>Лекция в Парке Горького №11</span><a class="capbtn" href="https://moonn.timepad.ru/event/3334362/" target="_blank" rel="noreferrer">Забронировать</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section id="podcast">
+      <div class="wrap">
+        <div class="title">
+          <div>
+            <h2>Предзапись на живые лекции по духовной психологии</h2>
+            <p>Старт с 6 апреля. Москва, Парк Горького или место уточнится. Предзапись даёт право бесплатно в течение месяца посещать слушания лекций. Записи не будет.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card reveal drop-glow" data-glow>
+            <h3>Как это устроено</h3>
+            <ul class="list">
+              <li><span class="bullet"></span> лекции очно, в Москве</li>
+              <li><span class="bullet"></span> старт с 6 апреля (точное место уточняется)</li>
+              <li><span class="bullet"></span> предзапись = месяц бесплатного посещения</li>
+              <li><span class="bullet"></span> записей не будет</li>
+            </ul>
+            <div class="hero-actions" style="margin-top:12px">
+              <a class="btn primary" href="https://t.me/Tatiana_Moonn" target="_blank" rel="noreferrer">Предзапись в Telegram</a>
+              <a class="btn" href="https://wa.me/79777770303" target="_blank" rel="noreferrer">Предзапись в WhatsApp</a>
+            </div>
+            <p class="mini" style="margin-top:10px; opacity:.85">Напиши: имя, удобные дни, и сколько человек (если будете вдвоём/втроём).</p>
+          </div>
+
+          <div class="card reveal drop-glow" data-glow>
+            <h3>Короткое видео о формате</h3>
+<div class="video-box">
+              <div class="video-16x9">
+                <video
+                  id="tmPodcastVideo"
+                  muted
+                  playsinline
+                  autoplay
+                  loop
+                  preload="none"
+                  src="https://static.tildacdn.com/vide3162-3538-4265-b166-386261336361/__.mp4"></video>
+
+                <div class="v-fallback" id="tmPodcastFallback">
+                  <b>Если видео не запускается на ПК</b>
+                  <p>ногда браузер не поддерживает кодек этого файла. Можно открыть видео отдельно или включить ручной режим.</p>
+                  <a href="https://static.tildacdn.com/vide3430-3133-4163-a236-376137316661/___.mp4" target="_blank" rel="noreferrer">Открыть видео</a>
+                </div>
+              </div>
+            </div>
+
+            </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="certs">
+      <div class="wrap">
+        <div class="title">
+          <div>
+            <h2>Сертификаты и дипломы</h2>
+            </div>
+        </div>
+
+        <div class="carousel cert-carousel reveal" data-glow>
+          <div class="car-btn left" data-car-left aria-label="Назад">‹</div>
+          <div class="car-btn right" data-car-right aria-label="Вперёд">›</div>
+
+          <div class="track" data-track>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3066-6163-4132-b064-306461386639/-/format/webp/photo.png.webp" alt="Сертификат 1" /></div><div class="cap"><span>Сертификат - 1</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3637-3866-4134-b637-353738396464/-/format/webp/__.png.webp" alt="Сертификат 2" /></div><div class="cap"><span>Сертификат - 2</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3331-3564-4631-b035-343130663639/-/format/webp/___.png.webp" alt="Сертификат 3" /></div><div class="cap"><span>Сертификат - 3</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild6164-3635-4238-a637-643638663963/-/format/webp/___.png.webp" alt="Сертификат 4" /></div><div class="cap"><span>Сертификат - 4</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3130-6462-4633-b738-623630353062/-/format/webp/____.png.webp" alt="Сертификат 5" /></div><div class="cap"><span>Сертификат - 5</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3239-3262-4566-a637-373238373964/-/format/webp/____.png.webp" alt="Сертификат 6" /></div><div class="cap"><span>Сертификат - 6</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild6331-3766-4238-b038-383362366436/-/format/webp/____.png.webp" alt="Сертификат 7" /></div><div class="cap"><span>Сертификат - 7</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3939-3238-4237-b032-336530373930/-/format/webp/___.png.webp" alt="Сертификат 8" /></div><div class="cap"><span>Сертификат - 8</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3834-3136-4133-b130-316630353235/-/format/webp/__.png.webp" alt="Сертификат 9" /></div><div class="cap"><span>Сертификат - 9</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild6133-6233-4565-b365-643736343661/-/format/webp/___.png.webp" alt="Сертификат 10" /></div><div class="cap"><span>Сертификат - 10</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3637-3866-4134-b637-353738396464/-/format/webp/__.png.webp" alt="Сертификат 11" /></div><div class="cap"><span>Сертификат - 11</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild6337-3761-4366-b866-366266643763/-/format/webp/___.png.webp" alt="Сертификат 12" /></div><div class="cap"><span>Сертификат - 12</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3130-6462-4633-b738-623630353062/-/format/webp/____.png.webp" alt="Сертификат 13" /></div><div class="cap"><span>Сертификат - 13</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild6434-6563-4537-b032-363563336136/-/format/webp/___1.png.webp" alt="Сертификат 14" /></div><div class="cap"><span>Сертификат - 14</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild6331-3766-4238-b038-383362366436/-/format/webp/____.png.webp" alt="Сертификат 15" /></div><div class="cap"><span>Сертификат - 15</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="corporate">
+      <div class="wrap">
+        <div class="title">
+          <div>
+            <h2>Для компаний</h2>
+            <p>Приглашения на корпоративные тренинги, лекции и программы для команд.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="card reveal" data-glow>
+            <h3>Выгорание и устойчивость</h3>
+            <p>Как команде не «сгореть» в длинных проектах. Признаки, профилактика, культура восстановления.</p>
+          </div>
+          <div class="card reveal" data-glow>
+            <h3>Эмоции как инструмент</h3>
+            <p>Эмоциональный интеллект без поп-мифов. Состояние руководителя - как фактор эффективности команды.</p>
+          </div>
+          <div class="card reveal" data-glow>
+            <h3>Коммуникации и границы</h3>
+            <p>Конфликты, роли, договорённости. Чтобы рабочие отношения не превращались в личные войны.</p>
+          </div>
+        </div>
+
+        <div class="big-cta reveal drop-glow" style="margin-top:12px" data-glow>
+          <div>
+            <h3>Пригласить как спикера</h3>
+            <p>Напиши: формат (онлайн/очно), аудитория, цель встречи. Я отвечу с предложением по структуре и длительности.</p>
+          </div>
+          <div class="hero-actions" style="margin:0">
+            <a class="btn" href="https://t.me/moonn_official" target="_blank" rel="noreferrer">Канал</a>
+            <a class="btn primary" href="https://t.me/Tatiana_Moonn" target="_blank" rel="noreferrer">Оставить заявку</a>
+          </div>
+
+          <div style="width:100%; margin-top:14px">
+            <div class="carousel speaker-carousel">
+              <div class="car-btn left" data-car-left aria-label="Назад">‹</div>
+              <div class="car-btn right" data-car-right aria-label="Вперёд">›</div>
+
+              <div class="track" data-track>
+                <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild6137-3335-4465-b631-616134313661/-/format/webp/photo.png.webp" alt="Спикер - фото 1" /></div><div class="cap"><span>Фото - 1</span></div></div>
+                <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild6235-3261-4534-b231-376361326634/-/format/webp/____j7pg.jpg.webp" alt="Спикер - фото 2" /></div><div class="cap"><span>Фото - 2</span></div></div>
+                <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild6337-3766-4666-b361-396365613835/-/format/webp/____.jpg.webp" alt="Спикер - фото 3" /></div><div class="cap"><span>Фото - 3</span></div></div>
+                <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild6335-3638-4732-a165-316537663163/-/format/webp/__.png.webp" alt="Спикер - фото 4" /></div><div class="cap"><span>Фото - 4</span></div></div>
+                <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3730-3232-4465-a165-313334323935/-/format/webp/__.png.webp" alt="Спикер - фото 5" /></div><div class="cap"><span>Фото - 5</span></div></div>
+                <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild6466-3536-4664-a366-363633316662/-/format/webp/photo.jpg.webp" alt="Спикер - фото 6" /></div><div class="cap"><span>Фото - 6</span></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="reviews">
+      <div class="wrap">
+        <div class="title">
+          <div>
+            <h2>Отзывы</h2>
+            </div>
+        </div>
+
+        <div class="carousel review-carousel reveal" data-glow>
+          <div class="car-btn left" data-car-left aria-label="Назад">‹</div>
+          <div class="car-btn right" data-car-right aria-label="Вперёд">›</div>
+
+          <div class="track" data-track>
+            
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3531-3239-4162-b866-393331636562/-/format/webp/____2025-09-10.png.webp" alt="Отзыв 1" /></div><div class="cap"><span>Отзыв - 1</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild6461-3937-4361-a638-333933393465/-/format/webp/____2025-08-24.png.webp" alt="Отзыв 2" /></div><div class="cap"><span>Отзыв - 2</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3735-3431-4666-b133-663761326134/-/format/webp/____2025-01-27.png.webp" alt="Отзыв 3" /></div><div class="cap"><span>Отзыв - 3</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3430-6362-4230-b831-623165396361/-/format/webp/____2024-10-07.png.webp" alt="Отзыв 4" /></div><div class="cap"><span>Отзыв - 4</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3737-3835-4636-a662-636135326539/-/format/webp/____2024-10-03.png.webp" alt="Отзыв 5" /></div><div class="cap"><span>Отзыв - 5</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3563-6337-4034-a133-643965356264/-/resize/546x/-/format/webp/____2024-09-06.png.webp" alt="Отзыв 6" /></div><div class="cap"><span>Отзыв - 6</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild6362-6362-4539-b030-646565316365/-/resize/549x/-/format/webp/____2024-09-04_2.png.webp" alt="Отзыв 7" /></div><div class="cap"><span>Отзыв - 7</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3435-3463-4530-a439-343666353934/-/resize/548x/-/format/webp/____2024-09-04.png.webp" alt="Отзыв 8" /></div><div class="cap"><span>Отзыв - 8</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3565-3039-4336-b739-376633663730/-/resize/550x/-/format/webp/____2024-08-18_2.png.webp" alt="Отзыв 9" /></div><div class="cap"><span>Отзыв - 9</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3331-6164-4363-b665-363431323163/-/resize/549x/-/format/webp/____2024-07-21_2.png.webp" alt="Отзыв 10" /></div><div class="cap"><span>Отзыв - 10</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3331-6131-4266-b438-303365333864/-/resize/553x/-/format/webp/____2024-07-19.png.webp" alt="Отзыв 11" /></div><div class="cap"><span>Отзыв - 11</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild6165-6138-4665-b862-363264653838/-/resize/546x/-/format/webp/____2024-07-08.png.webp" alt="Отзыв 12" /></div><div class="cap"><span>Отзыв - 12</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3539-3666-4165-b134-656634623635/-/resize/550x/-/format/webp/____2024-07-06.png.webp" alt="Отзыв 13" /></div><div class="cap"><span>Отзыв - 13</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild6330-6463-4537-a133-343937313461/-/resize/554x/-/format/webp/____2024-06-23.png.webp" alt="Отзыв 14" /></div><div class="cap"><span>Отзыв - 14</span></div></div>
+            <div class="slide"><div class="media"><img loading="lazy" src="https://optim.tildacdn.com/tild3065-3236-4634-b564-363532316564/-/resize/550x/-/format/webp/____2024-06-14.png.webp" alt="Отзыв 15" /></div><div class="cap"><span>Отзыв - 15</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="teen">
+      <div class="wrap">
+        <div class="title">
+          <div>
+            <h2>Записать подростка на консультацию</h2>
+            <p>Для улучшения учёбы и подготовки к экзаменам.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card reveal drop-glow" data-glow>
+            <h3>Когда это особенно полезно</h3>
+            <ul class="list">
+              <li><span class="bullet"></span> тревога перед экзаменами, «застревание» и прокрастинация</li>
+              <li><span class="bullet"></span> проблемы с концентрацией, режимом, мотивацией</li>
+              <li><span class="bullet"></span> напряжение в семье из-за учёбы и оценок</li>
+              <li><span class="bullet"></span> эмоциональные качели, выгорание, «не хочу ничего»</li>
+            </ul>
+
+            <div class="price-row">
+              <span class="price">10 000 ₽<small>онлайн</small></span>
+              <span class="badge">подростки</span>
+            </div>
+
+            <div class="hero-actions" style="margin-top:12px">
+              <a class="btn primary" href="https://n461584.yclients.com/" target="_blank" rel="noreferrer" data-moonn-goal="iclient_booking">Выбрать время</a>
+              <a class="btn" href="https://n461584.yclients.com/" data-moonn-goal="iclient_booking" target="_blank" rel="noreferrer">Запись (Yclients)</a>
+              <a class="btn" href="https://t.me/Tatiana_Moonn" target="_blank" rel="noreferrer">Написать</a>
+            </div>
+          </div>
+
+          <div class="card reveal drop-glow" data-glow>
+            <h3>Короткое видео</h3>
+<div class="video-box">
+              <div class="video-16x9">
+                <video id="tmShortVideo"  muted playsinline autoplay loop preload="metadata"
+                   src="https://static.tildacdn.com/vide6239-3237-4930-a231-383064323161/____.mp4" controls></video>
+              </div>
+            </div>
+
+            </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="faq">
+      <div class="wrap">
+        <div class="title">
+          <div>
+            <h2>FAQ</h2>
+            <p>Короткие ответы на частые вопросы.</p>
+          </div>
+        </div>
+
+        <div class="faq">
+          <details class="reveal" data-glow>
+            <summary>Как проходит первая встреча?</summary>
+            <p>Сначала уточняем запрос и контекст, потом быстро выходим на главный механизм, который держит состояние. В конце фиксируем 1-2 шага на неделю.</p>
+          </details>
+
+          <details class="reveal" data-glow>
+            <summary>Если я не знаю, как сформулировать запрос?</summary>
+            <p>Это нормально. Вы приходите “с состоянием”, а слова мы найдем вместе. Обычно достаточно 5-10 минут.</p>
+          </details>
+
+          <details class="reveal" data-glow>
+            <summary>Что если нужно перенести время?</summary>
+            <p>Перенос возможен заранее, по договорённости. Важно написать как можно раньше.</p>
+          </details>
+
+          <details class="reveal" data-glow>
+            <summary>Оплата обязательна до встречи?</summary>
+            <p>Если вы хотите закрепить конкретное время - да. Это снимает хаос с расписанием.</p>
+          </details>
+
+          <details class="reveal" data-glow>
+            <summary>Можно ли оплатить по СБП или от юрлица?</summary>
+            <p>Да. Если нужен счёт - напишите, подготовим вариант.</p>
+          </details>
+
+          <details class="reveal" data-glow>
+            <summary>Это психотерапия?</summary>
+            <p>Это психологическая консультация. При признаках острых состояний порекомендую обратиться к врачу.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="contacts">
+      <div class="wrap">
+        <div class="title">
+          <div>
+            <h2>Контакты</h2>
+            <p>Для консультаций - личный Telegram. Канал - отдельно.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card reveal" data-glow>
+            <h3>Написать</h3>
+            <ul class="list">
+              <li><span class="bullet"></span> Telegram (личный): <a href="https://t.me/Tatiana_Moonn" target="_blank" rel="noreferrer">@Tatiana_Moonn</a></li>
+              <li><span class="bullet"></span> Telegram (канал): <a href="https://t.me/moonn_official" target="_blank" rel="noreferrer">t.me/moonn_official</a></li>
+              <li><span class="bullet"></span> WhatsApp: <a href="https://wa.me/79777770303" target="_blank" rel="noreferrer">+7-977-777-03-03</a></li>
+              <li><span class="bullet"></span> Онлайн-запись: <a href="https://n461584.yclients.com/" target="_blank" rel="noreferrer" data-moonn-goal="iclient_booking">iClient/YCLIENTS</a></li>
+<li><span class="bullet"></span> Сайт: <a href="https://moonn.ru/" target="_blank" rel="noreferrer">moonn.ru</a></li>
+            </ul>
+            <div class="hero-actions" style="margin-top:12px">
+              <a class="btn primary" href="https://n461584.yclients.com/" target="_blank" rel="noreferrer" data-moonn-goal="iclient_booking">Записаться в iClient</a>
+              <a class="btn" href="https://wa.me/79777770303" target="_blank" rel="noreferrer">WhatsApp</a>
+              <a class="btn ghost" href="https://n461584.yclients.com/" target="_blank" rel="noreferrer" data-moonn-goal="iclient_booking">Онлайн-запись</a>
+            </div>
+          </div>
+
+          <div class="card reveal" data-glow>
+            <h3>Быстрая заявка (в 2 строки)</h3>
+            <p class="mini">Скопируй и отправь мне в Telegram:</p>
+            <div class="card slim" style="margin-top:10px; background: rgba(0,0,0,.22) !important">
+              <p style="margin:0; font-size:13px">
+                1) Что беспокоит (1-2 предложения)<br>
+                2) Сколько длится<br>
+                3) Формат: онлайн/очно<br>
+                4) Когда удобно по времени
+              </p>
+            </div>
+            <p class="note">Так я быстрее пойму, как лучше начать - и не будем тратить встречу на «раскачку».</p>
+
+            <div class="sep"></div>
+
+            <p class="mini" style="margin-top:10px; opacity:.85">
+              <b>Юридическая информация</b><br>
+                1) Публичная оферта: <a href="https://moonn.ru/offer" target="_blank" rel="noreferrer">Публичная оферта</a><br>
+                2) Политика конфиденциальности: <a href="https://moonn.ru/politic" target="_blank" rel="noreferrer">Политика конфиденциальности</a><br>
+                3) Согласие на обработку данных: <a href="https://moonn.ru/call" target="_blank" rel="noreferrer">Согласие на обработку данных</a><br>
+</p>
+          </div>
+        </div>
+
+        <div class="foot">
+          <div class="sep"></div>
+          <p style="margin:12px 0 0">© Татьяна Мунн. Психолог МГУ - «Быстрая психология». Москва + онлайн.<br>Контакты: moonn.ru | Telegram @Tatiana_Moonn | +7-977-777-03-03</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function(){
+      if(window.__moonnPsyBlockInit) return;
+      window.__moonnPsyBlockInit = true;
+
+      // Idempotency: keep only the first style/JSON-LD/root if block was inserted more than once.
+      document.querySelectorAll('style#tmPsyStyles').forEach((el, i)=>{ if(i>0) el.remove(); });
+      document.querySelectorAll('script#tmSeoJsonLd').forEach((el, i)=>{ if(i>0) el.remove(); });
+      document.querySelectorAll('#tmRoot').forEach((el, i)=>{ if(i>0) el.remove(); });
+
+      const root = document.getElementById('tmRoot');
+      if(!root) return;
+// Burger / drawer
+      const burger = document.getElementById('burger');
+      const drawer = document.getElementById('drawer');
+      const drawerBg = document.getElementById('drawerBg');
+      const drawerX = document.getElementById('drawerX');
+
+      function openDrawer(){
+        if(!drawer) return;
+        drawer.classList.add('show');
+        drawer.setAttribute('aria-hidden','false');
+        document.documentElement.style.overflow = 'hidden';
+      }
+      function closeDrawer(){
+        if(!drawer) return;
+        drawer.classList.remove('show');
+        drawer.setAttribute('aria-hidden','true');
+        document.documentElement.style.overflow = '';
+      }
+
+      if(burger) burger.addEventListener('click', openDrawer);
+      if(drawerBg) drawerBg.addEventListener('click', closeDrawer);
+      if(drawerX) drawerX.addEventListener('click', closeDrawer);
+      if(drawer){
+        drawer.addEventListener('click', (e)=>{
+          const a = e.target.closest('a');
+          if(a) closeDrawer();
+        });
+      }
+
+      // Reveal
+      const revealEls = Array.from(root.querySelectorAll('.reveal'));
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach((ent)=>{
+          if(ent.isIntersecting) ent.target.classList.add('show');
+        });
+      }, {threshold: 0.14});
+      revealEls.forEach(el=>io.observe(el));
+
+      // Glow
+      const glowEls = Array.from(root.querySelectorAll('[data-glow]'));
+      const glowIO = new IntersectionObserver((entries)=>{
+        entries.forEach((ent)=>{
+          if(!ent.isIntersecting) return;
+          const el = ent.target;
+
+          el.classList.add('glow');
+
+          el.classList.remove('glow-once');
+          void el.offsetWidth;
+          el.classList.add('glow-once');
+
+          window.clearTimeout(el.__glowOnceT);
+          el.__glowOnceT = window.setTimeout(()=> el.classList.remove('glow-once'), 1300);
+
+          window.clearTimeout(el.__glowT);
+          el.__glowT = window.setTimeout(()=> el.classList.remove('glow'), 2000);
+        });
+      }, {threshold: 0.35});
+      glowEls.forEach(el=>glowIO.observe(el));
+
+      // Carousel: multiple
+      const carousels = Array.from(root.querySelectorAll('.carousel'));
+      carousels.forEach((carousel)=>{
+        const track = carousel.querySelector('[data-track]');
+        const left = carousel.querySelector('[data-car-left]');
+        const right = carousel.querySelector('[data-car-right]');
+        if(!track) return;
+
+        const step = ()=> Math.max(280, Math.round(track.clientWidth * 0.85));
+        if(left) left.addEventListener('click', ()=> track.scrollBy({left: -step(), behavior:'smooth'}));
+        if(right) right.addEventListener('click', ()=> track.scrollBy({left: step(), behavior:'smooth'}));
+      });
+
+      // Smooth anchors
+      root.addEventListener('click', (e)=>{
+        const a = e.target.closest('a[href^="#"]');
+        if(!a) return;
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(!el) return;
+        e.preventDefault();
+        el.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+// =========================
+      // ТЕСТ - логика
+      // =========================
+      const quiz = document.getElementById('tmQuiz');
+      const res = document.getElementById('tmQuizResult');
+      const resText = document.getElementById('tmQuizText');
+      const state = { q1:null, q2:null, q3:null };
+
+      function allAnswered(){
+        return !!(state.q1 && state.q2 && state.q3);
+      }
+
+      function explain(){
+        // простая логика, без “психо-магии”
+        let label = 'состояние';
+        if(state.q1 === 'burnout') label = 'выгорание';
+        if(state.q1 === 'anxiety') label = 'тревога';
+        if(state.q1 === 'stress') label = 'стресс и напряжение';
+
+        let next = 'Начать с 1 встречи: быстро прояснить механизм и сделать план на неделю.';
+        if(state.q1 === 'burnout' || state.q3 === 'meaning') next = 'Чаще всего лучше работает пакет: 3 или 5 встреч, чтобы удержать динамику и закрепить изменения.';
+        if(state.q2 === 'relations') next = 'Сфокусируемся на границах и коммуникации: это часто резко снижает напряжение в теле и “фон тревоги”.';
+        if(state.q2 === 'sleep') next = 'Начнём с восстановления и режима: без этого мозг всё воспринимает как угрозу.';
+
+        return 'Похоже, сейчас ядро похоже на <b>' + label + '</b>. ' + next;
+      }
+
+      function markSelected(q, v){
+        const buttons = Array.from(quiz.querySelectorAll('button[data-q="'+q+'"]'));
+        buttons.forEach(b=>{
+          const is = b.getAttribute('data-v') === v;
+          b.classList.toggle('primary', is);
+        });
+      }
+
+      if(quiz){
+        quiz.addEventListener('click', (e)=>{
+          const b = e.target.closest('button[data-q]');
+          if(!b) return;
+          const q = b.getAttribute('data-q');
+          const v = b.getAttribute('data-v');
+          state[q] = v;
+          markSelected(q, v);
+
+          if(allAnswered()){
+            if(resText) resText.innerHTML = explain();
+            if(res) res.style.display = 'block';
+          }
+        });
+      }
+
+      // =========================
+      // PC issue: Podcast video fallback
+      // =========================
+      const podVideo = document.getElementById('tmPodcastVideo');
+      const podFallback = document.getElementById('tmPodcastFallback');
+
+      function showFallback(){
+        if(podFallback) podFallback.classList.add('show');
+        if(podVideo){
+          podVideo.autoplay = false;
+          podVideo.loop = false;
+          podVideo.controls = true;
+          // попытка перезапуска
+          try{ podVideo.play().catch(()=>{}); }catch(_){}
+        }
+      }
+
+      if(podVideo){
+        // Если браузер не может в H.265/кодек - canPlayType часто вернет пусто
+        const canH264 = podVideo.canPlayType('video/mp4; codecs="avc1.42E01E, mp4a.40.2"');
+        // Не блокируем, просто держим как сигнал:
+        // если через 2.2 сек не пошло - даём fallback
+        let started = false;
+        podVideo.addEventListener('playing', ()=>{ started = true; if(podFallback) podFallback.classList.remove('show'); });
+        podVideo.addEventListener('error', ()=> showFallback());
+
+        window.setTimeout(()=>{
+          if(!started){
+            // Если кодек/загрузка подвисли - покажем fallback
+            showFallback();
+          }
+        }, 2200);
+
+        // Если canPlayType пустой - заранее покажем fallback-подсказку, но не мешаем
+        if(!canH264){
+          window.setTimeout(()=>{ if(!started) showFallback(); }, 1200);
+        }
+      }
+
+      // =========================
+      // Lightweight anti-copy (не ломаем UX)
+      // Важно: это НЕ защита от DDoS. Для DDoS нужен Cloudflare/WAF.
+      // =========================
+      const HARDEN = false; // если захочешь включить - поставь true
+      if(HARDEN){
+        root.addEventListener('contextmenu', (e)=> e.preventDefault());
+        root.addEventListener('copy', (e)=>{
+          e.preventDefault();
+          try{ e.clipboardData.setData('text/plain', ''); }catch(_){}
+        });
+      }
+    })();
+  </script>
+
+</div>
+
+  <script>
+    (function(){
+      var goalMap = {
+        iclient_booking: 'consultation_iclient_click',
+        youtube_channel: 'youtube_channel_click',
+        reviews: 'reviews_click'
+      };
+      document.addEventListener('click', function(event){
+        var link = event.target.closest && event.target.closest('a[data-moonn-goal]');
+        if(!link) return;
+        var goal = goalMap[link.getAttribute('data-moonn-goal')] || link.getAttribute('data-moonn-goal');
+        if(window.ym && goal){
+          try{ window.ym(96397286, 'reachGoal', goal); }catch(error){}
+        }
+      }, true);
+    })();
+  </script>
+
+<script>
+(function(){
+  var v = document.getElementById('tmShortVideo');
+  if(!v) return;
+  var alt = 'https://static.tildacdn.com/vide6239-3237-4930-a231-383064323161/____.mp4';
+  v.addEventListener('error', function(){
+    if(v.dataset.fallbackDone) return;
+    v.dataset.fallbackDone = '1';
+    v.src = alt;
+    try{ v.load(); }catch(e){}
+  });
+})();
+</script>
