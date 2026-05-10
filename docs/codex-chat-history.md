@@ -1020,3 +1020,33 @@ Append-only project history for `moon-psy-site`.
   - `8739444` — `Fix Yandex reviews public links and leaked code`
 - Follow-up rule:
   - Public-page validation for review archives must include link-destination checks, visible-code leak checks, and exact full commit hash verification, not only card count and text/date presence.
+
+## 2026-05-10 — Moonn Reviews Exact Excerpt Layer Published
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user reported that the `/otzivi` review cards were semantic paraphrases, not the review texts, and asked for the pink/lilac background plus exact per-review Yandex links where possible.
+- Root cause:
+  - The previous archive layer optimized for a safe summary/provenance format and passed count/link checks, but the validation gate did not distinguish exact review text from generated meaning.
+  - The Yandex scan contains reviewer-profile URLs, not verified stable URLs for individual reviews; using reviewer-profile URLs was the wrong destination.
+  - Tilda/Ace can keep separate visible-editor and hidden-textarea values, so saving must be followed by raw live HTML and rendered browser checks.
+- Fix:
+  - Added `scripts/build_moonn_yandex_all_reviews_layer.js`, a deterministic builder from `output/yandex-services-reviews-scan-2026-05-09.json`.
+  - Regenerated `assets/moonn-yandex-all-reviews-layer.js` with exact source excerpts rather than paraphrases.
+  - Removed public use of `reviews.yandex.ru/user` reviewer-profile links.
+  - Kept a pink/lilac/light-blue gradient background for the archive layer.
+  - Republished Tilda page `81167556` with runtime layers pinned to commit `bc10db72289925361507bfee71b6d2c6d854b8c4`.
+- Verification:
+  - CDN asset for commit `bc10db72289925361507bfee71b6d2c6d854b8c4` returns `200`, contains `132` `excerpt` records, contains no generated summary phrases, and contains no `reviews.yandex.ru/user` URLs.
+  - Live raw HTML contains `bc10db72289925361507bfee71b6d2c6d854b8c4` and no old `17c88b3e6933a5194642f9005d5be2566cd6609a`.
+  - Live rendered Playwright check found `132` cards, `0` reviewer-profile links, no visible internal code, no generated summary phrases, no Yandex UI noise text, and a pink/lilac/light-blue gradient.
+  - First rendered review text starts with the exact scanned source fragment: `Хожу к Татьяне на бесплатные лекции))`.
+  - Screenshot proof: `output/moonn-otzivi-live-excerpt-verify-2026-05-10.png`.
+- Risk / limitation:
+  - Exact per-review deep links are not implemented because the collected source does not contain verified stable review URLs; cards honestly link to Tatyana Munn's Yandex Services profile until exact review URLs are verified.
+  - Live raw Tilda HEAD still contains an extra closing `</script> </script>` tail after the page-specific HEAD block. It is not visible and does not break rendered checks, but it remains a Tilda/Ace cleanup item.
+  - Full verbatim mirroring of all review texts remains behind the legal/platform/personal-data gate; the current public layer uses exact excerpts from the collected visible text.
+- Commit:
+  - `bc10db7` — `Render Yandex review excerpts from scan`
+- Follow-up rule:
+  - Review-page releases must validate semantic fidelity (`exact excerpt` vs `generated summary`), source-link type (`provider profile` vs `reviewer profile` vs `verified review permalink`), raw HEAD cleanliness, and rendered browser output before reporting completion.

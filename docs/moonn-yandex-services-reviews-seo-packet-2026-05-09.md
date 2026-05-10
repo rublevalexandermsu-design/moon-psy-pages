@@ -134,3 +134,40 @@ Validation rule:
   - rendered card count;
   - card link destinations;
   - visual overlap at desktop and mobile widths.
+
+## 2026-05-10 Exact Excerpt Layer Update
+
+Status: completed for the rendered page; raw Tilda HEAD has a non-visible cleanup item.
+
+- Correct commit applied in Tilda page-specific HEAD:
+  - `bc10db72289925361507bfee71b6d2c6d854b8c4`
+- Added deterministic source builder:
+  - `scripts/build_moonn_yandex_all_reviews_layer.js`
+- Regenerated runtime layer:
+  - `assets/moonn-yandex-all-reviews-layer.js`
+
+Live rendered verification:
+
+- `132` exact excerpt cards render from the Yandex Services scan.
+- The layer no longer uses generated phrases such as `В отзыве отмечают` or `В отзыве описан`.
+- The first rendered card starts with the exact scanned fragment `Хожу к Татьяне на бесплатные лекции))`.
+- `0` card links point to `reviews.yandex.ru/user`.
+- Card links point to Tatyana Munn's Yandex Services profile:
+  - `https://uslugi.yandex.ru/profile/TatyanaKumskovamunn-948629`
+- The pink/lilac/light-blue gradient background is present.
+- No visible internal HEAD/script code appears in the rendered page.
+
+Publication posture:
+
+- Exact per-review permalinks are not published because the scan does not contain verified stable review URLs.
+- Reviewer profile URLs must not be used as review-source links.
+- Full verbatim mirroring of all review texts remains behind the legal/platform/personal-data gate; the current public page uses exact excerpts.
+- Raw live HTML still contains an extra closing `</script> </script>` tail from the Tilda/Ace HEAD editor. Rendered output passes, but this remains a cleanup risk for the next Tilda HEAD edit.
+
+Validation rule:
+
+- Future review-page releases must check not only card count and link destinations, but also semantic fidelity:
+  - generated summary vs exact source excerpt;
+  - verified review permalink vs provider profile link vs reviewer profile link;
+  - raw HEAD cleanliness after Tilda save/publish;
+  - rendered browser result after publication.
