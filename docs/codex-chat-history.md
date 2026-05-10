@@ -943,3 +943,26 @@ Append-only project history for `moon-psy-site`.
   - `docs/moonn-yandex-services-all-reviews-scan-2026-05-09.md`
 - Follow-up rule:
   - Review pages need a canonical review manifest and count-verification gate. Selected summaries are acceptable only as an interim SEO/provenance layer, not as the complete reviews page.
+
+## 2026-05-10 — Moonn Reviews Page Runtime Regression Fixed
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user opened `https://moonn.ru/otzivi` and pointed out that the page showed only the Yandex source panel, not the actual reviews.
+- Root cause:
+  - `assets/moonn-yandex-reviews-quality-layer.js` searched broad `div` containers for weak SEO phrases and replaced `innerHTML`.
+  - On the Tilda page this matched a large page container, so the runtime layer removed the visible original reviews and left only the source panel.
+- Fix:
+  - Removed destructive text replacement from the review quality layer.
+  - Kept only a non-destructive source/provenance panel insertion.
+  - Re-pinned Tilda page-specific HEAD for page `81167556` to commit `ca82ebe2e33335c04f6bf05245b8630e9c25c759`.
+  - Published only page `81167556`.
+- Verification:
+  - Live raw HTML contains commit `ca82ebe2e33335c04f6bf05245b8630e9c25c759`.
+  - Previous runtime commit `b9930a83da11cdbfaeae98a9f92309fe1d2d4464` is absent from live HTML.
+  - Playwright rendered check found the original hero and review names/text again.
+  - Manual browser scroll showed visible review cards with source text and links.
+- Commit:
+  - `ca82ebe` — `Stop destructive Yandex reviews patching`
+- Follow-up rule:
+  - Runtime content patches on Tilda must not replace `innerHTML` of broad containers (`div`, record wrappers, body-level sections). Use additive overlays or leaf-node-only changes with tight length/class guards and visual verification.
