@@ -108,9 +108,9 @@ The single event `3973843` should become the first event of a weekly consultatio
 
 Target schedule:
 
-- Weekly Saturday and Sunday slots from 2026-05-16 through 2026-12-27 inclusive.
+- Weekly Tuesday, Saturday, and Sunday slots from 2026-05-16 through the end of 2026.
 - Baseline first slot: Saturday, 12:00-14:00 MSK.
-- Additional weekend two-hour slots should be configured from Tatyana's real iClient/YCLIENTS availability, so visitors can choose a suitable time instead of seeing only one fixed slot.
+- Additional two-hour slots should be configured from Tatyana's real iClient/YCLIENTS availability, so visitors can choose a suitable time instead of seeing only one fixed slot.
 - Each slot must keep capacity `1`.
 - Prefer Timepad's calendar-style schedule display so visitors can choose a date visually.
 - The slot list must be reconciled with iClient/YCLIENTS before publishing many dates.
@@ -145,8 +145,8 @@ https://moonn.timepad.ru/event/3973843/
 
 1. Проверить и одобрить мероприятие.
 2. Подключить к нему функцию расписания / мастер-события, чтобы посетитель мог выбрать дату консультации.
-3. Настроить расписание консультаций по субботам и воскресеньям с 16 мая 2026 года до конца 2026 года, с лимитом 1 место на каждый слот.
-4. По возможности включить несколько двухчасовых слотов в доступные выходные дни по фактическому графику специалиста, чтобы посетитель мог выбрать удобное время на странице мероприятия, а не видеть только один фиксированный слот.
+3. Настроить расписание консультаций по вторникам, субботам и воскресеньям с 16 мая 2026 года до конца 2026 года, с лимитом 1 место на каждый слот.
+4. По возможности включить несколько двухчасовых слотов в доступные приёмные дни по фактическому графику специалиста, чтобы посетитель мог выбрать удобное время на странице мероприятия, а не видеть только один фиксированный слот.
 5. По возможности включить отображение расписания в виде календаря.
 
 Если лучше выбрать другой технический формат внутри Timepad, пожалуйста, подскажите, что именно нужно изменить, чтобы страница соответствовала правилам Timepad и корректно работала как запись на платные консультации.
@@ -175,20 +175,22 @@ Still required:
 
 User correction:
 
-- Tatyana currently consults on Saturday and Sunday, not Monday.
+- Tatyana currently consults on Tuesday, Saturday, and Sunday, not Monday.
 - A single visible slot does not solve the booking problem because visitors need to choose a suitable date and time.
 
 API update:
 
 - Event `3973843` moved from Monday `2026-05-18 12:00-14:00` to Saturday `2026-05-16 12:00-14:00`.
-- Public short description and full description now state that consultations are held on Saturdays and Sundays.
+- Public short description and full description now state that consultations are held on Tuesday, Saturday, and Sunday.
+- Public text avoids internal words such as `technical` / `MVP`; it explains that if the desired time is not visible, the organizer will help choose a suitable time in the consultation days.
 
 Verification:
 
 - API read-back confirmed `starts_at=2026-05-16T12:00:00+03:00`, `ends_at=2026-05-16T14:00:00+03:00`.
 - API read-back confirmed sale end `2026-05-16T11:30:00+03:00`.
-- Public HTML returns `200`, contains `16 мая`, weekend wording, address, and paid prices.
+- Public HTML returns `200`, contains Tuesday/weekend wording, address, and paid prices.
 - Public HTML no longer contains the previous `18 мая` / Monday wording.
+- Public HTML does not contain internal `technical` / `MVP` wording after cleanup.
 
 Follow-up rule:
 
