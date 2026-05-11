@@ -1384,3 +1384,28 @@ Append-only project history for `moon-psy-site`.
   - Playwright screenshots were saved under `output/playwright/art-gallery-main-pedestal-fix-20260511/` and confirmed that the main pedestal no longer blocks the plaque text.
 - Follow-up rule:
   - When a user reports that a 3D object is “under the floor”, verify both the literal floor-plane relation and the camera/occlusion relation; a front-facing object can look sunken because its depth overlaps a label even if its Y-position is technically above the floor.
+
+## 2026-05-11 — Tatiana Moonn Art Gallery 3D Artwork Replacement
+
+- Project: Moonn / Tatiana Moonn art gallery.
+- Branch: `codex/moonn-art-gallery`.
+- Trigger: user supplied the latest 10 generated 3D-style artwork images and asked to replace the existing gallery paintings while preserving their current visual positions.
+- Route:
+  - Continued the existing art-gallery workstream.
+  - Edited only the canonical generator `scripts/build_tatiana_munn_art_gallery_site.py`; generated HTML/JS/CSS were rebuilt from it.
+  - Kept existing artwork slugs, titles, prices, placement and scene coordinates so downstream links and detail pages remain stable.
+- Changes:
+  - Replaced all 10 `Artwork.source` image paths with the latest `2026-05-11 00_08` generated images from Downloads.
+  - Mapped images by visual identity: central blue flower, turquoise eye, lotus balance, violet resource mandala, orchid rings, speed restoration, financial realization, sensitivity, eye vortex and wide gate composition.
+  - Regenerated all `assets/art/*.webp` and thumbnails under `docs/tatiana-munn-art-gallery/`.
+  - Updated the internal build-report single-`н` check to avoid a false grep match from the validator string itself.
+  - Regenerated `docs/tatiana-munn-art-gallery/` and `output/tatiana-munn-art-gallery-site.zip`.
+- Verification:
+  - Generator compiles with `python -m py_compile`.
+  - Static build regenerated successfully with `10` artworks.
+  - Public generated-site scan passed for localhost/`127.0.0.1`, internal workflow wording and single-`н` visible `Татьяна Мун` leaks.
+  - Build report checks passed: double-`н` name present, single-`н` visible hits `0`, Three.js present, purchase drawer present, artwork JSON present, asset names are Latin.
+  - Playwright QA loaded all 10 new artwork webp files; nine square/round images loaded at `1254x1254`, the wide artwork loaded at `1448x1086`.
+  - Browser QA screenshots were saved under `output/playwright/tatiana-gallery-art-replace/`; console/page-error and failed-request logs are empty.
+- Follow-up rule:
+  - For future artwork swaps, change only source image mapping in the generator and verify the rebuilt manifest plus browser-loaded asset dimensions before reporting readiness.
