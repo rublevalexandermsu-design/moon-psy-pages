@@ -1409,3 +1409,21 @@ Append-only project history for `moon-psy-site`.
   - Browser QA screenshots were saved under `output/playwright/tatiana-gallery-art-replace/`; console/page-error and failed-request logs are empty.
 - Follow-up rule:
   - For future artwork swaps, change only source image mapping in the generator and verify the rebuilt manifest plus browser-loaded asset dimensions before reporting readiness.
+
+## 2026-05-11 — Tatiana Moonn Art Gallery Tilda Publication Paused
+
+- Project: Moonn / Tatiana Moonn art gallery.
+- Branch: `codex/moonn-art-gallery`.
+- Trigger: user asked to stop the gallery publication task safely and continue later, then switched to a separate consultation-banner/payment task for the homepage.
+- Route:
+  - Kept the gallery workstream on its existing branch and did not mix it with the new consultation-banner workstream.
+  - Created a pause handoff: `docs/codex-handoffs/2026-05-11-art-gallery-tilda-publication-pause.md`.
+- Current state:
+  - The art-gallery generator has partial Tilda/CDN/payment preparation fields.
+  - `scripts/build_tatiana_munn_art_gallery_site.py` compiles with `python -m py_compile`.
+  - No Tilda publication was performed for the gallery in this paused step.
+  - No gallery payment flow was tested in this paused step.
+- Next step for this workstream:
+  - Resume from the handoff, finish native Tilda-cart bridge and Tilda-ready artifacts, then run local and live verification before publishing.
+- Follow-up rule:
+  - When a user pauses a public/payment workstream mid-change, checkpoint the exact branch and unfinished scope before switching tasks; do not carry partial public/payment changes into the next workstream.

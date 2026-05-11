@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+import os
+import re
 import shutil
 import urllib.request
 import zipfile
@@ -21,6 +23,13 @@ VENDOR_DIR = ASSETS / "vendor"
 DATA_DIR = OUT / "data"
 ZIP_OUT = ROOT / "output" / "tatiana-munn-art-gallery-site.zip"
 THREE_URL = "https://unpkg.com/three@0.164.1/build/three.module.min.js"
+GITHUB_REPO = "rublevalexandermsu-design/moonn-psy-pages"
+TILDA_PAGE_ALIAS = "kartiny-tatiany-munn"
+TILDA_PAGE_URL = f"https://moonn.ru/{TILDA_PAGE_ALIAS}"
+TILDA_CDN_REF = os.environ.get("MOONN_ART_GALLERY_CDN_REF", "__MOONN_ART_GALLERY_CDN_REF__")
+TILDA_CDN_BASE = f"https://cdn.jsdelivr.net/gh/{GITHUB_REPO}@{TILDA_CDN_REF}/docs/tatiana-munn-art-gallery"
+TILDA_PROJECT_ID = "8326812"
+TILDA_HOMEPAGE_ID = "42678538"
 
 SCENE_ASSETS = {
     "gallery-floor-parquet.webp": "ChatGPT Image 10 мая 2026 г., 22_26_33 (1).png",
@@ -258,6 +267,17 @@ def build_assets() -> None:
     enhance_and_save(concept_src, ASSETS / "tatiana_munn_gallery_concept.webp", 1800, 84)
     for output_name, source_name in SCENE_ASSETS.items():
         save_scene_asset(DOWNLOADS / source_name, SCENE_DIR / output_name, 2200, 86)
+
+
+def price_to_int(price: str) -> int:
+    value = re.sub(r"\D+", "", price)
+    if not value:
+        raise ValueError(f"Cannot parse artwork price: {price!r}")
+    return int(value)
+
+
+def cdn_url(path: str) -> str:
+    return f"{TILDA_CDN_BASE.rstrip('/')}/{path.lstrip('/')}"
     with Image.open(SCENE_DIR / "gallery-door-ornate.webp") as img:
         ImageOps.mirror(img).save(SCENE_DIR / "gallery-door-ornate-mirror.webp", "WEBP", quality=86, method=6)
     save_scene_asset(
@@ -291,6 +311,10 @@ def ensure_three_vendor() -> None:
 def artwork_records() -> list[dict[str, object]]:
     records = []
     for index, art in enumerate(ARTWORKS, start=1):
+        image_path = f"assets/art/{index:02d}-{art.slug}.webp"
+        thumb_path = f"assets/art/{index:02d}-{art.slug}-thumb.webp"
+        price_value = price_to_int(art.price)
+        checkout_name = f"{art.title} — картина Татьяны Мунн"
         records.append(
             {
                 "id": f"tm-art-{index:02d}",
@@ -299,9 +323,15 @@ def artwork_records() -> list[dict[str, object]]:
                 "subtitle": art.subtitle,
                 "shape": art.shape,
                 "price": art.price,
+                "priceValue": price_value,
+                "priceCurrency": "RUB",
+                "sku": f"moonn-art-gallery-{index:02d}-{art.slug}",
+                "checkoutName": checkout_name,
+                "checkoutImage": cdn_url(image_path),
+                "tildaProductHref": f"#order:{checkout_name} ={price_value}:::image={cdn_url(image_path)}",
                 "placement": art.placement,
-                "image": f"assets/art/{index:02d}-{art.slug}.webp",
-                "thumb": f"assets/art/{index:02d}-{art.slug}-thumb.webp",
+                "image": image_path,
+                "thumb": thumb_path,
                 "detailUrl": f"artwork-{art.slug}.html",
                 "scene": {
                     "x": art.x,
@@ -408,8 +438,24 @@ def purchase_drawer() -> str:
 
 
 def build_index(records: list[dict[str, object]]) -> None:
-    body = """
-<main class="immersive-page">
+    gallery_cards = "\n".join(
+        f"""
+      <article class="art-market-card">
+        <a href="{record['detailUrl']}" aria-label="{escape(str(record['title']))}">
+          <img src="{record['thumb']}" alt="{escape(str(record['title']))} — картина Татьяны Мунн">
+        </a>
+        <div>
+          <span>{escape(str(record['subtitle']))}</span>
+          <h3>{escape(str(record['title']))}</h3>
+          <p>{escape(str(record['intent']))}</p>
+          <b>{escape(str(record['price']))}</b>
+          <button class="gold-button compact" type="button" data-open-purchase data-art-id="{escape(str(record['id']))}">Купить картину</button>
+        </div>
+      </article>"""
+        for record in records
+    )
+    body = f"""
+<main class="immersive-page" id="gallery">
   <canvas id="galleryCanvas" aria-label="3D-зал энергетических картин Татьяны Мунн"></canvas>
   <div class="scroll-meter"><span id="scrollMeter"></span></div>
   <div class="entry-doors" aria-hidden="true">
@@ -424,7 +470,7 @@ def build_index(records: list[dict[str, object]]) -> None:
       <p>Прокручивайте страницу: камера входит в зал, проходит вдоль стен, подходит к работам на пьедесталах и подсвечивает каждую картину как в частной выставке.</p>
       <div class="hero-actions">
         <a class="gold-button" href="#walk">Войти в зал</a>
-        <a class="ghost-button" href="catalog.html">Открыть каталог</a>
+        <a class="ghost-button" href="#catalog">Открыть каталог</a>
       </div>
     </div>
   </section>
@@ -448,26 +494,57 @@ def build_index(records: list[dict[str, object]]) -> None:
       <span class="eyebrow">Индивидуальный код</span>
       <h2>Формула под человека</h2>
       <p>Покупатель вводит данные и запрос. Код связывается с выбранной работой, оборотом картины и сертификатом владельца.</p>
-      <a class="gold-button" href="code.html">Составить код</a>
+      <a class="gold-button" href="#personal-code">Составить код</a>
     </div>
   </section>
   <section class="story-section side-copy">
     <div class="glass-text right">
       <span class="eyebrow">Фактура</span>
       <h2>Золото, жемчуг, стразы и свет</h2>
-      <p>WebP-ассеты подготовлены из новых изображений: усилена резкость и контраст, сохранены блики и фактура, чтобы работы не выглядели плоско.</p>
+      <p>Объёмные линии, жемчужные детали, стеклянные блики и золотые акценты создают ощущение живой поверхности и частной коллекции.</p>
     </div>
   </section>
   <section class="story-section final-section">
     <div class="glass-text center">
       <span class="eyebrow">Частная покупка</span>
       <h2>Выберите работу для себя или в подарок</h2>
-      <p>Финальный путь клиента: просмотр в 3D-зале, открытие карточки, подбор кода, заявка на покупку и подтверждение заказа.</p>
+      <p>Посмотрите работы в 3D-зале, откройте выбранную картину крупно, добавьте персональный код и оформите покупку через безопасную оплату на сайте.</p>
       <div class="hero-actions">
-        <a class="gold-button" href="catalog.html">Перейти в каталог</a>
-        <button class="ghost-button" data-open-purchase>Оставить заявку</button>
+        <a class="gold-button" href="#catalog">Перейти в каталог</a>
+        <button class="ghost-button" data-open-purchase data-art-id="tm-art-01">Купить картину</button>
       </div>
     </div>
+  </section>
+  <section class="art-market-section" id="catalog" aria-label="Каталог картин Татьяны Мунн">
+    <div class="art-market-heading">
+      <span class="eyebrow">Каталог</span>
+      <h2>Купить картину Татьяны Мунн</h2>
+      <p>Каждая работа продаётся как авторский арт-объект. После выбора картины можно добавить индивидуальный код, согласовать детали и оформить оплату.</p>
+    </div>
+    <div class="art-market-grid">
+{gallery_cards}
+    </div>
+  </section>
+  <section class="personal-code-section" id="personal-code" aria-label="Индивидуальный код для картины">
+    <div class="code-intro">
+      <span class="eyebrow">Персональная настройка</span>
+      <h2>Каждая картина может быть настроена под вас лично</h2>
+      <p>ФИО, дата рождения, время рождения и запрос используются для расчёта персонального числового кода. Код можно связать с оборотом картины и сертификатом владельца.</p>
+      <div class="code-steps" aria-label="Данные для составления кода">
+        <div><span>1</span><b>ФИО</b></div>
+        <div><span>2</span><b>Дата рождения</b></div>
+        <div><span>3</span><b>Время рождения</b></div>
+        <div><span>4</span><b>Ваш запрос</b></div>
+      </div>
+    </div>
+    <form class="premium-form code-inline-form" id="codeForm">
+      <label>Фамилия, имя, отчество<input id="fio" value="Иванов Иван Иванович"></label>
+      <label>Дата рождения<input id="birth" type="date" value="1985-05-12"></label>
+      <label>Время рождения<input id="birthTime" type="time" value="14:30"></label>
+      <label>Запрос<textarea id="request" rows="4">гармония, ресурс, реализация</textarea></label>
+      <button class="gold-button" type="submit">Составить код</button>
+      <strong class="inline-code-result js-code">516 108 369</strong>
+    </form>
   </section>
   <section class="gallery-features" aria-label="Почему картины особенные">
     <span class="eyebrow">Почему мои картины особенные</span>
@@ -513,10 +590,10 @@ def build_index(records: list[dict[str, object]]) -> None:
     (OUT / "index.html").write_text(
         html_shell(
             "Галерея энергетических картин Татьяны Мунн | 3D-прогулка и индивидуальный код",
-            "Премиальная 3D-галерея картин Татьяны Мунн: прогулка по залу, каталог работ, индивидуальный код, заявка на покупку.",
+            "Премиальная 3D-галерея картин Татьяны Мунн: прогулка по залу, каталог работ, индивидуальный код и покупка картин онлайн.",
             body,
             "Галерея",
-            canonical_path="art-gallery",
+            canonical_path=TILDA_PAGE_ALIAS,
         ),
         encoding="utf-8",
     )
@@ -710,7 +787,7 @@ STYLE_CSS = r"""
 :root{--bg:#07080d;--panel:#11131b;--ink:#f8edda;--muted:#c7bdc8;--gold:#d8aa5d;--gold2:#ffe7aa;--aqua:#5fd6df;--violet:#8e55ff;--line:rgba(255,226,172,.24);--glass:rgba(12,15,24,.70)}
 *{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--bg);color:var(--ink)}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:radial-gradient(circle at 20% 0%,rgba(63,44,97,.38),transparent 34%),linear-gradient(180deg,#06070b,#0b1118 55%,#07080d);color:var(--ink)}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}.site-header{position:fixed;inset:0 0 auto 0;height:78px;z-index:50;display:flex;align-items:center;gap:28px;padding:0 clamp(18px,4vw,64px);background:rgba(4,6,10,.72);border-bottom:1px solid var(--line);backdrop-filter:blur(18px)}.brand{display:flex;align-items:center;gap:12px;min-width:240px}.brand-mark{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#402d6a,#42c7d2);box-shadow:0 0 28px rgba(95,214,223,.24)}.brand b{display:block;font-family:Georgia,serif;font-size:22px;color:var(--gold2);font-weight:400}.brand small{display:block;color:#c8c1cc;font-size:12px}.site-nav{display:flex;justify-content:center;gap:22px;flex:1}.site-nav a{color:#dcd5df;font-size:13px}.site-nav a.is-active,.site-nav a:hover{color:var(--gold2)}button{font:inherit}.gold-button,.ghost-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:999px;border:1px solid rgba(255,226,172,.42);cursor:pointer}.gold-button{background:linear-gradient(135deg,#a06b27,#f3cf82 52%,#8a5f25);color:#171014;font-weight:700;box-shadow:0 12px 34px rgba(216,170,93,.22)}.ghost-button{background:rgba(255,255,255,.06);color:#f5ead9}.compact{min-height:40px;padding-inline:16px;font-size:13px}.immersive-page{min-height:620vh}.immersive-page canvas{position:fixed;inset:0;width:100vw;height:100vh;z-index:1;background:#05070b}.scroll-meter{position:fixed;left:0;right:0;top:0;height:2px;z-index:80;background:rgba(255,255,255,.08)}.scroll-meter span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--aqua),var(--gold),var(--violet));box-shadow:0 0 18px var(--gold)}.story-section{position:relative;z-index:10;min-height:100vh;padding:120px clamp(18px,6vw,92px);display:flex;align-items:center;pointer-events:none}.hero-section{justify-content:center;text-align:center;align-items:flex-start;padding-top:20vh}.hero-copy,.glass-text{pointer-events:auto}.hero-copy{max-width:980px}.eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:16px;color:var(--gold2);font-size:12px;text-transform:uppercase;letter-spacing:.22em}.eyebrow:before{content:"";width:34px;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}h1,h2{font-family:Georgia,serif;font-weight:400;line-height:1;margin:0;color:#fff2d8;text-wrap:balance}h1{font-size:clamp(48px,7vw,112px)}h1 strong{color:var(--gold2);font-weight:400}h2{font-size:clamp(34px,4vw,68px)}p{color:var(--muted);line-height:1.72;font-size:clamp(15px,1.3vw,18px)}.hero-copy p{max-width:760px;margin:24px auto}.hero-actions,.modal-actions,.card-actions{display:flex;gap:14px;flex-wrap:wrap}.hero-actions{justify-content:center}.glass-text{max-width:560px;padding:30px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(135deg,rgba(9,12,19,.76),rgba(24,19,34,.58));box-shadow:0 24px 70px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.05);backdrop-filter:blur(14px)}.glass-text.left{margin-right:auto}.glass-text.right{margin-left:auto}.glass-text.center{margin:auto;text-align:center}.final-section{min-height:120vh}.page-shell{padding:120px clamp(18px,6vw,88px) 70px;min-height:100vh}.page-hero{max-width:960px;margin:0 auto 44px}.split-hero{display:grid;grid-template-columns:1fr minmax(280px,460px);gap:34px;align-items:center;max-width:1180px}.split-hero img,.artwork-detail__image img,.catalog-card img{border-radius:18px;border:1px solid var(--line);box-shadow:0 24px 70px rgba(0,0,0,.44)}.catalog-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:1220px;margin:auto}.catalog-card{display:grid;grid-template-columns:220px 1fr;gap:20px;padding:18px;border:1px solid var(--line);border-radius:20px;background:var(--glass)}.catalog-card img{aspect-ratio:1;object-fit:cover}.catalog-card span{color:var(--gold2);font-size:12px;letter-spacing:.12em;text-transform:uppercase}.catalog-card h2{font-size:28px;margin:8px 0}.catalog-card b{display:block;margin:12px 0 16px;color:var(--gold2);font-size:20px}.artwork-detail{display:grid;grid-template-columns:minmax(320px,580px) 1fr;gap:42px;align-items:center;max-width:1180px;margin:auto}.artwork-detail__image img{max-height:72vh;object-fit:contain;background:#0b0e14}.spec-list{display:grid;gap:12px;margin:24px 0}.spec-list div{display:flex;justify-content:space-between;gap:18px;border-bottom:1px solid rgba(255,226,172,.14);padding-bottom:10px}.spec-list dt{color:#b8afbd}.spec-list dd{margin:0;color:var(--gold2)}.related-strip{max-width:1180px;margin:70px auto 0}.related-strip>div{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.related-strip a{display:grid;gap:10px;color:#eee}.related-strip img{aspect-ratio:1;object-fit:cover;border-radius:16px}.code-layout,.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:1080px;margin:auto}.premium-form,.code-result-card,.content-grid article{padding:28px;border:1px solid var(--line);border-radius:22px;background:var(--glass)}label{display:block;margin:0 0 14px;color:#d7cddc;font-size:13px;letter-spacing:.08em;text-transform:uppercase}input,textarea{width:100%;margin-top:8px;padding:13px 14px;border-radius:12px;border:1px solid rgba(255,226,172,.2);background:rgba(0,0,0,.28);color:#fff;font:inherit;text-transform:none;letter-spacing:0}.code-result-card strong{display:block;font-family:Georgia,serif;font-size:64px;color:var(--gold2);text-shadow:0 0 28px rgba(216,170,93,.35)}.purchase-drawer,.art-modal{position:fixed;inset:0;z-index:100;display:none}.purchase-drawer[aria-hidden=false],.art-modal[aria-hidden=false]{display:block}.purchase-drawer__shade,.art-modal__shade{position:absolute;inset:0;background:rgba(1,2,5,.76);backdrop-filter:blur(10px)}.purchase-drawer__panel{position:absolute;right:0;top:0;bottom:0;width:min(480px,94vw);overflow:auto;padding:36px;border-left:1px solid var(--line);background:#0c1018}.icon-close{position:absolute;right:18px;top:18px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.06);color:#fff;font-size:28px;cursor:pointer}.art-modal__panel{position:relative;z-index:1;width:min(1060px,94vw);min-height:620px;margin:7vh auto;display:grid;grid-template-columns:minmax(320px,520px) 1fr;gap:28px;align-items:center;padding:28px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(135deg,#0b0f18,#15111d);box-shadow:0 40px 120px rgba(0,0,0,.65)}.flip-card{aspect-ratio:1;perspective:1200px}.flip-card__inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .7s}.flip-card.is-flipped .flip-card__inner{transform:rotateY(180deg)}.flip-face{position:absolute;inset:0;backface-visibility:hidden;overflow:hidden;border-radius:22px;border:1px solid var(--line);display:grid;place-items:center}.flip-face.front img{width:100%;height:100%;object-fit:cover}.flip-face.back{transform:rotateY(180deg);padding:32px;text-align:center;background:radial-gradient(circle at 50% 35%,#fff6df,#d9c5ef);color:#33243c}.flip-face.back strong{font-family:Georgia,serif;font-size:44px;color:#7b541d}.modal-copy h2{margin-bottom:16px}.copy-toast{position:fixed;left:50%;bottom:28px;z-index:200;transform:translateX(-50%);padding:14px 18px;border-radius:999px;background:#121722;border:1px solid var(--line);box-shadow:0 20px 50px rgba(0,0,0,.45)}@media (max-width:900px){.site-nav{display:none}.site-header{height:68px}.brand{min-width:0}.brand small{display:none}.story-section{padding:92px 18px}.hero-actions,.modal-actions{justify-content:center}.catalog-grid,.catalog-card,.artwork-detail,.code-layout,.content-grid,.split-hero,.art-modal__panel{grid-template-columns:1fr}.catalog-card{display:block}.catalog-card img{margin-bottom:16px}.glass-text.left,.glass-text.right{margin:auto}.art-modal__panel{margin:3vh auto;overflow:auto;max-height:94vh}.code-result-card strong{font-size:42px}}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.immersive-page canvas{opacity:.35}.story-section{background:rgba(7,8,13,.45)}}
 /* art-gallery refinements */
-:root{--entry-open:0}.entry-doors{position:fixed;inset:78px 0 0;z-index:3;overflow:hidden;pointer-events:none;perspective:1800px;opacity:calc(1 - var(--entry-open));background:radial-gradient(circle at 50% 42%,rgba(255,216,144,.16),transparent 32%)}.entry-doors__hall{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.62),rgba(4,7,12,.06),rgba(0,0,0,.62));opacity:.8}.entry-door{position:absolute;top:0;bottom:0;width:50.5vw;max-width:none;background:linear-gradient(90deg,rgba(5,5,6,.18),rgba(8,9,13,.10)),#0a0a0b;background-position:center;background-size:cover;background-repeat:no-repeat;border:1px solid rgba(216,170,93,.48);box-shadow:inset 0 0 0 8px rgba(216,170,93,.08),inset 0 0 0 18px rgba(0,0,0,.30),inset 0 0 70px rgba(216,170,93,.08),0 0 70px rgba(0,0,0,.82);transition:transform .12s linear;transform-style:preserve-3d}.entry-door:before{content:"";position:absolute;inset:5% 7%;border:1px solid rgba(216,170,93,.18);box-shadow:inset 0 0 0 16px rgba(0,0,0,.10),inset 0 0 44px rgba(216,170,93,.08)}.entry-door:after{display:none}.entry-door--left{background-image:linear-gradient(90deg,rgba(5,5,6,.18),rgba(8,9,13,.10)),url("assets/scene/gallery-door-ornate-mirror.webp")}.entry-door--right{background-image:linear-gradient(90deg,rgba(5,5,6,.18),rgba(8,9,13,.10)),url("assets/scene/gallery-door-ornate.webp")}.entry-door span{position:absolute;inset:14% 17%;border:2px solid rgba(216,170,93,.15);border-radius:50%;opacity:.35}.entry-door span:after{content:"";position:absolute;inset:23%;border-radius:50%;border:2px solid rgba(255,226,172,.18);box-shadow:0 0 0 28px rgba(216,170,93,.04),0 0 0 54px rgba(216,170,93,.03)}.entry-door--left{left:0;transform-origin:left center;transform:translateX(calc(var(--entry-open)*-4%)) rotateY(calc(var(--entry-open)*-74deg))}.entry-door--right{right:0;transform-origin:right center;transform:translateX(calc(var(--entry-open)*4%)) rotateY(calc(var(--entry-open)*74deg))}.hero-section{transition:opacity .18s ease}.side-copy{transition:opacity .18s ease}.side-copy .glass-text{max-width:520px}.gallery-features{position:relative;z-index:12;padding:72px clamp(18px,6vw,88px) 88px;border-top:1px solid var(--line);background:linear-gradient(180deg,rgba(11,15,22,.92),rgba(7,8,13,.98));text-align:center}.gallery-features>.eyebrow{justify-content:center}.feature-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0;max-width:1280px;margin:30px auto 0;border-top:1px solid rgba(255,226,172,.16);border-bottom:1px solid rgba(255,226,172,.16)}.feature-grid article{min-height:150px;padding:24px 18px;border-right:1px solid rgba(255,226,172,.12)}.feature-grid article:last-child{border-right:0}.feature-grid b{display:block;margin-bottom:12px;color:var(--gold2);font-family:Georgia,serif;font-size:18px;font-weight:400;text-transform:uppercase}.feature-grid span{color:#c8c0cc;font-size:14px;line-height:1.55}.code-page{background:radial-gradient(circle at 18% 15%,rgba(65,46,100,.38),transparent 36%),linear-gradient(135deg,#0b0f18,#071019 60%,#0c1018)}.code-page h1{font-size:clamp(46px,6vw,92px)}.code-layout{grid-template-columns:1.08fr .92fr;max-width:1180px;align-items:stretch}.code-intro{display:grid;align-content:center;gap:24px;padding:28px}.code-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.code-steps span{display:grid;place-items:center;width:68px;height:68px;margin:0 auto 12px;border:1px solid rgba(216,170,93,.55);border-radius:50%;color:var(--gold2);font-family:Georgia,serif;font-size:26px}.code-steps b{display:block;text-align:center;color:#efe6d8;font-size:14px}.code-note{color:var(--gold2);font-family:Georgia,serif;font-size:18px}.code-layout .premium-form{border-color:rgba(216,170,93,.45);box-shadow:0 30px 80px rgba(0,0,0,.32)}.code-result-card{position:relative;overflow:hidden}.code-result-card:after{content:"";position:absolute;right:-50px;bottom:-40px;width:220px;height:220px;background:radial-gradient(circle,rgba(216,170,93,.16),transparent 65%)}@media (max-width:1100px){.feature-grid{grid-template-columns:repeat(3,1fr)}.feature-grid article:nth-child(3n){border-right:0}}@media (max-width:900px){.entry-doors{inset:68px 0 0}.entry-door{width:51vw}.gallery-features{padding-inline:18px}.feature-grid{grid-template-columns:1fr 1fr}.code-layout,.code-steps{grid-template-columns:1fr}.code-intro{padding:0}.hero-section{padding-top:12vh}.hero-section h1{font-size:clamp(36px,10.6vw,46px);line-height:1.05}.hero-copy p{font-size:14px;line-height:1.55}.hero-actions{gap:10px}.hero-actions .gold-button,.hero-actions .ghost-button{min-height:46px;padding-inline:14px}.side-copy .glass-text{max-width:100%}}@media (max-width:560px){.feature-grid{grid-template-columns:1fr}.feature-grid article{border-right:0;border-bottom:1px solid rgba(255,226,172,.12)}}
+:root{--entry-open:0}.entry-doors{position:fixed;inset:78px 0 0;z-index:3;overflow:hidden;pointer-events:none;perspective:1800px;opacity:calc(1 - var(--entry-open));background:radial-gradient(circle at 50% 42%,rgba(255,216,144,.16),transparent 32%)}.entry-doors__hall{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.62),rgba(4,7,12,.06),rgba(0,0,0,.62));opacity:.8}.entry-door{position:absolute;top:0;bottom:0;width:50.5vw;max-width:none;background:linear-gradient(90deg,rgba(5,5,6,.18),rgba(8,9,13,.10)),#0a0a0b;background-position:center;background-size:cover;background-repeat:no-repeat;border:1px solid rgba(216,170,93,.48);box-shadow:inset 0 0 0 8px rgba(216,170,93,.08),inset 0 0 0 18px rgba(0,0,0,.30),inset 0 0 70px rgba(216,170,93,.08),0 0 70px rgba(0,0,0,.82);transition:transform .12s linear;transform-style:preserve-3d}.entry-door:before{content:"";position:absolute;inset:5% 7%;border:1px solid rgba(216,170,93,.18);box-shadow:inset 0 0 0 16px rgba(0,0,0,.10),inset 0 0 44px rgba(216,170,93,.08)}.entry-door:after{display:none}.entry-door--left{background-image:linear-gradient(90deg,rgba(5,5,6,.18),rgba(8,9,13,.10)),url("assets/scene/gallery-door-ornate-mirror.webp")}.entry-door--right{background-image:linear-gradient(90deg,rgba(5,5,6,.18),rgba(8,9,13,.10)),url("assets/scene/gallery-door-ornate.webp")}.entry-door span{position:absolute;inset:14% 17%;border:2px solid rgba(216,170,93,.15);border-radius:50%;opacity:.35}.entry-door span:after{content:"";position:absolute;inset:23%;border-radius:50%;border:2px solid rgba(255,226,172,.18);box-shadow:0 0 0 28px rgba(216,170,93,.04),0 0 0 54px rgba(216,170,93,.03)}.entry-door--left{left:0;transform-origin:left center;transform:translateX(calc(var(--entry-open)*-4%)) rotateY(calc(var(--entry-open)*-74deg))}.entry-door--right{right:0;transform-origin:right center;transform:translateX(calc(var(--entry-open)*4%)) rotateY(calc(var(--entry-open)*74deg))}.hero-section{transition:opacity .18s ease}.side-copy{transition:opacity .18s ease}.side-copy .glass-text{max-width:520px}.art-market-section,.personal-code-section{position:relative;z-index:12;padding:86px clamp(18px,6vw,88px);background:linear-gradient(180deg,rgba(8,10,16,.96),rgba(11,15,22,.98));border-top:1px solid var(--line)}.art-market-heading{max-width:940px;margin:0 auto 34px;text-align:center}.art-market-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;max-width:1240px;margin:auto}.art-market-card{display:grid;grid-template-columns:170px 1fr;gap:18px;align-items:center;padding:16px;border:1px solid rgba(255,226,172,.20);border-radius:18px;background:rgba(12,15,24,.78);box-shadow:0 20px 52px rgba(0,0,0,.26)}.art-market-card img{aspect-ratio:1;object-fit:cover;border-radius:14px;border:1px solid rgba(255,226,172,.18)}.art-market-card span{color:var(--gold2);font-size:11px;letter-spacing:.16em;text-transform:uppercase}.art-market-card h3{margin:6px 0 8px;font-family:Georgia,serif;font-size:25px;font-weight:400;color:#fff2d8}.art-market-card p{margin:0 0 10px;font-size:14px;line-height:1.5}.art-market-card b{display:block;margin:0 0 12px;color:var(--gold2);font-size:18px}.personal-code-section{display:grid;grid-template-columns:1fr minmax(320px,480px);gap:34px;align-items:center}.code-inline-form{border-color:rgba(216,170,93,.42)}.inline-code-result{display:block;margin-top:18px;font-family:Georgia,serif;font-size:42px;line-height:1;color:var(--gold2)}.gallery-features{position:relative;z-index:12;padding:72px clamp(18px,6vw,88px) 88px;border-top:1px solid var(--line);background:linear-gradient(180deg,rgba(11,15,22,.92),rgba(7,8,13,.98));text-align:center}.gallery-features>.eyebrow{justify-content:center}.feature-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0;max-width:1280px;margin:30px auto 0;border-top:1px solid rgba(255,226,172,.16);border-bottom:1px solid rgba(255,226,172,.16)}.feature-grid article{min-height:150px;padding:24px 18px;border-right:1px solid rgba(255,226,172,.12)}.feature-grid article:last-child{border-right:0}.feature-grid b{display:block;margin-bottom:12px;color:var(--gold2);font-family:Georgia,serif;font-size:18px;font-weight:400;text-transform:uppercase}.feature-grid span{color:#c8c0cc;font-size:14px;line-height:1.55}.code-page{background:radial-gradient(circle at 18% 15%,rgba(65,46,100,.38),transparent 36%),linear-gradient(135deg,#0b0f18,#071019 60%,#0c1018)}.code-page h1{font-size:clamp(46px,6vw,92px)}.code-layout{grid-template-columns:1.08fr .92fr;max-width:1180px;align-items:stretch}.code-intro{display:grid;align-content:center;gap:24px;padding:28px}.code-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.code-steps span{display:grid;place-items:center;width:68px;height:68px;margin:0 auto 12px;border:1px solid rgba(216,170,93,.55);border-radius:50%;color:var(--gold2);font-family:Georgia,serif;font-size:26px}.code-steps b{display:block;text-align:center;color:#efe6d8;font-size:14px}.code-note{color:var(--gold2);font-family:Georgia,serif;font-size:18px}.code-layout .premium-form{border-color:rgba(216,170,93,.45);box-shadow:0 30px 80px rgba(0,0,0,.32)}.code-result-card{position:relative;overflow:hidden}.code-result-card:after{content:"";position:absolute;right:-50px;bottom:-40px;width:220px;height:220px;background:radial-gradient(circle,rgba(216,170,93,.16),transparent 65%)}@media (max-width:1100px){.feature-grid{grid-template-columns:repeat(3,1fr)}.feature-grid article:nth-child(3n){border-right:0}.art-market-grid,.personal-code-section{grid-template-columns:1fr}}@media (max-width:900px){.entry-doors{inset:68px 0 0}.entry-door{width:51vw}.gallery-features,.art-market-section,.personal-code-section{padding-inline:18px}.feature-grid{grid-template-columns:1fr 1fr}.code-layout,.code-steps{grid-template-columns:1fr}.code-intro{padding:0}.hero-section{padding-top:12vh}.hero-section h1{font-size:clamp(36px,10.6vw,46px);line-height:1.05}.hero-copy p{font-size:14px;line-height:1.55}.hero-actions{gap:10px}.hero-actions .gold-button,.hero-actions .ghost-button{min-height:46px;padding-inline:14px}.side-copy .glass-text{max-width:100%}}@media (max-width:650px){.art-market-card{grid-template-columns:1fr}.art-market-card img{width:100%}}@media (max-width:560px){.feature-grid{grid-template-columns:1fr}.feature-grid article{border-right:0;border-bottom:1px solid rgba(255,226,172,.12)}}
 """
 
 
@@ -728,6 +805,14 @@ const modalText = document.getElementById('modalText');
 const modalDetail = document.getElementById('modalDetail');
 const flipCard = document.getElementById('flipCard');
 const flipButton = document.getElementById('flipButton');
+const assetBase = window.MOONN_ART_GALLERY_BASE_URL || '';
+const isTildaMode = Boolean(window.MOONN_ART_GALLERY_TILDA_MODE);
+
+function assetUrl(path) {
+  if (!path || /^https?:\/\//i.test(path) || path.startsWith('data:')) return path;
+  if (!assetBase) return path;
+  return `${assetBase.replace(/\/?$/, '/')}${String(path).replace(/^\.?\//, '')}`;
+}
 
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'high-performance' });
 renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
@@ -884,7 +969,7 @@ function createSheenTexture() {
 }
 
 function loadSceneTexture(path, repeatX = 1, repeatY = 1) {
-  const texture = loader.load(path);
+  const texture = loader.load(assetUrl(path));
   texture.colorSpace = THREE.SRGBColorSpace;
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
@@ -1064,7 +1149,7 @@ function wrap(ctx, text, x, y, maxWidth, lineHeight) {
 
 function addArtwork(art, index) {
   const group = new THREE.Group();
-  const t = loader.load(art.image);
+  const t = loader.load(assetUrl(art.image));
   t.colorSpace = THREE.SRGBColorSpace;
   t.anisotropy = Math.min(renderer.capabilities.getMaxAnisotropy?.() || 8, 8);
   const imageMat = new THREE.MeshStandardMaterial({
@@ -1170,11 +1255,11 @@ flipButton?.addEventListener('click', () => {
 });
 
 function openArt(art) {
-  modalImage.src = art.image;
+  modalImage.src = assetUrl(art.image);
   modalImage.alt = art.title;
   modalTitle.textContent = art.title;
   modalText.textContent = `${art.note} ${art.intent}`;
-  modalDetail.href = art.detailUrl;
+  modalDetail.href = isTildaMode ? '#catalog' : art.detailUrl;
   document.getElementById('purchaseArtwork').value = art.title;
   flipCard.classList.remove('is-flipped');
   flipButton.textContent = 'Перевернуть';
@@ -1310,15 +1395,66 @@ animate();
 APP_JS = r"""
 const drawer = document.getElementById('purchaseDrawer');
 const purchaseArtwork = document.getElementById('purchaseArtwork');
+const artworksData = JSON.parse(document.getElementById('artworksData')?.textContent || '[]');
+const artworksById = new Map(artworksData.map((art) => [art.id, art]));
+const artworksByTitle = new Map(artworksData.map((art) => [art.title, art]));
+const assetBase = window.MOONN_ART_GALLERY_BASE_URL || '';
 
-function openPurchase(title) {
-  if (title && purchaseArtwork) purchaseArtwork.value = title;
+function assetUrl(path) {
+  if (!path || /^https?:\/\//i.test(path) || path.startsWith('data:')) return path;
+  if (!assetBase) return path;
+  return `${assetBase.replace(/\/?$/, '/')}${String(path).replace(/^\.?\//, '')}`;
+}
+
+function resolveArtwork(value) {
+  if (!value) return artworksData[0] || null;
+  return artworksById.get(value) || artworksByTitle.get(value) || artworksData.find((art) => art.title === value) || artworksData[0] || null;
+}
+
+function openPurchase(artworkOrTitle) {
+  const art = typeof artworkOrTitle === 'object' ? artworkOrTitle : resolveArtwork(artworkOrTitle);
+  if (art && purchaseArtwork) purchaseArtwork.value = art.title;
   drawer?.setAttribute('aria-hidden', 'false');
 }
 function closePurchase() { drawer?.setAttribute('aria-hidden', 'true'); }
 
+function initTildaCart() {
+  if (typeof window.tcart__init === 'function') {
+    try { window.tcart__init(''); } catch (error) { console.warn('Moonn art cart init skipped', error); }
+  }
+}
+
+function openArtworkPayment(art) {
+  if (!art) return false;
+  initTildaCart();
+  if (typeof window.tcart__addProduct !== 'function' || typeof window.tcart__openCart !== 'function') return false;
+  const image = art.checkoutImage || assetUrl(art.image);
+  const product = {
+    name: art.checkoutName || `${art.title} — картина Татьяны Мунн`,
+    price: Number(art.priceValue || 0),
+    amount: Number(art.priceValue || 0),
+    quantity: 1,
+    img: image,
+    sku: art.sku || art.id,
+  };
+  try {
+    if (window.tcart && Array.isArray(window.tcart.products)) window.tcart.products = [];
+    window.tcart__addProduct(product);
+    if (typeof window.tcart__reDrawCartIcon === 'function') window.tcart__reDrawCartIcon();
+    window.tcart__openCart();
+    return true;
+  } catch (error) {
+    console.warn('Moonn art payment open skipped', error);
+    return false;
+  }
+}
+
 document.querySelectorAll('[data-open-purchase]').forEach((button) => {
-  button.addEventListener('click', () => openPurchase(button.dataset.artTitle || purchaseArtwork?.value));
+  button.addEventListener('click', (event) => {
+    event.preventDefault();
+    const art = resolveArtwork(button.dataset.artId || button.dataset.artTitle || purchaseArtwork?.value);
+    if (!openArtworkPayment(art)) openPurchase(art);
+  });
 });
 document.querySelectorAll('[data-close-purchase]').forEach((button) => button.addEventListener('click', closePurchase));
 
@@ -1328,6 +1464,7 @@ document.querySelector('[data-copy-request]')?.addEventListener('click', () => {
   const text = [
     'Здравствуйте. Хочу обсудить покупку картины Татьяны Мунн.',
     `Картина: ${data.get('artwork') || ''}`,
+    `Стоимость: ${(resolveArtwork(data.get('artwork')) || {}).price || ''}`,
     `Имя: ${data.get('name') || ''}`,
     `Контакт: ${data.get('contact') || ''}`,
     `Комментарий: ${data.get('message') || ''}`,
@@ -1366,6 +1503,7 @@ function updateCode() {
 codeForm?.addEventListener('submit', (event) => { event.preventDefault(); updateCode(); });
 codeForm?.addEventListener('input', updateCode);
 updateCode();
+window.MoonnArtGalleryPayment = { artworks: artworksData, openArtworkPayment, openPurchase };
 
 window.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
