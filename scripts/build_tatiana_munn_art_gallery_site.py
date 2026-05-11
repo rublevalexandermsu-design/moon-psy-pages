@@ -1792,6 +1792,7 @@ def build_publication_report(records: list[dict[str, object]]) -> None:
 - Intended URL: `{TILDA_PAGE_URL}`.
 - Homepage page id: `{TILDA_HOMEPAGE_ID}`.
 - Tilda project id: `{TILDA_PROJECT_ID}`.
+- CDN ref for Tilda assets: `{TILDA_CDN_REF}`.
 
 ## Generated Artifacts
 

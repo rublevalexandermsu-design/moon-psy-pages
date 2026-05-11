@@ -7,6 +7,7 @@
 - Intended URL: `https://moonn.ru/kartiny-tatiany-munn`.
 - Homepage page id: `42678538`.
 - Tilda project id: `8326812`.
+- CDN ref for Tilda assets: `132d5486ee27e3782f5d00905c94baba75c2a927`.
 
 ## Generated Artifacts
 

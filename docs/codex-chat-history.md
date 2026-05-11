@@ -1427,3 +1427,29 @@ Append-only project history for `moon-psy-site`.
   - Resume from the handoff, finish native Tilda-cart bridge and Tilda-ready artifacts, then run local and live verification before publishing.
 - Follow-up rule:
   - When a user pauses a public/payment workstream mid-change, checkpoint the exact branch and unfinished scope before switching tasks; do not carry partial public/payment changes into the next workstream.
+
+## 2026-05-11 — Tatiana Moonn Art Gallery Tilda Packet Resumed
+
+- Project: Moonn / Tatiana Moonn art gallery.
+- Branch: `codex/moonn-art-gallery`.
+- Trigger: user asked to resume the frozen gallery publication workstream, create a Tilda page for the art gallery, and add a homepage banner linking to it near the consultation banner.
+- Route:
+  - Continued the existing gallery branch instead of using the consultation-banner branch.
+  - Edited the canonical generator `scripts/build_tatiana_munn_art_gallery_site.py`, not generated HTML by hand.
+  - Kept live Tilda publication as a separate high-risk step requiring real page/cart verification.
+- Changes:
+  - Added Tilda-safe gallery artifacts: `tilda-html-block-final.html`, `tilda-page-final.html`, `tilda-head-loader-final.html`, `tilda-head-seo-final.html`.
+  - Added homepage banner artifact: `homepage-art-gallery-block-final.html`.
+  - Added native Tilda cart product manifest: `data/tilda-payment-products.json`.
+  - Strengthened generated `app.js` so artwork payment buttons use native Tilda cart/T-Bank through `tcart__addProduct`, `tcart__reDrawCartIcon`, `tcart__openCart`, and repair native T706 order-form handlers.
+  - Fixed generator asset rebuild logic so scene/art assets are reachable inside `build_assets()` instead of dead code after a `return`.
+- Verification:
+  - `python -m py_compile scripts\build_tatiana_munn_art_gallery_site.py` passed.
+  - `python scripts\build_tatiana_munn_art_gallery_site.py` regenerated the gallery, Tilda packet, payment products and ZIP.
+  - Local Playwright desktop/mobile checks confirmed the generated gallery renders and the first screen is not blank.
+  - Generated build report confirms Tilda page, homepage banner, payment-products manifest and Latin asset names.
+- Publication gate:
+  - Live Tilda page creation/update is still pending.
+  - Homepage banner insertion is still pending.
+  - Do not submit a real payment during QA.
+  - Before reporting completion, verify live page marker `moonn-art-gallery-tilda-page`, homepage marker `moonn-art-gallery-home-banner`, native cart amount/name for at least one artwork, and T-Bank provider transition without card submission.
