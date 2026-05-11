@@ -30,6 +30,8 @@ TILDA_CDN_REF = os.environ.get("MOONN_ART_GALLERY_CDN_REF", "__MOONN_ART_GALLERY
 TILDA_CDN_BASE = f"https://cdn.jsdelivr.net/gh/{GITHUB_REPO}@{TILDA_CDN_REF}/docs/tatiana-munn-art-gallery"
 TILDA_PROJECT_ID = "8326812"
 TILDA_HOMEPAGE_ID = "42678538"
+TILDA_PAGE_TITLE = "Картины Татьяны Мунн | 3D-галерея и персональный код"
+TILDA_PAGE_DESCRIPTION = "3D-галерея энергетических картин Татьяны Мунн: каталог работ, персональный код, заявка и онлайн-оплата через защищенную корзину сайта."
 
 SCENE_ASSETS = {
     "gallery-floor-parquet.webp": "ChatGPT Image 10 мая 2026 г., 22_26_33 (1).png",
@@ -267,17 +269,6 @@ def build_assets() -> None:
     enhance_and_save(concept_src, ASSETS / "tatiana_munn_gallery_concept.webp", 1800, 84)
     for output_name, source_name in SCENE_ASSETS.items():
         save_scene_asset(DOWNLOADS / source_name, SCENE_DIR / output_name, 2200, 86)
-
-
-def price_to_int(price: str) -> int:
-    value = re.sub(r"\D+", "", price)
-    if not value:
-        raise ValueError(f"Cannot parse artwork price: {price!r}")
-    return int(value)
-
-
-def cdn_url(path: str) -> str:
-    return f"{TILDA_CDN_BASE.rstrip('/')}/{path.lstrip('/')}"
     with Image.open(SCENE_DIR / "gallery-door-ornate.webp") as img:
         ImageOps.mirror(img).save(SCENE_DIR / "gallery-door-ornate-mirror.webp", "WEBP", quality=86, method=6)
     save_scene_asset(
@@ -293,6 +284,29 @@ def cdn_url(path: str) -> str:
         thumb = ART_DIR / f"{index:02d}-{art.slug}-thumb.webp"
         enhance_and_save(src, full, 1600, 84)
         enhance_and_save(src, thumb, 520, 78)
+
+
+def price_to_int(price: str) -> int:
+    value = re.sub(r"\D+", "", price)
+    if not value:
+        raise ValueError(f"Cannot parse artwork price: {price!r}")
+    return int(value)
+
+
+def cdn_url(path: str) -> str:
+    return f"{TILDA_CDN_BASE.rstrip('/')}/{path.lstrip('/')}"
+
+
+def tilda_asset_html(html: str) -> str:
+    html = html.replace('href="index.html"', f'href="{TILDA_PAGE_URL}"')
+    html = html.replace('href="catalog.html"', 'href="#catalog"')
+    html = html.replace('href="code.html"', 'href="#personal-code"')
+    html = html.replace('href="about.html"', 'href="#gallery-about"')
+    html = html.replace('href="contacts.html"', 'href="#gallery-contacts"')
+    html = re.sub(r'href="artwork-[^"]+\.html"', 'href="#catalog"', html)
+    html = html.replace('src="assets/', f'src="{cdn_url("assets/")}')
+    html = html.replace('href="favicon.svg"', f'href="{cdn_url("favicon.svg")}"')
+    return html
 
 
 def ensure_three_vendor() -> None:
@@ -1419,9 +1433,44 @@ function openPurchase(artworkOrTitle) {
 function closePurchase() { drawer?.setAttribute('aria-hidden', 'true'); }
 
 function initTildaCart() {
-  if (typeof window.tcart__init === 'function') {
-    try { window.tcart__init(''); } catch (error) { console.warn('Moonn art cart init skipped', error); }
+  const cartRecord = document.querySelector('[data-record-type="706"][id]');
+  if (!cartRecord || typeof window.t_onFuncLoad !== 'function') return;
+  window.t_onFuncLoad('tcart__init', () => {
+    try {
+      window.tcart__init(cartRecord.id.replace(/^rec/, ''), { cssClassName: '' });
+    } catch (error) {
+      console.warn('Moonn art cart init skipped', error);
+    }
+  });
+}
+
+function repairTildaOrderFormHandlers() {
+  const cartRecord = document.querySelector('[data-record-type="706"][id]');
+  const form = document.querySelector('.t706__cartwin form.js-form-proccess');
+  if (!cartRecord || !form) return;
+  try {
+    if (window.initForms && cartRecord.id) delete window.initForms[cartRecord.id];
+    if (typeof window.t_forms__initFormFields === 'function') window.t_forms__initFormFields(cartRecord);
+    if (typeof window.t_forms__addInputItsGood === 'function') window.t_forms__addInputItsGood(cartRecord);
+    if (typeof window.t_forms__addAttrAction === 'function') window.t_forms__addAttrAction(cartRecord);
+    if (typeof window.t_forms__onSubmit === 'function') window.t_forms__onSubmit(cartRecord);
+    if (typeof window.t_forms__onClick === 'function') window.t_forms__onClick(cartRecord);
+    if (typeof window.t_forms__onRender === 'function') window.t_forms__onRender(cartRecord);
+    if (typeof window.t_forms__addFocusOnTab === 'function') window.t_forms__addFocusOnTab(cartRecord);
+  } catch (error) {
+    console.warn('Moonn art order form repair skipped', error);
   }
+}
+
+function enhanceTildaPaymentUi() {
+  const cart = document.querySelector('.t706__cartwin, .t706');
+  if (!cart) return;
+  repairTildaOrderFormHandlers();
+  cart.querySelectorAll('.t-submit, button[type="submit"], .t-btnflex_type_submit').forEach((submit) => {
+    const submitText = submit.querySelector('.t-btnflex__text, span') || submit;
+    if ((submitText.textContent || '').trim() !== 'Перейти к оплате') submitText.textContent = 'Перейти к оплате';
+    submit.setAttribute('aria-label', 'Перейти к оплате через T-Bank');
+  });
 }
 
 function openArtworkPayment(art) {
@@ -1442,12 +1491,19 @@ function openArtworkPayment(art) {
     window.tcart__addProduct(product);
     if (typeof window.tcart__reDrawCartIcon === 'function') window.tcart__reDrawCartIcon();
     window.tcart__openCart();
+    setTimeout(enhanceTildaPaymentUi, 200);
+    setTimeout(enhanceTildaPaymentUi, 900);
     return true;
   } catch (error) {
     console.warn('Moonn art payment open skipped', error);
     return false;
   }
 }
+
+initTildaCart();
+setTimeout(initTildaCart, 300);
+setTimeout(initTildaCart, 1200);
+setInterval(enhanceTildaPaymentUi, 1500);
 
 document.querySelectorAll('[data-open-purchase]').forEach((button) => {
   button.addEventListener('click', (event) => {
@@ -1556,6 +1612,216 @@ FAVICON_SVG = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
 """
 
 
+def build_tilda_artifacts(records: list[dict[str, object]]) -> None:
+    index_html = (OUT / "index.html").read_text(encoding="utf-8")
+    body_match = re.search(r"<body>(?P<body>[\s\S]*?)</body>", index_html)
+    if not body_match:
+        raise RuntimeError("Generated index.html does not contain a body section")
+    body = body_match.group("body")
+    body = re.sub(r'<script src="app\.js"></script>\s*', "", body)
+    body = re.sub(r'<script type="module" src="gallery-3d\.js"></script>\s*', "", body)
+    body = tilda_asset_html(body)
+    body = body.replace('id="gallery"', 'id="gallery" data-moonn-art-gallery-tilda="true"', 1)
+    page_schema = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": f"{TILDA_PAGE_URL}#webpage",
+                "url": TILDA_PAGE_URL,
+                "name": TILDA_PAGE_TITLE,
+                "description": TILDA_PAGE_DESCRIPTION,
+                "inLanguage": "ru-RU",
+                "isPartOf": {"@type": "WebSite", "@id": "https://moonn.ru/#website", "url": "https://moonn.ru/"},
+            },
+            {
+                "@type": "ItemList",
+                "@id": f"{TILDA_PAGE_URL}#artworks",
+                "name": "Каталог картин Татьяны Мунн",
+                "numberOfItems": len(records),
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": index,
+                        "item": {
+                            "@type": "Product",
+                            "name": record["checkoutName"],
+                            "image": record["checkoutImage"],
+                            "sku": record["sku"],
+                            "offers": {
+                                "@type": "Offer",
+                                "price": record["priceValue"],
+                                "priceCurrency": record["priceCurrency"],
+                                "availability": "https://schema.org/InStock",
+                                "url": TILDA_PAGE_URL,
+                            },
+                        },
+                    }
+                    for index, record in enumerate(records, start=1)
+                ],
+            },
+        ],
+    }
+    block = f"""<section id="moonn-art-gallery-tilda-page" aria-label="Галерея картин Татьяны Мунн">
+  <link rel="stylesheet" href="{cdn_url('style.css')}">
+  <script>
+    window.MOONN_ART_GALLERY_BASE_URL = "{TILDA_CDN_BASE.rstrip('/')}/";
+    window.MOONN_ART_GALLERY_TILDA_MODE = true;
+  </script>
+  {body}
+  <script type="module" src="{cdn_url('gallery-3d.js')}"></script>
+  <script src="{cdn_url('app.js')}"></script>
+  <script type="application/ld+json">{json.dumps(page_schema, ensure_ascii=False)}</script>
+</section>
+"""
+    (OUT / "tilda-html-block-final.html").write_text(block, encoding="utf-8")
+    full_page = f"""<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{escape(TILDA_PAGE_TITLE)}</title>
+  <meta name="description" content="{escape(TILDA_PAGE_DESCRIPTION)}">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="{TILDA_PAGE_URL}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{TILDA_PAGE_URL}">
+  <meta property="og:title" content="{escape(TILDA_PAGE_TITLE)}">
+  <meta property="og:description" content="{escape(TILDA_PAGE_DESCRIPTION)}">
+  <meta property="og:image" content="{cdn_url('assets/tatiana_munn_gallery_concept.webp')}">
+</head>
+<body>
+{block}
+</body>
+</html>
+"""
+    (OUT / "tilda-page-final.html").write_text(full_page, encoding="utf-8")
+    (OUT / "tilda-head-loader-final.html").write_text(
+        "\n".join(
+            [
+                f'<link rel="canonical" href="{TILDA_PAGE_URL}">',
+                f'<meta property="og:image" content="{cdn_url("assets/tatiana_munn_gallery_concept.webp")}">',
+                f'<script>window.MOONN_ART_GALLERY_BASE_URL="{TILDA_CDN_BASE.rstrip("/")}/";window.MOONN_ART_GALLERY_TILDA_MODE=true;</script>',
+            ]
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    (OUT / "tilda-head-seo-final.html").write_text(
+        "\n".join(
+            [
+                f"<title>{escape(TILDA_PAGE_TITLE)}</title>",
+                f'<meta name="description" content="{escape(TILDA_PAGE_DESCRIPTION)}">',
+                '<meta name="robots" content="index,follow">',
+                f'<link rel="canonical" href="{TILDA_PAGE_URL}">',
+                '<meta property="og:type" content="website">',
+                f'<meta property="og:url" content="{TILDA_PAGE_URL}">',
+                f'<meta property="og:title" content="{escape(TILDA_PAGE_TITLE)}">',
+                f'<meta property="og:description" content="{escape(TILDA_PAGE_DESCRIPTION)}">',
+                f'<meta property="og:image" content="{cdn_url("assets/tatiana_munn_gallery_concept.webp")}">',
+                f'<script type="application/ld+json">{json.dumps(page_schema, ensure_ascii=False)}</script>',
+            ]
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    payment_products = {
+        "generatedAt": "2026-05-11",
+        "project": "Moonn / Tatiana Moonn art gallery",
+        "pageUrl": TILDA_PAGE_URL,
+        "paymentProvider": "Tilda native cart / T-Bank",
+        "products": [
+            {
+                "sku": record["sku"],
+                "name": record["checkoutName"],
+                "price": record["priceValue"],
+                "currency": record["priceCurrency"],
+                "image": record["checkoutImage"],
+                "tildaProductHref": record["tildaProductHref"],
+            }
+            for record in records
+        ],
+    }
+    (DATA_DIR / "tilda-payment-products.json").write_text(json.dumps(payment_products, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    build_homepage_art_gallery_block(records)
+    build_publication_report(records)
+
+
+def build_homepage_art_gallery_block(records: list[dict[str, object]]) -> None:
+    lead = records[0]
+    block = f"""<section id="moonn-art-gallery-home-banner" class="moonn-art-gallery-home-banner" aria-label="Галерея картин Татьяны Мунн">
+  <style>
+    #moonn-art-gallery-home-banner{{font-family:Inter,Arial,sans-serif;max-width:1180px;margin:28px auto;padding:30px;border:1px solid rgba(216,170,93,.25);background:linear-gradient(135deg,#090b12,#17111d 58%,#22152a);color:#fff2d8;box-shadow:0 24px 70px rgba(0,0,0,.22);display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,380px);gap:26px;align-items:center;overflow:hidden;position:relative}}
+    #moonn-art-gallery-home-banner *{{box-sizing:border-box}}
+    #moonn-art-gallery-home-banner h2{{margin:0 0 14px;font-family:Georgia,serif;font-weight:400;font-size:clamp(34px,4.8vw,64px);line-height:1.02;letter-spacing:0;color:#fff2d8}}
+    #moonn-art-gallery-home-banner p{{margin:0 0 20px;max-width:680px;color:#d6ccd8;font-size:17px;line-height:1.58}}
+    #moonn-art-gallery-home-banner .eyebrow{{display:inline-flex;margin-bottom:12px;color:#ffe7aa;font-size:12px;text-transform:uppercase;letter-spacing:.18em}}
+    #moonn-art-gallery-home-banner .actions{{display:flex;flex-wrap:wrap;gap:12px;align-items:center}}
+    #moonn-art-gallery-home-banner a.button{{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:999px;background:linear-gradient(135deg,#a06b27,#f3cf82 52%,#8a5f25);color:#171014!important;text-decoration:none!important;font-weight:800;box-shadow:0 14px 34px rgba(216,170,93,.22)}}
+    #moonn-art-gallery-home-banner .note{{color:#bfb5c5;font-size:14px}}
+    #moonn-art-gallery-home-banner .media{{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center}}
+    #moonn-art-gallery-home-banner .media img{{width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px;border:1px solid rgba(255,226,172,.2);box-shadow:0 18px 44px rgba(0,0,0,.34)}}
+    #moonn-art-gallery-home-banner .media img:first-child{{transform:translateY(18px)}}
+    @media(max-width:820px){{#moonn-art-gallery-home-banner{{grid-template-columns:1fr;margin:22px 10px;padding:22px}}#moonn-art-gallery-home-banner .media{{order:-1}}#moonn-art-gallery-home-banner a.button{{width:100%}}}}
+  </style>
+  <div>
+    <span class="eyebrow">3D-галерея · картины · персональный код</span>
+    <h2>Картины Татьяны Мунн</h2>
+    <p>Премиальная онлайн-галерея: прогулка по залу, каталог работ, персональный код владельца и заявка на покупку картины.</p>
+    <div class="actions">
+      <a class="button" href="/{TILDA_PAGE_ALIAS}">Открыть галерею</a>
+      <span class="note">10 авторских работ · от {escape(str(min(record["priceValue"] for record in records)))} ₽</span>
+    </div>
+  </div>
+  <a class="media" href="/{TILDA_PAGE_ALIAS}" aria-label="Открыть галерею картин Татьяны Мунн">
+    <img src="{lead['checkoutImage']}" alt="{escape(str(lead['title']))} — картина Татьяны Мунн">
+    <img src="{cdn_url('assets/tatiana_munn_gallery_concept.webp')}" alt="3D-галерея картин Татьяны Мунн">
+  </a>
+</section>
+"""
+    (OUT / "homepage-art-gallery-block-final.html").write_text(block, encoding="utf-8")
+
+
+def build_publication_report(records: list[dict[str, object]]) -> None:
+    report = f"""# 2026-05-11 Tatiana Moonn Art Gallery Tilda Publication Packet
+
+## Scope
+
+- Project: Moonn / Tatiana Moonn art gallery.
+- Branch: `codex/moonn-art-gallery`.
+- Intended URL: `{TILDA_PAGE_URL}`.
+- Homepage page id: `{TILDA_HOMEPAGE_ID}`.
+- Tilda project id: `{TILDA_PROJECT_ID}`.
+
+## Generated Artifacts
+
+- `tilda-html-block-final.html` - native Tilda T123 block for the gallery page.
+- `tilda-page-final.html` - standalone preview page using the same Tilda-safe block.
+- `tilda-head-loader-final.html` - minimal head/base snippet.
+- `tilda-head-seo-final.html` - SEO and schema layer.
+- `homepage-art-gallery-block-final.html` - homepage banner linking to `/{TILDA_PAGE_ALIAS}`.
+- `data/tilda-payment-products.json` - native Tilda cart product manifest.
+
+## Payment Products
+
+- Products: `{len(records)}` artworks.
+- Price range: `{min(record["priceValue"] for record in records)}`-`{max(record["priceValue"] for record in records)}` RUB.
+- Payment route: native Tilda cart / T-Bank through `tcart__addProduct`, `tcart__reDrawCartIcon`, `tcart__openCart`.
+
+## Publication Gate
+
+- Do not submit a real payment.
+- Create or update the Tilda page with alias `{TILDA_PAGE_ALIAS}`.
+- Add a native Tilda cart/payment block (`T706`/`ST100`) on the gallery page before payment QA.
+- Publish the gallery page.
+- Add `homepage-art-gallery-block-final.html` to the homepage near the existing consultation/camp promo banners.
+- Verify live HTML contains `moonn-art-gallery-tilda-page` and `moonn-art-gallery-home-banner`.
+- Verify at least one artwork CTA opens the native cart with the correct artwork name and amount.
+- Verify T-Bank provider screen is reachable without entering card data.
+"""
+    (OUT / "publication-report-2026-05-11.md").write_text(report, encoding="utf-8")
+
+
 def write_static_files(records: list[dict[str, object]]) -> None:
     (OUT / "style.css").write_text(STYLE_CSS, encoding="utf-8")
     (OUT / "gallery-3d.js").write_text(GALLERY_JS, encoding="utf-8")
@@ -1594,6 +1860,9 @@ def build_report(records: list[dict[str, object]]) -> None:
             "hasThreeJs": (OUT / "gallery-3d.js").read_text(encoding="utf-8").count("THREE.") > 10,
             "hasPurchaseRequestLayer": "purchaseDrawer" in (OUT / "app.js").read_text(encoding="utf-8"),
             "hasArtworkJson": (DATA_DIR / "artworks.json").exists(),
+            "hasTildaPage": (OUT / "tilda-html-block-final.html").exists(),
+            "hasHomepageBanner": (OUT / "homepage-art-gallery-block-final.html").exists(),
+            "hasTildaPaymentProducts": (DATA_DIR / "tilda-payment-products.json").exists(),
             "latinAssetNames": all(all(ord(ch) < 128 for ch in p.name) for p in ART_DIR.glob("*")),
         },
     }
@@ -1611,6 +1880,7 @@ def main() -> int:
     build_artwork_pages(records)
     build_code_page()
     build_about_contacts()
+    build_tilda_artifacts(records)
     build_report(records)
     build_zip()
     print(json.dumps({"output": str(OUT), "zip": str(ZIP_OUT), "artworks": len(records)}, ensure_ascii=False, indent=2))

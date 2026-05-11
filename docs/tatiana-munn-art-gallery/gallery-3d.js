@@ -12,6 +12,14 @@ const modalText = document.getElementById('modalText');
 const modalDetail = document.getElementById('modalDetail');
 const flipCard = document.getElementById('flipCard');
 const flipButton = document.getElementById('flipButton');
+const assetBase = window.MOONN_ART_GALLERY_BASE_URL || '';
+const isTildaMode = Boolean(window.MOONN_ART_GALLERY_TILDA_MODE);
+
+function assetUrl(path) {
+  if (!path || /^https?:\/\//i.test(path) || path.startsWith('data:')) return path;
+  if (!assetBase) return path;
+  return `${assetBase.replace(/\/?$/, '/')}${String(path).replace(/^\.?\//, '')}`;
+}
 
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'high-performance' });
 renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
@@ -168,7 +176,7 @@ function createSheenTexture() {
 }
 
 function loadSceneTexture(path, repeatX = 1, repeatY = 1) {
-  const texture = loader.load(path);
+  const texture = loader.load(assetUrl(path));
   texture.colorSpace = THREE.SRGBColorSpace;
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
@@ -348,7 +356,7 @@ function wrap(ctx, text, x, y, maxWidth, lineHeight) {
 
 function addArtwork(art, index) {
   const group = new THREE.Group();
-  const t = loader.load(art.image);
+  const t = loader.load(assetUrl(art.image));
   t.colorSpace = THREE.SRGBColorSpace;
   t.anisotropy = Math.min(renderer.capabilities.getMaxAnisotropy?.() || 8, 8);
   const imageMat = new THREE.MeshStandardMaterial({
@@ -454,11 +462,11 @@ flipButton?.addEventListener('click', () => {
 });
 
 function openArt(art) {
-  modalImage.src = art.image;
+  modalImage.src = assetUrl(art.image);
   modalImage.alt = art.title;
   modalTitle.textContent = art.title;
   modalText.textContent = `${art.note} ${art.intent}`;
-  modalDetail.href = art.detailUrl;
+  modalDetail.href = isTildaMode ? '#catalog' : art.detailUrl;
   document.getElementById('purchaseArtwork').value = art.title;
   flipCard.classList.remove('is-flipped');
   flipButton.textContent = 'Перевернуть';

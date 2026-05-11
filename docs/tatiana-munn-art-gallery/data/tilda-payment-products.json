@@ -1,0 +1,88 @@
+{
+  "generatedAt": "2026-05-11",
+  "project": "Moonn / Tatiana Moonn art gallery",
+  "pageUrl": "https://moonn.ru/kartiny-tatiany-munn",
+  "paymentProvider": "Tilda native cart / T-Bank",
+  "products": [
+    {
+      "sku": "moonn-art-gallery-01-blue-flower-harmony",
+      "name": "Гармония и чувственность — картина Татьяны Мунн",
+      "price": 700000,
+      "currency": "RUB",
+      "image": "https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@__MOONN_ART_GALLERY_CDN_REF__/docs/tatiana-munn-art-gallery/assets/art/01-blue-flower-harmony.webp",
+      "tildaProductHref": "#order:Гармония и чувственность — картина Татьяны Мунн =700000:::image=https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@__MOONN_ART_GALLERY_CDN_REF__/docs/tatiana-munn-art-gallery/assets/art/01-blue-flower-harmony.webp"
+    },
+    {
+      "sku": "moonn-art-gallery-02-turquoise-protection",
+      "name": "Ясность и защита — картина Татьяны Мунн",
+      "price": 420000,
+      "currency": "RUB",
+      "image": "https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@__MOONN_ART_GALLERY_CDN_REF__/docs/tatiana-munn-art-gallery/assets/art/02-turquoise-protection.webp",
+      "tildaProductHref": "#order:Ясность и защита — картина Татьяны Мунн =420000:::image=https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@__MOONN_ART_GALLERY_CDN_REF__/docs/tatiana-munn-art-gallery/assets/art/02-turquoise-protection.webp"
+    },
+    {
+      "sku": "moonn-art-gallery-03-lotus-balance",
+      "name": "Баланс и восстановление — картина Татьяны Мунн",
+      "price": 280000,
+      "currency": "RUB",
+      "image": "https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@__MOONN_ART_GALLERY_CDN_REF__/docs/tatiana-munn-art-gallery/assets/art/03-lotus-balance.webp",
+      "tildaProductHref": "#order:Баланс и восстановление — картина Татьяны Мунн =280000:::image=https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@__MOONN_ART_GALLERY_CDN_REF__/docs/tatiana-munn-art-gallery/assets/art/03-lotus-balance.webp"
+    },
+    {
+      "sku": "moonn-art-gallery-04-violet-galaxy",
+      "name": "Энергия и ресурс — картина Татьяны Мунн",
+      "price": 360000,
+      "currency": "RUB",
+      "image": "https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@__MOONN_ART_GALLERY_CDN_REF__/docs/tatiana-munn-art-gallery/assets/art/04-violet-galaxy.webp",
+      "tildaProductHref": "#order:Энергия и ресурс — картина Татьяны Мунн =360000:::image=https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@__MOONN_ART_GALLERY_CDN_REF__/docs/tatiana-munn-art-gallery/assets/art/04-violet-galaxy.webp"
+    },
+    {
+      "sku": "moonn-art-gallery-05-orchid-rings",
+      "name": "Тонкая настройка — картина Татьяны Мунн",
+      "price": 190000,
+      "currency": "RUB",
+      "image": "https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@__MOONN_ART_GALLERY_CDN_REF__/docs/tatiana-munn-art-gallery/assets/art/05-orchid-rings.webp",
+      "tildaProductHref": "#order:Тонкая настройка — картина Татьяны Мунн =190000:::image=https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@__MOONN_ART_GALLERY_CDN_REF__/docs/tatiana-munn-art-gallery/assets/art/05-orchid-rings.webp"
+    },
+    {
+      "sku": "moonn-art-gallery-06-personal-code-speed",
+      "name": "Скорость восстановления — картина Татьяны Мунн",
+      "price": 320000,
+      "currency": "RUB",
+      "image": "https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@__MOONN_ART_GALLERY_CDN_REF__/docs/tatiana-munn-art-gallery/assets/art/06-personal-code-speed.webp",
+      "tildaProductHref": "#order:Скорость восстановления — картина Татьяны Мунн =320000:::image=https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@__MOONN_ART_GALLERY_CDN_REF__/docs/tatiana-munn-art-gallery/assets/art/06-personal-code-speed.webp"
+    },
+    {
+      "sku": "moonn-art-gallery-07-finance-realization",
+      "name": "Финансовая реализация — картина Татьяны Мунн",
+      "price": 310000,
+      "currency": "RUB",
+      "image": "https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@__MOONN_ART_GALLERY_CDN_REF__/docs/tatiana-munn-art-gallery/assets/art/07-finance-realization.webp",
+      "tildaProductHref": "#order:Финансовая реализация — картина Татьяны Мунн =310000:::image=https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@__MOONN_ART_GALLERY_CDN_REF__/docs/tatiana-munn-art-gallery/assets/art/07-finance-realization.webp"
+    },
+    {
+      "sku": "moonn-art-gallery-08-sensitivity-purple",
+      "name": "Чувственность — картина Татьяны Мунн",
+      "price": 170000,
+      "currency": "RUB",
+      "image": "https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@__MOONN_ART_GALLERY_CDN_REF__/docs/tatiana-munn-art-gallery/assets/art/08-sensitivity-purple.webp",
+      "tildaProductHref": "#order:Чувственность — картина Татьяны Мунн =170000:::image=https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@__MOONN_ART_GALLERY_CDN_REF__/docs/tatiana-munn-art-gallery/assets/art/08-sensitivity-purple.webp"
+    },
+    {
+      "sku": "moonn-art-gallery-09-eye-vortex",
+      "name": "Око потока — картина Татьяны Мунн",
+      "price": 260000,
+      "currency": "RUB",
+      "image": "https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@__MOONN_ART_GALLERY_CDN_REF__/docs/tatiana-munn-art-gallery/assets/art/09-eye-vortex.webp",
+      "tildaProductHref": "#order:Око потока — картина Татьяны Мунн =260000:::image=https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@__MOONN_ART_GALLERY_CDN_REF__/docs/tatiana-munn-art-gallery/assets/art/09-eye-vortex.webp"
+    },
+    {
+      "sku": "moonn-art-gallery-10-gold-blue-gate",
+      "name": "Кодовые врата — картина Татьяны Мунн",
+      "price": 380000,
+      "currency": "RUB",
+      "image": "https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@__MOONN_ART_GALLERY_CDN_REF__/docs/tatiana-munn-art-gallery/assets/art/10-gold-blue-gate.webp",
+      "tildaProductHref": "#order:Кодовые врата — картина Татьяны Мунн =380000:::image=https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@__MOONN_ART_GALLERY_CDN_REF__/docs/tatiana-munn-art-gallery/assets/art/10-gold-blue-gate.webp"
+    }
+  ]
+}

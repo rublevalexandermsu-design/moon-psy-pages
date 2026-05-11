@@ -20,7 +20,12 @@
     "catalog.html",
     "code.html",
     "contacts.html",
-    "index.html"
+    "homepage-art-gallery-block-final.html",
+    "index.html",
+    "tilda-head-loader-final.html",
+    "tilda-head-seo-final.html",
+    "tilda-html-block-final.html",
+    "tilda-page-final.html"
   ],
   "checks": {
     "usesTatianaMunnDoubleN": true,
@@ -28,6 +33,9 @@
     "hasThreeJs": true,
     "hasPurchaseRequestLayer": true,
     "hasArtworkJson": true,
+    "hasTildaPage": true,
+    "hasHomepageBanner": true,
+    "hasTildaPaymentProducts": true,
     "latinAssetNames": true
   }
 }
