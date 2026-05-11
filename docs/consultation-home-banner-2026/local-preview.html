@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preview: Moonn Consultation Home Banner</title>
+  <style>
+    body { margin: 0; background: #f6f0ed; }
+    .preview-top { min-height: 160px; display: grid; place-items: center; font: 20px/1.4 Arial, sans-serif; color: #5c5261; }
+    .t706__cartwin { display: none; position: fixed; inset: 20px; z-index: 20; max-width: 420px; height: max-content; margin: auto; padding: 22px; border-radius: 10px; background: #fff; box-shadow: 0 24px 80px rgba(0,0,0,.24); font: 16px/1.35 Arial, sans-serif; }
+    .t706__cartwin.is-open { display: block; }
+    .t706__product { padding: 12px 0; border-bottom: 1px solid #e8e0e8; }
+    .t-submit { margin-top: 16px; width: 100%; min-height: 44px; border: 0; border-radius: 8px; background: #3149c9; color: #fff; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <div id="allrecords">
+    <div class="preview-top r">Верхний блок главной страницы</div>
+    <div id="rec2251553291" class="r" data-record-type="706">
+      <div class="t706">
+        <div class="t706__cartwin">
+          <strong>Корзина Tilda preview</strong>
+          <div data-preview-cart-products></div>
+          <div>Способ оплаты</div>
+          <button class="t-submit" type="button"><span>Перейти к оплате</span></button>
+          <form class="js-form-proccess"></form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    window.tcart = { products: [], amount: 0, total: 0 };
+    window.t_onFuncLoad = function(name, cb) { cb(); };
+    window.tcart__init = function() {};
+    window.tcart__addProduct = function(product) {
+      window.tcart.products.push(product);
+      window.tcart.amount = product.amount;
+      window.tcart.total = product.price;
+      var mount = document.querySelector('[data-preview-cart-products]');
+      mount.innerHTML = '<div class="t706__product">' + product.name + '<br><strong>' + product.price + ' RUB</strong><br><small>' + product.sku + '</small></div>';
+    };
+    window.tcart__reDrawCartIcon = function() {};
+    window.tcart__openCart = function() {
+      document.querySelector('.t706__cartwin').classList.add('is-open');
+    };
+  </script>
+  <!-- The production T123 block starts below. -->
+  <script>
+    function runInsertedScripts(scope) {
+      Array.prototype.slice.call(scope.querySelectorAll('script')).forEach(function(oldScript) {
+        var script = document.createElement('script');
+        Array.prototype.slice.call(oldScript.attributes).forEach(function(attribute) {
+          script.setAttribute(attribute.name, attribute.value);
+        });
+        script.textContent = oldScript.textContent;
+        oldScript.parentNode.replaceChild(script, oldScript);
+      });
+    }
+
+    fetch('./tilda-html-block-final.html').then(function(response) {
+      return response.text();
+    }).then(function(html) {
+      document.querySelector('.preview-top').insertAdjacentHTML('afterend', html);
+      runInsertedScripts(document.getElementById('moonn-consultation-home-banner'));
+      var testProduct = new URLSearchParams(window.location.search).get('autotest');
+      if (testProduct) {
+        setTimeout(function() {
+          var button = document.querySelector('[data-moonn-consult-product="' + testProduct + '"]');
+          if (button) button.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }));
+        }, 100);
+      }
+    });
+  </script>
+</body>
+</html>

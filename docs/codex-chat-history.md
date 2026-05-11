@@ -1248,3 +1248,29 @@ Append-only project history for `moon-psy-site`.
   - Visual Edge/browser check confirmed the page starts with the hero block and the removed top summary card is absent.
 - Follow-up rule:
   - For public Tilda pages, visual deletion requests must be implemented in the generator/source artifact first, then published, then verified through Tilda API, live HTML, and browser render.
+
+## 2026-05-11 — Moonn Consultation Homepage Banner Artifact
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-consultation-home-banner`.
+- Trigger: previous Codex chat froze while adding the homepage banner for Tatiana Moonn online consultations; user supplied the banner visual and asked to continue in this workstream.
+- Route:
+  - Kept this work separate from the paused art-gallery workstream and the teen-camp workstream.
+  - Reused the proven native Tilda `T123` + `T706` cart/T-Bank route instead of creating a custom payment layer.
+  - Extracted product facts from the supplied banner into a machine-readable manifest before publication.
+- Artifacts:
+  - `docs/consultation-home-banner-2026/consultation-products.json`
+  - `docs/consultation-home-banner-2026/tilda-html-block-final.html`
+  - `docs/consultation-home-banner-2026/local-preview.html`
+  - `docs/consultation-home-banner-2026/publication-report-2026-05-11.md`
+- Products:
+  - `moonn-consultation-online-1-2026`: 1 online consultation, `8000` RUB.
+  - `moonn-consultation-online-3-summer-2026`: 3 online consultations, `19000` RUB; regular displayed price `21000` RUB; visible valid-through text `до 31 августа`.
+- Publication gate:
+  - Local preview verification passed for desktop/mobile render and mocked Tilda cart products `8000` RUB / `19000` RUB.
+  - Homepage Tilda editor page `42678538` and native T123 record `rec2251351151` were found.
+  - Native Tilda cart record was found through API: `rec792077353`, block type `706`.
+  - Automated GUI focus/copy into the T123 editor was not reliable in this run, so no live Tilda save or publish was performed.
+  - Live Tilda publication and provider-screen verification are still pending.
+  - Do not submit a real payment during QA.
+  - Verify homepage HTML marker, native cart contents for both products, and T-Bank provider transition before reporting the live banner complete.

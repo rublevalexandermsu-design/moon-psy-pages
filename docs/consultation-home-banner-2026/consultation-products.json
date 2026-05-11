@@ -1,0 +1,45 @@
+{
+  "generatedAt": "2026-05-11",
+  "project": "Moonn / Tatiana Moonn",
+  "homepagePageId": "42678538",
+  "paymentProvider": "Tilda native cart / T-Bank",
+  "source": {
+    "type": "user-provided-banner-reference",
+    "receivedInChat": "2026-05-11",
+    "note": "User supplied the consultation banner visual in chat; this manifest extracts the public offer facts needed for Tilda cart products."
+  },
+  "products": [
+    {
+      "sku": "moonn-consultation-online-1-2026",
+      "name": "Онлайн-консультация Татьяны Мунн",
+      "publicLabel": "1 консультация",
+      "price": 8000,
+      "currency": "RUB",
+      "quantity": 1,
+      "format": "online",
+      "validThrough": "2026-08-31"
+    },
+    {
+      "sku": "moonn-consultation-online-3-summer-2026",
+      "name": "Пакет 3 онлайн-консультаций Татьяны Мунн",
+      "publicLabel": "3 консультации",
+      "price": 19000,
+      "regularPrice": 21000,
+      "currency": "RUB",
+      "quantity": 1,
+      "format": "online",
+      "validThrough": "2026-08-31"
+    }
+  ],
+  "publicationGate": {
+    "noMedicalGuarantees": true,
+    "paymentSubmissionTestAllowed": false,
+    "cartOpenTestAllowed": true,
+    "requiredLiveChecks": [
+      "homepage contains moonn-consultation-home-banner",
+      "one-consultation CTA opens native Tilda cart with 8000 RUB product",
+      "three-consultation CTA opens native Tilda cart with 19000 RUB product",
+      "T-Bank provider screen is reachable without submitting a real payment"
+    ]
+  }
+}
