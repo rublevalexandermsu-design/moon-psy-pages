@@ -1274,3 +1274,29 @@ Append-only project history for `moon-psy-site`.
   - Live Tilda publication and provider-screen verification are still pending.
   - Do not submit a real payment during QA.
   - Verify homepage HTML marker, native cart contents for both products, and T-Bank provider transition before reporting the live banner complete.
+
+## 2026-05-12 — Moonn Consultation Homepage Banner Published
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-consultation-home-banner`.
+- Trigger: user asked to finish the online-consultation homepage banner with payment before returning to the art-gallery workstream.
+- Route:
+  - Continued the consultation banner branch, separate from `codex/moonn-art-gallery`.
+  - Preserved the existing teen-camp homepage T123 block and appended the consultation banner below it in the same native Tilda T123 block.
+  - Published the homepage through Tilda UI.
+- Changes:
+  - Adjusted the consultation banner background crop/opacity so the portrait is visible instead of a cropped old poster text fragment.
+  - Updated `docs/consultation-home-banner-2026/publication-report-2026-05-11.md`.
+- Verification:
+  - Local Playwright desktop/mobile render passed after the crop fix.
+  - Local mock cart opened products `moonn-consultation-online-1-2026` / `8000` and `moonn-consultation-online-3-summer-2026` / `19000`.
+  - Tilda editor search found `moonn-consultation-home-banner` in the same T123 record after `moonn-teen-camp-home-banner`.
+  - Live HTML `https://moonn.ru/?consult-banner-check=20260512-0019`: status `200`, consultation marker present, teen-camp marker present, native cart markers present, prices `8 000` and `19 000` present.
+  - Live browser render showed the consultation banner on the homepage.
+  - Live cart smoke test: `Оплатить 1 консультацию` opened native Tilda cart with product `Онлайн-консультация Татьяны Мунн`, SKU `moonn-consultation-online-1-2026`, amount `8 000р.`.
+  - Live cart smoke test: `Оплатить пакет 3 консультации` opened native Tilda cart with product `Пакет 3 онлайн-консультаций Татьяны Мунн`, SKU `moonn-consultation-online-3-summer-2026`, amount `19 000р.`.
+- Open items:
+  - T-Bank provider transition was not submitted or completed; no real payment was made.
+  - Gallery banner/page is not part of this branch and remains in `codex/moonn-art-gallery`.
+- Follow-up rule:
+  - For homepage promo additions, verify live raw HTML and rendered browser after publishing; if multiple promo blocks share one T123, preserve existing markers before appending a new block.

@@ -46,10 +46,34 @@
 - Homepage editor page opened: `pageid=42678538`.
 - Existing homepage native T123 banner record found: `rec2251351151`.
 - Existing native cart record found through Tilda API: `rec792077353`, block type `706`.
-- Current visible Tilda editor session is usable for navigation, but automated code-editor copy/paste did not focus the T123 code editor reliably during this run.
-- No live Tilda save or publish was performed from this run.
+- The existing teen-camp T123 block was preserved and the consultation banner was appended below it in the same native T123 block.
+- The homepage was published from Tilda UI after the T123 update.
+
+## Live Verification
+
+- Live URL checked: `https://moonn.ru/?consult-banner-check=20260512-0019`.
+- HTTP status: `200`.
+- Live raw HTML contains:
+  - `moonn-teen-camp-home-banner`
+  - `moonn-consultation-home-banner`
+  - native cart/Tilda payment markers.
+- Live rendered browser contains the consultation banner with:
+  - `1 консультация - 8 000 ₽`
+  - `3 консультации - 21 000 ₽`
+  - `Летняя цена - 19 000 ₽`
+- Live cart smoke test:
+  - Clicking `Оплатить 1 консультацию` opened the native Tilda cart.
+  - Product name: `Онлайн-консультация Татьяны Мунн`.
+  - SKU: `moonn-consultation-online-1-2026`.
+  - Amount: `8 000р.`.
+  - Clicking `Оплатить пакет 3 консультации` opened the native Tilda cart.
+  - Product name: `Пакет 3 онлайн-консультаций Татьяны Мунн`.
+  - SKU: `moonn-consultation-online-3-summer-2026`.
+  - Amount: `19 000р.`.
+- No real payment was submitted.
 
 ## Status
 
-- Artifact prepared and locally verified.
-- Live Tilda publication and provider-screen verification are still pending.
+- Consultation homepage banner is live on `https://moonn.ru/`.
+- Native cart opens with the correct one-consultation and three-consultation products and amounts.
+- T-Bank provider transition without card submission still remains a separate high-risk payment QA step.
