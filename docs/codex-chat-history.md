@@ -1362,3 +1362,25 @@ Append-only project history for `moon-psy-site`.
   - Root cause of the door issue was reusing a single baked door image for both leaves and adding a separate CSS handle layer, which made handle placement look inconsistent.
 - Follow-up rule:
   - For generated 3D product scenes, verify hero entry, mid-gallery lighting and every center/pedestal label after each geometry change; visual labels must clear the floor plane and nearby decorative geometry before the task is reported as ready.
+
+## 2026-05-11 — Tatiana Moonn Art Gallery Main Pedestal Recheck
+
+- Project: Moonn / Tatiana Moonn art gallery.
+- Branch: `codex/moonn-art-gallery`.
+- Trigger: user clarified that entry doors are now correct and asked to recheck the remaining issue: the center pedestal under gallery paintings looked partly under the floor / overlapping the lower plaque.
+- Route:
+  - Rechecked the current local build first instead of assuming the previous fix was complete.
+  - Continued editing only the canonical generator `scripts/build_tatiana_munn_art_gallery_site.py`.
+- Verified fact:
+  - The two later center artworks no longer use the round pedestal and their plaques are readable.
+  - The remaining issue was the main round center artwork: the cylindrical pedestal depth and front rim still visually overlapped the lower plaque line.
+- Changes:
+  - Moved the main pedestal plaque forward relative to the cylinder.
+  - Made the main cylinder shallower, lowered it slightly, and moved its decorative rings away from the plaque text zone.
+  - Regenerated `docs/tatiana-munn-art-gallery/` and `output/tatiana-munn-art-gallery-site.zip`.
+- Verification:
+  - Generator compiles with `python -m py_compile`.
+  - Public generated-site scan passed for local-address leaks, internal workflow wording and single-`н` visible `Татьяна Мун` leaks.
+  - Playwright screenshots were saved under `output/playwright/art-gallery-main-pedestal-fix-20260511/` and confirmed that the main pedestal no longer blocks the plaque text.
+- Follow-up rule:
+  - When a user reports that a 3D object is “under the floor”, verify both the literal floor-plane relation and the camera/occlusion relation; a front-facing object can look sunken because its depth overlaps a label even if its Y-position is technically above the floor.

@@ -1114,7 +1114,7 @@ function addArtwork(art, index) {
   const isCenterWork = art.placement === 'center';
   const plaqueHeight = isMainPedestal ? 0.84 : 0.92;
   const plaqueY = isMainPedestal ? -h / 2 - 0.16 : (isCenterWork ? -h / 2 - 0.58 : -h / 2 - 0.46);
-  const plaqueZ = isMainPedestal ? 1.18 : (isCenterWork ? 0.26 : 0.16);
+  const plaqueZ = isMainPedestal ? w * 0.58 + 0.28 : (isCenterWork ? 0.26 : 0.16);
   const plaqueBack = new THREE.Mesh(new THREE.BoxGeometry(plaqueWidth + 0.16, plaqueHeight + 0.18, 0.12), mat(0x0f1118, 0.45, 0.38));
   plaqueBack.position.set(0, plaqueY, plaqueZ - 0.05);
   group.add(plaqueBack);
@@ -1124,14 +1124,16 @@ function addArtwork(art, index) {
 
   if (isMainPedestal) {
     const pedestalMat = mat(0x1a1210, 0.36, 0.42);
-    const pedestal = new THREE.Mesh(new THREE.CylinderGeometry(w * 0.48, w * 0.56, 0.82, 72), pedestalMat);
-    pedestal.position.set(0, -h / 2 - 0.72, 0.0);
+    const pedestal = new THREE.Mesh(new THREE.CylinderGeometry(w * 0.48, w * 0.56, 0.68, 72), pedestalMat);
+    pedestal.scale.z = 0.46;
+    pedestal.position.set(0, -h / 2 - 0.82, -0.18);
     pedestal.castShadow = true;
     group.add(pedestal);
-    [-0.32, -1.08].forEach((rimY) => {
+    [-0.54, -1.04].forEach((rimY) => {
       const rim = new THREE.Mesh(new THREE.TorusGeometry(w * 0.50, 0.028, 10, 72), mat(0xd8aa5d, 0.32, 0.68));
       rim.rotation.x = Math.PI / 2;
-      rim.position.set(0, -h / 2 + rimY, 0.0);
+      rim.scale.z = 0.46;
+      rim.position.set(0, -h / 2 + rimY, -0.18);
       group.add(rim);
     });
   }
