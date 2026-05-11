@@ -1453,3 +1453,30 @@ Append-only project history for `moon-psy-site`.
   - Homepage banner insertion is still pending.
   - Do not submit a real payment during QA.
   - Before reporting completion, verify live page marker `moonn-art-gallery-tilda-page`, homepage marker `moonn-art-gallery-home-banner`, native cart amount/name for at least one artwork, and T-Bank provider transition without card submission.
+
+## 2026-05-12 — Tatiana Moonn Art Gallery Published On Tilda
+
+- Project: Moonn / Tatiana Moonn art gallery.
+- Branch: `codex/moonn-art-gallery`.
+- Trigger: user reported that the gallery banner was absent on the homepage and asked to verify whether the gallery page was really created in Tilda.
+- Route:
+  - Continued the gallery workstream in `codex/moonn-art-gallery`.
+  - Confirmed through Tilda API and live HTML that `/kartiny-tatiany-munn` did not yet exist before this step.
+  - Created a new Tilda page instead of reusing the consultation-banner branch.
+- Changes:
+  - Created Tilda page `140864526` with alias `kartiny-tatiany-munn`.
+  - Added gallery `T123` record `2258253531` and native cart `ST100` / `T706` record `2258267581`.
+  - Inserted the gallery homepage banner into existing homepage T123 record `2251351151`, preserving teen-camp and consultation markers.
+  - Added evidence artifact `docs/tatiana-munn-art-gallery/homepage-t123-combined-2026-05-12.html`.
+- Verification:
+  - Gallery live HTML: status `200`, marker `moonn-art-gallery-tilda-page` present, cart markers present, first artwork SKU present, SoundCloud absent.
+  - Gallery browser render: page title correct, `#galleryCanvas` present, native cart present, SoundCloud absent.
+  - Homepage live HTML: status `200`, teen-camp marker present, gallery banner marker present, consultation marker present, gallery link present, SoundCloud absent.
+  - Homepage browser render: gallery banner visible and button links to `/kartiny-tatiany-munn`.
+  - Gallery cart smoke test after clearing previous cart state: first artwork opened native cart with SKU `moonn-art-gallery-01-blue-flower-harmony` and amount `700 000р.`.
+  - No real payment was submitted.
+- Incident:
+  - Wrong draft attempt used Tilda internal template id `123`, which is a SoundCloud/media block, not T123 custom HTML.
+  - The erroneous unpublished draft page `140863116` was deleted and verified absent through Tilda API.
+- Follow-up rule:
+  - For Tilda custom HTML blocks, use and verify `data-record-type="131"` plus the target marker before publishing; do not infer custom HTML from template id `123`.

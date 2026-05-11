@@ -34,3 +34,68 @@
 - Verify live HTML contains `moonn-art-gallery-tilda-page` and `moonn-art-gallery-home-banner`.
 - Verify at least one artwork CTA opens the native cart with the correct artwork name and amount.
 - Verify T-Bank provider screen is reachable without entering card data.
+
+## Live Publication
+
+- Created Tilda page `140864526`.
+- Page alias: `kartiny-tatiany-munn`.
+- Live URL: `https://moonn.ru/kartiny-tatiany-munn`.
+- Page title: `Картины Татьяны Мунн | 3D-галерея и персональный код`.
+- Added native Tilda `T123` record `2258253531` with `tilda-html-block-final.html`.
+- Added native Tilda cart/payment record `2258267581`, block type `ST100` / `T706`.
+- Published the gallery page from the Tilda editor.
+
+## Homepage Banner Publication
+
+- Homepage page id: `42678538`.
+- Existing homepage T123 record: `2251351151`.
+- Preserved existing promo markers:
+  - `moonn-teen-camp-home-banner`
+  - `moonn-consultation-home-banner`
+- Inserted `homepage-art-gallery-block-final.html` into the same homepage T123 block before the consultation banner.
+- Evidence artifact: `homepage-t123-combined-2026-05-12.html`.
+- Published the homepage from the Tilda editor.
+
+## Live Verification
+
+- Gallery live HTML check: `https://moonn.ru/kartiny-tatiany-munn?gallery-live-check=20260512-0126`.
+  - HTTP status `200`.
+  - `moonn-art-gallery-tilda-page` present.
+  - Native cart markers present.
+  - `moonn-art-gallery-01-blue-flower-harmony` present.
+  - `soundcloud` absent.
+- Gallery browser render check:
+  - Page title is correct.
+  - `#moonn-art-gallery-tilda-page` present.
+  - `#galleryCanvas` present.
+  - Native cart present.
+  - SoundCloud absent.
+- Homepage live HTML check: `https://moonn.ru/?homepage-gallery-banner-check=20260512-0141`.
+  - HTTP status `200`.
+  - `moonn-teen-camp-home-banner` present.
+  - `moonn-art-gallery-home-banner` present.
+  - `moonn-consultation-home-banner` present.
+  - `/kartiny-tatiany-munn` link present.
+  - `soundcloud` absent.
+- Homepage browser render check:
+  - Gallery banner is visible.
+  - Button link points to `/kartiny-tatiany-munn`.
+- Gallery cart smoke test after clearing previous Tilda cart state:
+  - `Гармония и чувственность — картина Татьяны Мунн` opened native Tilda cart.
+  - SKU: `moonn-art-gallery-01-blue-flower-harmony`.
+  - Amount: `700 000р.`.
+  - No real payment was submitted.
+
+## Incident Note
+
+- Symptom: an initial attempt used Tilda internal template id `123`, which created an unwanted SoundCloud/media block in an unpublished draft page.
+- Root cause: Tilda template id `123` is not the `T123` custom HTML block; the correct custom HTML block has `data-record-type="131"` and saves code through the `code` field.
+- Resolution: deleted the unpublished erroneous draft page `140863116`, verified through Tilda API that it no longer exists, then used template id `131` for the gallery page.
+- Follow-up rule: for Tilda custom HTML work, verify `data-record-type="131"` and the expected marker before publishing; never infer `T123` from template id `123`.
+
+## Status
+
+- Gallery page is live.
+- Homepage gallery banner is live.
+- Native cart opens with the correct first artwork product, SKU and amount.
+- T-Bank provider transition without card submission still remains a separate high-risk payment QA step.
