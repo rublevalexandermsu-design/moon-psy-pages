@@ -1686,3 +1686,27 @@ Append-only project history for `moon-psy-site`.
 - Follow-up rule:
   - Future Moonn SEO live changes must be applied from the URL decision register, not directly from sitemap enumeration. Tilda API read/export can verify state and page ids; live writes require a documented write path or a scoped supported UI pilot with raw HTML and browser verification.
 - Commit: pending.
+
+## 2026-05-12 — Moonn SEO Repositioning Partial Live Rollout and Chrome Incident
+
+- Project: Moonn / Tatiana Munn site.
+- Branch: `codex/moonn-seo-positioning-architecture`.
+- Trigger: user asked to start implementing the five live SEO changes, then objected that Chrome was being closed/reopened and required repeated robot checks.
+- Applied live:
+  - SEO settings and publish: `/`, `/psiholog`, `/speaker`, `/emotional-intelligence/`, `/psypodgotovka1`, `/otzivi`.
+  - Noindex/nofollow and publish: `/aromatherapy`, `/geshtalt`, `/kpt`, `/microbiom`, `/water`, `/salt`, `/vacuum_cups`, `/phytotherapy`.
+- Verification:
+  - Raw HTTP checks confirmed updated titles/canonicals on core pages.
+  - `/speaker` and `/psypodgotovka1` have raw H1 count `1`.
+  - Homepage still has raw H1 count `5`.
+  - `/psiholog` and `/emotional-intelligence/` still have raw H1 count `0`.
+  - `/otzivi` still has raw H1 count `2`.
+- Incident:
+  - Symptom: UI automation disturbed the user's visible Chrome session and caused re-opening/re-authentication friction.
+  - Root cause: after Tilda publication, DevTools/Tilda UI state sometimes hid Chrome address bar controls from UIA; the recovery path included DevTools toggling and one Chrome launch.
+  - Correction: stopped live UI automation immediately after the user's objection; do not recover Tilda UI failures by restarting Chrome.
+  - Follow-up rule: remaining live SEO rollout must use a verified non-visual write path or a user-approved scheduled visible Tilda session. If Chrome state is unstable, stop and report instead of restarting or taking over.
+- Evidence:
+  - `docs/moonn-seo-repositioning-2026-05-12/tilda-seo-ui-live-apply-report.json`
+  - `docs/moonn-seo-repositioning-2026-05-12/live-rollout-status-2026-05-12.md`
+- Commit: pending.

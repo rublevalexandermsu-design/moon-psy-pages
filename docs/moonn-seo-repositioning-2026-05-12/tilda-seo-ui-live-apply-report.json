@@ -1,0 +1,613 @@
+{
+  "createdDate": "2026-05-12",
+  "projectId": "8326812",
+  "sourceRegister": "docs\\moonn-seo-repositioning-2026-05-12\\url-decision-register.json",
+  "results": [
+    {
+      "url": "https://moonn.ru/psiholog",
+      "path": "/psiholog",
+      "pageId": "114846506",
+      "action": "rewrite",
+      "cluster": "private_practice",
+      "publishRequested": true,
+      "status": "error",
+      "error": "RuntimeError('Chrome DevTools console input not found')"
+    },
+    {
+      "url": "https://moonn.ru/psiholog",
+      "path": "/psiholog",
+      "pageId": "114846506",
+      "action": "rewrite",
+      "cluster": "private_practice",
+      "publishRequested": true,
+      "status": "error",
+      "error": "JSONDecodeError('Expecting value: line 1 column 1 (char 0)')"
+    },
+    {
+      "url": "https://moonn.ru/psiholog",
+      "path": "/psiholog",
+      "pageId": "114846506",
+      "action": "rewrite",
+      "cluster": "private_practice",
+      "publishRequested": true,
+      "status": "error",
+      "error": "JSONDecodeError('Expecting value: line 1 column 1 (char 0)')"
+    },
+    {
+      "url": "https://moonn.ru/psiholog",
+      "path": "/psiholog",
+      "pageId": "114846506",
+      "action": "rewrite",
+      "cluster": "private_practice",
+      "publishRequested": true,
+      "settingsSave": {
+        "pageId": "114846506",
+        "before": {
+          "meta_title": "Психолог в Москве и онлайн — Татьяна Мунн",
+          "meta_descr": "Психолог в Москве и онлайн: консультации Татьяны Мунн: консультации психолога Татьяны Мунн в Москве и онлайн без медицинских обещаний, с фокусом на эмоции.",
+          "link_canonical": "https://moonn.ru/psiholog",
+          "nosearch": false,
+          "meta_nofollow": false
+        },
+        "after": {
+          "meta_title": "Психолог в Москве и онлайн — Татьяна Мунн",
+          "meta_descr": "Психолог в Москве и онлайн: консультации Татьяны Мунн: консультации психолога Татьяны Мунн в Москве и онлайн без медицинских обещаний, с фокусом на эмоции.",
+          "link_canonical": "https://moonn.ru/psiholog",
+          "nosearch": false,
+          "meta_nofollow": false
+        }
+      },
+      "published": true,
+      "liveAfterPublish": {
+        "status": 200,
+        "titlePresent": true,
+        "canonicalPresent": true,
+        "robotsNoindexPresent": true,
+        "h1Count": 0
+      },
+      "status": "ok"
+    },
+    {
+      "url": "https://moonn.ru/",
+      "path": "/",
+      "pageId": "42678538",
+      "action": "rewrite",
+      "cluster": "secondary",
+      "publishRequested": true,
+      "status": "error",
+      "error": "RuntimeError('Chrome address bar edit control not found')"
+    },
+    {
+      "url": "https://moonn.ru/",
+      "path": "/",
+      "pageId": "42678538",
+      "action": "rewrite",
+      "cluster": "secondary",
+      "publishRequested": true,
+      "status": "error",
+      "error": "RuntimeError('SEO UI save confirmation missing for page 42678538')"
+    },
+    {
+      "url": "https://moonn.ru/",
+      "path": "/",
+      "pageId": "42678538",
+      "action": "rewrite",
+      "cluster": "secondary",
+      "publishRequested": true,
+      "status": "error",
+      "error": "RuntimeError('Tilda SEO UI error for page 42678538: missing field meta_title')"
+    },
+    {
+      "url": "https://moonn.ru/",
+      "path": "/",
+      "pageId": "42678538",
+      "action": "rewrite",
+      "cluster": "secondary",
+      "publishRequested": true,
+      "status": "error",
+      "error": "RuntimeError('Tilda SEO UI error for page 42678538: missing field meta_title')"
+    },
+    {
+      "url": "https://moonn.ru/",
+      "path": "/",
+      "pageId": "42678538",
+      "action": "rewrite",
+      "cluster": "secondary",
+      "publishRequested": true,
+      "settingsSave": {
+        "pageId": "42678538",
+        "before": {
+          "meta_title": "Татьяна Мунн — психолог МГУ в Москве и онлайн",
+          "meta_descr": "Татьяна Мунн (Кумскова Татьяна Михайловна) — психолог МГУ: консультации в Москве и онлайн, эмоциональный интеллект, отношения, стресс и подростки.",
+          "link_canonical": "https://moonn.ru/",
+          "nosearch": false,
+          "meta_nofollow": false
+        },
+        "after": {
+          "meta_title": "Татьяна Мунн — психолог МГУ и эксперт по эмоциональному интеллекту",
+          "meta_descr": "Татьяна Мунн, психолог МГУ: консультации в Москве и онлайн, эмоциональный интеллект, подростки, экзамены, отзывы и запись.",
+          "link_canonical": "https://moonn.ru/",
+          "nosearch": false,
+          "meta_nofollow": false
+        }
+      },
+      "published": true,
+      "liveAfterPublish": {
+        "status": 200,
+        "titlePresent": true,
+        "canonicalPresent": true,
+        "robotsNoindexPresent": true,
+        "h1Count": 5
+      },
+      "status": "ok"
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/",
+      "path": "/emotional-intelligence",
+      "pageId": "90977486",
+      "action": "rewrite",
+      "cluster": "emotional_intelligence",
+      "publishRequested": true,
+      "settingsSave": {
+        "pageId": "90977486",
+        "before": {
+          "meta_title": "Эмоциональный интеллект | психолог Татьяна Мунн",
+          "meta_descr": "Эмоциональный интеллект: материал Татьяны Мунн, психолога МГУ, о практической психологии, эмоциях, отношениях и саморегуляции.",
+          "link_canonical": "https://moonn.ru/emotional-intelligence/",
+          "nosearch": false,
+          "meta_nofollow": false
+        },
+        "after": {
+          "meta_title": "Эмоциональный интеллект — Татьяна Мунн",
+          "meta_descr": "Эмоциональный интеллект: статьи, практики и обучение: лекции, статьи и программы Татьяны Мунн по эмоциональному интеллекту, саморегуляции, soft skills и.",
+          "link_canonical": "https://moonn.ru/emotional-intelligence/",
+          "nosearch": false,
+          "meta_nofollow": false
+        }
+      },
+      "published": true,
+      "liveAfterPublish": {
+        "status": 200,
+        "titlePresent": true,
+        "canonicalPresent": true,
+        "robotsNoindexPresent": false,
+        "h1Count": 0
+      },
+      "status": "ok"
+    },
+    {
+      "url": "https://moonn.ru/otzivi",
+      "path": "/otzivi",
+      "pageId": "81167556",
+      "action": "rewrite",
+      "cluster": "reviews_trust",
+      "publishRequested": true,
+      "status": "error",
+      "error": "RuntimeError('Chrome address bar edit control not found')"
+    },
+    {
+      "url": "https://moonn.ru/otzivi",
+      "path": "/otzivi",
+      "pageId": "81167556",
+      "action": "rewrite",
+      "cluster": "reviews_trust",
+      "publishRequested": true,
+      "settingsSave": {
+        "pageId": "81167556",
+        "before": {
+          "meta_title": "Отзывы о психологе Татьяне Мунн | психолог Татьяна Мунн",
+          "meta_descr": "Отзывы о психологе Татьяне Мунн: материал Татьяны Мунн, психолога МГУ, о практической психологии, эмоциях, отношениях и саморегуляции.",
+          "link_canonical": "https://moonn.ru/otzivi",
+          "nosearch": false,
+          "meta_nofollow": false
+        },
+        "after": {
+          "meta_title": "Отзывы о психологе Татьяне Мунн — проверяемые источники",
+          "meta_descr": "Отзывы о психологе Татьяне Мунн из проверяемых источников: подтверждения опыта Татьяны Мунн, отзывы, мероприятия, лекции и внешние источники для проверки.",
+          "link_canonical": "https://moonn.ru/otzivi",
+          "nosearch": false,
+          "meta_nofollow": false
+        }
+      },
+      "published": true,
+      "liveAfterPublish": {
+        "status": 200,
+        "titlePresent": true,
+        "canonicalPresent": true,
+        "robotsNoindexPresent": false,
+        "h1Count": 2
+      },
+      "status": "ok"
+    },
+    {
+      "url": "https://moonn.ru/psypodgotovka1",
+      "path": "/psypodgotovka1",
+      "pageId": "62652841",
+      "action": "rewrite",
+      "cluster": "teen_exam_family",
+      "publishRequested": true,
+      "status": "error",
+      "error": "RuntimeError('Chrome address bar edit control not found')"
+    },
+    {
+      "url": "https://moonn.ru/psypodgotovka1",
+      "path": "/psypodgotovka1",
+      "pageId": "62652841",
+      "action": "rewrite",
+      "cluster": "teen_exam_family",
+      "publishRequested": true,
+      "settingsSave": {
+        "pageId": "62652841",
+        "before": {
+          "meta_title": "Психологическая подготовка к ОГЭ и ЕГЭ — Татьяна Мунн",
+          "meta_descr": "Индивидуальные консультации психолога для школьников и студентов перед ОГЭ, ЕГЭ, сессией и экзаменами: тревога, ступор, страх ошибки и поддержка родителей.",
+          "link_canonical": "https://moonn.ru/psypodgotovka1",
+          "nosearch": false,
+          "meta_nofollow": false
+        },
+        "after": {
+          "meta_title": "Психологическая подготовка к ОГЭ и ЕГЭ — Татьяна Мунн",
+          "meta_descr": "Психологическая подготовка к экзаменам без паники: психологическая поддержка подростков, студентов и родителей при тревоге, экзаменах, общении и учебной.",
+          "link_canonical": "https://moonn.ru/psypodgotovka1",
+          "nosearch": false,
+          "meta_nofollow": false
+        }
+      },
+      "published": true,
+      "liveAfterPublish": {
+        "status": 200,
+        "titlePresent": true,
+        "canonicalPresent": true,
+        "robotsNoindexPresent": false,
+        "h1Count": 1
+      },
+      "status": "ok"
+    },
+    {
+      "url": "https://moonn.ru/speaker",
+      "path": "/speaker",
+      "pageId": "87231366",
+      "action": "rewrite",
+      "cluster": "emotional_intelligence",
+      "publishRequested": true,
+      "status": "error",
+      "error": "RuntimeError('Chrome address bar edit control not found')"
+    },
+    {
+      "url": "https://moonn.ru/speaker",
+      "path": "/speaker",
+      "pageId": "87231366",
+      "action": "rewrite",
+      "cluster": "emotional_intelligence",
+      "publishRequested": true,
+      "settingsSave": {
+        "pageId": "87231366",
+        "before": {
+          "meta_title": "Татьяна Мунн как спикер — психология и эмоциональный интеллект",
+          "meta_descr": "Татьяна Мунн как спикер: лекции и практические материалы Татьяны Мунн по психологии, эмоциональному интеллекту, отношениям и soft skills.",
+          "link_canonical": "https://moonn.ru/speaker",
+          "nosearch": false,
+          "meta_nofollow": false
+        },
+        "after": {
+          "meta_title": "Спикер по эмоциональному интеллекту — Татьяна Мунн",
+          "meta_descr": "Эмоциональный интеллект, лекции и выступления Татьяны Мунн: лекции, статьи и программы Татьяны Мунн по эмоциональному интеллекту, саморегуляции, soft skills.",
+          "link_canonical": "https://moonn.ru/speaker",
+          "nosearch": false,
+          "meta_nofollow": false
+        }
+      },
+      "published": true,
+      "liveAfterPublish": {
+        "status": 200,
+        "titlePresent": true,
+        "canonicalPresent": true,
+        "robotsNoindexPresent": false,
+        "h1Count": 1
+      },
+      "status": "ok"
+    },
+    {
+      "url": "https://moonn.ru/aromatherapy",
+      "path": "/aromatherapy",
+      "pageId": "62470081",
+      "action": "noindex",
+      "cluster": "archive",
+      "publishRequested": true,
+      "settingsSave": {
+        "pageId": "62470081",
+        "before": {
+          "meta_title": "Ароматерапия и эмоциональное состояние | психолог Татьяна Мунн",
+          "meta_descr": "Ароматерапия и эмоциональное состояние: материал Татьяны Мунн, психолога МГУ, о практической психологии, эмоциях, отношениях и саморегуляции.",
+          "link_canonical": "https://moonn.ru/aromatherapy",
+          "nosearch": false,
+          "meta_nofollow": false
+        },
+        "after": {
+          "meta_title": "",
+          "meta_descr": "",
+          "link_canonical": "",
+          "nosearch": true,
+          "meta_nofollow": true
+        }
+      },
+      "published": true,
+      "liveAfterPublish": {
+        "status": 200,
+        "titlePresent": true,
+        "canonicalPresent": true,
+        "robotsNoindexPresent": true,
+        "h1Count": 1
+      },
+      "status": "ok"
+    },
+    {
+      "url": "https://moonn.ru/geshtalt",
+      "path": "/geshtalt",
+      "pageId": "63388057",
+      "action": "noindex",
+      "cluster": "archive",
+      "publishRequested": true,
+      "status": "error",
+      "error": "COMError(-2147220991, 'Событие не смогло вызвать ни одного из абонентов', (None, None, None, 0, None))"
+    },
+    {
+      "url": "https://moonn.ru/geshtalt",
+      "path": "/geshtalt",
+      "pageId": "63388057",
+      "action": "noindex",
+      "cluster": "archive",
+      "publishRequested": true,
+      "settingsSave": {
+        "pageId": "63388057",
+        "before": {
+          "meta_title": "Гештальт-подход | психолог Татьяна Мунн",
+          "meta_descr": "Гештальт-подход: материал Татьяны Мунн, психолога МГУ, о практической психологии, эмоциях, отношениях и саморегуляции.",
+          "link_canonical": "https://moonn.ru/geshtalt",
+          "nosearch": false,
+          "meta_nofollow": false
+        },
+        "after": {
+          "meta_title": "",
+          "meta_descr": "",
+          "link_canonical": "",
+          "nosearch": true,
+          "meta_nofollow": true
+        }
+      },
+      "published": true,
+      "liveAfterPublish": {
+        "status": 200,
+        "titlePresent": true,
+        "canonicalPresent": true,
+        "robotsNoindexPresent": true,
+        "h1Count": 1
+      },
+      "status": "ok"
+    },
+    {
+      "url": "https://moonn.ru/kpt",
+      "path": "/kpt",
+      "pageId": "63403669",
+      "action": "noindex",
+      "cluster": "archive",
+      "publishRequested": true,
+      "settingsSave": {
+        "pageId": "63403669",
+        "before": {
+          "meta_title": "Когнитивно-поведенческая терапия | психолог Татьяна Мунн",
+          "meta_descr": "Когнитивно-поведенческая терапия: материал Татьяны Мунн, психолога МГУ, о практической психологии, эмоциях, отношениях и саморегуляции.",
+          "link_canonical": "https://moonn.ru/kpt",
+          "nosearch": false,
+          "meta_nofollow": false
+        },
+        "after": {
+          "meta_title": "",
+          "meta_descr": "",
+          "link_canonical": "",
+          "nosearch": true,
+          "meta_nofollow": true
+        }
+      },
+      "published": true,
+      "liveAfterPublish": {
+        "status": 200,
+        "titlePresent": true,
+        "canonicalPresent": true,
+        "robotsNoindexPresent": true,
+        "h1Count": 1
+      },
+      "status": "ok"
+    },
+    {
+      "url": "https://moonn.ru/microbiom",
+      "path": "/microbiom",
+      "pageId": "62477227",
+      "action": "noindex",
+      "cluster": "archive",
+      "publishRequested": true,
+      "status": "error",
+      "error": "COMError(-2147220991, 'Событие не смогло вызвать ни одного из абонентов', (None, None, None, 0, None))"
+    },
+    {
+      "url": "https://moonn.ru/microbiom",
+      "path": "/microbiom",
+      "pageId": "62477227",
+      "action": "noindex",
+      "cluster": "archive",
+      "publishRequested": true,
+      "settingsSave": {
+        "pageId": "62477227",
+        "before": {
+          "meta_title": "Микробиом и эмоциональное состояние | психолог Татьяна Мунн",
+          "meta_descr": "Микробиом и эмоциональное состояние: материал Татьяны Мунн, психолога МГУ, о практической психологии, эмоциях, отношениях и саморегуляции.",
+          "link_canonical": "https://moonn.ru/microbiom",
+          "nosearch": false,
+          "meta_nofollow": false
+        },
+        "after": {
+          "meta_title": "",
+          "meta_descr": "",
+          "link_canonical": "",
+          "nosearch": true,
+          "meta_nofollow": true
+        }
+      },
+      "published": true,
+      "liveAfterPublish": {
+        "status": 200,
+        "titlePresent": true,
+        "canonicalPresent": true,
+        "robotsNoindexPresent": true,
+        "h1Count": 0
+      },
+      "status": "ok"
+    },
+    {
+      "url": "https://moonn.ru/water",
+      "path": "/water",
+      "pageId": "63552425",
+      "action": "noindex",
+      "cluster": "archive",
+      "publishRequested": true,
+      "settingsSave": {
+        "pageId": "63552425",
+        "before": {
+          "meta_title": "Вода и психоэмоциональное состояние | психолог Татьяна Мунн",
+          "meta_descr": "Вода и психоэмоциональное состояние: материал Татьяны Мунн, психолога МГУ, о практической психологии, эмоциях, отношениях и саморегуляции.",
+          "link_canonical": "https://moonn.ru/water",
+          "nosearch": false,
+          "meta_nofollow": false
+        },
+        "after": {
+          "meta_title": "",
+          "meta_descr": "",
+          "link_canonical": "",
+          "nosearch": true,
+          "meta_nofollow": true
+        }
+      },
+      "published": true,
+      "liveAfterPublish": {
+        "status": 200,
+        "titlePresent": true,
+        "canonicalPresent": true,
+        "robotsNoindexPresent": true,
+        "h1Count": 1
+      },
+      "status": "ok"
+    },
+    {
+      "url": "https://moonn.ru/salt",
+      "path": "/salt",
+      "pageId": "63131581",
+      "action": "noindex",
+      "cluster": "archive",
+      "publishRequested": true,
+      "settingsSave": {
+        "pageId": "63131581",
+        "before": {
+          "meta_title": "Соль и самочувствие | психолог Татьяна Мунн",
+          "meta_descr": "Соль и самочувствие: материал Татьяны Мунн, психолога МГУ, о практической психологии, эмоциях, отношениях и саморегуляции.",
+          "link_canonical": "https://moonn.ru/salt",
+          "nosearch": false,
+          "meta_nofollow": false
+        },
+        "after": {
+          "meta_title": "",
+          "meta_descr": "",
+          "link_canonical": "",
+          "nosearch": true,
+          "meta_nofollow": true
+        }
+      },
+      "published": true,
+      "liveAfterPublish": {
+        "status": 200,
+        "titlePresent": true,
+        "canonicalPresent": true,
+        "robotsNoindexPresent": true,
+        "h1Count": 0
+      },
+      "status": "ok"
+    },
+    {
+      "url": "https://moonn.ru/vacuum_cups",
+      "path": "/vacuum_cups",
+      "pageId": "63138325",
+      "action": "noindex",
+      "cluster": "archive",
+      "publishRequested": true,
+      "status": "error",
+      "error": "RuntimeError('SEO UI save confirmation missing for page 63138325')"
+    },
+    {
+      "url": "https://moonn.ru/vacuum_cups",
+      "path": "/vacuum_cups",
+      "pageId": "63138325",
+      "action": "noindex",
+      "cluster": "archive",
+      "publishRequested": true,
+      "settingsSave": {
+        "pageId": "63138325",
+        "before": {
+          "meta_title": "Вакуумные банки и самочувствие | психолог Татьяна Мунн",
+          "meta_descr": "Вакуумные банки и самочувствие: материал Татьяны Мунн, психолога МГУ, о практической психологии, эмоциях, отношениях и саморегуляции.",
+          "link_canonical": "https://moonn.ru/vacuum_cups",
+          "nosearch": false,
+          "meta_nofollow": false
+        },
+        "after": {
+          "meta_title": "",
+          "meta_descr": "",
+          "link_canonical": "",
+          "nosearch": true,
+          "meta_nofollow": true
+        }
+      },
+      "published": true,
+      "liveAfterPublish": {
+        "status": 200,
+        "titlePresent": true,
+        "canonicalPresent": true,
+        "robotsNoindexPresent": true,
+        "h1Count": 0
+      },
+      "status": "ok"
+    },
+    {
+      "url": "https://moonn.ru/phytotherapy",
+      "path": "/phytotherapy",
+      "pageId": "62462299",
+      "action": "noindex",
+      "cluster": "archive",
+      "publishRequested": true,
+      "settingsSave": {
+        "pageId": "62462299",
+        "before": {
+          "meta_title": "Фитотерапия и эмоциональное состояние | психолог Татьяна Мунн",
+          "meta_descr": "Фитотерапия и эмоциональное состояние: материал Татьяны Мунн, психолога МГУ, о практической психологии, эмоциях, отношениях и саморегуляции.",
+          "link_canonical": "https://moonn.ru/phytotherapy",
+          "nosearch": false,
+          "meta_nofollow": false
+        },
+        "after": {
+          "meta_title": "",
+          "meta_descr": "",
+          "link_canonical": "",
+          "nosearch": true,
+          "meta_nofollow": true
+        }
+      },
+      "published": true,
+      "liveAfterPublish": {
+        "status": 200,
+        "titlePresent": true,
+        "canonicalPresent": true,
+        "robotsNoindexPresent": true,
+        "h1Count": 0
+      },
+      "status": "ok"
+    }
+  ]
+}
