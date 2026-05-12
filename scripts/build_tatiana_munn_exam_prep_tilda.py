@@ -112,6 +112,17 @@ def build_tilda_page_block(source_html: str) -> str:
     block = f"""<section id="moonn-exam-prep-tilda-page" aria-label="Психологическая подготовка к экзаменам Татьяны Мунн">
 {head_assets}
 {body}
+<script>
+(function(){{
+  var root = document.getElementById('moonn-exam-prep-tilda-page');
+  if (!root) return;
+  var currentRecord = root.closest('.r');
+  if (!currentRecord) return;
+  document.querySelectorAll('#allrecords > .r').forEach(function(record){{
+    if (record !== currentRecord) record.style.display = 'none';
+  }});
+}})();
+</script>
 </section>
 """
     assert_public_text_is_clean(block)
@@ -219,6 +230,9 @@ def write_manifest(source_html: str, block: str, combined: str) -> None:
 
 
 def append_history() -> None:
+    existing = HISTORY.read_text(encoding="utf-8")
+    if "## 2026-05-12 — Tatiana Moonn Exam Prep Tilda Packet" in existing:
+        return
     entry = f"""
 
 ## 2026-05-12 — Tatiana Moonn Exam Prep Tilda Packet
@@ -244,7 +258,7 @@ def append_history() -> None:
   - Link `/{TILDA_PAGE_ALIAS}` opens the exam-prep page.
   - No SoundCloud/media block regression.
 """
-    HISTORY.write_text(HISTORY.read_text(encoding="utf-8").rstrip() + entry, encoding="utf-8")
+    HISTORY.write_text(existing.rstrip() + entry, encoding="utf-8")
 
 
 def main() -> None:

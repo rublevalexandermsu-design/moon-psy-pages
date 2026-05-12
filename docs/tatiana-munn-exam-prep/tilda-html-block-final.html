@@ -541,4 +541,15 @@
   }
 })();
 </script>
+<script>
+(function(){
+  var root = document.getElementById('moonn-exam-prep-tilda-page');
+  if (!root) return;
+  var currentRecord = root.closest('.r');
+  if (!currentRecord) return;
+  document.querySelectorAll('#allrecords > .r').forEach(function(record){
+    if (record !== currentRecord) record.style.display = 'none';
+  });
+})();
+</script>
 </section>
