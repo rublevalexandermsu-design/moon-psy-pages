@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-05-12T17:38:40",
+  "createdDate": "2026-05-12",
   "sourceAudit": "docs/moonn-final-seo-audit-2026-05-12.json",
   "scopeRule": "Only open semantic public pages participate in positioning; opaque/test/legal/transactional/closed URLs are hygiene, not SEO clusters.",
   "summary": {

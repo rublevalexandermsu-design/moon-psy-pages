@@ -3,7 +3,6 @@ from __future__ import annotations
 import csv
 import json
 import re
-from datetime import datetime
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -163,7 +162,7 @@ def build_map() -> dict[str, object]:
             counts[row[key]] = counts.get(row[key], 0) + 1
         summary[key] = dict(sorted(counts.items()))
     return {
-        "createdAt": datetime.now().isoformat(timespec="seconds"),
+        "createdDate": TODAY,
         "sourceAudit": AUDIT_PATH.relative_to(ROOT).as_posix(),
         "scopeRule": "Only open semantic public pages participate in positioning; opaque/test/legal/transactional/closed URLs are hygiene, not SEO clusters.",
         "summary": summary,
