@@ -73,7 +73,8 @@
   - CTA href: `/kartiny-tatiany-munn`.
   - Dark banner CSS marker `#090b12` absent.
 - Preview artifact: `homepage-gallery-compact-preview-2026-05-12.png`.
-- Tilda live refresh status: prepared; final live verification is pending after updating record `2251351151`.
+- Tilda save confirmation: record `2251351151`, payload length `22155`, `compact=true`.
+- Tilda live refresh status: published from the homepage editor.
 
 ## Live Verification
 
@@ -96,7 +97,19 @@
   - `moonn-consultation-home-banner` present.
   - `/kartiny-tatiany-munn` link present.
   - `soundcloud` absent.
-- Homepage compact-banner live verification: pending after publishing the refreshed T123 code.
+- Homepage compact-banner live HTML check: `https://moonn.ru/?homepage-gallery-compact-check=20260512-0849`.
+  - HTTP status `200`.
+  - `moonn-teen-camp-home-banner` present.
+  - `moonn-art-gallery-home-banner` present.
+  - `moonn-consultation-home-banner` present.
+  - `/kartiny-tatiany-munn` link present.
+  - Compact CSS marker `position:absolute;inset:0` present.
+  - Old dark CSS marker `#090b12` absent.
+  - `soundcloud` absent.
+- Homepage compact-banner browser render:
+  - Selector `#moonn-art-gallery-home-banner` loaded on the live homepage.
+  - Viewport screenshot saved as `homepage-gallery-compact-live-viewport-2026-05-12.png`.
+  - Full-page screenshot saved as `homepage-gallery-compact-live-2026-05-12.png`.
 - Gallery cart smoke test after clearing previous Tilda cart state:
   - `Гармония и чувственность — картина Татьяны Мунн` opened native Tilda cart.
   - SKU: `moonn-art-gallery-01-blue-flower-harmony`.
@@ -113,6 +126,6 @@
 ## Status
 
 - Gallery page is live.
-- Homepage gallery banner is live, but compact visual refresh is pending final Tilda record update and live check.
+- Homepage gallery banner compact visual refresh is live.
 - Native cart opens with the correct first artwork product, SKU and amount.
 - T-Bank provider transition without card submission still remains a separate high-risk payment QA step.

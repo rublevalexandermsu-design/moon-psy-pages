@@ -1480,3 +1480,33 @@ Append-only project history for `moon-psy-site`.
   - The erroneous unpublished draft page `140863116` was deleted and verified absent through Tilda API.
 - Follow-up rule:
   - For Tilda custom HTML blocks, use and verify `data-record-type="131"` plus the target marker before publishing; do not infer custom HTML from template id `123`.
+
+## 2026-05-12 — Tatiana Moonn Art Gallery Compact Homepage Banner
+
+- Project: Moonn / Tatiana Moonn art gallery.
+- Branch: `codex/moonn-art-gallery`.
+- Trigger: user confirmed the gallery page looked good, then clarified that the homepage gallery banner should be a compact rectangular block directly below the teen-camp banner, in the same visual family, not the previous dark premium banner.
+- Route:
+  - Continued the existing gallery workstream.
+  - Kept teen-camp and consultation workstreams untouched.
+  - Updated the canonical generator first, then regenerated the homepage T123 evidence artifact.
+- Changes:
+  - Reworked `homepage-art-gallery-block-final.html` into a light compact banner matching the teen-camp block structure: text left, image right, pill metadata, gradient CTA.
+  - Updated `homepage-t123-combined-2026-05-12.html` to preserve homepage order: teen camp -> gallery -> consultation.
+  - Saved the refreshed T123 code into existing homepage Tilda record `2251351151`.
+  - Published the homepage from the logged-in Tilda editor.
+- Verification:
+  - `python -m py_compile scripts\build_tatiana_munn_art_gallery_site.py` passed.
+  - Generator rebuild passed with `10` artworks.
+  - Local browser preview confirmed gallery block width `1160`, height `577`, teen block height `565`, CTA `/kartiny-tatiany-munn`, old dark CSS absent.
+  - GitHub raw artifact for commit `c8efbdcd381daafc3c95c83103c8dc43aec26835` returned `200`, compact marker present, old dark marker absent.
+  - Tilda save confirmation: `saved home T123 22155 compact=true`.
+  - Live homepage HTML returned `200`, teen/gallery/consultation markers present, gallery link present, compact CSS marker present, old dark marker and SoundCloud absent.
+  - Browser screenshot artifacts:
+    - `docs/tatiana-munn-art-gallery/homepage-gallery-compact-preview-2026-05-12.png`
+    - `docs/tatiana-munn-art-gallery/homepage-gallery-compact-live-viewport-2026-05-12.png`
+    - `docs/tatiana-munn-art-gallery/homepage-gallery-compact-live-2026-05-12.png`
+- Commits:
+  - `c8efbdc` prepared and pushed the compact banner source/artifacts before Tilda fetch.
+- Follow-up rule:
+  - For homepage promo blocks, verify not only marker presence but visual proportion against adjacent blocks; a banner can be technically live and still fail if its scale/palette does not match the neighboring canonical promo block.
