@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import json
+import os
 import re
+import subprocess
 from datetime import datetime
 from html import escape
 from pathlib import Path
@@ -16,8 +18,11 @@ ART_GALLERY_HOME = ROOT / "docs" / "tatiana-munn-art-gallery" / "homepage-t123-c
 TILDA_PROJECT_ID = "8326812"
 TILDA_HOMEPAGE_ID = "42678538"
 TILDA_HOMEPAGE_T123_RECORD_ID = "2251351151"
-TILDA_PAGE_ALIAS = "psihologicheskaya-podgotovka-k-ekzamenam"
+TILDA_PAGE_ID = "62652841"
+TILDA_PAGE_RECORD_ID = "2258994191"
+TILDA_PAGE_ALIAS = "psypodgotovka1"
 TILDA_PAGE_URL = f"https://moonn.ru/{TILDA_PAGE_ALIAS}"
+TILDA_GITHUB_REPO = "rublevalexandermsu-design/moonn-psy-pages"
 TILDA_PAGE_TITLE = "Психологическая подготовка к ОГЭ и ЕГЭ — Татьяна Мунн"
 TILDA_PAGE_DESCRIPTION = (
     "Индивидуальные консультации психолога для школьников и студентов перед ОГЭ, "
@@ -58,6 +63,7 @@ def extract_head_assets(html: str) -> str:
 
 def normalize_for_tilda(html: str) -> str:
     html = html.replace("https://moonn.ru/psihologicheskaya-podgotovka-k-ekzamenam", TILDA_PAGE_URL)
+    html = html.replace("https://moonn.ru/psypodgotovka1", TILDA_PAGE_URL)
     html = re.sub(r"\s+data-moonn-exam-prep-tilda=[\"'][^\"']*[\"']", "", html)
     html = html.replace(
         'id="tm-exam-page"',
@@ -107,7 +113,7 @@ def extract_image(html: str, preferred_alt: str) -> tuple[str, str]:
 
 
 def build_tilda_page_block(source_html: str) -> str:
-    head_assets = extract_head_assets(source_html)
+    head_assets = normalize_for_tilda(extract_head_assets(source_html))
     body = normalize_for_tilda(extract_body(source_html))
     block = f"""<section id="moonn-exam-prep-tilda-page" aria-label="Психологическая подготовка к экзаменам Татьяны Мунн">
 {head_assets}
@@ -143,6 +149,55 @@ def build_full_preview(block: str) -> str:
 {block}
 </body>
 </html>
+"""
+
+
+def current_git_ref() -> str:
+    if value := os.environ.get("MOONN_TILDA_CDN_REF"):
+        return value
+    return subprocess.check_output(
+        ["git", "rev-parse", "HEAD"],
+        cwd=ROOT,
+        text=True,
+        stderr=subprocess.DEVNULL,
+    ).strip()
+
+
+def build_tilda_loader_block(cdn_ref: str) -> str:
+    source = (
+        f"https://cdn.jsdelivr.net/gh/{TILDA_GITHUB_REPO}@{cdn_ref}/"
+        "docs/tatiana-munn-exam-prep/tilda-html-block-final.html"
+    )
+    return f"""<section id="moonn-exam-prep-tilda-page-loader" data-moonn-exam-prep-loader="true" aria-label="Психологическая подготовка к экзаменам Татьяны Мунн">
+  <div style="min-height:60vh;display:grid;place-items:center;font-family:Arial,sans-serif;color:#5c2d80;background:#fff7fb;">Загрузка страницы...</div>
+</section>
+<script>
+(function(){{
+  var mount = document.getElementById('moonn-exam-prep-tilda-page-loader');
+  if (!mount) return;
+  var source = "{source}";
+  function runScripts(root) {{
+    root.querySelectorAll('script').forEach(function(oldScript) {{
+      var script = document.createElement('script');
+      Array.prototype.slice.call(oldScript.attributes).forEach(function(attr) {{ script.setAttribute(attr.name, attr.value); }});
+      script.text = oldScript.textContent || '';
+      oldScript.parentNode.replaceChild(script, oldScript);
+    }});
+  }}
+  fetch(source, {{cache: 'no-store'}})
+    .then(function(response) {{ if (!response.ok) throw new Error('HTTP ' + response.status); return response.text(); }})
+    .then(function(html) {{
+      mount.insertAdjacentHTML('afterend', html);
+      var page = document.getElementById('moonn-exam-prep-tilda-page');
+      if (page) runScripts(page);
+      mount.remove();
+    }})
+    .catch(function(error) {{
+      mount.innerHTML = '<div style="min-height:60vh;display:grid;place-items:center;font-family:Arial,sans-serif;color:#5c2d80;background:#fff7fb;text-align:center;padding:32px;">Страница временно загружается. Обновите, пожалуйста, через несколько секунд.</div>';
+      console.error('Moonn exam prep loader failed', error);
+    }});
+}})();
+</script>
 """
 
 
@@ -198,7 +253,7 @@ def build_homepage_combined(exam_banner: str) -> str:
     return current.replace(marker, exam_banner.strip() + "\n\n" + marker, 1)
 
 
-def write_manifest(source_html: str, block: str, combined: str) -> None:
+def write_manifest(source_html: str, block: str, loader: str, combined: str, cdn_ref: str) -> None:
     form_present = "<form" in source_html.lower()
     payload = {
         "project": "Moonn / Tatiana Munn",
@@ -211,13 +266,17 @@ def write_manifest(source_html: str, block: str, combined: str) -> None:
         },
         "tilda": {
             "projectId": TILDA_PROJECT_ID,
+            "pageId": TILDA_PAGE_ID,
+            "pageRecordId": TILDA_PAGE_RECORD_ID,
             "homepageId": TILDA_HOMEPAGE_ID,
             "homepageT123RecordId": TILDA_HOMEPAGE_T123_RECORD_ID,
             "targetAlias": TILDA_PAGE_ALIAS,
             "targetUrl": TILDA_PAGE_URL,
+            "cdnRef": cdn_ref,
         },
         "qualityGates": {
             "pageMarker": "moonn-exam-prep-tilda-page" in block,
+            "loaderMarker": "moonn-exam-prep-tilda-page-loader" in loader,
             "homepageMarker": "moonn-exam-prep-home-banner" in combined,
             "hasLocalhostOrFileUrl": bool(re.search(r"localhost|127\.0\.0\.1|file:", source_html, re.I)),
             "hasForm": form_present,
@@ -245,11 +304,13 @@ def append_history() -> None:
   - Kept the exam-prep publication as a separate workstream from the art-gallery and consultation payment workstreams.
 - Prepared artifacts:
   - `docs/tatiana-munn-exam-prep/tilda-html-block-final.html`
+  - `docs/tatiana-munn-exam-prep/tilda-html-loader-final.html`
   - `docs/tatiana-munn-exam-prep/tilda-page-final.html`
   - `docs/tatiana-munn-exam-prep/homepage-exam-prep-block-final.html`
   - `docs/tatiana-munn-exam-prep/homepage-t123-combined-2026-05-12.html`
   - `docs/tatiana-munn-exam-prep/manifest.json`
 - Publication target:
+  - Tilda page: `{TILDA_PAGE_ID}`.
   - Intended URL: `{TILDA_PAGE_URL}`.
   - Homepage T123 record: `{TILDA_HOMEPAGE_T123_RECORD_ID}`.
 - Verification gates before completion:
@@ -264,15 +325,18 @@ def append_history() -> None:
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     source_html = read_source()
+    cdn_ref = current_git_ref()
     tilda_block = build_tilda_page_block(source_html)
+    tilda_loader = build_tilda_loader_block(cdn_ref)
     homepage_banner = build_homepage_banner(source_html)
     homepage_combined = build_homepage_combined(homepage_banner)
 
     (OUT / "tilda-html-block-final.html").write_text(tilda_block, encoding="utf-8")
+    (OUT / "tilda-html-loader-final.html").write_text(tilda_loader, encoding="utf-8")
     (OUT / "tilda-page-final.html").write_text(build_full_preview(tilda_block), encoding="utf-8")
     (OUT / "homepage-exam-prep-block-final.html").write_text(homepage_banner, encoding="utf-8")
     (OUT / "homepage-t123-combined-2026-05-12.html").write_text(homepage_combined, encoding="utf-8")
-    write_manifest(source_html, tilda_block, homepage_combined)
+    write_manifest(source_html, tilda_block, tilda_loader, homepage_combined, cdn_ref)
     append_history()
     print(json.dumps({"ok": True, "out": str(OUT), "targetUrl": TILDA_PAGE_URL}, ensure_ascii=False))
 
