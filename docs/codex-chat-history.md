@@ -1510,3 +1510,26 @@ Append-only project history for `moon-psy-site`.
   - `c8efbdc` prepared and pushed the compact banner source/artifacts before Tilda fetch.
 - Follow-up rule:
   - For homepage promo blocks, verify not only marker presence but visual proportion against adjacent blocks; a banner can be technically live and still fail if its scale/palette does not match the neighboring canonical promo block.
+
+## 2026-05-12 — Tatiana Moonn Exam Prep Tilda Packet
+
+- Project: Moonn / Tatiana Munn site.
+- Branch: `codex/moonn-exam-prep-tilda`.
+- Trigger: user asked to publish the self-contained exam-prep landing from Downloads and add a compact homepage banner below the art-gallery banner.
+- Route:
+  - Started from `origin/codex/moonn-art-gallery` to preserve the latest homepage T123 ordering.
+  - Kept the exam-prep publication as a separate workstream from the art-gallery and consultation payment workstreams.
+- Prepared artifacts:
+  - `docs/tatiana-munn-exam-prep/tilda-html-block-final.html`
+  - `docs/tatiana-munn-exam-prep/tilda-page-final.html`
+  - `docs/tatiana-munn-exam-prep/homepage-exam-prep-block-final.html`
+  - `docs/tatiana-munn-exam-prep/homepage-t123-combined-2026-05-12.html`
+  - `docs/tatiana-munn-exam-prep/manifest.json`
+- Publication target:
+  - Intended URL: `https://moonn.ru/psihologicheskaya-podgotovka-k-ekzamenam`.
+  - Homepage T123 record: `2251351151`.
+- Verification gates before completion:
+  - Live page marker `moonn-exam-prep-tilda-page` present.
+  - Homepage marker `moonn-exam-prep-home-banner` present below `moonn-art-gallery-home-banner`.
+  - Link `/psihologicheskaya-podgotovka-k-ekzamenam` opens the exam-prep page.
+  - No SoundCloud/media block regression.
