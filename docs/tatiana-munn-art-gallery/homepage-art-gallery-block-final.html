@@ -1,29 +1,32 @@
 <section id="moonn-art-gallery-home-banner" class="moonn-art-gallery-home-banner" aria-label="Галерея картин Татьяны Мунн">
   <style>
-    #moonn-art-gallery-home-banner{font-family:Inter,Arial,sans-serif;max-width:1180px;margin:28px auto;padding:30px;border:1px solid rgba(216,170,93,.25);background:linear-gradient(135deg,#090b12,#17111d 58%,#22152a);color:#fff2d8;box-shadow:0 24px 70px rgba(0,0,0,.22);display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,380px);gap:26px;align-items:center;overflow:hidden;position:relative}
+    #moonn-art-gallery-home-banner{margin:0;padding:48px 20px 56px;background:linear-gradient(135deg,#fff 0%,#f6efff 44%,#edf9ff 100%);font-family:Arial,sans-serif;color:#231b33}
     #moonn-art-gallery-home-banner *{box-sizing:border-box}
-    #moonn-art-gallery-home-banner h2{margin:0 0 14px;font-family:Georgia,serif;font-weight:400;font-size:clamp(34px,4.8vw,64px);line-height:1.02;letter-spacing:0;color:#fff2d8}
-    #moonn-art-gallery-home-banner p{margin:0 0 20px;max-width:680px;color:#d6ccd8;font-size:17px;line-height:1.58}
-    #moonn-art-gallery-home-banner .eyebrow{display:inline-flex;margin-bottom:12px;color:#ffe7aa;font-size:12px;text-transform:uppercase;letter-spacing:.18em}
-    #moonn-art-gallery-home-banner .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-    #moonn-art-gallery-home-banner a.button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:999px;background:linear-gradient(135deg,#a06b27,#f3cf82 52%,#8a5f25);color:#171014!important;text-decoration:none!important;font-weight:800;box-shadow:0 14px 34px rgba(216,170,93,.22)}
-    #moonn-art-gallery-home-banner .note{color:#bfb5c5;font-size:14px}
-    #moonn-art-gallery-home-banner .media{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center}
-    #moonn-art-gallery-home-banner .media img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px;border:1px solid rgba(255,226,172,.2);box-shadow:0 18px 44px rgba(0,0,0,.34)}
-    #moonn-art-gallery-home-banner .media img:first-child{transform:translateY(18px)}
-    @media(max-width:820px){#moonn-art-gallery-home-banner{grid-template-columns:1fr;margin:22px 10px;padding:22px}#moonn-art-gallery-home-banner .media{order:-1}#moonn-art-gallery-home-banner a.button{width:100%}}
+    #moonn-art-gallery-home-banner .wrap{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr);gap:28px;align-items:center;border:1px solid rgba(133,75,210,.18);border-radius:30px;background:rgba(255,255,255,.74);box-shadow:0 18px 55px rgba(70,34,140,.14);overflow:hidden;backdrop-filter:blur(14px)}
+    #moonn-art-gallery-home-banner .copy{padding:40px 0 40px 44px}
+    #moonn-art-gallery-home-banner .eyebrow{display:inline-flex;margin:0 0 16px;padding:8px 14px;border-radius:999px;background:rgba(116,77,210,.10);color:#5b2ec7;font-size:14px;font-weight:700;letter-spacing:.02em;text-transform:uppercase}
+    #moonn-art-gallery-home-title{margin:0 0 18px;font-size:40px;line-height:1.08;font-weight:800;color:#5220b8}
+    #moonn-art-gallery-home-banner p{margin:0 0 22px;font-size:18px;line-height:1.55;color:#40354d}
+    #moonn-art-gallery-home-banner .meta{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 26px;padding:0;list-style:none}
+    #moonn-art-gallery-home-banner .meta li{padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(82,32,184,.15);font-size:14px;color:#342845}
+    #moonn-art-gallery-home-banner .cta{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:999px;background:linear-gradient(90deg,#6f2ee8,#e743b5,#32b9ef);color:#fff!important;text-decoration:none!important;font-size:16px;font-weight:800;box-shadow:0 12px 28px rgba(111,46,232,.28);transition:transform .2s ease,box-shadow .2s ease}
+    #moonn-art-gallery-home-banner .cta:hover{transform:translateY(-2px);box-shadow:0 18px 34px rgba(111,46,232,.36)}
+    #moonn-art-gallery-home-banner .media{height:100%;min-height:360px;position:relative;background:#f3ecff;display:block;overflow:hidden}
+    #moonn-art-gallery-home-banner .media .scene{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+    #moonn-art-gallery-home-banner .art-card{position:absolute;right:24px;bottom:22px;width:min(36%,150px);aspect-ratio:1;border-radius:18px;border:6px solid rgba(255,255,255,.88);box-shadow:0 18px 40px rgba(55,28,110,.24);object-fit:cover;background:#fff}
+    @media (max-width:820px){#moonn-art-gallery-home-banner{padding:34px 14px}#moonn-art-gallery-home-banner .wrap{grid-template-columns:1fr;border-radius:22px}#moonn-art-gallery-home-banner .copy{padding:28px 24px 10px}#moonn-art-gallery-home-title{font-size:30px}#moonn-art-gallery-home-banner p{font-size:16px}#moonn-art-gallery-home-banner .media{min-height:260px}#moonn-art-gallery-home-banner .art-card{right:16px;bottom:16px;width:min(34%,120px);border-width:5px}}
   </style>
-  <div>
+  <div class="wrap">
+  <div class="copy">
     <span class="eyebrow">3D-галерея · картины · персональный код</span>
-    <h2>Картины Татьяны Мунн</h2>
-    <p>Премиальная онлайн-галерея: прогулка по залу, каталог работ, персональный код владельца и заявка на покупку картины.</p>
-    <div class="actions">
-      <a class="button" href="/kartiny-tatiany-munn">Открыть галерею</a>
-      <span class="note">10 авторских работ · от 170000 ₽</span>
-    </div>
+    <h2 id="moonn-art-gallery-home-title">Галерея картин Татьяны Мунн</h2>
+    <p>Авторские работы, 3D-прогулка по залу, персональный код владельца и оформление покупки через корзину сайта.</p>
+    <ul class="meta"><li>10 работ</li><li>от 170 000 ₽</li><li>Онлайн-галерея</li></ul>
+    <a class="cta" href="/kartiny-tatiany-munn">Открыть галерею</a>
   </div>
   <a class="media" href="/kartiny-tatiany-munn" aria-label="Открыть галерею картин Татьяны Мунн">
-    <img src="https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@132d5486ee27e3782f5d00905c94baba75c2a927/docs/tatiana-munn-art-gallery/assets/art/01-blue-flower-harmony.webp" alt="Гармония и чувственность — картина Татьяны Мунн">
-    <img src="https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@132d5486ee27e3782f5d00905c94baba75c2a927/docs/tatiana-munn-art-gallery/assets/tatiana_munn_gallery_concept.webp" alt="3D-галерея картин Татьяны Мунн">
+    <img class="scene" src="https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@132d5486ee27e3782f5d00905c94baba75c2a927/docs/tatiana-munn-art-gallery/assets/tatiana_munn_gallery_concept.webp" alt="3D-галерея картин Татьяны Мунн" loading="lazy">
+    <img class="art-card" src="https://cdn.jsdelivr.net/gh/rublevalexandermsu-design/moonn-psy-pages@132d5486ee27e3782f5d00905c94baba75c2a927/docs/tatiana-munn-art-gallery/assets/art/01-blue-flower-harmony.webp" alt="Гармония и чувственность — картина Татьяны Мунн" loading="lazy">
   </a>
+  </div>
 </section>

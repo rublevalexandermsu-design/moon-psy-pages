@@ -56,6 +56,25 @@
 - Evidence artifact: `homepage-t123-combined-2026-05-12.html`.
 - Published the homepage from the Tilda editor.
 
+## Compact Homepage Banner Refresh
+
+- Date: `2026-05-12`.
+- User correction: the homepage gallery block must visually match the compact teen-camp banner and sit directly below it, not use the previous dark premium banner style.
+- Updated canonical generator `scripts/build_tatiana_munn_art_gallery_site.py`.
+- Regenerated `homepage-art-gallery-block-final.html`.
+- Updated `homepage-t123-combined-2026-05-12.html` so the existing homepage T123 record keeps this order:
+  - teen camp banner
+  - compact art gallery banner
+  - consultation banner
+- Local visual preview:
+  - Gallery block width: `1160`.
+  - Gallery block height: `577`.
+  - Teen-camp block height in same preview: `565`.
+  - CTA href: `/kartiny-tatiany-munn`.
+  - Dark banner CSS marker `#090b12` absent.
+- Preview artifact: `homepage-gallery-compact-preview-2026-05-12.png`.
+- Tilda live refresh status: prepared; final live verification is pending after updating record `2251351151`.
+
 ## Live Verification
 
 - Gallery live HTML check: `https://moonn.ru/kartiny-tatiany-munn?gallery-live-check=20260512-0126`.
@@ -70,16 +89,14 @@
   - `#galleryCanvas` present.
   - Native cart present.
   - SoundCloud absent.
-- Homepage live HTML check: `https://moonn.ru/?homepage-gallery-banner-check=20260512-0141`.
+- Homepage live HTML check before compact refresh: `https://moonn.ru/?homepage-gallery-banner-check=20260512-0141`.
   - HTTP status `200`.
   - `moonn-teen-camp-home-banner` present.
   - `moonn-art-gallery-home-banner` present.
   - `moonn-consultation-home-banner` present.
   - `/kartiny-tatiany-munn` link present.
   - `soundcloud` absent.
-- Homepage browser render check:
-  - Gallery banner is visible.
-  - Button link points to `/kartiny-tatiany-munn`.
+- Homepage compact-banner live verification: pending after publishing the refreshed T123 code.
 - Gallery cart smoke test after clearing previous Tilda cart state:
   - `Гармония и чувственность — картина Татьяны Мунн` opened native Tilda cart.
   - SKU: `moonn-art-gallery-01-blue-flower-harmony`.
@@ -96,6 +113,6 @@
 ## Status
 
 - Gallery page is live.
-- Homepage gallery banner is live.
+- Homepage gallery banner is live, but compact visual refresh is pending final Tilda record update and live check.
 - Native cart opens with the correct first artwork product, SKU and amount.
 - T-Bank provider transition without card submission still remains a separate high-risk payment QA step.
