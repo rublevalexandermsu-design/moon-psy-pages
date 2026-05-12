@@ -1710,3 +1710,35 @@ Append-only project history for `moon-psy-site`.
   - `docs/moonn-seo-repositioning-2026-05-12/tilda-seo-ui-live-apply-report.json`
   - `docs/moonn-seo-repositioning-2026-05-12/live-rollout-status-2026-05-12.md`
 - Commit: pending.
+
+## 2026-05-12 — Moonn SEO Repositioning Noindex Queue Continuation
+
+- Project: Moonn / Tatiana Munn site.
+- Branch: `codex/moonn-seo-positioning-architecture`.
+- Trigger: user explicitly allowed continuing the visible Tilda session, with the constraint to use only the already-open Alexander Google Chrome profile and not Chromium-Gost or a new browser.
+- Applied live through scoped Tilda UI:
+  - Completed the full noindex queue from the repositioning register: `47/47` pages had noindex/nofollow saved in Tilda page settings.
+  - Published each affected page from its page editor; no project-wide publish-all was used.
+- Automation corrections:
+  - Pinned Chrome selection to `Google Chrome` windows.
+  - Expanded the save-button matcher from only `Сохранить изменения` to also accept `Сохранить`.
+  - Forced reset to `tilda.ru/projects/?projectid=8326812` before each page settings edit.
+  - Fixed publish-popup closing so it does not click the Chrome tab close button.
+  - Added reusable live noindex verifier `scripts/verify_moonn_noindex_live.py`.
+- Verification:
+  - `python -m py_compile scripts\tilda_apply_moonn_repositioning_seo_ui.py` passed after each script correction.
+  - `python -m py_compile scripts\verify_moonn_noindex_live.py` passed.
+  - `python scripts\verify_moonn_noindex_live.py --delay 0.05` refreshed the noindex verification report and exited non-zero because not all URLs are live-confirmed yet.
+  - `python scripts\moonn_final_seo_audit.py` completed and refreshed `docs/moonn-final-seo-audit-2026-05-12.*`.
+  - `docs/moonn-seo-repositioning-2026-05-12/noindex-live-verification-2026-05-12.json` checked all `47` noindex URLs.
+  - Immediate raw HTML noindex result: `18/47` confirmed live; `29/47` remain delayed or not propagated, mostly numeric `page*.html` URLs.
+- Incident update:
+  - Symptom: earlier close-popup logic could select the Chrome tab close button because it matched any visible `Закрыть`.
+  - Root cause: popup close predicate was too broad and sorted by top-left coordinates.
+  - Correction: popup close is now constrained to the Tilda popup area only.
+  - Follow-up rule: Tilda UI scripts must distinguish browser chrome controls from Tilda modal controls by coordinate/window-region constraints before clicking destructive or closing controls.
+- Remaining:
+  - Recheck the delayed noindex pages after cache/publish propagation.
+  - If numeric `page*.html` URLs still do not expose noindex, switch to redirect/remove-from-sitemap governance rather than repeating page settings saves.
+  - Homepage gateway/H1, core H1 cleanup, schema/AEO visible answer sections, redirect queue and reindex packet are still open.
+- Commit: pending.

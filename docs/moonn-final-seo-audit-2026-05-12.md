@@ -4,84 +4,47 @@ Mode: read-only live audit from `https://moonn.ru/sitemap.xml`.
 
 ## Summary
 
-- Checked URLs: 151
-- HTTP 200: 151
-- `strengthen_seo`: 105
-- `review_noindex_or_rename_slug`: 45
+- Checked URLs: 104
+- HTTP 200: 104
+- `strengthen_seo`: 93
+- `review_noindex_or_rename_slug`: 10
 - `fix_robots_then_strengthen`: 1
 
 ## Top Issues
 
-- `images_missing_alt`: 151
-- `missing_h1`: 92
-- `opaque_or_test_slug`: 45
-- `duplicate_description`: 33
-- `long_title`: 19
-- `multiple_h1`: 16
-- `short_title`: 14
-- `short_description`: 12
-- `duplicate_title`: 10
-- `missing_og_image`: 7
+- `images_missing_alt`: 104
+- `missing_h1`: 60
+- `multiple_h1`: 15
+- `long_title`: 15
+- `opaque_or_test_slug`: 10
+- `duplicate_description`: 9
 - `missing_description`: 4
-- `canonical_mismatch`: 3
+- `missing_og_image`: 4
+- `short_title`: 4
 - `long_description`: 3
+- `canonical_mismatch`: 2
+- `short_description`: 2
 - `robots_txt_blocked`: 1
 
 ## Decision Table
 
 | Decision | URL | Issues |
 | --- | --- | --- |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page103169626.html` | images_missing_alt, missing_h1, opaque_or_test_slug, short_description, short_title |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page119171366.html` | duplicate_description, duplicate_title, images_missing_alt, missing_og_image, opaque_or_test_slug |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page120899276.html` | duplicate_description, duplicate_title, images_missing_alt, opaque_or_test_slug |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page120915666.html` | duplicate_description, duplicate_title, images_missing_alt, opaque_or_test_slug |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page120920636.html` | duplicate_description, duplicate_title, images_missing_alt, opaque_or_test_slug |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page120929166.html` | duplicate_description, duplicate_title, images_missing_alt, opaque_or_test_slug |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page120952796.html` | duplicate_description, duplicate_title, images_missing_alt, opaque_or_test_slug |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page124646186.html` | duplicate_description, duplicate_title, images_missing_alt, missing_og_image, opaque_or_test_slug |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page135383536.html` | duplicate_description, images_missing_alt, missing_h1, opaque_or_test_slug, short_description |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page135428796.html` | duplicate_description, images_missing_alt, missing_h1, opaque_or_test_slug, short_description, short_title |
 | `review_noindex_or_rename_slug` | `https://moonn.ru/page44456533.html` | images_missing_alt, missing_h1, opaque_or_test_slug, short_description |
 | `review_noindex_or_rename_slug` | `https://moonn.ru/page44458639.html` | images_missing_alt, missing_h1, opaque_or_test_slug |
 | `review_noindex_or_rename_slug` | `https://moonn.ru/page44459247.html` | images_missing_alt, missing_h1, opaque_or_test_slug |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page44526043.html` | images_missing_alt, missing_h1, opaque_or_test_slug |
 | `review_noindex_or_rename_slug` | `https://moonn.ru/page44551635.html` | images_missing_alt, missing_h1, opaque_or_test_slug |
 | `review_noindex_or_rename_slug` | `https://moonn.ru/page44681917.html` | images_missing_alt, missing_h1, opaque_or_test_slug |
 | `review_noindex_or_rename_slug` | `https://moonn.ru/page45296765.html` | images_missing_alt, long_description, long_title, missing_h1, opaque_or_test_slug |
 | `review_noindex_or_rename_slug` | `https://moonn.ru/page45326465.html` | images_missing_alt, missing_h1, opaque_or_test_slug |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page45468005.html` | images_missing_alt, long_title, missing_h1, opaque_or_test_slug, short_description |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page46838717.html` | images_missing_alt, missing_h1, opaque_or_test_slug |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page47303655.html` | images_missing_alt, long_title, missing_h1, opaque_or_test_slug, short_description |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page53913787.html` | images_missing_alt, multiple_h1, opaque_or_test_slug, short_description |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page62923017.html` | images_missing_alt, missing_h1, opaque_or_test_slug, short_title |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page62951593.html` | duplicate_description, images_missing_alt, missing_h1, opaque_or_test_slug |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page62953471.html` | duplicate_description, images_missing_alt, missing_h1, opaque_or_test_slug |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page62956267.html` | duplicate_description, images_missing_alt, long_title, missing_h1, opaque_or_test_slug |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page62959307.html` | duplicate_description, images_missing_alt, missing_h1, opaque_or_test_slug |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page62962631.html` | duplicate_description, images_missing_alt, missing_h1, opaque_or_test_slug |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page62964151.html` | duplicate_description, images_missing_alt, missing_h1, opaque_or_test_slug |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page62970147.html` | duplicate_description, images_missing_alt, long_title, missing_h1, opaque_or_test_slug |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page63097209.html` | duplicate_description, images_missing_alt, missing_h1, opaque_or_test_slug, short_description |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page63099675.html` | duplicate_description, images_missing_alt, missing_h1, opaque_or_test_slug |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page63102709.html` | duplicate_description, images_missing_alt, missing_h1, opaque_or_test_slug |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page63127703.html` | duplicate_description, images_missing_alt, missing_h1, opaque_or_test_slug, short_description |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page63700731.html` | images_missing_alt, long_title, missing_h1, opaque_or_test_slug |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page63702011.html` | images_missing_alt, missing_h1, opaque_or_test_slug, short_title |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page90769516.html` | images_missing_alt, missing_h1, missing_og_image, opaque_or_test_slug, short_title |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page90770496.html` | images_missing_alt, missing_h1, opaque_or_test_slug, short_title |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page90770666.html` | images_missing_alt, missing_h1, opaque_or_test_slug, short_title |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page90781306.html` | images_missing_alt, missing_h1, opaque_or_test_slug, short_description, short_title |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page90781546.html` | images_missing_alt, missing_h1, opaque_or_test_slug, short_title |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/page90781686.html` | images_missing_alt, missing_h1, opaque_or_test_slug, short_title |
+| `review_noindex_or_rename_slug` | `https://moonn.ru/page62970147.html` | images_missing_alt, long_title, missing_h1, opaque_or_test_slug |
 | `review_noindex_or_rename_slug` | `https://moonn.ru/st1` | duplicate_description, images_missing_alt, missing_h1, opaque_or_test_slug |
 | `review_noindex_or_rename_slug` | `https://moonn.ru/st2` | duplicate_description, images_missing_alt, long_title, missing_h1, opaque_or_test_slug |
-| `review_noindex_or_rename_slug` | `https://moonn.ru/test77` | duplicate_description, images_missing_alt, opaque_or_test_slug, short_description |
 | `strengthen_seo` | `https://moonn.ru/` | images_missing_alt, multiple_h1 |
 | `strengthen_seo` | `https://moonn.ru/20251201` | canonical_mismatch, images_missing_alt, long_title |
 | `strengthen_seo` | `https://moonn.ru/20251213` | images_missing_alt, short_description |
 | `strengthen_seo` | `https://moonn.ru/20251216` | images_missing_alt, long_description, long_title, multiple_h1 |
 | `strengthen_seo` | `https://moonn.ru/abuse_gaslight` | images_missing_alt |
-| `strengthen_seo` | `https://moonn.ru/aromatherapy` | images_missing_alt |
 | `strengthen_seo` | `https://moonn.ru/article_diary_of_emotions` | images_missing_alt |
 | `strengthen_seo` | `https://moonn.ru/article_femininity` | images_missing_alt |
 | `strengthen_seo` | `https://moonn.ru/article_gadget_addiction` | images_missing_alt |
@@ -90,8 +53,8 @@ Mode: read-only live audit from `https://moonn.ru/sitemap.xml`.
 | `strengthen_seo` | `https://moonn.ru/baza-znaniy-emocionalnyy-intellekt-psihologiya` | images_missing_alt |
 | `strengthen_seo` | `https://moonn.ru/call` | images_missing_alt, missing_description, missing_h1, missing_og_image, short_title |
 | `strengthen_seo` | `https://moonn.ru/depressivnoe-sostoyanie` | duplicate_description, images_missing_alt, long_title, missing_h1 |
-| `strengthen_seo` | `https://moonn.ru/eintellect` | duplicate_description, duplicate_title, images_missing_alt |
-| `strengthen_seo` | `https://moonn.ru/emotional-intelligence/` | duplicate_description, duplicate_title, images_missing_alt, missing_h1 |
+| `strengthen_seo` | `https://moonn.ru/eintellect` | images_missing_alt |
+| `strengthen_seo` | `https://moonn.ru/emotional-intelligence/` | images_missing_alt, missing_h1 |
 | `strengthen_seo` | `https://moonn.ru/emotional-intelligence/articles` | images_missing_alt, missing_h1 |
 | `strengthen_seo` | `https://moonn.ru/emotional-intelligence/articles/benefits-of-ei` | images_missing_alt, missing_h1 |
 | `strengthen_seo` | `https://moonn.ru/emotional-intelligence/articles/emotional-intelligence-skills` | images_missing_alt, missing_h1 |
@@ -121,12 +84,9 @@ Mode: read-only live audit from `https://moonn.ru/sitemap.xml`.
 | `strengthen_seo` | `https://moonn.ru/events` | images_missing_alt, missing_h1 |
 | `strengthen_seo` | `https://moonn.ru/events_tp` | images_missing_alt, missing_h1 |
 | `strengthen_seo` | `https://moonn.ru/exam-preparation-psychology` | canonical_mismatch, images_missing_alt |
-| `strengthen_seo` | `https://moonn.ru/geshtalt` | images_missing_alt |
 | `strengthen_seo` | `https://moonn.ru/kartiny-tatiany-munn` | images_missing_alt, missing_og_image |
-| `strengthen_seo` | `https://moonn.ru/kpt` | images_missing_alt |
 | `strengthen_seo` | `https://moonn.ru/kurs-ei` | images_missing_alt |
 | `strengthen_seo` | `https://moonn.ru/lectures1` | images_missing_alt, missing_h1 |
-| `strengthen_seo` | `https://moonn.ru/microbiom` | images_missing_alt, missing_h1 |
 | `strengthen_seo` | `https://moonn.ru/novosti` | images_missing_alt, missing_h1 |
 | `strengthen_seo` | `https://moonn.ru/novosti20251113` | images_missing_alt, long_title |
 | `strengthen_seo` | `https://moonn.ru/novosti20251118` | images_missing_alt, long_title, multiple_h1 |
@@ -136,24 +96,18 @@ Mode: read-only live audit from `https://moonn.ru/sitemap.xml`.
 | `strengthen_seo` | `https://moonn.ru/otzivi` | images_missing_alt, multiple_h1 |
 | `strengthen_seo` | `https://moonn.ru/panicheskie_ataki` | images_missing_alt, multiple_h1 |
 | `strengthen_seo` | `https://moonn.ru/pay-good-moon` | images_missing_alt, missing_description, missing_h1, short_title |
-| `strengthen_seo` | `https://moonn.ru/phytotherapy` | images_missing_alt, missing_h1 |
 | `strengthen_seo` | `https://moonn.ru/platnye-treningi-seminary-programmy-tatiana-moonn` | images_missing_alt, missing_h1 |
 | `strengthen_seo` | `https://moonn.ru/podrostkovyy-lager-psihologiya` | images_missing_alt, missing_h1 |
 | `strengthen_seo` | `https://moonn.ru/politic` | images_missing_alt, missing_description, missing_h1, missing_og_image, short_title |
 | `strengthen_seo` | `https://moonn.ru/programmakursa` | images_missing_alt |
-| `strengthen_seo` | `https://moonn.ru/psiholog` | canonical_mismatch, images_missing_alt, missing_h1 |
+| `strengthen_seo` | `https://moonn.ru/psiholog` | images_missing_alt, missing_h1 |
 | `strengthen_seo` | `https://moonn.ru/psiholog-konsultacii-moskva` | images_missing_alt, multiple_h1 |
 | `strengthen_seo` | `https://moonn.ru/psiholog-tatiana-moonn` | images_missing_alt |
 | `strengthen_seo` | `https://moonn.ru/psiholog_moskva` | images_missing_alt, missing_h1 |
 | `strengthen_seo` | `https://moonn.ru/psihology` | images_missing_alt, missing_h1 |
-| `strengthen_seo` | `https://moonn.ru/psy4psy` | images_missing_alt |
-| `strengthen_seo` | `https://moonn.ru/psychoanalys` | images_missing_alt |
 | `strengthen_seo` | `https://moonn.ru/psypodgotovka1` | images_missing_alt |
 | `strengthen_seo` | `https://moonn.ru/recomend` | images_missing_alt |
-| `strengthen_seo` | `https://moonn.ru/salt` | images_missing_alt, missing_h1 |
 | `strengthen_seo` | `https://moonn.ru/samoocenka-i-uverennost` | duplicate_description, images_missing_alt, long_title, missing_h1 |
-| `strengthen_seo` | `https://moonn.ru/schematherapy` | images_missing_alt, missing_h1 |
-| `strengthen_seo` | `https://moonn.ru/selfharm` | images_missing_alt, missing_h1 |
 | `strengthen_seo` | `https://moonn.ru/semeynie_konflikti_article` | images_missing_alt, missing_h1 |
 | `strengthen_seo` | `https://moonn.ru/semeyniy_psiholog` | images_missing_alt, missing_h1 |
 | `strengthen_seo` | `https://moonn.ru/seminar555` | images_missing_alt, missing_h1 |
@@ -175,13 +129,11 @@ Mode: read-only live audit from `https://moonn.ru/sitemap.xml`.
 | `strengthen_seo` | `https://moonn.ru/uslugi_procrastination` | images_missing_alt, multiple_h1 |
 | `strengthen_seo` | `https://moonn.ru/uslugi_razvod` | images_missing_alt, multiple_h1 |
 | `strengthen_seo` | `https://moonn.ru/uslugi_sohranit_brak` | images_missing_alt, multiple_h1 |
-| `strengthen_seo` | `https://moonn.ru/vacuum_cups` | images_missing_alt, missing_h1 |
 | `strengthen_seo` | `https://moonn.ru/vecherinka369` | images_missing_alt, long_title |
 | `strengthen_seo` | `https://moonn.ru/vigoranie_article` | images_missing_alt |
 | `strengthen_seo` | `https://moonn.ru/vospitanie_article` | images_missing_alt, missing_h1 |
 | `strengthen_seo` | `https://moonn.ru/vystupleniya-lekcii-treningi-psiholog-tatiana-moonn` | images_missing_alt |
-| `strengthen_seo` | `https://moonn.ru/water` | images_missing_alt |
-| `fix_robots_then_strengthen` | `https://moonn.ru/psiholog-moskva-online` | duplicate_description, duplicate_title, images_missing_alt, robots_txt_blocked |
+| `fix_robots_then_strengthen` | `https://moonn.ru/psiholog-moskva-online` | images_missing_alt, robots_txt_blocked |
 
 ## Next Action Rules
 

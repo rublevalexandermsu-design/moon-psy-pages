@@ -38,7 +38,7 @@ def address_bar(window):
 
 def chrome_window():
     candidates = []
-    for window in Desktop(backend="uia").windows(title_re=".*(Google Chrome|Chromium|Chromium-Gost).*"):
+    for window in Desktop(backend="uia").windows(title_re=".*Google Chrome.*"):
         try:
             address = address_bar(window).window_text()
         except Exception:
@@ -70,7 +70,7 @@ def navigate(window, url: str, wait_seconds: float = 5.0) -> None:
 
 def ensure_project_page(window) -> None:
     current = address_bar(window).window_text()
-    if "tilda.ru" not in current or f"projectid={PROJECT_ID}" not in current:
+    if "tilda.ru/projects/" not in current or f"projectid={PROJECT_ID}" not in current:
         if "tilda.ru" not in current:
             pyautogui.hotkey("ctrl", "t")
             time.sleep(0.4)
@@ -90,6 +90,26 @@ def open_devtools_console(window) -> None:
             break
 
 
+def console_input(window):
+    rect = window.rectangle()
+    edits = []
+    for edit in window.descendants(control_type="Edit"):
+        try:
+            edit_rect = edit.rectangle()
+            if edit.element_info.automation_id == "view_1012":
+                continue
+            if edit.window_text() in {"Фильтр", "Filter"}:
+                continue
+            if edit_rect.left < rect.left + 350 or edit_rect.top < rect.top + 250:
+                continue
+            edits.append(edit)
+        except Exception:
+            continue
+    if not edits:
+        return None
+    return sorted(edits, key=lambda item: (item.rectangle().bottom, item.rectangle().right))[-1]
+
+
 def close_devtools(window) -> None:
     has_console = any((tab.window_text() or "") in {"Консоль", "Console"} for tab in window.descendants(control_type="TabItem"))
     if has_console:
@@ -99,10 +119,17 @@ def close_devtools(window) -> None:
 
 def run_console(window, code: str, wait_seconds: float = 2.0) -> None:
     open_devtools_console(window)
-    rect = window.rectangle()
-    pyautogui.click(rect.right - 450, rect.top + 450)
+    edit = console_input(window)
+    if edit:
+        rect = edit.rectangle()
+        pyautogui.click(rect.left + 20, rect.top + max(8, (rect.height() // 2)))
+    else:
+        rect = window.rectangle()
+        pyautogui.click(rect.right - 450, rect.bottom - 120)
     time.sleep(0.1)
     pyperclip.copy(code)
+    pyautogui.hotkey("ctrl", "a")
+    time.sleep(0.1)
     pyautogui.hotkey("ctrl", "v")
     time.sleep(0.2)
     pyautogui.press("enter")
@@ -171,7 +198,11 @@ try {
   setField('link_canonical', payload.canonical);
   setChecked('nosearch', payload.nosearch);
   setChecked('meta_nofollow', payload.nofollow);
-  const submit = Array.from(document.querySelectorAll('input[type="submit"],button')).find(el => /Сохранить изменения|Save changes/i.test(el.value || el.textContent || ''));
+  const submitCandidates = Array.from(document.querySelectorAll('input[type="submit"],button')).filter(el => {
+    const label = el.value || el.textContent || '';
+    return /Сохранить изменения|Сохранить|Save changes|Save/i.test(label);
+  });
+  const submit = submitCandidates.find(el => el.offsetParent !== null) || submitCandidates[0];
   if (!submit) throw new Error('save button not found');
   submit.click();
   await wait(2600);
@@ -226,7 +257,16 @@ def find_button(window, name: str, min_left: int = 0, max_top: int = 1000):
 
 def close_publish_popup(window) -> None:
     for _ in range(4):
-        button = find_button(window, "Закрыть", min_left=650, max_top=600) or find_button(window, "Close", min_left=650, max_top=600)
+        button = None
+        for candidate in window.descendants(control_type="Button"):
+            try:
+                text = candidate.window_text() or ""
+                rect = candidate.rectangle()
+            except Exception:
+                continue
+            if ("Закрыть" in text or "Close" in text) and rect.left >= 650 and 280 <= rect.top <= 620:
+                button = candidate
+                break
         if button:
             button.click_input()
             time.sleep(0.8)
@@ -238,9 +278,12 @@ def publish_page(window, row: dict[str, object]) -> bool:
     close_devtools(window)
     navigate(window, f"https://tilda.ru/page/?pageid={row['page_id']}&projectid={PROJECT_ID}", wait_seconds=6.0)
     button = find_button(window, "Опубликовать", min_left=700, max_top=360) or find_button(window, "Publish", min_left=700, max_top=360)
-    if not button:
-        return False
-    button.click_input()
+    if button:
+        button.click_input()
+    else:
+        # Tilda's editor publish control is often an unlabeled SVG cloud icon.
+        rect = window.rectangle()
+        pyautogui.click(rect.right - 140, rect.top + 245)
     time.sleep(7.0)
     close_publish_popup(window)
     return True

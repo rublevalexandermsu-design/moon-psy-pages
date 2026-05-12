@@ -1,0 +1,462 @@
+{
+  "createdDate": "2026-05-12",
+  "sourcePackets": "docs\\moonn-seo-repositioning-2026-05-12\\seo-aeo-tilda-apply-packets.json",
+  "total": 47,
+  "noindexCount": 18,
+  "missingNoindex": [
+    "/page103169626.html",
+    "/page119171366.html",
+    "/page120899276.html",
+    "/page120915666.html",
+    "/page120920636.html",
+    "/page120929166.html",
+    "/page120952796.html",
+    "/page124646186.html",
+    "/page135383536.html",
+    "/page135428796.html",
+    "/page44526043.html",
+    "/page46838717.html",
+    "/page47303655.html",
+    "/page62923017.html",
+    "/page62951593.html",
+    "/page62953471.html",
+    "/page62956267.html",
+    "/page62959307.html",
+    "/page62962631.html",
+    "/page62964151.html",
+    "/page63097209.html",
+    "/page63099675.html",
+    "/page63102709.html",
+    "/page63127703.html",
+    "/page63700731.html",
+    "/page90781306.html",
+    "/page90781546.html",
+    "/page90781686.html",
+    "/schematherapy"
+  ],
+  "results": [
+    {
+      "path": "/aromatherapy",
+      "url": "https://moonn.ru/aromatherapy",
+      "page_id": "62470081",
+      "status": 200,
+      "robots_noindex": true,
+      "canonical_present": true,
+      "h1_count": 1
+    },
+    {
+      "path": "/geshtalt",
+      "url": "https://moonn.ru/geshtalt",
+      "page_id": "63388057",
+      "status": 200,
+      "robots_noindex": true,
+      "canonical_present": true,
+      "h1_count": 1
+    },
+    {
+      "path": "/kpt",
+      "url": "https://moonn.ru/kpt",
+      "page_id": "63403669",
+      "status": 200,
+      "robots_noindex": true,
+      "canonical_present": true,
+      "h1_count": 1
+    },
+    {
+      "path": "/microbiom",
+      "url": "https://moonn.ru/microbiom",
+      "page_id": "62477227",
+      "status": 200,
+      "robots_noindex": true,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/page103169626.html",
+      "url": "https://moonn.ru/page103169626.html",
+      "page_id": "103169626",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/page119171366.html",
+      "url": "https://moonn.ru/page119171366.html",
+      "page_id": "119171366",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 1
+    },
+    {
+      "path": "/page120899276.html",
+      "url": "https://moonn.ru/page120899276.html",
+      "page_id": "120899276",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 1
+    },
+    {
+      "path": "/page120915666.html",
+      "url": "https://moonn.ru/page120915666.html",
+      "page_id": "120915666",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 1
+    },
+    {
+      "path": "/page120920636.html",
+      "url": "https://moonn.ru/page120920636.html",
+      "page_id": "120920636",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 1
+    },
+    {
+      "path": "/page120929166.html",
+      "url": "https://moonn.ru/page120929166.html",
+      "page_id": "120929166",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 1
+    },
+    {
+      "path": "/page120952796.html",
+      "url": "https://moonn.ru/page120952796.html",
+      "page_id": "120952796",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 1
+    },
+    {
+      "path": "/page124646186.html",
+      "url": "https://moonn.ru/page124646186.html",
+      "page_id": "124646186",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 1
+    },
+    {
+      "path": "/page135383536.html",
+      "url": "https://moonn.ru/page135383536.html",
+      "page_id": "135383536",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/page135428796.html",
+      "url": "https://moonn.ru/page135428796.html",
+      "page_id": "135428796",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/page44526043.html",
+      "url": "https://moonn.ru/page44526043.html",
+      "page_id": "44526043",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/page45468005.html",
+      "url": "https://moonn.ru/page45468005.html",
+      "page_id": "45468005",
+      "status": 200,
+      "robots_noindex": true,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/page46838717.html",
+      "url": "https://moonn.ru/page46838717.html",
+      "page_id": "46838717",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/page47303655.html",
+      "url": "https://moonn.ru/page47303655.html",
+      "page_id": "47303655",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/page53913787.html",
+      "url": "https://moonn.ru/page53913787.html",
+      "page_id": "53913787",
+      "status": 200,
+      "robots_noindex": true,
+      "canonical_present": true,
+      "h1_count": 2
+    },
+    {
+      "path": "/page62923017.html",
+      "url": "https://moonn.ru/page62923017.html",
+      "page_id": "62923017",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/page62951593.html",
+      "url": "https://moonn.ru/page62951593.html",
+      "page_id": "62951593",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/page62953471.html",
+      "url": "https://moonn.ru/page62953471.html",
+      "page_id": "62953471",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/page62956267.html",
+      "url": "https://moonn.ru/page62956267.html",
+      "page_id": "62956267",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/page62959307.html",
+      "url": "https://moonn.ru/page62959307.html",
+      "page_id": "62959307",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/page62962631.html",
+      "url": "https://moonn.ru/page62962631.html",
+      "page_id": "62962631",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/page62964151.html",
+      "url": "https://moonn.ru/page62964151.html",
+      "page_id": "62964151",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/page63097209.html",
+      "url": "https://moonn.ru/page63097209.html",
+      "page_id": "63097209",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/page63099675.html",
+      "url": "https://moonn.ru/page63099675.html",
+      "page_id": "63099675",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/page63102709.html",
+      "url": "https://moonn.ru/page63102709.html",
+      "page_id": "63102709",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/page63127703.html",
+      "url": "https://moonn.ru/page63127703.html",
+      "page_id": "63127703",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/page63700731.html",
+      "url": "https://moonn.ru/page63700731.html",
+      "page_id": "63700731",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/page63702011.html",
+      "url": "https://moonn.ru/page63702011.html",
+      "page_id": "63702011",
+      "status": 200,
+      "robots_noindex": true,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/page90769516.html",
+      "url": "https://moonn.ru/page90769516.html",
+      "page_id": "90769516",
+      "status": 200,
+      "robots_noindex": true,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/page90770496.html",
+      "url": "https://moonn.ru/page90770496.html",
+      "page_id": "90770496",
+      "status": 200,
+      "robots_noindex": true,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/page90770666.html",
+      "url": "https://moonn.ru/page90770666.html",
+      "page_id": "90770666",
+      "status": 200,
+      "robots_noindex": true,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/page90781306.html",
+      "url": "https://moonn.ru/page90781306.html",
+      "page_id": "90781306",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/page90781546.html",
+      "url": "https://moonn.ru/page90781546.html",
+      "page_id": "90781546",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/page90781686.html",
+      "url": "https://moonn.ru/page90781686.html",
+      "page_id": "90781686",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/phytotherapy",
+      "url": "https://moonn.ru/phytotherapy",
+      "page_id": "62462299",
+      "status": 200,
+      "robots_noindex": true,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/psy4psy",
+      "url": "https://moonn.ru/psy4psy",
+      "page_id": "62908693",
+      "status": 200,
+      "robots_noindex": true,
+      "canonical_present": true,
+      "h1_count": 1
+    },
+    {
+      "path": "/psychoanalys",
+      "url": "https://moonn.ru/psychoanalys",
+      "page_id": "63398035",
+      "status": 200,
+      "robots_noindex": true,
+      "canonical_present": true,
+      "h1_count": 1
+    },
+    {
+      "path": "/salt",
+      "url": "https://moonn.ru/salt",
+      "page_id": "63131581",
+      "status": 200,
+      "robots_noindex": true,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/schematherapy",
+      "url": "https://moonn.ru/schematherapy",
+      "page_id": "63409841",
+      "status": 200,
+      "robots_noindex": false,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/selfharm",
+      "url": "https://moonn.ru/selfharm",
+      "page_id": "62890623",
+      "status": 200,
+      "robots_noindex": true,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/test77",
+      "url": "https://moonn.ru/test77",
+      "page_id": "90265106",
+      "status": 200,
+      "robots_noindex": true,
+      "canonical_present": true,
+      "h1_count": 1
+    },
+    {
+      "path": "/vacuum_cups",
+      "url": "https://moonn.ru/vacuum_cups",
+      "page_id": "63138325",
+      "status": 200,
+      "robots_noindex": true,
+      "canonical_present": true,
+      "h1_count": 0
+    },
+    {
+      "path": "/water",
+      "url": "https://moonn.ru/water",
+      "page_id": "63552425",
+      "status": 200,
+      "robots_noindex": true,
+      "canonical_present": true,
+      "h1_count": 1
+    }
+  ]
+}
