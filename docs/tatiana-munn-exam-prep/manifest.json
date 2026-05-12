@@ -1,7 +1,7 @@
 {
   "project": "Moonn / Tatiana Munn",
   "workstream": "exam-prep-tilda-page",
-  "generatedAt": "2026-05-12T11:08:19",
+  "generatedAt": "2026-05-12T11:09:08",
   "source": {
     "path": "C:\\Users\\yanta\\Downloads\\tatiana-moonn-exam-landing-v3-self-contained.html",
     "bytes": 1307406,
@@ -15,7 +15,7 @@
     "homepageT123RecordId": "2251351151",
     "targetAlias": "psypodgotovka1",
     "targetUrl": "https://moonn.ru/psypodgotovka1",
-    "cdnRef": "f7a544d377dae871d718b5768f8bfd001267c45f"
+    "cdnRef": "124daecc2f8fe05460b6884d6c5edccb73391aca"
   },
   "qualityGates": {
     "pageMarker": true,
