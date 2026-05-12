@@ -1648,3 +1648,41 @@ Append-only project history for `moon-psy-site`.
   - `/speaker` is the cleanest current emotional-intelligence/speaker page.
   - Off-topic wellness pages and gallery should not be equal SEO signals for the psychology/EI entity.
 - Commit: pending.
+
+## 2026-05-12 — Moonn SEO Repositioning Pipeline Implementation
+
+- Project: Moonn / Tatiana Munn site.
+- Branch: `codex/moonn-seo-positioning-architecture`.
+- Trigger: user approved the Moonn SEO Repositioning Implementation Plan and asked to implement the new SEO/AIOSEO algorithm.
+- Decisions:
+  - Implement the new pipeline as deterministic GitHub artifacts first: public URL decision register -> cluster assignment -> index/canonical decision -> SEO packet -> AI/AEO/schema packet -> Tilda apply queue -> verification gates.
+  - Treat AIOSEO as both the internal SEO packet generator and the visible AI/AEO/schema/entity layer.
+  - Use the Tilda API only for read/export verification and page-id sync; do not write live Tilda changes through undocumented endpoints.
+  - Keep the gallery public as `secondary`, not as a psychology SEO pillar.
+  - Keep live Tilda mass apply blocked until a non-visual write-capable path is proven or explicitly replaced by a scoped supported UI pilot.
+- Tilda API verification:
+  - Official read-only API access was verified for project `8326812` (`Moonn.ru`).
+  - `getpageslist` returned `166` pages and confirmed core aliases `psiholog`, `speaker`, `psypodgotovka1`, `otzivi`, `kartiny-tatiany-munn`.
+  - New gallery page id synced into the generator fallback map: `140864526`.
+- Created or changed files:
+  - `scripts/build_moonn_seo_repositioning_packets.py`
+  - `docs/moonn-seo-repositioning-2026-05-12/url-decision-register.json`
+  - `docs/moonn-seo-repositioning-2026-05-12/url-decision-register.csv`
+  - `docs/moonn-seo-repositioning-2026-05-12/seo-aeo-tilda-apply-packets.json`
+  - `docs/moonn-seo-repositioning-2026-05-12/seo-aeo-tilda-apply-packets.md`
+  - `docs/moonn-seo-repositioning-2026-05-12/search-reindex-packet.json`
+  - `docs/moonn-seo-repositioning-2026-05-12/homepage-strategic-gateway-tilda-block.html`
+  - `docs/moonn-seo-repositioning-2026-05-12/implementation-report.md`
+- Verification:
+  - `python -m py_compile scripts\build_moonn_seo_repositioning_packets.py`
+  - `python scripts\build_moonn_seo_repositioning_packets.py`
+  - Dry-run register classified all `151` audited URLs with no `review` action left.
+  - Actions: `81` rewrite, `18` redirect, `47` noindex, `5` keep indexed.
+  - Clusters: `private_practice`, `emotional_intelligence`, `teen_exam_family`, `reviews_trust`, `secondary`, `archive`.
+  - Determinism check passed: repeated generator run did not change output hashes.
+  - Secret/local-path scan passed for generated artifacts and generator.
+  - Homepage gateway block has exactly one H1.
+  - Reviews schema packet contains no `AggregateRating`.
+- Follow-up rule:
+  - Future Moonn SEO live changes must be applied from the URL decision register, not directly from sitemap enumeration. Tilda API read/export can verify state and page ids; live writes require a documented write path or a scoped supported UI pilot with raw HTML and browser verification.
+- Commit: pending.
