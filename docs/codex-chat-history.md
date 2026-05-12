@@ -1533,3 +1533,30 @@ Append-only project history for `moon-psy-site`.
   - Homepage marker `moonn-exam-prep-home-banner` present below `moonn-art-gallery-home-banner`.
   - Link `/psihologicheskaya-podgotovka-k-ekzamenam` opens the exam-prep page.
   - No SoundCloud/media block regression.
+
+## 2026-05-12 — Tatiana Moonn Exam Prep Tilda Publication Completed
+
+- Project: Moonn / Tatiana Munn site.
+- Branch: `codex/moonn-exam-prep-tilda`.
+- Trigger: continue the exam-prep publication request after the generated Tilda packet was prepared.
+- Decisions:
+  - Preserved the existing Tilda alias `psypodgotovka1` instead of creating a duplicate long alias.
+  - Used a lightweight native T123 loader for the exam-prep page because the self-contained HTML is large due to inline images.
+  - Kept root `codex/ano-context-recovery` context-backup/screenshot changes out of the Moonn publication commit.
+- Tilda updates:
+  - Published page `62652841` at `https://moonn.ru/psypodgotovka1`.
+  - Updated page T123 record `2258994191`.
+  - Updated homepage T123 record `2251351151`.
+  - Published homepage `42678538` at `https://moonn.ru/`.
+- GitHub:
+  - Pushed branch `codex/moonn-exam-prep-tilda`.
+  - Latest pushed commit before live publication checks: `72059438c1fcba2433af7055f729a9a8556583d1`.
+- Verification:
+  - Tilda API and live HTML for `https://moonn.ru/psypodgotovka1` contain the exam-prep loader marker and no SoundCloud marker.
+  - Browser render confirms full page marker `moonn-exam-prep-tilda-page`, H1 `Психологическая подготовка к экзаменам без паники`, and form presence.
+  - Tilda API and live HTML for homepage contain markers in order: teen camp, art gallery, exam prep, consultation.
+  - Browser render confirms homepage banner title `Экзамены без паники` and CTA href `/psypodgotovka1`.
+- Evidence:
+  - `docs/tatiana-munn-exam-prep/publication-report-2026-05-12.md`
+  - `docs/tatiana-munn-exam-prep/exam-prep-live-render-2026-05-12.png`
+  - `docs/tatiana-munn-exam-prep/homepage-exam-prep-live-render-2026-05-12.png`
