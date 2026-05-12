@@ -36,6 +36,16 @@
 - Tilda API page check: live page HTML contains `moonn-exam-prep-tilda-page-loader` and commit `124daecc2f8fe05460b6884d6c5edccb73391aca`.
 - Live page check: `https://moonn.ru/psypodgotovka1` returns `200`, contains the loader marker, has no SoundCloud marker.
 - Browser render check: loader is removed after fetch, `#moonn-exam-prep-tilda-page` appears, H1 is `Психологическая подготовка к экзаменам без паники`, form exists.
+- SEO correction check after the user's reminder:
+  - Tilda page record `2258994191` was updated with a SEO-visible loader from commit `9126a5db99a8a4133680c3fb9e051b2be12ffce7`.
+  - Legacy Tilda content records on page `62652841` were switched off instead of being deleted.
+  - Page SEO settings were updated through the Tilda UI:
+    - title: `Психологическая подготовка к ОГЭ и ЕГЭ — Татьяна Мунн`
+    - description: `Индивидуальные консультации психолога для школьников и студентов перед ОГЭ, ЕГЭ, сессией и экзаменами: тревога, ступор, страх ошибки и поддержка родителей.`
+    - canonical: `https://moonn.ru/psypodgotovka1`
+  - Live raw HTML check now returns exactly one H1: `Психологическая подготовка к экзаменам без паники`.
+  - Old lecture-page H1/text markers and SoundCloud markers are absent from the live raw HTML.
+  - Rendered browser check confirms `#moonn-exam-prep-tilda-page`, form presence, no SoundCloud iframe, no failed requests and no page errors.
 - Tilda API homepage check: homepage HTML contains these markers in order:
   - `moonn-teen-camp-home-banner`
   - `moonn-art-gallery-home-banner`
@@ -48,9 +58,11 @@
 
 - `docs/tatiana-munn-exam-prep/exam-prep-live-render-2026-05-12.png`
 - `docs/tatiana-munn-exam-prep/homepage-exam-prep-live-render-2026-05-12.png`
+- `docs/tatiana-munn-exam-prep/exam-prep-seo-render-debug-2026-05-12.png`
 
 ## Notes
 
 - The existing alias `psypodgotovka1` was preserved to avoid creating a duplicate public URL.
 - The full page is served through a lightweight Tilda loader because the self-contained page is large due to inline images.
 - The root `codex/ano-context-recovery` uncommitted context-backup files were not mixed into this Moonn publication branch.
+- Follow-up rule: every new Moonn/Tilda page publication must treat SEO as part of the publication gate: update Tilda meta fields, verify canonical, verify raw H1 count, switch off stale legacy records, render in browser, then record the evidence before reporting completion.

@@ -1560,3 +1560,32 @@ Append-only project history for `moon-psy-site`.
   - `docs/tatiana-munn-exam-prep/publication-report-2026-05-12.md`
   - `docs/tatiana-munn-exam-prep/exam-prep-live-render-2026-05-12.png`
   - `docs/tatiana-munn-exam-prep/homepage-exam-prep-live-render-2026-05-12.png`
+
+## 2026-05-12 — Tatiana Moonn Exam Prep SEO Gate Correction
+
+- Project: Moonn / Tatiana Munn site.
+- Branch: `codex/moonn-exam-prep-tilda`.
+- Trigger: user reminded that published pages must keep the earlier Moonn SEO optimization and be visible in search.
+- Incident:
+  - Initial visual/browser publication was correct, but raw live HTML still contained old Tilda page content with multiple stale H1 headings.
+  - Root cause: the custom T123 loader hid old records at runtime, but legacy Tilda records were still published server-side and visible to crawlers.
+  - Algorithm correction: for Tilda loader-based replacements, do not close publication on rendered DOM alone; verify raw HTML, Tilda meta fields and legacy-record state.
+- Changes:
+  - Added a SEO-visible loader fallback with one H1 to `scripts/build_tatiana_munn_exam_prep_tilda.py`.
+  - Regenerated `docs/tatiana-munn-exam-prep/tilda-html-loader-final.html` and `manifest.json`.
+  - Pushed commit `9126a5d` before Tilda update.
+  - Updated page T123 record `2258994191` from the pushed CDN artifact.
+  - Switched off `19` legacy Tilda records on page `62652841`.
+  - Updated Tilda page SEO settings: title, description, canonical and indexing flags.
+  - Republished `https://moonn.ru/psypodgotovka1`.
+- Verification:
+  - Live raw HTML returns title `Психологическая подготовка к ОГЭ и ЕГЭ — Татьяна Мунн`.
+  - Live raw HTML returns canonical `https://moonn.ru/psypodgotovka1`.
+  - Live raw HTML has exactly one H1: `Психологическая подготовка к экзаменам без паники`.
+  - Old lecture H1/text markers and SoundCloud markers are absent.
+  - Playwright render confirms full page marker, form presence, no SoundCloud iframe, no failed requests and no page errors.
+- Evidence:
+  - `docs/tatiana-munn-exam-prep/publication-report-2026-05-12.md`
+  - `docs/tatiana-munn-exam-prep/exam-prep-seo-render-debug-2026-05-12.png`
+- Follow-up rule:
+  - For every future Moonn/Tilda page publication, SEO gate is mandatory before completion: Tilda meta fields, canonical, raw H1 count, old record visibility, browser render and report update.
