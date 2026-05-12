@@ -1616,3 +1616,35 @@ Append-only project history for `moon-psy-site`.
   - `docs/consultation-home-banner-2026/homepage-consultation-compact-live-2026-05-12.json`
 - Follow-up rule:
   - For homepage T123 combined blocks, always validate valid closing markup plus rendered adjacent bounding boxes before publishing to Tilda.
+
+## 2026-05-12 — Moonn SEO Positioning Architecture Audit
+
+- Project: Moonn / Tatiana Munn site.
+- Branch: `codex/moonn-seo-positioning-architecture`.
+- Trigger: user provided a strategic SEO/positioning analysis and asked to verify it, avoid occupying visible Chrome/Tilda, focus on open public pages only, and define a stronger site architecture before implementation.
+- Decisions:
+  - Treat this as a planning/governance workstream, not a Tilda publication task.
+  - Analyze open semantic public pages as positioning assets; treat closed, opaque, test, legal and transactional URLs as hygiene, not SEO clusters.
+  - Agree with the core diagnosis: the site currently dilutes Tatyana Munn's entity across too many equal-weight topics.
+  - Collapse positioning into three lanes: private practice, emotional intelligence/leadership, teens/exams/family support.
+  - Do not use visible Chrome/Tilda for this planning pass; use repository, HTTP checks and headless audits.
+- Created or changed files:
+  - `scripts/build_moonn_positioning_architecture.py`
+  - `docs/moonn-final-seo-audit-2026-05-12.json`
+  - `docs/moonn-final-seo-audit-2026-05-12.md`
+  - `docs/moonn-final-seo-audit-2026-05-12.csv`
+  - `docs/moonn-public-positioning-map-2026-05-12.json`
+  - `docs/moonn-public-positioning-map-2026-05-12.csv`
+  - `docs/moonn-positioning-architecture-2026-05-12.md`
+- Verification:
+  - `python scripts\moonn_final_seo_audit.py` checked `151` live URLs.
+  - `python scripts\build_moonn_positioning_architecture.py` generated the public URL map and strategy.
+  - `python -m py_compile scripts\build_moonn_positioning_architecture.py` passed.
+- Key findings:
+  - `45` opaque/test/numeric URLs should be redirected, renamed or deindexed.
+  - `92` pages have no detected H1; `16` have multiple H1; `33` duplicate descriptions.
+  - Homepage raw HTML currently has `5` H1 elements and mixes unrelated semantic blocks.
+  - `/psiholog` is a cleaner private-practice pillar candidate but lacks raw H1.
+  - `/speaker` is the cleanest current emotional-intelligence/speaker page.
+  - Off-topic wellness pages and gallery should not be equal SEO signals for the psychology/EI entity.
+- Commit: pending.
