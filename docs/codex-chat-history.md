@@ -1607,8 +1607,12 @@ Append-only project history for `moon-psy-site`.
   - `python -m py_compile scripts\fix_moonn_homepage_consultation_banner.py`
   - Local Playwright preview at 1280px, 825px and 390px confirmed correct block order and no overlap.
   - At 825px, consultation banner height is `519px`, close to the adjacent compact promo blocks.
+  - Tilda homepage T123 record `2251351151` was updated from pushed commit `ab2d71861f04d9171cf7b8a68de1fb00777fe11a` and the homepage was published.
+  - Live raw HTML contains `data-moonn-consultation-compact="2026-05-12"` and does not contain `moonn-consultation-home-signature`.
+  - Live Playwright render at 825px confirms consultation banner height `519px`; `Татьяна Мунн / Направления` starts at the banner bottom with no overlap.
 - Evidence:
   - `docs/consultation-home-banner-2026/homepage-consultation-layout-fix-report-2026-05-12.md`
   - `docs/consultation-home-banner-2026/homepage-consultation-compact-preview-2026-05-12.json`
+  - `docs/consultation-home-banner-2026/homepage-consultation-compact-live-2026-05-12.json`
 - Follow-up rule:
   - For homepage T123 combined blocks, always validate valid closing markup plus rendered adjacent bounding boxes before publishing to Tilda.

@@ -1,0 +1,45 @@
+{
+  "boxes": [
+    {
+      "id": "moonn-teen-camp-home-banner",
+      "top": 1564,
+      "height": 651,
+      "bottom": 2216,
+      "compact": null
+    },
+    {
+      "id": "moonn-art-gallery-home-banner",
+      "top": 2216,
+      "height": 568,
+      "bottom": 2784,
+      "compact": null
+    },
+    {
+      "id": "moonn-exam-prep-home-banner",
+      "top": 2784,
+      "height": 596,
+      "bottom": 3380,
+      "compact": null
+    },
+    {
+      "id": "moonn-consultation-home-banner",
+      "top": 3380,
+      "height": 519,
+      "bottom": 3899,
+      "compact": "2026-05-12"
+    }
+  ],
+  "directionCandidate": {
+    "text": "Татьяна МуннНаправления:   Свяжитесь со мной удобным способом - по номеру телефо",
+    "top": 3899
+  },
+  "ordered": true,
+  "url": "https://moonn.ru/?consultation-layout-fix=20260512-ab2d718-live",
+  "checkedAt": "2026-05-12T11:02:57.398Z",
+  "viewport": {
+    "width": 825,
+    "height": 1500
+  },
+  "pageErrors": [],
+  "passed": true
+}
