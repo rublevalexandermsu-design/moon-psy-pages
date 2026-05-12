@@ -1,0 +1,121 @@
+{
+  "checkedAt": "2026-05-12T10:26:43.001Z",
+  "target": "C:\\пайто н тесты\\Ано_институт_глаболизация\\moon-psy-site\\docs\\consultation-home-banner-2026\\homepage-t123-combined-compact-preview.html",
+  "results": [
+    {
+      "boxes": [
+        {
+          "id": "moonn-teen-camp-home-banner",
+          "top": 8,
+          "height": 536,
+          "bottom": 544,
+          "compact": null
+        },
+        {
+          "id": "moonn-art-gallery-home-banner",
+          "top": 544,
+          "height": 524,
+          "bottom": 1068,
+          "compact": null
+        },
+        {
+          "id": "moonn-exam-prep-home-banner",
+          "top": 1068,
+          "height": 611,
+          "bottom": 1679,
+          "compact": null
+        },
+        {
+          "id": "moonn-consultation-home-banner",
+          "top": 1679,
+          "height": 629,
+          "bottom": 2308,
+          "compact": "2026-05-12"
+        }
+      ],
+      "ordered": true,
+      "viewport": {
+        "width": 1280,
+        "height": 1800
+      },
+      "passed": true
+    },
+    {
+      "boxes": [
+        {
+          "id": "moonn-teen-camp-home-banner",
+          "top": 8,
+          "height": 651,
+          "bottom": 659,
+          "compact": null
+        },
+        {
+          "id": "moonn-art-gallery-home-banner",
+          "top": 659,
+          "height": 639,
+          "bottom": 1298,
+          "compact": null
+        },
+        {
+          "id": "moonn-exam-prep-home-banner",
+          "top": 1298,
+          "height": 596,
+          "bottom": 1894,
+          "compact": null
+        },
+        {
+          "id": "moonn-consultation-home-banner",
+          "top": 1894,
+          "height": 519,
+          "bottom": 2414,
+          "compact": "2026-05-12"
+        }
+      ],
+      "ordered": true,
+      "viewport": {
+        "width": 825,
+        "height": 1500
+      },
+      "passed": true
+    },
+    {
+      "boxes": [
+        {
+          "id": "moonn-teen-camp-home-banner",
+          "top": 8,
+          "height": 832,
+          "bottom": 840,
+          "compact": null
+        },
+        {
+          "id": "moonn-art-gallery-home-banner",
+          "top": 840,
+          "height": 816,
+          "bottom": 1656,
+          "compact": null
+        },
+        {
+          "id": "moonn-exam-prep-home-banner",
+          "top": 1656,
+          "height": 874,
+          "bottom": 2530,
+          "compact": null
+        },
+        {
+          "id": "moonn-consultation-home-banner",
+          "top": 2530,
+          "height": 937,
+          "bottom": 3468,
+          "compact": "2026-05-12"
+        }
+      ],
+      "ordered": true,
+      "viewport": {
+        "width": 390,
+        "height": 1500
+      },
+      "passed": true
+    }
+  ],
+  "passed": true
+}

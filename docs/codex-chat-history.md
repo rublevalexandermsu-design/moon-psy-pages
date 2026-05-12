@@ -1589,3 +1589,26 @@ Append-only project history for `moon-psy-site`.
   - `docs/tatiana-munn-exam-prep/exam-prep-seo-render-debug-2026-05-12.png`
 - Follow-up rule:
   - For every future Moonn/Tilda page publication, SEO gate is mandatory before completion: Tilda meta fields, canonical, raw H1 count, old record visibility, browser render and report update.
+
+## 2026-05-12 — Moonn Homepage Consultation Banner Layout Incident
+
+- Project: Moonn / Tatiana Munn site.
+- Branch: `codex/moonn-homepage-consultation-fix`.
+- Trigger: user reported that the homepage block `Онлайн-консультации для вас и ваших близких` stretched down and overlapped the next native Tilda sections, while the teen camp, art gallery and exam-prep banners were visually correct.
+- Incident:
+  - Symptom: consultation banner became unbounded and absorbed lower homepage content.
+  - Root cause: the combined homepage T123 artifact was truncated inside the consultation summer-price markup and did not close the section.
+  - Algorithm correction: homepage publication cannot be closed by marker/order checks alone; compact banner insertions must pass rendered bounding-box checks against neighboring blocks.
+- Changes:
+  - Added `scripts/fix_moonn_homepage_consultation_banner.py`.
+  - Replaced the broken consultation section in the exam-prep and art-gallery combined homepage artifacts with a compact bounded section.
+  - Preserved Tilda native cart bridge, product SKUs `moonn-consultation-online-1-2026` and `moonn-consultation-online-3-summer-2026`, and public Timepad detail link.
+- Verification:
+  - `python -m py_compile scripts\fix_moonn_homepage_consultation_banner.py`
+  - Local Playwright preview at 1280px, 825px and 390px confirmed correct block order and no overlap.
+  - At 825px, consultation banner height is `519px`, close to the adjacent compact promo blocks.
+- Evidence:
+  - `docs/consultation-home-banner-2026/homepage-consultation-layout-fix-report-2026-05-12.md`
+  - `docs/consultation-home-banner-2026/homepage-consultation-compact-preview-2026-05-12.json`
+- Follow-up rule:
+  - For homepage T123 combined blocks, always validate valid closing markup plus rendered adjacent bounding boxes before publishing to Tilda.
