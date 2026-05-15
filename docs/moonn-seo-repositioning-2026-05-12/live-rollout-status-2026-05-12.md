@@ -48,6 +48,15 @@ The remaining noindex queue from the 2026-05-12 register was also applied throug
 - Applied archive/offtopic pages include a live noindex marker after publication.
 - Full noindex verification evidence: `docs/moonn-seo-repositioning-2026-05-12/noindex-live-verification-2026-05-12.json`.
 
+## 2026-05-15 Noindex Cache Recheck
+
+- Recheck command: `python scripts\verify_moonn_noindex_live.py --delay 0.05`.
+- Result: `18/47` URLs expose a live `noindex` marker.
+- Missing noindex: `29/47` URLs remain without a live `noindex` marker.
+- The delayed set is still dominated by numeric `page*.html` URLs, plus `/schematherapy`.
+- No Chrome, Tilda UI, redirects, payments, secrets, deletion, or public publication actions were performed during this recheck.
+- Decision: these delayed pages still need a safer redirect/remove-from-sitemap route or a verified non-visual Tilda write path; repeating blind UI saves is not a good next step.
+
 ## Incident
 
 - Symptom: repeated Chrome/Tilda UI automation runs disturbed the user's active browser session and triggered re-opening/re-authentication/anti-bot friction.

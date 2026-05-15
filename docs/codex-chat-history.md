@@ -1742,3 +1742,22 @@ Append-only project history for `moon-psy-site`.
   - If numeric `page*.html` URLs still do not expose noindex, switch to redirect/remove-from-sitemap governance rather than repeating page settings saves.
   - Homepage gateway/H1, core H1 cleanup, schema/AEO visible answer sections, redirect queue and reindex packet are still open.
 - Commit: pending.
+
+## 2026-05-15 — Moonn SEO Repositioning Noindex Cache Recheck
+
+- Project: Moonn / Tatiana Munn site.
+- Branch: `codex/moonn-seo-positioning-architecture`.
+- Trigger: scheduled heartbeat `moonn-noindex-cache-recheck`.
+- Scope: recheck noindex propagation only; no Chrome, Tilda UI, redirects, payments, secrets, deletion, or public publication.
+- Verification:
+  - Ran `python scripts\verify_moonn_noindex_live.py --delay 0.05`.
+  - Refreshed `docs/moonn-seo-repositioning-2026-05-12/noindex-live-verification-2026-05-12.json`.
+  - Current confirmed noindex count remains `18/47`.
+  - Missing noindex remains `29/47`, mostly numeric `page*.html` URLs plus `/schematherapy`.
+- Decision:
+  - Delayed pages still need a redirect/remove-from-sitemap route or a verified non-visual Tilda write path.
+  - Do not repeat blind Tilda UI saves for the delayed set.
+- Updated files:
+  - `docs/moonn-seo-repositioning-2026-05-12/noindex-live-verification-2026-05-12.json`
+  - `docs/moonn-seo-repositioning-2026-05-12/live-rollout-status-2026-05-12.md`
+  - `docs/codex-chat-history.md`
