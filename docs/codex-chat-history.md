@@ -1780,3 +1780,23 @@ Append-only project history for `moon-psy-site`.
   - `https://moonn.ru/timepad-registration?lecture=7`
 - Verification gate:
   - Local and live browser checks must confirm that the selected Timepad registration form opens directly, not the recurring date list.
+
+### Publication result
+
+- Published Tilda page `141821916` at `https://moonn.ru/timepad-registration`.
+- Saved native T123 record `2273574411` with the generated bridge block.
+- Set alias `timepad-registration`, page title `Регистрация на лекцию Татьяны Мунн`, and noindex bridge behavior.
+- Live raw HTML check:
+  - status `200`;
+  - marker `moonn-timepad-registration-bridge` present;
+  - Timepad widget marker present;
+  - `noindex` present;
+  - H1 count `1`;
+  - SoundCloud marker absent.
+- Rendered browser check:
+  - `https://moonn.ru/timepad-registration?lecture=9` opened the selected form for `1 июня 2026, 19:00`;
+  - `E-mail`, `Фамилия`, `Имя`, `Телефон (Whatsapp)` fields visible;
+  - recurring date list absent.
+- Evidence:
+  - `docs/moonn-timepad-registration-bridge/publication-report-2026-05-15.md`
+  - `docs/moonn-timepad-registration-bridge/live-bridge-lecture-09-2026-05-15.png`
