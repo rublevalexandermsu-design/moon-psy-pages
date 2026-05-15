@@ -10,6 +10,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parent
 DATA_PATH = ROOT / "data" / "site.json"
+TIMEPAD_REGISTRATION_PATH = ROOT / "data" / "timepad-registration-pages.json"
 DIST = ROOT / "dist"
 
 
@@ -265,6 +266,141 @@ def copy_static_tree(source: Path, destination: Path) -> None:
     shutil.copytree(source, destination)
 
 
+def load_timepad_registration_pages() -> dict[str, Any]:
+    if not TIMEPAD_REGISTRATION_PATH.exists():
+        return {"pages": []}
+    with TIMEPAD_REGISTRATION_PATH.open("r", encoding="utf-8") as fh:
+        return json.load(fh)
+
+
+def render_timepad_registration_page(site: dict[str, Any], page: dict[str, Any]) -> str:
+    canonical = f'{site["site_url"].rstrip("/")}/timepad/{page["slug"]}/'
+    master_url = page["master_event_url"]
+    title = page["title"]
+    description = page["description"]
+    event_id = int(page["master_event_id"])
+    recurring_event_id = int(page["recurring_event_id"])
+    poster = page.get("poster_url", "")
+    poster_html = (
+        f'<img class="poster" src="{esc(poster)}" alt="{esc(page.get("poster_alt", title))}" />'
+        if poster
+        else ""
+    )
+    widget_config = {
+        "event": {"id": event_id},
+        "prefill": {"recurringEvent": recurring_event_id},
+    }
+    widget_config_json = json.dumps(widget_config, ensure_ascii=False)
+    return f"""<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{esc(title)}</title>
+  <meta name="description" content="{esc(description)}" />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="canonical" href="{esc(canonical)}" />
+  <style>
+    :root {{ color-scheme: light; }}
+    body {{
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f8f3ff;
+      color: #1f2430;
+    }}
+    .wrap {{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 16px 42px;
+    }}
+    .hero {{
+      display: grid;
+      grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #eadcf7;
+      border-radius: 12px;
+      box-shadow: 0 18px 42px rgba(88, 48, 140, .12);
+    }}
+    .poster {{
+      width: 100%;
+      max-width: 280px;
+      border-radius: 10px;
+      display: block;
+    }}
+    .kicker {{
+      margin: 0 0 8px;
+      color: #6a36c9;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 13px;
+    }}
+    h1 {{
+      margin: 0 0 12px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }}
+    .lead {{
+      margin: 0 0 12px;
+      font-size: 18px;
+      line-height: 1.5;
+    }}
+    .back {{
+      display: inline-flex;
+      margin-top: 8px;
+      color: #5d2fd1;
+      font-weight: 700;
+      text-decoration: none;
+    }}
+    .widget {{
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #eadcf7;
+      border-radius: 12px;
+    }}
+    @media (max-width: 720px) {{
+      .hero {{ grid-template-columns: 1fr; }}
+      .poster {{ max-width: 100%; }}
+    }}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div>{poster_html}</div>
+      <div>
+        <p class="kicker">{esc(page["date_label"])}</p>
+        <h1>{esc(page["heading"])}</h1>
+        <p class="lead">{esc(description)}</p>
+        <a class="back" href="{esc(master_url)}">Вернуться к общей странице лекций</a>
+      </div>
+    </section>
+    <section class="widget" aria-label="Форма регистрации Timepad">
+      <script type="text/javascript" async="async" defer="defer" charset="UTF-8"
+        src="https://timepad.ru/js/tpwf/loader/min/loader.js?v=355"
+        data-timepad-widget-v2="event_register">
+        (function(){{return {widget_config_json};}})();
+      </script>
+    </section>
+  </main>
+</body>
+</html>
+"""
+
+
+def build_timepad_registration_pages(site: dict[str, Any], out_dir: Path) -> None:
+    pages = load_timepad_registration_pages().get("pages", [])
+    for page in pages:
+        page_dir = out_dir / "timepad" / page["slug"]
+        page_dir.mkdir(parents=True, exist_ok=True)
+        page_html = render_timepad_registration_page(site, page)
+        (page_dir / "index.html").write_text(page_html, encoding="utf-8")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", default="dist")
@@ -287,6 +423,8 @@ def main() -> None:
     for page in pages:
         content = render_page(site, person, pages, page)
         (out_dir / page["filename"]).write_text(content, encoding="utf-8")
+
+    build_timepad_registration_pages(site, out_dir)
 
     (out_dir / ".nojekyll").write_text("", encoding="utf-8")
     (out_dir / "CNAME").write_text((ROOT / "CNAME").read_text(encoding="utf-8"), encoding="utf-8")

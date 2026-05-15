@@ -1,0 +1,88 @@
+{
+  "pages": [
+    {
+      "slug": "relations-lecture-07-register",
+      "title": "Регистрация на лекцию 7/13 — Психология длительных отношений",
+      "heading": "Психология длительных отношений",
+      "description": "Форма регистрации Timepad уже открыта на лекцию 18 мая 2026 года в 19:00.",
+      "date_label": "18 мая 2026, понедельник, 19:00",
+      "master_event_id": 3334362,
+      "recurring_event_id": 3889452,
+      "master_event_url": "https://moonn.timepad.ru/event/3334362/",
+      "poster_url": "https://ucare.timepad.ru/c8751919-3b7d-4eb3-863e-810e2c57185f/-/preview/308x600/-/format/jpeg/poster_event_3944310.jpg",
+      "poster_alt": "Афиша лекции Психология длительных отношений. Татьяна Мунн."
+    },
+    {
+      "slug": "relations-lecture-08-register",
+      "title": "Регистрация на лекцию 8/13 — Кризисы в отношениях",
+      "heading": "Кризисы в отношениях",
+      "description": "Форма регистрации Timepad уже открыта на лекцию 25 мая 2026 года в 19:00.",
+      "date_label": "25 мая 2026, понедельник, 19:00",
+      "master_event_id": 3334362,
+      "recurring_event_id": 3889453,
+      "master_event_url": "https://moonn.timepad.ru/event/3334362/",
+      "poster_url": "https://ucare.timepad.ru/11640e17-5242-4899-ac9b-9e22c055b72e/-/preview/308x600/-/format/jpeg/poster_event_3944311.jpg",
+      "poster_alt": "Афиша лекции Кризисы в отношениях. Татьяна Мунн."
+    },
+    {
+      "slug": "relations-lecture-09-register",
+      "title": "Регистрация на лекцию 9/13 — Как детство влияет на наши отношения",
+      "heading": "Как детство влияет на наши отношения",
+      "description": "Форма регистрации Timepad уже открыта на лекцию 1 июня 2026 года в 19:00.",
+      "date_label": "1 июня 2026, понедельник, 19:00",
+      "master_event_id": 3334362,
+      "recurring_event_id": 3889454,
+      "master_event_url": "https://moonn.timepad.ru/event/3334362/",
+      "poster_url": "https://ucare.timepad.ru/f2cbb463-5559-4bba-af51-d65331e1becf/-/preview/308x600/-/format/jpeg/poster_event_3944312.jpg",
+      "poster_alt": "Афиша лекции Как детство влияет на наши отношения. Татьяна Мунн."
+    },
+    {
+      "slug": "relations-lecture-10-register",
+      "title": "Регистрация на лекцию 10/13 — Психология любви к себе",
+      "heading": "Психология любви к себе",
+      "description": "Форма регистрации Timepad уже открыта на лекцию 8 июня 2026 года в 19:00.",
+      "date_label": "8 июня 2026, понедельник, 19:00",
+      "master_event_id": 3334362,
+      "recurring_event_id": 3889455,
+      "master_event_url": "https://moonn.timepad.ru/event/3334362/",
+      "poster_url": "https://ucare.timepad.ru/13c0dde0-bd33-40de-81ea-8941f0b5cbc7/-/preview/308x600/-/format/jpeg/poster_event_3944313.jpg",
+      "poster_alt": "Афиша лекции Психология любви к себе. Татьяна Мунн."
+    },
+    {
+      "slug": "relations-lecture-11-register",
+      "title": "Регистрация на лекцию 11/13 — Психология личных границ",
+      "heading": "Психология личных границ",
+      "description": "Форма регистрации Timepad уже открыта на лекцию 15 июня 2026 года в 19:00.",
+      "date_label": "15 июня 2026, понедельник, 19:00",
+      "master_event_id": 3334362,
+      "recurring_event_id": 3889456,
+      "master_event_url": "https://moonn.timepad.ru/event/3334362/",
+      "poster_url": "https://ucare.timepad.ru/301d6a39-889c-4f47-801b-0f50a41f72aa/-/preview/308x600/-/format/jpeg/poster_event_3944314.jpg",
+      "poster_alt": "Афиша лекции Психология личных границ. Татьяна Мунн."
+    },
+    {
+      "slug": "relations-lecture-12-register",
+      "title": "Регистрация на лекцию 12/13 — Психология конфликтов",
+      "heading": "Психология конфликтов",
+      "description": "Форма регистрации Timepad уже открыта на лекцию 22 июня 2026 года в 19:00.",
+      "date_label": "22 июня 2026, понедельник, 19:00",
+      "master_event_id": 3334362,
+      "recurring_event_id": 3889457,
+      "master_event_url": "https://moonn.timepad.ru/event/3334362/",
+      "poster_url": "https://ucare.timepad.ru/ce06bb8b-6509-4039-9498-33259eb67da5/-/preview/308x600/-/format/jpeg/poster_event_3944315.jpg",
+      "poster_alt": "Афиша лекции Психология конфликтов. Татьяна Мунн."
+    },
+    {
+      "slug": "relations-lecture-13-register",
+      "title": "Регистрация на лекцию 13/13 — Эмоциональный интеллект в отношениях",
+      "heading": "Эмоциональный интеллект в отношениях",
+      "description": "Форма регистрации Timepad уже открыта на лекцию 29 июня 2026 года в 19:00.",
+      "date_label": "29 июня 2026, понедельник, 19:00",
+      "master_event_id": 3334362,
+      "recurring_event_id": 3889458,
+      "master_event_url": "https://moonn.timepad.ru/event/3334362/",
+      "poster_url": "https://ucare.timepad.ru/cfe1c859-fee5-4055-b012-6ee24634844b/-/preview/308x600/-/format/jpeg/poster_event_3944317.jpg",
+      "poster_alt": "Афиша лекции Эмоциональный интеллект в отношениях. Татьяна Мунн."
+    }
+  ]
+}
