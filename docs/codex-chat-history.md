@@ -1800,3 +1800,33 @@ Append-only project history for `moon-psy-site`.
 - Evidence:
   - `docs/moonn-timepad-registration-bridge/publication-report-2026-05-15.md`
   - `docs/moonn-timepad-registration-bridge/live-bridge-lecture-09-2026-05-15.png`
+
+## 2026-05-15 — Moonn Timepad Bridge Poster Source Correction
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-timepad-registration-bridge`.
+- Trigger: user reported that `https://moonn.ru/timepad-registration` used old-looking right-side banner images instead of the newer generated posters used in the Fast Psychology Timepad lecture cards.
+- Root cause:
+  - `data/moonn-timepad-registration-bridge.json` still pointed to earlier GitHub `visual_card` fallback images.
+  - The Timepad master agenda already had the correct standalone `ucare.timepad.ru/...poster_event_*.jpg` poster URLs.
+- Decision:
+  - Use the Timepad standalone poster URLs as the canonical bridge `poster_url` source.
+  - Keep old visual-card assets out of the live bridge, but do not delete archival files until a usage scan confirms they are not referenced elsewhere.
+- Updated files:
+  - `data/moonn-timepad-registration-bridge.json`
+  - `scripts/build_moonn_timepad_registration_bridge.py`
+  - `docs/moonn-timepad-registration-bridge/tilda-html-block-final.html`
+  - `docs/moonn-timepad-registration-bridge/tilda-page-final.html`
+  - `docs/moonn-timepad-registration-bridge/manifest.json`
+  - `docs/moonn-timepad-registration-bridge/publication-report-2026-05-15.md`
+  - `docs/moonn-timepad-registration-bridge/live-bridge-poster-update-2026-05-15.png`
+- Publication:
+  - Republished Tilda page `141821916`, T123 record `2273574411`, alias `timepad-registration`.
+- Verification:
+  - Raw live HTML for `https://moonn.ru/timepad-registration?lecture=7` returned `200`.
+  - `poster_event_3944310.jpg` is present.
+  - Old `raw.githubusercontent.com/rublevalexandermsu-design/moon-psy-pages/...visual_card...` source is absent.
+  - `noindex` is present and H1 count is `1`.
+  - Rendered check confirmed the right-side poster loads from `ucare.timepad.ru`, natural size `308x173`, and the selected registration form opens for `18 мая 2026, 19:00`.
+- New rule:
+  - Moonn bridge/page manifests for Timepad lectures must consume the same poster source as the live Timepad agenda report; generated fallback visual cards must not remain the public default once standalone event posters exist.

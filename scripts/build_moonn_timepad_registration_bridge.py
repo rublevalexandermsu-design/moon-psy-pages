@@ -101,12 +101,12 @@ def build_block(data: dict) -> str:
     #moonn-timepad-registration-bridge .tm-bridge-lead{{margin:0 0 20px;font-size:18px;line-height:1.55;color:#40354d}}
     #moonn-timepad-registration-bridge .tm-bridge-meta{{display:flex;flex-wrap:wrap;gap:9px;margin:0;padding:0;list-style:none}}
     #moonn-timepad-registration-bridge .tm-bridge-meta li{{padding:8px 11px;border-radius:999px;background:#fff;border:1px solid rgba(82,32,184,.14);font-size:14px;color:#342845}}
-    #moonn-timepad-registration-bridge .tm-bridge-poster{{height:100%;min-height:290px;background:#efe8fb;overflow:hidden}}
-    #moonn-timepad-registration-bridge .tm-bridge-poster img{{width:100%;height:100%;object-fit:cover;display:block}}
+    #moonn-timepad-registration-bridge .tm-bridge-poster{{height:100%;min-height:290px;background:linear-gradient(135deg,#f5edff,#eef8ff);overflow:hidden;display:grid;place-items:center;padding:14px}}
+    #moonn-timepad-registration-bridge .tm-bridge-poster img{{width:100%;height:100%;object-fit:contain;display:block;border-radius:16px}}
     #moonn-timepad-registration-bridge .tm-bridge-widget{{margin:26px auto 0;background:#fff;border:1px solid rgba(91,50,156,.16);border-radius:22px;padding:18px;box-shadow:0 12px 36px rgba(82,32,184,.10)}}
     #moonn-timepad-registration-bridge .tm-bridge-fallback{{margin:26px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}}
     #moonn-timepad-registration-bridge .tm-bridge-card{{display:grid;grid-template-columns:118px 1fr;gap:14px;align-items:center;padding:12px;border:1px solid rgba(91,50,156,.14);border-radius:18px;background:rgba(255,255,255,.78);color:#1d1725;text-decoration:none}}
-    #moonn-timepad-registration-bridge .tm-bridge-card img{{grid-row:1/4;width:118px;aspect-ratio:16/10;object-fit:cover;border-radius:12px}}
+    #moonn-timepad-registration-bridge .tm-bridge-card img{{grid-row:1/4;width:118px;aspect-ratio:16/10;object-fit:contain;border-radius:12px;background:#f7f0ff}}
     #moonn-timepad-registration-bridge .tm-bridge-card span{{font-size:12px;font-weight:800;color:#6a2fca}}
     #moonn-timepad-registration-bridge .tm-bridge-card strong{{font-size:16px;line-height:1.2;color:#241331}}
     #moonn-timepad-registration-bridge .tm-bridge-card em{{font-style:normal;font-size:13px;color:#5e5368}}
