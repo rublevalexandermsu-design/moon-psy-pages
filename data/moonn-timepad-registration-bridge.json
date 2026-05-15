@@ -1,0 +1,71 @@
+{
+  "project": "Moonn / Tatyana Munn",
+  "kind": "timepad_recurring_registration_bridge",
+  "canonical_url": "https://moonn.ru/timepad-registration",
+  "robots": "noindex,follow",
+  "timepad_master_event_id": 3334362,
+  "timepad_master_url": "https://moonn.timepad.ru/event/3334362/",
+  "series_name": "Бесплатные лекции по психологии с Татьяной Мунн",
+  "age_limit": "16+",
+  "city": "Москва",
+  "venue": "Культурный центр «Полярный»",
+  "address": "метро Бабушкинская, ул. Полярная, д. 9",
+  "lectures": [
+    {
+      "lecture_no": 7,
+      "date": "2026-05-18",
+      "time": "19:00-21:00",
+      "title": "Психология длительных отношений",
+      "recurring_event_id": 3889452,
+      "poster_url": "https://raw.githubusercontent.com/rublevalexandermsu-design/moon-psy-pages/main/assets/timepad/visuals/tatyana-munn/tatyana-munn-psiholog-mgu-relations-lecture-07-2026-05-18-psihologiya-dlitelnyh-otnosh-card.png"
+    },
+    {
+      "lecture_no": 8,
+      "date": "2026-05-25",
+      "time": "19:00-21:00",
+      "title": "Кризисы в отношениях",
+      "recurring_event_id": 3889453,
+      "poster_url": "https://raw.githubusercontent.com/rublevalexandermsu-design/moon-psy-pages/main/assets/timepad/visuals/tatyana-munn/tatyana-munn-psiholog-mgu-relations-lecture-08-2026-05-25-krizisy-v-otnosheniyah-card.png"
+    },
+    {
+      "lecture_no": 9,
+      "date": "2026-06-01",
+      "time": "19:00-21:00",
+      "title": "Как детство влияет на наши отношения",
+      "recurring_event_id": 3889454,
+      "poster_url": "https://raw.githubusercontent.com/rublevalexandermsu-design/moon-psy-pages/main/assets/timepad/visuals/tatyana-munn/tatyana-munn-psiholog-mgu-relations-lecture-09-2026-06-01-kak-detstvo-vliyaet-na-nashi-card.png"
+    },
+    {
+      "lecture_no": 10,
+      "date": "2026-06-08",
+      "time": "19:00-21:00",
+      "title": "Психология любви к себе",
+      "recurring_event_id": 3889455,
+      "poster_url": "https://raw.githubusercontent.com/rublevalexandermsu-design/moon-psy-pages/main/assets/timepad/visuals/tatyana-munn/tatyana-munn-psiholog-mgu-relations-lecture-10-2026-06-08-psihologiya-lyubvi-k-sebe-card.png"
+    },
+    {
+      "lecture_no": 11,
+      "date": "2026-06-15",
+      "time": "19:00-21:00",
+      "title": "Психология личных границ",
+      "recurring_event_id": 3889456,
+      "poster_url": "https://raw.githubusercontent.com/rublevalexandermsu-design/moon-psy-pages/main/assets/timepad/visuals/tatyana-munn/tatyana-munn-psiholog-mgu-relations-lecture-11-2026-06-15-psihologiya-lichnyh-granic-card.png"
+    },
+    {
+      "lecture_no": 12,
+      "date": "2026-06-22",
+      "time": "19:00-21:00",
+      "title": "Психология конфликтов",
+      "recurring_event_id": 3889457,
+      "poster_url": "https://raw.githubusercontent.com/rublevalexandermsu-design/moon-psy-pages/main/assets/timepad/visuals/tatyana-munn/tatyana-munn-psiholog-mgu-relations-lecture-12-2026-06-22-psihologiya-konfliktov-card.png"
+    },
+    {
+      "lecture_no": 13,
+      "date": "2026-06-29",
+      "time": "19:00-21:00",
+      "title": "Эмоциональный интеллект в отношениях",
+      "recurring_event_id": 3889458,
+      "poster_url": "https://raw.githubusercontent.com/rublevalexandermsu-design/moon-psy-pages/main/assets/timepad/visuals/tatyana-munn/tatyana-munn-psiholog-mgu-relations-lecture-13-2026-06-29-emocionalnyy-intellekt-v-otn-card.png"
+    }
+  ]
+}

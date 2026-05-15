@@ -1761,3 +1761,22 @@ Append-only project history for `moon-psy-site`.
   - `docs/moonn-seo-repositioning-2026-05-12/noindex-live-verification-2026-05-12.json`
   - `docs/moonn-seo-repositioning-2026-05-12/live-rollout-status-2026-05-12.md`
   - `docs/codex-chat-history.md`
+
+## 2026-05-15 — Moonn Timepad Registration Bridge
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-timepad-registration-bridge`.
+- Trigger: user asked to move the Timepad direct-registration helper from `school.miiiips.ru` to the canonical `moonn.ru` domain.
+- Decision:
+  - Use one noindex Tilda page with query parameter `?lecture=N` instead of seven duplicate public pages.
+  - Keep Timepad as the payment/registration processor; the Moonn page is only a UX bridge to the selected recurring session.
+- Prepared artifacts:
+  - `data/moonn-timepad-registration-bridge.json`
+  - `scripts/build_moonn_timepad_registration_bridge.py`
+  - `docs/moonn-timepad-registration-bridge/tilda-html-block-final.html`
+  - `docs/moonn-timepad-registration-bridge/tilda-page-final.html`
+  - `docs/moonn-timepad-registration-bridge/manifest.json`
+- Publication target:
+  - `https://moonn.ru/timepad-registration?lecture=7`
+- Verification gate:
+  - Local and live browser checks must confirm that the selected Timepad registration form opens directly, not the recurring date list.
