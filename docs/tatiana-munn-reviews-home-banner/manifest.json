@@ -1,0 +1,42 @@
+{
+  "project": "Moonn / Tatyana Munn site",
+  "workstream": "homepage reviews banner",
+  "created_at": "2026-05-17T13:00:00+03:00",
+  "canonical_reviews_url": "https://moonn.ru/otzivi",
+  "target_homepage": "https://moonn.ru/",
+  "source_profile": "https://uslugi.yandex.ru/profile/TatyanaKumskovamunn-948629",
+  "artifacts": {
+    "tilda_html_block": "docs/tatiana-munn-reviews-home-banner/tilda-html-block-final.html",
+    "preview_html": "docs/tatiana-munn-reviews-home-banner/homepage-reviews-banner-preview.html"
+  },
+  "placement": {
+    "recommended_tilda_block_type": "T123 HTML",
+    "recommended_position": "after the existing small homepage service banners, near the consultation/exam/gallery cards",
+    "reason": "same visual family and direct trust route to the canonical reviews page",
+    "published_tilda_page_id": "42678538",
+    "published_tilda_record_id": "2251351151",
+    "published_at": "2026-05-17T14:15:00+03:00"
+  },
+  "publication": {
+    "status": "published",
+    "live_homepage_marker": "moonn-reviews-home-banner",
+    "live_reviews_page_marker": "moonn-yandex-reviews-quality-layer",
+    "evidence": [
+      "docs/tatiana-munn-reviews-home-banner/live-reviews-block-desktop-2026-05-17.png",
+      "docs/tatiana-munn-reviews-home-banner/live-reviews-block-mobile-2026-05-17.png",
+      "docs/tatiana-munn-reviews-home-banner/publication-report-2026-05-17.md"
+    ]
+  },
+  "copy_rules": [
+    "Do not claim unverified rating or review count in the homepage banner.",
+    "Do not mirror full Yandex review texts in the banner.",
+    "Keep /otzivi as the canonical reviews page instead of creating a duplicate page."
+  ],
+  "verification_gate": [
+    "raw homepage HTML contains moonn-reviews-home-banner",
+    "rendered homepage shows the banner without text overflow on desktop and mobile",
+    "CTA and right-side media panel link to /otzivi",
+    "reviews page returns HTTP 200",
+    "public text contains no internal technical wording"
+  ]
+}

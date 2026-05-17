@@ -1830,3 +1830,37 @@ Append-only project history for `moon-psy-site`.
   - Rendered check confirmed the right-side poster loads from `ucare.timepad.ru`, natural size `308x173`, and the selected registration form opens for `18 мая 2026, 19:00`.
 - New rule:
   - Moonn bridge/page manifests for Timepad lectures must consume the same poster source as the live Timepad agenda report; generated fallback visual cards must not remain the public default once standalone event posters exist.
+
+## 2026-05-17 — Moonn Homepage Reviews Banner Packet
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-homepage-reviews-banner`.
+- Trigger: user asked whether the reviews page and small homepage service banners already existed, and requested one more homepage block linking to Tatyana Munn reviews.
+- Verified facts:
+  - Live homepage `https://moonn.ru/` returned `200`.
+  - Existing homepage markers are present: `moonn-teen-camp-home-banner`, `moonn-art-gallery-home-banner`, `moonn-exam-prep-home-banner`, `moonn-consultation-home-banner`.
+  - Live homepage does not yet contain `moonn-reviews-home-banner`.
+  - Live reviews page `https://moonn.ru/otzivi` returned `200` and contains Yandex reviews layers/profile routing.
+- Decision:
+  - Keep `/otzivi` as the canonical reviews page.
+  - Add a fifth same-family homepage Tilda banner linking to `/otzivi`.
+  - Do not create a duplicate reviews page and do not claim unverified rating/count in the homepage banner.
+- Prepared artifacts:
+  - `docs/tatiana-munn-reviews-home-banner/tilda-html-block-final.html`
+  - `docs/tatiana-munn-reviews-home-banner/homepage-reviews-banner-preview.html`
+  - `docs/tatiana-munn-reviews-home-banner/manifest.json`
+  - `docs/tatiana-munn-reviews-home-banner/publication-report-2026-05-17.md`
+- Publication status:
+  - Published through Tilda on homepage page `42678538` by updating existing T123 record `2251351151`.
+  - Raw live homepage check confirms `moonn-reviews-home-banner` and `/otzivi` are present.
+  - Existing homepage markers remain present: `moonn-teen-camp-home-banner`, `moonn-art-gallery-home-banner`, `moonn-exam-prep-home-banner`, `moonn-consultation-home-banner`.
+  - Browser click check confirms the new CTA opens `https://moonn.ru/otzivi`, where `moonn-yandex-reviews-quality-layer` is present.
+  - Evidence screenshots:
+    - `docs/tatiana-munn-reviews-home-banner/live-reviews-block-desktop-2026-05-17.png`
+    - `docs/tatiana-munn-reviews-home-banner/live-reviews-block-mobile-2026-05-17.png`
+- Incident / correction:
+  - Earlier UI paste/publish attempt was not sufficient because Tilda can show a publish flow while the T123 `code` field was not actually updated.
+  - Correct gate: update canonical T123 `code` field, publish homepage, then verify raw live marker and browser route.
+- Follow-up rule:
+  - Homepage promotion cards should be managed as a canonical banner family: isolated Tilda block, manifest, visible marker, browser check, and project-history entry.
+  - Tilda popup or editor visual state is never enough proof of publication.
