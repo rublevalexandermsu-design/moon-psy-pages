@@ -199,3 +199,25 @@ Do not expose private YouTube links on public Tilda pages. The public sales page
 - Tilda customer accounts for online store: `https://help-ru.tilda.cc/online-store/customer-accounts`
 - Tilda Members access after payment: `https://help-ru.tilda.cc/membership`
 - Tilda courses and paid course access: `https://help-ru.tilda.cc/courses`
+
+## 2026-05-17 Price And Bundle Update
+
+User updated the commercial model:
+
+- single lecture recording: `2000 RUB`;
+- package: `5000 RUB` for five lecture recordings on choice;
+- public button: `Получить запись`;
+- bundle button: `Выбрать пакет`;
+- support contact should include Tatyana Munn's Telegram and/or WhatsApp after payment.
+
+Applied registry changes:
+
+- `registry/products/paid-video-lectures.manifest.json` now stores `default_price_rub: 2000`, `bundle_price_rub: 5000`, and `bundle_selection_count: 5`.
+- `registry/products/paid-video-lectures.schema.json` now supports bundle and support fields.
+- `scripts/prepare_paid_video_lecture_products.py` regenerates the manifest price contract and Tilda import CSV.
+- `registry/products/paid-video-lectures-tilda-catalog-2026-05-17.csv` contains 10 single lecture products plus the five-recording bundle product.
+- `docs/paid-video-lectures-checkout-2026-05-17.md` records the checkout/access implementation packet.
+
+Important constraint:
+
+- Do not send raw YouTube links as the fulfillment mechanism. YouTube unlisted links can be shared by anyone with the link; use Tilda Members/Courses protected pages for the viewer experience.

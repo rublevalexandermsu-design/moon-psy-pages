@@ -77,3 +77,44 @@ Append-only project history for `moon-psy-site`.
 - Risk notes:
   - Shared credentials and private video links are sensitive; rotate the password after the setup session.
   - Public sales pages must not expose raw private or unlisted YouTube links.
+
+## 2026-05-17 — Paid Lecture Checkout Price And Bundle Contract
+
+- Project: Moonn / Tilda site.
+- Workstream: paid video lectures and protected access.
+- Branch: `codex/moonn-paid-video-lectures`.
+- User request:
+  - return to the paid lecture page task while iClient access is pending;
+  - turn the existing `events_tp` lecture page into a paid recording storefront;
+  - set each lecture recording price to `2000 RUB`;
+  - add a `5000 RUB` package for five recordings on choice;
+  - after payment, show the recording inside the site rather than sending visitors away to YouTube;
+  - include Tatyana Munn's Telegram/support route for access problems.
+- Decisions:
+  - Continue the existing `codex/moonn-paid-video-lectures` branch instead of mixing this with the Timepad consultation sync branch.
+  - Keep `https://moonn.ru/events_tp` / Tilda page `66814657` as the canonical storefront.
+  - Use Tilda catalog/cart plus Members/Courses protected pages as the access model.
+  - Treat raw YouTube/unlisted links as insufficient copy protection; do not use them as public fulfillment.
+  - Use the five-recording bundle as a separate product with post-payment selection/access registry, not as five unrelated cart items.
+- Created or changed files:
+  - `scripts/prepare_paid_video_lecture_products.py`
+  - `registry/products/paid-video-lectures.schema.json`
+  - `registry/products/paid-video-lectures.manifest.json`
+  - `registry/products/paid-video-lectures-tilda-catalog-2026-05-17.csv`
+  - `docs/paid-video-lectures-checkout-2026-05-17.md`
+  - `docs/paid-video-lectures-tilda-plan-2026-05-03.md`
+  - `docs/codex-chat-history.md`
+- Verified:
+  - manifest price contract is now single `2000`, bundle `5000`, bundle size `5`;
+  - generated Tilda CSV contains 10 lecture products plus 1 bundle product;
+  - generated manifest/CSV contain no raw YouTube watch/embed URLs;
+  - official Tilda docs confirm cart/payment plus Members access after successful payment and CSV/YML catalog import;
+  - official YouTube Help confirms unlisted videos are accessible/shareable by anyone with the link.
+- Open questions / blockers:
+  - Confirm Tatyana Munn's exact Telegram URL/handle before adding it to public fulfillment text.
+  - Verify current Tilda payment provider/seller settings in the UI before live checkout.
+  - Create protected watch pages/groups for the five uniquely matched recordings first.
+  - Owner still needs to choose correct videos for four ambiguous YouTube matches and decide how to treat `3334362`.
+- Risk notes:
+  - Money/payment settings and paid content access remain high-risk; do not publish live payment flow before visual checkout and access testing.
+  - If a buyer can pay before a watch page exists, the operation needs a controlled pending-access process and support SLA.

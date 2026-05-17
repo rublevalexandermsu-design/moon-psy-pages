@@ -25,6 +25,14 @@
       "type": "integer",
       "minimum": 1
     },
+    "bundle_price_rub": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "bundle_selection_count": {
+      "type": "integer",
+      "minimum": 1
+    },
     "canonical_store_page": {
       "type": "object",
       "required": ["url", "tilda_page_id", "alias", "role"],
@@ -41,7 +49,46 @@
         "tilda_module": {"type": "string"},
         "payment_receiver": {"type": "string"},
         "delivery_rule": {"type": "string"},
-        "video_protection_rule": {"type": "string"}
+        "video_protection_rule": {"type": "string"},
+        "bundle_delivery_rule": {"type": "string"}
+      }
+    },
+    "support": {
+      "type": "object",
+      "properties": {
+        "telegram_url": {"type": ["string", "null"]},
+        "whatsapp_phone": {"type": ["string", "null"]},
+        "public_support_text": {"type": "string"}
+      }
+    },
+    "bundle_products": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["bundle_id", "title", "price_rub", "selection_count", "eligible_lecture_ids", "status"],
+        "properties": {
+          "bundle_id": {"type": "string"},
+          "title": {"type": "string"},
+          "price_rub": {"type": "integer"},
+          "selection_count": {"type": "integer"},
+          "tilda_product_sku": {"type": "string"},
+          "tilda_member_group": {"type": "string"},
+          "eligible_lecture_ids": {
+            "type": "array",
+            "items": {"type": "string"}
+          },
+          "status": {
+            "enum": [
+              "draft_pending_video_delivery",
+              "needs_tilda_product",
+              "ready_for_staging",
+              "staging_tested",
+              "ready_for_production",
+              "published"
+            ]
+          },
+          "notes": {"type": "string"}
+        }
       }
     },
     "lectures": {
