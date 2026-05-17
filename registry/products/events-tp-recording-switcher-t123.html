@@ -1,0 +1,192 @@
+<style>
+  .moonn-recording-price {
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 1.35;
+    font-weight: 600;
+    color: #111;
+  }
+  .moonn-recording-bundle {
+    max-width: 760px;
+    margin: 42px auto 30px;
+    padding: 24px 28px;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .moonn-recording-bundle__title {
+    margin: 0 0 8px;
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #111;
+  }
+  .moonn-recording-bundle__text {
+    margin: 0 0 18px;
+    font-size: 18px;
+    line-height: 1.45;
+    color: #333;
+  }
+  .moonn-recording-bundle__button {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 28px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #e884ff, #ba33f2);
+    color: #fff !important;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none !important;
+    box-shadow: 0 12px 25px rgba(184, 51, 242, 0.28);
+  }
+  @media (max-width: 640px) {
+    .moonn-recording-bundle {
+      margin: 28px 20px 22px;
+      padding: 20px 18px;
+      border-radius: 14px;
+    }
+    .moonn-recording-bundle__title {
+      font-size: 22px;
+    }
+    .moonn-recording-bundle__text,
+    .moonn-recording-price {
+      font-size: 16px;
+    }
+  }
+</style>
+<script>
+(function () {
+  var PRICE_RUB = 2000;
+  var BUNDLE_PRICE_RUB = 5000;
+  var BUTTON_TEXT = 'Получить запись';
+  var PAID_NOTE = 'Запись лекции - 2 000 ₽';
+
+  function moscowTodayStart() {
+    var moscowNow = new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Moscow' }));
+    return new Date(moscowNow.getFullYear(), moscowNow.getMonth(), moscowNow.getDate()).getTime();
+  }
+
+  function parseRuDate(text) {
+    var numeric = text.match(/(\d{2})\.(\d{2})\.(2026)/);
+    if (numeric) {
+      return new Date(Number(numeric[3]), Number(numeric[2]) - 1, Number(numeric[1])).getTime();
+    }
+
+    var months = {
+      'января': 0,
+      'февраля': 1,
+      'марта': 2,
+      'апреля': 3,
+      'мая': 4,
+      'июня': 5,
+      'июля': 6,
+      'августа': 7,
+      'сентября': 8,
+      'октября': 9,
+      'ноября': 10,
+      'декабря': 11
+    };
+    var word = text.toLowerCase().match(/(\d{1,2})\s+(января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря)\s+2026/);
+    if (!word) return null;
+    return new Date(2026, months[word[2]], Number(word[1])).getTime();
+  }
+
+  function cleanTitle(raw) {
+    return raw.replace(/\s+/g, ' ').replace(/^"|"$/g, '').trim();
+  }
+
+  function orderHash(title, price) {
+    return '#order:' + title + ' =' + price;
+  }
+
+  function addClickTarget(node, hash) {
+    node.setAttribute('data-moonn-recording-hash', hash);
+    node.setAttribute('role', 'link');
+    node.setAttribute('tabindex', '0');
+    node.style.cursor = 'pointer';
+  }
+
+  function convertPastCard(card, todayStart) {
+    var titleNode = card.querySelector('.t-card__title');
+    var descrNode = card.querySelector('.t-card__descr');
+    var buttonNode = card.querySelector('.t-card__btn');
+    var buttonTextNode = card.querySelector('.t-card__btn .t-btnflex__text') || buttonNode;
+    if (!titleNode || !descrNode || !buttonNode || !buttonTextNode) return;
+
+    var lectureDate = parseRuDate(card.textContent || '');
+    if (!lectureDate || lectureDate >= todayStart) return;
+
+    var title = cleanTitle(titleNode.textContent || '');
+    if (!title) return;
+
+    var hash = orderHash('Запись лекции: ' + title, PRICE_RUB);
+    buttonTextNode.textContent = BUTTON_TEXT;
+    addClickTarget(buttonNode, hash);
+
+    var titleLink = titleNode.querySelector('a');
+    if (titleLink) {
+      titleLink.removeAttribute('target');
+      titleLink.setAttribute('href', hash);
+    }
+
+    if (!card.querySelector('.moonn-recording-price')) {
+      var price = document.createElement('div');
+      price.className = 'moonn-recording-price';
+      price.textContent = PAID_NOTE;
+      descrNode.insertAdjacentElement('afterend', price);
+    }
+  }
+
+  function insertBundleCta() {
+    if (document.querySelector('.moonn-recording-bundle')) return;
+    var firstLectureBlock = document.querySelector('.t774');
+    if (!firstLectureBlock || !firstLectureBlock.parentNode) return;
+
+    var bundle = document.createElement('section');
+    bundle.className = 'moonn-recording-bundle';
+    bundle.innerHTML = '<h2 class="moonn-recording-bundle__title">Пакет из 5 записей лекций</h2>' +
+      '<p class="moonn-recording-bundle__text">Выберите любые 5 записей из прошедших лекций цикла за 5 000 ₽.</p>' +
+      '<a class="moonn-recording-bundle__button" href="' + orderHash('Пакет 5 записей лекций на выбор', BUNDLE_PRICE_RUB) + '">Купить пакет</a>';
+    firstLectureBlock.parentNode.insertBefore(bundle, firstLectureBlock);
+  }
+
+  function handleRecordingClick(event) {
+    var target = event.target.closest('[data-moonn-recording-hash]');
+    if (!target) return;
+    event.preventDefault();
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    window.location.href = target.getAttribute('data-moonn-recording-hash');
+  }
+
+  function handleRecordingKeydown(event) {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    var target = event.target.closest('[data-moonn-recording-hash]');
+    if (!target) return;
+    event.preventDefault();
+    window.location.href = target.getAttribute('data-moonn-recording-hash');
+  }
+
+  function run() {
+    var todayStart = moscowTodayStart();
+    document.querySelectorAll('.t774__wrapper').forEach(function (card) {
+      convertPastCard(card, todayStart);
+    });
+    insertBundleCta();
+  }
+
+  document.addEventListener('click', handleRecordingClick, true);
+  document.addEventListener('keydown', handleRecordingKeydown, true);
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
+  window.addEventListener('load', run);
+})();
+</script>
