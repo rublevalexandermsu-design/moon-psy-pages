@@ -97,10 +97,24 @@ Before making the event public:
 2. Publish only slots that are actually free in iClient/YCLIENTS.
 3. After every paid Timepad order, manually create/block the same slot in iClient/YCLIENTS.
 4. If a Timepad order is refunded or cancelled, unblock the slot only after verifying that no replacement booking exists.
+5. Keep the Timepad public model as a full-price ticket for a concrete two-hour consultation slot. Do not return to a 500-ruble partial-payment or external-preselection model.
 
 Future automation candidate:
 
 `Timepad order_change webhook -> order registry -> email/Telegram notification -> iClient/YCLIENTS booking/blocking`.
+
+## Full-Payment Correction - 2026-05-17
+
+Timepad support rejected the 500-ruble partial-payment framing. The recurring consultation series was updated on 2026-05-17:
+
+- public title: `Индивидуальная психологическая консультация с Татьяной Мунн`;
+- ticket: `Индивидуальная консультация, 2 часа`;
+- price: `10 000 ₽`, aligned with the public iClient/YCLIENTS two-hour consultation price;
+- one ticket per Timepad slot;
+- questionnaire: format, phone / WhatsApp, and short request/comment;
+- old wording about 500-ruble confirmation and external online-record preselection removed from checked future public pages.
+
+The unresolved system risk remains iClient/YCLIENTS synchronization. An `order_change` webhook exists for the Timepad organization, but this task did not prove that it blocks the same slot in iClient/YCLIENTS. Treat webhook-to-iClient blocking as a required next verification gate before scaling the schedule further.
 
 ## Recurring Schedule Decision
 

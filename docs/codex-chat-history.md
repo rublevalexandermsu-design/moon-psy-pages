@@ -1139,3 +1139,36 @@ Append-only project history for `moon-psy-site`.
   - Gmail connector install/activation was requested but not completed in this session, so email sending is still blocked without manual browser use.
 - Follow-up rule:
   - Consultation schedule assumptions must be verified against the current iClient/YCLIENTS calendar before publication or support submission; Timepad support requests should ask for multiple selectable reception-day slots.
+
+## 2026-05-17 — Moonn Timepad Consultation Full-Payment Correction
+
+- Project: Moonn / Tatyana Munn site and Timepad promotion.
+- Branch: `codex/moonn-timepad-consultation-full-payment-sync`.
+- Trigger: user shared Timepad support response rejecting the 500-ruble consultation reservation/payment framing and asked to convert the event into a full paid consultation flow while preserving selectable Timepad slots and avoiding iClient/YCLIENTS conflicts.
+- Verified facts:
+  - Event `3973843` and checked child event `3982132` still used old title `Бронь консультации с Татьяной Мунн`, 500-ruble ticket and public text that sent participants first to external online booking.
+  - Timepad recurring schedule is active and has generated consultation slots on Tuesday, Saturday and Sunday.
+  - Public iClient/YCLIENTS service page shows a two-hour consultation price of `10 000 ₽`.
+  - Timepad organization `426753` already has an `order_change` webhook to a Google Apps Script endpoint, but end-to-end iClient/YCLIENTS slot blocking was not proven.
+- Decision:
+  - Replace the partial-payment model with a full-price Timepad ticket per concrete two-hour consultation slot.
+  - Use `10 000 ₽` as the Timepad ticket price because it matches the public iClient/YCLIENTS two-hour consultation price.
+  - Keep one ticket per slot.
+  - Do not claim that iClient/YCLIENTS sync is solved until the webhook handler is inspected and proven.
+- Actions:
+  - Updated 49 unsold Timepad consultation-series events.
+  - New public title: `Индивидуальная психологическая консультация с Татьяной Мунн`.
+  - New ticket: `Индивидуальная консультация, 2 часа`, `10 000 ₽`.
+  - Updated questionnaire fields to format, phone / WhatsApp, and short request/comment.
+  - Removed old visible wording about 500-ruble confirmation, partial payment and external preselection from checked public future slots.
+  - Created Gmail draft to Timepad support, not sent: draft id `r7433309802949927658`.
+- Verification:
+  - API sample verified `3973843`, `3982132`, `3982133`, `3982055`, `3982145`, `3982174`, `3982189`: title/ticket/price updated and old wording absent.
+  - Browser check of `https://moonn.timepad.ru/event/3982055/` showed selectable dates/times, `1 билет`, and `10000 руб.` per slot.
+- Incident / security:
+  - Timepad API token was pasted into chat and must be rotated after this workstream.
+  - Timepad webhook secret appeared in API output and must also be rotated.
+- Artifact:
+  - `docs/timepad-consultation-full-payment-2026-05-17.md`.
+- Follow-up rule:
+  - Paid Timepad consultation slots must be full-price tickets for concrete slots; any bridge to iClient/YCLIENTS must be verified as a slot-locking flow, not assumed from webhook existence.
