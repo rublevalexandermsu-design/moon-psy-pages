@@ -158,3 +158,47 @@ Append-only project history for `moon-psy-site`.
 - Risk notes:
   - The draft is not publication-ready while the purchase CTA is English and bundle/access flow are incomplete.
   - Tilda GUI editing was brittle without `windows-mcp`; future GUI work should use a stronger desktop automation layer or a documented Tilda block setup runbook.
+
+## 2026-05-17 — Existing Lecture Cards Converted To Paid Recordings
+
+- Project: Moonn / Tilda site.
+- Workstream: paid video lectures and protected access.
+- Branch: `codex/moonn-paid-video-lectures`.
+- User correction:
+  - the added payment/catalog block duplicated lecture cards;
+  - the desired behavior was to modify existing `Регистрация` buttons on existing lecture cards;
+  - past lectures should become `Получить запись` at `2000 RUB`;
+  - future lectures should remain `Регистрация`;
+  - the five-recording package for `5000 RUB` should remain available without duplicating the whole lecture list.
+- Decisions:
+  - keep one canonical public page: `https://moonn.ru/events_tp`;
+  - remove the duplicate `ST315N` store/catalog block from Tilda page `66814657`;
+  - keep the cart/payment layer for direct `#order:` links;
+  - store the T123 transformation code in Git as `registry/products/events-tp-recording-switcher-t123.html`;
+  - use a date-based conversion so passed events automatically become recordings after their date.
+- Created or changed files:
+  - `registry/products/events-tp-recording-switcher-t123.html`;
+  - `docs/paid-video-lectures-checkout-2026-05-17.md`;
+  - `docs/codex-chat-history.md`.
+- External UI changes:
+  - removed the visible duplicate Tilda `ST315N` product/catalog grid;
+  - added/saved T123 code on page `66814657`;
+  - published the corrected page.
+- Verified:
+  - pre-publication browser smoke-check against live HTML with injected T123 code converted `19` past cards and left future cards as registration;
+  - live page after publication has `43` existing `T774` cards;
+  - live page has `19` `Получить запись` buttons and `19` `Запись лекции - 2 000 ₽` notes;
+  - future checked dates `18.05.2026`, `25.05.2026`, `01.06.2026`, `08.06.2026`, `22.05.2026`, `29.05.2026` stay as `Регистрация`;
+  - visible duplicate store cards are `0`;
+  - T123 service text is not visible publicly;
+  - click on the first converted recording opens the cart with `Запись лекции: "Психология ОТНОШЕНИЙ. ВВЕДЕНИЕ"` at `2 000р.`.
+- Incident:
+  - Symptom: a duplicate product catalog appeared above the canonical lecture cards.
+  - Root cause: implementation optimized for catalog import instead of the user's existing-card interaction model.
+  - Secondary bug caught before final publication: Tilda card text concatenated address and date as `д.906.04.2026`, so date parsing based on word boundary did not convert April cards.
+  - Fix: remove duplicate catalog block, use boundary-free numeric date parsing, and verify on real live HTML before publishing.
+  - Follow-up rule: for canonical Tilda pages, first map and transform existing blocks; only add a parallel catalog/list if the user explicitly asks for a separate storefront.
+- Residual risks:
+  - protected watch pages and Members/Courses delivery are still not complete;
+  - cart form still has default English labels;
+  - a controlled post-payment access test is still needed before scaling paid traffic.

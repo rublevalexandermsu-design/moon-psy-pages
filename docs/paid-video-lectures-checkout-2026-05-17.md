@@ -135,6 +135,69 @@ Current blockers before publication:
 - protected watch pages/Members groups are still needed before real paid rollout;
 - Telegram URL is still not confirmed.
 
+## Correction - Existing Card Conversion - 2026-05-17
+
+User correction:
+
+- The added `ST315N` product catalog block duplicated lectures and was not the requested interaction model.
+- The correct model is one canonical lecture page:
+  - lectures with dates before the current Moscow date become paid recordings;
+  - future lectures keep the existing `Регистрация` CTA;
+  - existing `T774` lecture cards must be reused instead of creating a second catalog grid.
+
+Root cause:
+
+- The previous implementation interpreted "connect payment" as "add a new catalog storefront".
+- That created a duplicate visual layer and left the canonical lecture cards unchanged.
+
+Fix applied in Tilda:
+
+- Removed the visible `ST315N` catalog/store block from page `66814657`.
+- Kept the cart/payment layer available for `#order:` links.
+- Added a `T123` HTML block using canonical code saved in `registry/products/events-tp-recording-switcher-t123.html`.
+- The `T123` code:
+  - reads each existing `.t774__wrapper` lecture card;
+  - parses the lecture date from the card text;
+  - uses Moscow date boundaries;
+  - converts only past cards to `Получить запись`;
+  - adds `Запись лекции - 2 000 ₽`;
+  - routes the existing card button to `#order:Запись лекции: <title> =2000`;
+  - leaves future cards as `Регистрация`;
+  - inserts one compact bundle CTA: `Пакет из 5 записей лекций` for `5000 RUB`.
+
+Validation before publication:
+
+- Playwright smoke-check against current live HTML with injected T123 code:
+  - total existing `T774` cards: `43`;
+  - converted recording buttons: `19`;
+  - future registration buttons: `6`;
+  - price notes added: `19`;
+  - first April and early May cards converted;
+  - 18.05.2026 and later checked samples stayed as `Регистрация`.
+
+Published live validation:
+
+- Published `https://moonn.ru/events_tp` from Tilda after removing the duplicate store block.
+- Playwright live check after publication:
+  - total existing `T774` cards: `43`;
+  - converted recording buttons: `19`;
+  - future registration buttons: `6`;
+  - price notes added: `19`;
+  - visible store/catalog duplicate cards: `0`;
+  - T123 service text is not visible on the public page;
+  - bundle CTA is visible;
+  - click on the first converted `Получить запись` button opens cart with product `Запись лекции: "Психология ОТНОШЕНИЙ. ВВЕДЕНИЕ"` and price `2 000р.`.
+
+Residual risks:
+
+- Buyer delivery is still an interim operational process until protected watch pages/Members groups are created.
+- The cart form still contains some default English labels such as `Your Name`, `Your Email`, `Your Phone`, `Checkout`; this should be localized in a follow-up Tilda cart settings pass.
+- The `#order:` method creates dynamic order items and is suitable for the current fast correction, but the stronger long-term architecture is still manifest -> product/access registry -> protected watch pages -> verified payment receiver.
+
+New rule:
+
+- For existing canonical content pages, do not add a parallel payment catalog until the user explicitly asks for a separate storefront. First try to convert the existing canonical cards and record the transformation code in the repository.
+
 ## Sources Checked
 
 - Tilda Members: paid access after payment through cart/payment and "Личный кабинет".
@@ -144,9 +207,9 @@ Current blockers before publication:
 
 ## Next Actions
 
-1. In Tilda draft, change the product purchase button text from `BUY NOW` to `Получить запись`.
-2. Expose the bundle product `moonn-video-bundle-5-choice` in a visible storefront block or move it into the visible `Записи лекций` catalog category after an explicit content decision.
-3. Create protected watch pages/groups for the five uniquely matched recordings first.
-4. Get owner decision for the four ambiguous YouTube matches and the `3334362` recurring series entry.
-5. Run one controlled checkout/access test before public rollout.
-6. Publish only after visual storefront, checkout, payment receiver and protected access checks pass.
+1. Localize the Tilda cart form labels that still appear in English (`Your Name`, `Your Email`, `Your Phone`, `Checkout`).
+2. Create protected watch pages/groups for the five uniquely matched recordings first.
+3. Get owner decision for the four ambiguous YouTube matches and the `3334362` recurring series entry.
+4. Configure the post-payment delivery path so buyers receive controlled access instead of manual support-only fulfillment.
+5. Run one controlled checkout/access test before scaling paid traffic.
+6. Replace the interim `#order:` bridge with manifest-driven Tilda products/access groups when protected watch pages are ready.
