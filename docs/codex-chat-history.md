@@ -118,3 +118,43 @@ Append-only project history for `moon-psy-site`.
 - Risk notes:
   - Money/payment settings and paid content access remain high-risk; do not publish live payment flow before visual checkout and access testing.
   - If a buyer can pay before a watch page exists, the operation needs a controlled pending-access process and support SLA.
+
+## 2026-05-17 — Tilda Catalog Import And Draft Storefront Check
+
+- Project: Moonn / Tilda site.
+- Workstream: paid video lectures and protected access.
+- Branch: `codex/moonn-paid-video-lectures`.
+- User request:
+  - continue the next proposed step for the paid lecture checkout rollout.
+- Decisions:
+  - Use the existing Tilda Product Catalog rather than hand-built payment buttons.
+  - Add checkout only to Tilda draft first; do not publish because payment and paid access are high-risk.
+  - Keep the package product as an imported catalog product, but do not claim storefront completion until it is visibly exposed and tested.
+- Created or changed files:
+  - `registry/products/tilda-catalog-backup-before-paid-lectures-2026-05-17.csv`
+  - `docs/paid-video-lectures-checkout-2026-05-17.md`
+  - `docs/codex-chat-history.md`
+- External UI changes:
+  - verified Tilda site currency is `Russian Ruble (RUB)`;
+  - verified active T-Bank card payment and T-Bank installment integrations;
+  - exported current Tilda catalog before import;
+  - imported 11 paid lecture products into Tilda Product Catalog;
+  - added `ST100` cart block to the draft of Tilda page `66814657`;
+  - added `ST315N` catalog block to the draft and connected it to category `Записи лекций`.
+- Verified:
+  - Tilda import reported 11 processed products;
+  - catalog UI showed `Записи лекций` products at `2000 RUB`;
+  - catalog UI showed bundle product `moonn-video-bundle-5-choice` at `5000 RUB`;
+  - Tilda preview opened SKU `moonn-video-lecture-3808783`;
+  - preview showed price `2 000 р.`;
+  - preview showed the imported access/support text without raw YouTube links;
+  - published page API still has no `ST100`/`ST315N`, so live page was not changed.
+- Open questions / blockers:
+  - product page button text is still `BUY NOW`; it must be changed to `Получить запись`;
+  - bundle product is imported but not yet visibly exposed in the checked storefront block;
+  - protected watch pages/groups are not yet created;
+  - end-to-end test purchase/access check is not complete;
+  - Telegram URL/handle is still unconfirmed.
+- Risk notes:
+  - The draft is not publication-ready while the purchase CTA is English and bundle/access flow are incomplete.
+  - Tilda GUI editing was brittle without `windows-mcp`; future GUI work should use a stronger desktop automation layer or a documented Tilda block setup runbook.

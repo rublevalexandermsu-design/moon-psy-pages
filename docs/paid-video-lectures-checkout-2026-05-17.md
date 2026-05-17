@@ -101,6 +101,40 @@ Local validation completed:
 - 10 lecture products and 1 bundle product in the generated Tilda CSV;
 - generated manifest/CSV do not contain raw `youtube.com/watch`, `youtu.be/` or `youtube.com/embed/` URLs.
 
+## Tilda UI Execution - 2026-05-17
+
+Verified in the Tilda UI:
+
+- site payment settings use `Russian Ruble (RUB)`;
+- `Visa, MIR, Mastercard via T-Bank` is active;
+- `T-Bank installments` is active;
+- existing Tilda catalog was exported before import and saved as `registry/products/tilda-catalog-backup-before-paid-lectures-2026-05-17.csv`;
+- `registry/products/paid-video-lectures-tilda-catalog-2026-05-17.csv` was imported into Tilda Product Catalog;
+- import result: 11 processed products;
+- Tilda catalog now contains category `Записи лекций` with single lecture products at `2000 RUB`;
+- Tilda catalog now contains category `Пакеты записей` with product `moonn-video-bundle-5-choice` at `5000 RUB`.
+
+Draft editor changes on Tilda page `66814657`:
+
+- added store cart block `ST100`;
+- added catalog block `ST315N`;
+- connected `ST315N` to category `Записи лекций`;
+- preview opened the product page for SKU `moonn-video-lecture-3808783`;
+- preview showed product price `2 000 р.`;
+- preview showed the imported access/support description and no raw YouTube URL.
+
+Not published:
+
+- Tilda API `getpagefull` still returns the published page without `ST100`/`ST315N`, so the public page has not been changed yet.
+
+Current blockers before publication:
+
+- product page button text is still `BUY NOW`; change it to `Получить запись`;
+- bundle product `moonn-video-bundle-5-choice` is imported but not yet exposed in the checked storefront block;
+- the buyer access path after successful payment is not yet tested end to end;
+- protected watch pages/Members groups are still needed before real paid rollout;
+- Telegram URL is still not confirmed.
+
 ## Sources Checked
 
 - Tilda Members: paid access after payment through cart/payment and "Личный кабинет".
@@ -110,9 +144,9 @@ Local validation completed:
 
 ## Next Actions
 
-1. Open Tilda UI and visually verify payment provider/seller settings.
-2. Import or create catalog products from `registry/products/paid-video-lectures-tilda-catalog-2026-05-17.csv`.
-3. Add storefront block and replace lecture card buttons with product/cart actions.
-4. Create protected watch pages/groups for the five uniquely matched recordings first.
-5. Get owner decision for the four ambiguous YouTube matches and the `3334362` recurring series entry.
-6. Run one controlled checkout/access test before public rollout.
+1. In Tilda draft, change the product purchase button text from `BUY NOW` to `Получить запись`.
+2. Expose the bundle product `moonn-video-bundle-5-choice` in a visible storefront block or move it into the visible `Записи лекций` catalog category after an explicit content decision.
+3. Create protected watch pages/groups for the five uniquely matched recordings first.
+4. Get owner decision for the four ambiguous YouTube matches and the `3334362` recurring series entry.
+5. Run one controlled checkout/access test before public rollout.
+6. Publish only after visual storefront, checkout, payment receiver and protected access checks pass.
