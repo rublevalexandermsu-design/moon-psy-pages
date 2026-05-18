@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0",
+  "workstream": "moonn_yandex_review_funnel",
+  "status": "prototype_ready_not_published",
+  "target_page": {
+    "canonical_url": "https://moonn.ru/otzivi",
+    "tilda_page_id": 81167556,
+    "anchor_id": "moonn-review-funnel"
+  },
+  "qr_target_url": "https://moonn.ru/otzivi?source=qr_event#moonn-review-funnel",
+  "yandex_services": {
+    "profile_url": "https://uslugi.yandex.ru/profile/TatyanaKumskovamunn-948629",
+    "rating_url": "https://uslugi.yandex.ru/search?action=addReview&profile=TatyanaKumskovatatyanamunn-948629",
+    "rating_destination": "official_yandex_services_review_modal",
+    "expected_behavior": [
+      "visitor taps the rating button",
+      "official Yandex Services page opens in a new tab",
+      "visitor leaves a star rating in Yandex",
+      "visitor returns to Moonn page and can leave a text comment in Moonn-controlled flow"
+    ]
+  },
+  "moonn_comment_flow": {
+    "desired_backend": "tilda_form_or_google_sheet_then_moderated_renderer",
+    "publish_mode": "moderated_before_publication",
+    "moderation_required": true,
+    "fields": [
+      "rating",
+      "comment",
+      "name_or_anonymous",
+      "event_or_service",
+      "contact_optional",
+      "publication_consent"
+    ],
+    "do_not_auto_publish_raw_submission": true,
+    "reason": "Text reviews can contain personal data, medical details, defamatory claims, spam, or platform-sensitive wording."
+  },
+  "publication_gate": {
+    "allowed_now": [
+      "prepare local prototype",
+      "generate QR code for the Moonn funnel URL",
+      "prepare Tilda-safe HTML block",
+      "record architecture and legal/platform guard"
+    ],
+    "blocked_until": [
+      "choose final intake backend: Tilda form, Google Sheet, Telegram bot, or Cloudflare Worker",
+      "confirm final public wording and consent checkbox",
+      "run live Tilda preview QA",
+      "receive explicit approval before publishing to moonn.ru"
+    ]
+  },
+  "strategic_assessment": {
+    "platform_value": "high",
+    "risk_of_obsolete_solution": "high if QR points only to Yandex and text reviews continue to disappear",
+    "stronger_architecture": "two-channel funnel: official Yandex rating plus own moderated Moonn text-review intake",
+    "reuse": "same manifest/block pattern can be reused for lectures, consultations, Timepad follow-ups, and Telegram campaigns",
+    "three_to_twelve_month_risk_if_skipped": "lost text feedback, weak proof layer on Moonn, manual copying from messengers, and no controlled moderation queue"
+  },
+  "compliance_notes": [
+    "The Moonn page must not pretend to be an official Yandex interface.",
+    "The Yandex rating action must open the official Yandex Services URL.",
+    "Moonn text comments must be collected with consent and moderation before publication.",
+    "Do not promise that a submitted Yandex text review will be published by Yandex."
+  ]
+}

@@ -1,0 +1,164 @@
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+import qrcode
+import qrcode.image.svg
+
+
+ROOT = Path(__file__).resolve().parents[1]
+MANIFEST_PATH = ROOT / "registry" / "reviews" / "moonn-review-funnel.manifest.json"
+OUTPUT_DIR = ROOT / "docs" / "tatiana-munn-review-funnel"
+
+
+def load_manifest() -> dict:
+    return json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
+
+
+def escape_html(value: object) -> str:
+    text = "" if value is None else str(value)
+    return (
+        text.replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+        .replace('"', "&quot;")
+        .replace("'", "&#39;")
+    )
+
+
+def build_block(manifest: dict) -> str:
+    anchor_id = manifest["target_page"]["anchor_id"]
+    qr_target = manifest["qr_target_url"]
+    rating_url = manifest["yandex_services"]["rating_url"]
+    profile_url = manifest["yandex_services"]["profile_url"]
+    return f"""<section id="{escape_html(anchor_id)}" class="moonn-review-funnel" aria-label="Оставить отзыв о Татьяне Мунн">
+  <style>
+    #moonn-review-funnel{{box-sizing:border-box;width:100%;margin:0;padding:42px 18px 54px;background:#f4f6f8;font-family:Arial,sans-serif;color:#1f2328;}}
+    #moonn-review-funnel *{{box-sizing:border-box;letter-spacing:0;}}
+    #moonn-review-funnel .rf-shell{{width:min(100%,1060px);margin:0 auto;display:grid;grid-template-columns:minmax(0,.96fr) minmax(300px,1.04fr);gap:20px;align-items:stretch;}}
+    #moonn-review-funnel .rf-card{{border:1px solid rgba(31,35,40,.12);border-radius:20px;background:#fff;box-shadow:0 18px 44px rgba(24,39,75,.10);overflow:hidden;}}
+    #moonn-review-funnel .rf-intro{{padding:30px 30px 24px;}}
+    #moonn-review-funnel .rf-kicker{{display:inline-flex;align-items:center;gap:8px;margin:0 0 14px;padding:7px 11px;border-radius:999px;background:#fff4bf;color:#2d2611;font-size:13px;font-weight:800;}}
+    #moonn-review-funnel .rf-y{{display:inline-grid;place-items:center;width:23px;height:23px;border-radius:7px;background:#fc0;color:#111;font-weight:900;}}
+    #moonn-review-funnel h2{{margin:0 0 12px;font-size:32px;line-height:1.12;color:#181c20;}}
+    #moonn-review-funnel p{{margin:0;color:#4d5965;font-size:16px;line-height:1.55;}}
+    #moonn-review-funnel .rf-person{{display:flex;align-items:center;gap:14px;margin-top:22px;padding:14px;border-radius:16px;background:#f7f9fb;border:1px solid rgba(31,35,40,.08);}}
+    #moonn-review-funnel .rf-avatar{{display:grid;place-items:center;flex:0 0 54px;width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#f3d9ff,#fff1a8);font-weight:900;color:#5b2ec7;}}
+    #moonn-review-funnel .rf-person strong{{display:block;margin-bottom:3px;color:#1f2328;font-size:17px;}}
+    #moonn-review-funnel .rf-stars{{display:flex;gap:7px;margin:24px 0 18px;}}
+    #moonn-review-funnel .rf-star{{width:38px;height:38px;display:grid;place-items:center;color:#f5b700;font-size:35px;line-height:1;filter:drop-shadow(0 4px 8px rgba(245,183,0,.22));}}
+    #moonn-review-funnel .rf-actions{{display:grid;gap:10px;margin-top:18px;}}
+    #moonn-review-funnel .rf-button{{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border-radius:999px;border:1px solid rgba(31,35,40,.12);font-size:16px;font-weight:800;text-decoration:none!important;cursor:pointer;}}
+    #moonn-review-funnel .rf-button.primary{{background:#fc0;color:#111!important;border-color:#f3c000;box-shadow:0 14px 28px rgba(204,154,0,.18);}}
+    #moonn-review-funnel .rf-button.secondary{{background:#fff;color:#1f2328!important;}}
+    #moonn-review-funnel .rf-note{{margin-top:12px;font-size:13px;color:#687583;}}
+    #moonn-review-funnel .rf-form{{padding:30px;background:linear-gradient(180deg,#fff,#fbfdff);}}
+    #moonn-review-funnel .rf-form h3{{margin:0 0 10px;font-size:24px;line-height:1.18;color:#181c20;}}
+    #moonn-review-funnel label{{display:block;margin:14px 0 6px;color:#303841;font-size:14px;font-weight:700;}}
+    #moonn-review-funnel input,#moonn-review-funnel select,#moonn-review-funnel textarea{{width:100%;border:1px solid rgba(31,35,40,.18);border-radius:14px;background:#fff;color:#1f2328;font:inherit;font-size:16px;}}
+    #moonn-review-funnel input,#moonn-review-funnel select{{height:46px;padding:0 13px;}}
+    #moonn-review-funnel textarea{{min-height:126px;resize:vertical;padding:13px;line-height:1.45;}}
+    #moonn-review-funnel .rf-check{{display:flex;align-items:flex-start;gap:10px;margin-top:14px;color:#4d5965;font-size:14px;line-height:1.45;}}
+    #moonn-review-funnel .rf-check input{{width:18px;height:18px;margin-top:1px;flex:0 0 18px;}}
+    #moonn-review-funnel .rf-submit{{margin-top:16px;background:#ff5c35;color:#fff;border:0;}}
+    #moonn-review-funnel .rf-disabled{{opacity:.62;cursor:not-allowed;}}
+    #moonn-review-funnel .rf-qr{{display:grid;grid-template-columns:112px minmax(0,1fr);gap:14px;align-items:center;margin-top:18px;padding:14px;border:1px dashed rgba(31,35,40,.22);border-radius:16px;background:#fff;}}
+    #moonn-review-funnel .rf-qr img{{width:112px;height:112px;display:block;background:#fff;border-radius:8px;}}
+    #moonn-review-funnel .rf-qr code{{display:block;margin-top:5px;color:#4d5965;font-size:12px;overflow-wrap:anywhere;}}
+    @media (max-width:820px){{#moonn-review-funnel{{padding:28px 14px 40px;}}#moonn-review-funnel .rf-shell{{grid-template-columns:1fr;}}#moonn-review-funnel .rf-intro,#moonn-review-funnel .rf-form{{padding:24px;}}#moonn-review-funnel h2{{font-size:27px;}}}}
+    @media (max-width:480px){{#moonn-review-funnel .rf-qr{{grid-template-columns:1fr;}}#moonn-review-funnel .rf-stars{{gap:4px;}}#moonn-review-funnel .rf-star{{width:32px;height:32px;font-size:30px;}}}}
+  </style>
+  <div class="rf-shell">
+    <article class="rf-card rf-intro">
+      <span class="rf-kicker"><span class="rf-y">Я</span> Оценка на Яндекс Услугах</span>
+      <h2>Оставьте оценку Татьяне Мунн</h2>
+      <p>Звёзды открываются в официальной форме Яндекс Услуг. После оценки можно вернуться сюда и оставить текстовый отзыв для страницы Moonn.</p>
+      <div class="rf-person">
+        <span class="rf-avatar">ТМ</span>
+        <div><strong>Татьяна Кумскова (Татьяна Мунн)</strong><p>Психолог, консультации и открытые лекции</p></div>
+      </div>
+      <div class="rf-stars" aria-hidden="true"><span class="rf-star">★</span><span class="rf-star">★</span><span class="rf-star">★</span><span class="rf-star">★</span><span class="rf-star">★</span></div>
+      <div class="rf-actions">
+        <a class="rf-button primary" href="{escape_html(rating_url)}" target="_blank" rel="noopener noreferrer">Поставить оценку на Яндекс Услугах</a>
+        <a class="rf-button secondary" href="{escape_html(profile_url)}" target="_blank" rel="noopener noreferrer">Открыть профиль на Яндекс Услугах</a>
+      </div>
+      <p class="rf-note">Эта страница Moonn не является страницей Яндекса. Оценка ставится только на официальной странице Яндекс Услуг.</p>
+      <div class="rf-qr">
+        <img src="qr-moonn-review-funnel.svg" alt="QR-код для страницы отзывов Татьяны Мунн">
+        <p>QR для экрана после лекции или консультации.<code>{escape_html(qr_target)}</code></p>
+      </div>
+    </article>
+    <article class="rf-card rf-form">
+      <h3>Текстовый отзыв для страницы Moonn</h3>
+      <p>Если комментарий не появится на Яндекс Услугах, отзыв можно оставить здесь. Перед публикацией на сайте Moonn текст проходит проверку.</p>
+      <form data-moonn-review-form="prototype" method="post" action="#">
+        <label for="rf-rating">Оценка</label>
+        <select id="rf-rating" name="rating">
+          <option value="5">5 — отлично</option>
+          <option value="4">4 — хорошо</option>
+          <option value="3">3 — нормально</option>
+          <option value="2">2 — есть замечания</option>
+          <option value="1">1 — плохо</option>
+        </select>
+        <label for="rf-context">Что вы посетили</label>
+        <select id="rf-context" name="context">
+          <option>Консультация</option>
+          <option>Лекция</option>
+          <option>Подростковый лагерь</option>
+          <option>Другое мероприятие</option>
+        </select>
+        <label for="rf-name">Имя для публикации</label>
+        <input id="rf-name" name="name" placeholder="Можно оставить пустым или написать Анонимно">
+        <label for="rf-comment">Комментарий</label>
+        <textarea id="rf-comment" name="comment" placeholder="Что было полезно, что изменилось, что особенно запомнилось?"></textarea>
+        <label class="rf-check"><input type="checkbox" name="consent" required> <span>Я согласен(на), что отзыв после проверки может быть опубликован на сайте Moonn. Контактные данные не публикуются.</span></label>
+        <button class="rf-button rf-submit rf-disabled" type="button" aria-disabled="true">Отправить отзыв</button>
+      </form>
+      <p class="rf-note">После отправки отзыв сначала проверяется, затем может появиться на странице отзывов.</p>
+    </article>
+  </div>
+</section>"""
+
+
+def build_preview(block: str) -> str:
+    return f"""<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preview: review funnel Tatyana Munn</title>
+</head>
+<body style="margin:0;background:#f4f6f8">
+{block}
+</body>
+</html>
+"""
+
+
+def write_qr(target: str) -> None:
+    svg_factory = qrcode.image.svg.SvgPathImage
+    svg_img = qrcode.make(target, image_factory=svg_factory, box_size=8, border=2)
+    (OUTPUT_DIR / "qr-moonn-review-funnel.svg").write_text(svg_img.to_string().decode("utf-8"), encoding="utf-8")
+
+    png_img = qrcode.make(target, box_size=10, border=2)
+    png_img.save(OUTPUT_DIR / "qr-moonn-review-funnel.png")
+
+
+def main() -> None:
+    manifest = load_manifest()
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    block = build_block(manifest)
+    (OUTPUT_DIR / "review-funnel-tilda-block.html").write_text(block + "\n", encoding="utf-8")
+    (OUTPUT_DIR / "review-funnel-prototype.html").write_text(build_preview(block), encoding="utf-8")
+    write_qr(manifest["qr_target_url"])
+    print(json.dumps({
+        "output_dir": str(OUTPUT_DIR),
+        "qr_target_url": manifest["qr_target_url"],
+        "tilda_block": str(OUTPUT_DIR / "review-funnel-tilda-block.html"),
+        "preview": str(OUTPUT_DIR / "review-funnel-prototype.html")
+    }, ensure_ascii=False, indent=2))
+
+
+if __name__ == "__main__":
+    main()

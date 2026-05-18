@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://moonn.ru/registry/reviews/moonn-review-funnel.schema.json",
+  "title": "Moonn review funnel manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "workstream",
+    "status",
+    "target_page",
+    "qr_target_url",
+    "yandex_services",
+    "moonn_comment_flow",
+    "publication_gate"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "workstream": { "type": "string" },
+    "status": { "type": "string" },
+    "target_page": {
+      "type": "object",
+      "required": ["canonical_url", "tilda_page_id", "anchor_id"],
+      "properties": {
+        "canonical_url": { "type": "string", "format": "uri" },
+        "tilda_page_id": { "type": "integer" },
+        "anchor_id": { "type": "string" }
+      }
+    },
+    "qr_target_url": { "type": "string", "format": "uri" },
+    "yandex_services": {
+      "type": "object",
+      "required": ["profile_url", "rating_url", "rating_destination"],
+      "properties": {
+        "profile_url": { "type": "string", "format": "uri" },
+        "rating_url": { "type": "string", "format": "uri" },
+        "rating_destination": { "type": "string" }
+      }
+    },
+    "moonn_comment_flow": {
+      "type": "object",
+      "required": ["desired_backend", "publish_mode", "moderation_required"],
+      "properties": {
+        "desired_backend": { "type": "string" },
+        "publish_mode": { "type": "string" },
+        "moderation_required": { "type": "boolean" },
+        "fields": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "publication_gate": {
+      "type": "object",
+      "required": ["allowed_now", "blocked_until"],
+      "properties": {
+        "allowed_now": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "blocked_until": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

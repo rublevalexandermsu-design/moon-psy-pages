@@ -1864,3 +1864,40 @@ Append-only project history for `moon-psy-site`.
 - Follow-up rule:
   - Homepage promotion cards should be managed as a canonical banner family: isolated Tilda block, manifest, visible marker, browser check, and project-history entry.
   - Tilda popup or editor visual state is never enough proof of publication.
+
+## 2026-05-18 — Moonn Yandex Rating And Site Review Funnel Prototype
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-homepage-reviews-banner`.
+- Trigger: user clarified the desired feedback flow: QR should let visitors leave a fast star rating on Yandex Services while text comments should be collected on the Moonn reviews page because Yandex may publish ratings but not comments.
+- Verified facts:
+  - Existing canonical reviews page remains `https://moonn.ru/otzivi`.
+  - Existing review branch is `codex/moonn-homepage-reviews-banner`; a mistakenly created new branch was deleted before any changes were committed.
+  - Previous `/otzivi` work already established the rule: do not create a second reviews page and do not mirror Yandex Services one-to-one.
+- Decision:
+  - Use `/otzivi#moonn-review-funnel` as the single QR destination.
+  - First action opens the official Yandex Services rating URL.
+  - Text comments are collected in a Moonn-owned form flow and must be moderated before publication.
+  - The public page must not pretend to be an official Yandex interface.
+- Prepared artifacts:
+  - `registry/reviews/moonn-review-funnel.schema.json`
+  - `registry/reviews/moonn-review-funnel.manifest.json`
+  - `scripts/build_moonn_review_funnel_artifacts.py`
+  - `docs/tatiana-munn-review-funnel/review-funnel-architecture-2026-05-18.md`
+  - `docs/tatiana-munn-review-funnel/review-funnel-tilda-block.html`
+  - `docs/tatiana-munn-review-funnel/review-funnel-prototype.html`
+  - `docs/tatiana-munn-review-funnel/qr-moonn-review-funnel.svg`
+  - `docs/tatiana-munn-review-funnel/qr-moonn-review-funnel.png`
+- Verification:
+  - JSON syntax validation passed for schema and manifest.
+  - Playwright rendered local desktop and mobile previews.
+  - QA report: `output/playwright/moonn-review-funnel/qa-report.json`.
+  - Desktop/mobile preview contains two official `uslugi.yandex.ru` links, one Moonn/Yandex disclaimer, one QR image, and no visible internal words from the publication guard list.
+- Publication status:
+  - Not published to Tilda yet.
+  - Blocked until the intake backend is chosen: Tilda Form, Google Sheet, Telegram bot, or Worker.
+- Incident / correction:
+  - A new branch was created prematurely despite an existing review branch. Corrected by switching to `codex/moonn-homepage-reviews-banner` and deleting the empty duplicate branch.
+- Follow-up rule:
+  - Review funnel changes must continue in the existing review branch and preserve `/otzivi` as canonical unless a technical blocker proves otherwise.
+  - Public review-intake text must separate official Yandex rating from Moonn-owned comment collection.
