@@ -31,16 +31,14 @@ def escape_html(value: object) -> str:
 
 def build_block(manifest: dict) -> str:
     anchor_id = manifest["target_page"]["anchor_id"]
-    qr_target = manifest["qr_target_url"]
     rating_url = manifest["yandex_services"]["rating_url"]
-    profile_url = manifest["yandex_services"]["profile_url"]
     api_url = manifest["moonn_comment_flow"]["api_url"]
     api_url_json = json.dumps(api_url, ensure_ascii=False)
     return f"""<section id="{escape_html(anchor_id)}" class="moonn-review-funnel" aria-label="Оставить отзыв о Татьяне Мунн" style="display:none">
   <style>
     #moonn-review-funnel{{box-sizing:border-box;width:100%;margin:0;padding:42px 18px 54px;background:#f4f6f8;font-family:Arial,sans-serif;color:#1f2328;}}
     #moonn-review-funnel *{{box-sizing:border-box;letter-spacing:0;}}
-    #moonn-review-funnel .rf-shell{{width:min(100%,1060px);margin:0 auto;display:grid;grid-template-columns:minmax(0,.96fr) minmax(300px,1.04fr);gap:20px;align-items:stretch;}}
+    #moonn-review-funnel .rf-shell{{width:min(100%,1060px);margin:0 auto;display:grid;grid-template-columns:minmax(0,.9fr) minmax(300px,1.1fr);gap:20px;align-items:stretch;}}
     #moonn-review-funnel .rf-card{{border:1px solid rgba(31,35,40,.12);border-radius:20px;background:#fff;box-shadow:0 18px 44px rgba(24,39,75,.10);overflow:hidden;}}
     #moonn-review-funnel .rf-intro{{padding:30px 30px 24px;}}
     #moonn-review-funnel .rf-kicker{{display:inline-flex;align-items:center;gap:8px;margin:0 0 14px;padding:7px 11px;border-radius:999px;background:#fff4bf;color:#2d2611;font-size:13px;font-weight:800;}}
@@ -57,7 +55,6 @@ def build_block(manifest: dict) -> str:
     #moonn-review-funnel .rf-rating-done strong{{display:block;margin-bottom:4px;color:#18462f;}}
     #moonn-review-funnel .rf-button{{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border-radius:999px;border:1px solid rgba(31,35,40,.12);font-size:16px;font-weight:800;text-decoration:none!important;cursor:pointer;}}
     #moonn-review-funnel .rf-button.primary{{background:#fc0;color:#111!important;border-color:#f3c000;box-shadow:0 14px 28px rgba(204,154,0,.18);}}
-    #moonn-review-funnel .rf-button.secondary{{background:#fff;color:#1f2328!important;}}
     #moonn-review-funnel .rf-button.ghost{{background:#f7f9fb;color:#4d5965!important;}}
     #moonn-review-funnel .rf-note{{margin-top:12px;font-size:13px;color:#687583;}}
     #moonn-review-funnel .rf-form{{padding:30px;background:linear-gradient(180deg,#fff,#fbfdff);}}
@@ -67,31 +64,22 @@ def build_block(manifest: dict) -> str:
     #moonn-review-funnel input,#moonn-review-funnel select{{height:46px;padding:0 13px;}}
     #moonn-review-funnel textarea{{min-height:126px;resize:vertical;padding:13px;line-height:1.45;}}
     #moonn-review-funnel .rf-check{{display:flex;align-items:flex-start;gap:10px;margin-top:14px;color:#4d5965;font-size:14px;line-height:1.45;}}
-    #moonn-review-funnel .rf-check input{{width:18px;height:18px;margin-top:1px;flex:0 0 18px;}}
+    #moonn-review-funnel .rf-check input[type="checkbox"]{{width:18px!important;height:18px!important;min-width:18px!important;margin:1px 0 0!important;padding:0!important;flex:0 0 18px!important;border-radius:3px!important;appearance:auto!important;-webkit-appearance:checkbox!important;}}
+    #moonn-review-funnel label:has(input[name="moonn_personal_data_consent"]){{display:none!important;}}
     #moonn-review-funnel .rf-submit{{margin-top:16px;background:#ff5c35;color:#fff;border:0;}}
     #moonn-review-funnel .rf-disabled{{opacity:.62;cursor:not-allowed;}}
     #moonn-review-funnel .rf-honeypot{{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important;}}
     #moonn-review-funnel .rf-status{{display:none;margin-top:14px;padding:13px 14px;border-radius:14px;background:#f4fff8;border:1px solid rgba(22,128,80,.18);color:#20573c;font-size:14px;line-height:1.4;}}
     #moonn-review-funnel .rf-status.error{{display:block;background:#fff4f2;border-color:rgba(214,77,45,.25);color:#8b2d1c;}}
     #moonn-review-funnel .rf-status.ok{{display:block;}}
-    #moonn-review-funnel .rf-site-reviews{{margin-top:20px;padding-top:18px;border-top:1px solid rgba(31,35,40,.10);}}
-    #moonn-review-funnel .rf-site-reviews h4{{margin:0 0 10px;font-size:18px;color:#181c20;}}
-    #moonn-review-funnel .rf-site-review-list{{display:grid;gap:10px;}}
-    #moonn-review-funnel .rf-site-review{{padding:13px 14px;border:1px solid rgba(31,35,40,.10);border-radius:14px;background:#fff;}}
-    #moonn-review-funnel .rf-site-review b{{display:block;margin-bottom:4px;color:#181c20;}}
-    #moonn-review-funnel .rf-site-review span{{display:block;margin-bottom:6px;color:#687583;font-size:13px;}}
-    #moonn-review-funnel .rf-site-review p{{font-size:14px;line-height:1.45;color:#303841;white-space:pre-line;}}
-    #moonn-review-funnel .rf-qr{{display:grid;grid-template-columns:112px minmax(0,1fr);gap:14px;align-items:center;margin-top:18px;padding:14px;border:1px dashed rgba(31,35,40,.22);border-radius:16px;background:#fff;}}
-    #moonn-review-funnel .rf-qr img{{width:112px;height:112px;display:block;background:#fff;border-radius:8px;}}
-    #moonn-review-funnel .rf-qr code{{display:block;margin-top:5px;color:#4d5965;font-size:12px;overflow-wrap:anywhere;}}
     @media (max-width:820px){{#moonn-review-funnel{{padding:28px 14px 40px;}}#moonn-review-funnel .rf-shell{{grid-template-columns:1fr;}}#moonn-review-funnel .rf-intro,#moonn-review-funnel .rf-form{{padding:24px;}}#moonn-review-funnel h2{{font-size:27px;}}}}
-    @media (max-width:480px){{#moonn-review-funnel .rf-qr{{grid-template-columns:1fr;}}#moonn-review-funnel .rf-stars{{gap:4px;}}#moonn-review-funnel .rf-star{{width:32px;height:32px;font-size:30px;}}}}
+    @media (max-width:480px){{#moonn-review-funnel .rf-stars{{gap:4px;}}#moonn-review-funnel .rf-star{{width:32px;height:32px;font-size:30px;}}}}
   </style>
   <div class="rf-shell">
     <article class="rf-card rf-intro">
       <span class="rf-kicker"><span class="rf-y">Я</span> Оценка на Яндекс Услугах</span>
       <h2>Оставьте оценку Татьяне Мунн</h2>
-      <p>Звёзды открываются в официальной форме Яндекс Услуг. После оценки можно вернуться сюда и оставить текстовый отзыв для страницы Moonn.</p>
+      <p>Сначала поставьте оценку на Яндекс Услугах. После этого можно оставить текстовый отзыв для сайта Moonn.</p>
       <div class="rf-person">
         <span class="rf-avatar">ТМ</span>
         <div><strong>Татьяна Кумскова (Татьяна Мунн)</strong><p>Психолог, консультации и открытые лекции</p></div>
@@ -99,21 +87,15 @@ def build_block(manifest: dict) -> str:
       <div class="rf-stars" aria-hidden="true"><span class="rf-star">★</span><span class="rf-star">★</span><span class="rf-star">★</span><span class="rf-star">★</span><span class="rf-star">★</span></div>
       <div class="rf-actions">
         <a class="rf-button primary" data-yandex-rating-link href="{escape_html(rating_url)}" target="_blank" rel="noopener noreferrer">Поставить оценку на Яндекс Услугах</a>
-        <a class="rf-button secondary" href="{escape_html(profile_url)}" target="_blank" rel="noopener noreferrer">Открыть профиль на Яндекс Услугах</a>
       </div>
       <div class="rf-rating-done" data-rating-opened>
         <strong>Форма Яндекс Услуг открыта</strong>
         <span>После оценки можно оставить текстовый отзыв ниже или закрыть страницу.</span>
       </div>
       <p class="rf-note">Эта страница Moonn не является страницей Яндекса. Оценка ставится только на официальной странице Яндекс Услуг.</p>
-      <div class="rf-qr">
-        <img src="qr-moonn-review-funnel.svg" alt="QR-код для страницы отзывов Татьяны Мунн">
-        <p>QR для экрана после лекции или консультации.<code>{escape_html(qr_target)}</code></p>
-      </div>
     </article>
     <article class="rf-card rf-form">
-      <h3>Текстовый отзыв для страницы Moonn</h3>
-      <p>Если комментарий не появится на Яндекс Услугах, отзыв можно оставить здесь. После отправки он появится на странице отзывов сайта Moonn.</p>
+      <h3>Отзыв для сайта Moonn</h3>
       <form data-moonn-review-form method="post" action="#">
         <label for="rf-rating">Оценка</label>
         <select id="rf-rating" name="rating">
@@ -131,23 +113,19 @@ def build_block(manifest: dict) -> str:
           <option>Другое мероприятие</option>
         </select>
         <label for="rf-name">Имя для публикации</label>
-        <input id="rf-name" name="name" placeholder="Можно оставить пустым или написать Анонимно">
+        <input id="rf-name" name="name" placeholder="Например: Анна" required>
         <label for="rf-comment">Комментарий</label>
         <textarea id="rf-comment" name="comment" placeholder="Что было полезно, что изменилось, что особенно запомнилось?"></textarea>
         <label class="rf-honeypot" for="rf-website">Сайт</label>
         <input class="rf-honeypot" id="rf-website" name="website" tabindex="-1" autocomplete="off">
         <label class="rf-check"><input type="checkbox" name="consent" required> <span>Я согласен(на), что отзыв может быть опубликован на сайте Moonn. Контактные данные не публикуются.</span></label>
+        <label class="rf-check"><input type="checkbox" name="privacy" required> <span>Я согласен(на) на обработку персональных данных в соответствии с <a href="https://moonn.ru/politic" target="_blank" rel="noopener noreferrer">политикой обработки персональных данных</a>.</span></label>
         <div class="rf-actions">
           <button class="rf-button rf-submit" type="submit">Отправить отзыв</button>
           <a class="rf-button ghost" href="https://moonn.ru/otzivi">Закрыть страницу</a>
         </div>
       </form>
       <div class="rf-status" data-review-status></div>
-      <div class="rf-site-reviews" data-site-reviews-wrap>
-        <h4>Отзывы, оставленные на сайте Moonn</h4>
-        <div class="rf-site-review-list" data-site-reviews-list></div>
-      </div>
-      <p class="rf-note">Текст публикуется на сайте Moonn. Оценка Яндекс Услуг отправляется только на официальной странице Яндекса.</p>
     </article>
   </div>
   <script>
@@ -172,7 +150,19 @@ def build_block(manifest: dict) -> str:
       var form = root.querySelector('[data-moonn-review-form]');
       var submitButton = root.querySelector('.rf-submit');
       var statusBox = root.querySelector('[data-review-status]');
-      var reviewsList = root.querySelector('[data-site-reviews-list]');
+
+      function disableInjectedConsentDuplicate() {{
+        root.querySelectorAll('input[name="moonn_personal_data_consent"]').forEach(function(input) {{
+          input.required = false;
+          input.disabled = true;
+          var label = input.closest('label');
+          if(label) label.style.display = 'none';
+        }});
+      }}
+
+      disableInjectedConsentDuplicate();
+      setTimeout(disableInjectedConsentDuplicate, 500);
+      setTimeout(disableInjectedConsentDuplicate, 1500);
 
       function escapeHtml(value) {{
         return String(value || '').replace(/[&<>"]/g, function(ch) {{
@@ -210,31 +200,6 @@ def build_block(manifest: dict) -> str:
         statusBox.textContent = text || '';
       }}
 
-      function renderReviews(reviews) {{
-        if(!reviewsList) return;
-        if(!reviews || !reviews.length) {{
-          reviewsList.innerHTML = '<p class="rf-note">Пока здесь нет отзывов, оставленных через форму сайта.</p>';
-          return;
-        }}
-        reviewsList.innerHTML = reviews.slice(0, 8).map(function(item) {{
-          var date = item.publishedAt ? new Date(item.publishedAt) : null;
-          var dateText = date && !isNaN(date.getTime()) ? date.toLocaleDateString('ru-RU') : '';
-          var stars = '★★★★★'.slice(0, Number(item.rating || 5));
-          return '<article class="rf-site-review">' +
-            '<b>' + escapeHtml(item.namePublic || 'Анонимно') + '</b>' +
-            '<span>' + escapeHtml(stars + (dateText ? ' · ' + dateText : '') + (item.context ? ' · ' + item.context : '')) + '</span>' +
-            '<p>' + escapeHtml(item.comment || '') + '</p>' +
-          '</article>';
-        }}).join('');
-      }}
-
-      function loadReviews() {{
-        jsonp({{action:'list'}}, function(err, payload) {{
-          if(err || !payload || !payload.ok) return;
-          renderReviews(payload.reviews || []);
-        }});
-      }}
-
       if(ratingLink) {{
         var ratingWasOpened = false;
         ratingLink.addEventListener('click', function(event){{
@@ -261,9 +226,19 @@ def build_block(manifest: dict) -> str:
         function handleReviewSubmit(event) {{
           if(event && event.preventDefault) event.preventDefault();
           if(isSubmittingReview) return;
+          disableInjectedConsentDuplicate();
           var fd = new FormData(form);
           if(!fd.get('consent')) {{
             setStatus('error', 'Поставьте согласие на публикацию отзыва.');
+            return;
+          }}
+          if(!fd.get('privacy')) {{
+            setStatus('error', 'Поставьте согласие на обработку персональных данных.');
+            return;
+          }}
+          var name = String(fd.get('name') || '').trim();
+          if(name.length < 2) {{
+            setStatus('error', 'Укажите имя для публикации.');
             return;
           }}
           var comment = String(fd.get('comment') || '').trim();
@@ -281,7 +256,7 @@ def build_block(manifest: dict) -> str:
             action: 'submit',
             rating: fd.get('rating') || '5',
             context: fd.get('context') || 'Отзыв',
-            name: fd.get('name') || 'Анонимно',
+            name: name,
             comment: comment,
             consent: '1',
             website: fd.get('website') || '',
@@ -299,14 +274,12 @@ def build_block(manifest: dict) -> str:
             }}
             form.reset();
             setStatus('ok', 'Отзыв опубликован на странице отзывов.');
-            renderReviews(payload.reviews || []);
           }});
         }}
         form.addEventListener('submit', handleReviewSubmit);
         if(submitButton) submitButton.addEventListener('click', handleReviewSubmit);
       }}
 
-      loadReviews();
     }})();
   </script>
 </section>"""

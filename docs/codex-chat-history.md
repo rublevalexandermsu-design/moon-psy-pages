@@ -2032,3 +2032,38 @@ Append-only project history for `moon-psy-site`.
   - The old consultation generator originally replaced from the consultation marker to the end of the file, which would remove later homepage sections such as reviews when the current combined file is added as a target. Corrected the generator to replace only the first consultation `<section>`.
 - Follow-up rule:
   - Any homepage section generator must preserve downstream sections after its own closing `</section>` before being used on current combined Tilda HTML.
+
+## 2026-05-18 — Moonn Review UX Simplification And QR Actions
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-homepage-reviews-banner`.
+- Trigger: user requested immediate cleanup of the dedicated review-intake page and homepage reviews block: remove overloaded technical copy, remove the QR from the intake page, fix the shifted personal-data checkbox, enlarge the homepage QR, and add share/download actions.
+- Decision:
+  - Continue the existing review funnel branch and canonical generators.
+  - Keep the dedicated intake mode at `/otzivi?ostavit-otzyv=1&source=homepage_reviews_banner#moonn-review-funnel`.
+  - Remove the duplicate QR from the intake page because visitors already arrive there through QR or CTA.
+  - Use a direct raw GitHub SVG URL for `Скачать QR` to avoid inflating the Tilda HTML with a large `data:` URL.
+- Updated artifacts:
+  - `scripts/build_moonn_review_funnel_artifacts.py`
+  - `scripts/build_moonn_reviews_home_banner.py`
+  - `docs/tatiana-munn-review-funnel/review-funnel-tilda-block.html`
+  - `docs/tatiana-munn-review-funnel/review-funnel-prototype.html`
+  - `docs/tatiana-munn-review-funnel/otzivi-t123-combined-final.html`
+  - `docs/tatiana-munn-reviews-home-banner/tilda-html-block-final.html`
+  - `docs/tatiana-munn-reviews-home-banner/homepage-reviews-banner-preview.html`
+  - `docs/tatiana-munn-reviews-home-banner/homepage-t123-combined-2026-05-17.html`
+- Publication:
+  - Republished `/otzivi` Tilda page `81167556`, T123 record `1353112591`.
+  - Republished homepage Tilda page `42678538`, T123 record `2251351151`.
+- Verification:
+  - Raw/live `/otzivi` contains the duplicate-consent guard and no longer contains `QR для экрана`, `Если комментарий`, `Пока здесь нет отзывов`, or `Открыть профиль на Яндекс`.
+  - Browser QA confirmed the review funnel has exactly two visible required checkboxes, both `18x18`.
+  - Raw/live homepage contains `Поделиться ссылкой`, `Скачать QR`, the raw GitHub QR SVG link, and `width:182px`.
+  - Browser QA confirmed the homepage QR renders at `182x182`.
+  - QA screenshots: `output/playwright/moonn-review-ux-simplify-2026-05-18-resume/`.
+- Incident / correction:
+  - The first homepage QR download implementation used an inline base64 `data:` URL. Tilda rejected the block with `Error. Too much data in code`. Corrected by linking to the SVG file instead of embedding it in the Tilda code.
+  - A global Moonn consent hardening script injected a third large checkbox into the custom review form. Corrected by disabling and hiding the injected duplicate only inside `#moonn-review-funnel`, leaving the two explicit review-form consents active.
+- Follow-up rule:
+  - Do not embed large QR/image payloads as `data:` URLs inside Tilda HTML blocks; use a stable file URL.
+  - Custom Tilda forms on Moonn must guard against the global personal-data checkbox injector when they already render their own explicit consent fields.

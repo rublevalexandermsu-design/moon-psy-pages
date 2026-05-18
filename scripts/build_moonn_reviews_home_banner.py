@@ -10,6 +10,7 @@ BLOCK_PATH = DOCS_DIR / "tilda-html-block-final.html"
 PREVIEW_PATH = DOCS_DIR / "homepage-reviews-banner-preview.html"
 COMBINED_PATH = DOCS_DIR / "homepage-t123-combined-2026-05-17.html"
 QR_SVG_PATH = FUNNEL_DIR / "qr-moonn-review-funnel.svg"
+QR_DOWNLOAD_URL = "https://raw.githubusercontent.com/rublevalexandermsu-design/moonn-psy-pages/codex/moonn-homepage-reviews-banner/docs/tatiana-munn-review-funnel/qr-moonn-review-funnel.svg"
 
 
 READ_URL = "/otzivi"
@@ -34,18 +35,22 @@ def build_block() -> str:
     #moonn-reviews-home-banner .cta{{display:inline-flex;align-items:center;justify-content:center;width:fit-content;min-height:48px;padding:0 24px;border-radius:999px;background:linear-gradient(90deg,#6f2ee8,#e743b5,#32b9ef);color:#fff!important;text-decoration:none!important;font-size:16px;font-weight:800;box-shadow:0 12px 28px rgba(111,46,232,.28);transition:transform .2s ease,box-shadow .2s ease}}
     #moonn-reviews-home-banner .cta.secondary{{background:#fff;color:#5220b8!important;border:1px solid rgba(82,32,184,.22);box-shadow:none}}
     #moonn-reviews-home-banner .cta:hover{{transform:translateY(-2px);box-shadow:0 18px 34px rgba(111,46,232,.30)}}
-    #moonn-reviews-home-banner .media{{min-width:0;min-height:360px;position:relative;display:grid;align-content:center;gap:14px;padding:34px;background:radial-gradient(circle at 85% 16%,rgba(252,204,0,.28),transparent 33%),linear-gradient(135deg,#fffaf0 0%,#fff 45%,#f4fbff 100%);border-left:1px solid rgba(133,75,210,.14);text-decoration:none!important;overflow:hidden}}
+    #moonn-reviews-home-banner .media{{min-width:0;min-height:360px;position:relative;display:grid;grid-template-columns:210px minmax(0,1fr);align-content:center;gap:14px;padding:30px;background:radial-gradient(circle at 85% 16%,rgba(252,204,0,.28),transparent 33%),linear-gradient(135deg,#fffaf0 0%,#fff 45%,#f4fbff 100%);border-left:1px solid rgba(133,75,210,.14);text-decoration:none!important;overflow:hidden}}
     #moonn-reviews-home-banner .source{{display:flex;align-items:center;gap:12px;margin-bottom:2px;color:#281b36;font-size:18px;font-weight:900}}
     #moonn-reviews-home-banner .source-mark{{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:#fc0;color:#111;font-size:25px;font-weight:900;box-shadow:0 12px 24px rgba(132,92,0,.18)}}
     #moonn-reviews-home-banner .review-card{{position:relative;padding:15px 16px 15px 18px;border:1px solid rgba(82,32,184,.12);border-radius:18px;background:rgba(255,255,255,.82);box-shadow:0 12px 30px rgba(67,45,110,.10);color:#3f334e}}
     #moonn-reviews-home-banner .review-card strong{{display:block;margin:0 0 6px;color:#5220b8;font-size:15px;line-height:1.25}}
     #moonn-reviews-home-banner .review-card span{{display:block;font-size:14px;line-height:1.45;color:#5a5063;overflow-wrap:anywhere}}
-    #moonn-reviews-home-banner .qr-box{{display:grid;grid-template-columns:104px minmax(0,1fr);gap:14px;align-items:center;padding:14px;border:1px dashed rgba(82,32,184,.22);border-radius:18px;background:rgba(255,255,255,.88)}}
-    #moonn-reviews-home-banner .qr-svg{{width:104px;height:104px;display:block;background:#fff;border-radius:8px}}
+    #moonn-reviews-home-banner .qr-box{{grid-row:2 / span 3;display:grid;gap:12px;align-content:start;padding:14px;border:1px dashed rgba(82,32,184,.22);border-radius:18px;background:rgba(255,255,255,.88);text-decoration:none!important;color:#231b33!important}}
+    #moonn-reviews-home-banner .qr-svg{{width:182px;height:182px;display:block;background:#fff;border-radius:10px}}
     #moonn-reviews-home-banner .qr-box b{{display:block;margin:0 0 4px;color:#5220b8;font-size:15px}}
     #moonn-reviews-home-banner .qr-box span{{display:block;color:#5a5063;font-size:13px;line-height:1.4;overflow-wrap:anywhere}}
+    #moonn-reviews-home-banner .link-card{{padding:12px 14px;border-radius:16px;background:#fff;border:1px solid rgba(82,32,184,.12);font-size:13px;line-height:1.35;color:#5a5063;overflow-wrap:anywhere}}
+    #moonn-reviews-home-banner .tool-actions{{display:flex;flex-wrap:wrap;gap:10px}}
+    #moonn-reviews-home-banner .mini-link{{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 14px;border-radius:999px;background:#fff;color:#5220b8!important;border:1px solid rgba(82,32,184,.22);font-size:13px;font-weight:800;text-decoration:none!important;cursor:pointer}}
     @media (max-width:820px){{#moonn-reviews-home-banner{{max-width:100vw;padding:34px 14px}}#moonn-reviews-home-banner .wrap{{width:100%;max-width:calc(100vw - 28px);grid-template-columns:1fr;border-radius:22px}}#moonn-reviews-home-banner .copy{{padding:28px 24px 10px}}#moonn-reviews-home-title{{font-size:30px}}#moonn-reviews-home-banner p{{font-size:16px}}#moonn-reviews-home-banner .media{{min-height:260px;padding:24px;border-left:0;border-top:1px solid rgba(133,75,210,.14)}}}}
-    @media (max-width:520px){{#moonn-reviews-home-banner .meta li{{white-space:normal}}#moonn-reviews-home-banner .source{{font-size:16px}}#moonn-reviews-home-banner .source-mark{{width:36px;height:36px;font-size:22px}}#moonn-reviews-home-banner .review-card{{padding:13px 14px}}#moonn-reviews-home-banner .qr-box{{grid-template-columns:1fr}}}}
+    @media (max-width:620px){{#moonn-reviews-home-banner .media{{grid-template-columns:1fr}}#moonn-reviews-home-banner .qr-box{{grid-row:auto;width:fit-content;max-width:100%}}#moonn-reviews-home-banner .qr-svg{{width:190px;height:190px}}}}
+    @media (max-width:520px){{#moonn-reviews-home-banner .meta li{{white-space:normal}}#moonn-reviews-home-banner .source{{font-size:16px}}#moonn-reviews-home-banner .source-mark{{width:36px;height:36px;font-size:22px}}#moonn-reviews-home-banner .review-card{{padding:13px 14px}}}}
   </style>
   <div class="wrap">
     <div class="copy">
@@ -60,14 +65,35 @@ def build_block() -> str:
     </div>
     <div class="media" aria-label="QR-код и переход к отзывам о Татьяне Мунн">
       <div class="source"><span class="source-mark">Я</span><span>Проверяемые отзывы</span></div>
-      <div class="review-card"><strong>Оценка на Яндекс Услугах</strong><span>Кнопка открывает официальную форму оценки исполнителя.</span></div>
-      <div class="review-card"><strong>Текстовый отзыв для Moonn</strong><span>Комментарий можно оставить на странице отзывов сайта.</span></div>
       <a class="qr-box" href="{REVIEW_URL}" aria-label="Открыть страницу, где можно оставить отзыв о Татьяне Мунн">
         {qr_svg}
-        <span><b>Навести камеру</b>QR ведёт на страницу оценки и текстового отзыва.<br>{REVIEW_URL}</span>
+        <span><b>Навести камеру</b>Страница оценки и отзыва</span>
       </a>
+      <div class="review-card"><strong>Оценка на Яндекс Услугах</strong><span>Официальная оценка в профиле исполнителя.</span></div>
+      <div class="review-card"><strong>Отзыв для сайта Татьяны Мунн</strong><span>Текстовый отзыв для страницы Moonn.</span></div>
+      <div class="link-card">{REVIEW_URL}</div>
+      <div class="tool-actions">
+        <button class="mini-link" type="button" data-copy-review-link="{REVIEW_URL}">Поделиться ссылкой</button>
+        <a class="mini-link" href="{QR_DOWNLOAD_URL}" target="_blank" rel="noopener noreferrer" download="moonn-review-qr.svg">Скачать QR</a>
+      </div>
     </div>
   </div>
+  <script>
+    (function(){{
+      var root = document.getElementById('moonn-reviews-home-banner');
+      if(!root) return;
+      root.addEventListener('click', function(event){{
+        var button = event.target && event.target.closest && event.target.closest('[data-copy-review-link]');
+        if(!button) return;
+        var link = new URL(button.getAttribute('data-copy-review-link'), window.location.origin).href;
+        if(navigator.clipboard && navigator.clipboard.writeText) {{
+          navigator.clipboard.writeText(link).then(function(){{ button.textContent = 'Ссылка скопирована'; }});
+        }} else {{
+          window.prompt('Ссылка на отзыв', link);
+        }}
+      }});
+    }})();
+  </script>
 </section>"""
 
 
