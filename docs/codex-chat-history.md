@@ -2067,3 +2067,28 @@ Append-only project history for `moon-psy-site`.
 - Follow-up rule:
   - Do not embed large QR/image payloads as `data:` URLs inside Tilda HTML blocks; use a stable file URL.
   - Custom Tilda forms on Moonn must guard against the global personal-data checkbox injector when they already render their own explicit consent fields.
+
+## 2026-05-18 — Moonn Review Funnel Wording And Consultation Offer Architecture
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-homepage-reviews-banner`.
+- Trigger: user approved the simplified review page but asked to remove the conditional wording `Сначала поставьте оценку...`, then described a larger marketing workflow: review/rating -> consultation discount -> iClients booking -> Telegram confirmation.
+- Decision:
+  - Immediately replace the conditional review-page copy with neutral choice wording.
+  - Do not implement a public discount-for-Yandex-rating or discount-for-review mechanic without compliance approval because Yandex Business guidance warns against money/discount incentives for reviews.
+  - Capture the stronger safe workflow as a project design document before implementation.
+- Updated artifacts:
+  - `scripts/build_moonn_review_funnel_artifacts.py`
+  - `docs/tatiana-munn-review-funnel/review-funnel-tilda-block.html`
+  - `docs/tatiana-munn-review-funnel/review-funnel-prototype.html`
+  - `docs/tatiana-munn-review-funnel/otzivi-t123-combined-final.html`
+  - `docs/moonn-review-to-consultation-offer-workflow-2026-05-18.md`
+- Publication:
+  - Republished `/otzivi` Tilda page `81167556`, T123 record `1353112591`.
+- Verification:
+  - Raw/live `/otzivi` contains the new copy: `Вы можете поставить оценку на Яндекс Услугах, нажав жёлтую кнопку, или оставить текстовый отзыв для сайта Moonn.ru.`
+  - Raw/live `/otzivi` no longer contains `Сначала поставьте оценку` or `После этого можно оставить`.
+- Incident / correction:
+  - The user's proposed reward flow exposes a platform-policy risk for Yandex reviews and a verification gap for Yandex rating and YCLIENTS booking completion.
+- Follow-up rule:
+  - Review/rating funnels must not promise a reward in exchange for Yandex reviews or require users to prove a Yandex review. Use voluntary reviews plus a separate participant offer unless legal/platform approval says otherwise.
