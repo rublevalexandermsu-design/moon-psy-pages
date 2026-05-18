@@ -151,15 +151,36 @@ Important limitation:
 
 - A normal website link to a personal Telegram profile cannot silently attach a generated file or send a message for the user. The safe implementation is: generate PNG -> user downloads or shares it -> user attaches/sends it in Telegram.
 
+UX correction after live user test on 2026-05-18:
+
+- After a successful Moonn review submission, the Yandex rating card and the filled review form are hidden.
+- The visitor is moved to a single success state instead of seeing the empty form again.
+- The status wording is now:
+  `Отзыв опубликован на странице Татьяна Мун.ру.`
+- The proof image is shown directly inside the success state; the old `Скачать подтверждение` and `Скопировать сообщение` buttons were removed.
+- The primary action is now:
+  `Скопировать текст и открыть Telegram Татьяны`
+- On supported mobile browsers, an additional user-facing file-share action can appear:
+  `Отправить текст и подтверждение`
+
 Verification:
 
 - Live safe Playwright check intercepted the backend JSONP submit request, so no fake public review was stored.
 - The generated proof link was a `data:image/png;base64,...` URL.
 - Downloaded proof file passed PNG signature check.
+- Live safe UX check confirmed:
+  - `.rf-intro` is hidden after submit;
+  - the form is hidden after submit;
+  - status strip is hidden after submit;
+  - success panel is visible;
+  - proof preview image is visible;
+  - Telegram button copies the text and opens `https://t.me/Tatiana_Moonn`.
 - Verification artifacts:
   - `output/playwright/moonn-review-proof-card-2026-05-18/result.json`
   - `output/playwright/moonn-review-proof-card-2026-05-18/download-result.json`
   - `output/playwright/moonn-review-proof-card-2026-05-18/offer-with-proof.png`
+  - `output/playwright/moonn-review-submitted-ux-fix-2026-05-18/result.json`
+  - `output/playwright/moonn-review-submitted-ux-fix-2026-05-18/mobile-telegram-result.json`
 
 Verification artifacts:
 

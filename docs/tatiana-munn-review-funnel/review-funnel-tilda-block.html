@@ -3,8 +3,11 @@
     #moonn-review-funnel{box-sizing:border-box;width:100%;margin:0;padding:42px 18px 54px;background:#f4f6f8;font-family:Arial,sans-serif;color:#1f2328;}
     #moonn-review-funnel *{box-sizing:border-box;letter-spacing:0;}
     #moonn-review-funnel .rf-shell{width:min(100%,1060px);margin:0 auto;display:grid;grid-template-columns:minmax(0,.9fr) minmax(300px,1.1fr);gap:20px;align-items:stretch;}
+    #moonn-review-funnel.is-submitted .rf-shell{grid-template-columns:minmax(0,680px);justify-content:center;}
     #moonn-review-funnel .rf-card{border:1px solid rgba(31,35,40,.12);border-radius:20px;background:#fff;box-shadow:0 18px 44px rgba(24,39,75,.10);overflow:hidden;}
     #moonn-review-funnel .rf-intro{padding:30px 30px 24px;}
+    #moonn-review-funnel.is-submitted .rf-intro,#moonn-review-funnel.is-submitted .rf-form>h3,#moonn-review-funnel.is-submitted .rf-form>.rf-offer-note,#moonn-review-funnel.is-submitted .rf-form>form,#moonn-review-funnel.is-submitted .rf-form>.rf-status{display:none!important;}
+    #moonn-review-funnel.is-submitted .rf-form{padding:0;background:transparent;box-shadow:none;border:0;}
     #moonn-review-funnel .rf-kicker{display:inline-flex;align-items:center;gap:8px;margin:0 0 14px;padding:7px 11px;border-radius:999px;background:#fff4bf;color:#2d2611;font-size:13px;font-weight:800;}
     #moonn-review-funnel .rf-y{display:inline-grid;place-items:center;width:23px;height:23px;border-radius:7px;background:#fc0;color:#111;font-weight:900;}
     #moonn-review-funnel h2{margin:0 0 12px;font-size:32px;line-height:1.12;color:#181c20;}
@@ -37,16 +40,18 @@
     #moonn-review-funnel .rf-status.error{display:block;background:#fff4f2;border-color:rgba(214,77,45,.25);color:#8b2d1c;}
     #moonn-review-funnel .rf-status.ok{display:block;}
     #moonn-review-funnel .rf-participant-offer{display:none;margin-top:16px;padding:18px;border-radius:18px;background:linear-gradient(135deg,#fff8dc,#fff 54%,#f3fbff);border:1px solid rgba(245,183,0,.35);box-shadow:0 12px 28px rgba(204,154,0,.12);}
+    #moonn-review-funnel.is-submitted .rf-participant-offer{margin-top:0;padding:24px;}
     #moonn-review-funnel .rf-participant-offer.is-visible{display:block;}
-    #moonn-review-funnel .rf-participant-offer h4{margin:0 0 8px;color:#181c20;font-size:20px;line-height:1.2;}
+    #moonn-review-funnel .rf-participant-offer h4{margin:0 0 8px;color:#181c20;font-size:24px;line-height:1.2;}
     #moonn-review-funnel .rf-participant-offer p{font-size:14px;line-height:1.45;}
     #moonn-review-funnel .rf-offer-note{margin:16px 0 0;padding:14px;border-radius:16px;background:#fff9df;border:1px solid rgba(245,183,0,.25);color:#4d5965;font-size:14px;line-height:1.45;}
     #moonn-review-funnel .rf-offer-note strong{display:block;margin-bottom:4px;color:#181c20;}
     #moonn-review-funnel .rf-copy-message{width:100%;min-height:92px;margin-top:12px;padding:12px;border:1px solid rgba(31,35,40,.14);border-radius:14px;background:#fff;color:#303841;font:500 13px/1.45 Arial,sans-serif;resize:vertical;}
-    #moonn-review-funnel .rf-proof-card{display:none;margin-top:14px;padding:14px;border-radius:16px;background:#fff;border:1px dashed rgba(31,35,40,.22);}
+    #moonn-review-funnel .rf-proof-card{display:none;margin-top:14px;padding:14px;border-radius:16px;background:#fff;border:1px solid rgba(31,35,40,.12);}
     #moonn-review-funnel .rf-proof-card.is-visible{display:block;}
     #moonn-review-funnel .rf-proof-card strong{display:block;margin-bottom:6px;color:#181c20;font-size:15px;}
     #moonn-review-funnel .rf-proof-card span{display:block;color:#687583;font-size:13px;line-height:1.4;}
+    #moonn-review-funnel .rf-proof-preview{display:block;width:100%;margin-top:12px;border-radius:14px;border:1px solid rgba(31,35,40,.12);background:#fff;box-shadow:0 10px 24px rgba(24,39,75,.10);}
     @media (max-width:820px){#moonn-review-funnel{padding:28px 14px 40px;}#moonn-review-funnel .rf-shell{grid-template-columns:1fr;}#moonn-review-funnel .rf-intro,#moonn-review-funnel .rf-form{padding:24px;}#moonn-review-funnel h2{font-size:27px;}}
     @media (max-width:480px){#moonn-review-funnel .rf-stars{gap:4px;}#moonn-review-funnel .rf-star{width:32px;height:32px;font-size:30px;}}
   </style>
@@ -107,18 +112,17 @@
       <div class="rf-status" data-review-status></div>
       <div class="rf-participant-offer" data-participant-offer aria-live="polite">
         <h4>Спасибо, отзыв опубликован</h4>
-        <p>Если вы участвовали в мероприятии Moonn, можно запросить специальное условие на первое двухчасовое посещение для себя или близкого: минус 2 000 ₽ от стоимости консультации. Итоговое применение подтверждает Татьяна Мунн в переписке.</p>
+        <p>Отзыв опубликован на странице Татьяна Мун.ру. Ниже уже подготовлены текст и подтверждение отзыва для сообщения Татьяне в Telegram.</p>
         <textarea class="rf-copy-message" data-offer-message readonly></textarea>
         <div class="rf-proof-card" data-proof-card>
           <strong>Подтверждение отзыва</strong>
-          <span>Скачайте PNG-карточку и приложите её к сообщению в Telegram.</span>
+          <span>Эту картинку можно отправить Татьяне вместе с сообщением.</span>
+          <img class="rf-proof-preview" data-proof-preview alt="Подтверждение опубликованного отзыва Moonn" hidden>
         </div>
         <div class="rf-actions">
-          <a class="rf-button primary" data-booking-link href="https://n461584.yclients.com/" target="_blank" rel="noopener noreferrer">Записаться онлайн</a>
-          <button class="rf-button ghost" type="button" data-copy-offer-message>Скопировать сообщение</button>
-          <a class="rf-button ghost" data-download-proof href="#" download="moonn-review-proof.png">Скачать подтверждение</a>
-          <button class="rf-button ghost" type="button" data-share-proof hidden>Поделиться подтверждением</button>
-          <a class="rf-button ghost" data-telegram-link href="https://t.me/Tatiana_Moonn" target="_blank" rel="noopener noreferrer">Открыть Telegram Татьяны</a>
+          <button class="rf-button primary" type="button" data-copy-open-telegram>Скопировать текст и открыть Telegram Татьяны</button>
+          <button class="rf-button ghost" type="button" data-share-proof hidden>Отправить текст и подтверждение</button>
+          <a class="rf-button ghost" data-booking-link href="https://n461584.yclients.com/" target="_blank" rel="noopener noreferrer">Записаться онлайн</a>
           <a class="rf-button ghost" href="https://moonn.ru/otzivi">Закрыть страницу</a>
         </div>
       </div>
@@ -150,12 +154,11 @@
       var statusBox = root.querySelector('[data-review-status]');
       var participantOffer = root.querySelector('[data-participant-offer]');
       var offerMessageBox = root.querySelector('[data-offer-message]');
-      var copyOfferButton = root.querySelector('[data-copy-offer-message]');
+      var copyOpenTelegramButton = root.querySelector('[data-copy-open-telegram]');
       var proofCard = root.querySelector('[data-proof-card]');
-      var downloadProofLink = root.querySelector('[data-download-proof]');
+      var proofPreview = root.querySelector('[data-proof-preview]');
       var shareProofButton = root.querySelector('[data-share-proof]');
       var bookingLink = root.querySelector('[data-booking-link]');
-      var telegramLink = root.querySelector('[data-telegram-link]');
       var lastProofFile = null;
 
       function disableInjectedConsentDuplicate() {
@@ -213,7 +216,7 @@
         }
         var parts = [
           ['Здравствуйте,', 'Татьяна.'].join(' '),
-          'Я оставил(а) отзыв на сайте Moonn.ru и хочу уточнить специальное условие для участника мероприятия Moonn на первое двухчасовое посещение для себя или близкого.',
+          'Я оставил(а) отзыв на сайте Moonn.ru. Прошу зафиксировать специальное условие участника мероприятия Moonn на первое двухчасовое посещение для меня или близкого.',
           'Прикрепляю подтверждение отзыва с сайта Moonn.ru.',
           fieldLine('Имя для публикации', review && review.namePublic ? review.namePublic : 'не указано'),
           fieldLine('Что посетил(а)', review && review.context ? review.context : 'не указано'),
@@ -253,7 +256,7 @@
       }
 
       function buildReviewProofImage(review) {
-        if(!review || !downloadProofLink) return null;
+        if(!review) return null;
         var canvas = document.createElement('canvas');
         canvas.width = 1080;
         canvas.height = 1350;
@@ -332,12 +335,14 @@
 
       function prepareReviewProof(review) {
         var canvas = buildReviewProofImage(review);
-        if(!canvas || !downloadProofLink) return;
+        if(!canvas) return;
         var dataUrl = canvas.toDataURL('image/png');
         var reviewId = review && review.id ? String(review.id).replace(/[^a-zA-Z0-9_-]/g, '-') : 'review';
         var filename = 'moonn-review-proof-' + reviewId + '.png';
-        downloadProofLink.href = dataUrl;
-        downloadProofLink.download = filename;
+        if(proofPreview) {
+          proofPreview.src = dataUrl;
+          proofPreview.hidden = false;
+        }
         if(proofCard) proofCard.classList.add('is-visible');
         if(shareProofButton && navigator.canShare && navigator.share && window.fetch && window.File) {
           fetch(dataUrl).then(function(response) { return response.blob(); }).then(function(blob) {
@@ -351,10 +356,10 @@
 
       function showParticipantOffer(review) {
         if(!participantOffer) return;
+        root.classList.add('is-submitted');
         var message = buildOfferMessage(review || {});
         if(offerMessageBox) offerMessageBox.value = message;
         if(bookingLink) bookingLink.href = yclientsUrl;
-        if(telegramLink) telegramLink.href = telegramUrl;
         prepareReviewProof(review || {});
         participantOffer.classList.add('is-visible');
         if(participantOffer.scrollIntoView) {
@@ -372,9 +377,10 @@
         window.prompt('Сообщение для Telegram', text);
       }
 
-      if(copyOfferButton) {
-        copyOfferButton.addEventListener('click', function() {
-          copyText(offerMessageBox ? offerMessageBox.value : '', copyOfferButton);
+      if(copyOpenTelegramButton) {
+        copyOpenTelegramButton.addEventListener('click', function() {
+          copyText(offerMessageBox ? offerMessageBox.value : '', copyOpenTelegramButton);
+          setTimeout(function() { window.open(telegramUrl, '_blank', 'noopener'); }, 180);
         });
       }
 
@@ -462,7 +468,7 @@
               return;
             }
             form.reset();
-            setStatus('ok', 'Отзыв опубликован на странице отзывов.');
+              setStatus('ok', 'Отзыв опубликован на странице Татьяна Мун.ру.');
             showParticipantOffer(payload.review || null);
           });
         }

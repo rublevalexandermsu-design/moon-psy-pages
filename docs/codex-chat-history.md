@@ -2184,3 +2184,33 @@ Append-only project history for `moon-psy-site`.
   - QA artifacts: `output/playwright/moonn-review-proof-card-2026-05-18/`.
 - Follow-up rule:
   - For Telegram personal-chat proof flows, generate a user-controlled proof artifact and clear attachment instruction. Use bot/API integration only if the target process needs automatic file delivery.
+
+## 2026-05-18 — Moonn Review Submitted-State UX Fix
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-homepage-reviews-banner`.
+- Trigger: user tested the live review form and found that after submission the visitor still sees the Yandex rating card and an empty review form, while the actual success/Telegram block is lower on the page. User also found that the Telegram chat opens empty and the proof-card download/share flow is too manual for phone users.
+- Decision:
+  - After a successful Moonn review submission, collapse the funnel into a single success state.
+  - Hide the Yandex card, the original review form, and the green status strip after submit.
+  - Show the generated proof image inline in the success panel instead of asking the visitor to download it first.
+  - Replace `Скачать подтверждение`, `Поделиться подтверждением`, and `Открыть Telegram Татьяны` with a primary action: `Скопировать текст и открыть Telegram Татьяны`.
+  - Keep an optional mobile-only/browser-supported share action with user-facing wording: `Отправить текст и подтверждение`.
+- Updated artifacts:
+  - `scripts/build_moonn_review_funnel_artifacts.py`
+  - `docs/tatiana-munn-review-funnel/review-funnel-tilda-block.html`
+  - `docs/tatiana-munn-review-funnel/review-funnel-prototype.html`
+  - `docs/tatiana-munn-review-funnel/otzivi-t123-combined-final.html`
+  - `docs/moonn-review-to-consultation-offer-workflow-2026-05-18.md`
+- Publication:
+  - Republished `/otzivi` Tilda page `81167556`, T123 record `1353112591`.
+- Verification:
+  - Live HTML contains `Скопировать текст и открыть Telegram Татьяны`, `data-proof-preview`, and `Отзыв опубликован на странице Татьяна Мун.ру`.
+  - Live HTML no longer contains `Скачать подтверждение`.
+  - Playwright safe submit confirmed `rootSubmitted: true`, Yandex intro hidden, form hidden, status hidden, success panel visible, proof preview visible.
+  - Mobile Playwright check confirmed the Telegram button opens `https://t.me/Tatiana_Moonn` and copies the message containing the review id and proof-attachment line.
+  - QA artifacts: `output/playwright/moonn-review-submitted-ux-fix-2026-05-18/`.
+- Incident / correction:
+  - Earlier verification checked that the offer existed, but did not validate post-submit focus and user comprehension. The user correctly found that leaving the original form visible made the funnel feel broken.
+- Follow-up rule:
+  - For funnel success states, verify the actual post-action viewport and remove completed-step UI unless it is intentionally needed for a second action.
