@@ -12,6 +12,8 @@ MANIFEST_PATH = ROOT / "registry" / "reviews" / "moonn-review-funnel.manifest.js
 OUTPUT_DIR = ROOT / "docs" / "tatiana-munn-review-funnel"
 OTZIVI_T123_COMBINED_PATH = OUTPUT_DIR / "otzivi-t123-combined-final.html"
 YCLIENTS_WIDGET_SNIPPET = """<!-- nominify begin --><script type="text/javascript" src="https://w461584.yclients.com/widgetJS" charset="UTF-8"></script><!-- nominify end -->"""
+YCLIENTS_BOOKING_URL = "https://n461584.yclients.com/"
+TELEGRAM_URL = "https://t.me/Tatiana_Moonn"
 
 
 def load_manifest() -> dict:
@@ -34,6 +36,8 @@ def build_block(manifest: dict) -> str:
     rating_url = manifest["yandex_services"]["rating_url"]
     api_url = manifest["moonn_comment_flow"]["api_url"]
     api_url_json = json.dumps(api_url, ensure_ascii=False)
+    yclients_url_json = json.dumps(YCLIENTS_BOOKING_URL, ensure_ascii=False)
+    telegram_url_json = json.dumps(TELEGRAM_URL, ensure_ascii=False)
     return f"""<section id="{escape_html(anchor_id)}" class="moonn-review-funnel" aria-label="Оставить отзыв о Татьяне Мунн" style="display:none">
   <style>
     #moonn-review-funnel{{box-sizing:border-box;width:100%;margin:0;padding:42px 18px 54px;background:#f4f6f8;font-family:Arial,sans-serif;color:#1f2328;}}
@@ -72,6 +76,13 @@ def build_block(manifest: dict) -> str:
     #moonn-review-funnel .rf-status{{display:none;margin-top:14px;padding:13px 14px;border-radius:14px;background:#f4fff8;border:1px solid rgba(22,128,80,.18);color:#20573c;font-size:14px;line-height:1.4;}}
     #moonn-review-funnel .rf-status.error{{display:block;background:#fff4f2;border-color:rgba(214,77,45,.25);color:#8b2d1c;}}
     #moonn-review-funnel .rf-status.ok{{display:block;}}
+    #moonn-review-funnel .rf-participant-offer{{display:none;margin-top:16px;padding:18px;border-radius:18px;background:linear-gradient(135deg,#fff8dc,#fff 54%,#f3fbff);border:1px solid rgba(245,183,0,.35);box-shadow:0 12px 28px rgba(204,154,0,.12);}}
+    #moonn-review-funnel .rf-participant-offer.is-visible{{display:block;}}
+    #moonn-review-funnel .rf-participant-offer h4{{margin:0 0 8px;color:#181c20;font-size:20px;line-height:1.2;}}
+    #moonn-review-funnel .rf-participant-offer p{{font-size:14px;line-height:1.45;}}
+    #moonn-review-funnel .rf-offer-note{{margin:16px 0 0;padding:14px;border-radius:16px;background:#fff9df;border:1px solid rgba(245,183,0,.25);color:#4d5965;font-size:14px;line-height:1.45;}}
+    #moonn-review-funnel .rf-offer-note strong{{display:block;margin-bottom:4px;color:#181c20;}}
+    #moonn-review-funnel .rf-copy-message{{width:100%;min-height:92px;margin-top:12px;padding:12px;border:1px solid rgba(31,35,40,.14);border-radius:14px;background:#fff;color:#303841;font:500 13px/1.45 Arial,sans-serif;resize:vertical;}}
     @media (max-width:820px){{#moonn-review-funnel{{padding:28px 14px 40px;}}#moonn-review-funnel .rf-shell{{grid-template-columns:1fr;}}#moonn-review-funnel .rf-intro,#moonn-review-funnel .rf-form{{padding:24px;}}#moonn-review-funnel h2{{font-size:27px;}}}}
     @media (max-width:480px){{#moonn-review-funnel .rf-stars{{gap:4px;}}#moonn-review-funnel .rf-star{{width:32px;height:32px;font-size:30px;}}}}
   </style>
@@ -96,6 +107,10 @@ def build_block(manifest: dict) -> str:
     </article>
     <article class="rf-card rf-form">
       <h3>Отзыв для сайта Moonn</h3>
+      <div class="rf-offer-note">
+        <strong>Для участников мероприятий Moonn</strong>
+        После отправки отзыва можно запросить специальное условие на первое двухчасовое посещение для себя или близкого.
+      </div>
       <form data-moonn-review-form method="post" action="#">
         <label for="rf-rating">Оценка</label>
         <select id="rf-rating" name="rating">
@@ -126,6 +141,17 @@ def build_block(manifest: dict) -> str:
         </div>
       </form>
       <div class="rf-status" data-review-status></div>
+      <div class="rf-participant-offer" data-participant-offer aria-live="polite">
+        <h4>Спасибо, отзыв опубликован</h4>
+        <p>Если вы участвовали в мероприятии Moonn, можно запросить специальное условие на первое двухчасовое посещение для себя или близкого: минус 2 000 ₽ от стоимости консультации. Итоговое применение подтверждает Татьяна Мунн в переписке.</p>
+        <textarea class="rf-copy-message" data-offer-message readonly></textarea>
+        <div class="rf-actions">
+          <a class="rf-button primary" data-booking-link href="{escape_html(YCLIENTS_BOOKING_URL)}" target="_blank" rel="noopener noreferrer">Записаться онлайн</a>
+          <button class="rf-button ghost" type="button" data-copy-offer-message>Скопировать сообщение</button>
+          <a class="rf-button ghost" data-telegram-link href="{escape_html(TELEGRAM_URL)}" target="_blank" rel="noopener noreferrer">Открыть Telegram Татьяны</a>
+          <a class="rf-button ghost" href="https://moonn.ru/otzivi">Закрыть страницу</a>
+        </div>
+      </div>
     </article>
   </div>
   <script>
@@ -144,12 +170,19 @@ def build_block(manifest: dict) -> str:
         placement.parentNode.insertBefore(root, placement);
       }}
       var apiUrl = {api_url_json};
+      var yclientsUrl = {yclients_url_json};
+      var telegramUrl = {telegram_url_json};
       var ratingLink = root.querySelector('[data-yandex-rating-link]');
       var opened = root.querySelector('[data-rating-opened]');
       var formTitle = root.querySelector('.rf-form h3');
       var form = root.querySelector('[data-moonn-review-form]');
       var submitButton = root.querySelector('.rf-submit');
       var statusBox = root.querySelector('[data-review-status]');
+      var participantOffer = root.querySelector('[data-participant-offer]');
+      var offerMessageBox = root.querySelector('[data-offer-message]');
+      var copyOfferButton = root.querySelector('[data-copy-offer-message]');
+      var bookingLink = root.querySelector('[data-booking-link]');
+      var telegramLink = root.querySelector('[data-telegram-link]');
 
       function disableInjectedConsentDuplicate() {{
         root.querySelectorAll('input[name="moonn_personal_data_consent"]').forEach(function(input) {{
@@ -198,6 +231,45 @@ def build_block(manifest: dict) -> str:
         if(!statusBox) return;
         statusBox.className = 'rf-status ' + (kind || '');
         statusBox.textContent = text || '';
+      }}
+
+      function buildOfferMessage(review) {{
+        var parts = [
+          'Здравствуйте, Татьяна.',
+          'Я оставил(а) отзыв на сайте Moonn.ru и хочу уточнить специальное условие для участника мероприятия Moonn на первое двухчасовое посещение для себя или близкого.',
+          'Имя для публикации: ' + (review && review.namePublic ? review.namePublic : 'не указано') + '.',
+          'Что посетил(а): ' + (review && review.context ? review.context : 'не указано') + '.',
+          'ID отзыва: ' + (review && review.id ? review.id : 'не указан') + '.'
+        ];
+        return parts.join('\\n');
+      }}
+
+      function showParticipantOffer(review) {{
+        if(!participantOffer) return;
+        var message = buildOfferMessage(review || {{}});
+        if(offerMessageBox) offerMessageBox.value = message;
+        if(bookingLink) bookingLink.href = yclientsUrl;
+        if(telegramLink) telegramLink.href = telegramUrl;
+        participantOffer.classList.add('is-visible');
+        if(participantOffer.scrollIntoView) {{
+          setTimeout(function() {{ participantOffer.scrollIntoView({{behavior:'smooth', block:'center'}}); }}, 350);
+        }}
+      }}
+
+      function copyText(text, button) {{
+        if(navigator.clipboard && navigator.clipboard.writeText) {{
+          navigator.clipboard.writeText(text).then(function() {{
+            if(button) button.textContent = 'Сообщение скопировано';
+          }});
+          return;
+        }}
+        window.prompt('Сообщение для Telegram', text);
+      }}
+
+      if(copyOfferButton) {{
+        copyOfferButton.addEventListener('click', function() {{
+          copyText(offerMessageBox ? offerMessageBox.value : '', copyOfferButton);
+        }});
       }}
 
       if(ratingLink) {{
@@ -274,6 +346,7 @@ def build_block(manifest: dict) -> str:
             }}
             form.reset();
             setStatus('ok', 'Отзыв опубликован на странице отзывов.');
+            showParticipantOffer(payload.review || null);
           }});
         }}
         form.addEventListener('submit', handleReviewSubmit);

@@ -2092,3 +2092,33 @@ Append-only project history for `moon-psy-site`.
   - The user's proposed reward flow exposes a platform-policy risk for Yandex reviews and a verification gap for Yandex rating and YCLIENTS booking completion.
 - Follow-up rule:
   - Review/rating funnels must not promise a reward in exchange for Yandex reviews or require users to prove a Yandex review. Use voluntary reviews plus a separate participant offer unless legal/platform approval says otherwise.
+
+## 2026-05-18 — Moonn Review Participant Offer Prototype
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-homepage-reviews-banner`.
+- Trigger: user approved the safer framing: the post-review offer should be positioned as a special condition for participants of Moonn events, not as a payment for Yandex rating/review. User asked to implement the practical flow now and verify it end to end.
+- Decision:
+  - Show the participant offer only after a Moonn text review is successfully accepted by the Moonn backend, because that is the only review fact currently verifiable by our system.
+  - Do not show a reward after Yandex rating click because Moonn cannot verify rating submission and Yandex review rules create platform risk.
+  - Telegram personal-chat message prefill is not reliable, so implement generated message + copy button + open Telegram profile.
+- Updated artifacts:
+  - `scripts/build_moonn_review_funnel_artifacts.py`
+  - `docs/tatiana-munn-review-funnel/review-funnel-tilda-block.html`
+  - `docs/tatiana-munn-review-funnel/review-funnel-prototype.html`
+  - `docs/tatiana-munn-review-funnel/otzivi-t123-combined-final.html`
+  - `docs/moonn-review-to-consultation-offer-workflow-2026-05-18.md`
+- Publication:
+  - Republished `/otzivi` Tilda page `81167556`, T123 record `1353112591`.
+- Verification:
+  - Raw/live `/otzivi` contains `Для участников мероприятий Moonn`, `минус 2 000 ₽`, `Скопировать сообщение`, `Открыть Telegram Татьяны`, `https://n461584.yclients.com/`, and `https://t.me/Tatiana_Moonn`.
+  - Playwright intercepted the backend JSONP response to avoid publishing a fake live review, submitted the form, and confirmed the offer panel appears.
+  - The generated message includes the backend review id and public name.
+  - `Записаться онлайн` opens `https://n461584.yclients.com/`.
+  - `Открыть Telegram Татьяны` opens `https://t.me/Tatiana_Moonn`.
+  - `Скопировать сообщение` writes the generated message to clipboard; normalized clipboard content matches the textarea value.
+  - QA screenshot: `output/playwright/moonn-review-offer-2026-05-18/offer-panel.png`.
+- Incident / correction:
+  - Telegram does not provide a reliable website-level way to prefill and send a personal direct message to an arbitrary user. The implementation uses copy-and-open instead.
+- Follow-up rule:
+  - For Telegram personal chats, do not promise auto-filled or auto-sent messages unless verified in the target Telegram client. Use explicit copy/open UX by default.

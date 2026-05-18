@@ -82,20 +82,31 @@ Build a small `review_offer_token` backend:
 6. Backend marks `offerToken` as `booked`.
 7. Telegram link is shown with confirmed appointment data.
 
-## Minimal Safe Prototype
+## Implemented Minimal Safe Prototype
 
-Implement only after approval:
+Implemented after user approval:
 
 1. On successful Moonn text review submission, show a compact thank-you panel:
    - "Спасибо, отзыв отправлен."
-   - "Для участников мероприятий Moonn доступно специальное первое посещение для себя или близкого."
+   - "Для участников мероприятий Moonn доступно специальное условие на первое двухчасовое посещение для себя или близкого."
    - Buttons:
      - `Записаться онлайн`
      - `Написать Татьяне в Telegram`
+     - `Скопировать сообщение`
      - `Закрыть страницу`
-2. Telegram prefilled text should not claim a verified discount. It should request confirmation:
-   - `Здравствуйте, я оставил(а) отзыв на Moonn.ru и хочу уточнить возможность специального первого посещения для себя или близкого.`
-3. Do not show a reward after Yandex rating click until there is a compliant legal wording and platform-safe decision.
+2. Telegram direct-message prefill is not reliable for arbitrary personal chats. Implemented as:
+   - generated message textarea;
+   - `Скопировать сообщение`;
+   - `Открыть Telegram Татьяны`.
+3. The generated message includes:
+   - public name;
+   - visit context;
+   - Moonn review id returned by the backend.
+4. Booking opens:
+   - `https://n461584.yclients.com/`
+5. Telegram opens:
+   - `https://t.me/Tatiana_Moonn`
+6. Do not show a reward after Yandex rating click until there is a compliant legal wording and platform-safe decision.
 
 ## Open Questions
 
