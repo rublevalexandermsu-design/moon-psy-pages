@@ -8,6 +8,7 @@
 - Canonical reviews page: `https://moonn.ru/otzivi`.
 - Tilda page id: `81167556`.
 - QR target: `https://moonn.ru/otzivi?source=qr_event#moonn-review-funnel`.
+- Homepage entry target: `https://moonn.ru/otzivi?source=homepage_reviews_banner#moonn-review-funnel`.
 
 ## Strategic Check
 
@@ -37,6 +38,8 @@ Use route B.
 
 The page may use a restrained yellow/star visual cue, but it must state that the star rating happens on the official Yandex Services page. The Moonn text-review form must be clearly labeled as a Moonn-owned form.
 
+The Yandex rating button must not claim automatic rating submission. It opens the official Yandex Services rating URL in a new tab, marks the local button as opened, shows the next-step message, and scrolls the visitor to the Moonn text-review form. This is the strongest safe behavior because Moonn cannot submit or verify a Yandex rating on behalf of the visitor.
+
 ## Implementation Packet
 
 - `registry/reviews/moonn-review-funnel.schema.json`
@@ -46,6 +49,9 @@ The page may use a restrained yellow/star visual cue, but it must state that the
 - `docs/tatiana-munn-review-funnel/review-funnel-prototype.html`
 - `docs/tatiana-munn-review-funnel/qr-moonn-review-funnel.svg`
 - `docs/tatiana-munn-review-funnel/qr-moonn-review-funnel.png`
+- `scripts/build_moonn_reviews_home_banner.py`
+- `docs/tatiana-munn-reviews-home-banner/tilda-html-block-final.html`
+- `docs/tatiana-munn-reviews-home-banner/homepage-reviews-banner-preview.html`
 
 ## Production Backend Decision
 
@@ -82,6 +88,8 @@ Do not publish to `moonn.ru` until:
 - Playwright/browser visual QA passes for desktop and mobile;
 - Yandex rating CTA opens the official Yandex URL;
 - QR target URL is confirmed.
+- homepage reviews banner has both `Читать отзывы` and `Оставить отзыв` actions;
+- homepage QR points to the same canonical review funnel instead of a duplicate page.
 
 ## Follow-Up Rule
 

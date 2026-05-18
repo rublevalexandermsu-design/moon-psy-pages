@@ -23,9 +23,12 @@
     #moonn-review-funnel .rf-stars{display:flex;gap:7px;margin:24px 0 18px;}
     #moonn-review-funnel .rf-star{width:38px;height:38px;display:grid;place-items:center;color:#f5b700;font-size:35px;line-height:1;filter:drop-shadow(0 4px 8px rgba(245,183,0,.22));}
     #moonn-review-funnel .rf-actions{display:grid;gap:10px;margin-top:18px;}
+    #moonn-review-funnel .rf-rating-done{display:none;margin-top:18px;padding:16px;border-radius:16px;background:#f4fff8;border:1px solid rgba(22,128,80,.18);color:#20573c;}
+    #moonn-review-funnel .rf-rating-done strong{display:block;margin-bottom:4px;color:#18462f;}
     #moonn-review-funnel .rf-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border-radius:999px;border:1px solid rgba(31,35,40,.12);font-size:16px;font-weight:800;text-decoration:none!important;cursor:pointer;}
     #moonn-review-funnel .rf-button.primary{background:#fc0;color:#111!important;border-color:#f3c000;box-shadow:0 14px 28px rgba(204,154,0,.18);}
     #moonn-review-funnel .rf-button.secondary{background:#fff;color:#1f2328!important;}
+    #moonn-review-funnel .rf-button.ghost{background:#f7f9fb;color:#4d5965!important;}
     #moonn-review-funnel .rf-note{margin-top:12px;font-size:13px;color:#687583;}
     #moonn-review-funnel .rf-form{padding:30px;background:linear-gradient(180deg,#fff,#fbfdff);}
     #moonn-review-funnel .rf-form h3{margin:0 0 10px;font-size:24px;line-height:1.18;color:#181c20;}
@@ -54,8 +57,12 @@
       </div>
       <div class="rf-stars" aria-hidden="true"><span class="rf-star">★</span><span class="rf-star">★</span><span class="rf-star">★</span><span class="rf-star">★</span><span class="rf-star">★</span></div>
       <div class="rf-actions">
-        <a class="rf-button primary" href="https://uslugi.yandex.ru/search?action=addReview&amp;profile=TatyanaKumskovatatyanamunn-948629" target="_blank" rel="noopener noreferrer">Поставить оценку на Яндекс Услугах</a>
+        <a class="rf-button primary" data-yandex-rating-link href="https://uslugi.yandex.ru/search?action=addReview&amp;profile=TatyanaKumskovatatyanamunn-948629" target="_blank" rel="noopener noreferrer">Поставить оценку на Яндекс Услугах</a>
         <a class="rf-button secondary" href="https://uslugi.yandex.ru/profile/TatyanaKumskovamunn-948629" target="_blank" rel="noopener noreferrer">Открыть профиль на Яндекс Услугах</a>
+      </div>
+      <div class="rf-rating-done" data-rating-opened>
+        <strong>Форма Яндекс Услуг открыта</strong>
+        <span>После оценки можно оставить текстовый отзыв ниже или закрыть страницу.</span>
       </div>
       <p class="rf-note">Эта страница Moonn не является страницей Яндекса. Оценка ставится только на официальной странице Яндекс Услуг.</p>
       <div class="rf-qr">
@@ -87,11 +94,42 @@
         <label for="rf-comment">Комментарий</label>
         <textarea id="rf-comment" name="comment" placeholder="Что было полезно, что изменилось, что особенно запомнилось?"></textarea>
         <label class="rf-check"><input type="checkbox" name="consent" required> <span>Я согласен(на), что отзыв после проверки может быть опубликован на сайте Moonn. Контактные данные не публикуются.</span></label>
-        <button class="rf-button rf-submit rf-disabled" type="button" aria-disabled="true">Отправить отзыв</button>
+        <div class="rf-actions">
+          <button class="rf-button rf-submit rf-disabled" type="button" aria-disabled="true">Отправить отзыв</button>
+          <a class="rf-button ghost" href="https://moonn.ru/otzivi">Закрыть страницу</a>
+        </div>
       </form>
       <p class="rf-note">После отправки отзыв сначала проверяется, затем может появиться на странице отзывов.</p>
     </article>
   </div>
+  <script>
+    (function(){
+      var root = document.getElementById('moonn-review-funnel');
+      if(!root) return;
+      var ratingLink = root.querySelector('[data-yandex-rating-link]');
+      var opened = root.querySelector('[data-rating-opened]');
+      var formTitle = root.querySelector('.rf-form h3');
+      if(!ratingLink) return;
+      var ratingWasOpened = false;
+      ratingLink.addEventListener('click', function(event){
+        if(ratingWasOpened) {
+          event.preventDefault();
+          return;
+        }
+        ratingWasOpened = true;
+        ratingLink.textContent = 'Оценка открыта в Яндекс Услугах';
+        ratingLink.setAttribute('aria-disabled', 'true');
+        ratingLink.classList.add('rf-disabled');
+        ratingLink.style.display = 'none';
+        if(opened) opened.style.display = 'block';
+        setTimeout(function(){
+          if(formTitle && formTitle.scrollIntoView) {
+            formTitle.scrollIntoView({behavior:'smooth', block:'start'});
+          }
+        }, 450);
+      });
+    })();
+  </script>
 </section>
 </body>
 </html>

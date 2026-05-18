@@ -8,13 +8,16 @@
     "anchor_id": "moonn-review-funnel"
   },
   "qr_target_url": "https://moonn.ru/otzivi?source=qr_event#moonn-review-funnel",
+  "homepage_entry_url": "https://moonn.ru/otzivi?source=homepage_reviews_banner#moonn-review-funnel",
   "yandex_services": {
     "profile_url": "https://uslugi.yandex.ru/profile/TatyanaKumskovamunn-948629",
     "rating_url": "https://uslugi.yandex.ru/search?action=addReview&profile=TatyanaKumskovatatyanamunn-948629",
     "rating_destination": "official_yandex_services_review_modal",
+    "click_behavior": "The Moonn page opens the official Yandex Services rating URL in a new tab, locally marks the rating button as opened, and scrolls the visitor to the Moonn text-review form. The Moonn page cannot automatically submit or verify the Yandex rating.",
     "expected_behavior": [
       "visitor taps the rating button",
       "official Yandex Services page opens in a new tab",
+      "Moonn page marks the rating action as opened and moves the visitor to the text review step",
       "visitor leaves a star rating in Yandex",
       "visitor returns to Moonn page and can leave a text comment in Moonn-controlled flow"
     ]
@@ -39,6 +42,7 @@
       "prepare local prototype",
       "generate QR code for the Moonn funnel URL",
       "prepare Tilda-safe HTML block",
+      "prepare homepage reviews banner entry with QR and leave-review CTA",
       "record architecture and legal/platform guard"
     ],
     "blocked_until": [

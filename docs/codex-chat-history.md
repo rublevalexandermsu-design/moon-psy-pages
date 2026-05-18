@@ -1901,3 +1901,34 @@ Append-only project history for `moon-psy-site`.
 - Follow-up rule:
   - Review funnel changes must continue in the existing review branch and preserve `/otzivi` as canonical unless a technical blocker proves otherwise.
   - Public review-intake text must separate official Yandex rating from Moonn-owned comment collection.
+
+## 2026-05-18 — Moonn Homepage Review QR Entry Update
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-homepage-reviews-banner`.
+- Trigger: user asked to connect the existing small homepage reviews banner with the new review funnel by adding a leave-review CTA and QR code.
+- Decision:
+  - Continue the existing review branch and existing homepage reviews block.
+  - Do not create a second reviews page.
+  - Use `/otzivi?source=homepage_reviews_banner#moonn-review-funnel` as the homepage leave-review and QR route.
+  - Keep Yandex rating as an official external action; Moonn can only open the Yandex rating page and then guide the visitor to its own text-review form.
+- Prepared artifacts:
+  - `scripts/build_moonn_reviews_home_banner.py`
+  - `docs/tatiana-munn-reviews-home-banner/tilda-html-block-final.html`
+  - `docs/tatiana-munn-reviews-home-banner/homepage-reviews-banner-preview.html`
+  - `docs/tatiana-munn-reviews-home-banner/homepage-t123-combined-2026-05-17.html`
+  - updated `registry/reviews/moonn-review-funnel.manifest.json`
+  - updated `docs/tatiana-munn-reviews-home-banner/manifest.json`
+- Publication status:
+  - Prepared locally, not published to Tilda in this step.
+  - Publication remains blocked until the `/otzivi` intake backend or final public form behavior is approved.
+- Verification:
+  - JSON validation passed for review funnel schema, review funnel manifest, and homepage banner manifest.
+  - Public generated HTML contains no internal guard words from the publication scan list.
+  - Playwright confirmed the homepage preview has `Читать отзывы`, `Оставить отзыв`, one QR code, and no mobile horizontal overflow.
+  - Playwright confirmed the Yandex rating CTA opens the official Yandex Services URL, then the local rating button disappears and the Moonn text-review step remains visible.
+  - QA report: `output/playwright/moonn-review-homepage-qr-2026-05-18/qa-report.json`.
+- Incident / correction:
+  - The first generator update had unescaped JavaScript braces inside a Python f-string and failed before artifact publication. Fixed in the generator and rerun.
+- Follow-up rule:
+  - Any QR or homepage entry for reviews must route to the canonical `/otzivi` funnel and be generated from the same QR source artifact.
