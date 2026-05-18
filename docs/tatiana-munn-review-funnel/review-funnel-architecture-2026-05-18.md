@@ -7,8 +7,9 @@
 - Existing branch: `codex/moonn-homepage-reviews-banner`.
 - Canonical reviews page: `https://moonn.ru/otzivi`.
 - Tilda page id: `81167556`.
-- QR target: `https://moonn.ru/otzivi?source=qr_event#moonn-review-funnel`.
-- Homepage entry target: `https://moonn.ru/otzivi?source=homepage_reviews_banner#moonn-review-funnel`.
+- QR target: `https://moonn.ru/otzivi?ostavit-otzyv=1&source=qr_event#moonn-review-funnel`.
+- Homepage entry target: `https://moonn.ru/otzivi?ostavit-otzyv=1&source=homepage_reviews_banner#moonn-review-funnel`.
+- Updated entry behavior: the review-intake form is visible only when `ostavit-otzyv=1` is present in the URL, for example `https://moonn.ru/otzivi?ostavit-otzyv=1&source=homepage_reviews_banner#moonn-review-funnel`.
 
 ## Strategic Check
 
@@ -94,6 +95,8 @@ Verified on live site:
 
 - `https://moonn.ru/` contains `moonn-reviews-home-banner`.
 - `https://moonn.ru/otzivi` contains `moonn-review-funnel`.
+- On the ordinary `https://moonn.ru/otzivi` reading page the review-intake block removes itself from the rendered DOM, so the form does not visually sit above the reviews.
+- Homepage `Оставить отзыв` and QR both route to `https://moonn.ru/otzivi?ostavit-otzyv=1&source=homepage_reviews_banner#moonn-review-funnel`.
 - Yandex rating CTA opens the official `uslugi.yandex.ru` rating URL.
 - A clearly marked test Moonn review was submitted through the live form.
 - The test Moonn review appeared on the public page and backend list.
@@ -106,7 +109,7 @@ QA report: `output/playwright/moonn-review-live-e2e-2026-05-18/qa-report.json`.
 
 Any future review request should route through:
 
-`QR / follow-up link -> Moonn review funnel -> official Yandex rating -> Moonn text intake -> public /otzivi renderer -> admin hide if needed`.
+`QR / follow-up link -> /otzivi?ostavit-otzyv=1 -> Moonn review funnel -> official Yandex rating -> Moonn text intake -> public /otzivi renderer -> admin hide if needed`.
 
 Do not create a second reviews page unless `/otzivi` cannot support the funnel technically.
 

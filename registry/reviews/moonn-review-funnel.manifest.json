@@ -8,13 +8,13 @@
     "tilda_t123_record_id": 1353112591,
     "anchor_id": "moonn-review-funnel"
   },
-  "qr_target_url": "https://moonn.ru/otzivi?source=qr_event#moonn-review-funnel",
-  "homepage_entry_url": "https://moonn.ru/otzivi?source=homepage_reviews_banner#moonn-review-funnel",
+  "qr_target_url": "https://moonn.ru/otzivi?ostavit-otzyv=1&source=qr_event#moonn-review-funnel",
+  "homepage_entry_url": "https://moonn.ru/otzivi?ostavit-otzyv=1&source=homepage_reviews_banner#moonn-review-funnel",
   "yandex_services": {
     "profile_url": "https://uslugi.yandex.ru/profile/TatyanaKumskovamunn-948629",
     "rating_url": "https://uslugi.yandex.ru/search?action=addReview&profile=TatyanaKumskovatatyanamunn-948629",
     "rating_destination": "official_yandex_services_review_modal",
-    "click_behavior": "The Moonn page opens the official Yandex Services rating URL in a new tab, locally marks the rating button as opened, and scrolls the visitor to the Moonn text-review form. The Moonn page cannot automatically submit or verify the Yandex rating.",
+    "click_behavior": "The homepage leave-review CTA and QR open the dedicated review-intake mode on /otzivi with ostavit-otzyv=1. The ordinary /otzivi reviews-reading page removes the intake form from the DOM. The Moonn form opens the official Yandex Services rating URL in a new tab, locally marks the rating button as opened, and scrolls the visitor to the Moonn text-review form. The Moonn page cannot automatically submit or verify the Yandex rating.",
     "expected_behavior": [
       "visitor taps the rating button",
       "official Yandex Services page opens in a new tab",
@@ -52,6 +52,8 @@
     "verified": [
       "live /otzivi raw HTML contains moonn-review-funnel and the Apps Script endpoint",
       "live homepage contains moonn-reviews-home-banner with read and leave-review actions",
+      "ordinary /otzivi removes the review-intake form from rendered DOM",
+      "homepage leave-review CTA and QR route to /otzivi?ostavit-otzyv=1&source=homepage_reviews_banner#moonn-review-funnel",
       "test Moonn review was submitted through the public /otzivi form",
       "test Moonn review appeared on the public page and in the backend list",
       "test Moonn review was hidden through the admin endpoint and disappeared after live page reload",

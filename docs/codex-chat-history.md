@@ -1972,3 +1972,37 @@ Append-only project history for `moon-psy-site`.
 - Follow-up rule:
   - For live form QA, record whether the script reached the click step before diagnosing backend or frontend failures.
   - Keep the real Yandex rating action human-only; Codex may open and inspect the official route but must not create artificial ratings.
+
+## 2026-05-18 — Moonn Review Form Separated From Reviews Reading Page
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-homepage-reviews-banner`.
+- Trigger: user pointed out that the review-intake form looked wrong when it sat directly at the top of `/otzivi`, and clarified that the form should appear only after pressing `Оставить отзыв` from the homepage block. The homepage reviews block must also contain both the button and QR.
+- Decision:
+  - Keep `/otzivi` as the canonical reading page for reviews.
+  - Do not create a duplicate canonical reviews page.
+  - Use a dedicated intake mode on the same Tilda page: `/otzivi?ostavit-otzyv=1&source=homepage_reviews_banner#moonn-review-funnel`.
+  - On ordinary `/otzivi`, the review-intake block removes itself from the rendered DOM so it does not visually sit above the reviews.
+- Updated artifacts:
+  - `registry/reviews/moonn-review-funnel.manifest.json`
+  - `scripts/build_moonn_review_funnel_artifacts.py`
+  - `scripts/build_moonn_reviews_home_banner.py`
+  - `docs/tatiana-munn-review-funnel/review-funnel-tilda-block.html`
+  - `docs/tatiana-munn-review-funnel/review-funnel-prototype.html`
+  - `docs/tatiana-munn-review-funnel/otzivi-t123-combined-final.html`
+  - `docs/tatiana-munn-reviews-home-banner/tilda-html-block-final.html`
+  - `docs/tatiana-munn-reviews-home-banner/homepage-reviews-banner-preview.html`
+  - `docs/tatiana-munn-reviews-home-banner/homepage-t123-combined-2026-05-17.html`
+  - `docs/tatiana-munn-reviews-home-banner/manifest.json`
+- Publication:
+  - Republished `/otzivi` Tilda page `81167556`, T123 record `1353112591`.
+  - Republished homepage Tilda page `42678538`, T123 record `2251351151`.
+- Verification:
+  - Homepage rendered `Оставить отзыв` button and QR, both linking to `/otzivi?ostavit-otzyv=1&source=homepage_reviews_banner#moonn-review-funnel`.
+  - Ordinary `/otzivi` rendered without `#moonn-review-funnel` in the DOM.
+  - Dedicated intake URL rendered the form with submit button and official Yandex rating link.
+  - QA report: `output/playwright/moonn-review-separate-entry-2026-05-18/qa-report.json`.
+- Incident / correction:
+  - Attempting to publish two Tilda pages in parallel through one Chrome window caused a GUI race and failed. Corrected by rerunning the Tilda UI publication scripts sequentially.
+- Follow-up rule:
+  - Tilda GUI publication scripts must not run in parallel against the same authenticated Chrome window.

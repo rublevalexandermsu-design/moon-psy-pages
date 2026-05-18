@@ -36,7 +36,7 @@ def build_block(manifest: dict) -> str:
     profile_url = manifest["yandex_services"]["profile_url"]
     api_url = manifest["moonn_comment_flow"]["api_url"]
     api_url_json = json.dumps(api_url, ensure_ascii=False)
-    return f"""<section id="{escape_html(anchor_id)}" class="moonn-review-funnel" aria-label="Оставить отзыв о Татьяне Мунн">
+    return f"""<section id="{escape_html(anchor_id)}" class="moonn-review-funnel" aria-label="Оставить отзыв о Татьяне Мунн" style="display:none">
   <style>
     #moonn-review-funnel{{box-sizing:border-box;width:100%;margin:0;padding:42px 18px 54px;background:#f4f6f8;font-family:Arial,sans-serif;color:#1f2328;}}
     #moonn-review-funnel *{{box-sizing:border-box;letter-spacing:0;}}
@@ -154,6 +154,13 @@ def build_block(manifest: dict) -> str:
     (function(){{
       var root = document.getElementById('moonn-review-funnel');
       if(!root) return;
+      var params = new URLSearchParams(window.location.search || '');
+      var shouldShowFunnel = params.get('ostavit-otzyv') === '1' || params.get('leave_review') === '1' || window.location.hash === '#moonn-review-funnel';
+      if(!shouldShowFunnel) {{
+        root.parentNode && root.parentNode.removeChild(root);
+        return;
+      }}
+      root.style.display = '';
       var placement = document.getElementById('moonn-yandex-all-reviews-layer') || document.getElementById('rec1352757161') || document.querySelector('.t-records');
       if(placement && placement.parentNode && placement !== root && root.nextElementSibling !== placement) {{
         placement.parentNode.insertBefore(root, placement);

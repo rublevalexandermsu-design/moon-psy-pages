@@ -3,7 +3,7 @@
   "workstream": "homepage reviews banner",
   "created_at": "2026-05-17T13:00:00+03:00",
   "canonical_reviews_url": "https://moonn.ru/otzivi",
-  "review_funnel_url": "https://moonn.ru/otzivi?source=homepage_reviews_banner#moonn-review-funnel",
+  "review_funnel_url": "https://moonn.ru/otzivi?ostavit-otzyv=1&source=homepage_reviews_banner#moonn-review-funnel",
   "target_homepage": "https://moonn.ru/",
   "source_profile": "https://uslugi.yandex.ru/profile/TatyanaKumskovamunn-948629",
   "artifacts": {
@@ -38,11 +38,13 @@
       "docs/tatiana-munn-review-funnel/qr-moonn-review-funnel.svg"
     ],
     "published_at": "2026-05-18T11:00:00+03:00",
-    "publication_result": "Homepage T123 record republished with leave-review CTA and QR routing to /otzivi?source=homepage_reviews_banner#moonn-review-funnel.",
+    "publication_result": "Homepage T123 record republished with leave-review CTA and QR routing to /otzivi?ostavit-otzyv=1&source=homepage_reviews_banner#moonn-review-funnel.",
     "verification": [
       "live homepage contains moonn-reviews-home-banner",
       "Читать отзывы links to /otzivi",
-      "Оставить отзыв links to /otzivi?source=homepage_reviews_banner#moonn-review-funnel",
+      "Оставить отзыв links to /otzivi?ostavit-otzyv=1&source=homepage_reviews_banner#moonn-review-funnel",
+      "homepage QR links to the same leave-review mode",
+      "ordinary /otzivi removes the review-intake form from rendered DOM",
       "live /otzivi funnel backend test passed with submit, public render, admin hide, and reload check"
     ]
   },
@@ -55,7 +57,7 @@
     "raw homepage HTML contains moonn-reviews-home-banner",
     "rendered homepage shows the banner without text overflow on desktop and mobile",
     "CTA and right-side media panel link to /otzivi",
-    "leave-review CTA and QR link to /otzivi?source=homepage_reviews_banner#moonn-review-funnel",
+    "leave-review CTA and QR link to /otzivi?ostavit-otzyv=1&source=homepage_reviews_banner#moonn-review-funnel",
     "reviews page returns HTTP 200",
     "public text contains no internal technical wording"
   ]

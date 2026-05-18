@@ -6,7 +6,7 @@
   <title>Preview: review funnel Tatyana Munn</title>
 </head>
 <body style="margin:0;background:#f4f6f8">
-<section id="moonn-review-funnel" class="moonn-review-funnel" aria-label="Оставить отзыв о Татьяне Мунн">
+<section id="moonn-review-funnel" class="moonn-review-funnel" aria-label="Оставить отзыв о Татьяне Мунн" style="display:none">
   <style>
     #moonn-review-funnel{box-sizing:border-box;width:100%;margin:0;padding:42px 18px 54px;background:#f4f6f8;font-family:Arial,sans-serif;color:#1f2328;}
     #moonn-review-funnel *{box-sizing:border-box;letter-spacing:0;}
@@ -78,7 +78,7 @@
       <p class="rf-note">Эта страница Moonn не является страницей Яндекса. Оценка ставится только на официальной странице Яндекс Услуг.</p>
       <div class="rf-qr">
         <img src="qr-moonn-review-funnel.svg" alt="QR-код для страницы отзывов Татьяны Мунн">
-        <p>QR для экрана после лекции или консультации.<code>https://moonn.ru/otzivi?source=qr_event#moonn-review-funnel</code></p>
+        <p>QR для экрана после лекции или консультации.<code>https://moonn.ru/otzivi?ostavit-otzyv=1&amp;source=qr_event#moonn-review-funnel</code></p>
       </div>
     </article>
     <article class="rf-card rf-form">
@@ -124,6 +124,13 @@
     (function(){
       var root = document.getElementById('moonn-review-funnel');
       if(!root) return;
+      var params = new URLSearchParams(window.location.search || '');
+      var shouldShowFunnel = params.get('ostavit-otzyv') === '1' || params.get('leave_review') === '1' || window.location.hash === '#moonn-review-funnel';
+      if(!shouldShowFunnel) {
+        root.parentNode && root.parentNode.removeChild(root);
+        return;
+      }
+      root.style.display = '';
       var placement = document.getElementById('moonn-yandex-all-reviews-layer') || document.getElementById('rec1352757161') || document.querySelector('.t-records');
       if(placement && placement.parentNode && placement !== root && root.nextElementSibling !== placement) {
         placement.parentNode.insertBefore(root, placement);

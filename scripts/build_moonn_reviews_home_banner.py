@@ -13,7 +13,7 @@ QR_SVG_PATH = FUNNEL_DIR / "qr-moonn-review-funnel.svg"
 
 
 READ_URL = "/otzivi"
-REVIEW_URL = "/otzivi?source=homepage_reviews_banner#moonn-review-funnel"
+REVIEW_URL = "/otzivi?ostavit-otzyv=1&source=homepage_reviews_banner#moonn-review-funnel"
 
 
 def build_block() -> str:
