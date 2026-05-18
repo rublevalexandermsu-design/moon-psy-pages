@@ -1932,3 +1932,43 @@ Append-only project history for `moon-psy-site`.
   - The first generator update had unescaped JavaScript braces inside a Python f-string and failed before artifact publication. Fixed in the generator and rerun.
 - Follow-up rule:
   - Any QR or homepage entry for reviews must route to the canonical `/otzivi` funnel and be generated from the same QR source artifact.
+
+## 2026-05-18 — Moonn Review Funnel Backend And Live Publication
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-homepage-reviews-banner`.
+- Trigger: user approved publishing the review funnel on `/otzivi`, updating the homepage block, connecting backend for Moonn text reviews, running a clearly marked test review, and hiding it after verification. Real Yandex rating must be submitted only by a real person.
+- Decision:
+  - Continue the existing reviews branch and canonical `/otzivi` page.
+  - Use Google Apps Script JSONP as the first production backend because Cloudflare Wrangler was not logged in, while Apps Script deployment was available.
+  - Auto-publish Moonn text comments for the first version, as requested, while keeping validation, consent, honeypot, length limits, and admin hide.
+  - Do not submit any artificial Yandex rating; only verify that the CTA opens the official `uslugi.yandex.ru` route.
+- Created or updated artifacts:
+  - `.clasp.json`
+  - `integrations/moonn-reviews-apps-script/appsscript.json`
+  - `integrations/moonn-reviews-apps-script/Code.js`
+  - `registry/reviews/moonn-review-funnel.manifest.json`
+  - `scripts/build_moonn_review_funnel_artifacts.py`
+  - `scripts/tilda_publish_moonn_review_funnel_ui.py`
+  - `scripts/tilda_append_homepage_reviews_banner_ui.py`
+  - `docs/tatiana-munn-review-funnel/review-funnel-tilda-block.html`
+  - `docs/tatiana-munn-review-funnel/review-funnel-prototype.html`
+  - `docs/tatiana-munn-review-funnel/otzivi-t123-combined-final.html`
+  - `docs/tatiana-munn-review-funnel/review-funnel-architecture-2026-05-18.md`
+  - `docs/tatiana-munn-reviews-home-banner/manifest.json`
+- Publication:
+  - Published `/otzivi` Tilda page `81167556`, T123 record `1353112591`, preserving the YClients widget script.
+  - Published homepage Tilda page `42678538`, T123 record `2251351151`, with `Читать отзывы`, `Оставить отзыв`, and QR route to `/otzivi?source=homepage_reviews_banner#moonn-review-funnel`.
+- Verification:
+  - Apps Script health returned `ok: true`.
+  - Raw live `/otzivi` contains `moonn-review-funnel`, the Apps Script endpoint, and `w461584.yclients.com/widgetJS`.
+  - Raw/live homepage contains `moonn-reviews-home-banner`.
+  - Live Playwright E2E submitted `ТЕСТОВЫЙ ОТЗЫВ CODEX LIVE 2026-05-18...`, confirmed it appeared on `/otzivi`, confirmed it existed in backend list, hid it by admin endpoint, then confirmed it disappeared after reload.
+  - Mobile `/otzivi` funnel was visible.
+  - QA report: `output/playwright/moonn-review-live-e2e-2026-05-18/qa-report.json`.
+- Incident / correction:
+  - Initial live test appeared to show no submit request, but the actual test script failed before clicking because it selected a non-existent dropdown option. The test was corrected to use an existing option.
+  - The frontend was still hardened by adding both form `submit` and button `click` handlers with a double-submit guard.
+- Follow-up rule:
+  - For live form QA, record whether the script reached the click step before diagnosing backend or frontend failures.
+  - Keep the real Yandex rating action human-only; Codex may open and inspect the official route but must not create artificial ratings.

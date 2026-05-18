@@ -55,16 +55,20 @@ The Yandex rating button must not claim automatic rating submission. It opens th
 
 ## Production Backend Decision
 
-The prototype intentionally does not auto-submit comments yet.
+Production backend is Apps Script with a JSONP endpoint because Tilda static pages cannot safely receive direct cross-origin form posts without a backend layer.
 
-Choose one production intake backend before publishing:
+Current backend:
 
-- Tilda Form -> email/CRM/Google Sheet: fastest if the existing Tilda account already has forms configured.
-- Google Sheet + Apps Script/Worker: better for moderation queue and future renderer.
-- Telegram `moonn_review_bot`: good for event follow-up, but currently requires runtime/secret confirmation.
-- Cloudflare Worker + private registry: strongest for reusable moderation and API contracts.
+- Apps Script project: `Moonn Reviews Intake`.
+- Apps Script script id: `1I2jTuAaTw0o9imbfrFPsk_Kqc2sfa63kp-2soTlN43h549qDl42oHrSX`.
+- Public endpoint: `https://script.google.com/macros/s/AKfycbx62eyhvrBVb3rt21le1iHfUrvJwhdcAJoAht_Chu0AL_PZjIR6I3r1FxKvI7pr-tz8/exec`.
+- Public actions: `health`, `list`, `submit`.
+- Admin action: `hide`, protected by a local/admin token stored outside Git.
+- Storage: Apps Script `PropertiesService`, key `moonn_reviews_v1`.
 
-Recommended first production step: Tilda Form or Google Sheet queue with moderation fields:
+The owner requested immediate publication for the first version. Therefore text comments are auto-published after validation, consent, honeypot check, and length limits. The backend still preserves an admin hide operation for cleanup and abuse handling.
+
+Review fields:
 
 - `created_at`
 - `source`
@@ -73,28 +77,37 @@ Recommended first production step: Tilda Form or Google Sheet queue with moderat
 - `name_public`
 - `comment_raw`
 - `publication_consent`
-- `moderation_status`
 - `published_at`
-- `published_url`
+- `hidden`
 
 ## Publication Gate
 
-Do not publish to `moonn.ru` until:
+Published to `moonn.ru` on 2026-05-18:
 
-- final backend is selected;
-- final consent checkbox text is approved;
-- comment submissions are stored in a private moderation queue;
-- raw comments are not auto-published;
-- Playwright/browser visual QA passes for desktop and mobile;
-- Yandex rating CTA opens the official Yandex URL;
-- QR target URL is confirmed.
-- homepage reviews banner has both `Читать отзывы` and `Оставить отзыв` actions;
-- homepage QR points to the same canonical review funnel instead of a duplicate page.
+- `/otzivi` Tilda page id: `81167556`.
+- `/otzivi` T123 record id: `1353112591`.
+- The existing YClients widget snippet is preserved after the funnel block.
+- Homepage Tilda page id: `42678538`.
+- Homepage T123 record id: `2251351151`.
+
+Verified on live site:
+
+- `https://moonn.ru/` contains `moonn-reviews-home-banner`.
+- `https://moonn.ru/otzivi` contains `moonn-review-funnel`.
+- Yandex rating CTA opens the official `uslugi.yandex.ru` rating URL.
+- A clearly marked test Moonn review was submitted through the live form.
+- The test Moonn review appeared on the public page and backend list.
+- The test Moonn review was hidden through the admin endpoint and disappeared after page reload.
+- Mobile rendering of the `/otzivi` funnel is visible.
+
+QA report: `output/playwright/moonn-review-live-e2e-2026-05-18/qa-report.json`.
 
 ## Follow-Up Rule
 
 Any future review request should route through:
 
-`QR / follow-up link -> Moonn review funnel -> official Yandex rating -> Moonn text queue -> moderation -> public /otzivi renderer`.
+`QR / follow-up link -> Moonn review funnel -> official Yandex rating -> Moonn text intake -> public /otzivi renderer -> admin hide if needed`.
 
 Do not create a second reviews page unless `/otzivi` cannot support the funnel technically.
+
+If reviews volume grows, migrate storage from Apps Script properties to a table-backed queue with explicit moderation states before adding imports from Telegram, Timepad, or Yandex follow-up campaigns.

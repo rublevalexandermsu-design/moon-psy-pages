@@ -12,11 +12,13 @@ from pywinauto.keyboard import send_keys
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECT_ID = "8326812"
-PAGE_ID = "42678538"
-RECORD_ID = "2251351151"
-COMBINED_PATH = ROOT / "docs" / "tatiana-munn-reviews-home-banner" / "homepage-t123-combined-2026-05-17.html"
-LIVE_URL = "https://moonn.ru/"
-MARKER = "moonn-reviews-home-banner"
+PAGE_ID = "81167556"
+RECORD_ID = "1353112591"
+COMBINED_PATH = ROOT / "docs" / "tatiana-munn-review-funnel" / "otzivi-t123-combined-final.html"
+LIVE_URL = "https://moonn.ru/otzivi"
+MARKER = "moonn-review-funnel"
+BACKEND_MARKER = "AKfycbx62eyhvrBVb3rt21le1iHfUrvJwhdcAJoAht_Chu0AL_PZjIR6I3r1FxKvI7pr-tz8"
+YCLIENTS_MARKER = "w461584.yclients.com/widgetJS"
 
 
 def address_bar(window):
@@ -42,7 +44,7 @@ def chrome_window():
         candidates.append((window, address, window.window_text()))
 
     for window, address, title in candidates:
-        if "tilda.ru/page/" in address or "Tilda" in title:
+        if "tilda.ru/page/" in address or "Tilda" in title or "tilda.ru/projects" in address:
             window.restore()
             window.set_focus()
             return window
@@ -71,7 +73,7 @@ def run_javascript_url(window, code: str, expected_prefix: str, timeout: float =
     return window.window_text()
 
 
-def navigate_to_homepage_editor(window) -> None:
+def navigate_to_editor(window) -> None:
     bar = address_bar(window)
     bar.set_focus()
     bar.set_edit_text(f"https://tilda.ru/page/?pageid={PAGE_ID}&projectid={PROJECT_ID}#rec{RECORD_ID}")
@@ -111,7 +113,7 @@ def save_record_code(window, html: str) -> str:
         "const r=await tp__fetch({url:'/page/submit/',body:{comm:'saverecord',pageid:window.pageid,"
         "recordid:'"
         + RECORD_ID
-        + "',onlythisfield:'code',code:code},explanation:'saving Moonn homepage reviews banner',timeout:90});"
+        + "',onlythisfield:'code',code:code},explanation:'saving Moonn review funnel',timeout:90});"
         "if(r===''||r==='OK'){await tp__updateRecord('"
         + RECORD_ID
         + "');document.title='SAVE_OK_'+code.length}else{document.title='SAVE_BAD_'+String(r).slice(0,80)}}"
@@ -120,7 +122,7 @@ def save_record_code(window, html: str) -> str:
     return run_javascript_url(window, save_code, "SAVE_", timeout=140)
 
 
-def publish_homepage(window) -> str:
+def publish_page(window) -> str:
     publish_code = (
         "(async()=>{try{document.title='PUBLISH_START';"
         "const r=tp__pagePublish();if(r&&r.then){await r};document.title='PUBLISH_CALLED'}"
@@ -129,38 +131,38 @@ def publish_homepage(window) -> str:
     return run_javascript_url(window, publish_code, "PUBLISH_", timeout=60)
 
 
-def live_contains_marker() -> bool:
-    url = f"{LIVE_URL}?reviews-banner-check={int(time.time())}"
+def live_contains_markers() -> bool:
+    url = f"{LIVE_URL}?review-funnel-check={int(time.time())}"
     request = urllib.request.Request(url, headers={"Cache-Control": "no-cache", "Pragma": "no-cache"})
     with urllib.request.urlopen(request, timeout=30) as response:
         html = response.read().decode("utf-8", errors="replace")
-    return MARKER in html and "/otzivi" in html
+    return MARKER in html and BACKEND_MARKER in html and YCLIENTS_MARKER in html
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Save and publish Moonn homepage reviews banner through an authenticated Tilda Chrome tab.")
+    parser = argparse.ArgumentParser(description="Save and publish Moonn /otzivi review funnel through an authenticated Tilda Chrome tab.")
     parser.add_argument("--skip-publish", action="store_true", help="Save the T123 code field but do not publish the page.")
     args = parser.parse_args()
 
     html = COMBINED_PATH.read_text(encoding="utf-8")
-    if MARKER not in html or "/otzivi" not in html:
-        raise RuntimeError("Combined homepage T123 HTML does not contain the reviews marker and /otzivi link.")
+    for marker in (MARKER, BACKEND_MARKER, YCLIENTS_MARKER):
+        if marker not in html:
+            raise RuntimeError(f"Combined /otzivi T123 HTML is missing marker: {marker}")
 
     window = chrome_window()
-    navigate_to_homepage_editor(window)
-
+    navigate_to_editor(window)
     save_title = save_record_code(window, html)
     print(save_title)
     if not save_title.startswith("SAVE_OK_"):
         raise RuntimeError(f"Tilda save failed: {save_title}")
 
     if not args.skip_publish:
-        publish_title = publish_homepage(window)
+        publish_title = publish_page(window)
         print(publish_title)
         if not publish_title.startswith("PUBLISH_CALLED"):
             raise RuntimeError(f"Tilda publish was not confirmed: {publish_title}")
-        if not live_contains_marker():
-            raise RuntimeError("Live homepage does not contain the reviews marker after publish.")
+        if not live_contains_markers():
+            raise RuntimeError("Live /otzivi does not contain review funnel markers after publish.")
         print("LIVE_OK")
 
     return 0

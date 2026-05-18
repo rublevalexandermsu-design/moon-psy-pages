@@ -29,7 +29,7 @@
     ]
   },
   "planned_update_2026_05_18": {
-    "status": "prepared_not_published",
+    "status": "published_live_verified",
     "purpose": "add leave-review CTA and QR code that route to the Moonn review funnel on the canonical /otzivi page",
     "artifacts": [
       "docs/tatiana-munn-reviews-home-banner/tilda-html-block-final.html",
@@ -37,7 +37,14 @@
       "docs/tatiana-munn-reviews-home-banner/homepage-t123-combined-2026-05-17.html",
       "docs/tatiana-munn-review-funnel/qr-moonn-review-funnel.svg"
     ],
-    "publication_blocker": "Do not publish the new homepage QR entry until the /otzivi review funnel backend or public intake behavior is approved."
+    "published_at": "2026-05-18T11:00:00+03:00",
+    "publication_result": "Homepage T123 record republished with leave-review CTA and QR routing to /otzivi?source=homepage_reviews_banner#moonn-review-funnel.",
+    "verification": [
+      "live homepage contains moonn-reviews-home-banner",
+      "Читать отзывы links to /otzivi",
+      "Оставить отзыв links to /otzivi?source=homepage_reviews_banner#moonn-review-funnel",
+      "live /otzivi funnel backend test passed with submit, public render, admin hide, and reload check"
+    ]
   },
   "copy_rules": [
     "Do not claim unverified rating or review count in the homepage banner.",

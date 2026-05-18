@@ -1,0 +1,16 @@
+{
+  "scriptId": "1I2jTuAaTw0o9imbfrFPsk_Kqc2sfa63kp-2soTlN43h549qDl42oHrSX",
+  "rootDir": "integrations\\moonn-reviews-apps-script",
+  "scriptExtensions": [
+    ".js",
+    ".gs"
+  ],
+  "htmlExtensions": [
+    ".html"
+  ],
+  "jsonExtensions": [
+    ".json"
+  ],
+  "filePushOrder": [],
+  "skipSubdirectories": false
+}

@@ -1,10 +1,11 @@
 {
   "schema_version": "1.0",
   "workstream": "moonn_yandex_review_funnel",
-  "status": "prototype_ready_not_published",
+  "status": "published_live_verified",
   "target_page": {
     "canonical_url": "https://moonn.ru/otzivi",
     "tilda_page_id": 81167556,
+    "tilda_t123_record_id": 1353112591,
     "anchor_id": "moonn-review-funnel"
   },
   "qr_target_url": "https://moonn.ru/otzivi?source=qr_event#moonn-review-funnel",
@@ -23,9 +24,10 @@
     ]
   },
   "moonn_comment_flow": {
-    "desired_backend": "tilda_form_or_google_sheet_then_moderated_renderer",
-    "publish_mode": "moderated_before_publication",
-    "moderation_required": true,
+    "desired_backend": "google_apps_script_jsonp_endpoint",
+    "api_url": "https://script.google.com/macros/s/AKfycbx62eyhvrBVb3rt21le1iHfUrvJwhdcAJoAht_Chu0AL_PZjIR6I3r1FxKvI7pr-tz8/exec",
+    "publish_mode": "auto_publish_with_admin_hide",
+    "moderation_required": false,
     "fields": [
       "rating",
       "comment",
@@ -34,8 +36,8 @@
       "contact_optional",
       "publication_consent"
     ],
-    "do_not_auto_publish_raw_submission": true,
-    "reason": "Text reviews can contain personal data, medical details, defamatory claims, spam, or platform-sensitive wording."
+    "do_not_auto_publish_raw_submission": false,
+    "reason": "The owner requested immediate publication for the first production version; the backend still keeps consent, validation, honeypot, admin hide, and length limits."
   },
   "publication_gate": {
     "allowed_now": [
@@ -43,14 +45,19 @@
       "generate QR code for the Moonn funnel URL",
       "prepare Tilda-safe HTML block",
       "prepare homepage reviews banner entry with QR and leave-review CTA",
+      "publish review funnel into the existing /otzivi T123 record while preserving YClients widget",
       "record architecture and legal/platform guard"
     ],
-    "blocked_until": [
-      "choose final intake backend: Tilda form, Google Sheet, Telegram bot, or Cloudflare Worker",
-      "confirm final public wording and consent checkbox",
-      "run live Tilda preview QA",
-      "receive explicit approval before publishing to moonn.ru"
-    ]
+    "blocked_until": [],
+    "verified": [
+      "live /otzivi raw HTML contains moonn-review-funnel and the Apps Script endpoint",
+      "live homepage contains moonn-reviews-home-banner with read and leave-review actions",
+      "test Moonn review was submitted through the public /otzivi form",
+      "test Moonn review appeared on the public page and in the backend list",
+      "test Moonn review was hidden through the admin endpoint and disappeared after live page reload",
+      "Yandex rating CTA points to the official uslugi.yandex.ru URL; no artificial Yandex rating was submitted"
+    ],
+    "qa_report": "output/playwright/moonn-review-live-e2e-2026-05-18/qa-report.json"
   },
   "strategic_assessment": {
     "platform_value": "high",

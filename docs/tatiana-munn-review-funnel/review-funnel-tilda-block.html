@@ -32,6 +32,17 @@
     #moonn-review-funnel .rf-check input{width:18px;height:18px;margin-top:1px;flex:0 0 18px;}
     #moonn-review-funnel .rf-submit{margin-top:16px;background:#ff5c35;color:#fff;border:0;}
     #moonn-review-funnel .rf-disabled{opacity:.62;cursor:not-allowed;}
+    #moonn-review-funnel .rf-honeypot{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important;}
+    #moonn-review-funnel .rf-status{display:none;margin-top:14px;padding:13px 14px;border-radius:14px;background:#f4fff8;border:1px solid rgba(22,128,80,.18);color:#20573c;font-size:14px;line-height:1.4;}
+    #moonn-review-funnel .rf-status.error{display:block;background:#fff4f2;border-color:rgba(214,77,45,.25);color:#8b2d1c;}
+    #moonn-review-funnel .rf-status.ok{display:block;}
+    #moonn-review-funnel .rf-site-reviews{margin-top:20px;padding-top:18px;border-top:1px solid rgba(31,35,40,.10);}
+    #moonn-review-funnel .rf-site-reviews h4{margin:0 0 10px;font-size:18px;color:#181c20;}
+    #moonn-review-funnel .rf-site-review-list{display:grid;gap:10px;}
+    #moonn-review-funnel .rf-site-review{padding:13px 14px;border:1px solid rgba(31,35,40,.10);border-radius:14px;background:#fff;}
+    #moonn-review-funnel .rf-site-review b{display:block;margin-bottom:4px;color:#181c20;}
+    #moonn-review-funnel .rf-site-review span{display:block;margin-bottom:6px;color:#687583;font-size:13px;}
+    #moonn-review-funnel .rf-site-review p{font-size:14px;line-height:1.45;color:#303841;white-space:pre-line;}
     #moonn-review-funnel .rf-qr{display:grid;grid-template-columns:112px minmax(0,1fr);gap:14px;align-items:center;margin-top:18px;padding:14px;border:1px dashed rgba(31,35,40,.22);border-radius:16px;background:#fff;}
     #moonn-review-funnel .rf-qr img{width:112px;height:112px;display:block;background:#fff;border-radius:8px;}
     #moonn-review-funnel .rf-qr code{display:block;margin-top:5px;color:#4d5965;font-size:12px;overflow-wrap:anywhere;}
@@ -64,8 +75,8 @@
     </article>
     <article class="rf-card rf-form">
       <h3>Текстовый отзыв для страницы Moonn</h3>
-      <p>Если комментарий не появится на Яндекс Услугах, отзыв можно оставить здесь. Перед публикацией на сайте Moonn текст проходит проверку.</p>
-      <form data-moonn-review-form="prototype" method="post" action="#">
+      <p>Если комментарий не появится на Яндекс Услугах, отзыв можно оставить здесь. После отправки он появится на странице отзывов сайта Moonn.</p>
+      <form data-moonn-review-form method="post" action="#">
         <label for="rf-rating">Оценка</label>
         <select id="rf-rating" name="rating">
           <option value="5">5 — отлично</option>
@@ -85,41 +96,172 @@
         <input id="rf-name" name="name" placeholder="Можно оставить пустым или написать Анонимно">
         <label for="rf-comment">Комментарий</label>
         <textarea id="rf-comment" name="comment" placeholder="Что было полезно, что изменилось, что особенно запомнилось?"></textarea>
-        <label class="rf-check"><input type="checkbox" name="consent" required> <span>Я согласен(на), что отзыв после проверки может быть опубликован на сайте Moonn. Контактные данные не публикуются.</span></label>
+        <label class="rf-honeypot" for="rf-website">Сайт</label>
+        <input class="rf-honeypot" id="rf-website" name="website" tabindex="-1" autocomplete="off">
+        <label class="rf-check"><input type="checkbox" name="consent" required> <span>Я согласен(на), что отзыв может быть опубликован на сайте Moonn. Контактные данные не публикуются.</span></label>
         <div class="rf-actions">
-          <button class="rf-button rf-submit rf-disabled" type="button" aria-disabled="true">Отправить отзыв</button>
+          <button class="rf-button rf-submit" type="submit">Отправить отзыв</button>
           <a class="rf-button ghost" href="https://moonn.ru/otzivi">Закрыть страницу</a>
         </div>
       </form>
-      <p class="rf-note">После отправки отзыв сначала проверяется, затем может появиться на странице отзывов.</p>
+      <div class="rf-status" data-review-status></div>
+      <div class="rf-site-reviews" data-site-reviews-wrap>
+        <h4>Отзывы, оставленные на сайте Moonn</h4>
+        <div class="rf-site-review-list" data-site-reviews-list></div>
+      </div>
+      <p class="rf-note">Текст публикуется на сайте Moonn. Оценка Яндекс Услуг отправляется только на официальной странице Яндекса.</p>
     </article>
   </div>
   <script>
     (function(){
       var root = document.getElementById('moonn-review-funnel');
       if(!root) return;
+      var placement = document.getElementById('moonn-yandex-all-reviews-layer') || document.getElementById('rec1352757161') || document.querySelector('.t-records');
+      if(placement && placement.parentNode && placement !== root && root.nextElementSibling !== placement) {
+        placement.parentNode.insertBefore(root, placement);
+      }
+      var apiUrl = "https://script.google.com/macros/s/AKfycbx62eyhvrBVb3rt21le1iHfUrvJwhdcAJoAht_Chu0AL_PZjIR6I3r1FxKvI7pr-tz8/exec";
       var ratingLink = root.querySelector('[data-yandex-rating-link]');
       var opened = root.querySelector('[data-rating-opened]');
       var formTitle = root.querySelector('.rf-form h3');
-      if(!ratingLink) return;
-      var ratingWasOpened = false;
-      ratingLink.addEventListener('click', function(event){
-        if(ratingWasOpened) {
-          event.preventDefault();
+      var form = root.querySelector('[data-moonn-review-form]');
+      var submitButton = root.querySelector('.rf-submit');
+      var statusBox = root.querySelector('[data-review-status]');
+      var reviewsList = root.querySelector('[data-site-reviews-list]');
+
+      function escapeHtml(value) {
+        return String(value || '').replace(/[&<>"]/g, function(ch) {
+          return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch];
+        });
+      }
+
+      function jsonp(params, onDone) {
+        var callbackName = '__moonnReviewsCb' + Date.now() + Math.floor(Math.random() * 100000);
+        params.callback = callbackName;
+        var query = Object.keys(params).map(function(key) {
+          return encodeURIComponent(key) + '=' + encodeURIComponent(params[key] == null ? '' : params[key]);
+        }).join('&');
+        var script = document.createElement('script');
+        var done = false;
+        window[callbackName] = function(payload) {
+          done = true;
+          delete window[callbackName];
+          if(script.parentNode) script.parentNode.removeChild(script);
+          onDone(null, payload);
+        };
+        script.onerror = function() {
+          if(done) return;
+          delete window[callbackName];
+          if(script.parentNode) script.parentNode.removeChild(script);
+          onDone(new Error('network_error'));
+        };
+        script.src = apiUrl + '?' + query;
+        document.head.appendChild(script);
+      }
+
+      function setStatus(kind, text) {
+        if(!statusBox) return;
+        statusBox.className = 'rf-status ' + (kind || '');
+        statusBox.textContent = text || '';
+      }
+
+      function renderReviews(reviews) {
+        if(!reviewsList) return;
+        if(!reviews || !reviews.length) {
+          reviewsList.innerHTML = '<p class="rf-note">Пока здесь нет отзывов, оставленных через форму сайта.</p>';
           return;
         }
-        ratingWasOpened = true;
-        ratingLink.textContent = 'Оценка открыта в Яндекс Услугах';
-        ratingLink.setAttribute('aria-disabled', 'true');
-        ratingLink.classList.add('rf-disabled');
-        ratingLink.style.display = 'none';
-        if(opened) opened.style.display = 'block';
-        setTimeout(function(){
-          if(formTitle && formTitle.scrollIntoView) {
-            formTitle.scrollIntoView({behavior:'smooth', block:'start'});
+        reviewsList.innerHTML = reviews.slice(0, 8).map(function(item) {
+          var date = item.publishedAt ? new Date(item.publishedAt) : null;
+          var dateText = date && !isNaN(date.getTime()) ? date.toLocaleDateString('ru-RU') : '';
+          var stars = '★★★★★'.slice(0, Number(item.rating || 5));
+          return '<article class="rf-site-review">' +
+            '<b>' + escapeHtml(item.namePublic || 'Анонимно') + '</b>' +
+            '<span>' + escapeHtml(stars + (dateText ? ' · ' + dateText : '') + (item.context ? ' · ' + item.context : '')) + '</span>' +
+            '<p>' + escapeHtml(item.comment || '') + '</p>' +
+          '</article>';
+        }).join('');
+      }
+
+      function loadReviews() {
+        jsonp({action:'list'}, function(err, payload) {
+          if(err || !payload || !payload.ok) return;
+          renderReviews(payload.reviews || []);
+        });
+      }
+
+      if(ratingLink) {
+        var ratingWasOpened = false;
+        ratingLink.addEventListener('click', function(event){
+          if(ratingWasOpened) {
+            event.preventDefault();
+            return;
           }
-        }, 450);
-      });
+          ratingWasOpened = true;
+          ratingLink.textContent = 'Оценка открыта в Яндекс Услугах';
+          ratingLink.setAttribute('aria-disabled', 'true');
+          ratingLink.classList.add('rf-disabled');
+          ratingLink.style.display = 'none';
+          if(opened) opened.style.display = 'block';
+          setTimeout(function(){
+            if(formTitle && formTitle.scrollIntoView) {
+              formTitle.scrollIntoView({behavior:'smooth', block:'start'});
+            }
+          }, 450);
+        });
+      }
+
+      if(form) {
+        var isSubmittingReview = false;
+        function handleReviewSubmit(event) {
+          if(event && event.preventDefault) event.preventDefault();
+          if(isSubmittingReview) return;
+          var fd = new FormData(form);
+          if(!fd.get('consent')) {
+            setStatus('error', 'Поставьте согласие на публикацию отзыва.');
+            return;
+          }
+          var comment = String(fd.get('comment') || '').trim();
+          if(comment.length < 8) {
+            setStatus('error', 'Напишите чуть более подробный комментарий.');
+            return;
+          }
+          isSubmittingReview = true;
+          if(submitButton) {
+            submitButton.disabled = true;
+            submitButton.classList.add('rf-disabled');
+            submitButton.textContent = 'Отправляем...';
+          }
+          jsonp({
+            action: 'submit',
+            rating: fd.get('rating') || '5',
+            context: fd.get('context') || 'Отзыв',
+            name: fd.get('name') || 'Анонимно',
+            comment: comment,
+            consent: '1',
+            website: fd.get('website') || '',
+            source: 'moonn_review_funnel'
+          }, function(err, payload) {
+            isSubmittingReview = false;
+            if(submitButton) {
+              submitButton.disabled = false;
+              submitButton.classList.remove('rf-disabled');
+              submitButton.textContent = 'Отправить отзыв';
+            }
+            if(err || !payload || !payload.ok) {
+              setStatus('error', 'Не удалось отправить отзыв. Попробуйте ещё раз.');
+              return;
+            }
+            form.reset();
+            setStatus('ok', 'Отзыв опубликован на странице отзывов.');
+            renderReviews(payload.reviews || []);
+          });
+        }
+        form.addEventListener('submit', handleReviewSubmit);
+        if(submitButton) submitButton.addEventListener('click', handleReviewSubmit);
+      }
+
+      loadReviews();
     })();
   </script>
 </section>
