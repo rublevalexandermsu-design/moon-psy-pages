@@ -2006,3 +2006,29 @@ Append-only project history for `moon-psy-site`.
   - Attempting to publish two Tilda pages in parallel through one Chrome window caused a GUI race and failed. Corrected by rerunning the Tilda UI publication scripts sequentially.
 - Follow-up rule:
   - Tilda GUI publication scripts must not run in parallel against the same authenticated Chrome window.
+
+## 2026-05-18 — Moonn Consultation Summer Offer Copy Update
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-homepage-reviews-banner`.
+- Trigger: user requested a quick homepage copy update in the `Онлайн-консультации для вас и ваших близких` block: replace the vague summer-price line with the summer 2026 online-consultation offer, payment deadline, and reception days.
+- Decision:
+  - Continue the existing homepage branch because the change belongs to the same published Tilda homepage HTML.
+  - Update the consultation banner generator and regenerate all known combined homepage artifacts, including the current reviews-banner combined file used for Tilda publication.
+- Updated artifacts:
+  - `scripts/fix_moonn_homepage_consultation_banner.py`
+  - `docs/consultation-home-banner-2026/tilda-html-block-compact-final.html`
+  - `docs/consultation-home-banner-2026/homepage-t123-combined-compact-preview.html`
+  - `docs/tatiana-munn-art-gallery/homepage-t123-combined-2026-05-12.html`
+  - `docs/tatiana-munn-exam-prep/homepage-t123-combined-2026-05-12.html`
+  - `docs/tatiana-munn-reviews-home-banner/homepage-t123-combined-2026-05-17.html`
+- Publication:
+  - Republished homepage Tilda page `42678538`, T123 record `2251351151`.
+- Verification:
+  - Live homepage contains `Онлайн-консультации лето 2026`, `Летняя цена - 19 000 ₽`, `при оплате до 31 мая`, and `Дни приёма: среда, четверг, пятница с 9:00 до 23:00`.
+  - Live homepage still contains `moonn-reviews-home-banner`.
+  - Browser QA confirmed the updated consultation section text is rendered; screenshot: `output/playwright/moonn-consultation-offer-2026-05-18.png`.
+- Incident / correction:
+  - The old consultation generator originally replaced from the consultation marker to the end of the file, which would remove later homepage sections such as reviews when the current combined file is added as a target. Corrected the generator to replace only the first consultation `<section>`.
+- Follow-up rule:
+  - Any homepage section generator must preserve downstream sections after its own closing `</section>` before being used on current combined Tilda HTML.

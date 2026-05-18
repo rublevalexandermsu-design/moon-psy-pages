@@ -7,6 +7,7 @@ OUTPUT_DIR = ROOT / "docs" / "consultation-home-banner-2026"
 TARGETS = [
     ROOT / "docs" / "tatiana-munn-exam-prep" / "homepage-t123-combined-2026-05-12.html",
     ROOT / "docs" / "tatiana-munn-art-gallery" / "homepage-t123-combined-2026-05-12.html",
+    ROOT / "docs" / "tatiana-munn-reviews-home-banner" / "homepage-t123-combined-2026-05-17.html",
 ]
 
 MARKER = '<section id="moonn-consultation-home-banner"'
@@ -327,8 +328,10 @@ COMPACT_BLOCK = f"""<section id="moonn-consultation-home-banner" class="moonn-co
         <div class="consult-price-row"><span>3 консультации</span><strong>21 000 ₽</strong></div>
       </div>
       <div class="consult-summer">
-        <strong>Летняя цена - 19 000 ₽</strong>
-        <span>за пакет из 3 консультаций, срок действия предложения - до 31 августа</span>
+        <strong>Онлайн-консультации лето 2026</strong>
+        <span>Летняя цена - 19 000 ₽</span>
+        <span>при оплате до 31 мая</span>
+        <span>Дни приёма: среда, четверг, пятница с 9:00 до 23:00</span>
       </div>
       <div class="consult-actions">
         <a class="consult-btn" data-moonn-consult-product="three" href="#order:Пакет 3 онлайн-консультаций Татьяны Мунн =19000:::image={PRODUCT_IMAGE}">Оплатить пакет 3 консультации</a>
@@ -488,7 +491,12 @@ def replace_consultation_block(html: str) -> str:
     start = html.find(MARKER)
     if start == -1:
         raise ValueError("Consultation marker not found")
-    return html[:start].rstrip() + "\n\n" + COMPACT_BLOCK.strip() + "\n"
+    end_marker = "\n</section>"
+    end = html.find(end_marker, start)
+    if end == -1:
+        raise ValueError("Consultation section close not found")
+    end += len(end_marker)
+    return html[:start].rstrip() + "\n\n" + COMPACT_BLOCK.strip() + html[end:]
 
 
 def validate(html: str, path: Path) -> None:
