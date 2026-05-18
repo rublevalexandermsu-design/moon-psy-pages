@@ -110,13 +110,16 @@ def save_record_code(window, html: str) -> str:
         "const arr=new Uint8Array(bin.length);"
         "for(let i=0;i<bin.length;i++)arr[i]=bin.charCodeAt(i);"
         "const code=new TextDecoder().decode(arr);"
-        "const r=await tp__fetch({url:'/page/submit/',body:{comm:'saverecord',pageid:window.pageid,"
+        "const body={comm:'saverecord',pageid:window.pageid,"
         "recordid:'"
         + RECORD_ID
-        + "',onlythisfield:'code',code:code},explanation:'saving Moonn review funnel',timeout:90});"
-        "if(r===''||r==='OK'){await tp__updateRecord('"
+        + "',onlythisfield:'code',code:code};"
+        "const r=window.tp__fetch"
+        "?await tp__fetch({url:'/page/submit/',body:body,explanation:'saving Moonn review funnel',timeout:90})"
+        ":await fetch('/page/submit/',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'},body:new URLSearchParams(body)}).then(x=>x.text());"
+        "if(r===''||r==='OK'){if(window.tp__updateRecord){await tp__updateRecord('"
         + RECORD_ID
-        + "');document.title='SAVE_OK_'+code.length}else{document.title='SAVE_BAD_'+String(r).slice(0,80)}}"
+        + "')};document.title='SAVE_OK_'+code.length}else{document.title='SAVE_BAD_'+String(r).slice(0,80)}}"
         "catch(e){document.title='SAVE_ERR_'+e.name+'_'+String(e.message).slice(0,100)}})()"
     )
     return run_javascript_url(window, save_code, "SAVE_", timeout=140)

@@ -108,6 +108,36 @@ Implemented after user approval:
    - `https://t.me/Tatiana_Moonn`
 6. Do not show a reward after Yandex rating click until there is a compliant legal wording and platform-safe decision.
 
+## Live Safe Verification
+
+Checked on 2026-05-18 against the published `/otzivi` page:
+
+1. Opened:
+   `https://moonn.ru/otzivi?ostavit-otzyv=1&source=live_safe_demo_after_fix#moonn-review-funnel`
+2. Submitted a test review as `Alex Markss` with the Moonn backend JSONP request intercepted in Playwright, so no fake public review was stored.
+3. Confirmed the post-review participant offer appears.
+4. Confirmed the generated Telegram message is:
+   `Здравствуйте, Татьяна.`
+   `Я оставил(а) отзыв на сайте Moonn.ru и хочу уточнить специальное условие для участника мероприятия Moonn на первое двухчасовое посещение для себя или близкого.`
+   `Имя для публикации: Alex Markss.`
+   `Что посетил(а): Лекция.`
+   `ID отзыва: test-live-safe-alex-markss-2026-05-18.`
+5. Confirmed `Скопировать сообщение` writes the message to clipboard.
+6. Confirmed `Записаться онлайн` points to:
+   `https://n461584.yclients.com/`
+7. Confirmed `Открыть Telegram Татьяны` opens:
+   `https://t.me/Tatiana_Moonn`
+
+Verification artifacts:
+
+- `output/playwright/moonn-review-live-safe-demo-2026-05-18-after-fix/result.json`
+- `output/playwright/moonn-review-live-safe-demo-2026-05-18-after-fix/telegram-open-result.json`
+- `output/playwright/moonn-review-live-safe-demo-2026-05-18-after-fix/offer-panel.png`
+
+Correction found during live verification:
+
+- Tilda minification removed spaces inside `join(': ')` string fragments in the generated Telegram message. The builder now assembles field lines through `label + ':'` and `join(' ')` so the published message keeps spaces after punctuation.
+
 ## Open Questions
 
 - Exact Telegram handle to use: repo currently has `Tatiana_Moonn`; confirm it is still correct.

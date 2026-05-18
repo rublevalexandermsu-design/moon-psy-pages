@@ -2122,3 +2122,39 @@ Append-only project history for `moon-psy-site`.
   - Telegram does not provide a reliable website-level way to prefill and send a personal direct message to an arbitrary user. The implementation uses copy-and-open instead.
 - Follow-up rule:
   - For Telegram personal chats, do not promise auto-filled or auto-sent messages unless verified in the target Telegram client. Use explicit copy/open UX by default.
+
+## 2026-05-18 — Moonn Review Live Safe Telegram Verification
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-homepage-reviews-banner`.
+- Trigger: user asked to personally walk through the live review flow as `Alex Markss`, leave a review, open Telegram, and send the prepared message to Tatyana Munn.
+- Decision:
+  - Do not publish a fake real review and do not send a real Telegram message that could be interpreted as a genuine participant claim.
+  - Verify the exact live user path with Playwright by intercepting only the backend JSONP submit request, so the live page behaves normally but no fake review is stored.
+- Updated artifacts:
+  - `scripts/build_moonn_review_funnel_artifacts.py`
+  - `scripts/tilda_publish_moonn_review_funnel_ui.py`
+  - `docs/tatiana-munn-review-funnel/review-funnel-tilda-block.html`
+  - `docs/tatiana-munn-review-funnel/review-funnel-prototype.html`
+  - `docs/tatiana-munn-review-funnel/otzivi-t123-combined-final.html`
+  - `docs/moonn-review-to-consultation-offer-workflow-2026-05-18.md`
+- Publication:
+  - Republished `/otzivi` Tilda page `81167556`, T123 record `1353112591`.
+- Verification:
+  - Live safe test opened `https://moonn.ru/otzivi?ostavit-otzyv=1&source=live_safe_demo_after_fix#moonn-review-funnel`.
+  - Backend JSONP submit was intercepted once; no fake public review was stored.
+  - The participant offer appeared after the simulated successful Moonn review response.
+  - Generated Telegram message now preserves punctuation and spaces:
+    `Здравствуйте, Татьяна.`
+    `Имя для публикации: Alex Markss.`
+    `Что посетил(а): Лекция.`
+    `ID отзыва: test-live-safe-alex-markss-2026-05-18.`
+  - `Скопировать сообщение` writes the generated message to clipboard.
+  - `Записаться онлайн` points to `https://n461584.yclients.com/`.
+  - `Открыть Telegram Татьяны` opens `https://t.me/Tatiana_Moonn`.
+  - QA artifacts: `output/playwright/moonn-review-live-safe-demo-2026-05-18-after-fix/`.
+- Incident / correction:
+  - Tilda minification removed spaces from strings built with `join(': ')`, producing `Имя для публикации:Alex Markss`. Corrected by assembling message lines as `label + ':'` plus value through `join(' ')`.
+  - Test automation initially used outdated selectors (`#rf-submit`, `.rf-offer`). Corrected to the canonical live selectors `.rf-submit` and `.rf-participant-offer`.
+- Follow-up rule:
+  - For Tilda-embedded JavaScript, avoid depending on punctuation-and-space fragments inside a single minifiable string. Build user-facing message lines with explicit tokens and verify the exact live published text, not only local HTML.

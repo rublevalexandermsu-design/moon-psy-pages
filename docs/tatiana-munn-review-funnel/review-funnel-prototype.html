@@ -202,12 +202,15 @@
       }
 
       function buildOfferMessage(review) {
+        function fieldLine(label, value) {
+          return [label + ':', value + '.'].join(' ');
+        }
         var parts = [
-          'Здравствуйте, Татьяна.',
+          ['Здравствуйте,', 'Татьяна.'].join(' '),
           'Я оставил(а) отзыв на сайте Moonn.ru и хочу уточнить специальное условие для участника мероприятия Moonn на первое двухчасовое посещение для себя или близкого.',
-          'Имя для публикации: ' + (review && review.namePublic ? review.namePublic : 'не указано') + '.',
-          'Что посетил(а): ' + (review && review.context ? review.context : 'не указано') + '.',
-          'ID отзыва: ' + (review && review.id ? review.id : 'не указан') + '.'
+          fieldLine('Имя для публикации', review && review.namePublic ? review.namePublic : 'не указано'),
+          fieldLine('Что посетил(а)', review && review.context ? review.context : 'не указано'),
+          fieldLine('ID отзыва', review && review.id ? review.id : 'не указан')
         ];
         return parts.join('\n');
       }
