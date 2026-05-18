@@ -128,6 +128,39 @@ Checked on 2026-05-18 against the published `/otzivi` page:
 7. Confirmed `Открыть Telegram Татьяны` opens:
    `https://t.me/Tatiana_Moonn`
 
+## Review Proof Attachment
+
+Implemented on 2026-05-18:
+
+1. After a Moonn text review is accepted, the browser generates a PNG proof card from the returned backend review data:
+   - review id;
+   - public name;
+   - visit context;
+   - rating;
+   - review comment;
+   - date;
+   - `https://moonn.ru/otzivi`.
+2. The offer panel shows:
+   - `Скачать подтверждение`;
+   - `Поделиться подтверждением` only when the browser supports Web Share with files;
+   - `Открыть Telegram Татьяны`.
+3. The Telegram message now includes:
+   `Прикрепляю подтверждение отзыва с сайта Moonn.ru.`
+
+Important limitation:
+
+- A normal website link to a personal Telegram profile cannot silently attach a generated file or send a message for the user. The safe implementation is: generate PNG -> user downloads or shares it -> user attaches/sends it in Telegram.
+
+Verification:
+
+- Live safe Playwright check intercepted the backend JSONP submit request, so no fake public review was stored.
+- The generated proof link was a `data:image/png;base64,...` URL.
+- Downloaded proof file passed PNG signature check.
+- Verification artifacts:
+  - `output/playwright/moonn-review-proof-card-2026-05-18/result.json`
+  - `output/playwright/moonn-review-proof-card-2026-05-18/download-result.json`
+  - `output/playwright/moonn-review-proof-card-2026-05-18/offer-with-proof.png`
+
 Verification artifacts:
 
 - `output/playwright/moonn-review-live-safe-demo-2026-05-18-after-fix/result.json`

@@ -2158,3 +2158,29 @@ Append-only project history for `moon-psy-site`.
   - Test automation initially used outdated selectors (`#rf-submit`, `.rf-offer`). Corrected to the canonical live selectors `.rf-submit` and `.rf-participant-offer`.
 - Follow-up rule:
   - For Tilda-embedded JavaScript, avoid depending on punctuation-and-space fragments inside a single minifiable string. Build user-facing message lines with explicit tokens and verify the exact live published text, not only local HTML.
+
+## 2026-05-18 — Moonn Review PNG Proof For Telegram
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-homepage-reviews-banner`.
+- Trigger: user asked to attach the review itself as a screenshot/photo to the Telegram confirmation message so Tatyana Munn can see that the visitor really published a review.
+- Decision:
+  - Do not claim that a public website can silently attach and send a generated file into a personal Telegram chat. Telegram personal profile links do not provide a reliable website-level file attachment/send API.
+  - Implement the safe production path: after a verified Moonn text review response, generate a PNG proof card in the browser, provide `Скачать подтверждение`, optionally show `Поделиться подтверждением` when Web Share with files is supported, and update the Telegram message to ask the user to attach the proof.
+- Updated artifacts:
+  - `scripts/build_moonn_review_funnel_artifacts.py`
+  - `docs/tatiana-munn-review-funnel/review-funnel-tilda-block.html`
+  - `docs/tatiana-munn-review-funnel/review-funnel-prototype.html`
+  - `docs/tatiana-munn-review-funnel/otzivi-t123-combined-final.html`
+  - `docs/moonn-review-to-consultation-offer-workflow-2026-05-18.md`
+- Publication:
+  - Republished `/otzivi` Tilda page `81167556`, T123 record `1353112591`.
+- Verification:
+  - Live safe Playwright check intercepted the backend JSONP submit request, so no fake public review was stored.
+  - After simulated success, the offer panel shows `Подтверждение отзыва` and `Скачать подтверждение`.
+  - The download link is a generated `data:image/png;base64,...` URL with filename `moonn-review-proof-<review-id>.png`.
+  - The downloaded proof file passed PNG signature validation.
+  - Telegram message includes `Прикрепляю подтверждение отзыва с сайта Moonn.ru.`
+  - QA artifacts: `output/playwright/moonn-review-proof-card-2026-05-18/`.
+- Follow-up rule:
+  - For Telegram personal-chat proof flows, generate a user-controlled proof artifact and clear attachment instruction. Use bot/API integration only if the target process needs automatic file delivery.
