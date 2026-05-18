@@ -162,6 +162,12 @@ UX correction after live user test on 2026-05-18:
   `Скопировать текст и открыть Telegram Татьяны`
 - On supported mobile browsers, an additional user-facing file-share action can appear:
   `Отправить текст и подтверждение`
+- UX correction after the Windows/Unigram test on 2026-05-19:
+  - Proof preview is displayed compactly at `260x330` instead of taking the full card width.
+  - The share action is now explicitly labeled:
+    `Отправить текст и подтверждение в Telegram`
+  - The share action copies the Telegram text to clipboard before opening the system share sheet, because Windows/Unigram may send the file but ignore the Web Share `text` field.
+  - The PNG proof itself now includes the offer-context line, so the image remains meaningful even if the target app sends only the file.
 
 Verification:
 
@@ -175,12 +181,15 @@ Verification:
   - success panel is visible;
   - proof preview image is visible;
   - Telegram button copies the text and opens `https://t.me/Tatiana_Moonn`.
+  - Windows/Unigram UX follow-up confirmed compact preview size, Telegram-specific share button wording, and restored spacing in the copied message after Tilda minification.
 - Verification artifacts:
   - `output/playwright/moonn-review-proof-card-2026-05-18/result.json`
   - `output/playwright/moonn-review-proof-card-2026-05-18/download-result.json`
   - `output/playwright/moonn-review-proof-card-2026-05-18/offer-with-proof.png`
   - `output/playwright/moonn-review-submitted-ux-fix-2026-05-18/result.json`
   - `output/playwright/moonn-review-submitted-ux-fix-2026-05-18/mobile-telegram-result.json`
+  - `output/playwright/moonn-review-proof-share-ux-2026-05-19/result.json`
+  - `output/playwright/moonn-review-proof-share-ux-2026-05-19/text-fix-result.json`
 
 Verification artifacts:
 

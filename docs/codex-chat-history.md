@@ -2214,3 +2214,33 @@ Append-only project history for `moon-psy-site`.
   - Earlier verification checked that the offer existed, but did not validate post-submit focus and user comprehension. The user correctly found that leaving the original form visible made the funnel feel broken.
 - Follow-up rule:
   - For funnel success states, verify the actual post-action viewport and remove completed-step UI unless it is intentionally needed for a second action.
+
+## 2026-05-19 — Moonn Review Proof Share UX Fix
+
+- Project: Moonn / Tatyana Munn site.
+- Branch: `codex/moonn-homepage-reviews-banner`.
+- Trigger: user tested the success state and found that the proof image is visually too large, the `Отправить текст и подтверждение` wording is unclear for Telegram, and Windows/Unigram may send only the PNG without the Web Share text.
+- Decision:
+  - Keep the direct Telegram limitation explicit: a website cannot force a personal Telegram chat to receive both prefilled text and a file.
+  - Make the proof preview compact in the page.
+  - Rename the share action to `Отправить текст и подтверждение в Telegram`.
+  - Copy the Telegram text to clipboard before opening the share sheet.
+  - Put the offer-context line inside the PNG itself so the image remains meaningful if Telegram/Unigram ignores the shared text.
+- Updated artifacts:
+  - `scripts/build_moonn_review_funnel_artifacts.py`
+  - `docs/tatiana-munn-review-funnel/review-funnel-tilda-block.html`
+  - `docs/tatiana-munn-review-funnel/review-funnel-prototype.html`
+  - `docs/tatiana-munn-review-funnel/otzivi-t123-combined-final.html`
+  - `docs/moonn-review-to-consultation-offer-workflow-2026-05-18.md`
+- Publication:
+  - Republished `/otzivi` Tilda page `81167556`, T123 record `1353112591`.
+- Verification:
+  - Live safe Playwright check confirmed proof preview size `260x330`.
+  - Share button text is `Отправить текст и подтверждение в Telegram`.
+  - Clipboard text includes the review id and the special-condition request.
+  - A follow-up check fixed another Tilda minification issue: `Moonn.ru. Прошу` now keeps the space.
+  - QA artifacts: `output/playwright/moonn-review-proof-share-ux-2026-05-19/`.
+- Incident / correction:
+  - Web Share behavior is target-app dependent; Unigram can accept the file while dropping the text. The proof image now carries the core context as a fallback.
+- Follow-up rule:
+  - When using Web Share with files, assume target apps may ignore `text`. Put critical context inside the shared file and copy the text to clipboard as a fallback.

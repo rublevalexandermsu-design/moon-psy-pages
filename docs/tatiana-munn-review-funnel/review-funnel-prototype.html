@@ -54,12 +54,12 @@
     #moonn-review-funnel .rf-participant-offer p{font-size:14px;line-height:1.45;}
     #moonn-review-funnel .rf-offer-note{margin:16px 0 0;padding:14px;border-radius:16px;background:#fff9df;border:1px solid rgba(245,183,0,.25);color:#4d5965;font-size:14px;line-height:1.45;}
     #moonn-review-funnel .rf-offer-note strong{display:block;margin-bottom:4px;color:#181c20;}
-    #moonn-review-funnel .rf-copy-message{width:100%;min-height:92px;margin-top:12px;padding:12px;border:1px solid rgba(31,35,40,.14);border-radius:14px;background:#fff;color:#303841;font:500 13px/1.45 Arial,sans-serif;resize:vertical;}
-    #moonn-review-funnel .rf-proof-card{display:none;margin-top:14px;padding:14px;border-radius:16px;background:#fff;border:1px solid rgba(31,35,40,.12);}
+    #moonn-review-funnel .rf-copy-message{width:100%;min-height:78px;margin-top:12px;padding:12px;border:1px solid rgba(31,35,40,.14);border-radius:14px;background:#fff;color:#303841;font:500 13px/1.45 Arial,sans-serif;resize:vertical;}
+    #moonn-review-funnel .rf-proof-card{display:none;margin-top:14px;padding:12px;border-radius:16px;background:#fff;border:1px solid rgba(31,35,40,.12);}
     #moonn-review-funnel .rf-proof-card.is-visible{display:block;}
     #moonn-review-funnel .rf-proof-card strong{display:block;margin-bottom:6px;color:#181c20;font-size:15px;}
     #moonn-review-funnel .rf-proof-card span{display:block;color:#687583;font-size:13px;line-height:1.4;}
-    #moonn-review-funnel .rf-proof-preview{display:block;width:100%;margin-top:12px;border-radius:14px;border:1px solid rgba(31,35,40,.12);background:#fff;box-shadow:0 10px 24px rgba(24,39,75,.10);}
+    #moonn-review-funnel .rf-proof-preview{display:block;width:min(100%,260px);max-height:330px;object-fit:contain;margin:12px auto 0;border-radius:12px;border:1px solid rgba(31,35,40,.12);background:#fff;box-shadow:0 8px 18px rgba(24,39,75,.10);}
     @media (max-width:820px){#moonn-review-funnel{padding:28px 14px 40px;}#moonn-review-funnel .rf-shell{grid-template-columns:1fr;}#moonn-review-funnel .rf-intro,#moonn-review-funnel .rf-form{padding:24px;}#moonn-review-funnel h2{font-size:27px;}}
     @media (max-width:480px){#moonn-review-funnel .rf-stars{gap:4px;}#moonn-review-funnel .rf-star{width:32px;height:32px;font-size:30px;}}
   </style>
@@ -129,7 +129,7 @@
         </div>
         <div class="rf-actions">
           <button class="rf-button primary" type="button" data-copy-open-telegram>Скопировать текст и открыть Telegram Татьяны</button>
-          <button class="rf-button ghost" type="button" data-share-proof hidden>Отправить текст и подтверждение</button>
+          <button class="rf-button ghost" type="button" data-share-proof hidden>Отправить текст и подтверждение в Telegram</button>
           <a class="rf-button ghost" data-booking-link href="https://n461584.yclients.com/" target="_blank" rel="noopener noreferrer">Записаться онлайн</a>
           <a class="rf-button ghost" href="https://moonn.ru/otzivi">Закрыть страницу</a>
         </div>
@@ -224,7 +224,7 @@
         }
         var parts = [
           ['Здравствуйте,', 'Татьяна.'].join(' '),
-          'Я оставил(а) отзыв на сайте Moonn.ru. Прошу зафиксировать специальное условие участника мероприятия Moonn на первое двухчасовое посещение для меня или близкого.',
+          ['Я оставил(а) отзыв на сайте Moonn.ru.', 'Прошу зафиксировать специальное условие участника мероприятия Moonn на первое двухчасовое посещение для меня или близкого.'].join(' '),
           'Прикрепляю подтверждение отзыва с сайта Moonn.ru.',
           fieldLine('Имя для публикации', review && review.namePublic ? review.namePublic : 'не указано'),
           fieldLine('Что посетил(а)', review && review.context ? review.context : 'не указано'),
@@ -267,7 +267,7 @@
         if(!review) return null;
         var canvas = document.createElement('canvas');
         canvas.width = 1080;
-        canvas.height = 1350;
+        canvas.height = 1500;
         var ctx = canvas.getContext('2d');
         if(!ctx) return null;
         var created = review.createdAt ? new Date(review.createdAt) : new Date();
@@ -279,10 +279,10 @@
         gradient.addColorStop(0.62, '#ffffff');
         gradient.addColorStop(1, '#fff6cf');
         ctx.fillStyle = gradient;
-        roundRect(ctx, 70, 70, 940, 1210, 34, true, false);
+        roundRect(ctx, 70, 70, 940, 1360, 34, true, false);
         ctx.strokeStyle = '#ded2fb';
         ctx.lineWidth = 3;
-        roundRect(ctx, 70, 70, 940, 1210, 34, false, true);
+        roundRect(ctx, 70, 70, 940, 1360, 34, false, true);
         ctx.fillStyle = '#ffcc00';
         roundRect(ctx, 110, 120, 84, 84, 22, true, false);
         ctx.fillStyle = '#111111';
@@ -297,31 +297,34 @@
         ctx.fillStyle = '#5b2ec7';
         ctx.font = '700 38px Arial';
         ctx.fillText('Отзыв опубликован на сайте Moonn.ru', 110, 280);
+        ctx.fillStyle = '#303841';
+        ctx.font = '400 27px Arial';
+        wrapCanvasText(ctx, 'Прошу зафиксировать специальное условие участника мероприятия Moonn на первое двухчасовое посещение для меня или близкого.', 110, 330, 840, 38, 3);
         ctx.fillStyle = '#181c20';
         ctx.font = '700 32px Arial';
-        ctx.fillText('Имя', 110, 370);
+        ctx.fillText('Имя', 110, 470);
         ctx.font = '400 34px Arial';
-        ctx.fillText(review.namePublic || 'не указано', 110, 415);
+        ctx.fillText(review.namePublic || 'не указано', 110, 515);
         ctx.font = '700 32px Arial';
-        ctx.fillText('Что посетил(а)', 110, 500);
+        ctx.fillText('Что посетил(а)', 110, 600);
         ctx.font = '400 34px Arial';
-        ctx.fillText(review.context || 'не указано', 110, 545);
+        ctx.fillText(review.context || 'не указано', 110, 645);
         ctx.font = '700 32px Arial';
-        ctx.fillText('Оценка', 110, 630);
+        ctx.fillText('Оценка', 110, 730);
         ctx.fillStyle = '#f5b700';
         ctx.font = '700 46px Arial';
-        ctx.fillText('★ ★ ★ ★ ★', 110, 685);
+        ctx.fillText('★ ★ ★ ★ ★', 110, 785);
         ctx.fillStyle = '#181c20';
         ctx.font = '700 32px Arial';
-        ctx.fillText('Комментарий', 110, 775);
+        ctx.fillText('Комментарий', 110, 875);
         ctx.fillStyle = '#303841';
         ctx.font = '400 31px Arial';
-        wrapCanvasText(ctx, review.comment || '', 110, 825, 840, 44, 7);
+        wrapCanvasText(ctx, review.comment || '', 110, 925, 840, 44, 7);
         ctx.fillStyle = '#687583';
         ctx.font = '400 25px Arial';
-        ctx.fillText('ID отзыва: ' + (review.id || 'не указан'), 110, 1140);
-        ctx.fillText('Дата: ' + createdText, 110, 1182);
-        ctx.fillText('Ссылка: https://moonn.ru/otzivi', 110, 1224);
+        ctx.fillText('ID отзыва: ' + (review.id || 'не указан'), 110, 1290);
+        ctx.fillText('Дата: ' + createdText, 110, 1332);
+        ctx.fillText('Ссылка: https://moonn.ru/otzivi', 110, 1374);
         return canvas;
       }
 
@@ -395,9 +398,11 @@
       if(shareProofButton) {
         shareProofButton.addEventListener('click', function() {
           if(!lastProofFile || !navigator.share) return;
+          var text = offerMessageBox ? offerMessageBox.value : 'Подтверждение отзыва Moonn.ru';
+          copyText(text, shareProofButton);
           navigator.share({
             title: 'Подтверждение отзыва Moonn',
-            text: offerMessageBox ? offerMessageBox.value : 'Подтверждение отзыва Moonn.ru',
+            text: text,
             files: [lastProofFile]
           }).catch(function() {});
         });
