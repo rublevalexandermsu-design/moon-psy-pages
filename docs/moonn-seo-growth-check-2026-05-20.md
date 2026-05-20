@@ -33,21 +33,95 @@
 
 ## Analytics Access Result
 
-- Yandex.Metrika API for counter `96397286` returned `403 access_denied`.
-- Yandex Webmaster API returned `403 INVALID_OAUTH_TOKEN`.
-- Google Search Console API returned `401 Login Required`.
-- Existing Chrome was running, but no Chrome DevTools Protocol port was open on `9222`, so Codex could not attach to the already-authenticated browser session.
-- Therefore visits, users, pageviews, search phrases, click maps, Webvisor sessions, GSC clicks/impressions/CTR/queries and GA data are not verified in this run.
+- API access is still blocked:
+  - Yandex.Metrika API for counter `96397286` returned `403 access_denied`.
+  - Yandex Webmaster API returned `403 INVALID_OAUTH_TOKEN`.
+  - Google Search Console API returned `401 Login Required`.
+- GUI access through Google Chrome Rublev profile was available and used for a bounded manual verification.
+- Source screenshots were kept as local working evidence and intentionally not committed, because they include analytics cabinet/account UI.
+
+## GUI-Verified Business Metrics
+
+### Yandex.Metrika
+
+Period: `21 Apr 2026 - 20 May 2026`.
+
+- Traffic report: `316` visits.
+- Sources report: `313` visits, `265` visitors, bounce rate `34.50%`, depth `2.87`.
+- Traffic sources:
+  - Direct visits: `205` visits / `182` visitors / `65.50%` of visits / bounce `46.83%` / depth `3.58`.
+  - Search engines: `81` visits / `63` visitors / `25.88%` of visits / bounce `12.35%` / depth `1.47`.
+  - Referral links: `24` visits / `20` visitors / `7.67%` of visits / bounce `4.17%` / depth `1.71`.
+  - Social networks: `2` visits / `2` visitors.
+  - Internal transitions: `1` visit.
+- Search phrases report: `38` visits / `33` visitors / bounce `7.89%` / depth `1.55`.
+- Visible Yandex search phrases include:
+  - `татьяна мунн`
+  - `татьяна мунн крутой психолог на чем ...`
+  - `татьяна мунн сколько стоит`
+  - `татьяна муун`
+  - `татьянка мунн лекции`
+  - `телесная терапия подростки лагерь г...`
+  - `что такое самоосознанность`
+  - `подростковый психологический инт...`
+- Popular content report: `901` views / `268` visitors, but the table collapses all visible page data to `https://moonn.ru/`.
+
+### Google Search Console
+
+Property: `https://moonn.ru/`.
+
+Last visible update: about `3.5` hours before the check.
+
+- Last `3 months`: `224` clicks, `14.1K` impressions, CTR `1.6%`, average position `7.1`.
+- Last `28 days`: `64` clicks, `4.41K` impressions, CTR `1.5%`, average position `8.7`.
+- Top visible queries for last `28 days`:
+  - `татьяна мунн`: `9` clicks / `17` impressions.
+  - `дневник эмоций`: `4` clicks / `266` impressions.
+  - `как вести дневник эмоций`: `2` clicks / `174` impressions.
+  - `социальный интеллект`: `1` click / `82` impressions.
+  - `что такое дневник эмоций`: `1` click / `22` impressions.
+  - `лекции по психологии му...`: `1` click / `9` impressions.
+  - Additional zero-click impression queries include `социальный интеллект это`, `муна`, `дневник эмоций как вести`, `дневник эмоций пример`.
+- Top visible pages for last `28 days`:
+  - `https://moonn.ru/article_diary_of_emotions`: `15` clicks / `2,025` impressions.
+  - `https://moonn.ru/`: `15` clicks / `283` impressions.
+  - `https://moonn.ru/article_femininity`: `9` clicks / `549` impressions.
+  - `https://moonn.ru/lectures1`: `7` clicks / `132` impressions.
+  - `https://moonn.ru/page485296765.html`: `4` clicks / `83` impressions.
+  - `https://moonn.ru/emotional-intelligence/knowledge-base/social-intelligence`: `2` clicks / `595` impressions.
+  - `https://moonn.ru/schematherapy`: `2` clicks / `218` impressions.
+  - `https://moonn.ru/uslugi_konflikti_na_rabote`: `2` clicks / `115` impressions.
+  - `https://moonn.ru/emotional-intelligence/lesson-12`: `2` clicks / `32` impressions.
+  - `https://moonn.ru/physiotherapy`: `2` clicks / `11` impressions.
+
+### Yandex Webmaster
+
+Property: `https://moonn.ru`.
+
+- Dashboard is accessible through Chrome.
+- Site diagnostics show: `0` errors and `1` recommendation.
+- Webmaster highlights duplicate metadata:
+  - `9` duplicate titles.
+  - `22` duplicate descriptions.
+- Search-query statistics page is accessible for `18 Apr 2026 - 18 May 2026`, but a readable table/export was not captured in this bounded pass.
 
 ## Current Interpretation
 
-The SEO implementation was not wasted technically: the rendered SEO/AEO layer is live and structurally strong on the full 83-page scope. The business question is still open: there is not enough verified analytics access in this run to say whether visits, search impressions, search queries or consultation clicks increased.
+The SEO implementation was not wasted. There is now verified traffic evidence from Yandex.Metrika and verified search evidence from Google Search Console.
 
-The biggest process gap is not the SEO code; it is missing machine-readable analytics export. The supervisor should not be considered complete until it can pull or ingest Yandex.Metrika, Yandex Webmaster and Google Search Console data for a fixed date range.
+The strongest positive signal is Google Search Console: in the last 28 days the site received `64` clicks and `4.41K` impressions, with measurable non-brand demand around `дневник эмоций`, `как вести дневник эмоций`, `социальный интеллект`, and related informational pages. This means the SEO/AEO work is creating discoverable search surfaces, not only branded traffic.
+
+The strongest limitation is conversion/path analytics: Yandex.Metrika shows traffic and search-source quality, but the visible popular-content report collapses page data to `https://moonn.ru/`. This blocks reliable understanding of what users click and which Moonn pages drive onsite interest inside Metrika. GSC page data partially compensates for SEO pages, but it does not replace onsite behavior and goal tracking.
+
+Current conclusion: SEO produced measurable search visibility and traffic, but the analytics system is not yet strong enough to prove consultation/business conversion. The next work should focus on Metrika URL/page tracking, duplicate metadata cleanup, and goals for consultation/contact actions.
 
 ## Problem Areas
 
-- Analytics evidence is blocked by missing OAuth/API access or exported reports.
+- Machine-readable API/export evidence is still blocked by missing OAuth/API access.
+- Yandex.Metrika page-level content reporting appears too collapsed to evaluate interest by page; this needs URL/pageview tracking correction or a different report/export configuration.
+- Google Search Console confirms SEO visibility, but average CTR is still low: `1.5%` over the last 28 days.
+- Google Search Console top SEO page is `article_diary_of_emotions`, which shows `2,025` impressions and `15` clicks; this page should become the first content-to-consultation funnel improvement candidate.
+- Yandex Webmaster still reports `9` duplicate titles and `22` duplicate descriptions.
 - Raw HTML still does not reflect the rendered H1/schema mitigation, so audits must continue to distinguish raw source vs rendered DOM.
 - Image alt remains unresolved across `83` pages at source/raw level.
 - `robots_txt_blocked` appears on `12` pages; `9` look intentionally out-of-index, but `3` are marked `fix_robots_then_strengthen`: `/psy4psy`, `/schematherapy`, `/selfharm`.
@@ -56,13 +130,14 @@ The biggest process gap is not the SEO code; it is missing machine-readable anal
 
 ## Follow-Up Tasks
 
-1. Connect or export Yandex.Metrika for counter `96397286`: visits, users, pageviews, sources, search phrases, popular pages, click goals and Webvisor/clickmap summary for 2026-04-29 to 2026-05-20.
-2. Connect or export Google Search Console for `https://moonn.ru/`: clicks, impressions, CTR, average position, pages, queries and sitemap/indexing status for the same period.
-3. Check whether Google Analytics/GA4 is intentionally absent; if absent, keep Yandex.Metrika primary until legal/privacy posture for GA is approved.
-4. Resolve the three `fix_robots_then_strengthen` pages: `/psy4psy`, `/schematherapy`, `/selfharm`.
-5. Create a source-level image-alt remediation packet for the 83-page scope, with filenames/alt text separated from hidden marketing tokens.
-6. Decide privacy endpoint canon: keep `/politic` only with internal redirects/links, or publish canonical `/privacy`, `/cookies`, `/personal-data-consent`, `/data-subject-request` pages after legal approval.
-7. Update the supervisor so future runs require analytics export evidence before making a conclusion about SEO success or failure.
+1. Fix or document Yandex.Metrika page-level tracking so the content report separates Moonn URLs instead of collapsing visible page data to `https://moonn.ru/`.
+2. Create a conversion-goal map for consultation/contact actions and verify that Yandex.Metrika goals capture them without adding new legal/privacy risk.
+3. Use GSC top pages to create a focused content-funnel backlog: start with `article_diary_of_emotions`, homepage, `article_femininity`, `lectures1`, and social-intelligence content.
+4. Resolve Yandex Webmaster duplicate metadata: `9` duplicate titles and `22` duplicate descriptions.
+5. Resolve the three `fix_robots_then_strengthen` pages: `/psy4psy`, `/schematherapy`, `/selfharm`.
+6. Create a source-level image-alt remediation packet for the 83-page scope, with filenames/alt text separated from hidden marketing tokens.
+7. Decide privacy endpoint canon: keep `/politic` only with internal redirects/links, or publish canonical `/privacy`, `/cookies`, `/personal-data-consent`, `/data-subject-request` pages after legal approval.
+8. Update the supervisor so future runs first try official APIs/exports and then explicitly fall back to Chrome GUI capture when APIs are blocked.
 
 ## Artifacts
 

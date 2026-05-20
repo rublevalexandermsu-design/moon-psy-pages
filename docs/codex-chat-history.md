@@ -1312,3 +1312,29 @@ Append-only project history for `moon-psy-site`.
   - Follow-up rule: supervisor audits must write append-only dated artifacts and must not overwrite historical evidence.
 - Decision:
   - The SEO rollout is technically real and live, but traffic impact is not verified until Yandex.Metrika/GSC analytics data is accessible or exported.
+
+## 2026-05-20 — Moonn SEO Growth GUI Analytics Correction
+
+- Project: Moonn / Tatyana Munn site.
+- Workstream: SEO/AEO growth evidence and analytics access.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user corrected that missing API tokens should not stop the analysis; Codex must use Google Chrome Rublev profile when GUI cabinet access is available.
+- Correction:
+  - Continued the same workstream through the Chrome profile associated with Rublev access.
+  - Used authenticated GUI views for Yandex.Metrika, Google Search Console and Yandex Webmaster.
+  - Kept screenshots as local working evidence and did not commit them because they contain account/cabinet UI.
+- Verified via GUI:
+  - Yandex.Metrika counter `96397286`, period `21 Apr 2026 - 20 May 2026`: sources report `313` visits and `265` visitors.
+  - Metrika sources: direct `205`, search engines `81`, referral links `24`, social networks `2`, internal transitions `1`.
+  - Metrika search phrases: `38` visits and `33` visitors; visible phrases include `татьяна мунн`, `татьяна мунн сколько стоит`, `татьянка мунн лекции`, `что такое самоосознанность`.
+  - Metrika popular content report: `901` views and `268` visitors, but visible page data collapses to `https://moonn.ru/`.
+  - Google Search Console for `https://moonn.ru/`, last `28 days`: `64` clicks, `4.41K` impressions, CTR `1.5%`, average position `8.7`.
+  - GSC top pages include `article_diary_of_emotions`, homepage, `article_femininity`, `lectures1`, social-intelligence content, `schematherapy`, and `physiotherapy`.
+  - Yandex Webmaster dashboard: `0` errors, `1` recommendation, `9` duplicate titles, `22` duplicate descriptions.
+- Changed files:
+  - `docs/moonn-seo-growth-check-2026-05-20.md`
+- Incident:
+  - Symptom: first report treated blocked APIs as a hard stop for business analytics.
+  - Root cause: fallback route through authenticated Chrome GUI was not executed before reporting.
+  - Fix: reran the analytics evidence step through Chrome GUI and updated the report.
+  - Follow-up rule: when analytics APIs are blocked but an authenticated Chrome profile is available, the supervisor must use GUI capture as a bounded fallback and clearly separate API-blocked from GUI-verified facts.
