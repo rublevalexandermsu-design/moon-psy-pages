@@ -1248,3 +1248,29 @@ Append-only project history for `moon-psy-site`.
   - Visual Edge/browser check confirmed the page starts with the hero block and the removed top summary card is absent.
 - Follow-up rule:
   - For public Tilda pages, visual deletion requests must be implemented in the generator/source artifact first, then published, then verified through Tilda API, live HTML, and browser render.
+
+## 2026-05-20 — Moonn SEO/Privacy Supervisor Automation Restored
+
+- Project: Moonn / Tatyana Munn site.
+- Workstream: SEO/AEO supervisor and privacy/RKN compliance follow-up.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user reported that the previous chat became too slow and asked to find the SEO branch and recreate the morning automation in Russian.
+- Verified facts:
+  - The canonical Moonn repository is `C:\пайто н тесты\Ано_институт_глаболизация\moon-psy-site`.
+  - The SEO/RKN workstream history is in this file and points to `codex/moonn-seo-audit`.
+  - Related but separate branches exist: `codex/moonn-seo-positioning-architecture` for noindex/positioning, `codex/moonn-homepage-reviews-banner` for the reviews funnel, and `codex/moonn-paid-video-lectures` for paid lectures.
+  - No existing active Moonn SEO automation was found in `C:\Users\yanta\.codex\automations`.
+- Created automation:
+  - ID: `moonn-seo-privacy-supervisor`.
+  - Name: `Moonn SEO и privacy supervisor`.
+  - Schedule: daily from `2026-05-21 09:00` Moscow time.
+  - CWD: `C:\пайто н тесты\Ано_институт_глаболизация\moon-psy-site`.
+  - Prompt language: Russian only.
+- Scope:
+  - Continue from existing reports and registries before new actions.
+  - Check MIIIIPS PR #11, Moonn reindexing, 83-page SEO audit/classification, Yandex Services/MSU Istina blockers, and paid video lecture pause.
+  - Run weekly privacy/RKN checks on Mondays or when explicitly requested.
+- Safety gates:
+  - No live Tilda changes, legal publication, personal data, screenshots, payment changes, private video links, RKN notification, bot-blocking rules, or mass Google URL Inspection resubmission without approval.
+- Follow-up rule:
+  - Supervisor runs must start from `codex/moonn-seo-audit` context and must not mix SEO/RKN work with reviews, paid videos, or other Moonn branches.
