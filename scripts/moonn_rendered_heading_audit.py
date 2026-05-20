@@ -10,9 +10,10 @@ from playwright.async_api import async_playwright
 ROOT = Path(__file__).resolve().parents[1]
 PLAN_PATH = ROOT / "docs" / "moonn-h1-h2-ui-apply-plan-2026-05-06.json"
 PRODUCTION_AUDIT_PATH = ROOT / "docs" / "moonn-production-scope-seo-audit-2026-05-06.json"
-JSON_OUT = ROOT / "docs" / "moonn-rendered-heading-audit-2026-05-06.json"
-CSV_OUT = ROOT / "docs" / "moonn-rendered-heading-audit-2026-05-06.csv"
-MD_OUT = ROOT / "docs" / "moonn-rendered-heading-audit-2026-05-06.md"
+RUN_DATE = datetime.now(timezone.utc).date().isoformat()
+JSON_OUT = ROOT / "docs" / f"moonn-rendered-heading-audit-{RUN_DATE}.json"
+CSV_OUT = ROOT / "docs" / f"moonn-rendered-heading-audit-{RUN_DATE}.csv"
+MD_OUT = ROOT / "docs" / f"moonn-rendered-heading-audit-{RUN_DATE}.md"
 
 
 def normalize_heading_text(value: str) -> str:
@@ -191,7 +192,7 @@ async def main():
         if item["error"] or len(item["h1"]) != 1 or not item["hasSemanticLayerScript"]
     ]
     md = [
-        "# Moonn Rendered Heading Audit — 2026-05-06",
+        f"# Moonn Rendered Heading Audit — {RUN_DATE}",
         "",
         "Rendered DOM check after publishing the global Tilda HEAD semantic heading layer.",
         "",

@@ -9,9 +9,10 @@ from playwright.async_api import async_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
 PRODUCTION_AUDIT_PATH = ROOT / "docs" / "moonn-production-scope-seo-audit-2026-05-08.json"
-JSON_OUT = ROOT / "docs" / "moonn-rendered-schema-audit-2026-05-08.json"
-CSV_OUT = ROOT / "docs" / "moonn-rendered-schema-audit-2026-05-08.csv"
-MD_OUT = ROOT / "docs" / "moonn-rendered-schema-audit-2026-05-08.md"
+RUN_DATE = datetime.now(timezone.utc).date().isoformat()
+JSON_OUT = ROOT / "docs" / f"moonn-rendered-schema-audit-{RUN_DATE}.json"
+CSV_OUT = ROOT / "docs" / f"moonn-rendered-schema-audit-{RUN_DATE}.csv"
+MD_OUT = ROOT / "docs" / f"moonn-rendered-schema-audit-{RUN_DATE}.md"
 
 
 def load_urls():
@@ -186,7 +187,7 @@ async def main():
         or item["error"]
     ]
     lines = [
-        "# Moonn Rendered Schema Audit — 2026-05-08",
+        f"# Moonn Rendered Schema Audit — {RUN_DATE}",
         "",
         "## Summary",
         "",

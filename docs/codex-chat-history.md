@@ -1274,3 +1274,41 @@ Append-only project history for `moon-psy-site`.
   - No live Tilda changes, legal publication, personal data, screenshots, payment changes, private video links, RKN notification, bot-blocking rules, or mass Google URL Inspection resubmission without approval.
 - Follow-up rule:
   - Supervisor runs must start from `codex/moonn-seo-audit` context and must not mix SEO/RKN work with reviews, paid videos, or other Moonn branches.
+
+## 2026-05-20 — Moonn SEO Growth Supervisor Manual Run
+
+- Project: Moonn / Tatyana Munn site.
+- Workstream: SEO/AEO growth evidence and analytics access.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user asked to run the restored automation immediately and determine whether three weeks of SEO work produced traffic/search improvements.
+- Actions:
+  - Ran `python scripts\moonn_final_seo_audit.py --production-scope`.
+  - Ran `python scripts\moonn_privacy_compliance_audit.py`.
+  - Ran `python scripts\moonn_rendered_heading_audit.py`.
+  - Ran `python scripts\moonn_rendered_schema_audit.py`.
+  - Checked Yandex.Metrika API, Yandex Webmaster API and Google Search Console API access.
+  - Created SEO growth report and backlog.
+- Verified:
+  - `83/83` production URLs returned HTTP `200`.
+  - Rendered H1: `83/83` pages have exactly one H1; `2` H2 target checks failed on `psypodgotovka1`.
+  - Rendered schema: `83/83` pages have JSON-LD and no JSON errors.
+  - Yandex.Metrika API returned `403 access_denied`.
+  - Yandex Webmaster API returned `403 INVALID_OAUTH_TOKEN`.
+  - Google Search Console API returned `401 Login Required`.
+- Created / changed files:
+  - `docs/moonn-seo-growth-check-2026-05-20.md`
+  - `docs/moonn-seo-growth-backlog.md`
+  - `docs/moonn-production-scope-seo-audit-2026-05-20.*`
+  - `docs/moonn-rendered-heading-audit-2026-05-20.*`
+  - `docs/moonn-rendered-schema-audit-2026-05-20.*`
+  - `docs/moonn-privacy-compliance-audit-2026-05-20.*`
+  - `scripts/moonn_privacy_compliance_audit.py`
+  - `scripts/moonn_rendered_heading_audit.py`
+  - `scripts/moonn_rendered_schema_audit.py`
+- Incident:
+  - Symptom: several audit scripts wrote new run results into old dated files such as `2026-05-06` and `2026-05-08`.
+  - Root cause: output filenames were hard-coded to the original rollout dates.
+  - Fix: changed output paths and Markdown headers to use the current UTC run date.
+  - Follow-up rule: supervisor audits must write append-only dated artifacts and must not overwrite historical evidence.
+- Decision:
+  - The SEO rollout is technically real and live, but traffic impact is not verified until Yandex.Metrika/GSC analytics data is accessible or exported.

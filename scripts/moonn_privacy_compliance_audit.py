@@ -12,8 +12,9 @@ from urllib.error import HTTPError, URLError
 
 ROOT = Path(__file__).resolve().parents[1]
 PACKET = ROOT / "docs" / "moonn-gsc-yandex-reindex-packet-2026-05-08.json"
-OUT_JSON = ROOT / "docs" / "moonn-privacy-compliance-audit-2026-05-08.json"
-OUT_MD = ROOT / "docs" / "moonn-privacy-compliance-audit-2026-05-08.md"
+RUN_DATE = datetime.now(timezone.utc).date().isoformat()
+OUT_JSON = ROOT / "docs" / f"moonn-privacy-compliance-audit-{RUN_DATE}.json"
+OUT_MD = ROOT / "docs" / f"moonn-privacy-compliance-audit-{RUN_DATE}.md"
 
 POLICY_URLS = [
     "https://moonn.ru/privacy",
@@ -108,7 +109,7 @@ def write_report(payload: dict[str, Any]) -> None:
     form_pages = [p for p in pages if p["formSignals"]]
 
     lines = [
-        "# Moonn Privacy Compliance Audit — 2026-05-08",
+        f"# Moonn Privacy Compliance Audit — {RUN_DATE}",
         "",
         "## Summary",
         "",

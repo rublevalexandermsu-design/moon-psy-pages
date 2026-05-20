@@ -1,0 +1,3622 @@
+{
+  "summary": {
+    "createdAt": "2026-05-20T07:03:54.146653+00:00",
+    "scope": "rendered DOM audit for Moonn production pages after Tilda global semantic heading layer publish",
+    "sourcePlan": "docs\\moonn-h1-h2-ui-apply-plan-2026-05-06.json",
+    "sourceProductionAudit": "docs\\moonn-production-scope-seo-audit-2026-05-06.json",
+    "pagesChecked": 83,
+    "pagesLoaded": 83,
+    "pagesWithSemanticLayerScript": 83,
+    "pagesWithExactlyOneH1": 83,
+    "pagesWithMissingH1": 0,
+    "pagesWithMultipleH1": 0,
+    "targetChecks": 52,
+    "targetChecksMatched": 50,
+    "targetChecksFailed": 2,
+    "errors": 0
+  },
+  "pages": [
+    {
+      "url": "https://moonn.ru/",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Татьяна Мунн - психолог МГУ",
+          "recId": "2175794861",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_left "
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Подростковый лагерь по психологии",
+          "recId": "2251351151",
+          "className": ""
+        },
+        {
+          "tag": "h2",
+          "text": "Галерея картин Татьяны Мунн",
+          "recId": "2251351151",
+          "className": ""
+        },
+        {
+          "tag": "h2",
+          "text": "Экзамены без паники",
+          "recId": "2251351151",
+          "className": ""
+        },
+        {
+          "tag": "h2",
+          "text": "Онлайн-консультации для вас и ваших близких",
+          "recId": "2251351151",
+          "className": ""
+        },
+        {
+          "tag": "h2",
+          "text": "Отзывы о Татьяне Мунн",
+          "recId": "2251351151",
+          "className": ""
+        },
+        {
+          "tag": "h2",
+          "text": "ТЕМЫ ЛЕКЦИЙ, КОТОРЫЕ Я ЧИТАЮ",
+          "recId": "1208109326",
+          "className": "t962__title t-title t-title_xxs"
+        },
+        {
+          "tag": "h2",
+          "text": "ТЕМЫ ЛЕКЦИЙ, КОТОРЫЕ ЧИТАЮ",
+          "recId": "2173916631",
+          "className": "t962__title t-title t-title_xxs"
+        },
+        {
+          "tag": "h2",
+          "text": "ОБРАЗОВАНИЕ - МГУ",
+          "recId": "860020874",
+          "className": "t921__title t-title t-title_xs "
+        },
+        {
+          "tag": "h2",
+          "text": "психолог Татьяна Мунн рекомендует",
+          "recId": "865442304",
+          "className": "t581__title t-title t-title_sm t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Яндекс-Услуги",
+          "recId": "859631906",
+          "className": "t337__title t-title t-title_xxs"
+        }
+      ],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/abuse_gaslight",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Абьюзинг и газлайтинг",
+          "recId": "869774901",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/aromatherapy",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Ароматерапия и психология",
+          "recId": "860030752",
+          "className": "t485__title t-title t-title_xxs t-margin_auto"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "860030752",
+          "expectedTag": "h1",
+          "visibleSignal": "Ароматерапия и психология",
+          "matched": true,
+          "matchedText": "Ароматерапия и психология"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/article_diary_of_emotions",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Как вести дневник эмоций",
+          "recId": "864005781",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Зачем вести дневник эмоций?",
+          "recId": "864005787",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Как начать вести дневник эмоций?",
+          "recId": "864011173",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Структура записей в \"Дневнике Эмоций\"",
+          "recId": "864018980",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Советы для эффективного ведения дневника эмоций",
+          "recId": "864021192",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_left "
+        },
+        {
+          "tag": "h2",
+          "text": "Запись в Дневнике Эмоций",
+          "recId": "864005785",
+          "className": "t489__title t-title t-title_md"
+        }
+      ],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/article_femininity",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Потеря женственности в отношениях",
+          "recId": "873459196",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Что можно сделать?",
+          "recId": "873459205",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        }
+      ],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/article_gadget_addiction",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Зависимость подростков от гаджетов и социальных сетей",
+          "recId": "869845857",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Зависимость от гаджетов - причины:",
+          "recId": "869845860",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Последствия зависимости от гаджетов",
+          "recId": "869845862",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Пути решения проблемы",
+          "recId": "869845872",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Зависимость подростков от гаджетов и социальных сетей",
+          "recId": "869845868",
+          "className": "t220__title t-heading t-heading_sm"
+        },
+        {
+          "tag": "h2",
+          "text": "Как зависимость от гаджетов влияет на психологическое состояние подростка",
+          "recId": "869845871",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Как зависимость от гаджетов влияет на состояние мозга",
+          "recId": "869856166",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        }
+      ],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/article_toxic_job",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "как справиться с негативными эмоциями других людей",
+          "recId": "873550429",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/articles/eq-dlya-rukovoditeley",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Эмоциональный интеллект лидера",
+          "recId": "1564665281",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/baza-znaniy-emocionalnyy-intellekt-psihologiya",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Полезная информация по ПСИХОЛОГИИ",
+          "recId": "2175171601",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "БАЗА ЗНАНИЙ ПО ПСИХОЛОГИИ",
+          "recId": "2175171561",
+          "className": "t001__title t-title t-title_xl"
+        },
+        {
+          "tag": "h2",
+          "text": "Полезная информация",
+          "recId": "2175171581",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Книги по психологии, которые я рекомендую прочитать",
+          "recId": "2175171591",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        }
+      ],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/eintellect",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Эмоциональный интеллект",
+          "recId": "868889460",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Эмоциональный интеллект - что это?",
+          "recId": "868892313",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Люди с высоким ЭИ:",
+          "recId": "868895327",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "4 кита эмоционального интеллекта",
+          "recId": "868898165",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Мифы об Эмоциональном Интеллекте, которые мешают расти",
+          "recId": "868907890",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        }
+      ],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Эмоциональный интеллект — основа осознанного лидерства",
+          "recId": "1500161991",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "1500161991",
+          "expectedTag": "h1",
+          "visibleSignal": "Эмоциональный интеллект — основа осознанного лидерства",
+          "matched": true,
+          "matchedText": "Эмоциональный интеллект — основа осознанного лидерства"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/articles",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "СТАТЬИ по Эмоциональному Интеллекту (ЭИ)",
+          "recId": "1513039251",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "1513039251",
+          "expectedTag": "h1",
+          "visibleSignal": "СТАТЬИ по Эмоциональному Интеллекту (ЭИ)",
+          "matched": true,
+          "matchedText": "СТАТЬИ по Эмоциональному Интеллекту (ЭИ)"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/articles/benefits-of-ei",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Преимущества и польза эмоционального интеллекта — почему это работает всегда",
+          "recId": "1503094811",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "1503094811",
+          "expectedTag": "h1",
+          "visibleSignal": "Преимущества и польза эмоционального интеллекта — почему это работает всегда",
+          "matched": true,
+          "matchedText": "Преимущества и польза эмоционального интеллекта — почему это работает всегда"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/articles/emotional-intelligence-skills",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Навыки эмоционального интеллекта — 5 основ зрелой личности",
+          "recId": "1499777381",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/articles/what-is-emotional-intelligence",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Что такое эмоциональный интеллект — просто о главном",
+          "recId": "1499511631",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "1499511631",
+          "expectedTag": "h1",
+          "visibleSignal": "Что такое эмоциональный интеллект — просто о главном",
+          "matched": true,
+          "matchedText": "Что такое эмоциональный интеллект — просто о главном"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/articles/why-ei-matters",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Почему эмоциональный интеллект так важен — больше, чем просто «уметь чувствовать»",
+          "recId": "1502985271",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "1502985271",
+          "expectedTag": "h1",
+          "visibleSignal": "Почему эмоциональный интеллект так важен — больше, чем просто «уметь чувствовать»",
+          "matched": true,
+          "matchedText": "Почему эмоциональный интеллект так важен — больше, чем просто «уметь чувствовать»"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/diagnostoka-ei",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Диагностика эмоционального интеллекта — как понять свой уровень EI",
+          "recId": "1503206791",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "1503206791",
+          "expectedTag": "h1",
+          "visibleSignal": "Диагностика эмоционального интеллекта — как понять свой уровень EI",
+          "matched": true,
+          "matchedText": "Диагностика эмоционального интеллекта — как понять свой уровень EI"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/ei-leader-12",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Что делать эффективному лидеру, если его руководитель — человек с низким эмоциональным интеллектом",
+          "recId": "1622710011",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "БАЗА ЗНАНИЙ по Эмоциональному Интеллекту (ЭИ)",
+          "recId": "1510350791",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "1510350791",
+          "expectedTag": "h1",
+          "visibleSignal": "БАЗА ЗНАНИЙ по Эмоциональному Интеллекту (ЭИ)",
+          "matched": true,
+          "matchedText": "БАЗА ЗНАНИЙ по Эмоциональному Интеллекту (ЭИ)"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/active-listening",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "АКТИВНОЕ СЛУШАНИЕ",
+          "recId": "1511259241",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "1511259241",
+          "expectedTag": "h1",
+          "visibleSignal": "АКТИВНОЕ СЛУШАНИЕ",
+          "matched": true,
+          "matchedText": "АКТИВНОЕ СЛУШАНИЕ"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/burnout",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "ВЫГОРАНИЕ",
+          "recId": "1511108531",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "1511108531",
+          "expectedTag": "h1",
+          "visibleSignal": "ВЫГОРАНИЕ",
+          "matched": true,
+          "matchedText": "ВЫГОРАНИЕ"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/emotional-contagion",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "ЭМОЦИОНАЛЬНЫЕ ЗАРАЖЕНИЕ",
+          "recId": "1512705771",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "1512705771",
+          "expectedTag": "h1",
+          "visibleSignal": "ЭМОЦИОНАЛЬНЫЕ ЗАРАЖЕНИЕ",
+          "matched": true,
+          "matchedText": "ЭМОЦИОНАЛЬНЫЕ ЗАРАЖЕНИЕ"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/emotional-intelligence",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "ЭМОЦИОНАЛЬНЫЙ ИНТЕЛЛЕКТ (ЭИ / EI / EQ)",
+          "recId": "1510355531",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "1510355531",
+          "expectedTag": "h1",
+          "visibleSignal": "ЭМОЦИОНАЛЬНЫЙ ИНТЕЛЛЕКТ (ЭИ / EI / EQ)",
+          "matched": true,
+          "matchedText": "ЭМОЦИОНАЛЬНЫЙ ИНТЕЛЛЕКТ (ЭИ / EI / EQ)"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/emotional-literacy",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "ЭМОЦИОНАЛЬНАЯ ГРАМОТНОСТЬ",
+          "recId": "1510837831",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "1510837831",
+          "expectedTag": "h1",
+          "visibleSignal": "ЭМОЦИОНАЛЬНАЯ ГРАМОТНОСТЬ",
+          "matched": true,
+          "matchedText": "ЭМОЦИОНАЛЬНАЯ ГРАМОТНОСТЬ"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/emotional-maturity",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "ЭМОЦИОНАЛЬНАЯ ЗРЕЛОСТЬ",
+          "recId": "1512810211",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "1512810211",
+          "expectedTag": "h1",
+          "visibleSignal": "ЭМОЦИОНАЛЬНАЯ ЗРЕЛОСТЬ",
+          "matched": true,
+          "matchedText": "ЭМОЦИОНАЛЬНАЯ ЗРЕЛОСТЬ"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/empathy",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Эмпатия — ключевой навык эмоционального интеллекта",
+          "recId": "1510754371",
+          "className": ""
+        }
+      ],
+      "h2": [],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/intrinsic-motivation",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "ВНУТРЕННЯЯ МОТИВАЦИЯ",
+          "recId": "1510942691",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "1510942691",
+          "expectedTag": "h1",
+          "visibleSignal": "ВНУТРЕННЯЯ МОТИВАЦИЯ",
+          "matched": true,
+          "matchedText": "ВНУТРЕННЯЯ МОТИВАЦИЯ"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/male-loneliness-russia",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Мужское одиночество в России",
+          "recId": "1564559171",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/nonviolent-communication",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "НЕНАСИЛЬСТВЕННОЕ ОБЩЕНИЕ (ННО/NVC)",
+          "recId": "1511159951",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "1511159951",
+          "expectedTag": "h1",
+          "visibleSignal": "НЕНАСИЛЬСТВЕННОЕ ОБЩЕНИЕ (ННО/NVC)",
+          "matched": true,
+          "matchedText": "НЕНАСИЛЬСТВЕННОЕ ОБЩЕНИЕ (ННО/NVC)"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/personal-boundaries",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "ЛИЧНЫЕ ГРАНИЦЫ",
+          "recId": "1511213641",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "1511213641",
+          "expectedTag": "h1",
+          "visibleSignal": "ЛИЧНЫЕ ГРАНИЦЫ",
+          "matched": true,
+          "matchedText": "ЛИЧНЫЕ ГРАНИЦЫ"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/psychological-safety",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "ПСИХОЛОГИЧЕСКАЯ БЕЗОПАСНОСТЬ",
+          "recId": "1512737921",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "1512737921",
+          "expectedTag": "h1",
+          "visibleSignal": "ПСИХОЛОГИЧЕСКАЯ БЕЗОПАСНОСТЬ",
+          "matched": true,
+          "matchedText": "ПСИХОЛОГИЧЕСКАЯ БЕЗОПАСНОСТЬ"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/self-awareness",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "САМООСОЗНАННОСТЬ",
+          "recId": "1510513881",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "1510513881",
+          "expectedTag": "h1",
+          "visibleSignal": "САМООСОЗНАННОСТЬ",
+          "matched": true,
+          "matchedText": "САМООСОЗНАННОСТЬ"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/self-regulation",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "САМОРЕГУЛЯЦИЯ",
+          "recId": "1510571101",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "1510571101",
+          "expectedTag": "h1",
+          "visibleSignal": "САМОРЕГУЛЯЦИЯ",
+          "matched": true,
+          "matchedText": "САМОРЕГУЛЯЦИЯ"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/emotional-intelligence/knowledge-base/social-intelligence",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "СОЦИАЛЬНЫЕ НАВЫКИ (Социальный интеллект)",
+          "recId": "1510889821",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "1510889821",
+          "expectedTag": "h1",
+          "visibleSignal": "СОЦИАЛЬНЫЕ НАВЫКИ (Социальный интеллект)",
+          "matched": true,
+          "matchedText": "СОЦИАЛЬНЫЕ НАВЫКИ (Социальный интеллект)"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/events",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Бесплатные Лекции по Психологии в Москве Психолог Татьяна Мунн",
+          "recId": "787864694",
+          "className": "t182__title t-title t-title_xl t-animate"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/events_tp",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Лекции Татьяны Мунн по психологии АПРЕЛЬ 2026",
+          "recId": "1854076751",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Пакет из 5 записей лекций",
+          "recId": "1854076751",
+          "className": "moonn-recording-bundle__title"
+        }
+      ],
+      "targetChecks": [
+        {
+          "recId": "1854076751",
+          "expectedTag": "h1",
+          "visibleSignal": "Лекции Татьяны Мунн по психологии АПРЕЛЬ 2026",
+          "matched": true,
+          "matchedText": "Лекции Татьяны Мунн по психологии АПРЕЛЬ 2026"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/geshtalt",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Гештальт-терапия:",
+          "recId": "867367901",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Основная идея гештальт-терапии",
+          "recId": "867380620",
+          "className": "t220__title t-heading t-heading_sm"
+        },
+        {
+          "tag": "h2",
+          "text": "Гештальт-Терапия - основные принципы",
+          "recId": "867367906",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Для кого подходит гештальт-терапия?",
+          "recId": "867388844",
+          "className": "t-section__title t-title t-title_xs"
+        },
+        {
+          "tag": "h2",
+          "text": "Преимущества гештальт-терапии",
+          "recId": "867367909",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Что такое осознанность в гештальт-терапии?",
+          "recId": "867367907",
+          "className": "t489__title t-title t-title_md"
+        },
+        {
+          "tag": "h2",
+          "text": "Гештальт-терапия",
+          "recId": "867367910",
+          "className": "t921__title t-title t-title_xs "
+        }
+      ],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/kpt",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Когнитивно-поведенческая терапия (КПТ)",
+          "recId": "867494314",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Основная цель КПТ",
+          "recId": "867497542",
+          "className": "t220__title t-heading t-heading_sm"
+        },
+        {
+          "tag": "h2",
+          "text": "КПТ - основные принципы",
+          "recId": "867494318",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Этапы работы в когнитивно-поведенческой терапии",
+          "recId": "867494321",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Преимущества КПТ",
+          "recId": "867494322",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "когда может помочь",
+          "recId": "867494323",
+          "className": "t889__title t-title t-title_xxs "
+        },
+        {
+          "tag": "h2",
+          "text": "Когнитивно-поведенческая терапия",
+          "recId": "867494324",
+          "className": "t921__title t-title t-title_xs t-margin_auto"
+        }
+      ],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/kurs-ei",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Курс про эмоциональный интеллект без скучной подачи",
+          "recId": "1996195451",
+          "className": "hero-title"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Татьяна Мунн",
+          "recId": "1996195451",
+          "className": ""
+        },
+        {
+          "tag": "h2",
+          "text": "Что даёт курс по эмоциональному интеллекту",
+          "recId": "1996195451",
+          "className": ""
+        },
+        {
+          "tag": "h2",
+          "text": "Как тема раскрывается на курсе",
+          "recId": "1996195451",
+          "className": ""
+        },
+        {
+          "tag": "h2",
+          "text": "Формат и структура курса",
+          "recId": "1996195451",
+          "className": ""
+        },
+        {
+          "tag": "h2",
+          "text": "Эмоциональные реакции",
+          "recId": "1996195451",
+          "className": ""
+        },
+        {
+          "tag": "h2",
+          "text": "Мини-квиз «какой у вас эмоциональный тип реакции»",
+          "recId": "1996195451",
+          "className": ""
+        },
+        {
+          "tag": "h2",
+          "text": "Татьяна Мунн",
+          "recId": "1996195451",
+          "className": ""
+        },
+        {
+          "tag": "h2",
+          "text": "FAQ",
+          "recId": "1996195451",
+          "className": ""
+        },
+        {
+          "tag": "h2",
+          "text": "Контакты",
+          "recId": "1996195451",
+          "className": ""
+        }
+      ],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/lectures1",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Лекции по психологии",
+          "recId": "1006080036",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/microbiom",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Микробиом и Психология",
+          "recId": "860612642",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "860612642",
+          "expectedTag": "h1",
+          "visibleSignal": "Микробиом и Психология",
+          "matched": true,
+          "matchedText": "Микробиом и Психология"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/novosti",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Татьяна Мунн выступит на Московской Неделе Интерьера и Дизайна. Тема выступления \"Порядок в доме и в голове\".",
+          "recId": "1680403171",
+          "className": "t403__title t-title t-title_xxs"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/otzivi",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "ОТЗЫВЫ КЛИЕНТОВПсихолог Татьяна Мунн",
+          "recId": "1353100721",
+          "className": "t032__title t-title t-title_md"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "ОТЗЫВЫ КЛИЕНТОВ (с 2021г.)",
+          "recId": "1353045131",
+          "className": "t015__title t-title t-title_lg"
+        },
+        {
+          "tag": "h2",
+          "text": "Проверяемые отзывы с Яндекс Услуг",
+          "recId": null,
+          "className": ""
+        },
+        {
+          "tag": "h2",
+          "text": "Отзывы клиентов Татьяны Мунн с 2026 по 2021 год",
+          "recId": null,
+          "className": ""
+        },
+        {
+          "tag": "h2",
+          "text": "Психолог Татьяна Мунн КОНТАКТЫ",
+          "recId": "1352757211",
+          "className": "t578__title t-title t-title_xs"
+        }
+      ],
+      "targetChecks": [
+        {
+          "recId": "1352757211",
+          "expectedTag": "h2",
+          "visibleSignal": "Психолог Татьяна Мунн КОНТАКТЫ",
+          "matched": true,
+          "matchedText": "Психолог Татьяна Мунн КОНТАКТЫ"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/panicheskie_ataki",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Как БЫСТРО избавиться от ПАНИЧЕСКИХ АТАК?",
+          "recId": "857270802",
+          "className": "t165__title t-heading t-heading_md"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Симптомы Панические Атак",
+          "recId": "857277983",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Панические Атаки у ПОДРОСТКОВ",
+          "recId": "859637479",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Панические атаки - Способы решения",
+          "recId": "857279445",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "1. Психотерапия",
+          "recId": "857279445",
+          "className": "t-name t-name_md t508__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "2. Медикаментозное лечение",
+          "recId": "857279445",
+          "className": "t-name t-name_md t508__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "3. Техника релаксации и дыхательные упражнения",
+          "recId": "857279445",
+          "className": "t-name t-name_md t508__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "4. Регулярная физическая активность",
+          "recId": "857279445",
+          "className": "t-name t-name_md t508__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Татьяна Мунн - Дипломированный Психолог - МГУ",
+          "recId": "857276301",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Опыт работы",
+          "recId": "857276301",
+          "className": "t497__name t-name t-name_lg"
+        },
+        {
+          "tag": "h2",
+          "text": "Многообразие методов",
+          "recId": "857276301",
+          "className": "t497__name t-name t-name_lg"
+        },
+        {
+          "tag": "h2",
+          "text": "Быстрый результат",
+          "recId": "857276301",
+          "className": "t497__name t-name t-name_lg"
+        },
+        {
+          "tag": "h2",
+          "text": "Индивидуальные и семейные консультации",
+          "recId": "857276301",
+          "className": "t497__name t-name t-name_lg"
+        },
+        {
+          "tag": "h2",
+          "text": "Решение проблем",
+          "recId": "857276301",
+          "className": "t497__name t-name t-name_lg"
+        },
+        {
+          "tag": "h2",
+          "text": "Образование",
+          "recId": "857276301",
+          "className": "t497__name t-name t-name_lg"
+        },
+        {
+          "tag": "h2",
+          "text": "Отзывы",
+          "recId": "857276301",
+          "className": "t497__name t-name t-name_lg"
+        },
+        {
+          "tag": "h2",
+          "text": "Удобное расположение",
+          "recId": "857276301",
+          "className": "t497__name t-name t-name_lg"
+        },
+        {
+          "tag": "h2",
+          "text": "Консультации психолога в Москве - Онлайн и ОЧНО",
+          "recId": "871277702",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "В кабинете в Москве",
+          "recId": "871277702",
+          "className": "t497__name t-name t-name_lg"
+        },
+        {
+          "tag": "h2",
+          "text": "Онлайн",
+          "recId": "871277702",
+          "className": "t497__name t-name t-name_lg"
+        },
+        {
+          "tag": "h2",
+          "text": "Получите помощь квалифицированного психолога",
+          "recId": "857270815",
+          "className": "t555__title t-heading t-heading_sm"
+        }
+      ],
+      "targetChecks": [
+        {
+          "recId": "857277983",
+          "expectedTag": "h2",
+          "visibleSignal": "Симптомы Панические Атак",
+          "matched": true,
+          "matchedText": "Симптомы Панические Атак"
+        },
+        {
+          "recId": "859637479",
+          "expectedTag": "h2",
+          "visibleSignal": "Панические Атаки у ПОДРОСТКОВ",
+          "matched": true,
+          "matchedText": "Панические Атаки у ПОДРОСТКОВ"
+        },
+        {
+          "recId": "857279445",
+          "expectedTag": "h2",
+          "visibleSignal": "Панические атаки - Способы решения",
+          "matched": true,
+          "matchedText": "Панические атаки - Способы решения"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/phytotherapy",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "ФИТОТЕРАПИЯ И ПСИХОЛОГИЯ Раскройте целебную силу растений",
+          "recId": "859970833",
+          "className": "t1001__title t-title t-title_md t-margin_auto"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "859970833",
+          "expectedTag": "h1",
+          "visibleSignal": "ФИТОТЕРАПИЯ И ПСИХОЛОГИЯ Раскройте целебную силу растений",
+          "matched": true,
+          "matchedText": "ФИТОТЕРАПИЯ И ПСИХОЛОГИЯ Раскройте целебную силу растений"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/platnye-treningi-seminary-programmy-tatiana-moonn",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "ОБУЧЕНИЕ психологии у Татьяны Мунн",
+          "recId": "2173943641",
+          "className": "t1241__title t-title t-title_md t-align_left"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "2173943641",
+          "expectedTag": "h1",
+          "visibleSignal": "ОБУЧЕНИЕ психологии у Татьяны Мунн",
+          "matched": true,
+          "matchedText": "ОБУЧЕНИЕ психологии у Татьяны Мунн"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/programmakursa",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Программа курса по эмоциональному интеллекту",
+          "recId": "2006806141",
+          "className": ""
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Как проходит курс",
+          "recId": "2006806141",
+          "className": ""
+        },
+        {
+          "tag": "h2",
+          "text": "Что вы получите",
+          "recId": "2006806141",
+          "className": ""
+        },
+        {
+          "tag": "h2",
+          "text": "Как устроены эмоции и что они сообщают",
+          "recId": "2006806141",
+          "className": ""
+        },
+        {
+          "tag": "h2",
+          "text": "Почему мы по-разному реагируем в одних и тех же ситуациях",
+          "recId": "2006806141",
+          "className": ""
+        },
+        {
+          "tag": "h2",
+          "text": "Как использовать эмоциональный интеллект в реальной жизни",
+          "recId": "2006806141",
+          "className": ""
+        }
+      ],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/psiholog",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Психология эмоций, выгорания и отношений",
+          "recId": "1856304071",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/psiholog-konsultacii-moskva",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Психологические Консультации в Москве Психолог МГУ - Татьяна Мунн",
+          "recId": "2173770201",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_left "
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Запись на консультацию",
+          "recId": "2173770201",
+          "className": "t-card__title t-name t-name_lg "
+        },
+        {
+          "tag": "h2",
+          "text": "Стоимость услуг",
+          "recId": "2173770201",
+          "className": "t-card__title t-name t-name_lg "
+        },
+        {
+          "tag": "h2",
+          "text": "Отзывы клиентов",
+          "recId": "2173770201",
+          "className": "t-card__title t-name t-name_lg "
+        },
+        {
+          "tag": "h2",
+          "text": "Важная информация для новых клиентов",
+          "recId": "2173770201",
+          "className": "t-card__title t-name t-name_lg "
+        },
+        {
+          "tag": "h2",
+          "text": "С какими запросами можно справиться быстро",
+          "recId": "2173770201",
+          "className": "t-card__title t-name t-name_lg "
+        },
+        {
+          "tag": "h2",
+          "text": "Адрес кабинета",
+          "recId": "2173770201",
+          "className": "t-card__title t-name t-name_lg "
+        },
+        {
+          "tag": "h2",
+          "text": "Дипломы и сертификаты",
+          "recId": "2173770201",
+          "className": "t-card__title t-name t-name_lg "
+        },
+        {
+          "tag": "h2",
+          "text": "ОБРАЗОВАНИЕ - МГУ",
+          "recId": "2173799451",
+          "className": "t921__title t-title t-title_xs "
+        }
+      ],
+      "targetChecks": [
+        {
+          "recId": "2173799451",
+          "expectedTag": "h2",
+          "visibleSignal": "ОБРАЗОВАНИЕ - МГУ",
+          "matched": true,
+          "matchedText": "ОБРАЗОВАНИЕ - МГУ"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/psiholog_moskva",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "ПСИХОЛОГ МОСКВА. БЫСТРАЯ ПСИХОЛОГИЯ. ОНЛАЙН И ОЧНО В КАБИНЕТЕ",
+          "recId": "857212255",
+          "className": "t228__logo t-title"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/psihology",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Вы можете стать спокойным и уверенным в себе человеком в течение 1 месяца и потребуется всего несколько встреч с профессиональным психологом",
+          "recId": "713914271",
+          "className": "tn-atom"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/psy4psy",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "ПСИХОЛОГ для ПСИХОЛОГОВ",
+          "recId": "863588156",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "почему психологу нужен свой личный психолог",
+          "recId": "863543865",
+          "className": "t1001__title t-title t-title_md t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Почему психологам нужны психологи",
+          "recId": "863543868",
+          "className": "t486__title t-title t-title_xs "
+        },
+        {
+          "tag": "h2",
+          "text": "Опыт работы с психологом В КАЧЕСТВЕ КЛИЕНТА",
+          "recId": "863543871",
+          "className": "t485__title t-title t-title_xxs t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Зачем психологу нужна своя терапия?",
+          "recId": "863560981",
+          "className": "t-section__title t-title t-title_xs"
+        },
+        {
+          "tag": "h2",
+          "text": "Как выбрать психолога для себя",
+          "recId": "863543873",
+          "className": "t485__title t-title t-title_xxs t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Татьяна Мунн",
+          "recId": "863567788",
+          "className": "t544__title t-heading t-heading_xs "
+        }
+      ],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/psychoanalys",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Психоанализ",
+          "recId": "867447940",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Психоанализ - основные принципы",
+          "recId": "867447945",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Эго, Ид и Суперэго (структура психики по Фрейду)",
+          "recId": "867461479",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Как работает психоаналитическая терапия?",
+          "recId": "867465300",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Возможные ограничения",
+          "recId": "867468196",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Современный взгляд",
+          "recId": "867475677",
+          "className": "t889__title t-title t-title_xxs "
+        },
+        {
+          "tag": "h2",
+          "text": "Психоанализ - мощный инструмент самопознания",
+          "recId": "867447954",
+          "className": "t921__title t-title t-title_xs t-margin_auto"
+        }
+      ],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/psypodgotovka1",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Психологическая подготовка к экзаменам без паники",
+          "recId": "2258994191",
+          "className": ""
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "861500604",
+          "expectedTag": "h2",
+          "visibleSignal": "Как справиться со стрессом на экзаменах: Психологические стратегии для успеха",
+          "matched": false,
+          "matchedText": null
+        },
+        {
+          "recId": "861500606",
+          "expectedTag": "h2",
+          "visibleSignal": "Проверенные методы управления тревогой перед экзаменами",
+          "matched": false,
+          "matchedText": null
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/recomend",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Полезная информация по ПСИХОЛОГИИ",
+          "recId": "864137482",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Психолог рекомендует",
+          "recId": "865439406",
+          "className": "t001__title t-title t-title_xl"
+        },
+        {
+          "tag": "h2",
+          "text": "Полезная информация",
+          "recId": "864123535",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Книги по психологии, которые я рекомендую прочитать",
+          "recId": "864157089",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        }
+      ],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/salt",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Соль для здоровья",
+          "recId": "865356634",
+          "className": "tmenu-mobile__burgerlogo__title t-title"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/schematherapy",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Виды схем в Схематерапии:",
+          "recId": "867548255",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/selfharm",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Суицидальные мысли и селфхарм (самоповреждения) у подростков",
+          "recId": "863408206",
+          "className": "t1001__title t-title t-title_md t-margin_auto"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "863408206",
+          "expectedTag": "h1",
+          "visibleSignal": "Суицидальные мысли и селфхарм (самоповреждения) у подростков",
+          "matched": true,
+          "matchedText": "Суицидальные мысли и селфхарм (самоповреждения) у подростков"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/semeynie_konflikti_article",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Управление конфликтами в семье",
+          "recId": "863657748",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/semeyniy_psiholog",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Консультации семейного психолога",
+          "recId": "863635131",
+          "className": "tmenu-mobile__burgerlogo__title t-title"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/seminar555",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "От стресса к гармонии: быстрое снятие негативных эмоциональных состояний",
+          "recId": "824726050",
+          "className": "tn-atom"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/shppp333",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Школа ПРАКТИЧЕСКОЙ Психологии для ПОДРОСТКОВ в г. Москве",
+          "recId": "706417215",
+          "className": "t712__title t-title t-title_xl t-animate"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/speaker",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Татьяна Мунн - эксперт по эмоциональному интеллекту, soft skills и психологии состояний. Лекции, тренинги, корпоративные программы",
+          "recId": "1444652181",
+          "className": "t030__title t-title t-title_xxs"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "ФОРМАТ ВЫСТУПЛЕНИЙ:",
+          "recId": "1444797431",
+          "className": "t-section__title t-title t-title_xs"
+        },
+        {
+          "tag": "h2",
+          "text": "ОСНОВНЫЕ ТЕМЫ ВЫСТУПЛЕНИЙ:",
+          "recId": "1444846131",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "ДЛЯ КОГО ПОДХОДЯТ ЛЕКЦИИ",
+          "recId": "1444897871",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "ГЕОГРАФИЯ ВЫСТУПЛЕНИЙ",
+          "recId": "1444948621",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "ПОЧЕМУ ВЫБИРАЮТ ИМЕННО МЕНЯ",
+          "recId": "1445043801",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_left "
+        },
+        {
+          "tag": "h2",
+          "text": "ТЕМЫ ЛЕКЦИЙ для ВЫСТУПЛЕНИЙ",
+          "recId": "2173935961",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        }
+      ],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/st1",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Трансформационный онлайн-тренинг: \"СРЕДА Трансформации\" РАСКРОЙ СВОЙ ПОТЕНЦИАЛ",
+          "recId": "1060387551",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/st2",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Трансформационный онлайн-тренинг: \"СРЕДА Трансформации\" РАСКРОЙ СВОЙ ПОТЕНЦИАЛ",
+          "recId": "1608442161",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/trauma",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Психология травмы:",
+          "recId": "868928798",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Виды травм",
+          "recId": "868931796",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Последствия травматического опыта",
+          "recId": "868933395",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Методы терапии",
+          "recId": "868934622",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        }
+      ],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/uslugi_aerofobia",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Боишься летать на самолётах?",
+          "recId": "870978936",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Страх полетов на самолетах может проявляться у людей разных возрастов и социальных групп",
+          "recId": "870978938",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "1. Дети и подростки, летящие с родителями в отпуск",
+          "recId": "870978938",
+          "className": "t-name t-name_md t510__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "2. Пожилые люди",
+          "recId": "870978938",
+          "className": "t-name t-name_md t510__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "3. Люди из бизнеса, которые летают в командировки",
+          "recId": "870978938",
+          "className": "t-name t-name_md t510__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "4. Люди, чья семья живет в другой стране",
+          "recId": "870978938",
+          "className": "t-name t-name_md t510__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "5. Другие группы, вынужденные летать",
+          "recId": "870978938",
+          "className": "t-name t-name_md t510__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Просмотр телевизора и новостей может значительно влиять на формирование и усиление страха перед полетами на самолетах",
+          "recId": "870999519",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "1. Акцент на негативных событиях",
+          "recId": "870999519",
+          "className": "t-name t-name_md t510__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "2. Эмоциональная подача информации",
+          "recId": "870999519",
+          "className": "t-name t-name_md t510__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "3. Эффект \"доступности\"",
+          "recId": "870999519",
+          "className": "t-name t-name_md t510__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "4. Влияние на детей и подростков",
+          "recId": "870999519",
+          "className": "t-name t-name_md t510__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "5. Поддержание страха у тех, кто уже боится",
+          "recId": "870999519",
+          "className": "t-name t-name_md t510__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Длительный перелет с пересадками усугубляет страх",
+          "recId": "871237687",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Увеличение времени, проведенного в стрессовой ситуации",
+          "recId": "871237687",
+          "className": "t499__title t-name t-name_xl"
+        },
+        {
+          "tag": "h2",
+          "text": "Необходимость адаптироваться к новым условиям",
+          "recId": "871237687",
+          "className": "t499__title t-name t-name_xl"
+        },
+        {
+          "tag": "h2",
+          "text": "Риск задержек и непредвиденных ситуаций",
+          "recId": "871237687",
+          "className": "t499__title t-name t-name_xl"
+        },
+        {
+          "tag": "h2",
+          "text": "Физический дискомфорт",
+          "recId": "871237687",
+          "className": "t499__title t-name t-name_xl"
+        },
+        {
+          "tag": "h2",
+          "text": "Как справиться со страхом во время длительного перелета с пересадками?",
+          "recId": "871241035",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "1. Тщательная подготовка",
+          "recId": "871241035",
+          "className": "t-name t-name_md t820__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Создание комфортных условий",
+          "recId": "871241035",
+          "className": "t-name t-name_md t820__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Отвлечение",
+          "recId": "871241035",
+          "className": "t-name t-name_md t820__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Техники релаксации",
+          "recId": "871241035",
+          "className": "t-name t-name_md t820__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Поддержка",
+          "recId": "871241035",
+          "className": "t-name t-name_md t820__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Профессиональная помощь",
+          "recId": "871241035",
+          "className": "t-name t-name_md t820__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Страх за близких, которые летят вместе усиливает страх",
+          "recId": "871243561",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "1. Чувство ответственности за безопасность близких",
+          "recId": "871243561",
+          "className": "t-name t-name_md t508__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "2. Проецирование своих страхов на близких",
+          "recId": "871243561",
+          "className": "t-name t-name_md t508__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "3. Страх не справиться с ситуацией",
+          "recId": "871243561",
+          "className": "t-name t-name_md t508__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "4. Эмоциональное заражение",
+          "recId": "871243561",
+          "className": "t-name t-name_md t508__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "5. Страх оставить близких без поддержки",
+          "recId": "871243561",
+          "className": "t-name t-name_md t508__bottommargin"
+        }
+      ],
+      "targetChecks": [
+        {
+          "recId": "870978938",
+          "expectedTag": "h2",
+          "visibleSignal": "Страх полетов на самолетах может проявляться у людей разных возрастов и социальных групп",
+          "matched": true,
+          "matchedText": "Страх полетов на самолетах может проявляться у людей разных возрастов и социальных групп"
+        },
+        {
+          "recId": "870999519",
+          "expectedTag": "h2",
+          "visibleSignal": "Просмотр телевизора и новостей может значительно влиять на формирование и усиление страха перед полетами на самолетах",
+          "matched": true,
+          "matchedText": "Просмотр телевизора и новостей может значительно влиять на формирование и усиление страха перед полетами на самолетах"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/uslugi_depression",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Депрессивное состояние:",
+          "recId": "870281477",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "«Мне ничего не хочется»: симптомы депрессии",
+          "recId": "870281479",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Эмоциональные симптомы",
+          "recId": "870281479",
+          "className": "t-name t-name_md t510__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Физические симптомы",
+          "recId": "870281479",
+          "className": "t-name t-name_md t510__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Поведенческие изменения",
+          "recId": "870281479",
+          "className": "t-name t-name_md t510__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Почему возникает депрессия?",
+          "recId": "870284531",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "1. Биологические причины",
+          "recId": "870284531",
+          "className": "t-card__title t-name t-name_lg t858__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "2. Психологические факторы",
+          "recId": "870284531",
+          "className": "t-card__title t-name t-name_lg t858__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "3. Социальные причины",
+          "recId": "870284531",
+          "className": "t-card__title t-name t-name_lg t858__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "«Я не могу это преодолеть»: как депрессия искажает восприятие",
+          "recId": "870286019",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Беспомощность",
+          "recId": "870286019",
+          "className": "t1007__title t-name t-name_xl"
+        },
+        {
+          "tag": "h2",
+          "text": "Бессилие",
+          "recId": "870286019",
+          "className": "t1007__title t-name t-name_xl"
+        },
+        {
+          "tag": "h2",
+          "text": "Самообвинение",
+          "recId": "870286019",
+          "className": "t1007__title t-name t-name_xl"
+        },
+        {
+          "tag": "h2",
+          "text": "Как справиться с депрессией:",
+          "recId": "870287931",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "1. Психотерапия",
+          "recId": "870287931",
+          "className": "t499__title t-name t-name_xl"
+        },
+        {
+          "tag": "h2",
+          "text": "2. Медикаментозное лечение",
+          "recId": "870287931",
+          "className": "t499__title t-name t-name_xl"
+        },
+        {
+          "tag": "h2",
+          "text": "3. Изменение образа жизни",
+          "recId": "870287931",
+          "className": "t499__title t-name t-name_xl"
+        },
+        {
+          "tag": "h2",
+          "text": "4. Поддержка близких",
+          "recId": "870287931",
+          "className": "t499__title t-name t-name_xl"
+        },
+        {
+          "tag": "h2",
+          "text": "Когда срочно нужна помощь?",
+          "recId": "870290223",
+          "className": "t-section__title t-title t-title_xs"
+        },
+        {
+          "tag": "h2",
+          "text": "Появляются суицидальные мысли или планы.",
+          "recId": "870290223",
+          "className": "t-name t-name_md "
+        },
+        {
+          "tag": "h2",
+          "text": "Депрессия сопровождается галлюцинациями или бредом.",
+          "recId": "870290223",
+          "className": "t-name t-name_md "
+        },
+        {
+          "tag": "h2",
+          "text": "Вы не можете выполнять базовые потребности (есть, пить, спать).",
+          "recId": "870290223",
+          "className": "t-name t-name_md "
+        }
+      ],
+      "targetChecks": [
+        {
+          "recId": "870281479",
+          "expectedTag": "h2",
+          "visibleSignal": "«Мне ничего не хочется»: симптомы депрессии",
+          "matched": true,
+          "matchedText": "«Мне ничего не хочется»: симптомы депрессии"
+        },
+        {
+          "recId": "870284531",
+          "expectedTag": "h2",
+          "visibleSignal": "Почему возникает депрессия?",
+          "matched": true,
+          "matchedText": "Почему возникает депрессия?"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/uslugi_fin_blocks",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Проработка финансовых блоков",
+          "recId": "870006019",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Что такое финансовые блоки?",
+          "recId": "870006024",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        }
+      ],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/uslugi_gtr",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Тревожные расстройства:",
+          "recId": "870371666",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Тревожное расстройство - что это?",
+          "recId": "870371668",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Генерализованное тревожное расстройство (ГТР)",
+          "recId": "870371668",
+          "className": "t497__name t-name t-name_lg"
+        },
+        {
+          "tag": "h2",
+          "text": "Паническое расстройство",
+          "recId": "870371668",
+          "className": "t497__name t-name t-name_lg"
+        },
+        {
+          "tag": "h2",
+          "text": "Социальное тревожное расстройство",
+          "recId": "870371668",
+          "className": "t497__name t-name t-name_lg"
+        },
+        {
+          "tag": "h2",
+          "text": "Специфические фобии",
+          "recId": "870371668",
+          "className": "t497__name t-name t-name_lg"
+        },
+        {
+          "tag": "h2",
+          "text": "Обсессивно-компульсивное расстройство (ОКР)",
+          "recId": "870371668",
+          "className": "t497__name t-name t-name_lg"
+        },
+        {
+          "tag": "h2",
+          "text": "Ключевые признаки ГТР:",
+          "recId": "870371670",
+          "className": "t-section__title t-title t-title_xs"
+        },
+        {
+          "tag": "h2",
+          "text": "Постоянное беспокойство",
+          "recId": "870371670",
+          "className": "t-name t-name_md t1000__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Трудности с концентрацией",
+          "recId": "870371670",
+          "className": "t-name t-name_md t1000__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Мышечное напряжение",
+          "recId": "870371670",
+          "className": "t-name t-name_md t1000__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Раздражительность",
+          "recId": "870371670",
+          "className": "t-name t-name_md t1000__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Проблемы со сном",
+          "recId": "870371670",
+          "className": "t-name t-name_md t1000__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Почему возникает «беспричинная» тревога?",
+          "recId": "870371673",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "1. Биологические причины",
+          "recId": "870371673",
+          "className": "t-card__title t-name t-name_lg t850__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "2. Психологические причины",
+          "recId": "870371673",
+          "className": "t-card__title t-name t-name_lg t850__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "3. Социальные и экологические факторы",
+          "recId": "870371673",
+          "className": "t-card__title t-name t-name_lg t850__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Как отличить ГТР от обычной тревоги?",
+          "recId": "870371671",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Длительность",
+          "recId": "870371671",
+          "className": "t-name t-name_md t820__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Интенсивность",
+          "recId": "870371671",
+          "className": "t-name t-name_md t820__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Контроль",
+          "recId": "870371671",
+          "className": "t-name t-name_md t820__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Физические симптомы",
+          "recId": "870371671",
+          "className": "t-name t-name_md t820__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Тревога, страх, фобия: в чем разница?",
+          "recId": "870398435",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Тревожные состояния",
+          "recId": "870392488",
+          "className": "t220__title t-heading t-heading_sm"
+        }
+      ],
+      "targetChecks": [
+        {
+          "recId": "870371668",
+          "expectedTag": "h2",
+          "visibleSignal": "Тревожное расстройство - что это?",
+          "matched": true,
+          "matchedText": "Тревожное расстройство - что это?"
+        },
+        {
+          "recId": "870371670",
+          "expectedTag": "h2",
+          "visibleSignal": "Ключевые признаки ГТР :",
+          "matched": true,
+          "matchedText": "Ключевые признаки ГТР:"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/uslugi_konflikti_na_rabote",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Проработка внутренних конфликтов, связанных с работой",
+          "recId": "870053075",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Почему возникают внутренние конфликты на работе?",
+          "recId": "870053998",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        }
+      ],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/uslugi_lubovnaya_zavisimost",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Любовные зависимости и привязанности:",
+          "recId": "870360255",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Что такое любовная зависимость?",
+          "recId": "870361216",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Одержимостью",
+          "recId": "870361216",
+          "className": "t497__name t-name t-name_lg"
+        },
+        {
+          "tag": "h2",
+          "text": "Страхом потери",
+          "recId": "870361216",
+          "className": "t497__name t-name t-name_lg"
+        },
+        {
+          "tag": "h2",
+          "text": "Саморазрушением",
+          "recId": "870361216",
+          "className": "t497__name t-name t-name_lg"
+        },
+        {
+          "tag": "h2",
+          "text": "Отрицанием реальности",
+          "recId": "870361216",
+          "className": "t497__name t-name t-name_lg"
+        },
+        {
+          "tag": "h2",
+          "text": "Почему возникает любовная зависимость?",
+          "recId": "870362299",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Дефицит родительской любви",
+          "recId": "870362299",
+          "className": "t-name t-name_md t510__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Низкая самооценка",
+          "recId": "870362299",
+          "className": "t-name t-name_md t510__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Страх одиночества",
+          "recId": "870362299",
+          "className": "t-name t-name_md t510__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Травмы прошлого",
+          "recId": "870362299",
+          "className": "t-name t-name_md t510__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Созависимые паттерны",
+          "recId": "870362299",
+          "className": "t-name t-name_md t510__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Как распознать любовную зависимость: 6 признаков",
+          "recId": "870363321",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Вы теряете себя в отношениях",
+          "recId": "870363321",
+          "className": "t-name t-name_md t820__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Оправдываете плохое обращение",
+          "recId": "870363321",
+          "className": "t-name t-name_md t820__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Идеализируете партнера",
+          "recId": "870363321",
+          "className": "t-name t-name_md t820__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Испытываете «ломку» при расставании",
+          "recId": "870363321",
+          "className": "t-name t-name_md t820__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Контролируете каждый шаг партнера",
+          "recId": "870363321",
+          "className": "t-name t-name_md t820__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Живете в цикле «ссора — примирение»",
+          "recId": "870363321",
+          "className": "t-name t-name_md t820__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Как вырваться из ловушки:",
+          "recId": "870365778",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "1. Признайте проблему",
+          "recId": "870365778",
+          "className": "t-card__title t-name t-name_lg t850__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "2. Прервите контакт (если возможно)",
+          "recId": "870365778",
+          "className": "t-card__title t-name t-name_lg t850__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "3. Работайте с самооценкой",
+          "recId": "870365778",
+          "className": "t-card__title t-name t-name_lg t850__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "4. Научитесь проживать эмоции",
+          "recId": "870365778",
+          "className": "t-card__title t-name t-name_lg t850__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "5. Переключите фокус на себя",
+          "recId": "870365778",
+          "className": "t-card__title t-name t-name_lg t850__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "6. Обратитесь к психологу",
+          "recId": "870365778",
+          "className": "t-card__title t-name t-name_lg t850__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Как справиться с безответной любовью?",
+          "recId": "870360260",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Перестаньте питать иллюзии",
+          "recId": "870360260",
+          "className": "t497__name t-name t-name_lg"
+        },
+        {
+          "tag": "h2",
+          "text": "Откажитесь от «дружбы»",
+          "recId": "870360260",
+          "className": "t497__name t-name t-name_lg"
+        },
+        {
+          "tag": "h2",
+          "text": "Практикуйте «ментальный детокс»",
+          "recId": "870360260",
+          "className": "t497__name t-name t-name_lg"
+        },
+        {
+          "tag": "h2",
+          "text": "Создайте новый образ будущего",
+          "recId": "870360260",
+          "className": "t497__name t-name t-name_lg"
+        }
+      ],
+      "targetChecks": [
+        {
+          "recId": "870361216",
+          "expectedTag": "h2",
+          "visibleSignal": "Что такое любовная зависимость?",
+          "matched": true,
+          "matchedText": "Что такое любовная зависимость?"
+        },
+        {
+          "recId": "870362299",
+          "expectedTag": "h2",
+          "visibleSignal": "Почему возникает любовная зависимость?",
+          "matched": true,
+          "matchedText": "Почему возникает любовная зависимость?"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/uslugi_obida_na_roditelei",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Обида на родителей:",
+          "recId": "870299396",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Обиды на родителей - причины",
+          "recId": "870299398",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Авторитарное воспитание",
+          "recId": "870299398",
+          "className": "t-name t-name_md t510__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Эмоциональная отдалённость",
+          "recId": "870299398",
+          "className": "t-name t-name_md t510__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Безучастность родителей",
+          "recId": "870299398",
+          "className": "t-name t-name_md t510__bottommargin"
+        }
+      ],
+      "targetChecks": [
+        {
+          "recId": "870299398",
+          "expectedTag": "h2",
+          "visibleSignal": "Обиды на родителей - причины",
+          "matched": true,
+          "matchedText": "Обиды на родителей - причины"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/uslugi_otnosheniya_v_kollektive",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Налаживание отношений в коллективе",
+          "recId": "870065736",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Почему возникают конфликты в бизнес-среде?",
+          "recId": "870065739",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Профилактика конфликтов:",
+          "recId": "870068830",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Четкие правила игры",
+          "recId": "870068830",
+          "className": "t-name t-name_md t508__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Культура обратной связи",
+          "recId": "870068830",
+          "className": "t-name t-name_md t508__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Обучение soft skills",
+          "recId": "870068830",
+          "className": "t-name t-name_md t508__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Прозрачность решений",
+          "recId": "870068830",
+          "className": "t-name t-name_md t508__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Поощрение инициативы",
+          "recId": "870068830",
+          "className": "t-name t-name_md t508__bottommargin"
+        }
+      ],
+      "targetChecks": [
+        {
+          "recId": "870068830",
+          "expectedTag": "h2",
+          "visibleSignal": "Профилактика конфликтов:",
+          "matched": true,
+          "matchedText": "Профилактика конфликтов:"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/uslugi_podrostki",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Психологическая консультация для подростков от 12 лет",
+          "recId": "870021122",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Психологическая консультация для подростков",
+          "recId": "870025150",
+          "className": "t203__title t-title t-title_xs"
+        }
+      ],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/uslugi_procrastination",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Прокрастинация",
+          "recId": "870310580",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "«Сделаю завтра»: Что такое прокрастинация?",
+          "recId": "870310583",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Осознанность",
+          "recId": "870310583",
+          "className": "t-card__title t-name t-name_lg t858__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Эмоциональный дискомфорт",
+          "recId": "870310583",
+          "className": "t-card__title t-name t-name_lg t858__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Парадокс",
+          "recId": "870310583",
+          "className": "t-card__title t-name t-name_lg t858__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Почему мы откладываем дела?",
+          "recId": "870310582",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "1. Страх неудачи или успеха",
+          "recId": "870310582",
+          "className": "t-name t-name_md t510__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "2. Перфекционизм",
+          "recId": "870310582",
+          "className": "t-name t-name_md t510__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "3. Неопределенность и абстрактные цели",
+          "recId": "870310582",
+          "className": "t-name t-name_md t510__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "4. Эмоциональное избегание",
+          "recId": "870310582",
+          "className": "t-name t-name_md t510__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "5. Низкая самоэффективность",
+          "recId": "870310582",
+          "className": "t-name t-name_md t510__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Как преодолеть прокрастинацию:",
+          "recId": "870316170",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "1. Дробите задачи на микрошаги",
+          "recId": "870316170",
+          "className": "t899__title t-name t-name_lg t899__bottommargin_sm"
+        },
+        {
+          "tag": "h2",
+          "text": "2. Используйте «правило 2 минут»",
+          "recId": "870316170",
+          "className": "t899__title t-name t-name_lg t899__bottommargin_sm"
+        },
+        {
+          "tag": "h2",
+          "text": "3. Применяйте технику Pomodoro",
+          "recId": "870316170",
+          "className": "t899__title t-name t-name_lg t899__bottommargin_sm"
+        },
+        {
+          "tag": "h2",
+          "text": "4. Создайте «ритуал начала»",
+          "recId": "870316170",
+          "className": "t899__title t-name t-name_lg t899__bottommargin_sm"
+        },
+        {
+          "tag": "h2",
+          "text": "5.Планируйте «время для прокрастинации»",
+          "recId": "870316170",
+          "className": "t899__title t-name t-name_lg t899__bottommargin_sm"
+        },
+        {
+          "tag": "h2",
+          "text": "6.Устраните триггеры",
+          "recId": "870316170",
+          "className": "t899__title t-name t-name_lg t899__bottommargin_sm"
+        },
+        {
+          "tag": "h2",
+          "text": "Что делать, если ничего не помогает?",
+          "recId": "870317725",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Тревожное расстройство",
+          "recId": "870317725",
+          "className": "t-card__title t-name t-name_sm"
+        },
+        {
+          "tag": "h2",
+          "text": "Синдром дефицита внимания (СДВГ);",
+          "recId": "870317725",
+          "className": "t-card__title t-name t-name_sm"
+        },
+        {
+          "tag": "h2",
+          "text": "Депрессия",
+          "recId": "870317725",
+          "className": "t-card__title t-name t-name_sm"
+        },
+        {
+          "tag": "h2",
+          "text": "Когда обратиться к психологу:",
+          "recId": "870318300",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Прокрастинация длится больше 6 месяцев.",
+          "recId": "870318300",
+          "className": "t-card__title t-name t-name_sm"
+        },
+        {
+          "tag": "h2",
+          "text": "Вы заметили у себя признаки выгорания или апатии.",
+          "recId": "870318300",
+          "className": "t-card__title t-name t-name_sm"
+        },
+        {
+          "tag": "h2",
+          "text": "Самостоятельные методы не дают результата.",
+          "recId": "870318300",
+          "className": "t-card__title t-name t-name_sm"
+        }
+      ],
+      "targetChecks": [
+        {
+          "recId": "870310583",
+          "expectedTag": "h2",
+          "visibleSignal": "«Сделаю завтра»: Что такое прокрастинация?",
+          "matched": true,
+          "matchedText": "«Сделаю завтра»: Что такое прокрастинация?"
+        },
+        {
+          "recId": "870310582",
+          "expectedTag": "h2",
+          "visibleSignal": "Почему мы откладываем дела?",
+          "matched": true,
+          "matchedText": "Почему мы откладываем дела?"
+        },
+        {
+          "recId": "870318300",
+          "expectedTag": "h2",
+          "visibleSignal": "Когда обратиться к психологу:",
+          "matched": true,
+          "matchedText": "Когда обратиться к психологу:"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/uslugi_razvod",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Психологическая помощь при расставании, измене, разводе:",
+          "recId": "870345763",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Как пережить измену: восстановление доверия к себе и миру",
+          "recId": "870345768",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "1. Признайте свои чувства",
+          "recId": "870345768",
+          "className": "t-card__title t-name t-name_sm"
+        },
+        {
+          "tag": "h2",
+          "text": "2. Откажитесь от мести",
+          "recId": "870345768",
+          "className": "t-card__title t-name t-name_sm"
+        },
+        {
+          "tag": "h2",
+          "text": "3. Проработайте травму с психологом",
+          "recId": "870345768",
+          "className": "t-card__title t-name t-name_sm"
+        },
+        {
+          "tag": "h2",
+          "text": "Когда обращаться к психологу?",
+          "recId": "870353589",
+          "className": "t-section__title t-title t-title_xs"
+        },
+        {
+          "tag": "h2",
+          "text": "— Вы думаете о самоубийстве или членовредительстве.",
+          "recId": "870353589",
+          "className": "t-name t-name_md "
+        },
+        {
+          "tag": "h2",
+          "text": "— Не можете выполнять базовые обязанности (работать, ухаживать за детьми).",
+          "recId": "870353589",
+          "className": "t-name t-name_md "
+        },
+        {
+          "tag": "h2",
+          "text": "— Испытываете панические атаки или приступы неконтролируемого гнева.",
+          "recId": "870353589",
+          "className": "t-name t-name_md "
+        },
+        {
+          "tag": "h2",
+          "text": "— Заметили, что «застряли» на одной из стадий горя дольше 3–4 месяцев.",
+          "recId": "870353589",
+          "className": "t-name t-name_md "
+        }
+      ],
+      "targetChecks": [
+        {
+          "recId": "870345768",
+          "expectedTag": "h2",
+          "visibleSignal": "Как пережить измену: восстановление доверия к себе и миру",
+          "matched": true,
+          "matchedText": "Как пережить измену: восстановление доверия к себе и миру"
+        },
+        {
+          "recId": "870353589",
+          "expectedTag": "h2",
+          "visibleSignal": "Когда обращаться к психологу?",
+          "matched": true,
+          "matchedText": "Когда обращаться к психологу?"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/uslugi_sohranit_brak",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Как сохранить брак",
+          "recId": "870322708",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Почему возникают кризисы в браке?",
+          "recId": "870323921",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Накопленные обиды и невысказанные эмоции",
+          "recId": "870323921",
+          "className": "t-name t-name_md t508__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Изменение ролей",
+          "recId": "870323921",
+          "className": "t-name t-name_md t508__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Рутина и потеря эмоциональной связи",
+          "recId": "870323921",
+          "className": "t-name t-name_md t508__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Внешние стрессоры",
+          "recId": "870323921",
+          "className": "t-name t-name_md t508__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Несовпадение ценностей",
+          "recId": "870323921",
+          "className": "t-name t-name_md t508__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "Как научиться понимать партнера?",
+          "recId": "870322715",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "1. Откажитесь от ярлыков",
+          "recId": "870322715",
+          "className": "t-name t-name_md t820__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "2. Примите различия",
+          "recId": "870322715",
+          "className": "t-name t-name_md t820__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "3. Задавайте вопросы",
+          "recId": "870322715",
+          "className": "t-name t-name_md t820__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "4. Практикуйте эмпатию",
+          "recId": "870322715",
+          "className": "t-name t-name_md t820__bottommargin"
+        },
+        {
+          "tag": "h2",
+          "text": "3 упражнения для укрепления брака",
+          "recId": "870322717",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "1. «Сундук сокровищ»",
+          "recId": "870322717",
+          "className": "t-card__title t-name t-name_sm"
+        },
+        {
+          "tag": "h2",
+          "text": "2. «Свидание с неожиданностью»",
+          "recId": "870322717",
+          "className": "t-card__title t-name t-name_sm"
+        },
+        {
+          "tag": "h2",
+          "text": "3. «Карта эмоций»",
+          "recId": "870322717",
+          "className": "t-card__title t-name t-name_sm"
+        },
+        {
+          "tag": "h2",
+          "text": "Когда стоит бороться за брак, а когда — отпустить?",
+          "recId": "870328184",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Физическое или эмоциональное насилие.",
+          "recId": "870328184",
+          "className": "t-card__title t-name t-name_sm"
+        },
+        {
+          "tag": "h2",
+          "text": "Измена, которую партнер не признает и не пытается исправить",
+          "recId": "870328184",
+          "className": "t-card__title t-name t-name_sm"
+        },
+        {
+          "tag": "h2",
+          "text": "Полное эмоциональное отдаление на фоне отказа от терапии",
+          "recId": "870328184",
+          "className": "t-card__title t-name t-name_sm"
+        }
+      ],
+      "targetChecks": [
+        {
+          "recId": "870323921",
+          "expectedTag": "h2",
+          "visibleSignal": "Почему возникают кризисы в браке?",
+          "matched": true,
+          "matchedText": "Почему возникают кризисы в браке?"
+        },
+        {
+          "recId": "870322715",
+          "expectedTag": "h2",
+          "visibleSignal": "Как научиться понимать партнера?",
+          "matched": true,
+          "matchedText": "Как научиться понимать партнера?"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/vacuum_cups",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Вакуумные банки и баночный массаж",
+          "recId": "865411513",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "865411513",
+          "expectedTag": "h1",
+          "visibleSignal": "Вакуумные банки и баночный массаж",
+          "matched": true,
+          "matchedText": "Вакуумные банки и баночный массаж"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/vigoranie_article",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Выгорание на работе",
+          "recId": "864182254",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Причины выгорания на работе",
+          "recId": "864183295",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Как предотвратить выгорание?",
+          "recId": "864186782",
+          "className": "t220__title t-heading t-heading_sm"
+        },
+        {
+          "tag": "h2",
+          "text": "Профессиональное выгорание — это серьезная проблема",
+          "recId": "864182265",
+          "className": "t921__title t-title t-title_xs "
+        }
+      ],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/vospitanie_article",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "ВОСПИТАНИЕ ДЕТЕЙ",
+          "recId": "863654053",
+          "className": "t001__title t-title t-title_xl"
+        }
+      ],
+      "h2": [],
+      "targetChecks": [
+        {
+          "recId": "863654053",
+          "expectedTag": "h1",
+          "visibleSignal": "ВОСПИТАНИЕ ДЕТЕЙ",
+          "matched": true,
+          "matchedText": "ВОСПИТАНИЕ ДЕТЕЙ"
+        }
+      ],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/vystupleniya-lekcii-treningi-psiholog-tatiana-moonn",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "ТЕМЫ ЛЕКЦИЙ, КОТОРЫЕ Я ЧИТАЮ",
+          "recId": "2173917421",
+          "className": "t962__title t-title t-title_xxs"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "ЦИКЛЫ ЛЕКЦИЙ и ВЫСТУПЛЕНИЙ",
+          "recId": "2173929411",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        }
+      ],
+      "targetChecks": [],
+      "error": null
+    },
+    {
+      "url": "https://moonn.ru/water",
+      "status": 200,
+      "loaded": true,
+      "hasSemanticLayerScript": true,
+      "h1": [
+        {
+          "tag": "h1",
+          "text": "Как правильно пить воду",
+          "recId": "868716790",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        }
+      ],
+      "h2": [
+        {
+          "tag": "h2",
+          "text": "Вода и её влияние на здоровье:",
+          "recId": "868702209",
+          "className": "t001__title t-title t-title_xl"
+        },
+        {
+          "tag": "h2",
+          "text": "Польза воды для организма",
+          "recId": "868702211",
+          "className": "t485__title t-title t-title_xxs t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Виды воды и ее польза",
+          "recId": "868702213",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Как нехватка воды влияет на состояние мозга и нервной системы",
+          "recId": "868741011",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        },
+        {
+          "tag": "h2",
+          "text": "Как ОБЕЗВОЖИВАНИЕ влияет на состояние крови, межклеточной и внутриклеточной жидкости",
+          "recId": "868744865",
+          "className": "js-block-header-title t-section__title t-title t-title_xs t-align_center t-margin_auto"
+        }
+      ],
+      "targetChecks": [],
+      "error": null
+    }
+  ]
+}
