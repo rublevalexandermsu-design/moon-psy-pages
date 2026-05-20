@@ -42,6 +42,18 @@
 
 ## GUI-Verified Business Metrics
 
+### SEO Rollout Dates And Baseline
+
+The rollout was not a single moment; it happened in phases:
+
+- `2026-05-01`: pre-rollout analytics baseline was recorded. Canonical Metrika counter `96397286` showed `1` visit / `1` view / `1` visitor for `2026-04-25 - 2026-05-01`. GSC last 3 months showed `221` clicks, `12.4K` impressions, CTR `1.8%`, average position `6.9`.
+- `2026-05-03`: live Moonn SEO metadata audit and Tilda SEO patch packets were prepared.
+- `2026-05-04`: production SEO settings were applied through Tilda UI to `77` ready pages plus `3` formerly robots-blocked production pages; final `80/80` matched title, description and canonical packets.
+- `2026-05-06 - 2026-05-07`: H1/H2 cleanup and scoped publishing follow-up were performed.
+- `2026-05-08`: JSON-LD schema layer and reindex submission packet were recorded for Google Search Console and Yandex.
+
+Important measurement caveat: the project history also records that before the final May 7-8 publication work, the live global HEAD still had a broken Yandex.Metrika JavaScript snippet. Therefore the Metrika before/after jump is a combined signal: increased traffic plus corrected measurement. Google Search Console is the cleaner source for SEO visibility because it measures search impressions/clicks outside the site script.
+
 ### Yandex.Metrika
 
 Period: `21 Apr 2026 - 20 May 2026`.
@@ -65,6 +77,13 @@ Period: `21 Apr 2026 - 20 May 2026`.
   - `что такое самоосознанность`
   - `подростковый психологический инт...`
 - Popular content report: `901` views / `268` visitors, but the table collapses all visible page data to `https://moonn.ru/`.
+
+Before/after Metrika check:
+
+- Before core SEO application, `2026-04-20 - 2026-05-03`: traffic report showed `4` visits; sources report showed `1` attributed visit.
+- After core SEO/schema/reindex work, `2026-05-07 - 2026-05-20`: traffic report showed `312` visits; sources report showed `312` visits / `264` visitors.
+- After-window sources: direct `204`, search engines `81`, referral links `24`, social networks `2`, internal `1`.
+- Therefore the earlier `316` figure is not nine months. It is the Metrika `month` preset visible as `21 Apr - 20 May`; almost all tracked visits in that month came in the last two weeks (`312` visits on `7 May - 20 May`).
 
 ### Google Search Console
 
@@ -107,13 +126,15 @@ Property: `https://moonn.ru`.
 
 ## Current Interpretation
 
-The SEO implementation was not wasted. There is now verified traffic evidence from Yandex.Metrika and verified search evidence from Google Search Console.
+The SEO implementation was not wasted, but the exact effect must be separated from analytics instrumentation repair.
 
 The strongest positive signal is Google Search Console: in the last 28 days the site received `64` clicks and `4.41K` impressions, with measurable non-brand demand around `дневник эмоций`, `как вести дневник эмоций`, `социальный интеллект`, and related informational pages. This means the SEO/AEO work is creating discoverable search surfaces, not only branded traffic.
 
+Metrika confirms that tracked site traffic changed sharply after the rollout window: `4` visits before the core application window versus `312` visits after May 7. Because the Metrika snippet was also fixed during the SEO/RKN workstream, this should be treated as "tracked traffic became visible and active", not as a pure SEO-only uplift.
+
 The strongest limitation is conversion/path analytics: Yandex.Metrika shows traffic and search-source quality, but the visible popular-content report collapses page data to `https://moonn.ru/`. This blocks reliable understanding of what users click and which Moonn pages drive onsite interest inside Metrika. GSC page data partially compensates for SEO pages, but it does not replace onsite behavior and goal tracking.
 
-Current conclusion: SEO produced measurable search visibility and traffic, but the analytics system is not yet strong enough to prove consultation/business conversion. The next work should focus on Metrika URL/page tracking, duplicate metadata cleanup, and goals for consultation/contact actions.
+Current conclusion: SEO produced measurable search visibility and tracked traffic, but the analytics system is not yet strong enough to prove consultation/business conversion. The next work should focus on Metrika URL/page tracking, duplicate metadata cleanup, and goals for consultation/contact actions.
 
 ## Problem Areas
 

@@ -1338,3 +1338,27 @@ Append-only project history for `moon-psy-site`.
   - Root cause: fallback route through authenticated Chrome GUI was not executed before reporting.
   - Fix: reran the analytics evidence step through Chrome GUI and updated the report.
   - Follow-up rule: when analytics APIs are blocked but an authenticated Chrome profile is available, the supervisor must use GUI capture as a bounded fallback and clearly separate API-blocked from GUI-verified facts.
+
+## 2026-05-20 — Moonn SEO Before/After Analytics Clarification
+
+- Project: Moonn / Tatyana Munn site.
+- Workstream: SEO/AEO growth evidence and analytics access.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user questioned whether the `316` visits were really for one month and asked for a proper before/after SEO interpretation.
+- Verified dates:
+  - `2026-05-01`: analytics baseline recorded; Metrika counter `96397286` had `1` visit / `1` view / `1` visitor for `2026-04-25 - 2026-05-01`; GSC last 3 months had `221` clicks and `12.4K` impressions.
+  - `2026-05-04`: production SEO settings were applied through Tilda UI to `77` ready pages plus `3` formerly robots-blocked pages.
+  - `2026-05-07`: H1/H2 and publish follow-up work; history records broken Yandex.Metrika script before final publication path.
+  - `2026-05-08`: JSON-LD/schema rollout and GSC/Yandex reindex submission were recorded.
+- GUI recheck:
+  - Metrika `month` preset was confirmed as `21 Apr - 20 May`, not 9 months.
+  - Metrika before core SEO application, `2026-04-20 - 2026-05-03`: traffic report `4` visits; sources report `1` attributed visit.
+  - Metrika after rollout window, `2026-05-07 - 2026-05-20`: traffic report `312` visits; sources report `312` visits / `264` visitors.
+  - After-window sources: direct `204`, search engines `81`, referral links `24`, social networks `2`, internal `1`.
+- Interpretation:
+  - The Metrika jump is real as tracked traffic, but not pure SEO uplift because the Metrika snippet/instrumentation was also repaired during the workstream.
+  - GSC remains the cleaner SEO signal; the May 20 GUI check showed last-28-days `64` clicks and `4.41K` impressions with non-brand queries/pages gaining visibility.
+- Changed files:
+  - `docs/moonn-seo-growth-check-2026-05-20.md`
+- Follow-up rule:
+  - SEO growth reports must always define rollout date(s), pre-window, post-window, and measurement caveats before claiming impact.
