@@ -1362,3 +1362,24 @@ Append-only project history for `moon-psy-site`.
   - `docs/moonn-seo-growth-check-2026-05-20.md`
 - Follow-up rule:
   - SEO growth reports must always define rollout date(s), pre-window, post-window, and measurement caveats before claiming impact.
+
+## 2026-05-20 — Moonn GSC Query/Page CTR Clarification
+
+- Project: Moonn / Tatyana Munn site.
+- Workstream: SEO/AEO growth evidence and analytics access.
+- Branch: `codex/moonn-seo-audit`.
+- Trigger: user asked which pages are visited/shown, which queries produce impressions, why clicks are low, and whether impressions increased after SEO.
+- Verified via Google Search Console GUI:
+  - Latest `28 days`: `64` clicks, `4.41K` impressions, CTR `1.5%`, average position `8.7`.
+  - Pre-rollout comparable `28 days` (`2026-04-06 - 2026-05-03`): `89` clicks, `5.87K` impressions, CTR `1.5%`, average position `6.8`.
+  - Pre-rollout `15 days` (`2026-04-19 - 2026-05-03`): `39` clicks, `2.88K` impressions, CTR `1.4%`, average position `8.1`.
+  - Post-rollout `15 days` (`2026-05-04 - 2026-05-18`): `30` clicks, `2.1K` impressions, CTR `1.4%`, average position `8.7`.
+  - Top last-28-day high-impression queries include `дневник эмоций`, `социальный интеллект это`, `как вести дневник эмоций`, `социальный интеллект`, `муна`, and diary-related variants.
+  - Top last-28-day high-impression pages include `article_diary_of_emotions`, social-intelligence knowledge-base, `article_femininity`, homepage, `uslugi_sohranit_brak`, `schematherapy`, `lectures1`, `uslugi_konflikti_na_rabote`, `diagnostika-ei`, and `uslugi_procrastination`.
+- Decision:
+  - Do not claim GSC growth yet. The site has measurable search visibility, but latest comparable GSC windows are lower than pre-rollout windows.
+  - Treat the next SEO iteration as CTR/snippet/intent optimization, not as proof that the first rollout already increased Google clicks.
+- Changed files:
+  - `docs/moonn-seo-growth-check-2026-05-20.md`
+- Follow-up rule:
+  - SEO reports must separate visibility, CTR, page-level demand, and conversion instead of compressing them into one "SEO worked" conclusion.

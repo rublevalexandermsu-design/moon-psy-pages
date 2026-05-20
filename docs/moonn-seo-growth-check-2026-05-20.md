@@ -93,6 +93,10 @@ Last visible update: about `3.5` hours before the check.
 
 - Last `3 months`: `224` clicks, `14.1K` impressions, CTR `1.6%`, average position `7.1`.
 - Last `28 days`: `64` clicks, `4.41K` impressions, CTR `1.5%`, average position `8.7`.
+- Comparable pre-rollout `28 days` (`2026-04-06 - 2026-05-03`): `89` clicks, `5.87K` impressions, CTR `1.5%`, average position `6.8`.
+- Comparable pre/post `15 days`:
+  - Before core SEO rollout (`2026-04-19 - 2026-05-03`): `39` clicks, `2.88K` impressions, CTR `1.4%`, average position `8.1`.
+  - After core SEO rollout (`2026-05-04 - 2026-05-18`): `30` clicks, `2.1K` impressions, CTR `1.4%`, average position `8.7`.
 - Top visible queries for last `28 days`:
   - `татьяна мунн`: `9` clicks / `17` impressions.
   - `дневник эмоций`: `4` clicks / `266` impressions.
@@ -112,6 +116,17 @@ Last visible update: about `3.5` hours before the check.
   - `https://moonn.ru/uslugi_konflikti_na_rabote`: `2` clicks / `115` impressions.
   - `https://moonn.ru/emotional-intelligence/lesson-12`: `2` clicks / `32` impressions.
   - `https://moonn.ru/physiotherapy`: `2` clicks / `11` impressions.
+- Top visible pages by impressions for last `28 days`:
+  - `https://moonn.ru/article_diary_of_emotions`: `15` clicks / `2,025` impressions.
+  - `https://moonn.ru/emotional-intelligence/knowledge-base/social-intelligence`: `2` clicks / `595` impressions.
+  - `https://moonn.ru/article_femininity`: `9` clicks / `549` impressions.
+  - `https://moonn.ru/`: `15` clicks / `283` impressions.
+  - `https://moonn.ru/uslugi_sohranit_brak`: `0` clicks / `258` impressions.
+  - `https://moonn.ru/schematherapy`: `2` clicks / `218` impressions.
+  - `https://moonn.ru/lectures1`: `7` clicks / `132` impressions.
+  - `https://moonn.ru/uslugi_konflikti_na_rabote`: `2` clicks / `115` impressions.
+  - `https://moonn.ru/emotional-intelligence/diagnostika-ei`: `1` click / `107` impressions.
+  - `https://moonn.ru/uslugi_procrastination`: `0` clicks / `106` impressions.
 
 ### Yandex Webmaster
 
@@ -126,22 +141,24 @@ Property: `https://moonn.ru`.
 
 ## Current Interpretation
 
-The SEO implementation was not wasted, but the exact effect must be separated from analytics instrumentation repair.
+The SEO implementation was not wasted technically, but the current GSC data does not yet prove search-growth uplift.
 
-The strongest positive signal is Google Search Console: in the last 28 days the site received `64` clicks and `4.41K` impressions, with measurable non-brand demand around `дневник эмоций`, `как вести дневник эмоций`, `социальный интеллект`, and related informational pages. This means the SEO/AEO work is creating discoverable search surfaces, not only branded traffic.
+The strongest positive signal is that Google Search Console now exposes concrete non-brand demand surfaces around `дневник эмоций`, `как вести дневник эмоций`, `социальный интеллект`, and related informational pages. These pages are discoverable. However, comparable GSC windows are weaker after the rollout: `89` clicks / `5.87K` impressions before versus `64` clicks / `4.41K` impressions in the latest 28 days; and `39` clicks / `2.88K` impressions before versus `30` clicks / `2.1K` impressions in the first 15 days after the core rollout.
 
 Metrika confirms that tracked site traffic changed sharply after the rollout window: `4` visits before the core application window versus `312` visits after May 7. Because the Metrika snippet was also fixed during the SEO/RKN workstream, this should be treated as "tracked traffic became visible and active", not as a pure SEO-only uplift.
 
 The strongest limitation is conversion/path analytics: Yandex.Metrika shows traffic and search-source quality, but the visible popular-content report collapses page data to `https://moonn.ru/`. This blocks reliable understanding of what users click and which Moonn pages drive onsite interest inside Metrika. GSC page data partially compensates for SEO pages, but it does not replace onsite behavior and goal tracking.
 
-Current conclusion: SEO produced measurable search visibility and tracked traffic, but the analytics system is not yet strong enough to prove consultation/business conversion. The next work should focus on Metrika URL/page tracking, duplicate metadata cleanup, and goals for consultation/contact actions.
+Current conclusion: SEO produced measurable search visibility and tracked traffic, but not yet measurable GSC growth. The next work should focus on CTR/snippet improvements for high-impression low-click pages, Metrika URL/page tracking, duplicate metadata cleanup, and goals for consultation/contact actions.
 
 ## Problem Areas
 
 - Machine-readable API/export evidence is still blocked by missing OAuth/API access.
 - Yandex.Metrika page-level content reporting appears too collapsed to evaluate interest by page; this needs URL/pageview tracking correction or a different report/export configuration.
 - Google Search Console confirms SEO visibility, but average CTR is still low: `1.5%` over the last 28 days.
+- Google Search Console does not yet show before/after growth: the latest comparable windows are lower than pre-rollout windows.
 - Google Search Console top SEO page is `article_diary_of_emotions`, which shows `2,025` impressions and `15` clicks; this page should become the first content-to-consultation funnel improvement candidate.
+- High-impression low-click pages need snippet/intent work: social-intelligence (`595` impressions / `2` clicks), `uslugi_sohranit_brak` (`258` / `0`), procrastination (`106` / `0`).
 - Yandex Webmaster still reports `9` duplicate titles and `22` duplicate descriptions.
 - Raw HTML still does not reflect the rendered H1/schema mitigation, so audits must continue to distinguish raw source vs rendered DOM.
 - Image alt remains unresolved across `83` pages at source/raw level.
